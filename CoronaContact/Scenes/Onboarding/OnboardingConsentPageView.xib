@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="OnboardingConsentPageView" customModule="Stopp_Corona" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="508" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6jY-OL-cud">
+                    <rect key="frame" x="0.0" y="0.0" width="508" height="600"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eer-KZ-zxH">
+                            <rect key="frame" x="0.0" y="0.0" width="508" height="261"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="onboarding_consent_body_1" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ncN-bk-EfV" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
+                                    <rect key="frame" x="24" y="68.5" width="460" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="body"/>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="onboarding_consent_body_1"/>
+                                    </userDefinedRuntimeAttributes>
+                                </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bhc-WQ-vwn">
+                                    <rect key="frame" x="32" y="113" width="444" height="20.5"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hnJ-Tk-6xv" customClass="M13Checkbox" customModule="M13Checkbox">
+                                            <rect key="frame" x="0.0" y="5" width="24" height="24"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="24" id="5Ed-jz-bi7"/>
+                                                <constraint firstAttribute="width" constant="24" id="crB-ak-leT"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="4"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="agreementChanged:" destination="iN0-l3-epB" eventType="valueChanged" id="JOh-sl-zcd"/>
+                                            </connections>
+                                        </view>
+                                        <label opaque="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="onboarding_consent_checkbox_label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mda-MZ-DdK" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
+                                            <rect key="frame" x="40" y="0.0" width="404" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="bold"/>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="onboarding_consent_checkbox_label"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="mda-MZ-DdK" secondAttribute="bottom" id="IfM-Yn-Y84"/>
+                                        <constraint firstAttribute="trailing" secondItem="mda-MZ-DdK" secondAttribute="trailing" id="LJx-oo-ZQY"/>
+                                        <constraint firstItem="mda-MZ-DdK" firstAttribute="leading" secondItem="hnJ-Tk-6xv" secondAttribute="trailing" constant="16" id="l8M-ry-4Aj"/>
+                                        <constraint firstItem="hnJ-Tk-6xv" firstAttribute="firstBaseline" secondItem="mda-MZ-DdK" secondAttribute="top" constant="5" id="pHh-rr-ysS"/>
+                                        <constraint firstItem="mda-MZ-DdK" firstAttribute="top" secondItem="Bhc-WQ-vwn" secondAttribute="top" id="vhY-nJ-DNu"/>
+                                        <constraint firstItem="hnJ-Tk-6xv" firstAttribute="leading" secondItem="Bhc-WQ-vwn" secondAttribute="leading" id="zbo-pN-rY1"/>
+                                    </constraints>
+                                </view>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="onboarding_consent_body_2" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hET-gE-Azu" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
+                                    <rect key="frame" x="24" y="157.5" width="460" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="body"/>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="onboarding_consent_body_2"/>
+                                    </userDefinedRuntimeAttributes>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="qOa-JD-a77" customClass="TransButton" customModule="Stopp_Corona" customModuleProvider="target">
+                                    <rect key="frame" x="24" y="202" width="460" height="34"/>
+                                    <state key="normal" title="onboarding_consent_body_3">
+                                        <color key="titleColor" name="ccBlack"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="normalStyle" value="body"/>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="transKeyNormal" value="onboarding_consent_body_3"/>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="multiline" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="dataPrivacyButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="ehe-Px-Q6K"/>
+                                    </connections>
+                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="onboarding_consent_headline" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wNh-mu-8Fa" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
+                                    <rect key="frame" x="24" y="32" width="460" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="h1"/>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="onboarding_consent_headline"/>
+                                    </userDefinedRuntimeAttributes>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstItem="hET-gE-Azu" firstAttribute="top" secondItem="Bhc-WQ-vwn" secondAttribute="bottom" constant="24" id="2zZ-Ac-fcT"/>
+                                <constraint firstItem="wNh-mu-8Fa" firstAttribute="top" secondItem="Eer-KZ-zxH" secondAttribute="top" constant="32" id="6RI-Us-Hrk"/>
+                                <constraint firstItem="qOa-JD-a77" firstAttribute="leading" secondItem="Eer-KZ-zxH" secondAttribute="leading" constant="24" id="AUt-qb-IbX"/>
+                                <constraint firstItem="qOa-JD-a77" firstAttribute="top" secondItem="hET-gE-Azu" secondAttribute="bottom" constant="24" id="DVE-3p-Iiq"/>
+                                <constraint firstItem="Bhc-WQ-vwn" firstAttribute="leading" secondItem="Eer-KZ-zxH" secondAttribute="leading" constant="32" id="EAp-xa-Sif"/>
+                                <constraint firstItem="Bhc-WQ-vwn" firstAttribute="leading" secondItem="Eer-KZ-zxH" secondAttribute="leading" constant="32" id="Edg-nj-fbO"/>
+                                <constraint firstItem="ncN-bk-EfV" firstAttribute="top" secondItem="wNh-mu-8Fa" secondAttribute="bottom" constant="16" id="HBA-TM-g3u"/>
+                                <constraint firstAttribute="trailing" secondItem="qOa-JD-a77" secondAttribute="trailing" constant="24" id="Hcx-xS-Lpr"/>
+                                <constraint firstItem="wNh-mu-8Fa" firstAttribute="leading" secondItem="Eer-KZ-zxH" secondAttribute="leading" constant="24" id="LOA-cb-huK"/>
+                                <constraint firstAttribute="trailing" secondItem="wNh-mu-8Fa" secondAttribute="trailing" constant="24" id="Lse-sl-6cp"/>
+                                <constraint firstItem="ncN-bk-EfV" firstAttribute="leading" secondItem="Eer-KZ-zxH" secondAttribute="leading" constant="24" id="PeF-v4-g8D"/>
+                                <constraint firstAttribute="trailing" secondItem="ncN-bk-EfV" secondAttribute="trailing" constant="24" id="YqX-bT-qT9"/>
+                                <constraint firstAttribute="bottom" secondItem="qOa-JD-a77" secondAttribute="bottom" constant="25" id="ZPV-Zy-WEf"/>
+                                <constraint firstItem="hET-gE-Azu" firstAttribute="leading" secondItem="Eer-KZ-zxH" secondAttribute="leading" constant="24" id="aol-tT-qEd"/>
+                                <constraint firstAttribute="trailing" secondItem="hET-gE-Azu" secondAttribute="trailing" constant="24" id="bjW-SC-qnQ"/>
+                                <constraint firstItem="Bhc-WQ-vwn" firstAttribute="top" secondItem="ncN-bk-EfV" secondAttribute="bottom" constant="24" id="cRf-WQ-0RZ"/>
+                                <constraint firstAttribute="trailing" secondItem="Bhc-WQ-vwn" secondAttribute="trailing" constant="32" id="gTa-jG-oAr"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="Eer-KZ-zxH" firstAttribute="trailing" secondItem="XIq-tG-wVB" secondAttribute="trailing" id="7CC-XN-QRR"/>
+                        <constraint firstItem="Eer-KZ-zxH" firstAttribute="top" secondItem="XIq-tG-wVB" secondAttribute="top" id="RcK-65-LbA"/>
+                        <constraint firstItem="Eer-KZ-zxH" firstAttribute="left" secondItem="XIq-tG-wVB" secondAttribute="left" id="VNe-bc-CZG"/>
+                        <constraint firstItem="Eer-KZ-zxH" firstAttribute="width" secondItem="zXw-W7-VjW" secondAttribute="width" id="cuh-rE-EtO"/>
+                        <constraint firstItem="Eer-KZ-zxH" firstAttribute="bottom" secondItem="XIq-tG-wVB" secondAttribute="bottom" id="dNq-Zo-Q64"/>
+                    </constraints>
+                    <viewLayoutGuide key="contentLayoutGuide" id="XIq-tG-wVB"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="zXw-W7-VjW"/>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="6jY-OL-cud" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="2zC-Bo-8ru"/>
+                <constraint firstItem="6jY-OL-cud" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="HuC-Kj-b7D"/>
+                <constraint firstAttribute="bottom" secondItem="6jY-OL-cud" secondAttribute="bottom" id="bFu-Mg-706"/>
+                <constraint firstAttribute="trailing" secondItem="6jY-OL-cud" secondAttribute="trailing" id="gSt-aR-On1"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="checkbox" destination="hnJ-Tk-6xv" id="3m0-2q-xnL"/>
+                <outlet property="consentLabel" destination="mda-MZ-DdK" id="2Vs-0t-qa8"/>
+            </connections>
+            <point key="canvasLocation" x="200.00000000000003" y="12.723214285714285"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="ccBlack">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

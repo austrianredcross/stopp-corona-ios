@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0DV-8a-Pct">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Self Testing Check Symptoms View Controller-->
+        <scene sceneID="QGl-3T-POc">
+            <objects>
+                <viewController id="0DV-8a-Pct" customClass="SelfTestingCheckSymptomsViewController" customModule="Stopp_Corona" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FKk-he-u7K">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8QV-4c-6Gt" customClass="PrimaryButton" customModule="Stopp_Corona" customModuleProvider="target">
+                                <rect key="frame" x="24" y="782" width="366" height="56"/>
+                                <color key="backgroundColor" name="rouge"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="yza-Gk-oEa"/>
+                                </constraints>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="transKeyNormal" value="sickness_certificate_personal_data_next_button"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="nextButtonTapped:" destination="0DV-8a-Pct" eventType="touchUpInside" id="WOF-QT-2de"/>
+                                </connections>
+                            </button>
+                            <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pDi-ZF-KNl">
+                                <rect key="frame" x="0.0" y="44" width="414" height="674"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="d9Q-eM-tcV">
+                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="674"/>
+                                        <subviews>
+                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B4G-Tg-Om6">
+                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="674"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="B4G-Tg-Om6" firstAttribute="height" secondItem="oLi-BL-rjF" secondAttribute="height" id="BRi-8h-dWv"/>
+                                    <constraint firstItem="d9Q-eM-tcV" firstAttribute="leading" secondItem="I9D-ok-Z25" secondAttribute="leading" id="Ii5-fN-0cZ"/>
+                                    <constraint firstItem="d9Q-eM-tcV" firstAttribute="trailing" secondItem="I9D-ok-Z25" secondAttribute="trailing" id="Ndj-8H-uiW"/>
+                                    <constraint firstItem="d9Q-eM-tcV" firstAttribute="height" secondItem="oLi-BL-rjF" secondAttribute="height" id="SyD-yT-CVf"/>
+                                    <constraint firstItem="d9Q-eM-tcV" firstAttribute="bottom" secondItem="I9D-ok-Z25" secondAttribute="bottom" id="VCz-of-iLu"/>
+                                    <constraint firstItem="d9Q-eM-tcV" firstAttribute="top" secondItem="I9D-ok-Z25" secondAttribute="top" id="jdL-aV-Co7"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="I9D-ok-Z25"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="oLi-BL-rjF"/>
+                                <connections>
+                                    <outlet property="delegate" destination="0DV-8a-Pct" id="nsH-o3-SpX"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="pDi-ZF-KNl" firstAttribute="trailing" secondItem="kOk-2h-9pJ" secondAttribute="trailing" id="A9s-Sf-lZV"/>
+                            <constraint firstItem="pDi-ZF-KNl" firstAttribute="leading" secondItem="kOk-2h-9pJ" secondAttribute="leading" id="Mhq-AH-Ir1"/>
+                            <constraint firstItem="kOk-2h-9pJ" firstAttribute="trailing" secondItem="8QV-4c-6Gt" secondAttribute="trailing" constant="24" id="W2q-9d-432"/>
+                            <constraint firstItem="8QV-4c-6Gt" firstAttribute="leading" secondItem="kOk-2h-9pJ" secondAttribute="leading" constant="24" id="e4N-2V-aAM"/>
+                            <constraint firstItem="pDi-ZF-KNl" firstAttribute="top" secondItem="kOk-2h-9pJ" secondAttribute="top" id="jss-e8-wSh"/>
+                            <constraint firstItem="8QV-4c-6Gt" firstAttribute="top" relation="lessThanOrEqual" secondItem="pDi-ZF-KNl" secondAttribute="bottom" constant="64" id="pJM-JW-QSE"/>
+                            <constraint firstItem="8QV-4c-6Gt" firstAttribute="top" relation="greaterThanOrEqual" secondItem="pDi-ZF-KNl" secondAttribute="bottom" constant="16" id="qcu-BS-oiu"/>
+                            <constraint firstItem="kOk-2h-9pJ" firstAttribute="bottom" secondItem="8QV-4c-6Gt" secondAttribute="bottom" constant="24" id="xdR-sh-cwW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="kOk-2h-9pJ"/>
+                    </view>
+                    <connections>
+                        <outlet property="button" destination="8QV-4c-6Gt" id="SNV-Az-Icv"/>
+                        <outlet property="scrollView" destination="pDi-ZF-KNl" id="CcR-fQ-B1O"/>
+                        <outlet property="stackView" destination="d9Q-eM-tcV" id="w4V-lI-HuM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nng-Vb-cIq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="rouge">
+            <color red="0.72549019607843135" green="0.074509803921568626" blue="0.10588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

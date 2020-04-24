@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Sickness Certificate Confirmation View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="SicknessCertificateConfirmationViewController" customModule="CoronaContact" customModuleProvider="___VARIABLE_ibCustomModuleProvider___" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="WmM-br-PP5">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xS3-Cs-QOZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="419"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="Nt4-tt-Pdd" customClass="BackgroundStackView" customModule="CoronaContact" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="419"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sickness_certificate_confirmation_headline" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mr4-Zf-A95" customClass="TransLabel" customModule="CoronaContact" customModuleProvider="target">
+                                                        <rect key="frame" x="24" y="24" width="366" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="h1"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="sickness_certificate_confirmation_headline"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </label>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SuccessIcon" translatesAutoresizingMaskIntoConstraints="NO" id="0Jk-q0-zs1">
+                                                        <rect key="frame" x="24" y="76.5" width="366" height="80"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="80" id="VLk-t0-ZPF"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sickness_certificate_confirmation_description" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gGf-4H-EZD" customClass="TransLabel" customModule="CoronaContact" customModuleProvider="target">
+                                                        <rect key="frame" x="24" y="188.5" width="366" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="body"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="sickness_certificate_confirmation_description"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </label>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dy6-MZ-VTe">
+                                                        <rect key="frame" x="24" y="241" width="366" height="50"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    </view>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="qoX-9N-96z">
+                                                        <rect key="frame" x="24" y="323" width="366" height="72"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mNR-uZ-Urp" customClass="SecondaryButton" customModule="CoronaContact" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="366" height="30"/>
+                                                                <state key="normal" title="sickness_certificate_confirmation_secondary_button">
+                                                                    <color key="titleColor" name="ccBlack"/>
+                                                                </state>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="transKeyNormal" value="sickness_certificate_confirmation_secondary_button"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="secondaryButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sPu-RR-sI9"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yby-CW-vY8" customClass="PrimaryButton" customModule="CoronaContact" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="42" width="366" height="30"/>
+                                                                <state key="normal" title="sickness_certificate_confirmation_primary_button">
+                                                                    <color key="titleColor" name="ccBlack"/>
+                                                                </state>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="transKeyNormal" value="sickness_certificate_confirmation_primary_button"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="primaryButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vTa-5t-oaZ"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                                <directionalEdgeInsets key="directionalLayoutMargins" top="24" leading="24" bottom="24" trailing="24"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="overrideHorztMarginMulti">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="overrideVertMarginMulti">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="overrideSpacingMulti">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstItem="Nt4-tt-Pdd" firstAttribute="top" secondItem="xS3-Cs-QOZ" secondAttribute="top" id="Hd4-8T-0gi"/>
+                                            <constraint firstAttribute="bottom" secondItem="Nt4-tt-Pdd" secondAttribute="bottom" id="R0x-Zd-yWz"/>
+                                            <constraint firstItem="Nt4-tt-Pdd" firstAttribute="leading" secondItem="xS3-Cs-QOZ" secondAttribute="leading" id="ZJm-JL-ez0"/>
+                                            <constraint firstAttribute="trailing" secondItem="Nt4-tt-Pdd" secondAttribute="trailing" id="twD-Rm-ESg"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="xS3-Cs-QOZ" secondAttribute="bottom" priority="250" id="17J-9N-UnI"/>
+                                    <constraint firstItem="xS3-Cs-QOZ" firstAttribute="top" secondItem="WmM-br-PP5" secondAttribute="top" id="KTP-Ep-rlr"/>
+                                    <constraint firstItem="xS3-Cs-QOZ" firstAttribute="centerX" secondItem="WmM-br-PP5" secondAttribute="centerX" id="MDw-Jy-K3k"/>
+                                    <constraint firstAttribute="trailing" secondItem="xS3-Cs-QOZ" secondAttribute="trailing" id="riH-y4-6IV"/>
+                                    <constraint firstItem="xS3-Cs-QOZ" firstAttribute="centerY" secondItem="WmM-br-PP5" secondAttribute="centerY" priority="250" id="tdp-S2-enD"/>
+                                    <constraint firstItem="xS3-Cs-QOZ" firstAttribute="leading" secondItem="WmM-br-PP5" secondAttribute="leading" id="yQj-Zm-57M"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="CuI-6n-Fa9"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="CJA-Rl-p3O"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="WmM-br-PP5" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="4N1-ah-U8M"/>
+                            <constraint firstItem="WmM-br-PP5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="8G1-lM-ySh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="WmM-br-PP5" secondAttribute="top" id="9Ve-09-vhy"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WmM-br-PP5" secondAttribute="trailing" id="OBX-DS-tYu"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="scrollView" destination="WmM-br-PP5" id="hL4-rt-Om8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="138"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="SuccessIcon" width="80" height="80"/>
+        <namedColor name="ccBlack">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

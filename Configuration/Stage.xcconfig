@@ -1,0 +1,16 @@
+//
+//  Stage.xcconfig
+//  CoronaContact
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+#include "Base.xcconfig"
+#include "Pods/Target Support Files/Pods-CoronaContact/Pods-CoronaContact.stage.xcconfig"
+
+BUILD_CONFIGURATION=Stage
+
+PRODUCT_DISPLAY_NAME=Stopp Corona (Stage)
+
+OTHER_SWIFT_FLAGS = $(inherited) -DSTAGE -DLOGGING

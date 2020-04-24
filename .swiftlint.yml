@@ -1,0 +1,11 @@
+
+line_length: 150
+type_name:
+  max_length:
+    warning: 60
+    error: 80
+
+excluded:
+  - Pods
+  - .idea
+  - Templates

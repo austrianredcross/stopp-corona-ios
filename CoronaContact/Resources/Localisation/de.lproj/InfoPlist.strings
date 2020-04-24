@@ -1,0 +1,5 @@
+"NSMicrophoneUsageDescription"          = "Die Berechtigung wird für die Präzision des digitalen Handshake benötigt.";
+"NSBluetoothAlwaysUsageDescription"     = "Die Berechtigung wird für die Präzision des digitalen Handshake benötigt.";
+"NSBluetoothPeripheralUsageDescription" = "Die Berechtigung wird für die Präzision des digitalen Handshake benötigt.";
+"NSLocationAlwaysUsageDescription"      = "Die Berechtigung wird für die Präzision des digitalen Handshake benötigt.";
+"NSLocationWhenInUseUsageDescription"   = "Die Berechtigung wird für die Präzision des digitalen Handshake benötigt.";

@@ -1,0 +1,16 @@
+//
+//  Development.xcconfig
+//  CoronaContact
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+#include "Base.xcconfig"
+#include "Pods/Target Support Files/Pods-CoronaContact/Pods-CoronaContact.development.xcconfig"
+
+BUILD_CONFIGURATION=Development
+
+PRODUCT_DISPLAY_NAME=Stopp Corona (Dev)
+
+OTHER_SWIFT_FLAGS = $(inherited) -DDEBUG -DLOGGING

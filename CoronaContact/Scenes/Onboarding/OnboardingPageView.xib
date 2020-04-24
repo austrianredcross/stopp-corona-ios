@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina3_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="OnboardingPageView" customModule="Stopp_Corona" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="385" height="512"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HS0-Ui-L3Q">
+                    <rect key="frame" x="20" y="20" width="345" height="492"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="ilZ-Y2-hNQ" customClass="BackgroundStackView" customModule="Stopp_Corona" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="345" height="492"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="headLine" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="bof-dt-8vb" userLabel="headingLabel">
+                                    <rect key="frame" x="0.0" y="0.0" width="345" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="h1"/>
+                                    </userDefinedRuntimeAttributes>
+                                </label>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="NlN-bN-DCe">
+                                    <rect key="frame" x="0.0" y="44.5" width="345" height="20.5"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="copyText" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U1b-31-foO" userLabel="textLabel" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="345" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="body"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </label>
+                                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="copyText" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="14" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NCE-b5-I8v" userLabel="textLabel" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="345" height="0.0"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="body"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="VSE-uv-Wbi" customClass="TransButton" customModule="Stopp_Corona" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="89" width="345" height="34"/>
+                                    <state key="normal" title="Button">
+                                        <color key="titleColor" name="ccBlack"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="normalStyle" value="body"/>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="multiline" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="buttonTapped" destination="iN0-l3-epB" eventType="touchUpInside" id="dyl-8o-hGT"/>
+                                    </connections>
+                                </button>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tmi-PI-HfO">
+                                    <rect key="frame" x="0.0" y="147" width="345" height="345"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="740" verticalCompressionResistancePriority="740" image="OnboardingPage1" translatesAutoresizingMaskIntoConstraints="NO" id="IQn-bd-iWo">
+                                            <rect key="frame" x="20" y="92.5" width="305" height="160"/>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="IQn-bd-iWo" secondAttribute="trailing" constant="20" symbolic="YES" id="AdO-IQ-vc7"/>
+                                        <constraint firstItem="IQn-bd-iWo" firstAttribute="centerY" secondItem="Tmi-PI-HfO" secondAttribute="centerY" id="B4h-oe-a8y"/>
+                                        <constraint firstItem="IQn-bd-iWo" firstAttribute="leading" secondItem="Tmi-PI-HfO" secondAttribute="leading" constant="20" symbolic="YES" id="m7B-eM-h1A"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="overrideVertMarginMulti">
+                                    <real key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="overrideHorztMarginMulti">
+                                    <real key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="overrideSpacingMulti">
+                                    <real key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="ilZ-Y2-hNQ" secondAttribute="trailing" id="3bj-zM-KcO"/>
+                        <constraint firstItem="ilZ-Y2-hNQ" firstAttribute="top" secondItem="HS0-Ui-L3Q" secondAttribute="top" id="CiA-py-YHJ"/>
+                        <constraint firstAttribute="bottom" secondItem="ilZ-Y2-hNQ" secondAttribute="bottom" id="eLw-yX-uqO"/>
+                        <constraint firstItem="ilZ-Y2-hNQ" firstAttribute="leading" secondItem="HS0-Ui-L3Q" secondAttribute="leading" id="nAe-Rt-VaI"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                            <color key="value" name="ccBorder"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="8"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                            <color key="value" name="ccShadow"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="setShadowOpacity">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="setShadowRadius">
+                            <real key="value" value="8"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="size" keyPath="setShadowOffset">
+                            <size key="value" width="2" height="2"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="HS0-Ui-L3Q" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="ANK-OV-EGc"/>
+                <constraint firstAttribute="bottom" secondItem="HS0-Ui-L3Q" secondAttribute="bottom" id="WjQ-QT-HL6"/>
+                <constraint firstItem="HS0-Ui-L3Q" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="fmb-jj-uOQ"/>
+                <constraint firstAttribute="trailing" secondItem="HS0-Ui-L3Q" secondAttribute="trailing" constant="20" id="mg6-YK-D1O"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="button" destination="VSE-uv-Wbi" id="eVO-HN-Vx6"/>
+                <outlet property="headingLabel" destination="bof-dt-8vb" id="h22-tc-4G2"/>
+                <outlet property="imageView" destination="IQn-bd-iWo" id="cxp-37-X6k"/>
+                <outlet property="textLabel" destination="U1b-31-foO" id="EVZ-hV-Nln"/>
+                <outlet property="textLabel2" destination="NCE-b5-I8v" id="y0p-cJ-gio"/>
+            </connections>
+            <point key="canvasLocation" x="238.125" y="186.25"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="OnboardingPage1" width="316" height="160"/>
+        <namedColor name="ccBlack">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ccBorder">
+            <color red="0.89800000190734863" green="0.89800000190734863" blue="0.89800000190734863" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ccShadow">
+            <color red="0.0" green="0.0" blue="0.0" alpha="0.23000000417232513" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

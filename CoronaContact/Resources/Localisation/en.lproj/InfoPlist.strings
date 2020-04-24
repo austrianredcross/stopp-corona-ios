@@ -1,0 +1,5 @@
+"NSMicrophoneUsageDescription"          = "The permissions are needed to improve the accuracy of the digital handshake.";
+"NSBluetoothAlwaysUsageDescription"     = "The permissions are needed to improve the accuracy of the digital handshake.";
+"NSBluetoothPeripheralUsageDescription" = "The permissions are needed to improve the accuracy of the digital handshake.";
+"NSLocationAlwaysUsageDescription"      = "The permissions are needed to improve the accuracy of the digital handshake.";
+"NSLocationWhenInUseUsageDescription"   = "The permissions are needed to improve the accuracy of the digital handshake.";

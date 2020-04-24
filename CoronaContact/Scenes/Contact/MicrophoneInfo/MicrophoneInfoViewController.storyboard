@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="u3f-a5-h9l">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Microphone Info View Controller-->
+        <scene sceneID="DHL-Q3-YdQ">
+            <objects>
+                <viewController storyboardIdentifier="MicrophoneInfoViewController" id="u3f-a5-h9l" customClass="MicrophoneInfoViewController" customModule="Stopp_Corona" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TkP-X0-dsJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yia-vA-i3N">
+                                <rect key="frame" x="24" y="117" width="366" height="672"/>
+                                <subviews>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="e7f-u6-i7Z">
+                                        <rect key="frame" x="0.0" y="0.0" width="366" height="672"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qbm-XE-e1o">
+                                                <rect key="frame" x="0.0" y="0.0" width="366" height="426"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="o9v-gh-hRa">
+                                                        <rect key="frame" x="0.0" y="0.0" width="366" height="426"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="main_microphone_explanation_dialog_headline" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bfH-Ua-WMW" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                <rect key="frame" x="24" y="24" width="318" height="41"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="main_microphone_explanation_dialog_headline"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="h2"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </label>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="YBQ-Sr-URJ">
+                                                                <rect key="frame" x="24" y="73" width="318" height="329"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="main_microphone_explanation_dialog_description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TfM-B6-WYe" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="16" width="318" height="41"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="main_microphone_explanation_dialog_description"/>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="body"/>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                    </label>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="TNp-Le-bzu">
+                                                                        <rect key="frame" x="0.0" y="89" width="318" height="178"/>
+                                                                        <subviews>
+                                                                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="308" placeholderIntrinsicHeight="128" translatesAutoresizingMaskIntoConstraints="NO" id="ofk-Rm-DE4">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="318" height="128"/>
+                                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            </view>
+                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iki-HI-CvW">
+                                                                                <rect key="frame" x="0.0" y="128" width="318" height="50"/>
+                                                                                <subviews>
+                                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rWc-Pq-oDC" customClass="CheckboxView" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                                        <rect key="frame" x="0.0" y="13" width="24" height="24"/>
+                                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                        <constraints>
+                                                                                            <constraint firstAttribute="height" constant="24" id="ylm-gy-nZQ"/>
+                                                                                            <constraint firstAttribute="width" constant="24" id="z62-Ir-oqi"/>
+                                                                                        </constraints>
+                                                                                        <userDefinedRuntimeAttributes>
+                                                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                                <real key="value" value="4"/>
+                                                                                            </userDefinedRuntimeAttribute>
+                                                                                        </userDefinedRuntimeAttributes>
+                                                                                        <connections>
+                                                                                            <action selector="hideNextTimeCheckboxChanged:" destination="u3f-a5-h9l" eventType="valueChanged" id="DcJ-bF-Hcc"/>
+                                                                                        </connections>
+                                                                                    </view>
+                                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CLB-8b-edS" customClass="TransButton" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                                        <rect key="frame" x="24" y="0.0" width="294" height="50"/>
+                                                                                        <inset key="titleEdgeInsets" minX="16" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                                                        <state key="normal" title="main_microphone_explanation_dialog_do_not_show_again">
+                                                                                            <color key="titleColor" name="ccBlack"/>
+                                                                                        </state>
+                                                                                        <userDefinedRuntimeAttributes>
+                                                                                            <userDefinedRuntimeAttribute type="string" keyPath="transKeyNormal" value="main_microphone_explanation_dialog_do_not_show_again"/>
+                                                                                            <userDefinedRuntimeAttribute type="string" keyPath="normalStyle" value="bold"/>
+                                                                                        </userDefinedRuntimeAttributes>
+                                                                                        <connections>
+                                                                                            <action selector="hideNextTimeButtonChanged:" destination="u3f-a5-h9l" eventType="touchUpInside" id="dVf-S6-UWd"/>
+                                                                                        </connections>
+                                                                                    </button>
+                                                                                </subviews>
+                                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                <constraints>
+                                                                                    <constraint firstItem="CLB-8b-edS" firstAttribute="centerY" secondItem="rWc-Pq-oDC" secondAttribute="centerY" id="1Ho-iH-vCV"/>
+                                                                                    <constraint firstAttribute="trailing" secondItem="CLB-8b-edS" secondAttribute="trailing" id="3J7-gQ-gSy"/>
+                                                                                    <constraint firstItem="rWc-Pq-oDC" firstAttribute="leading" secondItem="Iki-HI-CvW" secondAttribute="leading" id="BAi-DP-M9Q"/>
+                                                                                    <constraint firstItem="CLB-8b-edS" firstAttribute="leading" secondItem="rWc-Pq-oDC" secondAttribute="trailing" id="BaH-mZ-ePD"/>
+                                                                                    <constraint firstAttribute="bottom" secondItem="CLB-8b-edS" secondAttribute="bottom" id="WZq-SI-oPl"/>
+                                                                                    <constraint firstItem="CLB-8b-edS" firstAttribute="top" secondItem="Iki-HI-CvW" secondAttribute="top" id="fZV-nC-SjN"/>
+                                                                                </constraints>
+                                                                            </view>
+                                                                        </subviews>
+                                                                    </stackView>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PkR-Yv-Vhh" customClass="PrimaryButton" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="299" width="318" height="30"/>
+                                                                        <state key="normal" title="general_ok">
+                                                                            <color key="titleColor" name="ccBlack"/>
+                                                                        </state>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="transKeyNormal" value="general_ok"/>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                        <connections>
+                                                                            <action selector="closeButtonTapped:" destination="u3f-a5-h9l" eventType="touchUpInside" id="QoC-eR-4h8"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                </subviews>
+                                                                <directionalEdgeInsets key="directionalLayoutMargins" top="16" leading="0.0" bottom="0.0" trailing="0.0"/>
+                                                            </stackView>
+                                                        </subviews>
+                                                        <directionalEdgeInsets key="directionalLayoutMargins" top="24" leading="24" bottom="24" trailing="24"/>
+                                                    </stackView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="o9v-gh-hRa" firstAttribute="top" secondItem="Qbm-XE-e1o" secondAttribute="top" id="9pQ-6J-DHt"/>
+                                                    <constraint firstAttribute="trailing" secondItem="o9v-gh-hRa" secondAttribute="trailing" id="gxT-HN-GiJ"/>
+                                                    <constraint firstItem="o9v-gh-hRa" firstAttribute="leading" secondItem="Qbm-XE-e1o" secondAttribute="leading" id="hPh-xc-4Uu"/>
+                                                    <constraint firstAttribute="bottom" secondItem="o9v-gh-hRa" secondAttribute="bottom" id="wuG-wb-pxI"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="Qbm-XE-e1o" firstAttribute="top" secondItem="4Al-y9-rVx" secondAttribute="top" id="Rli-0R-PkI"/>
+                                            <constraint firstAttribute="trailing" secondItem="Qbm-XE-e1o" secondAttribute="trailing" id="ZOx-rQ-Z7g"/>
+                                            <constraint firstItem="Qbm-XE-e1o" firstAttribute="centerX" secondItem="e7f-u6-i7Z" secondAttribute="centerX" id="jbj-Bk-C2O"/>
+                                            <constraint firstItem="Qbm-XE-e1o" firstAttribute="centerY" secondItem="e7f-u6-i7Z" secondAttribute="centerY" priority="250" id="kbq-3q-MPn"/>
+                                            <constraint firstItem="Qbm-XE-e1o" firstAttribute="leading" secondItem="e7f-u6-i7Z" secondAttribute="leading" id="lmT-C5-jLY"/>
+                                            <constraint firstAttribute="bottom" secondItem="Qbm-XE-e1o" secondAttribute="bottom" priority="250" id="smP-lq-tpf"/>
+                                        </constraints>
+                                        <viewLayoutGuide key="contentLayoutGuide" id="4Al-y9-rVx"/>
+                                        <viewLayoutGuide key="frameLayoutGuide" id="U6G-g6-y4Y"/>
+                                    </scrollView>
+                                </subviews>
+                                <color key="backgroundColor" name="ccWhite"/>
+                                <constraints>
+                                    <constraint firstItem="e7f-u6-i7Z" firstAttribute="leading" secondItem="Yia-vA-i3N" secondAttribute="leading" id="7wc-fM-UXv"/>
+                                    <constraint firstItem="e7f-u6-i7Z" firstAttribute="top" secondItem="Yia-vA-i3N" secondAttribute="top" id="LbY-0O-yyn"/>
+                                    <constraint firstAttribute="bottom" secondItem="e7f-u6-i7Z" secondAttribute="bottom" id="LnD-Ha-L6S"/>
+                                    <constraint firstAttribute="trailing" secondItem="e7f-u6-i7Z" secondAttribute="trailing" id="WIs-hN-j2r"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="DeI-0G-R44" firstAttribute="trailing" secondItem="Yia-vA-i3N" secondAttribute="trailing" constant="24" id="1EM-lF-ign"/>
+                            <constraint firstItem="Yia-vA-i3N" firstAttribute="top" relation="greaterThanOrEqual" secondItem="DeI-0G-R44" secondAttribute="top" constant="24" id="6aj-CC-LZK"/>
+                            <constraint firstItem="Yia-vA-i3N" firstAttribute="centerX" secondItem="DeI-0G-R44" secondAttribute="centerX" id="B3L-I6-tGA"/>
+                            <constraint firstItem="Yia-vA-i3N" firstAttribute="centerY" secondItem="DeI-0G-R44" secondAttribute="centerY" id="U3P-AY-dEE"/>
+                            <constraint firstItem="DeI-0G-R44" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Yia-vA-i3N" secondAttribute="bottom" constant="24" id="V3v-RR-aym"/>
+                            <constraint firstItem="Yia-vA-i3N" firstAttribute="height" secondItem="TkP-X0-dsJ" secondAttribute="height" multiplier="0.75" id="WcI-LJ-In6"/>
+                            <constraint firstItem="Yia-vA-i3N" firstAttribute="leading" secondItem="DeI-0G-R44" secondAttribute="leading" constant="24" id="bMn-JB-2aw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="DeI-0G-R44"/>
+                    </view>
+                    <connections>
+                        <outlet property="checkboxView" destination="rWc-Pq-oDC" id="8yR-Vr-fT2"/>
+                        <outlet property="innerView" destination="Yia-vA-i3N" id="wt5-3Y-EOm"/>
+                        <outlet property="scrollView" destination="e7f-u6-i7Z" id="cAS-Ej-3zM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rS5-kX-zIq" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-62.318840579710148" y="-58.258928571428569"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="ccBlack">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ccWhite">
+            <color red="0.95686274509803926" green="0.95686274509803926" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
