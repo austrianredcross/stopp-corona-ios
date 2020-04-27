@@ -1,0 +1,20 @@
+//
+//  Production.xcconfig
+//  CoronaContact
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+#include "Base.xcconfig"
+#include "Pods/Target Support Files/Pods-CoronaContact/Pods-CoronaContact.production.xcconfig"
+
+BUILD_CONFIGURATION=Production
+
+PRODUCT_BUNDLE_IDENTIFIER=at.roteskreut.stopcorona
+PRODUCT_DISPLAY_NAME=Stopp Corona
+
+API_BASE_URL =
+API_AUTHORIZATION_KEY =
+
+OTHER_SWIFT_FLAGS = $(inherited) -DRELEASE

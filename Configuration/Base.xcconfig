@@ -1,0 +1,14 @@
+//
+//  Base.xcconfig
+//  CoronaContact
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+PRODUCT_BUNDLE_IDENTIFIER=at.roteskreut.stopcorona.stage
+HTTPS = https:/$()/
+API_BASE_URL = 
+API_AUTHORIZATION_KEY =
+GOOGLE_NEARBY_API =
+P2P_KIT_API =

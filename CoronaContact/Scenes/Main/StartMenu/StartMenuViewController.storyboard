@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0DV-8a-Pct">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Start Menu View Controller-->
+        <scene sceneID="QGl-3T-POc">
+            <objects>
+                <viewController id="0DV-8a-Pct" customClass="StartMenuViewController" customModule="Stopp_Corona" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FKk-he-u7K">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YNt-f0-gDi">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="BFS-xQ-SD9">
+                                        <rect key="frame" x="0.0" y="24" width="414" height="1087.5"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="upv-SN-VCw" userLabel="Functions Stack View">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="374"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="start_menu_headline_3" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mdc-Aj-Ss6" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
+                                                        <rect key="frame" x="24" y="42" width="366" height="24"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="h2"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="start_menu_headline_3"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </label>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wt1-wJ-NZF" userLabel="Handshake">
+                                                        <rect key="frame" x="24" y="101" width="366" height="53"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j84-BJ-Wgl" customClass="ArrowButton" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="366" height="34"/>
+                                                                <state key="normal" title="start_menu_item_3_1_trigger_manual_handshake">
+                                                                    <color key="titleColor" name="ccBlack"/>
+                                                                </state>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="transKeyNormal" value="start_menu_item_3_1_trigger_manual_handshake"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="manualHandshakeButtonTapped:" destination="0DV-8a-Pct" eventType="touchUpInside" id="kXP-GF-XHv"/>
+                                                                </connections>
+                                                            </button>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="byC-XM-oFw" userLabel="DividerView">
+                                                                <rect key="frame" x="0.0" y="52" width="366" height="1"/>
+                                                                <color key="backgroundColor" red="0.79607843140000001" green="0.79607843140000001" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="1" id="Gm7-w4-Ir8"/>
+                                                                </constraints>
+                                                            </view>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="byC-XM-oFw" secondAttribute="trailing" id="1Ne-xh-XNn"/>
+                                                            <constraint firstAttribute="trailing" secondItem="j84-BJ-Wgl" secondAttribute="trailing" id="3qX-ys-UlG"/>
+                                                            <constraint firstItem="byC-XM-oFw" firstAttribute="top" secondItem="j84-BJ-Wgl" secondAttribute="bottom" constant="18" id="JJW-Pu-r6Z"/>
+                                                            <constraint firstItem="j84-BJ-Wgl" firstAttribute="leading" secondItem="Wt1-wJ-NZF" secondAttribute="leading" id="JSh-BG-SsI"/>
+                                                            <constraint firstAttribute="bottom" secondItem="byC-XM-oFw" secondAttribute="bottom" id="Tzw-i0-aZu"/>
+                                                            <constraint firstItem="byC-XM-oFw" firstAttribute="leading" secondItem="Wt1-wJ-NZF" secondAttribute="leading" id="ocl-Dm-KC7"/>
+                                                            <constraint firstItem="j84-BJ-Wgl" firstAttribute="top" secondItem="Wt1-wJ-NZF" secondAttribute="top" id="wTf-Hh-ced"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="esV-bG-xqR" userLabel="Check Symptoms">
+                                                        <rect key="frame" x="24" y="189" width="366" height="63"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vYc-iK-0fG" customClass="ArrowButton" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="366" height="34"/>
+                                                                <state key="normal" title="start_menu_item_3_2_check_symptoms">
+                                                                    <color key="titleColor" name="ccBlack"/>
+                                                                </state>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="transKeyNormal" value="start_menu_item_3_2_check_symptoms"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="checkSymptomsButtonTapped:" destination="0DV-8a-Pct" eventType="touchUpInside" id="HgM-2C-zc0"/>
+                                                                </connections>
+                                                            </button>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="icj-CH-AZc" userLabel="DividerView">
+                                                                <rect key="frame" x="0.0" y="52" width="366" height="1"/>
+                                                                <color key="backgroundColor" red="0.79607843140000001" green="0.79607843140000001" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="1" id="hku-I3-4W3"/>
+                                                                </constraints>
+                                                            </view>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstItem="vYc-iK-0fG" firstAttribute="top" secondItem="esV-bG-xqR" secondAttribute="top" id="3uR-oi-6w0"/>
+                                                            <constraint firstAttribute="trailing" secondItem="icj-CH-AZc" secondAttribute="trailing" id="CHe-6Y-LZf"/>
+                                                            <constraint firstItem="icj-CH-AZc" firstAttribute="leading" secondItem="esV-bG-xqR" secondAttribute="leading" id="RV0-X9-34g"/>
+                                                            <constraint firstItem="icj-CH-AZc" firstAttribute="top" secondItem="vYc-iK-0fG" secondAttribute="bottom" constant="18" id="eUN-VI-aU7"/>
+                                                            <constraint firstItem="vYc-iK-0fG" firstAttribute="leading" secondItem="esV-bG-xqR" secondAttribute="leading" id="jZf-BD-D2R"/>
+                                                            <constraint firstAttribute="bottom" secondItem="icj-CH-AZc" secondAttribute="bottom" constant="10" id="qV3-4j-M28"/>
+                                                            <constraint firstAttribute="trailing" secondItem="vYc-iK-0fG" secondAttribute="trailing" id="yz6-Wm-i4H"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hTa-7l-QkP" userLabel="Report Positive Diagnosis">
+                                                        <rect key="frame" x="24" y="287" width="366" height="63"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xYY-i6-672" customClass="ArrowButton" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="366" height="34"/>
+                                                                <state key="normal" title="start_menu_item_3_3_report_positive_doctors_diagnosis">
+                                                                    <color key="titleColor" name="ccBlack"/>
+                                                                </state>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="transKeyNormal" value="start_menu_item_3_3_report_positive_doctors_diagnosis"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="reportPositiveDoctorsDiagnosisTapped:" destination="0DV-8a-Pct" eventType="touchUpInside" id="3sg-YA-Ga4"/>
+                                                                </connections>
+                                                            </button>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="osp-YT-2aD" userLabel="DividerView">
+                                                                <rect key="frame" x="0.0" y="52" width="366" height="1"/>
+                                                                <color key="backgroundColor" red="0.79607843140000001" green="0.79607843140000001" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="1" id="hLW-b6-8Vl"/>
+                                                                </constraints>
+                                                            </view>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstItem="osp-YT-2aD" firstAttribute="top" secondItem="xYY-i6-672" secondAttribute="bottom" constant="18" id="2k1-4h-lJY"/>
+                                                            <constraint firstAttribute="trailing" secondItem="osp-YT-2aD" secondAttribute="trailing" id="4dA-Oh-eat"/>
+                                                            <constraint firstAttribute="trailing" secondItem="xYY-i6-672" secondAttribute="trailing" id="9pL-l5-3vd"/>
+                                                            <constraint firstAttribute="bottom" secondItem="osp-YT-2aD" secondAttribute="bottom" constant="10" id="GZ4-1c-wwM"/>
+                                                            <constraint firstItem="xYY-i6-672" firstAttribute="top" secondItem="hTa-7l-QkP" secondAttribute="top" id="jXl-0v-7Ow"/>
+                                                            <constraint firstItem="osp-YT-2aD" firstAttribute="leading" secondItem="hTa-7l-QkP" secondAttribute="leading" id="jiR-6O-F7I"/>
+                                                            <constraint firstItem="xYY-i6-672" firstAttribute="leading" secondItem="hTa-7l-QkP" secondAttribute="leading" id="owa-fq-9EN"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" name="ccWhite"/>
+                                                <edgeInsets key="layoutMargins" top="42" left="24" bottom="24" right="24"/>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="Gdq-pf-F76" userLabel="Info Stack View">
+                                                <rect key="frame" x="0.0" y="374" width="414" height="374"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="start_menu_headline_1" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZTy-Jg-Tvq" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
+                                                        <rect key="frame" x="24" y="42" width="366" height="24"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="h2"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="start_menu_headline_1"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </label>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="62C-tk-PPg" userLabel="Onboarding">
+                                                        <rect key="frame" x="24" y="101" width="366" height="53"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XQn-4y-bnm" customClass="ArrowButton" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="366" height="34"/>
+                                                                <state key="normal" title="start_menu_item_1_1_what_does_the_app_do">
+                                                                    <color key="titleColor" name="ccBlack"/>
+                                                                </state>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="transKeyNormal" value="start_menu_item_1_1_what_does_the_app_do"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="aboutAppTapped:" destination="0DV-8a-Pct" eventType="touchUpInside" id="sPz-YU-mzE"/>
+                                                                </connections>
+                                                            </button>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WRY-lH-amL" userLabel="DividerView">
+                                                                <rect key="frame" x="0.0" y="52" width="366" height="1"/>
+                                                                <color key="backgroundColor" red="0.79607843137254897" green="0.79607843137254897" blue="0.79607843137254897" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="1" id="Boa-uI-m1y"/>
+                                                                </constraints>
+                                                            </view>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="bottom" secondItem="WRY-lH-amL" secondAttribute="bottom" id="DF9-Xt-kjF"/>
+                                                            <constraint firstAttribute="trailing" secondItem="XQn-4y-bnm" secondAttribute="trailing" id="HVT-4d-KKP"/>
+                                                            <constraint firstAttribute="trailing" secondItem="WRY-lH-amL" secondAttribute="trailing" id="WF7-oG-242"/>
+                                                            <constraint firstItem="WRY-lH-amL" firstAttribute="top" secondItem="XQn-4y-bnm" secondAttribute="bottom" constant="18" id="YhO-Y1-AmX"/>
+                                                            <constraint firstItem="XQn-4y-bnm" firstAttribute="leading" secondItem="62C-tk-PPg" secondAttribute="leading" id="ZTj-hh-QJk"/>
+                                                            <constraint firstItem="WRY-lH-amL" firstAttribute="leading" secondItem="62C-tk-PPg" secondAttribute="leading" id="bEQ-D4-gTI"/>
+                                                            <constraint firstItem="XQn-4y-bnm" firstAttribute="top" secondItem="62C-tk-PPg" secondAttribute="top" id="izm-ls-yxk"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SsR-Ci-Pq7" userLabel="FAQ">
+                                                        <rect key="frame" x="24" y="189" width="366" height="63"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jTE-VY-uUU" customClass="ArrowButton" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="366" height="34"/>
+                                                                <state key="normal" title="start_menu_item_1_2_faq_link">
+                                                                    <color key="titleColor" name="ccBlack"/>
+                                                                </state>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="transKeyNormal" value="start_menu_item_1_2_faq_link"/>
+                                                                    <userDefinedRuntimeAttribute type="image" keyPath="arrowImage" value="ArrowDiagonalUpRight"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="faqButtonTapped:" destination="0DV-8a-Pct" eventType="touchUpInside" id="CoR-Yy-5we"/>
+                                                                </connections>
+                                                            </button>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oz2-L2-rJh" userLabel="DividerView">
+                                                                <rect key="frame" x="0.0" y="52" width="366" height="1"/>
+                                                                <color key="backgroundColor" red="0.79607843140000001" green="0.79607843140000001" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="1" id="pMg-Hk-eXg"/>
+                                                                </constraints>
+                                                            </view>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstItem="jTE-VY-uUU" firstAttribute="top" secondItem="SsR-Ci-Pq7" secondAttribute="top" id="0vy-yd-ekQ"/>
+                                                            <constraint firstAttribute="trailing" secondItem="jTE-VY-uUU" secondAttribute="trailing" id="7Sk-EO-pXw"/>
+                                                            <constraint firstItem="jTE-VY-uUU" firstAttribute="leading" secondItem="SsR-Ci-Pq7" secondAttribute="leading" id="Jgv-u9-4Xv"/>
+                                                            <constraint firstAttribute="trailing" secondItem="Oz2-L2-rJh" secondAttribute="trailing" id="Q2R-SY-y1v"/>
+                                                            <constraint firstItem="Oz2-L2-rJh" firstAttribute="top" secondItem="jTE-VY-uUU" secondAttribute="bottom" constant="18" id="gQ3-Oz-7DM"/>
+                                                            <constraint firstItem="Oz2-L2-rJh" firstAttribute="leading" secondItem="SsR-Ci-Pq7" secondAttribute="leading" id="hRO-Wv-xgg"/>
+                                                            <constraint firstAttribute="bottom" secondItem="Oz2-L2-rJh" secondAttribute="bottom" constant="10" id="xm5-BR-Lkz"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ItU-kd-ud7" userLabel="Homepage">
+                                                        <rect key="frame" x="24" y="287" width="366" height="63"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ecm-1h-vag" customClass="ArrowButton" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="366" height="34"/>
+                                                                <state key="normal" title="start_menu_item_1_3_red_cross_link">
+                                                                    <color key="titleColor" name="ccBlack"/>
+                                                                </state>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="transKeyNormal" value="start_menu_item_1_3_red_cross_link"/>
+                                                                    <userDefinedRuntimeAttribute type="image" keyPath="arrowImage" value="ArrowDiagonalUpRight"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="websiteButtonTapped:" destination="0DV-8a-Pct" eventType="touchUpInside" id="xyX-wg-PEA"/>
+                                                                </connections>
+                                                            </button>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="01X-dM-lzZ" userLabel="DividerView">
+                                                                <rect key="frame" x="0.0" y="52" width="366" height="1"/>
+                                                                <color key="backgroundColor" red="0.79607843137254897" green="0.79607843137254897" blue="0.79607843137254897" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="1" id="QDq-2H-m2z"/>
+                                                                </constraints>
+                                                            </view>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="01X-dM-lzZ" secondAttribute="trailing" id="Awe-H7-qgA"/>
+                                                            <constraint firstItem="ecm-1h-vag" firstAttribute="leading" secondItem="ItU-kd-ud7" secondAttribute="leading" id="NdN-Wy-JUZ"/>
+                                                            <constraint firstItem="01X-dM-lzZ" firstAttribute="top" secondItem="ecm-1h-vag" secondAttribute="bottom" constant="18" id="T72-WP-gI4"/>
+                                                            <constraint firstItem="01X-dM-lzZ" firstAttribute="leading" secondItem="ItU-kd-ud7" secondAttribute="leading" id="bAp-0h-5n5"/>
+                                                            <constraint firstAttribute="trailing" secondItem="ecm-1h-vag" secondAttribute="trailing" id="ofy-NC-NTc"/>
+                                                            <constraint firstItem="ecm-1h-vag" firstAttribute="top" secondItem="ItU-kd-ud7" secondAttribute="top" id="q1n-1a-nDH"/>
+                                                            <constraint firstAttribute="bottom" secondItem="01X-dM-lzZ" secondAttribute="bottom" constant="10" id="rJn-3n-ycp"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" name="ccWhite"/>
+                                                <edgeInsets key="layoutMargins" top="42" left="24" bottom="24" right="24"/>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="KNG-Fl-JE4" userLabel="Legal Stack View" customClass="BackgroundStackView" customModule="Stopp_Corona" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="748" width="414" height="339.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="start_menu_headline_2" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R6j-a8-gdW" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
+                                                        <rect key="frame" x="24" y="16" width="366" height="24"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="h2"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="start_menu_headline_2"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </label>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3e4-69-AmH" userLabel="OpenSource">
+                                                        <rect key="frame" x="24" y="60" width="366" height="53"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t17-r9-ybU" customClass="ArrowButton" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="366" height="34"/>
+                                                                <state key="normal" title="start_menu_item_2_1_open_source_licenses">
+                                                                    <color key="titleColor" name="ccBlack"/>
+                                                                </state>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="transKeyNormal" value="start_menu_item_2_1_open_source_licenses"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="openSourceLicensesTapped:" destination="0DV-8a-Pct" eventType="touchUpInside" id="ZqY-XT-z90"/>
+                                                                </connections>
+                                                            </button>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wEV-Xv-9BK" userLabel="DividerView">
+                                                                <rect key="frame" x="0.0" y="52" width="366" height="1"/>
+                                                                <color key="backgroundColor" red="0.79607843137254897" green="0.79607843137254897" blue="0.79607843137254897" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="1" id="ZTS-pA-sZh"/>
+                                                                </constraints>
+                                                            </view>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstItem="wEV-Xv-9BK" firstAttribute="leading" secondItem="3e4-69-AmH" secondAttribute="leading" id="9d5-47-SNb"/>
+                                                            <constraint firstItem="t17-r9-ybU" firstAttribute="top" secondItem="3e4-69-AmH" secondAttribute="top" id="M2L-Ag-yue"/>
+                                                            <constraint firstAttribute="trailing" secondItem="wEV-Xv-9BK" secondAttribute="trailing" id="QG5-h4-ecE"/>
+                                                            <constraint firstItem="t17-r9-ybU" firstAttribute="leading" secondItem="3e4-69-AmH" secondAttribute="leading" id="Sn0-zq-4ck"/>
+                                                            <constraint firstItem="wEV-Xv-9BK" firstAttribute="top" secondItem="t17-r9-ybU" secondAttribute="bottom" constant="18" id="aDK-ZU-vPa"/>
+                                                            <constraint firstAttribute="trailing" secondItem="t17-r9-ybU" secondAttribute="trailing" id="ljJ-A8-WGJ"/>
+                                                            <constraint firstAttribute="bottom" secondItem="wEV-Xv-9BK" secondAttribute="bottom" id="sJS-sn-BL1"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n8D-Ep-zD3" userLabel="DataPrivacy">
+                                                        <rect key="frame" x="24" y="133" width="366" height="53"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wil-7A-m5n" customClass="ArrowButton" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="366" height="34"/>
+                                                                <state key="normal" title="start_menu_item_2_2_data_privacy">
+                                                                    <color key="titleColor" name="ccBlack"/>
+                                                                </state>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="transKeyNormal" value="start_menu_item_2_2_data_privacy"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="dataPrivacyButtonTapped:" destination="0DV-8a-Pct" eventType="touchUpInside" id="iw5-7i-8vY"/>
+                                                                </connections>
+                                                            </button>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="abs-Xb-mH4" userLabel="DividerView">
+                                                                <rect key="frame" x="0.0" y="52" width="366" height="1"/>
+                                                                <color key="backgroundColor" red="0.79607843137254897" green="0.79607843137254897" blue="0.79607843137254897" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="1" id="NzC-h2-mOC"/>
+                                                                </constraints>
+                                                            </view>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="Wil-7A-m5n" secondAttribute="trailing" id="0KE-Lk-bzR"/>
+                                                            <constraint firstItem="Wil-7A-m5n" firstAttribute="leading" secondItem="n8D-Ep-zD3" secondAttribute="leading" id="H0O-bb-UEe"/>
+                                                            <constraint firstItem="abs-Xb-mH4" firstAttribute="top" secondItem="Wil-7A-m5n" secondAttribute="bottom" constant="18" id="LhN-iR-6lW"/>
+                                                            <constraint firstItem="Wil-7A-m5n" firstAttribute="top" secondItem="n8D-Ep-zD3" secondAttribute="top" id="XTr-DF-Ztg"/>
+                                                            <constraint firstAttribute="bottom" secondItem="abs-Xb-mH4" secondAttribute="bottom" id="cHo-D9-7U2"/>
+                                                            <constraint firstAttribute="trailing" secondItem="abs-Xb-mH4" secondAttribute="trailing" id="dsw-2d-bdl"/>
+                                                            <constraint firstItem="abs-Xb-mH4" firstAttribute="leading" secondItem="n8D-Ep-zD3" secondAttribute="leading" id="fAC-j5-A1W"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fGp-lX-33W" userLabel="Imprint">
+                                                        <rect key="frame" x="24" y="206" width="366" height="53"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hxv-Fi-0RC" customClass="ArrowButton" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="366" height="34"/>
+                                                                <state key="normal" title="start_menu_item_2_3_imprint">
+                                                                    <color key="titleColor" name="ccBlack"/>
+                                                                </state>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="transKeyNormal" value="start_menu_item_2_3_imprint"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="imprintButtonTapped:" destination="0DV-8a-Pct" eventType="touchUpInside" id="MsU-Xd-Fra"/>
+                                                                </connections>
+                                                            </button>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qli-lt-JJk" userLabel="DividerView">
+                                                                <rect key="frame" x="0.0" y="52" width="366" height="1"/>
+                                                                <color key="backgroundColor" red="0.79607843137254897" green="0.79607843137254897" blue="0.79607843137254897" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="1" id="1qM-o1-hcw"/>
+                                                                </constraints>
+                                                            </view>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstItem="hxv-Fi-0RC" firstAttribute="leading" secondItem="fGp-lX-33W" secondAttribute="leading" id="8AL-aq-1jw"/>
+                                                            <constraint firstItem="hxv-Fi-0RC" firstAttribute="top" secondItem="fGp-lX-33W" secondAttribute="top" id="B65-Eb-BTh"/>
+                                                            <constraint firstAttribute="trailing" secondItem="Qli-lt-JJk" secondAttribute="trailing" id="IVa-VB-vcN"/>
+                                                            <constraint firstItem="Qli-lt-JJk" firstAttribute="leading" secondItem="fGp-lX-33W" secondAttribute="leading" id="J83-kl-jl5"/>
+                                                            <constraint firstItem="Qli-lt-JJk" firstAttribute="top" secondItem="hxv-Fi-0RC" secondAttribute="bottom" constant="18" id="c9h-GE-qrS"/>
+                                                            <constraint firstAttribute="trailing" secondItem="hxv-Fi-0RC" secondAttribute="trailing" id="gwM-9k-qru"/>
+                                                            <constraint firstAttribute="bottom" secondItem="Qli-lt-JJk" secondAttribute="bottom" id="mbH-Ld-eAg"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="App Version: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OS1-Jt-OrA" userLabel="VersionLabel">
+                                                        <rect key="frame" x="24" y="279" width="366" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" name="ccBrownGrey"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <edgeInsets key="layoutMargins" top="16" left="24" bottom="40" right="24"/>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="BFS-xQ-SD9" firstAttribute="top" secondItem="wsL-iP-Emx" secondAttribute="top" constant="24" id="GG3-XO-hSK"/>
+                                    <constraint firstItem="BFS-xQ-SD9" firstAttribute="leading" secondItem="wsL-iP-Emx" secondAttribute="leading" id="QMR-tX-w5b"/>
+                                    <constraint firstItem="BFS-xQ-SD9" firstAttribute="trailing" secondItem="wsL-iP-Emx" secondAttribute="trailing" id="YI5-77-vHr"/>
+                                    <constraint firstItem="BFS-xQ-SD9" firstAttribute="width" secondItem="6Mz-7g-CxI" secondAttribute="width" id="ibP-8B-xXX"/>
+                                    <constraint firstItem="BFS-xQ-SD9" firstAttribute="bottom" secondItem="wsL-iP-Emx" secondAttribute="bottom" id="mca-ki-brS"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="wsL-iP-Emx"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="6Mz-7g-CxI"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="YNt-f0-gDi" firstAttribute="top" secondItem="kne-Da-p86" secondAttribute="top" id="9ev-M8-TvU"/>
+                            <constraint firstItem="YNt-f0-gDi" firstAttribute="leading" secondItem="kne-Da-p86" secondAttribute="leading" id="WT0-3n-pB0"/>
+                            <constraint firstItem="kne-Da-p86" firstAttribute="bottom" secondItem="YNt-f0-gDi" secondAttribute="bottom" id="cdv-8I-GkY"/>
+                            <constraint firstItem="kne-Da-p86" firstAttribute="trailing" secondItem="YNt-f0-gDi" secondAttribute="trailing" id="ovK-yB-2we"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="kne-Da-p86"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="qq8-T6-gVE">
+                        <barButtonItem key="rightBarButtonItem" title="Menu" image="startMenuClose" id="ioc-ud-tAC" userLabel="Close">
+                            <color key="tintColor" name="ccBlack"/>
+                            <connections>
+                                <action selector="closeMenuTapped:" destination="0DV-8a-Pct" id="ynA-zB-Zqb"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="checkSymptomsView" destination="esV-bG-xqR" id="6bQ-0g-kd7"/>
+                        <outlet property="functionsView" destination="upv-SN-VCw" id="zod-cA-Mbf"/>
+                        <outlet property="handshakeView" destination="Wt1-wJ-NZF" id="oW6-vx-4PX"/>
+                        <outlet property="reportPositiveDoctorsDiagnosisView" destination="hTa-7l-QkP" id="R0G-qk-8Lf"/>
+                        <outlet property="scrollView" destination="YNt-f0-gDi" id="1jh-rl-90u"/>
+                        <outlet property="versionLabel" destination="OS1-Jt-OrA" id="bXc-v6-qSD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nng-Vb-cIq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ArrowDiagonalUpRight" width="16" height="16"/>
+        <image name="startMenuClose" width="20" height="21"/>
+        <namedColor name="ccBlack">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ccBrownGrey">
+            <color red="0.47450980392156861" green="0.47450980392156861" blue="0.47450980392156861" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ccWhite">
+            <color red="0.95686274509803926" green="0.95686274509803926" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

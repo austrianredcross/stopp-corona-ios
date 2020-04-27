@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dNc-Y1-ag4">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--History View Controller-->
+        <scene sceneID="dS6-Ta-yMn">
+            <objects>
+                <viewController id="dNc-Y1-ag4" customClass="HistoryViewController" customModule="CoronaContact" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="we7-6e-9O8">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jM4-mE-2uw">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="iEb-GV-21Z">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="176.5"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="v8O-k7-Dy7" customClass="BackgroundStackView" customModule="CoronaContact" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="20.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="history_intro" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G0A-70-s9e" customClass="TransLabel" customModule="CoronaContact" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="history_intro"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="body"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </label>
+                                                </subviews>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="overrideHorztMarginMulti">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="overrideVertMarginMulti">
+                                                        <real key="value" value="1.6000000000000001"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="fYy-Yd-P4Y">
+                                                <rect key="frame" x="0.0" y="20.5" width="320" height="156"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0fY-au-pfy" userLabel="rounded rect view" customClass="SelectedRoundCornersView" customModule="CoronaContact" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="56"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="EYO-Fo-g5D" customClass="BackgroundStackView" customModule="CoronaContact" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="320" height="56"/>
+                                                                <subviews>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hEW-Ax-7on">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="56"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xk0-b1-sKn" customClass="TransLabel" customModule="CoronaContact" customModuleProvider="target">
+                                                                                <rect key="frame" x="143.5" y="0.0" width="33.5" height="56"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                                <userDefinedRuntimeAttributes>
+                                                                                    <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="tableHeader"/>
+                                                                                    <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="history_time"/>
+                                                                                </userDefinedRuntimeAttributes>
+                                                                            </label>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="id" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ILr-5U-Y0B" customClass="TransLabel" customModule="CoronaContact" customModuleProvider="target">
+                                                                                <rect key="frame" x="235" y="0.0" width="14" height="56"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                                <userDefinedRuntimeAttributes>
+                                                                                    <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="tableHeader"/>
+                                                                                    <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="history_mode"/>
+                                                                                </userDefinedRuntimeAttributes>
+                                                                            </label>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qsh-4l-axd" userLabel="date" customClass="TransLabel" customModule="CoronaContact" customModuleProvider="target">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="34.5" height="56"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                                <userDefinedRuntimeAttributes>
+                                                                                    <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="tableHeader"/>
+                                                                                    <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="history_date"/>
+                                                                                </userDefinedRuntimeAttributes>
+                                                                            </label>
+                                                                        </subviews>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="trailing" secondItem="ILr-5U-Y0B" secondAttribute="leading" constant="85" id="30c-Lz-rZB"/>
+                                                                            <constraint firstAttribute="bottom" secondItem="qsh-4l-axd" secondAttribute="bottom" id="35F-3R-Z7g"/>
+                                                                            <constraint firstItem="xk0-b1-sKn" firstAttribute="top" secondItem="hEW-Ax-7on" secondAttribute="top" id="L8r-zJ-eYA"/>
+                                                                            <constraint firstItem="ILr-5U-Y0B" firstAttribute="top" secondItem="hEW-Ax-7on" secondAttribute="top" id="NU0-PG-dJ3"/>
+                                                                            <constraint firstAttribute="bottom" secondItem="ILr-5U-Y0B" secondAttribute="bottom" id="Pl2-zM-r9e"/>
+                                                                            <constraint firstAttribute="bottom" secondItem="xk0-b1-sKn" secondAttribute="bottom" id="Qn7-g0-x5W"/>
+                                                                            <constraint firstItem="qsh-4l-axd" firstAttribute="leading" secondItem="hEW-Ax-7on" secondAttribute="leading" id="SaN-fe-Bui"/>
+                                                                            <constraint firstItem="qsh-4l-axd" firstAttribute="top" secondItem="hEW-Ax-7on" secondAttribute="top" id="lad-9Y-JEw"/>
+                                                                            <constraint firstItem="xk0-b1-sKn" firstAttribute="centerX" secondItem="hEW-Ax-7on" secondAttribute="centerX" id="uZU-Tk-RBk"/>
+                                                                        </constraints>
+                                                                    </view>
+                                                                </subviews>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="overrideHorztMarginMulti">
+                                                                        <real key="value" value="1"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </stackView>
+                                                        </subviews>
+                                                        <color key="backgroundColor" name="ccRouge"/>
+                                                        <constraints>
+                                                            <constraint firstItem="EYO-Fo-g5D" firstAttribute="top" secondItem="0fY-au-pfy" secondAttribute="top" id="Pbd-N9-ZCB"/>
+                                                            <constraint firstAttribute="trailing" secondItem="EYO-Fo-g5D" secondAttribute="trailing" id="YlU-fO-Cd9"/>
+                                                            <constraint firstItem="EYO-Fo-g5D" firstAttribute="leading" secondItem="0fY-au-pfy" secondAttribute="leading" id="ZYp-R6-ihW"/>
+                                                            <constraint firstAttribute="bottom" secondItem="EYO-Fo-g5D" secondAttribute="bottom" id="bPF-Tn-7rg"/>
+                                                            <constraint firstAttribute="height" constant="56" id="fEg-Hs-7cB"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="64" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Xip-um-QRD">
+                                                        <rect key="frame" x="0.0" y="56" width="320" height="100"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="100" id="d1H-ys-KFr"/>
+                                                        </constraints>
+                                                        <connections>
+                                                            <outlet property="dataSource" destination="dNc-Y1-ag4" id="TE0-PP-PTT"/>
+                                                            <outlet property="delegate" destination="dNc-Y1-ag4" id="rRb-XI-B1N"/>
+                                                        </connections>
+                                                    </tableView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="iEb-GV-21Z" firstAttribute="trailing" secondItem="fwC-ty-6qG" secondAttribute="trailing" id="NIt-Na-BMh"/>
+                                    <constraint firstItem="iEb-GV-21Z" firstAttribute="top" secondItem="fwC-ty-6qG" secondAttribute="top" id="VIK-Zp-bsE"/>
+                                    <constraint firstItem="iEb-GV-21Z" firstAttribute="bottom" secondItem="fwC-ty-6qG" secondAttribute="bottom" id="bud-dS-Dvn"/>
+                                    <constraint firstItem="iEb-GV-21Z" firstAttribute="width" secondItem="Iva-Ia-S3t" secondAttribute="width" id="dht-NC-8DJ"/>
+                                    <constraint firstItem="iEb-GV-21Z" firstAttribute="leading" secondItem="fwC-ty-6qG" secondAttribute="leading" id="pzl-I0-BHz"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="fwC-ty-6qG"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="Iva-Ia-S3t"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="jM4-mE-2uw" firstAttribute="top" secondItem="oRa-Fg-EDt" secondAttribute="top" id="6r1-Ok-ob8"/>
+                            <constraint firstItem="jM4-mE-2uw" firstAttribute="trailing" secondItem="oRa-Fg-EDt" secondAttribute="trailing" id="93W-lb-GMh"/>
+                            <constraint firstItem="jM4-mE-2uw" firstAttribute="leading" secondItem="oRa-Fg-EDt" secondAttribute="leading" id="ENv-Av-qhq"/>
+                            <constraint firstItem="jM4-mE-2uw" firstAttribute="bottom" secondItem="oRa-Fg-EDt" secondAttribute="bottom" id="wtI-AF-eBa"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="oRa-Fg-EDt"/>
+                    </view>
+                    <connections>
+                        <outlet property="historyTableView" destination="Xip-um-QRD" id="ve6-2Q-vTa"/>
+                        <outlet property="historyTableViewHeightConstraint" destination="d1H-ys-KFr" id="QB2-Ms-bPX"/>
+                        <outlet property="roundedTopRectsView" destination="0fY-au-pfy" id="xsb-lQ-4m5"/>
+                        <outlet property="scrollView" destination="jM4-mE-2uw" id="NVz-Kq-xYO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iQd-xM-pdL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-963.76811594202911" y="-66.294642857142861"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="ccRouge">
+            <color red="0.72549019607843135" green="0.074509803921568626" blue="0.10588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

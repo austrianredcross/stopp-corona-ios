@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="0DV-8a-Pct">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Onboarding View Controller-->
+        <scene sceneID="QGl-3T-POc">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="0DV-8a-Pct" customClass="OnboardingViewController" customModule="Stopp_Corona" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WQ8-Il-dIt"/>
+                        <viewControllerLayoutGuide type="bottom" id="oRo-eg-SpX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FKk-he-u7K">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="uhI-E3-Nju">
+                                <rect key="frame" x="0.0" y="547" width="375" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="p8i-DT-Z3s"/>
+                                </constraints>
+                                <color key="pageIndicatorTintColor" name="ccBrownGrey"/>
+                                <color key="currentPageIndicatorTintColor" name="ccRouge"/>
+                            </pageControl>
+                            <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pDi-ZF-KNl">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="532"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="d9Q-eM-tcV">
+                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="532"/>
+                                        <subviews>
+                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B4G-Tg-Om6">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="532"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="B4G-Tg-Om6" firstAttribute="width" secondItem="oLi-BL-rjF" secondAttribute="width" id="D7j-qc-TNp"/>
+                                    <constraint firstItem="d9Q-eM-tcV" firstAttribute="leading" secondItem="I9D-ok-Z25" secondAttribute="leading" id="Ii5-fN-0cZ"/>
+                                    <constraint firstItem="d9Q-eM-tcV" firstAttribute="trailing" secondItem="I9D-ok-Z25" secondAttribute="trailing" id="Ndj-8H-uiW"/>
+                                    <constraint firstItem="d9Q-eM-tcV" firstAttribute="height" secondItem="oLi-BL-rjF" secondAttribute="height" id="SyD-yT-CVf"/>
+                                    <constraint firstItem="d9Q-eM-tcV" firstAttribute="bottom" secondItem="I9D-ok-Z25" secondAttribute="bottom" id="VCz-of-iLu"/>
+                                    <constraint firstItem="d9Q-eM-tcV" firstAttribute="top" secondItem="I9D-ok-Z25" secondAttribute="top" id="jdL-aV-Co7"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="I9D-ok-Z25"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="oLi-BL-rjF"/>
+                                <connections>
+                                    <outlet property="delegate" destination="0DV-8a-Pct" id="nsH-o3-SpX"/>
+                                </connections>
+                            </scrollView>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8QV-4c-6Gt" customClass="PrimaryButton" customModule="Stopp_Corona" customModuleProvider="target">
+                                <rect key="frame" x="24" y="587" width="327" height="56"/>
+                                <color key="backgroundColor" name="rouge"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="yza-Gk-oEa"/>
+                                </constraints>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="0DV-8a-Pct" eventType="touchUpInside" id="ef6-dh-eyw"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="pDi-ZF-KNl" secondAttribute="trailing" id="CVS-Dw-A7f"/>
+                            <constraint firstItem="8QV-4c-6Gt" firstAttribute="top" secondItem="uhI-E3-Nju" secondAttribute="bottom" constant="16" id="JW7-c2-ZVU"/>
+                            <constraint firstAttribute="trailing" secondItem="uhI-E3-Nju" secondAttribute="trailing" id="Pks-CE-d82"/>
+                            <constraint firstItem="uhI-E3-Nju" firstAttribute="top" secondItem="pDi-ZF-KNl" secondAttribute="bottom" constant="16" id="PxC-AS-oEY"/>
+                            <constraint firstAttribute="trailing" secondItem="8QV-4c-6Gt" secondAttribute="trailing" constant="24" id="W2q-9d-432"/>
+                            <constraint firstItem="8QV-4c-6Gt" firstAttribute="leading" secondItem="FKk-he-u7K" secondAttribute="leading" constant="24" id="e4N-2V-aAM"/>
+                            <constraint firstItem="pDi-ZF-KNl" firstAttribute="leading" secondItem="FKk-he-u7K" secondAttribute="leading" id="u6i-mq-hRC"/>
+                            <constraint firstItem="pDi-ZF-KNl" firstAttribute="top" secondItem="WQ8-Il-dIt" secondAttribute="bottom" id="uNT-au-WbX"/>
+                            <constraint firstItem="uhI-E3-Nju" firstAttribute="leading" secondItem="FKk-he-u7K" secondAttribute="leading" id="xFT-GR-MBF"/>
+                            <constraint firstItem="oRo-eg-SpX" firstAttribute="top" secondItem="8QV-4c-6Gt" secondAttribute="bottom" constant="24" id="xdR-sh-cwW"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="button" destination="8QV-4c-6Gt" id="SNV-Az-Icv"/>
+                        <outlet property="pageControl" destination="uhI-E3-Nju" id="Sxh-YS-4dK"/>
+                        <outlet property="scrollView" destination="pDi-ZF-KNl" id="CcR-fQ-B1O"/>
+                        <outlet property="stackView" destination="d9Q-eM-tcV" id="w4V-lI-HuM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nng-Vb-cIq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="ccBrownGrey">
+            <color red="0.47450980392156861" green="0.47450980392156861" blue="0.47450980392156861" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ccRouge">
+            <color red="0.72549019607843135" green="0.074509803921568626" blue="0.10588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="rouge">
+            <color red="0.72549019607843135" green="0.074509803921568626" blue="0.10588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

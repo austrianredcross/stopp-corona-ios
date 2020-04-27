@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Sickness Certificate Tan Confirmation View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="SicknessCertificateTanConfirmationViewController" customModule="Stopp_Corona" customModuleProvider="___VARIABLE_ibCustomModuleProvider___" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="366" placeholderIntrinsicHeight="85" translatesAutoresizingMaskIntoConstraints="NO" id="8mI-Bj-17J" customClass="ProgressView" customModule="Stopp_Corona" customModuleProvider="target">
+                                <rect key="frame" x="24" y="60" width="366" height="85"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="currentStep">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="numberOfSteps">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="p8J-EA-I8D">
+                                <rect key="frame" x="0.0" y="153" width="414" height="709"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cIp-ri-BhD">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="475.5"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="LyJ-L8-cOY" customClass="BackgroundStackView" customModule="Stopp_Corona" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="475.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sickness_certificate_tan_confirmation_headline" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p2k-9Y-qCb" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
+                                                        <rect key="frame" x="24" y="24" width="366" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="h1"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="sickness_certificate_tan_confirmation_headline"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sickness_certificate_tan_confirmation_description" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fdo-ec-Mkn" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
+                                                        <rect key="frame" x="24" y="76.5" width="366" height="41"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="body"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="sickness_certificate_tan_confirmation_description"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pzm-SN-Mmh" customClass="StandardTextField" customModule="Stopp_Corona" customModuleProvider="target">
+                                                        <rect key="frame" x="24" y="149.5" width="366" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UxG-ZE-gwU">
+                                                        <rect key="frame" x="24" y="215.5" width="366" height="128"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    </view>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="nFO-jL-u9g">
+                                                        <rect key="frame" x="24" y="375.5" width="366" height="76"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bA5-yr-nxb" customClass="SecondaryButton" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="366" height="30"/>
+                                                                <state key="normal" title="sickness_certificate_tan_confirmation_resend_tan_button"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="transKeyNormal" value="sickness_certificate_tan_confirmation_resend_tan_button"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="nextButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ta5-5F-bKe"/>
+                                                                    <action selector="resendTanButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ku2-EZ-KMA"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Edd-zj-NId" customClass="PrimaryButton" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="46" width="366" height="30"/>
+                                                                <state key="normal" title="sickness_certificate_personal_data_next_button"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="transKeyNormal" value="sickness_certificate_personal_data_next_button"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="nextButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ho0-TD-UnE"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                                <directionalEdgeInsets key="directionalLayoutMargins" top="24" leading="24" bottom="24" trailing="24"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="overrideHorztMarginMulti">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="overrideVertMarginMulti">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="overrideSpacingMulti">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstItem="LyJ-L8-cOY" firstAttribute="top" secondItem="cIp-ri-BhD" secondAttribute="top" id="3t3-3c-yGF"/>
+                                            <constraint firstAttribute="bottom" secondItem="LyJ-L8-cOY" secondAttribute="bottom" id="JHw-NQ-Bid"/>
+                                            <constraint firstItem="LyJ-L8-cOY" firstAttribute="leading" secondItem="cIp-ri-BhD" secondAttribute="leading" id="T1P-Pm-9MY"/>
+                                            <constraint firstAttribute="trailing" secondItem="LyJ-L8-cOY" secondAttribute="trailing" id="x8x-Qd-3mz"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="cIp-ri-BhD" secondAttribute="trailing" id="80m-TR-YCM"/>
+                                    <constraint firstItem="cIp-ri-BhD" firstAttribute="centerY" secondItem="p8J-EA-I8D" secondAttribute="centerY" priority="250" id="Jk2-Pf-aZj"/>
+                                    <constraint firstItem="cIp-ri-BhD" firstAttribute="centerX" secondItem="p8J-EA-I8D" secondAttribute="centerX" id="Nob-cI-H3b"/>
+                                    <constraint firstItem="cIp-ri-BhD" firstAttribute="leading" secondItem="p8J-EA-I8D" secondAttribute="leading" id="aaH-MA-GX0"/>
+                                    <constraint firstItem="cIp-ri-BhD" firstAttribute="top" secondItem="rlE-ap-xz2" secondAttribute="top" id="hob-Ed-Qju"/>
+                                    <constraint firstAttribute="bottom" secondItem="cIp-ri-BhD" secondAttribute="bottom" priority="250" id="uhJ-ro-feF"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="rlE-ap-xz2"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="bRF-y9-v8I"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="p8J-EA-I8D" firstAttribute="top" secondItem="8mI-Bj-17J" secondAttribute="bottom" constant="8" id="7q3-9d-5QX"/>
+                            <constraint firstItem="p8J-EA-I8D" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="B1e-K6-JJe"/>
+                            <constraint firstItem="p8J-EA-I8D" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="NMt-eE-vpb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="p8J-EA-I8D" secondAttribute="bottom" id="cDR-Cy-rMa"/>
+                            <constraint firstItem="8mI-Bj-17J" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="pDh-fE-jpy"/>
+                            <constraint firstItem="8mI-Bj-17J" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="puX-CL-zEk"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8mI-Bj-17J" secondAttribute="trailing" constant="24" id="q5K-uF-Zih"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="fdo-ec-Mkn" id="sa7-je-3aG"/>
+                        <outlet property="scrollView" destination="p8J-EA-I8D" id="fHU-Je-P32"/>
+                        <outlet property="tanTextField" destination="Pzm-SN-Mmh" id="5nk-Uc-LTk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
+        </scene>
+    </scenes>
+</document>

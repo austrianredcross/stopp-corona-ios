@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Attested Sickness Guidelines View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="AttestedSicknessGuidelinesViewController" customModule="Stopp_Corona" customModuleProvider="___VARIABLE_ibCustomModuleProvider___" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="2PQ-3r-8Cn">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3RN-Qn-fLm">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1086"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="gKO-M4-alo">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="1086"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="mX8-OB-DXh" customClass="BackgroundStackView" customModule="Stopp_Corona" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="41"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sickness_certificate_quarantine_guidelines_headline" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Jh-YL-TDv" userLabel="Headline" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="414" height="20.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="h1"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="sickness_certificate_quarantine_guidelines_headline"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sickness_certificate_quarantine_guidelines_date" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zHd-Hr-XJP" userLabel="Description" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="20.5" width="414" height="20.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="body"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="sickness_certificate_quarantine_guidelines_date"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </label>
+                                                        </subviews>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="overrideHorztMarginMulti">
+                                                                <real key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="overrideVertMarginMulti">
+                                                                <real key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="overrideSpacingMulti">
+                                                                <real key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </stackView>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kfI-RJ-4Jl">
+                                                        <rect key="frame" x="0.0" y="49" width="414" height="745"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sickness_certificate_quarantine_guidelines_steps_headline" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SN3-3B-b0c" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                <rect key="frame" x="24" y="32" width="370" height="41"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="h2"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="sickness_certificate_quarantine_guidelines_steps_headline"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sickness_certificate_quarantine_guidelines_steps_quarantine_end" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RQa-hH-wn7" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                <rect key="frame" x="24" y="89" width="366" height="41"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="boldRed"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="sickness_certificate_quarantine_guidelines_steps_quarantine_end"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sickness_certificate_quarantine_guidelines_steps_no_public_transport" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zJM-1K-THd" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                <rect key="frame" x="24" y="154" width="366" height="41"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="body"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="sickness_certificate_quarantine_guidelines_steps_no_public_transport"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </label>
+                                                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="374" placeholderIntrinsicHeight="500" translatesAutoresizingMaskIntoConstraints="NO" id="cMC-4I-v4d" customClass="InstructionsView" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                <rect key="frame" x="8" y="211" width="374" height="500"/>
+                                                                <color key="backgroundColor" name="ccWhite"/>
+                                                            </view>
+                                                        </subviews>
+                                                        <color key="backgroundColor" name="ccWhite"/>
+                                                        <constraints>
+                                                            <constraint firstItem="zJM-1K-THd" firstAttribute="top" secondItem="RQa-hH-wn7" secondAttribute="bottom" constant="24" id="0k7-SN-5Ug"/>
+                                                            <constraint firstItem="RQa-hH-wn7" firstAttribute="leading" secondItem="kfI-RJ-4Jl" secondAttribute="leading" constant="24" id="5DH-e1-0TW"/>
+                                                            <constraint firstAttribute="bottom" secondItem="cMC-4I-v4d" secondAttribute="bottom" constant="34" id="IJp-YP-pfy"/>
+                                                            <constraint firstAttribute="trailing" secondItem="SN3-3B-b0c" secondAttribute="trailing" constant="20" id="KgO-Mi-DO5"/>
+                                                            <constraint firstItem="cMC-4I-v4d" firstAttribute="top" secondItem="zJM-1K-THd" secondAttribute="bottom" constant="16" id="Lzh-YT-rZh"/>
+                                                            <constraint firstItem="SN3-3B-b0c" firstAttribute="top" secondItem="kfI-RJ-4Jl" secondAttribute="top" constant="32" id="NNM-JI-AUu"/>
+                                                            <constraint firstAttribute="trailing" secondItem="zJM-1K-THd" secondAttribute="trailing" constant="24" id="Pim-GT-Cng"/>
+                                                            <constraint firstAttribute="trailing" secondItem="cMC-4I-v4d" secondAttribute="trailing" constant="32" id="Vr5-MK-j0E"/>
+                                                            <constraint firstItem="SN3-3B-b0c" firstAttribute="leading" secondItem="kfI-RJ-4Jl" secondAttribute="leading" constant="24" id="W5j-5U-Pkj"/>
+                                                            <constraint firstItem="zJM-1K-THd" firstAttribute="leading" secondItem="kfI-RJ-4Jl" secondAttribute="leading" constant="24" id="aVe-EC-9gn"/>
+                                                            <constraint firstItem="RQa-hH-wn7" firstAttribute="top" secondItem="SN3-3B-b0c" secondAttribute="bottom" constant="16" id="cvW-KK-jFg"/>
+                                                            <constraint firstItem="cMC-4I-v4d" firstAttribute="leading" secondItem="kfI-RJ-4Jl" secondAttribute="leading" constant="8" id="vIt-SD-IUf"/>
+                                                            <constraint firstAttribute="trailing" secondItem="RQa-hH-wn7" secondAttribute="trailing" constant="24" id="x06-dL-lfy"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="vcr-RS-zhE">
+                                                        <rect key="frame" x="0.0" y="802" width="414" height="284"/>
+                                                        <subviews>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="92V-DG-jGH">
+                                                                <rect key="frame" x="0.0" y="0.0" width="414" height="81"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sickness_certificate_quarantine_guidelines_consulting_description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KUS-f0-ryv" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                        <rect key="frame" x="24" y="24" width="366" height="41"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="body"/>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="sickness_certificate_quarantine_guidelines_consulting_description"/>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                    </label>
+                                                                </subviews>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstItem="KUS-f0-ryv" firstAttribute="top" secondItem="92V-DG-jGH" secondAttribute="top" constant="24" id="4da-UK-Erv"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="KUS-f0-ryv" secondAttribute="bottom" constant="16" id="Fg3-RY-h2z"/>
+                                                                    <constraint firstItem="KUS-f0-ryv" firstAttribute="leading" secondItem="92V-DG-jGH" secondAttribute="leading" constant="24" id="aFq-pC-h32"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="KUS-f0-ryv" secondAttribute="trailing" constant="24" id="nuf-PQ-vaX"/>
+                                                                </constraints>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Mh-Am-TYi">
+                                                                <rect key="frame" x="0.0" y="81" width="414" height="73"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sickness_certificate_quarantine_guidelines_consulting_first" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HrH-Ld-QSB" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                        <rect key="frame" x="24" y="16" width="366" height="41"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="body"/>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="sickness_certificate_quarantine_guidelines_consulting_first"/>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                    </label>
+                                                                </subviews>
+                                                                <color key="backgroundColor" name="ccWhite"/>
+                                                                <constraints>
+                                                                    <constraint firstItem="HrH-Ld-QSB" firstAttribute="top" secondItem="8Mh-Am-TYi" secondAttribute="top" constant="16" id="3Co-9l-OED"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="HrH-Ld-QSB" secondAttribute="trailing" constant="24" id="4Wi-hc-WVP"/>
+                                                                    <constraint firstItem="HrH-Ld-QSB" firstAttribute="leading" secondItem="8Mh-Am-TYi" secondAttribute="leading" constant="24" id="JWX-kL-XTo"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="HrH-Ld-QSB" secondAttribute="bottom" constant="16" id="q08-7Q-Zgt"/>
+                                                                </constraints>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" verticalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="2GI-wZ-lsX">
+                                                                <rect key="frame" x="0.0" y="154" width="414" height="57"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sickness_certificate_quarantine_guidelines_consulting_second" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tI1-Iz-DP3" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                        <rect key="frame" x="24" y="16" width="366" height="25"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="body"/>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="sickness_certificate_quarantine_guidelines_consulting_second"/>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                    </label>
+                                                                </subviews>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstItem="tI1-Iz-DP3" firstAttribute="leading" secondItem="2GI-wZ-lsX" secondAttribute="leading" constant="24" id="70m-PN-dgM"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="tI1-Iz-DP3" secondAttribute="bottom" constant="16" id="CEW-B9-Mwu"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="tI1-Iz-DP3" secondAttribute="trailing" constant="24" id="FFc-G0-lOO"/>
+                                                                    <constraint firstItem="tI1-Iz-DP3" firstAttribute="top" secondItem="2GI-wZ-lsX" secondAttribute="top" constant="16" id="RWl-UN-Gr8"/>
+                                                                </constraints>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y9a-Po-TVV">
+                                                                <rect key="frame" x="0.0" y="211" width="414" height="73"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sickness_certificate_quarantine_guidelines_consulting_third" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bZd-Ym-BwQ" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                        <rect key="frame" x="24" y="16" width="366" height="41"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="body"/>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="sickness_certificate_quarantine_guidelines_consulting_third"/>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                    </label>
+                                                                </subviews>
+                                                                <color key="backgroundColor" name="ccWhite"/>
+                                                                <constraints>
+                                                                    <constraint firstItem="bZd-Ym-BwQ" firstAttribute="leading" secondItem="Y9a-Po-TVV" secondAttribute="leading" constant="24" id="Pvf-VL-6yB"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="bZd-Ym-BwQ" secondAttribute="trailing" constant="24" id="UWL-7N-vPf"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="bZd-Ym-BwQ" secondAttribute="bottom" constant="16" id="sfZ-hp-mVv"/>
+                                                                    <constraint firstItem="bZd-Ym-BwQ" firstAttribute="top" secondItem="Y9a-Po-TVV" secondAttribute="top" constant="16" id="tA1-4I-zpY"/>
+                                                                </constraints>
+                                                            </view>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                                <directionalEdgeInsets key="directionalLayoutMargins" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstItem="gKO-M4-alo" firstAttribute="leading" secondItem="3RN-Qn-fLm" secondAttribute="leading" id="Eae-UD-GJz"/>
+                                            <constraint firstAttribute="trailing" secondItem="gKO-M4-alo" secondAttribute="trailing" id="P6u-yo-9rt"/>
+                                            <constraint firstItem="gKO-M4-alo" firstAttribute="top" secondItem="3RN-Qn-fLm" secondAttribute="top" id="cmz-za-sZk"/>
+                                            <constraint firstAttribute="bottom" secondItem="gKO-M4-alo" secondAttribute="bottom" id="yCg-6l-t6Z"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="3RN-Qn-fLm" secondAttribute="trailing" id="DWM-fx-1V0"/>
+                                    <constraint firstItem="3RN-Qn-fLm" firstAttribute="centerX" secondItem="2PQ-3r-8Cn" secondAttribute="centerX" id="Jsa-Ke-L7P"/>
+                                    <constraint firstAttribute="bottom" secondItem="3RN-Qn-fLm" secondAttribute="bottom" priority="250" id="JwS-Ah-fRR"/>
+                                    <constraint firstItem="3RN-Qn-fLm" firstAttribute="centerY" secondItem="2PQ-3r-8Cn" secondAttribute="centerY" priority="250" id="hOO-Tk-4Qz"/>
+                                    <constraint firstItem="3RN-Qn-fLm" firstAttribute="top" secondItem="2PQ-3r-8Cn" secondAttribute="top" id="q8I-rn-gmO"/>
+                                    <constraint firstItem="3RN-Qn-fLm" firstAttribute="leading" secondItem="2PQ-3r-8Cn" secondAttribute="leading" id="x17-l0-wUE"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="p7t-u1-wAB"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="kNo-Ol-imz"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="2PQ-3r-8Cn" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="IwZ-ju-mvU"/>
+                            <constraint firstItem="2PQ-3r-8Cn" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="eko-Un-m5f"/>
+                            <constraint firstItem="2PQ-3r-8Cn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="puo-tQ-ezV"/>
+                            <constraint firstItem="2PQ-3r-8Cn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="sRD-uq-f8C"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="attestedSicknessDateLabel" destination="zHd-Hr-XJP" id="eOu-oe-DHa"/>
+                        <outlet property="instructionsView" destination="cMC-4I-v4d" id="cef-Ri-E5P"/>
+                        <outlet property="scrollView" destination="2PQ-3r-8Cn" id="nLc-nZ-zTP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="132" y="138"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="ccWhite">
+            <color red="0.95686274509803926" green="0.95686274509803926" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

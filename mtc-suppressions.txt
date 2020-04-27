@@ -1,0 +1,2 @@
+method:-[UIApplication applicationState]
+method:-[UIApplication backgroundTimeRemaining]

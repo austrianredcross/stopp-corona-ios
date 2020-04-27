@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IUx-KG-GTF">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Launch Screen View Controller-->
+        <scene sceneID="ZsD-dj-fjM">
+            <objects>
+                <viewController id="IUx-KG-GTF" customClass="LaunchScreenViewController" customModule="Stopp_Corona" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HY2-kC-fJs">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zw1-Ex-zNa" customClass="LaunchScreenView" customModule="Stopp_Corona" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Zw1-Ex-zNa" firstAttribute="trailing" secondItem="odx-vI-etc" secondAttribute="trailing" id="6RP-V2-Kji"/>
+                            <constraint firstItem="Zw1-Ex-zNa" firstAttribute="leading" secondItem="odx-vI-etc" secondAttribute="leading" id="M0E-CI-9Pl"/>
+                            <constraint firstAttribute="bottom" secondItem="Zw1-Ex-zNa" secondAttribute="bottom" id="NjR-MW-n4C"/>
+                            <constraint firstItem="Zw1-Ex-zNa" firstAttribute="top" secondItem="HY2-kC-fJs" secondAttribute="top" id="qlh-1K-GZ3"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="odx-vI-etc"/>
+                    </view>
+                    <connections>
+                        <outlet property="launchScreenView" destination="Zw1-Ex-zNa" id="Iqb-HC-45j"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bu9-QM-dXx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-136.23188405797103" y="124.55357142857142"/>
+        </scene>
+    </scenes>
+</document>
