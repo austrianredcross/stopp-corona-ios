@@ -41,7 +41,7 @@
 "main_body_covid_alert"                                                      = "<b>corona enfeksiyonunu bildirin</b>\nKişilerinizi korumak için tıbbi olarak onaylanmış bir enfeksiyonu bildirin.";
 "main_button_covid_alert"                                                    = "Tıbbi onayı rapor et";
 "main_handshake_information_hint"                                            = "Bu özelliği ne zaman kullanmalıyım?";
-"main_handshake_dialog_headline"                                             = "Olası durumlarda karşılaşmaları kaydedin ... ";
+"main_handshake_dialog_headline"                                             = "Olası durumlarda karşılaşmaları kaydedin ...";
 "main_handshake_dialog_description_first"                                    = "... 15 dakikadan uzun bir süredir kişisel iletişiminiz var ve her zaman 2 metrelik bir mesafeyi koruyamıyorsunuz.";
 "main_handshake_dialog_description_second"                                   = "... 15 dakikadan uzun bir süredir kişisel iletişiminiz var ve araba, oda veya tren gibi küçük, kapalı bir alandasınız.";
 "main_microphone_explanation_dialog_headline"                                = "Mikrofon erişimi";
