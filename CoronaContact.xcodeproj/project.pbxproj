@@ -313,6 +313,9 @@
 		16F5D7F6D6B4A765EC82601F /* Pods-CoronaContactTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoronaContactTests.release.xcconfig"; path = "Target Support Files/Pods-CoronaContactTests/Pods-CoronaContactTests.release.xcconfig"; sourceTree = "<group>"; };
 		17CE98EF2576F57F776FBC3D /* UIApplication+SafariViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+SafariViewController.swift"; sourceTree = "<group>"; };
 		1FDDA0B8090AAB9A97DCB475 /* Pods-CoronaContactTests.stage.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoronaContactTests.stage.xcconfig"; path = "Target Support Files/Pods-CoronaContactTests/Pods-CoronaContactTests.stage.xcconfig"; sourceTree = "<group>"; };
+		47C7B7F5245655F800D90FDE /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		47C7B7F6245655F900D90FDE /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		47C7B7F7245655F900D90FDE /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4B1F6118242A60AD00E82D4C /* Stopp Corona.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Stopp Corona.entitlements"; sourceTree = "<group>"; };
 		4B25BA9C2429592A00CDD1CF /* UserHealthStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHealthStatus.swift; sourceTree = "<group>"; };
 		4B7379E82423D9E600DF338E /* StartMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartMenuViewController.swift; sourceTree = "<group>"; };
@@ -1636,6 +1639,7 @@
 				en,
 				Base,
 				de,
+				tr,
 			);
 			mainGroup = 4E0B3E2C241F995D00EF60EE;
 			productRefGroup = 4E0B3E36241F995D00EF60EE /* Products */;
@@ -1798,7 +1802,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "ruby ${PODS_ROOT}/Carte/Sources/Carte/carte.rb post\n";
+			shellScript = "ruby ${PODS_ROOT}/Carte/Sources/Carte/carte.rb post";
 			showEnvVarsInLog = 0;
 		};
 		89149E0C245082C60053310D /* prepare NOTICE.md */ = {
@@ -1825,11 +1829,9 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CoronaContact/Pods-CoronaContact-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CoronaContact/Pods-CoronaContact-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1864,11 +1866,9 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CoronaContact/Pods-CoronaContact-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CoronaContact/Pods-CoronaContact-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1891,7 +1891,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "ruby ${PODS_ROOT}/Carte/Sources/Carte/carte.rb pre\n";
+			shellScript = "ruby ${PODS_ROOT}/Carte/Sources/Carte/carte.rb pre";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -2155,6 +2155,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				4E0B3E44241F995E00EF60EE /* Base */,
+				47C7B7F5245655F800D90FDE /* tr */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -2164,6 +2165,7 @@
 			children = (
 				61D1A3CF242A3C40007F82ED /* de */,
 				61D1A3D2242A3C40007F82ED /* en */,
+				47C7B7F6245655F900D90FDE /* tr */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -2173,6 +2175,7 @@
 			children = (
 				61D1A3D1242A3C40007F82ED /* de */,
 				61D1A3D3242A3C40007F82ED /* en */,
+				47C7B7F7245655F900D90FDE /* tr */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";

@@ -115,7 +115,7 @@ DEPENDENCIES:
   - SwiftyBeaver
 
 SPEC REPOS:
-  trunk:
+  https://github.com/cocoapods/specs.git:
     - Alamofire
     - Carte
     - Firebase
@@ -183,6 +183,6 @@ SPEC CHECKSUMS:
   SwiftRichString: 9a6a70b4fe2cf428e38348b5ada5400da74621fd
   SwiftyBeaver: d39e7c376bf15e9fffca8263b8fd1f42ea56aa2d
 
-PODFILE CHECKSUM: 002d256dedecfab37de925c87d5c2c5768715ac7
+PODFILE CHECKSUM: 23ac09d84524dee038abbab1dabbf447630bfb08
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.7.5

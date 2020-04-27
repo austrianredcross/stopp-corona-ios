@@ -1,5 +1,5 @@
 platform :ios, '12.0'
-
+install! 'cocoapods', :disable_input_output_paths => true
 # ignore all warnings from all pods
 inhibit_all_warnings!
 use_frameworks!
