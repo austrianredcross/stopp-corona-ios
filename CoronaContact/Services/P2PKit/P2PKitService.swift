@@ -11,8 +11,11 @@ extension Notification.Name {
     static let P2PDiscoveryChanged = Notification.Name("p2p_active")
 }
 
+#if DEBUG
+let stateRestoration = false
+#else
 let stateRestoration = true
-
+#endif
 
 class P2PKitService: NSObject {
     @Injected private var crypto: CryptoService
@@ -59,6 +62,7 @@ class P2PKitService: NSObject {
     func enable() {
         PPKController.enable(withConfiguration: AppConfiguration.p2pKitApiKey, observer: self)
         removeOldP2PKitEvents()
+        log.debug("enabled", context: .p2pkit)
     }
 
     private func removeOldP2PKitEvents() {
@@ -81,6 +85,7 @@ class P2PKitService: NSObject {
         updateIsRunning = true
         DispatchQueue.global().async { [weak self] in
             guard let self = self else { return }
+            self.log.verbose("running checkScores", context: .p2pkit)
             let now = Date()
             let intervalStart = now.addingTimeInterval(-self.detectionInterval)
             self.database.deleteP2PKitEventsBefore(endtime: intervalStart)
@@ -95,6 +100,9 @@ class P2PKitService: NSObject {
                 let prefix = self.crypto.getPublicKeyPrefix(publicKey: currentPubKey)
                 if currentScore > self.intensiveContactScore {
                     self.database.saveContact(RemoteContact(name: "", key: currentPubKey, automaticDiscovered: true))
+                    self.log.debug("adding \(prefix) to contacts with \(currentScore) Points", context: .p2pkit)
+                } else {
+                    self.log.verbose("\(prefix) Current Score: \(currentScore) Points", context: .p2pkit)
                 }
             }
 
@@ -139,6 +147,7 @@ class P2PKitService: NSObject {
 
 extension P2PKitService: PPKControllerDelegate {
     func ppkControllerInitialized() {
+        log.debug("initialized", context: .p2pkit)
         isEnabled = true
         if !UserDefaults.standard.backgroundHandShakeDisabled && UserDefaults.standard.hasSeenOnboarding {
             start()
@@ -194,6 +203,9 @@ extension P2PKitService: PPKControllerDelegate {
     func proximityStrengthChanged(for peer: PPKPeer) {
         if let pubKey = getPublicKeyFromDiscoverInfo(peer), peer.proximityStrength != .unknown {
             database.saveP2PKitEvent(pubKey: pubKey, strength: peer.proximityStrength.rawValue)
+            let prefix = crypto.getPublicKeyPrefix(publicKey: pubKey)
+            log.verbose("peer strength changed \(peer.peerID) (\(prefix)): \(peer.proximityStrength.rawValue)",
+                        context: .p2pkit)
         } else {
             log.warning("peer strength changed \(peer.peerID): \(peer.proximityStrength.rawValue) WITHOUT PUBKEY",
                         context: .p2pkit)

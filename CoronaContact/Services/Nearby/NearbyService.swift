@@ -88,6 +88,7 @@ class NearbyService {
                 NotificationCenter.default.post(name: .NearbyServiceContactsChanged, object: nil)
             }
         }
+        log.verbose("service initialized", context: .nearby)
     }
 
     func parseMessage(_ data: Data) -> RemoteContact? {
@@ -196,5 +197,6 @@ class NearbyService {
 
     deinit {
         nearbyPermission = nil
+        log.verbose("service deinitialized", context: .nearby)
     }
 }

@@ -119,6 +119,7 @@ class MainCoordinator: Coordinator {
     }
 
     override func didFinish(_ coordinator: Coordinator) {
+        LoggingService.debug("didFinish \(coordinator)", context: .navigation)
         if coordinator is OnboardingCoordinator {
             mainViewModel?.onboardingJustFinished()
         }

@@ -59,6 +59,7 @@ class DatabaseService {
 
     init(location: DatabaseLocation = .file("db")) {
         dba = try? Connection(location.location)
+        log.debug("Database \(location.location)", context: .database)
     }
 
     func migrate() {
@@ -72,12 +73,16 @@ class DatabaseService {
 
         do {
             if !manager.hasMigrationsTable() {
+                log.debug("creating migration table", context: .database)
                 try manager.createMigrationsTable()
             }
 
             if manager.needsMigration() {
+                log.debug("pending migrations \(manager.pendingMigrations())", context: .database)
                 try manager.migrateDatabase()
             }
+
+            log.verbose("current migrations: \(manager.appliedVersions())", context: .database)
         } catch {
             log.error("migration failed: \(error)", context: .database)
         }
@@ -192,6 +197,7 @@ class DatabaseService {
             DispatchQueue.main.async {
                 NotificationCenter.default.post(name: .DatabaseServiceNewContact, object: nil, userInfo: info)
             }
+            log.verbose("inserted contact: \(String(describing: insert))", context: .database)
         } catch {
             log.error("insertion failed: \(error)", context: .database)
         }

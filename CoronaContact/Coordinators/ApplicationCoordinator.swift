@@ -15,8 +15,20 @@ class ApplicationCoordinator: Coordinator {
     }
 
     lazy var rootViewController: UINavigationController = {
-        UINavigationController()
+        #if (DEBUG || STAGE)
+        let dvc = DebugNavigationController()
+        dvc.coordinator = self
+        return dvc
+        #else
+        return UINavigationController()
+        #endif
     }()
+
+    func debugView() {
+        let child = DebugCoordinator(navigationController: rootViewController)
+        addChildCoordinator(child)
+        child.start()
+    }
 
     init(window: UIWindow?) {
         self.window = window

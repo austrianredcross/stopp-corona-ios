@@ -29,6 +29,8 @@ final class NetworkClient {
                 do {
                     let filteredResponse = try response.filterSuccessfulStatusCodes()
                     completion(.success(filteredResponse.data))
+                    self?.log.verbose(response.detailedDebugDescription, context: .network)
+
                 } catch let error {
                     let statusCode = HTTPStatusCode(statusCode: response.statusCode)
                     if statusCode == .notModified {
@@ -65,6 +67,7 @@ final class NetworkClient {
                     let filteredResponse = try response.filterSuccessfulStatusCodes()
                     let parsedResponse: Result<Payload, NetworkError> = filteredResponse.parseJSON()
                     completion(parsedResponse)
+                    self?.log.verbose(response.detailedDebugDescription, context: .network)
 
                 } catch let error {
                     let statusCode = HTTPStatusCode(statusCode: response.statusCode)

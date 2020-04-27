@@ -38,6 +38,10 @@ class LoggingService {
         file.minLevel = .verbose
         file.format = "$Dyyyy-MM-dd HH:mm:ss.SSS$d $C[$X] $L$c $N.$F:$l - $M"
 
+        #if DEBUG
+        file.asynchronously = false
+        #endif
+
         #if LOGGING
         SwiftyBeaver.addDestination(console)
         SwiftyBeaver.addDestination(file)

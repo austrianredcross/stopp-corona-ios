@@ -9,6 +9,10 @@ class Coordinator {
     private(set) var childCoordinators: [Coordinator] = []
     weak var parentCoordinator: Coordinator?
 
+    init() {
+        LoggingService.verbose(self, context: .navigation)
+    }
+
     func start() {
         // needs to be implemented
         assertionFailure("not implemented")
@@ -31,7 +35,13 @@ class Coordinator {
     func removeChildCoordinator(_ coordinator: Coordinator) {
         if let index = childCoordinators.firstIndex(of: coordinator) {
             childCoordinators.remove(at: index)
+        } else {
+            LoggingService.debug("Couldn't remove coordinator: \(coordinator). It's not a child coordinator.", context: .navigation)
         }
+    }
+
+    deinit {
+        LoggingService.verbose(self, context: .navigation)
     }
 }
 
