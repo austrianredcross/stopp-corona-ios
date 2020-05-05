@@ -1,6 +1,5 @@
 *.xcuserdatad
 
-GoogleService-Info.plist
 .babelish.token
 translations.csv
 .idea

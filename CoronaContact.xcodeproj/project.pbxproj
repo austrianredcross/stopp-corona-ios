@@ -42,6 +42,13 @@
 		4EB52F02243C955D0004FAA0 /* M003Database_1_1_Migration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB52F01243C955D0004FAA0 /* M003Database_1_1_Migration.swift */; };
 		4EC81FB52423843300179CE9 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC81FB42423843300179CE9 /* PrimaryButton.swift */; };
 		4EC81FB72423844E00179CE9 /* SecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC81FB62423844E00179CE9 /* SecondaryButton.swift */; };
+		4ED175B42458347400248D3B /* DebugViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4ED175AF2458347400248D3B /* DebugViewController.storyboard */; };
+		4ED175B52458347400248D3B /* DebugNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED175B02458347400248D3B /* DebugNavigationController.swift */; };
+		4ED175B62458347400248D3B /* DebugCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED175B12458347400248D3B /* DebugCoordinator.swift */; };
+		4ED175B72458347400248D3B /* DebugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED175B22458347400248D3B /* DebugViewController.swift */; };
+		4ED175B82458347400248D3B /* DebugViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED175B32458347400248D3B /* DebugViewModel.swift */; };
+		4ED175BA245836E000248D3B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4ED175B9245836E000248D3B /* GoogleService-Info.plist */; };
+		4ED175BC245836F100248D3B /* server.der in Resources */ = {isa = PBXBuildFile; fileRef = 4ED175BB245836F100248D3B /* server.der */; };
 		4EDB47F12421E92E000CE24A /* OnboardingPageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EDB47F02421E92E000CE24A /* OnboardingPageView.xib */; };
 		4EDB47F42421EE02000CE24A /* AppDelegate+FontStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDB47F22421EB2B000CE24A /* AppDelegate+FontStyles.swift */; };
 		4EDB47F62421EF46000CE24A /* UIColor+NamedColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDB47F52421EF46000CE24A /* UIColor+NamedColors.swift */; };
@@ -253,7 +260,6 @@
 		839748D0A89F0117C192DD34 /* CryptoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83974EEE9ABEC9F8E8C29669 /* CryptoService.swift */; };
 		83974901AF9ABB4176C37AD0 /* OnboardingConsentPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839746E980E1878DBDF978AE /* OnboardingConsentPageView.swift */; };
 		83974960BEEA73146FD4930C /* AutoMarginTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839744713BE877F4659927B5 /* AutoMarginTableViewCell.swift */; };
-		839749D28AAC292FFC2148D0 /* Certificates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83974EB276227AD0AB0CDBAB /* Certificates.swift */; };
 		83974A3C096BEC7F5CCBFCC7 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83974ED255ED47321535BA0E /* OnboardingViewController.swift */; };
 		83974A681281494B1DB360AB /* ContactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839741473EE54F93E5209C23 /* ContactViewModel.swift */; };
 		83974AA35AEBF4A6769C00B4 /* M001InitialMigration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83974E486CD5B31F449062D0 /* M001InitialMigration.swift */; };
@@ -352,6 +358,13 @@
 		4EB52F01243C955D0004FAA0 /* M003Database_1_1_Migration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = M003Database_1_1_Migration.swift; sourceTree = "<group>"; };
 		4EC81FB42423843300179CE9 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		4EC81FB62423844E00179CE9 /* SecondaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButton.swift; sourceTree = "<group>"; };
+		4ED175AF2458347400248D3B /* DebugViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DebugViewController.storyboard; sourceTree = "<group>"; };
+		4ED175B02458347400248D3B /* DebugNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugNavigationController.swift; sourceTree = "<group>"; };
+		4ED175B12458347400248D3B /* DebugCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugCoordinator.swift; sourceTree = "<group>"; };
+		4ED175B22458347400248D3B /* DebugViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugViewController.swift; sourceTree = "<group>"; };
+		4ED175B32458347400248D3B /* DebugViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugViewModel.swift; sourceTree = "<group>"; };
+		4ED175B9245836E000248D3B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4ED175BB245836F100248D3B /* server.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = server.der; sourceTree = "<group>"; };
 		4EDB47F02421E92E000CE24A /* OnboardingPageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingPageView.xib; sourceTree = "<group>"; };
 		4EDB47F22421EB2B000CE24A /* AppDelegate+FontStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+FontStyles.swift"; sourceTree = "<group>"; };
 		4EDB47F52421EF46000CE24A /* UIColor+NamedColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+NamedColors.swift"; sourceTree = "<group>"; };
@@ -493,6 +506,8 @@
 		615D36632438C25400B608AB /* LoggingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggingService.swift; sourceTree = "<group>"; };
 		616E1DA8243486C700109435 /* ArrowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrowButton.swift; sourceTree = "<group>"; };
 		618A6650242B8B84001BDBBF /* Collection+safe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+safe.swift"; sourceTree = "<group>"; };
+		61AB6EF024573737006B4190 /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
+		61AB6EF124573771006B4190 /* Secrets.template.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.template.xcconfig; sourceTree = "<group>"; };
 		61C4A46B24275C38004D18BB /* UIView+Shadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Shadow.swift"; sourceTree = "<group>"; };
 		61C4A47824279433004D18BB /* UIActivityIndicatorView+scale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIActivityIndicatorView+scale.swift"; sourceTree = "<group>"; };
 		61C4A47E2427B848004D18BB /* QuarantineNotificationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuarantineNotificationView.xib; sourceTree = "<group>"; };
@@ -590,7 +605,6 @@
 		83974E486CD5B31F449062D0 /* M001InitialMigration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = M001InitialMigration.swift; sourceTree = "<group>"; };
 		83974E4BF20807E7150F5CDD /* ConfigurationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationService.swift; sourceTree = "<group>"; };
 		83974E8DF47258DBA88F9CAA /* ContactTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactTableViewCell.xib; sourceTree = "<group>"; };
-		83974EB276227AD0AB0CDBAB /* Certificates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Certificates.swift; sourceTree = "<group>"; };
 		83974ED255ED47321535BA0E /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		83974EEE9ABEC9F8E8C29669 /* CryptoService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptoService.swift; sourceTree = "<group>"; };
 		83974F38691AC7428DA4002D /* ContactViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ContactViewController.storyboard; sourceTree = "<group>"; };
@@ -598,8 +612,6 @@
 		87895CFEB99369228D18DF33 /* Pods-CoronaContactTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoronaContactTests.debug.xcconfig"; path = "Target Support Files/Pods-CoronaContactTests/Pods-CoronaContactTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8922A16B243D1DD6004E9D42 /* HealthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthRepository.swift; sourceTree = "<group>"; };
 		8922A16D243DF094004E9D42 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
-		89FB2B4924508CA2009A892A /* Prod */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Prod; sourceTree = "<group>"; };
-		89FB2B4B24508CB7009A892A /* Stage */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Stage; sourceTree = "<group>"; };
 		9152F86ED090FF1A20BFD5A3 /* Pods-CoronaContact.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoronaContact.release.xcconfig"; path = "Target Support Files/Pods-CoronaContact/Pods-CoronaContact.release.xcconfig"; sourceTree = "<group>"; };
 		921525372427C5DF0023F469 /* SelfTestingHintCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelfTestingHintCoordinator.swift; sourceTree = "<group>"; };
 		921525382427C5DF0023F469 /* SelfTestingHintViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelfTestingHintViewController.swift; sourceTree = "<group>"; };
@@ -761,13 +773,6 @@
 			path = P2PKit;
 			sourceTree = "<group>";
 		};
-		4E6FD8DB244E09030058713E /* Certificates */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Certificates;
-			sourceTree = "<group>";
-		};
 		4E7BA4A8242E28BD00AE0AC7 /* Animations */ = {
 			isa = PBXGroup;
 			children = (
@@ -777,11 +782,21 @@
 			path = Animations;
 			sourceTree = "<group>";
 		};
+		4ED175AE2458347400248D3B /* Debug */ = {
+			isa = PBXGroup;
+			children = (
+				4ED175AF2458347400248D3B /* DebugViewController.storyboard */,
+				4ED175B02458347400248D3B /* DebugNavigationController.swift */,
+				4ED175B12458347400248D3B /* DebugCoordinator.swift */,
+				4ED175B22458347400248D3B /* DebugViewController.swift */,
+				4ED175B32458347400248D3B /* DebugViewModel.swift */,
+			);
+			path = Debug;
+			sourceTree = "<group>";
+		};
 		4EDB47FB242255A6000CE24A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				4E6FD8DB244E09030058713E /* Certificates */,
-				61FABC922431E9FB0085786B /* Firebase */,
 				4E7BA4A8242E28BD00AE0AC7 /* Animations */,
 				61D1A3CD242A3C40007F82ED /* Localisation */,
 				61032074243F24D800ED3A20 /* Websites */,
@@ -899,7 +914,6 @@
 				4B25BA9C2429592A00CDD1CF /* UserHealthStatus.swift */,
 				61459A56242AC48800DC88A7 /* Website.swift */,
 				83974BF870B575EAC8607D3D /* P2PKitEvent.swift */,
-				83974EB276227AD0AB0CDBAB /* Certificates.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1259,18 +1273,13 @@
 			path = Permissions;
 			sourceTree = "<group>";
 		};
-		61FABC922431E9FB0085786B /* Firebase */ = {
-			isa = PBXGroup;
-			children = (
-				89FB2B4924508CA2009A892A /* Prod */,
-				89FB2B4B24508CB7009A892A /* Stage */,
-			);
-			path = Firebase;
-			sourceTree = "<group>";
-		};
 		61FABC9E2431EBDE0085786B /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
+				4ED175BB245836F100248D3B /* server.der */,
+				4ED175B9245836E000248D3B /* GoogleService-Info.plist */,
+				61AB6EF024573737006B4190 /* Secrets.xcconfig */,
+				61AB6EF124573771006B4190 /* Secrets.template.xcconfig */,
 				61FABCB02432368E0085786B /* Base.xcconfig */,
 				61FABCAC243233440085786B /* Development.xcconfig */,
 				61FABC9F2431EBF50085786B /* Stage.xcconfig */,
@@ -1325,6 +1334,7 @@
 		839742CD30B274EE264849F8 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				4ED175AE2458347400248D3B /* Debug */,
 				6153A51824264A2D006A8570 /* Shared */,
 				83974C90F8BFA3D3989974D0 /* Main */,
 				83974095C18852AFA32AC3C8 /* Onboarding */,
@@ -1572,7 +1582,6 @@
 				4E9BF7042420AF2B00B360A4 /* Swiftlint */,
 				4E0B3E31241F995D00EF60EE /* Sources */,
 				4E0B3E32241F995D00EF60EE /* Frameworks */,
-				61FABC992431EA960085786B /* Setup Firebase Environment GoogleService-Info.plist */,
 				E62EED9B3D667B480F11A2F0 /* [Carte] Pre Script */,
 				4E0B3E33241F995D00EF60EE /* Resources */,
 				6F09AC68488332B30709BADD /* [Carte] Post Script */,
@@ -1668,6 +1677,7 @@
 				4EDB47F12421E92E000CE24A /* OnboardingPageView.xib in Resources */,
 				614D72062428E82700CC545D /* ContactSicknessViewController.storyboard in Resources */,
 				61D1A3D4242A3C40007F82ED /* Localizable.strings in Resources */,
+				4ED175BA245836E000248D3B /* GoogleService-Info.plist in Resources */,
 				4E44EDEB2424D076000CC695 /* ContactLabelTableViewCell.xib in Resources */,
 				61546541242CBE7F0003D3D3 /* SelfMonitoringGuidelinesViewController.storyboard in Resources */,
 				614D72302429084B00CC545D /* SelfTestingTanConfirmationViewController.storyboard in Resources */,
@@ -1675,6 +1685,7 @@
 				613E35F6242E3F65009421A8 /* LaunchScreenViewController.storyboard in Resources */,
 				6103207C243F28A000ED3A20 /* en.privacy-and-terms-of-use.html in Resources */,
 				614D72232429084300CC545D /* SelfTestingPersonalDataViewController.storyboard in Resources */,
+				4ED175B42458347400248D3B /* DebugViewController.storyboard in Resources */,
 				4E44EDED2424F4AC000CC695 /* HistoryTableViewCell.xib in Resources */,
 				61D0F55A24352EA90026C91A /* CheckboxLabelView.xib in Resources */,
 				61459A55242AC15F00DC88A7 /* de.privacy-and-terms-of-use.html in Resources */,
@@ -1710,6 +1721,7 @@
 				61546549242CBEA60003D3D3 /* SuspicionGuidelinesViewController.storyboard in Resources */,
 				83974B1E68BE8FC18F274E68 /* ContactTableViewCell.xib in Resources */,
 				61459A53242ABFE200DC88A7 /* de.terms-of-use.html in Resources */,
+				4ED175BC245836F100248D3B /* server.der in Resources */,
 				61D1A3DD242A58B1007F82ED /* ContactHelpViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1764,24 +1776,6 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
-		61FABC992431EA960085786B /* Setup Firebase Environment GoogleService-Info.plist */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Setup Firebase Environment GoogleService-Info.plist";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Name of the resource we're selectively copying\nGOOGLESERVICE_INFO_PLIST=GoogleService-Info.plist\n\n# Get references to dev and prod versions of the GoogleService-Info.plist\n# NOTE: These should only live on the file system and should NOT be part of the target (since we'll be adding them to the target manually)\nGOOGLESERVICE_INFO_STAGE=${PROJECT_DIR}/${TARGET_NAME}/Resources/Firebase/Stage/${GOOGLESERVICE_INFO_PLIST}\nGOOGLESERVICE_INFO_PROD=${PROJECT_DIR}/${TARGET_NAME}/Resources/Firebase/Prod/${GOOGLESERVICE_INFO_PLIST}\n\n# Make sure the stage version of GoogleService-Info.plist exists\necho \"Looking for ${GOOGLESERVICE_INFO_PLIST} in ${GOOGLESERVICE_INFO_STAGE}\"\nif [ ! -f $GOOGLESERVICE_INFO_STAGE ]\nthen\n    echo \"error: No Stage GoogleService-Info.plist found. Please ensure it's in the proper directory.\"\n    exit 1\nfi\n\n# Make sure the prod version of GoogleService-Info.plist exists\necho \"Looking for ${GOOGLESERVICE_INFO_PLIST} in ${GOOGLESERVICE_INFO_PROD}\"\nif [ ! -f $GOOGLESERVICE_INFO_PROD ]\nthen\n    echo \"error: No Production GoogleService-Info.plist found. Please ensure it's in the proper directory.\"\n    exit 1\nfi\n\n# Get a reference to the destination location for the GoogleService-Info.plist\nPLIST_DESTINATION=${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app\necho \"Will copy ${GOOGLESERVICE_INFO_PLIST} to final destination: ${PLIST_DESTINATION}\"\n\n# Copy over the prod GoogleService-Info.plist for Production builds\nif [ \"${CONFIGURATION}\" == \"Production\" ]\nthen\n    echo \"Using ${GOOGLESERVICE_INFO_PROD}\"\n    cp \"${GOOGLESERVICE_INFO_PROD}\" \"${PLIST_DESTINATION}\"\nelse\n    echo \"Using ${GOOGLESERVICE_INFO_STAGE}\"\n    cp \"${GOOGLESERVICE_INFO_STAGE}\" \"${PLIST_DESTINATION}\"\nfi\n";
-		};
 		6F09AC68488332B30709BADD /* [Carte] Post Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1798,7 +1792,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "ruby ${PODS_ROOT}/Carte/Sources/Carte/carte.rb post\n";
+			shellScript = "ruby ${PODS_ROOT}/Carte/Sources/Carte/carte.rb post";
 			showEnvVarsInLog = 0;
 		};
 		89149E0C245082C60053310D /* prepare NOTICE.md */ = {
@@ -1891,7 +1885,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "ruby ${PODS_ROOT}/Carte/Sources/Carte/carte.rb pre\n";
+			shellScript = "ruby ${PODS_ROOT}/Carte/Sources/Carte/carte.rb pre";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1945,6 +1939,7 @@
 				839742C47A14834F1B2C24F6 /* MainViewModel.swift in Sources */,
 				9215253E2427C5E00023F469 /* SelfTestingHintViewModel.swift in Sources */,
 				61F50DD72439EC8500798264 /* MissingPermissionsCoordinator.swift in Sources */,
+				4ED175B62458347400248D3B /* DebugCoordinator.swift in Sources */,
 				614D72252429084300CC545D /* SelfTestingPersonalDataViewModel.swift in Sources */,
 				61D0F55924352EA90026C91A /* CheckboxView.swift in Sources */,
 				6153A52624264A2D006A8570 /* ActivityPresentationStyle.swift in Sources */,
@@ -1957,6 +1952,7 @@
 				8922A16E243DF094004E9D42 /* Observable.swift in Sources */,
 				6153A4E8242598F5006A8570 /* SicknessCertificateCoordinator.swift in Sources */,
 				4E019BE32427D287004FF670 /* Date+round.swift in Sources */,
+				4ED175B72458347400248D3B /* DebugViewController.swift in Sources */,
 				614BAA0D2423C334006797AA /* SuccessResponse.swift in Sources */,
 				9215255E2427C7AA0023F469 /* SelfTestingSuspicionViewModel.swift in Sources */,
 				614BAA0B2423C334006797AA /* Answer.swift in Sources */,
@@ -1979,6 +1975,7 @@
 				61BB41DB2436845F0083053B /* Date+daysUntil.swift in Sources */,
 				6153A52324264A2D006A8570 /* ActivityPresentableType.swift in Sources */,
 				839748117E82124039816540 /* AppDelegate+Injection.swift in Sources */,
+				4ED175B52458347400248D3B /* DebugNavigationController.swift in Sources */,
 				9215253C2427C5E00023F469 /* SelfTestingHintViewController.swift in Sources */,
 				614D723B242909C000CC545D /* SelfTestingConfirmationViewController.swift in Sources */,
 				614D722F2429084B00CC545D /* SelfTestingTanConfirmationViewController.swift in Sources */,
@@ -2116,6 +2113,7 @@
 				611B78BE242816BE0040CCB3 /* AppUpdateService+Injection.swift in Sources */,
 				83974E39C51DA3FCCB202E62 /* MainCoordinator.swift in Sources */,
 				83974C2CD7A816EE91AA6583 /* OutgoingInfectionMessage.swift in Sources */,
+				4ED175B82458347400248D3B /* DebugViewModel.swift in Sources */,
 				83974070AAD41799D50EE1F8 /* Contact.swift in Sources */,
 				614A001D243CB13F00ACBD0A /* SelfTestingConsentViewModel.swift in Sources */,
 				83974E1C0C969B298357EDD5 /* InfectionWarning.swift in Sources */,
@@ -2129,7 +2127,6 @@
 				83974E92DF6EEC0D6F262ED6 /* M002ScoreMigration.swift in Sources */,
 				8397463D0CC798F8B4976AB8 /* P2PKitEvent.swift in Sources */,
 				83974E01F55C841BAD9C9D1D /* NetworkSession.swift in Sources */,
-				839749D28AAC292FFC2148D0 /* Certificates.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2309,7 +2306,7 @@
 				CODE_SIGN_ENTITLEMENTS = "CoronaContact/Stopp Corona.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 18;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = "$(DEVELOPMENT_TEAM)";
 				ENABLE_TESTABILITY = NO;
 				INFOPLIST_FILE = CoronaContact/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2332,7 +2329,7 @@
 				CODE_SIGN_ENTITLEMENTS = "CoronaContact/Stopp Corona.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 18;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = "$(DEVELOPMENT_TEAM)";
 				INFOPLIST_FILE = CoronaContact/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2458,7 +2455,7 @@
 				CODE_SIGN_ENTITLEMENTS = "CoronaContact/Stopp Corona.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 18;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = "$(DEVELOPMENT_TEAM)";
 				ENABLE_TESTABILITY = YES;
 				INFOPLIST_FILE = CoronaContact/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

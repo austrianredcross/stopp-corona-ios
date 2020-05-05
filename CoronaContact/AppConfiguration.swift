@@ -17,6 +17,10 @@ enum AppConfiguration {
         AppConfiguration.value(for: "P2P_KIT_API")
     }
 
+    static var apiHostName: String {
+        AppConfiguration.value(for: "API_HOST")
+    }
+
     private static func value<T>(for key: String) -> T where T: LosslessStringConvertible {
         guard let object = Bundle.main.object(forInfoDictionaryKey: key) else {
             fatalError("Configuration missing key.")
