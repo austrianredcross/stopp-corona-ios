@@ -21,7 +21,7 @@ class CryptoService {
 
     private let kRSABlockSize = kRSASwiftGeneratorKeySize / 8 - 42
 
-    private let kZeroPadding = Data(repeating: 0, count:61)
+    private let kZeroPadding = Data(repeating: 0, count: 61)
 
     lazy var generatedName: String = {
         var name = String(Int.random(in: 10000..<20000))
@@ -80,6 +80,26 @@ class CryptoService {
         return message
     }
 
+    func createRevokeInfectionMessages(to type: InfectionWarningType) -> Result<[OutGoingInfectionWarningWithAddressPrefix], CryptoError> {
+        var updateContacts: [ContactUpdate] = []
+        var warningMessages: [OutGoingInfectionWarningWithAddressPrefix] = []
+
+        updateContacts.append(contentsOf: dba.getContactsToUpdate(from: .red))
+
+        for updateContact in updateContacts {
+            if let warning = encryptMessage(pubKey: updateContact.pubKey,
+                                            timestamp: updateContact.timestamp,
+                                            type: type,
+                                            upgradeUUID: updateContact.uuid) {
+                let addressPrefix = getPublicKeyPrefix(publicKey: updateContact.pubKey)
+                warningMessages.append(OutGoingInfectionWarningWithAddressPrefix(outGoingInfectionWarning: warning,
+                                                                                 addressPrefix: addressPrefix))
+            }
+        }
+
+        return .success(warningMessages)
+    }
+
     func createInfectionWarnings(type: InfectionWarningType) -> Result<[OutGoingInfectionWarningWithAddressPrefix], CryptoError> {
         let warningTime = config.currentConfig.warnBeforeSymptoms
 
@@ -91,7 +111,7 @@ class CryptoService {
         }
 
         if [.red, .green].contains(type) { // for those types we need to update old messages
-            updateContacts.append(contentsOf: dba.getContactsToUpdate())
+            updateContacts.append(contentsOf: dba.getContactsToUpdate(from: .yellow))
         }
 
         if [.yellow, .red].contains(type) { // for those types we need to inform new contacts

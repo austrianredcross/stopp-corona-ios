@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Revoke Sickness Status Report View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="RevokeSicknessStatusReportViewController" customModule="Stopp_Corona" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="kfs-Ez-Yp6">
+                                <rect key="frame" x="0.0" y="127" width="414" height="735"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jr6-op-QQ2">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="365"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="FX0-vN-TZX" customClass="BackgroundStackView" customModule="Stopp_Corona" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="365"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="revoke_sickness_report_title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T87-0s-Bxa" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
+                                                        <rect key="frame" x="24" y="24" width="366" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="h1"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="revoke_sickness_report_title"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="revoke_sickness_report_description" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Io5-tr-q3t" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
+                                                        <rect key="frame" x="24" y="68.5" width="366" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="body"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="revoke_sickness_report_description"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </label>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="55Q-ic-fUB">
+                                                        <rect key="frame" x="24" y="113" width="366" height="0.0"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" id="zep-CN-78Q" customClass="CheckboxLabelView" customModule="Stopp_Corona" customModuleProvider="target">
+                                                        <rect key="frame" x="24" y="137" width="366" height="150"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="labelTransKey" value="revoke_sickness_report_approval"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LOR-hg-JSM" customClass="PrimaryButton" customModule="Stopp_Corona" customModuleProvider="target">
+                                                        <rect key="frame" x="24" y="311" width="366" height="30"/>
+                                                        <state key="normal" title="revocation_report_status_button">
+                                                            <color key="titleColor" name="ccBlack"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="transKeyNormal" value="revoke_sickness_report_action"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="reportButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7Kt-nH-q8t"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <directionalEdgeInsets key="directionalLayoutMargins" top="24" leading="24" bottom="24" trailing="24"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="overrideHorztMarginMulti">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="overrideVertMarginMulti">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="overrideSpacingMulti">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="FX0-vN-TZX" secondAttribute="trailing" id="3FC-OX-aH9"/>
+                                            <constraint firstItem="FX0-vN-TZX" firstAttribute="top" secondItem="jr6-op-QQ2" secondAttribute="top" id="d42-ld-sh4"/>
+                                            <constraint firstAttribute="bottom" secondItem="FX0-vN-TZX" secondAttribute="bottom" id="db6-cE-sCY"/>
+                                            <constraint firstItem="FX0-vN-TZX" firstAttribute="leading" secondItem="jr6-op-QQ2" secondAttribute="leading" id="xFB-eg-e5r"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="jr6-op-QQ2" secondAttribute="bottom" priority="250" id="5nE-GI-lWB"/>
+                                    <constraint firstItem="jr6-op-QQ2" firstAttribute="centerX" secondItem="kfs-Ez-Yp6" secondAttribute="centerX" id="SEr-lV-VvE"/>
+                                    <constraint firstItem="jr6-op-QQ2" firstAttribute="top" secondItem="kfs-Ez-Yp6" secondAttribute="top" id="ZLt-RG-5xH"/>
+                                    <constraint firstItem="jr6-op-QQ2" firstAttribute="leading" secondItem="kfs-Ez-Yp6" secondAttribute="leading" id="d9l-cb-r1q"/>
+                                    <constraint firstItem="jr6-op-QQ2" firstAttribute="centerY" secondItem="kfs-Ez-Yp6" secondAttribute="centerY" priority="250" id="faH-qF-TZY"/>
+                                    <constraint firstAttribute="trailing" secondItem="jr6-op-QQ2" secondAttribute="trailing" id="rlm-Xb-Or4"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="75E-uJ-wMn"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="g0e-VB-akM"/>
+                            </scrollView>
+                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="366" placeholderIntrinsicHeight="67" translatesAutoresizingMaskIntoConstraints="NO" id="ltP-4H-YOy" customClass="ProgressView" customModule="Stopp_Corona">
+                                <rect key="frame" x="24" y="60" width="366" height="67"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="currentStep">
+                                        <integer key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="numberOfSteps">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ltP-4H-YOy" secondAttribute="trailing" constant="24" id="Ds8-u8-CxU"/>
+                            <constraint firstItem="ltP-4H-YOy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="M3v-Xk-9Wf"/>
+                            <constraint firstItem="kfs-Ez-Yp6" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="TGZ-dH-uQI"/>
+                            <constraint firstItem="kfs-Ez-Yp6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="XL6-1I-W3F"/>
+                            <constraint firstItem="kfs-Ez-Yp6" firstAttribute="top" secondItem="ltP-4H-YOy" secondAttribute="bottom" id="dPd-BD-gqF"/>
+                            <constraint firstItem="ltP-4H-YOy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="tBN-ah-KPk"/>
+                            <constraint firstItem="kfs-Ez-Yp6" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="tdo-hE-zcX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="checkboxLabelView" destination="zep-CN-78Q" id="JgQ-au-HC3"/>
+                        <outlet property="descriptionLabel" destination="Io5-tr-q3t" id="Ikk-ae-crL"/>
+                        <outlet property="reportStatusButton" destination="LOR-hg-JSM" id="QVY-Ru-fRc"/>
+                        <outlet property="scrollView" destination="kfs-Ez-Yp6" id="71y-7L-lUn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="ccBlack">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
