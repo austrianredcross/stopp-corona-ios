@@ -32,7 +32,7 @@ final class RevokeSicknessStatusReportViewController: UIViewController,
         title = "revoke_sickness_title".localized
 
         if let dateLabel = viewModel?.dateLabel, let transKey = descriptionLabel.transKey {
-            descriptionLabel.styledText = String(format: transKey.localized.replacingOccurrences(of: "%s", with: "%@"), dateLabel)
+            descriptionLabel.styledText = String(format: transKey.localized, dateLabel)
         }
 
         checkboxLabelView.handleTap = { [weak self] isChecked in
