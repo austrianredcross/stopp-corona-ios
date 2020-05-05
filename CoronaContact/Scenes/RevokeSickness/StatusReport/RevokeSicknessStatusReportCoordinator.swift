@@ -22,9 +22,6 @@ final class RevokeSicknessStatusReportCoordinator: Coordinator, ErrorPresentable
         navigationController.pushViewController(rootViewController, animated: true)
     }
 
-    override func finish(animated: Bool = false) {
-    }
-
     func goBackToTanConfirmation() {
         navigationController.popViewController(animated: true)
     }
