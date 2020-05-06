@@ -5,7 +5,7 @@
 
 import UIKit
 
-class ContactCoordinator: Coordinator {
+class ContactCoordinator: Coordinator, ShareSheetPresentable {
     var navigationController: UINavigationController
 
     lazy var rootViewController: ContactViewController = {
@@ -32,6 +32,10 @@ class ContactCoordinator: Coordinator {
         let child = ContactHelpCoordinator(navigationController: navigationController)
         addChildCoordinator(child)
         child.start()
+    }
+
+    func shareApp() {
+        presentShareAppActivity()
     }
 
     func microphoneInfo() {

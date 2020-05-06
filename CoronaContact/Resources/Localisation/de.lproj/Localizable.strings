@@ -400,3 +400,9 @@
 "revocation_voluntary_quarantine_completed_description"                      = "Vielen Dank, dass Sie sich in Quarantäne begeben haben. Sie können die Quarantäne beenden.";
 "revocation_all_clear_headline"                                              = "Status Update";
 "revocation_all_clear_description"                                           = "Der Verdachtsfall bei einem oder mehrerer Ihrer Kontakte hat sich nicht bestätigt. Sie können die Quarantäne beenden. ";
+"share_app_card_headline"                                                    = "Teilen Sie die App!";
+"share_app_card_description"                                                 = "Teilen Sie die App und schützen Sie so sich und Ihr Umfeld.";
+"share_app_card_button"                                                      = "App teilen";
+"contact_share_app_button"                                                   = "Teilen Sie die App";
+"start_menu_item_share_app"                                                  = "App teilen";
+"share_app_content"                                                          = "Installieren Sie jetzt die STOPP Corona App!\nSo schützen Sie sich und Ihr Umfeld.\n%@";

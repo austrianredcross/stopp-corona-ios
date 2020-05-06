@@ -179,6 +179,10 @@ class MainViewModel: ViewModel {
         coordinator?.startMenu()
     }
 
+    func shareApp() {
+        coordinator?.shareApp()
+    }
+
     func selfTesting() {
         coordinator?.selfTesting()
     }
