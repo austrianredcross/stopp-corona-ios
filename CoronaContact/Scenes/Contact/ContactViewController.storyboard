@@ -21,33 +21,52 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="698"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ljj-Mi-rpw">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="562.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="634.5"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="t0b-Vs-8yX" customClass="BackgroundStackView" customModule="Stopp_Corona" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="51.5"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="t0b-Vs-8yX" customClass="BackgroundStackView" customModule="Stopp_Corona" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="123.5"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="contact_headline" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="srq-vm-GUw" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="20.5"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="7cP-l3-954">
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="51.5"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="contact_headline" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="srq-vm-GUw" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="414" height="20.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="contact_headline"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="bold"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </label>
+                                                            <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tIK-iv-2FY" customClass="TransButton" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="20.5" width="414" height="31"/>
+                                                                <inset key="contentEdgeInsets" minX="0.0" minY="5" maxX="0.0" maxY="4"/>
+                                                                <inset key="imageEdgeInsets" minX="6" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                                <state key="normal" title="contact_help_button" image="exclamationMark">
+                                                                    <color key="titleColor" name="ccBrownGrey"/>
+                                                                </state>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="transKeyNormal" value="contact_help_button"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="helpButtonPressed:" destination="0DV-8a-Pct" eventType="touchUpInside" id="d6U-yE-jx1"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nSQ-Ap-G3C" customClass="ShareButton" customModule="Stopp_Corona" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="67.5" width="414" height="56"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="56" id="OGa-U6-zT9"/>
+                                                        </constraints>
+                                                        <state key="normal" title="contact_share_app_button"/>
                                                         <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="contact_headline"/>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="bold"/>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tIK-iv-2FY" customClass="TransButton" customModule="Stopp_Corona" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="20.5" width="414" height="31"/>
-                                                        <inset key="contentEdgeInsets" minX="0.0" minY="5" maxX="0.0" maxY="4"/>
-                                                        <inset key="imageEdgeInsets" minX="6" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                        <state key="normal" title="contact_help_button" image="exclamationMark">
-                                                            <color key="titleColor" name="ccBrownGrey"/>
-                                                        </state>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="transKeyNormal" value="contact_help_button"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="transKeyNormal" value="contact_share_app_button"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="normalStyle" value="boldWhite"/>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <action selector="helpButtonPressed:" destination="0DV-8a-Pct" eventType="touchUpInside" id="d6U-yE-jx1"/>
+                                                            <action selector="shareAppButtonPressed:" destination="0DV-8a-Pct" eventType="touchUpInside" id="C7E-ub-XOt"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -61,7 +80,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="pmA-4h-8f9">
-                                                <rect key="frame" x="0.0" y="51.5" width="414" height="355"/>
+                                                <rect key="frame" x="0.0" y="123.5" width="414" height="355"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="permissions_missing" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5M0-Ul-Ef9" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
                                                         <rect key="frame" x="8" y="40" width="398" height="20.5"/>
@@ -168,7 +187,7 @@
                                                 <edgeInsets key="layoutMargins" top="40" left="8" bottom="40" right="8"/>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Uon-4C-zjJ">
-                                                <rect key="frame" x="0.0" y="406.5" width="414" height="156"/>
+                                                <rect key="frame" x="0.0" y="478.5" width="414" height="156"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ebd-RC-mrb" userLabel="rounded rect view" customClass="SelectedRoundCornersView" customModule="Stopp_Corona" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>

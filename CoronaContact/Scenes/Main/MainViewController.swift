@@ -26,6 +26,7 @@ final class MainViewController: UIViewController, StoryboardBased, ViewModelBase
     @IBOutlet weak var revocationStatusView: QuarantineNotificationView!
     @IBOutlet weak var historyButton: TransButton!
     @IBOutlet weak var notificationStackView: UIStackView!
+    @IBOutlet weak var shareAppCardView: ShareAppCardView!
     @IBOutlet weak var selfTestingStackView: UIStackView!
     @IBOutlet weak var sicknessCertificateStackView: UIStackView!
     @IBOutlet weak var automaticHandshakeInactiveView: UIView!
@@ -92,6 +93,7 @@ final class MainViewController: UIViewController, StoryboardBased, ViewModelBase
         configureUserHealthstatusView()
         configureContactHealthStatusView()
         configureRevocationStatusView()
+        configureShareAppCardView()
         configureSelfTestingView()
         configureSicknessCertificateView()
         configureAutomationHandshakeView()
@@ -219,6 +221,12 @@ final class MainViewController: UIViewController, StoryboardBased, ViewModelBase
         }
 
         backgroundHandshakeSwitch.isEnabled = !viewModel.hasAttestedSickness
+    }
+
+    private func configureShareAppCardView() {
+        shareAppCardView.handlePrimaryTap = { [weak self] in
+            self?.viewModel?.shareApp()
+        }
     }
 
     private func configureSelfTestingView() {

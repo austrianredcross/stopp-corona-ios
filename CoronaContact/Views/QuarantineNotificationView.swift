@@ -147,12 +147,7 @@ class QuarantineNotificationView: UIView, NibOwnerLoadable {
 
     private func configureView() {
         innerView.layer.cornerRadius = 10
-        innerView.addShadow(
-            ofColor: UIColor.ccBlack,
-            radius: 8,
-            offset: CGSize(width: 2, height: 2),
-            opacity: 0.23
-        )
+        innerView.addStandardShadow()
 
         let tap = UITapGestureRecognizer(target: self, action: #selector(tappedView))
         innerView.isUserInteractionEnabled = true
