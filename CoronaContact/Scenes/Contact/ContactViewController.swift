@@ -203,9 +203,7 @@ extension ContactViewController: UITableViewDataSource {
 
             let cell = tableView.dequeueReusableCell(for: indexPath) as ContactLabelTableViewCell
             let remoteId = viewModel.ownRemoteId
-            remoteId.withCString { remoteId in
-                cell.label.styledText = String(format: "contact_your_id".localized, remoteId)
-            }
+            cell.label.styledText = String(format: "contact_your_id".localized, remoteId)
             return cell
         case .selectAll:
             let cell = tableView.dequeueReusableCell(for: indexPath) as ContactTableViewCell

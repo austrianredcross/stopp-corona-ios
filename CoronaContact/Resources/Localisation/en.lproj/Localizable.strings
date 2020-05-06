@@ -198,7 +198,7 @@
 "sickness_certificate_confirmation_primary_button"                           = "Back to home screen";
 "sickness_certificate_quarantine_guidelines_title"                           = "Quarantine information";
 "sickness_certificate_quarantine_guidelines_headline"                        = "Officially sick";
-"sickness_certificate_quarantine_guidelines_date"                            = "You officially reported coronavirus on %s.";
+"sickness_certificate_quarantine_guidelines_date"                            = "You officially reported coronavirus on %@.";
 "sickness_certificate_quarantine_guidelines_date_format"                     = "dd.MM.yyyy";
 "sickness_certificate_quarantine_guidelines_steps_headline"                  = "Please stay in quarantine!";
 "sickness_certificate_quarantine_guidelines_steps_quarantine_end"            = "Your doctor will decide when you can end the quarantine.";
@@ -230,6 +230,7 @@
 "sickness_certificate_attest_headline"                                       = "Infection reported";
 "sickness_certificate_attest_description"                                    = "Please remain in quarantine. You have officially declared yourself ill with the coronavirus.";
 "sickness_certificate_attest_button"                                         = "Self-quarantine";
+"sickness_certificate_attest_button_revoke"                                  = "Revoke sick note";
 "start_menu_headline_1"                                                      = "Info";
 "start_menu_item_1_1_what_does_the_app_do"                                   = "What can this app do?";
 "start_menu_item_1_2_faq_link"                                               = "FAQ at roteskreuz.at";
@@ -244,6 +245,7 @@
 "start_menu_item_3_1_trigger_manual_handshake"                               = "Start handshake manually";
 "start_menu_item_3_2_check_symptoms"                                         = "Examine symptoms";
 "start_menu_item_3_3_report_positive_doctors_diagnosis"                      = "Report medical confirmation";
+"start_menu_item_revoke_sickness"                                            = "Revoke sick note";
 "history_title"                                                              = "Saved encounters";
 "history_intro"                                                              = "<b>The encounters are stored anonymously.</b> In case of infection your contacts are automatically notified anonymously. ";
 "history_date"                                                               = "Date";
@@ -406,3 +408,17 @@
 "contact_share_app_button"                                                   = "Share the app";
 "start_menu_item_share_app"                                                  = "Share App";
 "share_app_content"                                                          = "Install the STOPP Corona App now!\nIn this way you protect yourself and your environment.\n%@";
+"revoke_sickness_title"                                                      = "Change Status";
+"revoke_sickness_headline"                                                   = "Please enter your data";
+"revoke_sickness_personal_data_description"                                  = "After the next step, we will anonymously inform your previously informed contacts that you are withdrawing the sick note. We will validate the mobile number so that we can prevent misuse of this function.";
+"revoke_sickness_report_title"                                               = "Revoke infection message";
+"revoke_sickness_report_headline"                                            = "Was your sick call an accident?";
+"revoke_sickness_report_dateformat"                                          = "dd.MM.yyyy";
+"revoke_sickness_report_description"                                         = "You have informed your contacts at the %s that you are infected with the coronavirus\n\nIf this message was an accident, please inform your contacts immediately. This will work automatically and anonymously if you confirm it here.";
+"revoke_sickness_report_approval"                                            = "I hereby confirm that the sick note was not truthful.";
+"revoke_sickness_report_action"                                              = "Revoke infection message";
+"revoke_sickness_success_headline"                                           = "Infection message revoked";
+"revoke_sickness_success_description_1"                                      = "Thank you for updating your information and thus contributing significantly to a transparent procedure and the common good.";
+"revoke_sickness_success_description_2"                                      = "Your contacts will be anonymously notified that it was not a corona infection.";
+"revoke_sickness_success_description_3"                                      = "We wish you all the best for the future!";
+"revoke_sickness_success_finish"                                             = "Back to the start page";
