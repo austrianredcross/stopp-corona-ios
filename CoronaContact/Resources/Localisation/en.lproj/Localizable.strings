@@ -230,6 +230,7 @@
 "sickness_certificate_attest_headline"                                       = "Infection reported";
 "sickness_certificate_attest_description"                                    = "Please remain in quarantine. You have officially declared yourself ill with the coronavirus.";
 "sickness_certificate_attest_button"                                         = "Self-quarantine";
+"sickness_certificate_attest_button_revoke"                                  = "Revoke sick note";
 "start_menu_headline_1"                                                      = "Info";
 "start_menu_item_1_1_what_does_the_app_do"                                   = "What can this app do?";
 "start_menu_item_1_2_faq_link"                                               = "FAQ at roteskreuz.at";
