@@ -60,7 +60,7 @@
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="transKeyNormal" value="contact_help_faq_button"/>
-                                                            <userDefinedRuntimeAttribute type="image" keyPath="arrowImage" value="ArrowDiagonalUpRight"/>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="arrowImage" value="ExternalLinkIcon"/>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="normalStyle" value="bold"/>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
@@ -159,7 +159,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ArrowDiagonalUpRight" width="16" height="16"/>
+        <image name="ExternalLinkIcon" width="24" height="24"/>
         <image name="startMenuClose" width="20" height="21"/>
         <namedColor name="ccBlack">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
