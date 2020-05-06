@@ -89,7 +89,7 @@ class MainCoordinator: Coordinator, ShareSheetPresentable {
         child.start()
     }
 
-    func revokateSickness() {
+    func revokeSickness() {
         let child = RevokeSicknessPersonalDataCoordinator(navigationController: navigationController)
         addChildCoordinator(child)
         child.start()
