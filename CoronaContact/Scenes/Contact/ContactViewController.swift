@@ -127,6 +127,10 @@ final class ContactViewController: UIViewController, StoryboardBased, ViewModelB
     @IBAction func helpButtonPressed(_ sender: Any) {
         viewModel?.showHelp()
     }
+
+    @IBAction func shareAppButtonPressed(_ sender: Any) {
+        viewModel?.shareApp()
+    }
 }
 
 extension ContactViewController: UITableViewDelegate {

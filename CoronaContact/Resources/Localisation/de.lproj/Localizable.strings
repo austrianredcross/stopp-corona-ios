@@ -244,6 +244,7 @@
 "start_menu_item_3_1_trigger_manual_handshake"                               = "Handshake manuell starten";
 "start_menu_item_3_2_check_symptoms"                                         = "Symptome abprüfen";
 "start_menu_item_3_3_report_positive_doctors_diagnosis"                      = "Ärztliche Bestätigung melden";
+"start_menu_item_revoke_sickness"                                            = "Krankmeldung zurückziehen";
 "history_title"                                                              = "Gespeicherte Begegnungen";
 "history_intro"                                                              = "<b>Die Begegnungen werden anonym gespeichert.</b> In Ihrem Krankheitsfall werden Ihre Kontakte automatisch anonym benachrichtigt. ";
 "history_date"                                                               = "Datum";
@@ -401,7 +402,7 @@
 "revocation_all_clear_headline"                                              = "Status Update";
 "revocation_all_clear_description"                                           = "Der Verdachtsfall bei einem oder mehrerer Ihrer Kontakte hat sich nicht bestätigt. Sie können die Quarantäne beenden. ";
 "share_app_card_headline"                                                    = "Teilen Sie die App!";
-"share_app_card_description"                                                 = "Teilen Sie die App und schützen Sie so sich und Ihr Umfeld.";
+"share_app_card_description"                                                 = "Empfehlen Sie die App und schützen Sie so sich und Ihr Umfeld.";
 "share_app_card_button"                                                      = "App teilen";
 "contact_share_app_button"                                                   = "Teilen Sie die App";
 "start_menu_item_share_app"                                                  = "App teilen";
@@ -412,7 +413,7 @@
 "revoke_sickness_report_title"                                               = "Infektions-Meldung zurückziehen";
 "revoke_sickness_report_headline"                                            = "War Ihre Krankmeldung ein Versehen?";
 "revoke_sickness_report_dateformat"                                          = "dd.MM.yyyy";
-"revoke_sickness_report_description"                                         = "Sie haben Ihre Kontakte am %s darüber informiert, dass mit dem Coronavirus infiziert sind.\n\nWenn diese Meldung ein Versehen war, informieren Sie bitte umgehend Ihre Kontakte. Das funktioniert automatisch und anonym, wenn Sie dies hier bestätigen.";
+"revoke_sickness_report_description"                                         = "Sie haben Ihre Kontakte am %s darüber informiert, dass Sie mit dem Coronavirus infiziert sind.\n\nWenn diese Meldung ein Versehen war, informieren Sie bitte umgehend Ihre Kontakte. Das funktioniert automatisch und anonym, wenn Sie dies hier bestätigen.";
 "revoke_sickness_report_approval"                                            = "Hiermit bestätige ich, dass die Krankmeldung nicht wahrheitsgemäß war.";
 "revoke_sickness_report_action"                                              = "Infektions-Meldung zurückziehen";
 "revoke_sickness_success_headline"                                           = "Infektions-Meldung zurückgezogen";

@@ -55,12 +55,7 @@ class AppUpdateService {
     }
 
     private func openAppStore() {
-        guard let appStoreAppId = UIApplication.appStoreAppId else {
-            print("App Store App Id is not present")
-            return
-        }
-
-        guard let url = URL(string: "itms-apps://itunes.apple.com/app/\(appStoreAppId)"),
+        guard let url = UIApplication.appStoreAppDeepUrl,
             UIApplication.shared.canOpenURL(url) else {
                 print("Can't Open App Store on the simulator")
                 return

@@ -134,6 +134,10 @@ class ContactViewModel: ViewModel {
         coordinator?.showHelp()
     }
 
+    func shareApp() {
+        coordinator?.shareApp()
+    }
+
     func showMicrophoneInfo() {
         if UserDefaults.standard.hideMicrophoneInfoDialog {
             return

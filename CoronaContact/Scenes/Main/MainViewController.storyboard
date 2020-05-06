@@ -313,41 +313,19 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </stackView>
-                                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="KBR-9b-tF2" customClass="BackgroundStackView" customModule="Stopp_Corona" customModuleProvider="target">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="5ah-cw-edb" customClass="BackgroundStackView" customModule="Stopp_Corona" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="623.5" width="414" height="64"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="main_body_feel_today" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="37B-Zv-Nw6" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="32" width="414" height="0.0"/>
-                                                                <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <nil key="textColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                                <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="body"/>
-                                                                    <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="main_body_feel_today"/>
-                                                                </userDefinedRuntimeAttributes>
-                                                            </label>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bfi-C1-sqq" customClass="SecondaryButton" customModule="Stopp_Corona" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="32" width="414" height="0.0"/>
-                                                                <state key="normal" title="main_button_feel_today"/>
-                                                                <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="string" keyPath="transKeyNormal" value="main_button_feel_today"/>
-                                                                </userDefinedRuntimeAttributes>
-                                                                <connections>
-                                                                    <action selector="selfTestingTapped:" destination="cMg-fw-Upr" eventType="touchUpInside" id="ghd-0c-AOL"/>
-                                                                </connections>
-                                                            </button>
+                                                            <view contentMode="scaleToFill" id="AGc-IG-ele" customClass="ShareAppCardView" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                <rect key="frame" x="24" y="32" width="366" height="0.0"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </view>
                                                         </subviews>
-                                                        <edgeInsets key="layoutMargins" top="32" left="0.0" bottom="32" right="0.0"/>
+                                                        <edgeInsets key="layoutMargins" top="32" left="24" bottom="32" right="24"/>
                                                         <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="overrideVertMarginMulti">
-                                                                <real key="value" value="1"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="overrideHorztMarginMulti">
-                                                                <real key="value" value="1"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="overrideSpacingMulti">
-                                                                <real key="value" value="1"/>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="stackBackgroundColor">
+                                                                <color key="value" name="ccWhite"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </stackView>
@@ -387,7 +365,7 @@
                                                                 <real key="value" value="1"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="stackBackgroundColor">
-                                                                <color key="value" name="ccWhite"/>
+                                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </stackView>
@@ -425,6 +403,9 @@
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="overrideHorztMarginMulti">
                                                                 <real key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="stackBackgroundColor">
+                                                                <color key="value" name="ccWhite"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </stackView>
@@ -479,6 +460,7 @@
                         <outlet property="revocationWrapperView" destination="uRh-NA-Ut9" id="pgO-ro-7S6"/>
                         <outlet property="scrollView" destination="a38-gg-nus" id="waw-LS-sHX"/>
                         <outlet property="selfTestingStackView" destination="GTB-hm-U6b" id="Vq7-Ha-tVa"/>
+                        <outlet property="shareAppCardView" destination="AGc-IG-ele" id="qfB-rq-zWe"/>
                         <outlet property="sicknessCertificateStackView" destination="xbI-dq-Sh6" id="WDz-cR-OwM"/>
                         <outlet property="userHealthStatusView" destination="V0K-Xc-uxn" id="Y8j-fu-Rmk"/>
                         <outlet property="userHealthWrapperView" destination="YI5-cn-OEb" id="anW-gl-P3V"/>

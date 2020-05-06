@@ -244,6 +244,7 @@
 "start_menu_item_3_1_trigger_manual_handshake"                               = "Start handshake manually";
 "start_menu_item_3_2_check_symptoms"                                         = "Examine symptoms";
 "start_menu_item_3_3_report_positive_doctors_diagnosis"                      = "Report medical confirmation";
+"start_menu_item_revoke_sickness"                                            = "Revoke sick note";
 "history_title"                                                              = "Saved encounters";
 "history_intro"                                                              = "<b>The encounters are stored anonymously.</b> In case of infection your contacts are automatically notified anonymously. ";
 "history_date"                                                               = "Date";

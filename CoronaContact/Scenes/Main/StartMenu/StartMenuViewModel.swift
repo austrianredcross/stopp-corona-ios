@@ -44,6 +44,10 @@ class StartMenuViewModel: ViewModel {
         coordinator?.sicknessCertificate()
     }
 
+    func shareApp() {
+        coordinator?.shareApp()
+    }
+
     func aboutApp() {
         coordinator?.openOnboarding()
     }
