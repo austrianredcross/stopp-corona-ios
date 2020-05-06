@@ -17,6 +17,7 @@ class StartMenuViewModel: ViewModel {
     var isSelfTestFunctionAvailable: Bool {
         !(repository.isProbablySick || repository.hasAttestedSickness)
     }
+    var hasAttestedSickness: Bool { repository.hasAttestedSickness }
 
     init(with coordinator: StartMenuCoordinator) {
         self.coordinator = coordinator
@@ -42,6 +43,10 @@ class StartMenuViewModel: ViewModel {
 
     func reportPositiveDoctorsDiagnosis() {
         coordinator?.sicknessCertificate()
+    }
+
+    func revokeSickness() {
+        coordinator?.revokeSickness()
     }
 
     func shareApp() {
