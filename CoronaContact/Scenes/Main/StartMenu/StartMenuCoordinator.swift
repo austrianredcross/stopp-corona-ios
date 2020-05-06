@@ -40,6 +40,12 @@ class StartMenuCoordinator: Coordinator, ShareSheetPresentable {
         child.start()
     }
 
+    func revokeSickness() {
+        let child = RevokeSicknessPersonalDataCoordinator(navigationController: navigationController)
+        addChildCoordinator(child)
+        child.start()
+    }
+
     func shareApp() {
         presentShareAppActivity()
     }
