@@ -11,6 +11,7 @@ import Resolver
 enum StyleNames: String {
     case body
     case bodyCenter
+    case bodyLargeBoldRed
     case bodySmall
     case bold
     case boldWhite
@@ -40,6 +41,7 @@ private struct FontSettings {
     struct Size {
         let h1: CGFloat
         let h2: CGFloat
+        let bodyLarge: CGFloat
         let body: CGFloat
         let bodyMedium: CGFloat
         let bodySmall: CGFloat
@@ -49,6 +51,7 @@ private struct FontSettings {
     struct LineHeight {
         let h1: CGFloat
         let h2: CGFloat
+        let bodyLarge: CGFloat
         let body: CGFloat
         let bodyMedium: CGFloat
         let bodySmall: CGFloat
@@ -154,6 +157,17 @@ extension AppDelegate {
         Styles.register(StyleNames.bodySmall.rawValue, style: bodySmallStyle)
     }
 
+    private func registerBodyLargeStyles(settings: FontSettings) {
+        let bodyLargeBoldRed = Style({
+            $0.font = UIFont.systemFont(ofSize: settings.size.bodyLarge, weight: .bold)
+            $0.color = UIColor.ccRouge
+            $0.minimumLineHeight = settings.height.body
+            $0.maximumLineHeight = settings.height.body
+        })
+        Styles.register(StyleNames.bodyLargeBoldRed.rawValue, style: bodyLargeBoldRed)
+
+    }
+
     private func registerHeadlineStyles(settings: FontSettings) {
         let h1Style = settings.h1FontStyle(weight: .bold).byAdding {
             $0.color = UIColor.ccRouge
@@ -194,6 +208,7 @@ extension AppDelegate {
             size: FontSettings.Size(
                 h1: 24,
                 h2: 20,
+                bodyLarge: 16,
                 body: 16,
                 bodyMedium: 16,
                 bodySmall: 16,
@@ -202,6 +217,7 @@ extension AppDelegate {
             height: FontSettings.LineHeight(
                 h1: 32,
                 h2: 24,
+                bodyLarge: 22,
                 body: 22,
                 bodyMedium: 22,
                 bodySmall: 22,
@@ -215,6 +231,7 @@ extension AppDelegate {
                 settings.size = FontSettings.Size(
                     h1: 28,
                     h2: 20,
+                    bodyLarge: 22,
                     body: 18,
                     bodyMedium: 16,
                     bodySmall: 16,
@@ -223,6 +240,7 @@ extension AppDelegate {
                 settings.height = FontSettings.LineHeight(
                     h1: 36,
                     h2: 24,
+                    bodyLarge: 24,
                     body: 24,
                     bodyMedium: 22,
                     bodySmall: 22,
@@ -232,6 +250,7 @@ extension AppDelegate {
                 settings.size = FontSettings.Size(
                     h1: 32,
                     h2: 20,
+                    bodyLarge: 24,
                     body: 20,
                     bodyMedium: 18,
                     bodySmall: 16,
@@ -240,6 +259,7 @@ extension AppDelegate {
                 settings.height = FontSettings.LineHeight(
                     h1: 40,
                     h2: 24,
+                    bodyLarge: 28,
                     body: 28,
                     bodyMedium: 24,
                     bodySmall: 22,
@@ -252,6 +272,7 @@ extension AppDelegate {
 
         registerBoldStyles(settings: settings)
         registerBodyStyles(settings: settings)
+        registerBodyLargeStyles(settings: settings)
         registerBodySmallStyles(settings: settings)
         registerHeadlineStyles(settings: settings)
         registerModifiers()
