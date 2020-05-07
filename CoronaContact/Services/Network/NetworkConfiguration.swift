@@ -5,20 +5,26 @@
 
 import Foundation
 
-enum NetworkConfiguration {
+enum NetworkConfiguration: ConfigurationRetrievable {
 
     static var baseURL: URL = {
-        guard let urlString = Bundle.main.object(forInfoDictionaryKey: "ApiBaseUrl") as? String,
-            let url = URL(string: urlString) else {
-                fatalError("The `ApiBaseUrl` key in the Info.plist does not exist or isn't valid.")
-        }
-
-        return url
+        AppConfiguration.value(for: "API_BASE_URL") { URL(string: $0)! }
+    }()
+    static var smsBaseURL: URL = {
+        AppConfiguration.value(for: "API_SMS_BASE_URL") { URL(string: $0)! }
     }()
     static let authorizationKey: String = {
-        guard let authorizationKey = Bundle.main.object(forInfoDictionaryKey: "ApiAuthorizationKey") as? String,
-            !authorizationKey.isEmpty else {
-                fatalError("The `ApiAuthorizationKey` key in the Info.plist does not exist or isn't valid.")
+        let authorizationKey: String = AppConfiguration.value(for: "API_AUTHORIZATION_KEY")
+        guard !authorizationKey.isEmpty else {
+            fatalError("The `API_AUTHORIZATION_KEY` key in the Info.plist isn't valid.")
+        }
+
+        return authorizationKey
+    }()
+    static let smsAuthorizationKey: String = {
+        let authorizationKey: String = AppConfiguration.value(for: "API_SMS_AUTHORIZATION_KEY")
+        guard !authorizationKey.isEmpty else {
+            fatalError("The `API_SMS_AUTHORIZATION_KEY` key in the Info.plist isn't valid.")
         }
 
         return authorizationKey
