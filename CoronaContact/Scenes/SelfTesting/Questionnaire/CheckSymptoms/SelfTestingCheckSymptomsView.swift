@@ -29,8 +29,8 @@ final class SelfTestingCheckSymptomsView: UIView, NibLoadable {
             return
         }
 
-        questionTitle.text = question.title
-        questionText.text = question.questionText
+        questionTitle.styledText = question.title
+        questionText.styledText = question.questionText
 
         addAnswers(question.answers)
     }

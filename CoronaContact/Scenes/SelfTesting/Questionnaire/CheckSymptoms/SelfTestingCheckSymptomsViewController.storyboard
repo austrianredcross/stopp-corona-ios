@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0DV-8a-Pct">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0DV-8a-Pct">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -72,7 +72,7 @@
                             <constraint firstItem="8QV-4c-6Gt" firstAttribute="leading" secondItem="kOk-2h-9pJ" secondAttribute="leading" constant="24" id="e4N-2V-aAM"/>
                             <constraint firstItem="pDi-ZF-KNl" firstAttribute="top" secondItem="kOk-2h-9pJ" secondAttribute="top" id="jss-e8-wSh"/>
                             <constraint firstItem="8QV-4c-6Gt" firstAttribute="top" relation="lessThanOrEqual" secondItem="pDi-ZF-KNl" secondAttribute="bottom" constant="64" id="pJM-JW-QSE"/>
-                            <constraint firstItem="8QV-4c-6Gt" firstAttribute="top" relation="greaterThanOrEqual" secondItem="pDi-ZF-KNl" secondAttribute="bottom" constant="16" id="qcu-BS-oiu"/>
+                            <constraint firstItem="8QV-4c-6Gt" firstAttribute="top" relation="greaterThanOrEqual" secondItem="pDi-ZF-KNl" secondAttribute="bottom" constant="12" id="qcu-BS-oiu"/>
                             <constraint firstItem="kOk-2h-9pJ" firstAttribute="bottom" secondItem="8QV-4c-6Gt" secondAttribute="bottom" constant="24" id="xdR-sh-cwW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kOk-2h-9pJ"/>
