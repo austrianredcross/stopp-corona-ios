@@ -2,13 +2,19 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>API_AUTHORIZATION_KEY</key>
+	<string>${API_AUTHORIZATION_KEY}</string>
+	<key>API_BASE_URL</key>
+	<string>${API_BASE_URL}</string>
 	<key>API_HOST</key>
 	<string>${API_HOST}</string>
-	<key>ApiAuthorizationKey</key>
-	<string>${API_AUTHORIZATION_KEY}</string>
-	<key>ApiBaseUrl</key>
-	<string>${API_BASE_URL}</string>
-	<key>AppStoreAppID</key>
+	<key>API_SMS_AUTHORIZATION_KEY</key>
+	<string>${API_SMS_AUTHORIZATION_KEY}</string>
+	<key>API_SMS_BASE_URL</key>
+	<string>${API_SMS_BASE_URL}</string>
+	<key>API_SMS_HOST</key>
+	<string>${API_SMS_HOST}</string>
+	<key>APP_STORE_APP_ID</key>
 	<string>1503717224</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>

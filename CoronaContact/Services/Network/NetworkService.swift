@@ -51,7 +51,8 @@ final class NetworkService {
     }
 
     func requestTan(mobileNumber: String, completion: @escaping (Result<RequestTanResponse, DisplayableError>) -> Void) {
-        client.request(.requestTan(mobileNumber)) { (result: Result<RequestTanResponse, NetworkError>) in
+        let requestTan = RequestTan(phoneNumber: mobileNumber)
+        client.request(.requestTan(requestTan)) { (result: Result<RequestTanResponse, NetworkError>) in
             switch result {
             case let .failure((.unknownError(statusCode, _, _))):
                 completion(.failure(self.parseTanEror(statusCode: statusCode)))
