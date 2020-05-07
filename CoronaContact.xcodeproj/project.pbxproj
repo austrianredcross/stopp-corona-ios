@@ -36,6 +36,7 @@
 		4E1AAEFB2461870700D43E2B /* RevokeSicknessConfirmationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1AAEF72461870700D43E2B /* RevokeSicknessConfirmationCoordinator.swift */; };
 		4E1AAEFC2461870700D43E2B /* RevokeSicknessConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1AAEF82461870700D43E2B /* RevokeSicknessConfirmationViewController.swift */; };
 		4E1AAEFD2461870700D43E2B /* RevokeSicknessConfirmationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1AAEF92461870700D43E2B /* RevokeSicknessConfirmationViewModel.swift */; };
+		4E1F2EC324646B550088B8F8 /* sms.der in Resources */ = {isa = PBXBuildFile; fileRef = 4E1F2EC224646B550088B8F8 /* sms.der */; };
 		4E360818242350D900789ABF /* CryptoServices+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E360817242350D900789ABF /* CryptoServices+Injection.swift */; };
 		4E44EDEB2424D076000CC695 /* ContactLabelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E44EDEA2424D076000CC695 /* ContactLabelTableViewCell.xib */; };
 		4E44EDED2424F4AC000CC695 /* HistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E44EDEC2424F4AC000CC695 /* HistoryTableViewCell.xib */; };
@@ -86,6 +87,8 @@
 		611B78BA242816950040CCB3 /* UIApplication+AppStoreAppId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611B78B8242816950040CCB3 /* UIApplication+AppStoreAppId.swift */; };
 		611B78BE242816BE0040CCB3 /* AppUpdateService+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611B78BC242816BE0040CCB3 /* AppUpdateService+Injection.swift */; };
 		611B78BF242816BE0040CCB3 /* AppUpdateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611B78BD242816BE0040CCB3 /* AppUpdateService.swift */; };
+		612C4600246414260072ECF7 /* ConfigurationRetrievable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612C45FF246414260072ECF7 /* ConfigurationRetrievable.swift */; };
+		612C460224641C620072ECF7 /* RequestTan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612C460124641C620072ECF7 /* RequestTan.swift */; };
 		613AF72B24616A8B0089085E /* ShareButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613AF72A24616A8B0089085E /* ShareButton.swift */; };
 		613AF72D24618DE80089085E /* Coordinator+ShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613AF72C24618DE80089085E /* Coordinator+ShareSheet.swift */; };
 		613E35F5242E3F65009421A8 /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613E35F1242E3F64009421A8 /* LaunchScreenViewController.swift */; };
@@ -372,6 +375,7 @@
 		4E1AAEF72461870700D43E2B /* RevokeSicknessConfirmationCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RevokeSicknessConfirmationCoordinator.swift; sourceTree = "<group>"; };
 		4E1AAEF82461870700D43E2B /* RevokeSicknessConfirmationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RevokeSicknessConfirmationViewController.swift; sourceTree = "<group>"; };
 		4E1AAEF92461870700D43E2B /* RevokeSicknessConfirmationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RevokeSicknessConfirmationViewModel.swift; sourceTree = "<group>"; };
+		4E1F2EC224646B550088B8F8 /* sms.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = sms.der; sourceTree = "<group>"; };
 		4E32299D242345FB00F60053 /* CoronaContactTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoronaContactTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E3229A1242345FB00F60053 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E360817242350D900789ABF /* CryptoServices+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CryptoServices+Injection.swift"; sourceTree = "<group>"; };
@@ -425,6 +429,8 @@
 		611B78B8242816950040CCB3 /* UIApplication+AppStoreAppId.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+AppStoreAppId.swift"; sourceTree = "<group>"; };
 		611B78BC242816BE0040CCB3 /* AppUpdateService+Injection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppUpdateService+Injection.swift"; sourceTree = "<group>"; };
 		611B78BD242816BE0040CCB3 /* AppUpdateService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppUpdateService.swift; sourceTree = "<group>"; };
+		612C45FF246414260072ECF7 /* ConfigurationRetrievable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationRetrievable.swift; sourceTree = "<group>"; };
+		612C460124641C620072ECF7 /* RequestTan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestTan.swift; sourceTree = "<group>"; };
 		613AF72A24616A8B0089085E /* ShareButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareButton.swift; sourceTree = "<group>"; };
 		613AF72C24618DE80089085E /* Coordinator+ShareSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Coordinator+ShareSheet.swift"; sourceTree = "<group>"; };
 		613E35F1242E3F64009421A8 /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
@@ -1021,6 +1027,7 @@
 				839743E9E3569B229703A3F8 /* OutgoingInfectionMessage.swift */,
 				614BA9FE2423C334006797AA /* Question.swift */,
 				614BA9FF2423C334006797AA /* Questionnaire.swift */,
+				612C460124641C620072ECF7 /* RequestTan.swift */,
 				6153A4F82425993B006A8570 /* RequestTanResponse.swift */,
 				614BAA032423C334006797AA /* SuccessResponse.swift */,
 				4B25BA9C2429592A00CDD1CF /* UserHealthStatus.swift */,
@@ -1185,6 +1192,7 @@
 				6153A4F424259932006A8570 /* NotificationToken.swift */,
 				61032064243E0AE400ED3A20 /* FlashableScrollIndicators.swift */,
 				8922A16D243DF094004E9D42 /* Observable.swift */,
+				612C45FF246414260072ECF7 /* ConfigurationRetrievable.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -1377,6 +1385,7 @@
 		61FABC9E2431EBDE0085786B /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
+				4E1F2EC224646B550088B8F8 /* sms.der */,
 				4ED175BB245836F100248D3B /* server.der */,
 				4ED175B9245836E000248D3B /* GoogleService-Info.plist */,
 				61AB6EF024573737006B4190 /* Secrets.xcconfig */,
@@ -1789,6 +1798,7 @@
 				4E44EDEB2424D076000CC695 /* ContactLabelTableViewCell.xib in Resources */,
 				61546541242CBE7F0003D3D3 /* SelfMonitoringGuidelinesViewController.storyboard in Resources */,
 				614D72302429084B00CC545D /* SelfTestingTanConfirmationViewController.storyboard in Resources */,
+				4E1F2EC324646B550088B8F8 /* sms.der in Resources */,
 				4E0B3E45241F995E00EF60EE /* LaunchScreen.storyboard in Resources */,
 				613E35F6242E3F65009421A8 /* LaunchScreenViewController.storyboard in Resources */,
 				6103207C243F28A000ED3A20 /* en.privacy-and-terms-of-use.html in Resources */,
@@ -2087,6 +2097,7 @@
 				614A001A243CB13E00ACBD0A /* SelfTestingConsentCoordinator.swift in Sources */,
 				614BAA0A2423C334006797AA /* ErrorResponse.swift in Sources */,
 				61BB41DB2436845F0083053B /* Date+daysUntil.swift in Sources */,
+				612C460224641C620072ECF7 /* RequestTan.swift in Sources */,
 				6153A52324264A2D006A8570 /* ActivityPresentableType.swift in Sources */,
 				839748117E82124039816540 /* AppDelegate+Injection.swift in Sources */,
 				4ED175B52458347400248D3B /* DebugNavigationController.swift in Sources */,
@@ -2122,6 +2133,7 @@
 				615D36342437417600B608AB /* AttestedSicknessGuidelinesViewController.swift in Sources */,
 				4EDB47F42421EE02000CE24A /* AppDelegate+FontStyles.swift in Sources */,
 				9215254D2427C74A0023F469 /* SelfTestingSelfMonitoringViewModel.swift in Sources */,
+				612C4600246414260072ECF7 /* ConfigurationRetrievable.swift in Sources */,
 				6153A4FF24259953006A8570 /* FloatingTextField.swift in Sources */,
 				4EC81FB72423844E00179CE9 /* SecondaryButton.swift in Sources */,
 				6154654A242CBEA60003D3D3 /* SuspicionGuidelinesViewController.swift in Sources */,
