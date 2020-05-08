@@ -103,10 +103,6 @@
 		61459A53242ABFE200DC88A7 /* de.terms-of-use.html in Resources */ = {isa = PBXBuildFile; fileRef = 61459A52242ABFE200DC88A7 /* de.terms-of-use.html */; };
 		61459A55242AC15F00DC88A7 /* de.privacy-and-terms-of-use.html in Resources */ = {isa = PBXBuildFile; fileRef = 61459A54242AC15F00DC88A7 /* de.privacy-and-terms-of-use.html */; };
 		61459A57242AC48800DC88A7 /* Website.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61459A56242AC48800DC88A7 /* Website.swift */; };
-		614A001A243CB13E00ACBD0A /* SelfTestingConsentCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614A0016243CB13E00ACBD0A /* SelfTestingConsentCoordinator.swift */; };
-		614A001B243CB13E00ACBD0A /* SelfTestingConsentViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 614A0017243CB13E00ACBD0A /* SelfTestingConsentViewController.storyboard */; };
-		614A001C243CB13E00ACBD0A /* SelfTestingConsentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614A0018243CB13E00ACBD0A /* SelfTestingConsentViewController.swift */; };
-		614A001D243CB13F00ACBD0A /* SelfTestingConsentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614A0019243CB13E00ACBD0A /* SelfTestingConsentViewModel.swift */; };
 		614A001F243CB22800ACBD0A /* SelfTestingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614A001E243CB22800ACBD0A /* SelfTestingCoordinator.swift */; };
 		614A0025243CF8DD00ACBD0A /* Date+addDays.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614A0024243CF8DD00ACBD0A /* Date+addDays.swift */; };
 		614A0027243CFB3500ACBD0A /* BubbleArrowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614A0026243CFB3400ACBD0A /* BubbleArrowButton.swift */; };
@@ -445,10 +441,6 @@
 		61459A52242ABFE200DC88A7 /* de.terms-of-use.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "de.terms-of-use.html"; sourceTree = "<group>"; };
 		61459A54242AC15F00DC88A7 /* de.privacy-and-terms-of-use.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "de.privacy-and-terms-of-use.html"; sourceTree = "<group>"; };
 		61459A56242AC48800DC88A7 /* Website.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Website.swift; sourceTree = "<group>"; };
-		614A0016243CB13E00ACBD0A /* SelfTestingConsentCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfTestingConsentCoordinator.swift; sourceTree = "<group>"; };
-		614A0017243CB13E00ACBD0A /* SelfTestingConsentViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelfTestingConsentViewController.storyboard; sourceTree = "<group>"; };
-		614A0018243CB13E00ACBD0A /* SelfTestingConsentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfTestingConsentViewController.swift; sourceTree = "<group>"; };
-		614A0019243CB13E00ACBD0A /* SelfTestingConsentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfTestingConsentViewModel.swift; sourceTree = "<group>"; };
 		614A001E243CB22800ACBD0A /* SelfTestingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfTestingCoordinator.swift; sourceTree = "<group>"; };
 		614A0024243CF8DD00ACBD0A /* Date+addDays.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+addDays.swift"; sourceTree = "<group>"; };
 		614A0026243CFB3400ACBD0A /* BubbleArrowButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BubbleArrowButton.swift; sourceTree = "<group>"; };
@@ -969,17 +961,6 @@
 				613E3614242E5AD9009421A8 /* MicrophoneInfoCoordinator.swift */,
 			);
 			path = MicrophoneInfo;
-			sourceTree = "<group>";
-		};
-		614A0015243CB0BF00ACBD0A /* Consent */ = {
-			isa = PBXGroup;
-			children = (
-				614A0016243CB13E00ACBD0A /* SelfTestingConsentCoordinator.swift */,
-				614A0017243CB13E00ACBD0A /* SelfTestingConsentViewController.storyboard */,
-				614A0018243CB13E00ACBD0A /* SelfTestingConsentViewController.swift */,
-				614A0019243CB13E00ACBD0A /* SelfTestingConsentViewModel.swift */,
-			);
-			path = Consent;
 			sourceTree = "<group>";
 		};
 		614BA9E22423C31C006797AA /* Network */ = {
@@ -1651,7 +1632,6 @@
 		92FFC9B024267C5F00CC541B /* SelfTesting */ = {
 			isa = PBXGroup;
 			children = (
-				614A0015243CB0BF00ACBD0A /* Consent */,
 				614D72112429057E00CC545D /* Questionnaire */,
 				614D7212242905A400CC545D /* Report */,
 				614A001E243CB22800ACBD0A /* SelfTestingCoordinator.swift */,
@@ -1813,7 +1793,6 @@
 				61D0F55024352E960026C91A /* RevocationTanConfirmationViewController.storyboard in Resources */,
 				6103207D243F28A000ED3A20 /* en.terms-of-use.html in Resources */,
 				61546555242D1A7D0003D3D3 /* AnswerView.xib in Resources */,
-				614A001B243CB13E00ACBD0A /* SelfTestingConsentViewController.storyboard in Resources */,
 				921525602427C7AA0023F469 /* SelfTestingSuspicionViewController.storyboard in Resources */,
 				614D723A242909C000CC545D /* SelfTestingConfirmationViewController.storyboard in Resources */,
 				4E019BDC242692E3004FF670 /* HistoryViewController.storyboard in Resources */,
@@ -2094,7 +2073,6 @@
 				4EDB47F82421F13E000CE24A /* OnboardingPageView.swift in Sources */,
 				6153A4DE242598DC006A8570 /* SicknessCertificateFlowController.swift in Sources */,
 				61C4A4812427B848004D18BB /* QuarantineNotificationView.swift in Sources */,
-				614A001A243CB13E00ACBD0A /* SelfTestingConsentCoordinator.swift in Sources */,
 				614BAA0A2423C334006797AA /* ErrorResponse.swift in Sources */,
 				61BB41DB2436845F0083053B /* Date+daysUntil.swift in Sources */,
 				612C460224641C620072ECF7 /* RequestTan.swift in Sources */,
@@ -2158,7 +2136,6 @@
 				614D723C242909C000CC545D /* SelfTestingConfirmationViewModel.swift in Sources */,
 				839740094A9E228FB41E3A8C /* ContactViewController.swift in Sources */,
 				614BAA092423C334006797AA /* Questionnaire.swift in Sources */,
-				614A001C243CB13E00ACBD0A /* SelfTestingConsentViewController.swift in Sources */,
 				6153A50324259953006A8570 /* InstructionsView.swift in Sources */,
 				61D0F54B24352E960026C91A /* RevocationStatusReportCoordinator.swift in Sources */,
 				61032065243E0AE400ED3A20 /* FlashableScrollIndicators.swift in Sources */,
@@ -2254,7 +2231,6 @@
 				83974C2CD7A816EE91AA6583 /* OutgoingInfectionMessage.swift in Sources */,
 				4ED175B82458347400248D3B /* DebugViewModel.swift in Sources */,
 				83974070AAD41799D50EE1F8 /* Contact.swift in Sources */,
-				614A001D243CB13F00ACBD0A /* SelfTestingConsentViewModel.swift in Sources */,
 				83974E1C0C969B298357EDD5 /* InfectionWarning.swift in Sources */,
 				839740A169112CCF5D5A3C10 /* MessageUpdateService.swift in Sources */,
 				839742207FE8739EB66870E3 /* MessageUpdate+injection.swift in Sources */,
