@@ -11,11 +11,14 @@ struct InfectionInfo: Codable {
 
     private enum CodingKeys: String, CodingKey {
         case
+        uuid,
         personalData = "personal-data",
         infectionMessages = "infection-messages",
         authorization
     }
 
+    /// An uuid which was requested via the `/request-tan` endpoint
+    let uuid: String
     let personalData: PersonalData
     let infectionMessages: [UploadInfectionMessage]
     let authorization: String
