@@ -21,7 +21,7 @@ class RevokeSicknessFlowController {
 
     var flow: Flow = .personalData
     var personalData: PersonalData?
-    var tanUuid: String?
+    var tanUUID: String?
     var infectionInfo: InfectionInfo?
     var infectionWarnings: [OutGoingInfectionWarningWithAddressPrefix] = []
 
@@ -31,7 +31,7 @@ class RevokeSicknessFlowController {
         networkService.requestTan(mobileNumber: personalData.mobileNumber) { [weak self] result in
             switch result {
             case .success(let response):
-                self?.tanUuid = response.uuid
+                self?.tanUUID = response.uuid
                 self?.flow = .tanConfirmation
                 completion(.success(()))
             case .failure(let error):
@@ -41,7 +41,7 @@ class RevokeSicknessFlowController {
     }
 
     func revokeSickness(tanNumber: String) {
-        guard let personalData = personalData, let tanUuid = tanUuid else {
+        guard let personalData = personalData, let tanUUID = tanUUID else {
             return
         }
 
@@ -55,7 +55,7 @@ class RevokeSicknessFlowController {
             UploadInfectionMessage(message: warning.outGoingInfectionWarning.base64encoded, addressPrefix: warning.addressPrefix)
         }
         flow = .statusReport
-        infectionInfo = InfectionInfo(uuid: tanUuid, personalData: personalData, infectionMessages: infectionMessages, authorization: tanNumber)
+        infectionInfo = InfectionInfo(uuid: tanUUID, personalData: personalData, infectionMessages: infectionMessages, authorization: tanNumber)
     }
 
     func submit(completion: @escaping (Result<Void, NetworkService.InfectionInfoError>) -> Void) {
