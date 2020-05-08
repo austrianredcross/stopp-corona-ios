@@ -21,6 +21,7 @@ class RevocationFlowController {
 
     var flow: Flow = .personalData
     var personalData: PersonalData?
+    var tanUUID: String?
     var infectionInfo: InfectionInfo?
     var infectionWarnings: [OutGoingInfectionWarningWithAddressPrefix] = []
 
@@ -29,7 +30,8 @@ class RevocationFlowController {
 
         networkService.requestTan(mobileNumber: personalData.mobileNumber) { [weak self] result in
             switch result {
-            case .success:
+            case .success(let response):
+                self?.tanUUID = response.uuid
                 self?.flow = .tanConfirmation
                 completion(.success(()))
             case .failure(let error):
@@ -39,7 +41,7 @@ class RevocationFlowController {
     }
 
     func statusReport(tanNumber: String) {
-        guard let personalData = personalData else {
+        guard let personalData = personalData, let tanUUID = tanUUID else {
             return
         }
 
@@ -49,7 +51,7 @@ class RevocationFlowController {
         }
 
         flow = .statusReport
-        infectionInfo = InfectionInfo(personalData: personalData, infectionMessages: infectionMessages, authorization: tanNumber)
+        infectionInfo = InfectionInfo(uuid: tanUUID, personalData: personalData, infectionMessages: infectionMessages, authorization: tanNumber)
     }
 
     func submit(completion: @escaping (Result<Void, NetworkService.InfectionInfoError>) -> Void) {
