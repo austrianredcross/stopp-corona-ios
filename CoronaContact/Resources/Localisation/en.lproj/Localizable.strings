@@ -23,10 +23,10 @@
 "onboarding_next_button"                                                     = "Continue";
 "onboarding_finish_buton"                                                    = "Finished";
 "onboarding_consent_headline"                                                = "Declaration of consent";
-"onboarding_consent_body_1"                                                  = "I agree that the Austrian Red Cross (ÖRK) may process my personal data (unique identification number [ID], my telephone number, and any suspicion and reporting of my COVID-19 condition [= health data]) for the purpose of achieving a rapid interruption of the corona infection chain. In addition, my public key will be shared with my intensive contacts for the purpose of issuing a warning in the event of a medically confirmed risk of infection.";
-"onboarding_consent_checkbox_label"                                          = "Yes, I consent to the processing of data.";
-"onboarding_consent_body_2"                                                  = "I may revoke my consent at any time and I may switch off the automatic contact initiation feature in the app. Revocation does not affect the lawfulness of processing up until the time that consent is revoked. ";
-"onboarding_consent_body_3"                                                  = "You can find further information in our <u>privacy policy</u>.";
+"onboarding_consent_body_1"                                                  = "I agree that the Austrian Red Cross (ÖRK) may process my personal data (unique identification numbers [IDs], my telephone number, and any suspicion and reporting of my COVID-19 condition [= health data]) for the purpose of rapid interruption of the corona infection chain. In addition, my public key will be shared with my intensive contacts for the purpose of issuing a warning or an all-clear notification.";
+"onboarding_consent_checkbox_label"                                          = "I consent";
+"onboarding_consent_body_2"                                                  = "I may revoke my consent at any time, whereby revocation does not affect the lawfulness of processing up until the time that consent is revoked.";
+"onboarding_consent_body_3"                                                  = "Further information can be found in our <u>privacy policy</u>.";
 "onboarding_consent_data_privacy"                                            = "privacy policy.";
 "onboarding_terms_of_use_headline"                                           = "Terms of use";
 "onboarding_data_privacy_headline"                                           = "Privacy policy";
@@ -255,11 +255,6 @@
 "history_mode_automatic"                                                     = "autom.";
 "history_time_format"                                                        = "h a";
 "history_date_format"                                                        = "MM/dd/yy";
-"self_testing_consent_headline"                                              = "Declaration of consent";
-"self_testing_consent_body_1"                                                = "I agree that the Austrian Red Cross (ÖRK) may process my personal data (unique identification number [ID], my telephone number, and any suspicion and reporting of my COVID-19 condition [= health data]) for the purpose of achieving a rapid interruption of the corona infection chain. In addition, my public key will be shared with my intensive contacts for the purpose of issuing a warning of a potential danger of infection, as well as a subsequent all-clear notification or a confirmation of such infection. ";
-"self_testing_consent_checkbox_label"                                        = "Yes, I consent to the processing of data.";
-"self_testing_consent_body_2"                                                = "I may revoke my consent at any time, whereby revocation does not affect the lawfulness of processing up until the time that consent is revoked.";
-"self_testing_consent_body_3"                                                = "Further information can be found in our <u>privacy policy</u>.";
 "self_test_push_reminder"                                                    = "How are you feeling today?";
 "self_testing_check_symptoms_title"                                          = "Check symptoms";
 "self_testing_result"                                                        = "Result";
@@ -415,7 +410,7 @@
 "revoke_sickness_report_headline"                                            = "Was your sick call an accident?";
 "revoke_sickness_report_dateformat"                                          = "dd.MM.yyyy";
 "revoke_sickness_report_description"                                         = "You have informed your contacts at the %s that you are infected with the coronavirus\n\nIf this message was an accident, please inform your contacts immediately. This will work automatically and anonymously if you confirm it here.";
-"revoke_sickness_report_approval"                                            = "I hereby confirm that the sick note was not truthful.";
+"revoke_sickness_report_approval"                                            = "I hereby confirm the revocation of my sick note.";
 "revoke_sickness_report_action"                                              = "Revoke infection message";
 "revoke_sickness_success_headline"                                           = "Infection message revoked";
 "revoke_sickness_success_description_1"                                      = "Thank you for updating your information and thus contributing significantly to a transparent procedure and the common good.";

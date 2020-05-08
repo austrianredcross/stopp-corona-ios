@@ -14,15 +14,9 @@ class SelfTestingCoordinator: Coordinator {
     }
 
     override func start() {
-        if UserDefaults.standard.agreedToMedicalDataPrivacyAt == nil {
-            let child = SelfTestingConsentCoordinator(navigationController: navigationController)
-            addChildCoordinator(child)
-            child.start()
-        } else {
-            let child = SelfTestingCheckSymptomsCoordinator(navigationController: navigationController)
-            addChildCoordinator(child)
-            child.start(with: 0)
-        }
+        let child = SelfTestingCheckSymptomsCoordinator(navigationController: navigationController)
+        addChildCoordinator(child)
+        child.start(with: 0)
     }
 
     override func finish(animated: Bool = false) {
