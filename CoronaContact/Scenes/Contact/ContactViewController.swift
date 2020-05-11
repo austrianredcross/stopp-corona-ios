@@ -202,7 +202,7 @@ extension ContactViewController: UITableViewDataSource {
             guard let viewModel = viewModel else { return UITableViewCell() }
 
             let cell = tableView.dequeueReusableCell(for: indexPath) as ContactLabelTableViewCell
-            let remoteId = viewModel.ownRemoteId
+            let remoteId = String(format: "handshake_code_%@", viewModel.ownRemoteId).localized
             cell.label.styledText = String(format: "contact_your_id".localized, remoteId)
             return cell
         case .selectAll:
