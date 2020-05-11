@@ -402,7 +402,7 @@
 "share_app_card_button"                                                      = "App teilen";
 "contact_share_app_button"                                                   = "Teilen Sie die App";
 "start_menu_item_share_app"                                                  = "App teilen";
-"share_app_content"                                                          = "Installieren Sie jetzt die STOPP Corona App!\nSo schützen Sie sich und Ihr Umfeld.\n%@";
+"share_app_content"                                                          = "Installieren Sie jetzt die STOPP Corona App!\nSo schützen Sie sich und Ihr Umfeld.\nApp Store\nhttps://apps.apple.com/at/app/apple-store/id1503717224\nGoogle Play Store\nhttps://play.google.com/store/apps/details?id=at.roteskreuz.stopcorona";
 "revoke_sickness_title"                                                      = "Status ändern";
 "revoke_sickness_headline"                                                   = "Bitte geben Sie Ihre Daten ein";
 "revoke_sickness_personal_data_description"                                  = "Wir werden nach dem nächsten Schritt Ihre vorher informierten Kontakte anonym informieren, dass Sie die Krankmeldung zurückziehen. Wir validieren die Mobilnummer, damit wir einen Missbrauch dieser Funktion vermeiden können.";

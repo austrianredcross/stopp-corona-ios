@@ -402,7 +402,7 @@
 "share_app_card_button"                                                      = "Share App";
 "contact_share_app_button"                                                   = "Share the app";
 "start_menu_item_share_app"                                                  = "Share App";
-"share_app_content"                                                          = "Install the STOPP Corona App now!\nIn this way you protect yourself and your environment.\n%@";
+"share_app_content"                                                          = "Install the STOPP Corona App now!\nIn this way you protect yourself and your environment.\nApp Store\nhttps://apps.apple.com/at/app/apple-store/id1503717224\nGoogle Play Store\nhttps://play.google.com/store/apps/details?id=at.roteskreuz.stopcorona";
 "revoke_sickness_title"                                                      = "Change Status";
 "revoke_sickness_headline"                                                   = "Please enter your data";
 "revoke_sickness_personal_data_description"                                  = "After the next step, we will anonymously inform your previously informed contacts that you are withdrawing the sick note. We will validate the mobile number so that we can prevent misuse of this function.";
