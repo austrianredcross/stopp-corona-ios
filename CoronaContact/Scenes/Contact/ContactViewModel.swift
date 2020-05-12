@@ -42,6 +42,10 @@ class ContactViewModel: ViewModel {
 
     }
 
+    func formatContactName(_ name: String) -> String {
+        String(format: "handshake_code_%@", String(name.prefix(2))).localized + name.suffix(2)
+    }
+
     @objc func updateView() {
         viewController?.updateView()
         viewController?.updateContactList(nearbyService.contacts)
