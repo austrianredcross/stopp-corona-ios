@@ -202,8 +202,8 @@ extension ContactViewController: UITableViewDataSource {
             guard let viewModel = viewModel else { return UITableViewCell() }
 
             let cell = tableView.dequeueReusableCell(for: indexPath) as ContactLabelTableViewCell
-            let remoteId = String(format: "handshake_code_%@", String(viewModel.ownRemoteId.prefix(2))).localized
-            cell.label.styledText = String(format: "contact_your_id".localized, remoteId + viewModel.ownRemoteId.suffix(2))
+            let remoteId = viewModel.formatContactName(viewModel.ownRemoteId)
+            cell.label.styledText = String(format: "contact_your_id".localized, remoteId)
             return cell
         case .selectAll:
             let cell = tableView.dequeueReusableCell(for: indexPath) as ContactTableViewCell
@@ -221,7 +221,7 @@ extension ContactViewController: UITableViewDataSource {
 
         let cell = tableView.dequeueReusableCell(for: indexPath) as ContactTableViewCell
         let contact = viewModel.getContactAtIndex(indexPath.row)
-        cell.configureCell(contact)
+        cell.configureCell(contact, viewModel: viewModel)
         return cell
     }
 }
