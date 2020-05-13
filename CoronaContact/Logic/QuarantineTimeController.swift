@@ -221,7 +221,7 @@ class QuarantineTimeController {
                 endOfQuarantines.append(endOfQuarantine)
             }
 
-            if greenWarning != nil, redWarning == nil, yellowWarning == nil {
+            if greenWarning != nil, endOfQuarantines.count == 0 {
                 completion(.cleared)
                 return
             }
