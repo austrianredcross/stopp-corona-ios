@@ -127,6 +127,10 @@ final class ContactViewController: UIViewController, StoryboardBased, ViewModelB
     @IBAction func helpButtonPressed(_ sender: Any) {
         viewModel?.showHelp()
     }
+
+    @IBAction func shareAppButtonPressed(_ sender: Any) {
+        viewModel?.shareApp()
+    }
 }
 
 extension ContactViewController: UITableViewDelegate {
@@ -198,10 +202,8 @@ extension ContactViewController: UITableViewDataSource {
             guard let viewModel = viewModel else { return UITableViewCell() }
 
             let cell = tableView.dequeueReusableCell(for: indexPath) as ContactLabelTableViewCell
-            let remoteId = viewModel.ownRemoteId
-            remoteId.withCString { remoteId in
-                cell.label.styledText = String(format: "contact_your_id".localized, remoteId)
-            }
+            let remoteId = viewModel.formatContactName(viewModel.ownRemoteId)
+            cell.label.styledText = String(format: "contact_your_id".localized, remoteId)
             return cell
         case .selectAll:
             let cell = tableView.dequeueReusableCell(for: indexPath) as ContactTableViewCell
@@ -219,7 +221,7 @@ extension ContactViewController: UITableViewDataSource {
 
         let cell = tableView.dequeueReusableCell(for: indexPath) as ContactTableViewCell
         let contact = viewModel.getContactAtIndex(indexPath.row)
-        cell.configureCell(contact)
+        cell.configureCell(contact, viewModel: viewModel)
         return cell
     }
 }

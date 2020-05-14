@@ -6,7 +6,7 @@
 import UIKit
 import Carte
 
-class StartMenuCoordinator: Coordinator {
+class StartMenuCoordinator: Coordinator, ShareSheetPresentable {
     var navigationController: UINavigationController
 
     lazy var rootViewController: StartMenuViewController = {
@@ -38,6 +38,16 @@ class StartMenuCoordinator: Coordinator {
         let child = SicknessCertificateCoordinator(navigationController: navigationController)
         addChildCoordinator(child)
         child.start()
+    }
+
+    func revokeSickness() {
+        let child = RevokeSicknessPersonalDataCoordinator(navigationController: navigationController)
+        addChildCoordinator(child)
+        child.start()
+    }
+
+    func shareApp() {
+        presentShareAppActivity()
     }
 
     func openOnboarding() {

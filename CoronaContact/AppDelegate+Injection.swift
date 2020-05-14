@@ -20,6 +20,7 @@ extension Resolver: ResolverRegistering {
         registerSelfTestingDependencies()
         registerSicknessCertificateDependencies()
         registerRevocationDependencies()
+        registerRevokeSicknessDependencies()
         registerNotificationServices()
         registerAppUpdateServices()
         registerHealthRepository()

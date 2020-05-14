@@ -37,10 +37,10 @@ class ContactTableViewCell: AutoMarginTableViewCell, NibReusable {
         idLabel.styledText = text
     }
 
-    func configureCell(_ contact: RemoteContact) {
+    func configureCell(_ contact: RemoteContact, viewModel: ContactViewModel) {
         let isContactSaved = contact.saved
 
-        idLabel.styledText = contact.name
+        idLabel.styledText = viewModel.formatContactName(contact.name)
         saveLabel.isHidden = !isContactSaved
         iconView.isHidden = !isContactSaved
         checkboxView.isEnabled = !isContactSaved

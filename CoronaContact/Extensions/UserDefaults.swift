@@ -13,7 +13,6 @@ extension UserDefaults {
         static let lastDownloadedMessage        = "last_downloaded_message"
         static let hasSeenOnboarding            = "has_seen_onboarding_2"
         static let agreedToDataPrivacyAt        = "agreed_to_data_privacy_at_2"
-        static let agreedToMedicalDataPrivacyAt = "agreed_to_medical_data_privacy_at"
         static let notFreshInstalled            = "not_fresh_installed"
         static let isUnderSelfMonitoring        = "is_under_self_monitoring"
         static let isProbablySick               = "is_probably_sick"
@@ -73,15 +72,6 @@ extension UserDefaults {
         }
         set {
             set(newValue, forKey: Keys.agreedToDataPrivacyAt)
-        }
-    }
-
-    var agreedToMedicalDataPrivacyAt: Date? {
-        get {
-            object(forKey: Keys.agreedToMedicalDataPrivacyAt) as? Date
-        }
-        set {
-            set(newValue, forKey: Keys.agreedToMedicalDataPrivacyAt)
         }
     }
 

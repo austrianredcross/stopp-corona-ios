@@ -1,6 +1,5 @@
 *.xcuserdatad
 
-GoogleService-Info.plist
 .babelish.token
 translations.csv
 .idea
@@ -67,9 +66,6 @@ DerivedData/
 !*.xcodeproj/xcshareddata/
 !*.xcworkspace/contents.xcworkspacedata
 /*.gcno
-
-### Xcode Patch ###
-**/xcshareddata/WorkspaceSettings.xcsettings
 
 # End of https://www.gitignore.io/api/xcode,macos
 

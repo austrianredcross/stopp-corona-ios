@@ -145,6 +145,8 @@ class MainViewModel: ViewModel {
 
     func tappedSecondaryButtonInUserHealthStatus() {
         switch repository.userHealthStatus {
+        case .hasAttestedSickness:
+            revokeSickness()
         case .isProbablySick:
             revocation()
         case .isUnderSelfMonitoring:
@@ -179,6 +181,10 @@ class MainViewModel: ViewModel {
         coordinator?.startMenu()
     }
 
+    func shareApp() {
+        coordinator?.shareApp()
+    }
+
     func selfTesting() {
         coordinator?.selfTesting()
     }
@@ -189,6 +195,10 @@ class MainViewModel: ViewModel {
 
     func attestedSicknessGuidelines() {
         coordinator?.attestedSicknessGuidelines()
+    }
+
+    func revokeSickness() {
+        coordinator?.revokeSickness()
     }
 
     func revocation() {

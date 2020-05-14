@@ -11,10 +11,10 @@ final class StartMenuViewController: UIViewController, StoryboardBased, Flashabl
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var versionLabel: UILabel!
-
-    @IBOutlet weak var functionsView: UIStackView!
+    @IBOutlet weak var hideableFunctionsView: UIStackView!
     @IBOutlet weak var handshakeView: UIView!
     @IBOutlet weak var checkSymptomsView: UIView!
+    @IBOutlet weak var revokeSicknessView: UIView!
     @IBOutlet weak var reportPositiveDoctorsDiagnosisView: UIView!
 
     @Injected private var notificationService: NotificationService
@@ -56,6 +56,14 @@ final class StartMenuViewController: UIViewController, StoryboardBased, Flashabl
         viewModel?.reportPositiveDoctorsDiagnosis()
     }
 
+    @IBAction func revokeSicknessTapped(_ sender: Any) {
+        viewModel?.revokeSickness()
+    }
+
+    @IBAction func shareAppTapped(_ sender: Any) {
+        viewModel?.shareApp()
+    }
+
     @IBAction func aboutAppTapped(_ sender: Any) {
         viewModel?.aboutApp()
     }
@@ -83,7 +91,8 @@ final class StartMenuViewController: UIViewController, StoryboardBased, Flashabl
     func updateView() {
         guard let viewModel = viewModel else { return }
 
-        functionsView.isHidden = viewModel.isFunctionsSectionHidden
+        hideableFunctionsView.isHidden = viewModel.isFunctionsSectionHidden
         checkSymptomsView.isHidden = !viewModel.isSelfTestFunctionAvailable
+        revokeSicknessView.isHidden = !viewModel.hasAttestedSickness
     }
 }

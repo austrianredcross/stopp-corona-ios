@@ -6,8 +6,12 @@
 import UIKit
 import Resolver
 
-class MainCoordinator: Coordinator {
+class MainCoordinator: Coordinator, ShareSheetPresentable {
+
     var navigationController: UINavigationController
+    var rootViewController: UIViewController {
+        navigationController
+    }
 
     @Injected private var notificationService: NotificationService
     @Injected private var p2pkit: P2PKitService
@@ -39,6 +43,10 @@ class MainCoordinator: Coordinator {
         let child = StartMenuCoordinator(navigationController: navigationController)
         addChildCoordinator(child)
         child.start()
+    }
+
+    func shareApp() {
+        presentShareAppActivity()
     }
 
     func selfTesting() {
@@ -77,6 +85,12 @@ class MainCoordinator: Coordinator {
 
     func showMissingPermissions(type: MissingPermissionsCoordinator.PermissionType) {
         let child = MissingPermissionsCoordinator(type: type, navigationController: navigationController)
+        addChildCoordinator(child)
+        child.start()
+    }
+
+    func revokeSickness() {
+        let child = RevokeSicknessPersonalDataCoordinator(navigationController: navigationController)
         addChildCoordinator(child)
         child.start()
     }

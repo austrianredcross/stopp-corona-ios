@@ -5,9 +5,13 @@
 
 import Foundation
 
-enum AppConfiguration {
+enum AppConfiguration: ConfigurationRetrievable {
     static let launchScreenDuration: TimeInterval = 1
     static let launchScreenFadeOutAnimationDuration: TimeInterval = 0.3
+
+    static var appStoreAppId: String {
+        AppConfiguration.value(for: "APP_STORE_APP_ID")
+    }
 
     static var googleNearbyApiKey: String {
         AppConfiguration.value(for: "GOOGLE_NEARBY_API")
@@ -17,19 +21,11 @@ enum AppConfiguration {
         AppConfiguration.value(for: "P2P_KIT_API")
     }
 
-    private static func value<T>(for key: String) -> T where T: LosslessStringConvertible {
-        guard let object = Bundle.main.object(forInfoDictionaryKey: key) else {
-            fatalError("Configuration missing key.")
-        }
+    static var apiHostName: String {
+        AppConfiguration.value(for: "API_HOST")
+    }
 
-        switch object {
-        case let value as T:
-            return value
-        case let string as String:
-            guard let value = T(string) else { fallthrough }
-            return value
-        default:
-            fatalError("Configuration missing value.")
-        }
+    static var apiSmsHostName: String {
+        AppConfiguration.value(for: "API_SMS_HOST")
     }
 }

@@ -7,6 +7,6 @@ import Foundation
 
 struct RequestTanResponse: Codable {
 
-    let httpCode: Int
-    let message: String
+    let uuid: String
+    let status: String
 }

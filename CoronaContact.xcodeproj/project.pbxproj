@@ -28,6 +28,15 @@
 		4E0B3E45241F995E00EF60EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E0B3E43241F995E00EF60EE /* LaunchScreen.storyboard */; };
 		4E0D6D6824225FA30076CBD6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E0D6D6724225FA30076CBD6 /* Assets.xcassets */; };
 		4E0D6D6A2422C43B0076CBD6 /* BackgroundStackview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0D6D692422C43B0076CBD6 /* BackgroundStackview.swift */; };
+		4E1AAEF1246186FA00D43E2B /* RevocationConfirmationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1AAEED246186F900D43E2B /* RevocationConfirmationCoordinator.swift */; };
+		4E1AAEF2246186FA00D43E2B /* RevocationConfirmationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1AAEEE246186F900D43E2B /* RevocationConfirmationViewModel.swift */; };
+		4E1AAEF3246186FA00D43E2B /* RevocationConfirmationViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E1AAEEF246186F900D43E2B /* RevocationConfirmationViewController.storyboard */; };
+		4E1AAEF4246186FA00D43E2B /* RevocationConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1AAEF0246186F900D43E2B /* RevocationConfirmationViewController.swift */; };
+		4E1AAEFA2461870700D43E2B /* RevokeSicknessConfirmationViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E1AAEF62461870700D43E2B /* RevokeSicknessConfirmationViewController.storyboard */; };
+		4E1AAEFB2461870700D43E2B /* RevokeSicknessConfirmationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1AAEF72461870700D43E2B /* RevokeSicknessConfirmationCoordinator.swift */; };
+		4E1AAEFC2461870700D43E2B /* RevokeSicknessConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1AAEF82461870700D43E2B /* RevokeSicknessConfirmationViewController.swift */; };
+		4E1AAEFD2461870700D43E2B /* RevokeSicknessConfirmationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1AAEF92461870700D43E2B /* RevokeSicknessConfirmationViewModel.swift */; };
+		4E1F2EC324646B550088B8F8 /* sms.der in Resources */ = {isa = PBXBuildFile; fileRef = 4E1F2EC224646B550088B8F8 /* sms.der */; };
 		4E360818242350D900789ABF /* CryptoServices+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E360817242350D900789ABF /* CryptoServices+Injection.swift */; };
 		4E44EDEB2424D076000CC695 /* ContactLabelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E44EDEA2424D076000CC695 /* ContactLabelTableViewCell.xib */; };
 		4E44EDED2424F4AC000CC695 /* HistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E44EDEC2424F4AC000CC695 /* HistoryTableViewCell.xib */; };
@@ -42,6 +51,27 @@
 		4EB52F02243C955D0004FAA0 /* M003Database_1_1_Migration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB52F01243C955D0004FAA0 /* M003Database_1_1_Migration.swift */; };
 		4EC81FB52423843300179CE9 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC81FB42423843300179CE9 /* PrimaryButton.swift */; };
 		4EC81FB72423844E00179CE9 /* SecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC81FB62423844E00179CE9 /* SecondaryButton.swift */; };
+		4ED175B42458347400248D3B /* DebugViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4ED175AF2458347400248D3B /* DebugViewController.storyboard */; };
+		4ED175B52458347400248D3B /* DebugNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED175B02458347400248D3B /* DebugNavigationController.swift */; };
+		4ED175B62458347400248D3B /* DebugCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED175B12458347400248D3B /* DebugCoordinator.swift */; };
+		4ED175B72458347400248D3B /* DebugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED175B22458347400248D3B /* DebugViewController.swift */; };
+		4ED175B82458347400248D3B /* DebugViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED175B32458347400248D3B /* DebugViewModel.swift */; };
+		4ED175BA245836E000248D3B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4ED175B9245836E000248D3B /* GoogleService-Info.plist */; };
+		4ED175BC245836F100248D3B /* server.der in Resources */ = {isa = PBXBuildFile; fileRef = 4ED175BB245836F100248D3B /* server.der */; };
+		4ED175C524606AF400248D3B /* RevokeSicknessPersonalDataCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED175C22460663200248D3B /* RevokeSicknessPersonalDataCoordinator.swift */; };
+		4ED175C624606AFA00248D3B /* RevokeSicknessPersonalDataViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4ED175C12460663200248D3B /* RevokeSicknessPersonalDataViewController.storyboard */; };
+		4ED175C724606AFE00248D3B /* RevokeSicknessPersonalDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED175C32460663200248D3B /* RevokeSicknessPersonalDataViewController.swift */; };
+		4ED175C824606B0200248D3B /* RevokeSicknessPersonalDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED175C42460663300248D3B /* RevokeSicknessPersonalDataViewModel.swift */; };
+		4ED175C924606B0600248D3B /* RevokeSickness+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED175BF24605DC600248D3B /* RevokeSickness+Injection.swift */; };
+		4ED175CA24606B0A00248D3B /* RevokeSicknessFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED175BE24605DAC00248D3B /* RevokeSicknessFlowController.swift */; };
+		4ED175D024606F6D00248D3B /* RevokeSicknessTanConfirmationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED175CC24606F3400248D3B /* RevokeSicknessTanConfirmationCoordinator.swift */; };
+		4ED175D124606F9200248D3B /* RevokeSicknessTanConfirmationViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4ED175CE24606F3500248D3B /* RevokeSicknessTanConfirmationViewController.storyboard */; };
+		4ED175D224606F9600248D3B /* RevokeSicknessTanConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED175CD24606F3400248D3B /* RevokeSicknessTanConfirmationViewController.swift */; };
+		4ED175D32460705200248D3B /* RevokeSicknessTanConfirmationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED175CF24606F3500248D3B /* RevokeSicknessTanConfirmationViewModel.swift */; };
+		4ED175D92460730E00248D3B /* RevokeSicknessStatusReportCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED175D82460729000248D3B /* RevokeSicknessStatusReportCoordinator.swift */; };
+		4ED175DA2460731200248D3B /* RevokeSicknessStatusReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED175D62460729000248D3B /* RevokeSicknessStatusReportViewController.swift */; };
+		4ED175DB2460731500248D3B /* RevokeSicknessStatusReportViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED175D72460729000248D3B /* RevokeSicknessStatusReportViewModel.swift */; };
+		4ED175DC2460739B00248D3B /* RevokeSicknessStatusReportViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4ED175D52460729000248D3B /* RevokeSicknessStatusReportViewController.storyboard */; };
 		4EDB47F12421E92E000CE24A /* OnboardingPageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EDB47F02421E92E000CE24A /* OnboardingPageView.xib */; };
 		4EDB47F42421EE02000CE24A /* AppDelegate+FontStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDB47F22421EB2B000CE24A /* AppDelegate+FontStyles.swift */; };
 		4EDB47F62421EF46000CE24A /* UIColor+NamedColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDB47F52421EF46000CE24A /* UIColor+NamedColors.swift */; };
@@ -57,6 +87,10 @@
 		611B78BA242816950040CCB3 /* UIApplication+AppStoreAppId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611B78B8242816950040CCB3 /* UIApplication+AppStoreAppId.swift */; };
 		611B78BE242816BE0040CCB3 /* AppUpdateService+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611B78BC242816BE0040CCB3 /* AppUpdateService+Injection.swift */; };
 		611B78BF242816BE0040CCB3 /* AppUpdateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611B78BD242816BE0040CCB3 /* AppUpdateService.swift */; };
+		612C4600246414260072ECF7 /* ConfigurationRetrievable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612C45FF246414260072ECF7 /* ConfigurationRetrievable.swift */; };
+		612C460224641C620072ECF7 /* RequestTan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612C460124641C620072ECF7 /* RequestTan.swift */; };
+		613AF72B24616A8B0089085E /* ShareButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613AF72A24616A8B0089085E /* ShareButton.swift */; };
+		613AF72D24618DE80089085E /* Coordinator+ShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613AF72C24618DE80089085E /* Coordinator+ShareSheet.swift */; };
 		613E35F5242E3F65009421A8 /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613E35F1242E3F64009421A8 /* LaunchScreenViewController.swift */; };
 		613E35F6242E3F65009421A8 /* LaunchScreenViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 613E35F2242E3F64009421A8 /* LaunchScreenViewController.storyboard */; };
 		613E35F7242E3F65009421A8 /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613E35F3242E3F64009421A8 /* LaunchScreenView.swift */; };
@@ -69,10 +103,6 @@
 		61459A53242ABFE200DC88A7 /* de.terms-of-use.html in Resources */ = {isa = PBXBuildFile; fileRef = 61459A52242ABFE200DC88A7 /* de.terms-of-use.html */; };
 		61459A55242AC15F00DC88A7 /* de.privacy-and-terms-of-use.html in Resources */ = {isa = PBXBuildFile; fileRef = 61459A54242AC15F00DC88A7 /* de.privacy-and-terms-of-use.html */; };
 		61459A57242AC48800DC88A7 /* Website.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61459A56242AC48800DC88A7 /* Website.swift */; };
-		614A001A243CB13E00ACBD0A /* SelfTestingConsentCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614A0016243CB13E00ACBD0A /* SelfTestingConsentCoordinator.swift */; };
-		614A001B243CB13E00ACBD0A /* SelfTestingConsentViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 614A0017243CB13E00ACBD0A /* SelfTestingConsentViewController.storyboard */; };
-		614A001C243CB13E00ACBD0A /* SelfTestingConsentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614A0018243CB13E00ACBD0A /* SelfTestingConsentViewController.swift */; };
-		614A001D243CB13F00ACBD0A /* SelfTestingConsentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614A0019243CB13E00ACBD0A /* SelfTestingConsentViewModel.swift */; };
 		614A001F243CB22800ACBD0A /* SelfTestingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614A001E243CB22800ACBD0A /* SelfTestingCoordinator.swift */; };
 		614A0025243CF8DD00ACBD0A /* Date+addDays.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614A0024243CF8DD00ACBD0A /* Date+addDays.swift */; };
 		614A0027243CFB3500ACBD0A /* BubbleArrowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614A0026243CFB3400ACBD0A /* BubbleArrowButton.swift */; };
@@ -178,6 +208,8 @@
 		615D36342437417600B608AB /* AttestedSicknessGuidelinesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615D36302437417600B608AB /* AttestedSicknessGuidelinesViewController.swift */; };
 		615D36352437417600B608AB /* AttestedSicknessGuidelinesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615D36312437417600B608AB /* AttestedSicknessGuidelinesViewModel.swift */; };
 		615D36642438C25400B608AB /* LoggingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615D36632438C25400B608AB /* LoggingService.swift */; };
+		616518E52460777C001219A7 /* ShareAppCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616518E42460777C001219A7 /* ShareAppCardView.swift */; };
+		616518E72460778C001219A7 /* ShareAppCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 616518E62460778C001219A7 /* ShareAppCardView.xib */; };
 		616E1DA9243486C700109435 /* ArrowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616E1DA8243486C700109435 /* ArrowButton.swift */; };
 		618A6651242B8B84001BDBBF /* Collection+safe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618A6650242B8B84001BDBBF /* Collection+safe.swift */; };
 		61BB41DA243684590083053B /* Revocation+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D0F5702435EF1B0026C91A /* Revocation+Injection.swift */; };
@@ -193,10 +225,6 @@
 		61D0F54924352E960026C91A /* RevocationStatusReportViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61D0F53B24352E960026C91A /* RevocationStatusReportViewController.storyboard */; };
 		61D0F54A24352E960026C91A /* RevocationStatusReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D0F53C24352E960026C91A /* RevocationStatusReportViewController.swift */; };
 		61D0F54B24352E960026C91A /* RevocationStatusReportCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D0F53D24352E960026C91A /* RevocationStatusReportCoordinator.swift */; };
-		61D0F54C24352E960026C91A /* RevocationConfirmationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D0F53F24352E960026C91A /* RevocationConfirmationCoordinator.swift */; };
-		61D0F54D24352E960026C91A /* RevocationConfirmationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D0F54024352E960026C91A /* RevocationConfirmationViewModel.swift */; };
-		61D0F54E24352E960026C91A /* RevocationConfirmationViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61D0F54124352E960026C91A /* RevocationConfirmationViewController.storyboard */; };
-		61D0F54F24352E960026C91A /* RevocationConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D0F54224352E960026C91A /* RevocationConfirmationViewController.swift */; };
 		61D0F55024352E960026C91A /* RevocationTanConfirmationViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61D0F54424352E960026C91A /* RevocationTanConfirmationViewController.storyboard */; };
 		61D0F55124352E960026C91A /* RevocationTanConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D0F54524352E960026C91A /* RevocationTanConfirmationViewController.swift */; };
 		61D0F55224352E960026C91A /* RevocationTanConfirmationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D0F54624352E960026C91A /* RevocationTanConfirmationCoordinator.swift */; };
@@ -253,7 +281,6 @@
 		839748D0A89F0117C192DD34 /* CryptoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83974EEE9ABEC9F8E8C29669 /* CryptoService.swift */; };
 		83974901AF9ABB4176C37AD0 /* OnboardingConsentPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839746E980E1878DBDF978AE /* OnboardingConsentPageView.swift */; };
 		83974960BEEA73146FD4930C /* AutoMarginTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839744713BE877F4659927B5 /* AutoMarginTableViewCell.swift */; };
-		839749D28AAC292FFC2148D0 /* Certificates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83974EB276227AD0AB0CDBAB /* Certificates.swift */; };
 		83974A3C096BEC7F5CCBFCC7 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83974ED255ED47321535BA0E /* OnboardingViewController.swift */; };
 		83974A681281494B1DB360AB /* ContactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839741473EE54F93E5209C23 /* ContactViewModel.swift */; };
 		83974AA35AEBF4A6769C00B4 /* M001InitialMigration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83974E486CD5B31F449062D0 /* M001InitialMigration.swift */; };
@@ -336,6 +363,15 @@
 		4E0B3E46241F995F00EF60EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E0D6D6724225FA30076CBD6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4E0D6D692422C43B0076CBD6 /* BackgroundStackview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundStackview.swift; sourceTree = "<group>"; };
+		4E1AAEED246186F900D43E2B /* RevocationConfirmationCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RevocationConfirmationCoordinator.swift; sourceTree = "<group>"; };
+		4E1AAEEE246186F900D43E2B /* RevocationConfirmationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RevocationConfirmationViewModel.swift; sourceTree = "<group>"; };
+		4E1AAEEF246186F900D43E2B /* RevocationConfirmationViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RevocationConfirmationViewController.storyboard; sourceTree = "<group>"; };
+		4E1AAEF0246186F900D43E2B /* RevocationConfirmationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RevocationConfirmationViewController.swift; sourceTree = "<group>"; };
+		4E1AAEF62461870700D43E2B /* RevokeSicknessConfirmationViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RevokeSicknessConfirmationViewController.storyboard; sourceTree = "<group>"; };
+		4E1AAEF72461870700D43E2B /* RevokeSicknessConfirmationCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RevokeSicknessConfirmationCoordinator.swift; sourceTree = "<group>"; };
+		4E1AAEF82461870700D43E2B /* RevokeSicknessConfirmationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RevokeSicknessConfirmationViewController.swift; sourceTree = "<group>"; };
+		4E1AAEF92461870700D43E2B /* RevokeSicknessConfirmationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RevokeSicknessConfirmationViewModel.swift; sourceTree = "<group>"; };
+		4E1F2EC224646B550088B8F8 /* sms.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = sms.der; sourceTree = "<group>"; };
 		4E32299D242345FB00F60053 /* CoronaContactTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoronaContactTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E3229A1242345FB00F60053 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E360817242350D900789ABF /* CryptoServices+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CryptoServices+Injection.swift"; sourceTree = "<group>"; };
@@ -352,6 +388,27 @@
 		4EB52F01243C955D0004FAA0 /* M003Database_1_1_Migration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = M003Database_1_1_Migration.swift; sourceTree = "<group>"; };
 		4EC81FB42423843300179CE9 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		4EC81FB62423844E00179CE9 /* SecondaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButton.swift; sourceTree = "<group>"; };
+		4ED175AF2458347400248D3B /* DebugViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DebugViewController.storyboard; sourceTree = "<group>"; };
+		4ED175B02458347400248D3B /* DebugNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugNavigationController.swift; sourceTree = "<group>"; };
+		4ED175B12458347400248D3B /* DebugCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugCoordinator.swift; sourceTree = "<group>"; };
+		4ED175B22458347400248D3B /* DebugViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugViewController.swift; sourceTree = "<group>"; };
+		4ED175B32458347400248D3B /* DebugViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugViewModel.swift; sourceTree = "<group>"; };
+		4ED175B9245836E000248D3B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4ED175BB245836F100248D3B /* server.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = server.der; sourceTree = "<group>"; };
+		4ED175BE24605DAC00248D3B /* RevokeSicknessFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevokeSicknessFlowController.swift; sourceTree = "<group>"; };
+		4ED175BF24605DC600248D3B /* RevokeSickness+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RevokeSickness+Injection.swift"; sourceTree = "<group>"; };
+		4ED175C12460663200248D3B /* RevokeSicknessPersonalDataViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RevokeSicknessPersonalDataViewController.storyboard; sourceTree = "<group>"; };
+		4ED175C22460663200248D3B /* RevokeSicknessPersonalDataCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevokeSicknessPersonalDataCoordinator.swift; sourceTree = "<group>"; };
+		4ED175C32460663200248D3B /* RevokeSicknessPersonalDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevokeSicknessPersonalDataViewController.swift; sourceTree = "<group>"; };
+		4ED175C42460663300248D3B /* RevokeSicknessPersonalDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevokeSicknessPersonalDataViewModel.swift; sourceTree = "<group>"; };
+		4ED175CC24606F3400248D3B /* RevokeSicknessTanConfirmationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevokeSicknessTanConfirmationCoordinator.swift; sourceTree = "<group>"; };
+		4ED175CD24606F3400248D3B /* RevokeSicknessTanConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevokeSicknessTanConfirmationViewController.swift; sourceTree = "<group>"; };
+		4ED175CE24606F3500248D3B /* RevokeSicknessTanConfirmationViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RevokeSicknessTanConfirmationViewController.storyboard; sourceTree = "<group>"; };
+		4ED175CF24606F3500248D3B /* RevokeSicknessTanConfirmationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevokeSicknessTanConfirmationViewModel.swift; sourceTree = "<group>"; };
+		4ED175D52460729000248D3B /* RevokeSicknessStatusReportViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RevokeSicknessStatusReportViewController.storyboard; sourceTree = "<group>"; };
+		4ED175D62460729000248D3B /* RevokeSicknessStatusReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevokeSicknessStatusReportViewController.swift; sourceTree = "<group>"; };
+		4ED175D72460729000248D3B /* RevokeSicknessStatusReportViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevokeSicknessStatusReportViewModel.swift; sourceTree = "<group>"; };
+		4ED175D82460729000248D3B /* RevokeSicknessStatusReportCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevokeSicknessStatusReportCoordinator.swift; sourceTree = "<group>"; };
 		4EDB47F02421E92E000CE24A /* OnboardingPageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingPageView.xib; sourceTree = "<group>"; };
 		4EDB47F22421EB2B000CE24A /* AppDelegate+FontStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+FontStyles.swift"; sourceTree = "<group>"; };
 		4EDB47F52421EF46000CE24A /* UIColor+NamedColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+NamedColors.swift"; sourceTree = "<group>"; };
@@ -368,6 +425,10 @@
 		611B78B8242816950040CCB3 /* UIApplication+AppStoreAppId.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+AppStoreAppId.swift"; sourceTree = "<group>"; };
 		611B78BC242816BE0040CCB3 /* AppUpdateService+Injection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppUpdateService+Injection.swift"; sourceTree = "<group>"; };
 		611B78BD242816BE0040CCB3 /* AppUpdateService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppUpdateService.swift; sourceTree = "<group>"; };
+		612C45FF246414260072ECF7 /* ConfigurationRetrievable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationRetrievable.swift; sourceTree = "<group>"; };
+		612C460124641C620072ECF7 /* RequestTan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestTan.swift; sourceTree = "<group>"; };
+		613AF72A24616A8B0089085E /* ShareButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareButton.swift; sourceTree = "<group>"; };
+		613AF72C24618DE80089085E /* Coordinator+ShareSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Coordinator+ShareSheet.swift"; sourceTree = "<group>"; };
 		613E35F1242E3F64009421A8 /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
 		613E35F2242E3F64009421A8 /* LaunchScreenViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreenViewController.storyboard; sourceTree = "<group>"; };
 		613E35F3242E3F64009421A8 /* LaunchScreenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
@@ -380,10 +441,6 @@
 		61459A52242ABFE200DC88A7 /* de.terms-of-use.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "de.terms-of-use.html"; sourceTree = "<group>"; };
 		61459A54242AC15F00DC88A7 /* de.privacy-and-terms-of-use.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "de.privacy-and-terms-of-use.html"; sourceTree = "<group>"; };
 		61459A56242AC48800DC88A7 /* Website.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Website.swift; sourceTree = "<group>"; };
-		614A0016243CB13E00ACBD0A /* SelfTestingConsentCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfTestingConsentCoordinator.swift; sourceTree = "<group>"; };
-		614A0017243CB13E00ACBD0A /* SelfTestingConsentViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelfTestingConsentViewController.storyboard; sourceTree = "<group>"; };
-		614A0018243CB13E00ACBD0A /* SelfTestingConsentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfTestingConsentViewController.swift; sourceTree = "<group>"; };
-		614A0019243CB13E00ACBD0A /* SelfTestingConsentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfTestingConsentViewModel.swift; sourceTree = "<group>"; };
 		614A001E243CB22800ACBD0A /* SelfTestingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfTestingCoordinator.swift; sourceTree = "<group>"; };
 		614A0024243CF8DD00ACBD0A /* Date+addDays.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+addDays.swift"; sourceTree = "<group>"; };
 		614A0026243CFB3400ACBD0A /* BubbleArrowButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BubbleArrowButton.swift; sourceTree = "<group>"; };
@@ -491,8 +548,12 @@
 		615D36312437417600B608AB /* AttestedSicknessGuidelinesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttestedSicknessGuidelinesViewModel.swift; sourceTree = "<group>"; };
 		615D365F2438B26400B608AB /* mtc-suppressions.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "mtc-suppressions.txt"; sourceTree = "<group>"; };
 		615D36632438C25400B608AB /* LoggingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggingService.swift; sourceTree = "<group>"; };
+		616518E42460777C001219A7 /* ShareAppCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareAppCardView.swift; sourceTree = "<group>"; };
+		616518E62460778C001219A7 /* ShareAppCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShareAppCardView.xib; sourceTree = "<group>"; };
 		616E1DA8243486C700109435 /* ArrowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrowButton.swift; sourceTree = "<group>"; };
 		618A6650242B8B84001BDBBF /* Collection+safe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+safe.swift"; sourceTree = "<group>"; };
+		61AB6EF024573737006B4190 /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
+		61AB6EF124573771006B4190 /* Secrets.template.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.template.xcconfig; sourceTree = "<group>"; };
 		61C4A46B24275C38004D18BB /* UIView+Shadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Shadow.swift"; sourceTree = "<group>"; };
 		61C4A47824279433004D18BB /* UIActivityIndicatorView+scale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIActivityIndicatorView+scale.swift"; sourceTree = "<group>"; };
 		61C4A47E2427B848004D18BB /* QuarantineNotificationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuarantineNotificationView.xib; sourceTree = "<group>"; };
@@ -505,10 +566,6 @@
 		61D0F53B24352E960026C91A /* RevocationStatusReportViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RevocationStatusReportViewController.storyboard; sourceTree = "<group>"; };
 		61D0F53C24352E960026C91A /* RevocationStatusReportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RevocationStatusReportViewController.swift; sourceTree = "<group>"; };
 		61D0F53D24352E960026C91A /* RevocationStatusReportCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RevocationStatusReportCoordinator.swift; sourceTree = "<group>"; };
-		61D0F53F24352E960026C91A /* RevocationConfirmationCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RevocationConfirmationCoordinator.swift; sourceTree = "<group>"; };
-		61D0F54024352E960026C91A /* RevocationConfirmationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RevocationConfirmationViewModel.swift; sourceTree = "<group>"; };
-		61D0F54124352E960026C91A /* RevocationConfirmationViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RevocationConfirmationViewController.storyboard; sourceTree = "<group>"; };
-		61D0F54224352E960026C91A /* RevocationConfirmationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RevocationConfirmationViewController.swift; sourceTree = "<group>"; };
 		61D0F54424352E960026C91A /* RevocationTanConfirmationViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RevocationTanConfirmationViewController.storyboard; sourceTree = "<group>"; };
 		61D0F54524352E960026C91A /* RevocationTanConfirmationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RevocationTanConfirmationViewController.swift; sourceTree = "<group>"; };
 		61D0F54624352E960026C91A /* RevocationTanConfirmationCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RevocationTanConfirmationCoordinator.swift; sourceTree = "<group>"; };
@@ -590,7 +647,6 @@
 		83974E486CD5B31F449062D0 /* M001InitialMigration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = M001InitialMigration.swift; sourceTree = "<group>"; };
 		83974E4BF20807E7150F5CDD /* ConfigurationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationService.swift; sourceTree = "<group>"; };
 		83974E8DF47258DBA88F9CAA /* ContactTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactTableViewCell.xib; sourceTree = "<group>"; };
-		83974EB276227AD0AB0CDBAB /* Certificates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Certificates.swift; sourceTree = "<group>"; };
 		83974ED255ED47321535BA0E /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		83974EEE9ABEC9F8E8C29669 /* CryptoService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptoService.swift; sourceTree = "<group>"; };
 		83974F38691AC7428DA4002D /* ContactViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ContactViewController.storyboard; sourceTree = "<group>"; };
@@ -598,8 +654,6 @@
 		87895CFEB99369228D18DF33 /* Pods-CoronaContactTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoronaContactTests.debug.xcconfig"; path = "Target Support Files/Pods-CoronaContactTests/Pods-CoronaContactTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8922A16B243D1DD6004E9D42 /* HealthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthRepository.swift; sourceTree = "<group>"; };
 		8922A16D243DF094004E9D42 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
-		89FB2B4924508CA2009A892A /* Prod */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Prod; sourceTree = "<group>"; };
-		89FB2B4B24508CB7009A892A /* Stage */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Stage; sourceTree = "<group>"; };
 		9152F86ED090FF1A20BFD5A3 /* Pods-CoronaContact.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoronaContact.release.xcconfig"; path = "Target Support Files/Pods-CoronaContact/Pods-CoronaContact.release.xcconfig"; sourceTree = "<group>"; };
 		921525372427C5DF0023F469 /* SelfTestingHintCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelfTestingHintCoordinator.swift; sourceTree = "<group>"; };
 		921525382427C5DF0023F469 /* SelfTestingHintViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelfTestingHintViewController.swift; sourceTree = "<group>"; };
@@ -744,6 +798,28 @@
 			path = CoronaContact;
 			sourceTree = "<group>";
 		};
+		4E1AAEEC246186F900D43E2B /* Confirmation */ = {
+			isa = PBXGroup;
+			children = (
+				4E1AAEED246186F900D43E2B /* RevocationConfirmationCoordinator.swift */,
+				4E1AAEEE246186F900D43E2B /* RevocationConfirmationViewModel.swift */,
+				4E1AAEEF246186F900D43E2B /* RevocationConfirmationViewController.storyboard */,
+				4E1AAEF0246186F900D43E2B /* RevocationConfirmationViewController.swift */,
+			);
+			path = Confirmation;
+			sourceTree = "<group>";
+		};
+		4E1AAEF52461870700D43E2B /* Confirmation */ = {
+			isa = PBXGroup;
+			children = (
+				4E1AAEF62461870700D43E2B /* RevokeSicknessConfirmationViewController.storyboard */,
+				4E1AAEF72461870700D43E2B /* RevokeSicknessConfirmationCoordinator.swift */,
+				4E1AAEF82461870700D43E2B /* RevokeSicknessConfirmationViewController.swift */,
+				4E1AAEF92461870700D43E2B /* RevokeSicknessConfirmationViewModel.swift */,
+			);
+			path = Confirmation;
+			sourceTree = "<group>";
+		};
 		4E32299E242345FB00F60053 /* CoronaContactTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -761,13 +837,6 @@
 			path = P2PKit;
 			sourceTree = "<group>";
 		};
-		4E6FD8DB244E09030058713E /* Certificates */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Certificates;
-			sourceTree = "<group>";
-		};
 		4E7BA4A8242E28BD00AE0AC7 /* Animations */ = {
 			isa = PBXGroup;
 			children = (
@@ -777,11 +846,67 @@
 			path = Animations;
 			sourceTree = "<group>";
 		};
+		4ED175AE2458347400248D3B /* Debug */ = {
+			isa = PBXGroup;
+			children = (
+				4ED175AF2458347400248D3B /* DebugViewController.storyboard */,
+				4ED175B02458347400248D3B /* DebugNavigationController.swift */,
+				4ED175B12458347400248D3B /* DebugCoordinator.swift */,
+				4ED175B22458347400248D3B /* DebugViewController.swift */,
+				4ED175B32458347400248D3B /* DebugViewModel.swift */,
+			);
+			path = Debug;
+			sourceTree = "<group>";
+		};
+		4ED175BD24605D2100248D3B /* RevokeSickness */ = {
+			isa = PBXGroup;
+			children = (
+				4E1AAEF52461870700D43E2B /* Confirmation */,
+				4ED175C02460661F00248D3B /* PersonalData */,
+				4ED175CB24606F1E00248D3B /* TanConfirmation */,
+				4ED175D42460727400248D3B /* StatusReport */,
+				4ED175BF24605DC600248D3B /* RevokeSickness+Injection.swift */,
+				4ED175BE24605DAC00248D3B /* RevokeSicknessFlowController.swift */,
+			);
+			path = RevokeSickness;
+			sourceTree = "<group>";
+		};
+		4ED175C02460661F00248D3B /* PersonalData */ = {
+			isa = PBXGroup;
+			children = (
+				4ED175C22460663200248D3B /* RevokeSicknessPersonalDataCoordinator.swift */,
+				4ED175C12460663200248D3B /* RevokeSicknessPersonalDataViewController.storyboard */,
+				4ED175C32460663200248D3B /* RevokeSicknessPersonalDataViewController.swift */,
+				4ED175C42460663300248D3B /* RevokeSicknessPersonalDataViewModel.swift */,
+			);
+			path = PersonalData;
+			sourceTree = "<group>";
+		};
+		4ED175CB24606F1E00248D3B /* TanConfirmation */ = {
+			isa = PBXGroup;
+			children = (
+				4ED175CC24606F3400248D3B /* RevokeSicknessTanConfirmationCoordinator.swift */,
+				4ED175CE24606F3500248D3B /* RevokeSicknessTanConfirmationViewController.storyboard */,
+				4ED175CD24606F3400248D3B /* RevokeSicknessTanConfirmationViewController.swift */,
+				4ED175CF24606F3500248D3B /* RevokeSicknessTanConfirmationViewModel.swift */,
+			);
+			path = TanConfirmation;
+			sourceTree = "<group>";
+		};
+		4ED175D42460727400248D3B /* StatusReport */ = {
+			isa = PBXGroup;
+			children = (
+				4ED175D82460729000248D3B /* RevokeSicknessStatusReportCoordinator.swift */,
+				4ED175D52460729000248D3B /* RevokeSicknessStatusReportViewController.storyboard */,
+				4ED175D62460729000248D3B /* RevokeSicknessStatusReportViewController.swift */,
+				4ED175D72460729000248D3B /* RevokeSicknessStatusReportViewModel.swift */,
+			);
+			path = StatusReport;
+			sourceTree = "<group>";
+		};
 		4EDB47FB242255A6000CE24A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				4E6FD8DB244E09030058713E /* Certificates */,
-				61FABC922431E9FB0085786B /* Firebase */,
 				4E7BA4A8242E28BD00AE0AC7 /* Animations */,
 				61D1A3CD242A3C40007F82ED /* Localisation */,
 				61032074243F24D800ED3A20 /* Websites */,
@@ -838,17 +963,6 @@
 			path = MicrophoneInfo;
 			sourceTree = "<group>";
 		};
-		614A0015243CB0BF00ACBD0A /* Consent */ = {
-			isa = PBXGroup;
-			children = (
-				614A0016243CB13E00ACBD0A /* SelfTestingConsentCoordinator.swift */,
-				614A0017243CB13E00ACBD0A /* SelfTestingConsentViewController.storyboard */,
-				614A0018243CB13E00ACBD0A /* SelfTestingConsentViewController.swift */,
-				614A0019243CB13E00ACBD0A /* SelfTestingConsentViewModel.swift */,
-			);
-			path = Consent;
-			sourceTree = "<group>";
-		};
 		614BA9E22423C31C006797AA /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -894,12 +1008,12 @@
 				839743E9E3569B229703A3F8 /* OutgoingInfectionMessage.swift */,
 				614BA9FE2423C334006797AA /* Question.swift */,
 				614BA9FF2423C334006797AA /* Questionnaire.swift */,
+				612C460124641C620072ECF7 /* RequestTan.swift */,
 				6153A4F82425993B006A8570 /* RequestTanResponse.swift */,
 				614BAA032423C334006797AA /* SuccessResponse.swift */,
 				4B25BA9C2429592A00CDD1CF /* UserHealthStatus.swift */,
 				61459A56242AC48800DC88A7 /* Website.swift */,
 				83974BF870B575EAC8607D3D /* P2PKitEvent.swift */,
-				83974EB276227AD0AB0CDBAB /* Certificates.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1059,6 +1173,7 @@
 				6153A4F424259932006A8570 /* NotificationToken.swift */,
 				61032064243E0AE400ED3A20 /* FlashableScrollIndicators.swift */,
 				8922A16D243DF094004E9D42 /* Observable.swift */,
+				612C45FF246414260072ECF7 /* ConfigurationRetrievable.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -1153,10 +1268,10 @@
 		61D0F53824352E960026C91A /* Revocation */ = {
 			isa = PBXGroup;
 			children = (
+				4E1AAEEC246186F900D43E2B /* Confirmation */,
 				61D0F5672435EB730026C91A /* PersonalData */,
 				61D0F54324352E960026C91A /* TanConfirmation */,
 				61D0F53924352E960026C91A /* StatusReport */,
-				61D0F53E24352E960026C91A /* Confirmation */,
 				61D0F5652435EABE0026C91A /* RevocationFlowController.swift */,
 				61D0F5702435EF1B0026C91A /* Revocation+Injection.swift */,
 			);
@@ -1172,17 +1287,6 @@
 				61D0F53A24352E960026C91A /* RevocationStatusReportViewModel.swift */,
 			);
 			path = StatusReport;
-			sourceTree = "<group>";
-		};
-		61D0F53E24352E960026C91A /* Confirmation */ = {
-			isa = PBXGroup;
-			children = (
-				61D0F53F24352E960026C91A /* RevocationConfirmationCoordinator.swift */,
-				61D0F54124352E960026C91A /* RevocationConfirmationViewController.storyboard */,
-				61D0F54224352E960026C91A /* RevocationConfirmationViewController.swift */,
-				61D0F54024352E960026C91A /* RevocationConfirmationViewModel.swift */,
-			);
-			path = Confirmation;
 			sourceTree = "<group>";
 		};
 		61D0F54324352E960026C91A /* TanConfirmation */ = {
@@ -1259,18 +1363,14 @@
 			path = Permissions;
 			sourceTree = "<group>";
 		};
-		61FABC922431E9FB0085786B /* Firebase */ = {
-			isa = PBXGroup;
-			children = (
-				89FB2B4924508CA2009A892A /* Prod */,
-				89FB2B4B24508CB7009A892A /* Stage */,
-			);
-			path = Firebase;
-			sourceTree = "<group>";
-		};
 		61FABC9E2431EBDE0085786B /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
+				4E1F2EC224646B550088B8F8 /* sms.der */,
+				4ED175BB245836F100248D3B /* server.der */,
+				4ED175B9245836E000248D3B /* GoogleService-Info.plist */,
+				61AB6EF024573737006B4190 /* Secrets.xcconfig */,
+				61AB6EF124573771006B4190 /* Secrets.template.xcconfig */,
 				61FABCB02432368E0085786B /* Base.xcconfig */,
 				61FABCAC243233440085786B /* Development.xcconfig */,
 				61FABC9F2431EBF50085786B /* Stage.xcconfig */,
@@ -1325,6 +1425,7 @@
 		839742CD30B274EE264849F8 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				4ED175AE2458347400248D3B /* Debug */,
 				6153A51824264A2D006A8570 /* Shared */,
 				83974C90F8BFA3D3989974D0 /* Main */,
 				83974095C18852AFA32AC3C8 /* Onboarding */,
@@ -1332,6 +1433,7 @@
 				614D71FF2428E82700CC545D /* ContactSickness */,
 				92FFC9B024267C5F00CC541B /* SelfTesting */,
 				6153A4B5242598DB006A8570 /* SicknessCertificate */,
+				4ED175BD24605D2100248D3B /* RevokeSickness */,
 				61D0F53824352E960026C91A /* Revocation */,
 				83974E14F314C1637D93EB43 /* History */,
 			);
@@ -1375,6 +1477,9 @@
 				8397474245A5951193FA02B7 /* TransLabel.swift */,
 				616E1DA8243486C700109435 /* ArrowButton.swift */,
 				614A0026243CFB3400ACBD0A /* BubbleArrowButton.swift */,
+				616518E42460777C001219A7 /* ShareAppCardView.swift */,
+				616518E62460778C001219A7 /* ShareAppCardView.xib */,
+				613AF72A24616A8B0089085E /* ShareButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1485,6 +1590,7 @@
 			isa = PBXGroup;
 			children = (
 				83974D3FCE9D7093717ED324 /* Coordinator.swift */,
+				613AF72C24618DE80089085E /* Coordinator+ShareSheet.swift */,
 				83974B4E7DDB0AFD2F931B97 /* ApplicationCoordinator.swift */,
 			);
 			path = Coordinators;
@@ -1526,7 +1632,6 @@
 		92FFC9B024267C5F00CC541B /* SelfTesting */ = {
 			isa = PBXGroup;
 			children = (
-				614A0015243CB0BF00ACBD0A /* Consent */,
 				614D72112429057E00CC545D /* Questionnaire */,
 				614D7212242905A400CC545D /* Report */,
 				614A001E243CB22800ACBD0A /* SelfTestingCoordinator.swift */,
@@ -1572,7 +1677,6 @@
 				4E9BF7042420AF2B00B360A4 /* Swiftlint */,
 				4E0B3E31241F995D00EF60EE /* Sources */,
 				4E0B3E32241F995D00EF60EE /* Frameworks */,
-				61FABC992431EA960085786B /* Setup Firebase Environment GoogleService-Info.plist */,
 				E62EED9B3D667B480F11A2F0 /* [Carte] Pre Script */,
 				4E0B3E33241F995D00EF60EE /* Resources */,
 				6F09AC68488332B30709BADD /* [Carte] Post Script */,
@@ -1658,6 +1762,7 @@
 				61D1A3BF242A24B0007F82ED /* de.privacy.html in Resources */,
 				4E9BF7062420C2A100B360A4 /* MainViewController.storyboard in Resources */,
 				61D1A3E7242A58CA007F82ED /* MainHelpViewController.storyboard in Resources */,
+				4ED175D124606F9200248D3B /* RevokeSicknessTanConfirmationViewController.storyboard in Resources */,
 				61C4A4802427B848004D18BB /* QuarantineNotificationView.xib in Resources */,
 				4B7379F12423E88700DF338E /* StartMenuViewController.storyboard in Resources */,
 				4E7BA4AA242E28DB00AE0AC7 /* wave.json in Resources */,
@@ -1668,26 +1773,33 @@
 				4EDB47F12421E92E000CE24A /* OnboardingPageView.xib in Resources */,
 				614D72062428E82700CC545D /* ContactSicknessViewController.storyboard in Resources */,
 				61D1A3D4242A3C40007F82ED /* Localizable.strings in Resources */,
+				4ED175BA245836E000248D3B /* GoogleService-Info.plist in Resources */,
+				616518E72460778C001219A7 /* ShareAppCardView.xib in Resources */,
 				4E44EDEB2424D076000CC695 /* ContactLabelTableViewCell.xib in Resources */,
 				61546541242CBE7F0003D3D3 /* SelfMonitoringGuidelinesViewController.storyboard in Resources */,
 				614D72302429084B00CC545D /* SelfTestingTanConfirmationViewController.storyboard in Resources */,
+				4E1F2EC324646B550088B8F8 /* sms.der in Resources */,
 				4E0B3E45241F995E00EF60EE /* LaunchScreen.storyboard in Resources */,
 				613E35F6242E3F65009421A8 /* LaunchScreenViewController.storyboard in Resources */,
 				6103207C243F28A000ED3A20 /* en.privacy-and-terms-of-use.html in Resources */,
+				4E1AAEFA2461870700D43E2B /* RevokeSicknessConfirmationViewController.storyboard in Resources */,
 				614D72232429084300CC545D /* SelfTestingPersonalDataViewController.storyboard in Resources */,
+				4ED175DC2460739B00248D3B /* RevokeSicknessStatusReportViewController.storyboard in Resources */,
+				4ED175B42458347400248D3B /* DebugViewController.storyboard in Resources */,
+				4ED175C624606AFA00248D3B /* RevokeSicknessPersonalDataViewController.storyboard in Resources */,
 				4E44EDED2424F4AC000CC695 /* HistoryTableViewCell.xib in Resources */,
 				61D0F55A24352EA90026C91A /* CheckboxLabelView.xib in Resources */,
 				61459A55242AC15F00DC88A7 /* de.privacy-and-terms-of-use.html in Resources */,
 				61D0F55024352E960026C91A /* RevocationTanConfirmationViewController.storyboard in Resources */,
 				6103207D243F28A000ED3A20 /* en.terms-of-use.html in Resources */,
 				61546555242D1A7D0003D3D3 /* AnswerView.xib in Resources */,
-				614A001B243CB13E00ACBD0A /* SelfTestingConsentViewController.storyboard in Resources */,
 				921525602427C7AA0023F469 /* SelfTestingSuspicionViewController.storyboard in Resources */,
 				614D723A242909C000CC545D /* SelfTestingConfirmationViewController.storyboard in Resources */,
 				4E019BDC242692E3004FF670 /* HistoryViewController.storyboard in Resources */,
 				9215254E2427C74A0023F469 /* SelfTestingSelfMonitoringViewController.storyboard in Resources */,
 				61F50DD82439EC8500798264 /* MissingPermissionsViewController.storyboard in Resources */,
 				839743F271E19BEF66B89E3A /* OnboardingViewController.storyboard in Resources */,
+				4E1AAEF3246186FA00D43E2B /* RevocationConfirmationViewController.storyboard in Resources */,
 				613E35F8242E3F65009421A8 /* LaunchScreenView.xib in Resources */,
 				4E0D6D6824225FA30076CBD6 /* Assets.xcassets in Resources */,
 				4B82572124266B9E007E25C6 /* de.imprint.html in Resources */,
@@ -1701,7 +1813,6 @@
 				61D0F56D2435EB870026C91A /* RevocationPersonalDataViewController.storyboard in Resources */,
 				6153A4D7242598DC006A8570 /* SicknessCertificateConfirmationViewController.storyboard in Resources */,
 				6153A4E5242598DC006A8570 /* SicknessCertificateTanConfirmationViewController.storyboard in Resources */,
-				61D0F54E24352E960026C91A /* RevocationConfirmationViewController.storyboard in Resources */,
 				8397407B842054D9947D6AB7 /* configuration.json in Resources */,
 				614D72102428E87000CC545D /* QuarantineGuidelinesViewController.storyboard in Resources */,
 				615D36332437417600B608AB /* AttestedSicknessGuidelinesViewController.storyboard in Resources */,
@@ -1710,6 +1821,7 @@
 				61546549242CBEA60003D3D3 /* SuspicionGuidelinesViewController.storyboard in Resources */,
 				83974B1E68BE8FC18F274E68 /* ContactTableViewCell.xib in Resources */,
 				61459A53242ABFE200DC88A7 /* de.terms-of-use.html in Resources */,
+				4ED175BC245836F100248D3B /* server.der in Resources */,
 				61D1A3DD242A58B1007F82ED /* ContactHelpViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1764,24 +1876,6 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
-		61FABC992431EA960085786B /* Setup Firebase Environment GoogleService-Info.plist */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Setup Firebase Environment GoogleService-Info.plist";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Name of the resource we're selectively copying\nGOOGLESERVICE_INFO_PLIST=GoogleService-Info.plist\n\n# Get references to dev and prod versions of the GoogleService-Info.plist\n# NOTE: These should only live on the file system and should NOT be part of the target (since we'll be adding them to the target manually)\nGOOGLESERVICE_INFO_STAGE=${PROJECT_DIR}/${TARGET_NAME}/Resources/Firebase/Stage/${GOOGLESERVICE_INFO_PLIST}\nGOOGLESERVICE_INFO_PROD=${PROJECT_DIR}/${TARGET_NAME}/Resources/Firebase/Prod/${GOOGLESERVICE_INFO_PLIST}\n\n# Make sure the stage version of GoogleService-Info.plist exists\necho \"Looking for ${GOOGLESERVICE_INFO_PLIST} in ${GOOGLESERVICE_INFO_STAGE}\"\nif [ ! -f $GOOGLESERVICE_INFO_STAGE ]\nthen\n    echo \"error: No Stage GoogleService-Info.plist found. Please ensure it's in the proper directory.\"\n    exit 1\nfi\n\n# Make sure the prod version of GoogleService-Info.plist exists\necho \"Looking for ${GOOGLESERVICE_INFO_PLIST} in ${GOOGLESERVICE_INFO_PROD}\"\nif [ ! -f $GOOGLESERVICE_INFO_PROD ]\nthen\n    echo \"error: No Production GoogleService-Info.plist found. Please ensure it's in the proper directory.\"\n    exit 1\nfi\n\n# Get a reference to the destination location for the GoogleService-Info.plist\nPLIST_DESTINATION=${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app\necho \"Will copy ${GOOGLESERVICE_INFO_PLIST} to final destination: ${PLIST_DESTINATION}\"\n\n# Copy over the prod GoogleService-Info.plist for Production builds\nif [ \"${CONFIGURATION}\" == \"Production\" ]\nthen\n    echo \"Using ${GOOGLESERVICE_INFO_PROD}\"\n    cp \"${GOOGLESERVICE_INFO_PROD}\" \"${PLIST_DESTINATION}\"\nelse\n    echo \"Using ${GOOGLESERVICE_INFO_STAGE}\"\n    cp \"${GOOGLESERVICE_INFO_STAGE}\" \"${PLIST_DESTINATION}\"\nfi\n";
-		};
 		6F09AC68488332B30709BADD /* [Carte] Post Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1798,7 +1892,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "ruby ${PODS_ROOT}/Carte/Sources/Carte/carte.rb post\n";
+			shellScript = "ruby ${PODS_ROOT}/Carte/Sources/Carte/carte.rb post";
 			showEnvVarsInLog = 0;
 		};
 		89149E0C245082C60053310D /* prepare NOTICE.md */ = {
@@ -1891,7 +1985,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "ruby ${PODS_ROOT}/Carte/Sources/Carte/carte.rb pre\n";
+			shellScript = "ruby ${PODS_ROOT}/Carte/Sources/Carte/carte.rb pre";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1945,6 +2039,7 @@
 				839742C47A14834F1B2C24F6 /* MainViewModel.swift in Sources */,
 				9215253E2427C5E00023F469 /* SelfTestingHintViewModel.swift in Sources */,
 				61F50DD72439EC8500798264 /* MissingPermissionsCoordinator.swift in Sources */,
+				4ED175B62458347400248D3B /* DebugCoordinator.swift in Sources */,
 				614D72252429084300CC545D /* SelfTestingPersonalDataViewModel.swift in Sources */,
 				61D0F55924352EA90026C91A /* CheckboxView.swift in Sources */,
 				6153A52624264A2D006A8570 /* ActivityPresentationStyle.swift in Sources */,
@@ -1956,15 +2051,19 @@
 				9215253B2427C5E00023F469 /* SelfTestingHintCoordinator.swift in Sources */,
 				8922A16E243DF094004E9D42 /* Observable.swift in Sources */,
 				6153A4E8242598F5006A8570 /* SicknessCertificateCoordinator.swift in Sources */,
+				613AF72D24618DE80089085E /* Coordinator+ShareSheet.swift in Sources */,
 				4E019BE32427D287004FF670 /* Date+round.swift in Sources */,
+				4ED175B72458347400248D3B /* DebugViewController.swift in Sources */,
 				614BAA0D2423C334006797AA /* SuccessResponse.swift in Sources */,
 				9215255E2427C7AA0023F469 /* SelfTestingSuspicionViewModel.swift in Sources */,
 				614BAA0B2423C334006797AA /* Answer.swift in Sources */,
 				6153A4EF24259929006A8570 /* NotificationCenter+observe.swift in Sources */,
 				8397468B2A696988BB980A18 /* OnboardingViewModel.swift in Sources */,
+				613AF72B24616A8B0089085E /* ShareButton.swift in Sources */,
 				92FFC9BE24267D8200CC541B /* SelfTestingCheckSymptomsCoordinator.swift in Sources */,
 				61D1A3DC242A58B1007F82ED /* ContactHelpViewModel.swift in Sources */,
 				61546548242CBEA60003D3D3 /* SuspicionGuidelinesCoordinator.swift in Sources */,
+				4ED175C924606B0600248D3B /* RevokeSickness+Injection.swift in Sources */,
 				83974A3C096BEC7F5CCBFCC7 /* OnboardingViewController.swift in Sources */,
 				614D72332429094200CC545D /* SelfTestingReportFlowController.swift in Sources */,
 				614BA9EF2423C31C006797AA /* NetworkClient.swift in Sources */,
@@ -1974,11 +2073,13 @@
 				4EDB47F82421F13E000CE24A /* OnboardingPageView.swift in Sources */,
 				6153A4DE242598DC006A8570 /* SicknessCertificateFlowController.swift in Sources */,
 				61C4A4812427B848004D18BB /* QuarantineNotificationView.swift in Sources */,
-				614A001A243CB13E00ACBD0A /* SelfTestingConsentCoordinator.swift in Sources */,
 				614BAA0A2423C334006797AA /* ErrorResponse.swift in Sources */,
 				61BB41DB2436845F0083053B /* Date+daysUntil.swift in Sources */,
+				612C460224641C620072ECF7 /* RequestTan.swift in Sources */,
 				6153A52324264A2D006A8570 /* ActivityPresentableType.swift in Sources */,
 				839748117E82124039816540 /* AppDelegate+Injection.swift in Sources */,
+				4ED175B52458347400248D3B /* DebugNavigationController.swift in Sources */,
+				4ED175C824606B0200248D3B /* RevokeSicknessPersonalDataViewModel.swift in Sources */,
 				9215253C2427C5E00023F469 /* SelfTestingHintViewController.swift in Sources */,
 				614D723B242909C000CC545D /* SelfTestingConfirmationViewController.swift in Sources */,
 				614D722F2429084B00CC545D /* SelfTestingTanConfirmationViewController.swift in Sources */,
@@ -1992,6 +2093,7 @@
 				613E35FA242E3F71009421A8 /* AppConfiguration.swift in Sources */,
 				613E35F7242E3F65009421A8 /* LaunchScreenView.swift in Sources */,
 				6153A52524264A2D006A8570 /* ActivityPresentable.swift in Sources */,
+				4ED175D92460730E00248D3B /* RevokeSicknessStatusReportCoordinator.swift in Sources */,
 				4E6B44202437A17A004267F3 /* P2PKit+Injection.swift in Sources */,
 				614D720E2428E87000CC545D /* QuarantineGuidelinesViewModel.swift in Sources */,
 				4B7379E92423D9E600DF338E /* StartMenuViewController.swift in Sources */,
@@ -2009,6 +2111,7 @@
 				615D36342437417600B608AB /* AttestedSicknessGuidelinesViewController.swift in Sources */,
 				4EDB47F42421EE02000CE24A /* AppDelegate+FontStyles.swift in Sources */,
 				9215254D2427C74A0023F469 /* SelfTestingSelfMonitoringViewModel.swift in Sources */,
+				612C4600246414260072ECF7 /* ConfigurationRetrievable.swift in Sources */,
 				6153A4FF24259953006A8570 /* FloatingTextField.swift in Sources */,
 				4EC81FB72423844E00179CE9 /* SecondaryButton.swift in Sources */,
 				6154654A242CBEA60003D3D3 /* SuspicionGuidelinesViewController.swift in Sources */,
@@ -2021,33 +2124,35 @@
 				4E019BD8242604D6004FF670 /* SelectedRoundCornersView.swift in Sources */,
 				61459A57242AC48800DC88A7 /* Website.swift in Sources */,
 				61546542242CBE7F0003D3D3 /* SelfMonitoringGuidelinesViewController.swift in Sources */,
+				4E1AAEF4246186FA00D43E2B /* RevocationConfirmationViewController.swift in Sources */,
 				611B78B9242816950040CCB3 /* UIWindow+topMostViewController.swift in Sources */,
 				6153A4D8242598DC006A8570 /* SicknessCertificateConfirmationCoordinator.swift in Sources */,
 				6153A52B24264A34006A8570 /* UIView+embedSubview.swift in Sources */,
 				6153A4D2242598DC006A8570 /* SicknessCertificateStatusReportViewController.swift in Sources */,
 				4B82571F24266A32007E25C6 /* StartMenuSimpleWebViewViewModel.swift in Sources */,
 				613E3618242E5ADA009421A8 /* MicrophoneInfoCoordinator.swift in Sources */,
+				616518E52460777C001219A7 /* ShareAppCardView.swift in Sources */,
 				83974A681281494B1DB360AB /* ContactViewModel.swift in Sources */,
 				614D723C242909C000CC545D /* SelfTestingConfirmationViewModel.swift in Sources */,
 				839740094A9E228FB41E3A8C /* ContactViewController.swift in Sources */,
 				614BAA092423C334006797AA /* Questionnaire.swift in Sources */,
-				614A001C243CB13E00ACBD0A /* SelfTestingConsentViewController.swift in Sources */,
 				6153A50324259953006A8570 /* InstructionsView.swift in Sources */,
 				61D0F54B24352E960026C91A /* RevocationStatusReportCoordinator.swift in Sources */,
 				61032065243E0AE400ED3A20 /* FlashableScrollIndicators.swift in Sources */,
 				61D1A3E5242A58CA007F82ED /* MainHelpCoordinator.swift in Sources */,
 				839742CA8F8A4CC34C042091 /* RemoteContact.swift in Sources */,
 				92FFC9BF24267D8200CC541B /* SelfTestingCheckSymptomsViewController.swift in Sources */,
+				4ED175D32460705200248D3B /* RevokeSicknessTanConfirmationViewModel.swift in Sources */,
 				61D0F56F2435EB870026C91A /* RevocationPersonalDataViewModel.swift in Sources */,
-				61D0F54F24352E960026C91A /* RevocationConfirmationViewController.swift in Sources */,
 				83974B1F6F49E544E670E7E3 /* NSString+localized.swift in Sources */,
 				6153A4E3242598DC006A8570 /* SicknessCertificateTanConfirmationViewModel.swift in Sources */,
+				4E1AAEFD2461870700D43E2B /* RevokeSicknessConfirmationViewModel.swift in Sources */,
 				92FFC9C124267D8200CC541B /* SelfTestingCheckSymptomsViewModel.swift in Sources */,
 				92FFC9C52426806300CC541B /* SelfTestingFlowController.swift in Sources */,
-				61D0F54C24352E960026C91A /* RevocationConfirmationCoordinator.swift in Sources */,
 				4EC81FB52423843300179CE9 /* PrimaryButton.swift in Sources */,
 				61BB41DA243684590083053B /* Revocation+Injection.swift in Sources */,
 				614BAA082423C334006797AA /* Question.swift in Sources */,
+				4E1AAEF1246186FA00D43E2B /* RevocationConfirmationCoordinator.swift in Sources */,
 				61F50DDA2439EC8500798264 /* MissingPermissionsViewModel.swift in Sources */,
 				6153A4EE24259929006A8570 /* UIResponder+Traversing.swift in Sources */,
 				611B78BF242816BE0040CCB3 /* AppUpdateService.swift in Sources */,
@@ -2056,6 +2161,7 @@
 				614BA9F22423C31C006797AA /* NetworkService.swift in Sources */,
 				614BA9F92423C31C006797AA /* NetworkConfiguration.swift in Sources */,
 				614D72312429084B00CC545D /* SelfTestingTanConfirmationCoordinator.swift in Sources */,
+				4ED175DB2460731500248D3B /* RevokeSicknessStatusReportViewModel.swift in Sources */,
 				4BD0B8DC2427AF6400BFA123 /* NotificationService.swift in Sources */,
 				614D72052428E82700CC545D /* ContactSicknessViewModel.swift in Sources */,
 				6153A52924264A2D006A8570 /* ActivityView.swift in Sources */,
@@ -2066,7 +2172,9 @@
 				6153A4DD242598DC006A8570 /* SicknessCertificate+Injection.swift in Sources */,
 				614D720F2428E87000CC545D /* QuarantineGuidelinesCoordinator.swift in Sources */,
 				8397409A6F3CF92410AAEE06 /* TransLabel.swift in Sources */,
+				4ED175D024606F6D00248D3B /* RevokeSicknessTanConfirmationCoordinator.swift in Sources */,
 				614D72222429083F00CC545D /* SelfTestingPersonalDataCoordinator.swift in Sources */,
+				4ED175C724606AFE00248D3B /* RevokeSicknessPersonalDataViewController.swift in Sources */,
 				4EB52F02243C955D0004FAA0 /* M003Database_1_1_Migration.swift in Sources */,
 				6153A4ED24259929006A8570 /* UIScrollView+ScrollToVisible.swift in Sources */,
 				61C4A46C24275C38004D18BB /* UIView+Shadow.swift in Sources */,
@@ -2081,16 +2189,19 @@
 				615D36352437417600B608AB /* AttestedSicknessGuidelinesViewModel.swift in Sources */,
 				6153A4D3242598DC006A8570 /* SicknessCertificateStatusReportCoordinator.swift in Sources */,
 				83974ABF4A7552BBADBEA195 /* RSAGenerator.swift in Sources */,
+				4E1AAEFB2461870700D43E2B /* RevokeSicknessConfirmationCoordinator.swift in Sources */,
 				61F50DD92439EC8500798264 /* MissingPermissionsViewController.swift in Sources */,
+				4E1AAEFC2461870700D43E2B /* RevokeSicknessConfirmationViewController.swift in Sources */,
 				6153A50024259953006A8570 /* PaddingLabel.swift in Sources */,
+				4ED175C524606AF400248D3B /* RevokeSicknessPersonalDataCoordinator.swift in Sources */,
 				839748D0A89F0117C192DD34 /* CryptoService.swift in Sources */,
 				611B78BA242816950040CCB3 /* UIApplication+AppStoreAppId.swift in Sources */,
 				61D0F56C2435EB870026C91A /* RevocationPersonalDataCoordinator.swift in Sources */,
 				6153A52724264A2D006A8570 /* ActivityModalViewController.swift in Sources */,
 				839740EFDBDDEF4CFD0F4B72 /* ContactLabelTableViewCell.swift in Sources */,
-				61D0F54D24352E960026C91A /* RevocationConfirmationViewModel.swift in Sources */,
 				83974960BEEA73146FD4930C /* AutoMarginTableViewCell.swift in Sources */,
 				83974B08F39FB88A2F8B47BF /* HistoryTableViewCell.swift in Sources */,
+				4ED175D224606F9600248D3B /* RevokeSicknessTanConfirmationViewController.swift in Sources */,
 				83974BFDA169F61FBF77FA24 /* DatabaseService.swift in Sources */,
 				613E35F5242E3F65009421A8 /* LaunchScreenViewController.swift in Sources */,
 				615D36642438C25400B608AB /* LoggingService.swift in Sources */,
@@ -2103,9 +2214,11 @@
 				6153A4F624259932006A8570 /* InputValidation.swift in Sources */,
 				61D1A3DB242A58B1007F82ED /* ContactHelpViewController.swift in Sources */,
 				61546543242CBE7F0003D3D3 /* SelfMonitoringGuidelinesViewModel.swift in Sources */,
+				4ED175DA2460731200248D3B /* RevokeSicknessStatusReportViewController.swift in Sources */,
 				4B25BA9D2429592A00CDD1CF /* UserHealthStatus.swift in Sources */,
 				8397409E6D4A0FD3F83CE213 /* ConfigurationService.swift in Sources */,
 				8397485AF4D5FC35155ED797 /* ConfigurationService+Injection.swift in Sources */,
+				4ED175CA24606B0A00248D3B /* RevokeSicknessFlowController.swift in Sources */,
 				61546553242D1A6D0003D3D3 /* AnswerView.swift in Sources */,
 				83974D611E8008BF5EED0ADA /* HistoryViewModel.swift in Sources */,
 				83974B01E648AF3AB175DCF1 /* HistoryViewController.swift in Sources */,
@@ -2116,8 +2229,8 @@
 				611B78BE242816BE0040CCB3 /* AppUpdateService+Injection.swift in Sources */,
 				83974E39C51DA3FCCB202E62 /* MainCoordinator.swift in Sources */,
 				83974C2CD7A816EE91AA6583 /* OutgoingInfectionMessage.swift in Sources */,
+				4ED175B82458347400248D3B /* DebugViewModel.swift in Sources */,
 				83974070AAD41799D50EE1F8 /* Contact.swift in Sources */,
-				614A001D243CB13F00ACBD0A /* SelfTestingConsentViewModel.swift in Sources */,
 				83974E1C0C969B298357EDD5 /* InfectionWarning.swift in Sources */,
 				839740A169112CCF5D5A3C10 /* MessageUpdateService.swift in Sources */,
 				839742207FE8739EB66870E3 /* MessageUpdate+injection.swift in Sources */,
@@ -2129,7 +2242,7 @@
 				83974E92DF6EEC0D6F262ED6 /* M002ScoreMigration.swift in Sources */,
 				8397463D0CC798F8B4976AB8 /* P2PKitEvent.swift in Sources */,
 				83974E01F55C841BAD9C9D1D /* NetworkSession.swift in Sources */,
-				839749D28AAC292FFC2148D0 /* Certificates.swift in Sources */,
+				4E1AAEF2246186FA00D43E2B /* RevocationConfirmationViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2308,15 +2421,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "CoronaContact/Stopp Corona.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 18;
-				DEVELOPMENT_TEAM = "";
+				CURRENT_PROJECT_VERSION = 20;
+				DEVELOPMENT_TEAM = "$(DEVELOPMENT_TEAM)";
 				ENABLE_TESTABILITY = NO;
 				INFOPLIST_FILE = CoronaContact/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.4;
+				MARKETING_VERSION = 1.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = at.roteskreuz.stopcorona.stage;
 				PRODUCT_NAME = "Stopp Corona";
 				SWIFT_VERSION = 5.0;
@@ -2331,14 +2444,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "CoronaContact/Stopp Corona.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 18;
-				DEVELOPMENT_TEAM = "";
+				CURRENT_PROJECT_VERSION = 20;
+				DEVELOPMENT_TEAM = "$(DEVELOPMENT_TEAM)";
 				INFOPLIST_FILE = CoronaContact/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.4;
+				MARKETING_VERSION = 1.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = at.roteskreuz.stopcorona;
 				PRODUCT_NAME = "Stopp Corona";
 				SWIFT_VERSION = 5.0;
@@ -2457,15 +2570,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "CoronaContact/Stopp Corona.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 18;
-				DEVELOPMENT_TEAM = "";
+				CURRENT_PROJECT_VERSION = 20;
+				DEVELOPMENT_TEAM = "$(DEVELOPMENT_TEAM)";
 				ENABLE_TESTABILITY = YES;
 				INFOPLIST_FILE = CoronaContact/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.4;
+				MARKETING_VERSION = 1.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = at.roteskreuz.stopcorona.stage;
 				PRODUCT_NAME = "Stopp Corona";
 				SWIFT_VERSION = 5.0;

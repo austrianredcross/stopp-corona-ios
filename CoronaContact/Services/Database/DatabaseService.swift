@@ -354,11 +354,11 @@ class DatabaseService {
         }
     }
 
-    func getContactsToUpdate() -> [ContactUpdate] { // this will return all yellow messages that needs update
+    func getContactsToUpdate(from type: InfectionWarningType) -> [ContactUpdate] { // this will return all yellow messages that needs update
         guard let dba = self.dba else { return [] }
 
         let selectQuery = outMessages.select(uuid, timestamp, pubkey, created)
-                .filter(messageType == String(InfectionWarningType.yellow.rawValue))
+                .filter(messageType == String(type.rawValue))
                 .order(created)
         do {
             let updates = try dba.prepare(selectQuery).map({ row in

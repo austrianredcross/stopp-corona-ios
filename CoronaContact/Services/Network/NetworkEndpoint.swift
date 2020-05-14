@@ -10,13 +10,18 @@ enum NetworkEndpoint: TargetType {
     case configuration
     case infectionMessages(fromId: String?, addressPrefix: String)
     case infectionInfo(InfectionInfo)
-    case requestTan(String)
+    case requestTan(RequestTan)
 }
 
 // MARK: - TargetType Protocol Implementation
 extension NetworkEndpoint {
     var baseURL: URL {
-        NetworkConfiguration.baseURL
+        switch self {
+        case .requestTan:
+            return NetworkConfiguration.smsBaseURL
+        default:
+            return NetworkConfiguration.baseURL
+        }
     }
 
     var path: String {
@@ -34,8 +39,10 @@ extension NetworkEndpoint {
 
     var method: Moya.Method {
         switch self {
-        case .configuration, .infectionMessages, .requestTan:
+        case .configuration, .infectionMessages:
             return .get
+        case .requestTan:
+            return .post
         case .infectionInfo:
             return .put
         }
@@ -54,8 +61,8 @@ extension NetworkEndpoint {
             return .requestParameters(parameters: parameters, encoding: URLEncoding.queryString)
         case let .infectionInfo(infectionInfo):
             return .requestCustomJSONEncodable(infectionInfo, encoder: JSONEncoder.withApiDateFormat)
-        case let .requestTan(mobileNumber):
-            return .requestParameters(parameters: ["phone": mobileNumber], encoding: URLEncoding.queryString)
+        case let .requestTan(requestTan):
+            return .requestJSONEncodable(requestTan)
         }
     }
 
@@ -64,8 +71,16 @@ extension NetworkEndpoint {
     }
 
     var headers: [String: String]? {
-        [
-            NetworkConfiguration.HeaderKeys.authorizationKey: NetworkConfiguration.authorizationKey,
+        let authorizationKey: String
+        switch self {
+        case .requestTan:
+            authorizationKey = NetworkConfiguration.smsAuthorizationKey
+        default:
+            authorizationKey = NetworkConfiguration.authorizationKey
+        }
+
+        return [
+            NetworkConfiguration.HeaderKeys.authorizationKey: authorizationKey,
             NetworkConfiguration.HeaderKeys.appId: NetworkConfiguration.appId,
             NetworkConfiguration.HeaderKeys.contentType: NetworkConfiguration.HeaderValues.contentType
         ]
