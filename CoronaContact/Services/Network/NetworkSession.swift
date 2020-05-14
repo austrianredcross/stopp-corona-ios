@@ -15,6 +15,11 @@ class NetworkSession {
         ]
         let trustManager = ServerTrustManager(evaluators: evaluators)
         let configuration = URLSessionConfiguration.af.default
+
+        #if DEBUG
+        return Alamofire.Session.default
+        #else
         return Alamofire.Session(configuration: configuration, serverTrustManager: trustManager)
+        #endif
     }
 }
