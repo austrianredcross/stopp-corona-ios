@@ -28,7 +28,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     @Injected private var notificationService: NotificationService
     @Injected private var messageUpdateService: MessageUpdateService
     @Injected private var databaseService: DatabaseService
-    @Injected private var p2pKitService: P2PKitService
     @Injected private var healthRepository: HealthRepository
 
     lazy var screenSize: ScreenSize = {
@@ -66,7 +65,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func initializeExternalServices(_ application: UIApplication) {
         guard serivcesInitialized == false else { return }
 
-        p2pKitService.enable()
         configService.update()
         msgUpdateService.update()
 

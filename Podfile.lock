@@ -80,7 +80,6 @@ PODS:
     - GoogleNetworkingUtilities (~> 1.2)
     - GoogleSymbolUtilities (~> 1.1)
     - GoogleUtilitiesLegacy (~> 1.3)
-  - p2pkit (2.1.0)
   - PromisesObjC (1.2.8)
   - Protobuf (3.11.4)
   - Resolver (1.1.2)
@@ -105,7 +104,6 @@ DEPENDENCIES:
   - M13Checkbox
   - Moya
   - NearbyMessages
-  - p2pkit
   - Resolver
   - Reusable
   - SQLite.swift (~> 0.12.0)
@@ -138,7 +136,6 @@ SPEC REPOS:
     - Moya
     - nanopb
     - NearbyMessages
-    - p2pkit
     - PromisesObjC
     - Protobuf
     - Resolver
@@ -172,7 +169,6 @@ SPEC CHECKSUMS:
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
   NearbyMessages: bd9e88f2df7fbab78be58fed58580d5d5bd62cbf
-  p2pkit: 3c42f139e7d523fc870d791ba963dab69f79688a
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
   Protobuf: 176220c526ad8bd09ab1fb40a978eac3fef665f7
   Resolver: e04ca5a9a19906f2e5cdceb2b90edd3b5daed049
@@ -183,6 +179,6 @@ SPEC CHECKSUMS:
   SwiftRichString: 9a6a70b4fe2cf428e38348b5ada5400da74621fd
   SwiftyBeaver: d39e7c376bf15e9fffca8263b8fd1f42ea56aa2d
 
-PODFILE CHECKSUM: 002d256dedecfab37de925c87d5c2c5768715ac7
+PODFILE CHECKSUM: e7c117a4a99f74e66132589d7b6f9949b51e0fc5
 
 COCOAPODS: 1.9.1

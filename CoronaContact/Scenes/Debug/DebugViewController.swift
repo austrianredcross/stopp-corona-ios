@@ -10,7 +10,6 @@ import Resolver
 
 class DebugViewController: UIViewController, StoryboardBased, ViewModelBased, Reusable {
     @Injected private var crypto: CryptoService
-    @Injected private var p2pkit: P2PKitService
 
     var viewModel: DebugViewModel? {
         didSet {
@@ -18,41 +17,9 @@ class DebugViewController: UIViewController, StoryboardBased, ViewModelBased, Re
         }
     }
 
+    // TODO: Remove p2p based views
     @IBOutlet weak var p2pID: UILabel!
     @IBOutlet weak var p2pStack: UIStackView!
-
-    func updateP2PStack(events: [P2PKitEvent]) {
-        for view in p2pStack.arrangedSubviews {
-            view.removeFromSuperview()
-        }
-
-        let mono = Style {
-            $0.font = SystemFonts.AmericanTypewriter_Bold.font(size: 14)
-            $0.alignment = .center
-        }
-        let now = Date()
-        let intervalStart = now.addingTimeInterval(-p2pkit.detectionInterval)
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "HH:mm:ss"
-
-        events.reversed().forEach { event in
-
-            let label = UILabel()
-            label.adjustsFontSizeToFitWidth = true
-            label.attributedText = "\(crypto.getPublicKeyPrefix(publicKey: event.pubKey)) Signal:\(event.signalStrength)"
-                    .set(style: mono)
-            p2pStack.addArrangedSubview(label)
-            let label2 = UILabel()
-            label2.adjustsFontSizeToFitWidth = true
-            label2.textAlignment = .center
-
-            let score = p2pkit.calculateScoreFor(event, intervalStart, now)
-            var end = "n.a."
-            if let endDate = event.end { end = dateFormatter.string(from: endDate) }
-            label2.text = "\(dateFormatter.string(from: event.start)) - \(end) Score: \(String(format: "%.3f", score))"
-            p2pStack.addArrangedSubview(label2)
-        }
-    }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

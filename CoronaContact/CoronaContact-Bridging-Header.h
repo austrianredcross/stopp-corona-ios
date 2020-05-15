@@ -7,6 +7,5 @@
 #define CoronaContact_Bridging_Header_h
 
 #import <GNSMessages.h>
-#import <P2PKit/P2PKit.h>
 
 #endif /* CoronaContact_Bridging_Header_h */

@@ -11,7 +11,6 @@ class ContactViewModel: ViewModel {
     weak var viewController: ContactViewController?
     @Injected private var nearbyService: NearbyService
     @Injected private var crypto: CryptoService
-    @Injected private var p2pkit: P2PKitService
     var isActive: Bool { nearbyService.isSharing }
     var errors: PermissionErrors = PermissionErrors(microphone: false, bluetooth: false, nearby: false)
     var sharingEnabled = true
