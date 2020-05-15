@@ -27,26 +27,6 @@ class DebugViewModel: ViewModel {
         self.coordinator = coordintator
     }
 
-    @objc func viewWillAppear() {
-        updateView()
-    }
-
-    @objc func updateView() {
-        if let timer = timer { timer.invalidate(); }
-        timer = Timer(fireAt: Date().addingTimeInterval(2),
-                      interval: 0,
-                      target: self,
-                      selector: #selector(updateView), userInfo: nil, repeats: false)
-
-        viewController?.p2pID.text = "MyID: \(crypto.getMyPublicKeyPrefix() ?? "")"
-
-        if let timer = timer { RunLoop.main.add(timer, forMode: .common) }
-    }
-
-    deinit {
-        NotificationCenter.default.removeObserver(self)
-    }
-
     func close() {
         coordinator?.finish(animated: true)
     }

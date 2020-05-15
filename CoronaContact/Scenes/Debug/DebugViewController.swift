@@ -17,16 +17,6 @@ class DebugViewController: UIViewController, StoryboardBased, ViewModelBased, Re
         }
     }
 
-    // TODO: Remove p2p based views
-    @IBOutlet weak var p2pID: UILabel!
-    @IBOutlet weak var p2pStack: UIStackView!
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        viewModel?.viewWillAppear()
-
-    }
-
     @IBAction func close(_ sender: Any) {
         viewModel?.close()
     }
