@@ -267,6 +267,7 @@
 		839743B155DC6C9A74C9724B /* HistoryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83974E30FD36A3286882FA7F /* HistoryCoordinator.swift */; };
 		839743F271E19BEF66B89E3A /* OnboardingViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 839746C7B319EBECC38557CB /* OnboardingViewController.storyboard */; };
 		8397446DA0EAC8E79B9445BA /* TransButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8397498ADF6B7522C4D9AC93 /* TransButton.swift */; };
+		839744A261CFAE17A42C84A1 /* M004RemovalOfP2PKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83974C150BC2CBB287C5D996 /* M004RemovalOfP2PKit.swift */; };
 		8397463D0CC798F8B4976AB8 /* P2PKitEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83974BF870B575EAC8607D3D /* P2PKitEvent.swift */; };
 		8397468B2A696988BB980A18 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83974639DCEE7C5E6BF2008F /* OnboardingViewModel.swift */; };
 		839746AC0F1A3D6D6D96C1AC /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839745B40296D5952E506699 /* ContactTableViewCell.swift */; };
@@ -632,6 +633,7 @@
 		83974B80F5AA22CF8DE14941 /* M002ScoreMigration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = M002ScoreMigration.swift; sourceTree = "<group>"; };
 		83974BF5DD12A8B96C4A52A8 /* MainViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		83974BF870B575EAC8607D3D /* P2PKitEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = P2PKitEvent.swift; sourceTree = "<group>"; };
+		83974C150BC2CBB287C5D996 /* M004RemovalOfP2PKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = M004RemovalOfP2PKit.swift; sourceTree = "<group>"; };
 		83974C72E7A76A18CD84FD94 /* NearbyService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NearbyService.swift; sourceTree = "<group>"; };
 		83974CA3ADFAFC996C58C505 /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		83974CDB8D1D885F0FB88CC1 /* OnboardingCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinator.swift; sourceTree = "<group>"; };
@@ -1486,6 +1488,7 @@
 				83974E486CD5B31F449062D0 /* M001InitialMigration.swift */,
 				83974B80F5AA22CF8DE14941 /* M002ScoreMigration.swift */,
 				4EB52F01243C955D0004FAA0 /* M003Database_1_1_Migration.swift */,
+				83974C150BC2CBB287C5D996 /* M004RemovalOfP2PKit.swift */,
 			);
 			path = Migrations;
 			sourceTree = "<group>";
@@ -2227,6 +2230,7 @@
 				8397463D0CC798F8B4976AB8 /* P2PKitEvent.swift in Sources */,
 				83974E01F55C841BAD9C9D1D /* NetworkSession.swift in Sources */,
 				4E1AAEF2246186FA00D43E2B /* RevocationConfirmationViewModel.swift in Sources */,
+				839744A261CFAE17A42C84A1 /* M004RemovalOfP2PKit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

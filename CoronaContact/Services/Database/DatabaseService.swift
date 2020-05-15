@@ -39,9 +39,7 @@ class DatabaseService {
     private let contacts = Table("handshakes_2")
     private let outMessages = Table("out_messages_2")
     private let inMessages = Table("in_messages")
-    private let p2pkitEvents = Table("p2pkit_events")
 
-    private let signalStrength = Expression<Int>("strength")
     private let start = Expression<Date>("start")
     private let end = Expression<Date?>("end")
 
@@ -68,7 +66,8 @@ class DatabaseService {
         let manager = SQLiteMigrationManager(db: dba, migrations: [
             M001InitialMigration(),
             M002ScoreMigration(),
-            M003Database11Migration()
+            M003Database11Migration(),
+            M004RemovalOfP2PKit(),
         ])
 
         do {
@@ -85,29 +84,6 @@ class DatabaseService {
             log.verbose("current migrations: \(manager.appliedVersions())", context: .database)
         } catch {
             log.error("migration failed: \(error)", context: .database)
-        }
-    }
-
-    func saveP2PKitEvent(pubKey key: Data, strength: Int) {
-        guard let dba = dba else { return }
-        do {
-            try dba.run(p2pkitEvents.filter(pubkey == key && end == nil).update(end <- Date()))
-            try dba.run(p2pkitEvents.insert(pubkey <- key, start <- Date(), signalStrength <- strength))
-        } catch {
-            log.error("save event failed: \(error)", context: .database)
-        }
-    }
-
-    func saveP2PKitEventForAllPubkeys(strength: Int) {
-        guard let dba = dba else { return }
-        do {
-            try dba.transaction {
-                try dba.prepare(p2pkitEvents.select(pubkey).group(pubkey)).forEach { row in
-                    saveP2PKitEvent(pubKey: row[pubkey], strength: strength)
-                }
-            }
-        } catch {
-            log.error("delete events failed: \(error)", context: .database)
         }
     }
 
@@ -143,47 +119,6 @@ class DatabaseService {
             try dba.run(query.delete())
         } catch {
             log.error("delete failed: \(error)", context: .database)
-        }
-    }
-
-    /**
-     * Delete all events which ended before the [endtime]. And 0 proximity events if they started
-     * before the [endtime].
-     *
-     * Zero proximity events (PeerLost) at the beginning of the event list are not relevant and might otherwise
-     * never be deleted if we never see the device again.
-     */
-    func deleteP2PKitEventsBefore(endtime: Date) {
-        guard let dba = dba else { return }
-        do {
-            try dba.run(p2pkitEvents.filter(end < endtime || (signalStrength == 0 && start < endtime)).delete())
-        } catch {
-            log.error("delete events failed: \(error)", context: .database)
-        }
-    }
-
-    func deleteP2PKitEvents() {
-        guard let dba = dba else { return }
-        do {
-            try dba.run(p2pkitEvents.delete())
-        } catch {
-            log.error("delete events failed: \(error)", context: .database)
-        }
-    }
-
-    func getP2PKitEvents() -> [P2PKitEvent] {
-        guard let dba = dba else { return [] }
-        do {
-            return try dba.prepare(p2pkitEvents.select(pubkey, signalStrength, start, end).order(pubkey, start))
-                    .map { row in
-                        P2PKitEvent(pubKey: row[pubkey],
-                                    signalStrength: row[signalStrength],
-                                    start: row[start],
-                                    end: row[end])
-                    }
-        } catch {
-            log.error("delete events failed: \(error)", context: .database)
-            return []
         }
     }
 
