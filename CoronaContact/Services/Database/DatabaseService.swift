@@ -67,7 +67,7 @@ class DatabaseService {
             M001InitialMigration(),
             M002ScoreMigration(),
             M003Database11Migration(),
-            M004RemovalOfP2PKit(),
+            M004RemovalOfP2PKit()
         ])
 
         do {
