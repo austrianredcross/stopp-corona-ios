@@ -211,10 +211,6 @@ class MainViewModel: ViewModel {
         }
     }
 
-    func history() {
-        coordinator?.history()
-    }
-
     func backgroundDiscovery(enable: Bool) {
        // TODO: new implementation
     }

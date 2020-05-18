@@ -21,7 +21,6 @@
 		4BD0B8DF2427AF9800BFA123 /* NotificationService+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD0B8DE2427AF9800BFA123 /* NotificationService+Injection.swift */; };
 		4E019BD8242604D6004FF670 /* SelectedRoundCornersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E019BD7242604D6004FF670 /* SelectedRoundCornersView.swift */; };
 		4E019BDA24265DF7004FF670 /* Data+uuid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E019BD924265DF7004FF670 /* Data+uuid.swift */; };
-		4E019BDC242692E3004FF670 /* HistoryViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E019BDB242692E3004FF670 /* HistoryViewController.storyboard */; };
 		4E019BDE24269556004FF670 /* ContactCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E019BDD24269555004FF670 /* ContactCoordinator.swift */; };
 		4E019BE32427D287004FF670 /* Date+round.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E019BE22427D287004FF670 /* Date+round.swift */; };
 		4E0B3E39241F995D00EF60EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0B3E38241F995D00EF60EE /* AppDelegate.swift */; };
@@ -39,7 +38,6 @@
 		4E1F2EC324646B550088B8F8 /* sms.der in Resources */ = {isa = PBXBuildFile; fileRef = 4E1F2EC224646B550088B8F8 /* sms.der */; };
 		4E360818242350D900789ABF /* CryptoServices+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E360817242350D900789ABF /* CryptoServices+Injection.swift */; };
 		4E44EDEB2424D076000CC695 /* ContactLabelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E44EDEA2424D076000CC695 /* ContactLabelTableViewCell.xib */; };
-		4E44EDED2424F4AC000CC695 /* HistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E44EDEC2424F4AC000CC695 /* HistoryTableViewCell.xib */; };
 		4E7BA4AA242E28DB00AE0AC7 /* wave.json in Resources */ = {isa = PBXBuildFile; fileRef = 4E7BA4A9242E28DB00AE0AC7 /* wave.json */; };
 		4E9BF7062420C2A100B360A4 /* MainViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E9BF7052420C2A100B360A4 /* MainViewController.storyboard */; };
 		4E9BF7082420C31400B360A4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9BF7072420C31400B360A4 /* MainViewController.swift */; };
@@ -264,7 +262,6 @@
 		839742207FE8739EB66870E3 /* MessageUpdate+injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839742D5EEDF8B25D481FF0E /* MessageUpdate+injection.swift */; };
 		839742C47A14834F1B2C24F6 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83974BF5DD12A8B96C4A52A8 /* MainViewModel.swift */; };
 		839742CA8F8A4CC34C042091 /* RemoteContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839741E9DA65C125979BF49B /* RemoteContact.swift */; };
-		839743B155DC6C9A74C9724B /* HistoryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83974E30FD36A3286882FA7F /* HistoryCoordinator.swift */; };
 		839743F271E19BEF66B89E3A /* OnboardingViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 839746C7B319EBECC38557CB /* OnboardingViewController.storyboard */; };
 		8397446DA0EAC8E79B9445BA /* TransButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8397498ADF6B7522C4D9AC93 /* TransButton.swift */; };
 		839744A261CFAE17A42C84A1 /* M004RemovalOfP2PKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83974C150BC2CBB287C5D996 /* M004RemovalOfP2PKit.swift */; };
@@ -285,13 +282,10 @@
 		83974AA35AEBF4A6769C00B4 /* M001InitialMigration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83974E486CD5B31F449062D0 /* M001InitialMigration.swift */; };
 		83974ABF4A7552BBADBEA195 /* RSAGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83974F61E3E28DB3698CD9F2 /* RSAGenerator.swift */; };
 		83974AC7075D0484918431AC /* ContactViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83974F38691AC7428DA4002D /* ContactViewController.storyboard */; };
-		83974B01E648AF3AB175DCF1 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83974CA3ADFAFC996C58C505 /* HistoryViewController.swift */; };
-		83974B08F39FB88A2F8B47BF /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83974D8BF3CA981689E42FD2 /* HistoryTableViewCell.swift */; };
 		83974B1E68BE8FC18F274E68 /* ContactTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83974E8DF47258DBA88F9CAA /* ContactTableViewCell.xib */; };
 		83974B1F6F49E544E670E7E3 /* NSString+localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839747A974BEBD27078B488B /* NSString+localized.swift */; };
 		83974BFDA169F61FBF77FA24 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83974CDC660156EAFABB1829 /* DatabaseService.swift */; };
 		83974C2CD7A816EE91AA6583 /* OutgoingInfectionMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839743E9E3569B229703A3F8 /* OutgoingInfectionMessage.swift */; };
-		83974D611E8008BF5EED0ADA /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839747705BCEAC94273217A9 /* HistoryViewModel.swift */; };
 		83974E01F55C841BAD9C9D1D /* NetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83974B0D3420CEC1F08FB85D /* NetworkSession.swift */; };
 		83974E1C0C969B298357EDD5 /* InfectionWarning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83974B392C3F97B048440E20 /* InfectionWarning.swift */; };
 		83974E39C51DA3FCCB202E62 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839747825714F0364F308D55 /* MainCoordinator.swift */; };
@@ -353,7 +347,6 @@
 		4BD0B8DE2427AF9800BFA123 /* NotificationService+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationService+Injection.swift"; sourceTree = "<group>"; };
 		4E019BD7242604D6004FF670 /* SelectedRoundCornersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedRoundCornersView.swift; sourceTree = "<group>"; };
 		4E019BD924265DF7004FF670 /* Data+uuid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+uuid.swift"; sourceTree = "<group>"; };
-		4E019BDB242692E3004FF670 /* HistoryViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HistoryViewController.storyboard; sourceTree = "<group>"; };
 		4E019BDD24269555004FF670 /* ContactCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactCoordinator.swift; sourceTree = "<group>"; };
 		4E019BE22427D287004FF670 /* Date+round.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+round.swift"; sourceTree = "<group>"; };
 		4E0B3E35241F995D00EF60EE /* Stopp Corona.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Stopp Corona.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -375,7 +368,6 @@
 		4E3229A1242345FB00F60053 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E360817242350D900789ABF /* CryptoServices+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CryptoServices+Injection.swift"; sourceTree = "<group>"; };
 		4E44EDEA2424D076000CC695 /* ContactLabelTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactLabelTableViewCell.xib; sourceTree = "<group>"; };
-		4E44EDEC2424F4AC000CC695 /* HistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryTableViewCell.xib; sourceTree = "<group>"; };
 		4E7BA4A9242E28DB00AE0AC7 /* wave.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = wave.json; sourceTree = "<group>"; };
 		4E9BF7052420C2A100B360A4 /* MainViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainViewController.storyboard; sourceTree = "<group>"; };
 		4E9BF7072420C31400B360A4 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -617,7 +609,6 @@
 		839746C7B319EBECC38557CB /* OnboardingViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnboardingViewController.storyboard; sourceTree = "<group>"; };
 		839746E980E1878DBDF978AE /* OnboardingConsentPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingConsentPageView.swift; sourceTree = "<group>"; };
 		8397474245A5951193FA02B7 /* TransLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransLabel.swift; sourceTree = "<group>"; };
-		839747705BCEAC94273217A9 /* HistoryViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
 		839747825714F0364F308D55 /* MainCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		839747A974BEBD27078B488B /* NSString+localized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSString+localized.swift"; sourceTree = "<group>"; };
 		8397482B5EB2DBA92C193311 /* MessageUpdateService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageUpdateService.swift; sourceTree = "<group>"; };
@@ -635,13 +626,10 @@
 		83974BF870B575EAC8607D3D /* P2PKitEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = P2PKitEvent.swift; sourceTree = "<group>"; };
 		83974C150BC2CBB287C5D996 /* M004RemovalOfP2PKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = M004RemovalOfP2PKit.swift; sourceTree = "<group>"; };
 		83974C72E7A76A18CD84FD94 /* NearbyService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NearbyService.swift; sourceTree = "<group>"; };
-		83974CA3ADFAFC996C58C505 /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		83974CDB8D1D885F0FB88CC1 /* OnboardingCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinator.swift; sourceTree = "<group>"; };
 		83974CDC660156EAFABB1829 /* DatabaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
 		83974D3FCE9D7093717ED324 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
-		83974D8BF3CA981689E42FD2 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		83974DE622CC5A770112F3AE /* ContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
-		83974E30FD36A3286882FA7F /* HistoryCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryCoordinator.swift; sourceTree = "<group>"; };
 		83974E486CD5B31F449062D0 /* M001InitialMigration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = M001InitialMigration.swift; sourceTree = "<group>"; };
 		83974E4BF20807E7150F5CDD /* ConfigurationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationService.swift; sourceTree = "<group>"; };
 		83974E8DF47258DBA88F9CAA /* ContactTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactTableViewCell.xib; sourceTree = "<group>"; };
@@ -1424,7 +1412,6 @@
 				6153A4B5242598DB006A8570 /* SicknessCertificate */,
 				4ED175BD24605D2100248D3B /* RevokeSickness */,
 				61D0F53824352E960026C91A /* Revocation */,
-				83974E14F314C1637D93EB43 /* History */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -1550,19 +1537,6 @@
 				839746CABAC2FF8A7B93BDD4 /* Migrations */,
 			);
 			path = Database;
-			sourceTree = "<group>";
-		};
-		83974E14F314C1637D93EB43 /* History */ = {
-			isa = PBXGroup;
-			children = (
-				4E44EDEC2424F4AC000CC695 /* HistoryTableViewCell.xib */,
-				83974D8BF3CA981689E42FD2 /* HistoryTableViewCell.swift */,
-				839747705BCEAC94273217A9 /* HistoryViewModel.swift */,
-				83974CA3ADFAFC996C58C505 /* HistoryViewController.swift */,
-				4E019BDB242692E3004FF670 /* HistoryViewController.storyboard */,
-				83974E30FD36A3286882FA7F /* HistoryCoordinator.swift */,
-			);
-			path = History;
 			sourceTree = "<group>";
 		};
 		83974EDA17B2040A7C8C803D /* Nearby */ = {
@@ -1776,7 +1750,6 @@
 				4ED175DC2460739B00248D3B /* RevokeSicknessStatusReportViewController.storyboard in Resources */,
 				4ED175B42458347400248D3B /* DebugViewController.storyboard in Resources */,
 				4ED175C624606AFA00248D3B /* RevokeSicknessPersonalDataViewController.storyboard in Resources */,
-				4E44EDED2424F4AC000CC695 /* HistoryTableViewCell.xib in Resources */,
 				61D0F55A24352EA90026C91A /* CheckboxLabelView.xib in Resources */,
 				61459A55242AC15F00DC88A7 /* de.privacy-and-terms-of-use.html in Resources */,
 				61D0F55024352E960026C91A /* RevocationTanConfirmationViewController.storyboard in Resources */,
@@ -1784,7 +1757,6 @@
 				61546555242D1A7D0003D3D3 /* AnswerView.xib in Resources */,
 				921525602427C7AA0023F469 /* SelfTestingSuspicionViewController.storyboard in Resources */,
 				614D723A242909C000CC545D /* SelfTestingConfirmationViewController.storyboard in Resources */,
-				4E019BDC242692E3004FF670 /* HistoryViewController.storyboard in Resources */,
 				9215254E2427C74A0023F469 /* SelfTestingSelfMonitoringViewController.storyboard in Resources */,
 				61F50DD82439EC8500798264 /* MissingPermissionsViewController.storyboard in Resources */,
 				839743F271E19BEF66B89E3A /* OnboardingViewController.storyboard in Resources */,
@@ -2187,7 +2159,6 @@
 				6153A52724264A2D006A8570 /* ActivityModalViewController.swift in Sources */,
 				839740EFDBDDEF4CFD0F4B72 /* ContactLabelTableViewCell.swift in Sources */,
 				83974960BEEA73146FD4930C /* AutoMarginTableViewCell.swift in Sources */,
-				83974B08F39FB88A2F8B47BF /* HistoryTableViewCell.swift in Sources */,
 				4ED175D224606F9600248D3B /* RevokeSicknessTanConfirmationViewController.swift in Sources */,
 				83974BFDA169F61FBF77FA24 /* DatabaseService.swift in Sources */,
 				613E35F5242E3F65009421A8 /* LaunchScreenViewController.swift in Sources */,
@@ -2207,10 +2178,7 @@
 				8397485AF4D5FC35155ED797 /* ConfigurationService+Injection.swift in Sources */,
 				4ED175CA24606B0A00248D3B /* RevokeSicknessFlowController.swift in Sources */,
 				61546553242D1A6D0003D3D3 /* AnswerView.swift in Sources */,
-				83974D611E8008BF5EED0ADA /* HistoryViewModel.swift in Sources */,
-				83974B01E648AF3AB175DCF1 /* HistoryViewController.swift in Sources */,
 				4BD0B8DF2427AF9800BFA123 /* NotificationService+Injection.swift in Sources */,
-				839743B155DC6C9A74C9724B /* HistoryCoordinator.swift in Sources */,
 				839741974FFF610B5F936C7D /* History.swift in Sources */,
 				839746AC0F1A3D6D6D96C1AC /* ContactTableViewCell.swift in Sources */,
 				611B78BE242816BE0040CCB3 /* AppUpdateService+Injection.swift in Sources */,

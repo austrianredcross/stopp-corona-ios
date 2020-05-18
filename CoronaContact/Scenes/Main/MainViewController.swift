@@ -24,7 +24,6 @@ final class MainViewController: UIViewController, StoryboardBased, ViewModelBase
     @IBOutlet weak var contactHealthStatusView: QuarantineNotificationView!
     @IBOutlet weak var revocationWrapperView: UIView!
     @IBOutlet weak var revocationStatusView: QuarantineNotificationView!
-    @IBOutlet weak var historyButton: TransButton!
     @IBOutlet weak var notificationStackView: UIStackView!
     @IBOutlet weak var shareAppCardView: ShareAppCardView!
     @IBOutlet weak var selfTestingStackView: UIStackView!
@@ -87,7 +86,6 @@ final class MainViewController: UIViewController, StoryboardBased, ViewModelBase
     func updateView() {
         guard let viewModel = viewModel, isViewLoaded else { return }
 
-        historyButton.styledTextNormal = String(viewModel.numberOfContacts)
         notificationStackView.isHidden = !viewModel.displayNotifications
 
         configureUserHealthstatusView()
@@ -259,10 +257,6 @@ final class MainViewController: UIViewController, StoryboardBased, ViewModelBase
 
     @IBAction func sicknessCertificateTapped(_ sender: Any) {
         viewModel?.sicknessCertificate()
-    }
-
-    @IBAction func historyButtonTapped(_ sender: Any) {
-        viewModel?.history()
     }
 
     // MARK: - Event Handling
