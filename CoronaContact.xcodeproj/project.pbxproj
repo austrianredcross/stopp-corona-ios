@@ -376,6 +376,7 @@
 		4E360817242350D900789ABF /* CryptoServices+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CryptoServices+Injection.swift"; sourceTree = "<group>"; };
 		4E44EDEA2424D076000CC695 /* ContactLabelTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactLabelTableViewCell.xib; sourceTree = "<group>"; };
 		4E44EDEC2424F4AC000CC695 /* HistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryTableViewCell.xib; sourceTree = "<group>"; };
+		4E5254CE2472B40100B6C3A4 /* Stopp Corona Test.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Stopp Corona Test.entitlements"; sourceTree = "<group>"; };
 		4E7BA4A9242E28DB00AE0AC7 /* wave.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = wave.json; sourceTree = "<group>"; };
 		4E9BF7052420C2A100B360A4 /* MainViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainViewController.storyboard; sourceTree = "<group>"; };
 		4E9BF7072420C31400B360A4 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -777,6 +778,7 @@
 			isa = PBXGroup;
 			children = (
 				4B1F6118242A60AD00E82D4C /* Stopp Corona.entitlements */,
+				4E5254CE2472B40100B6C3A4 /* Stopp Corona Test.entitlements */,
 				4E0B3E38241F995D00EF60EE /* AppDelegate.swift */,
 				839749AD5CC31574CCB7808B /* AppDelegate+Injection.swift */,
 				4EDB47F22421EB2B000CE24A /* AppDelegate+FontStyles.swift */,
@@ -2407,10 +2409,11 @@
 			baseConfigurationReference = F6393791D423F4FA9D506CE8 /* Pods-CoronaContact.stage.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "CoronaContact/Stopp Corona.entitlements";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = "CoronaContact/Stopp Corona Test.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 20;
-				DEVELOPMENT_TEAM = "$(DEVELOPMENT_TEAM)";
+				DEVELOPMENT_TEAM = 56P9N5C6WJ;
 				ENABLE_TESTABILITY = NO;
 				INFOPLIST_FILE = CoronaContact/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2420,6 +2423,7 @@
 				MARKETING_VERSION = 1.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = at.roteskreuz.stopcorona.stage;
 				PRODUCT_NAME = "Stopp Corona";
+				PROVISIONING_PROFILE_SPECIFIER = "Stopp Corona Stage - Exposure Notification";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -2556,10 +2560,11 @@
 			baseConfigurationReference = C2F26E0AD3560D2A48461D26 /* Pods-CoronaContact.development.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "CoronaContact/Stopp Corona.entitlements";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = "CoronaContact/Stopp Corona Test.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 20;
-				DEVELOPMENT_TEAM = "$(DEVELOPMENT_TEAM)";
+				DEVELOPMENT_TEAM = 56P9N5C6WJ;
 				ENABLE_TESTABILITY = YES;
 				INFOPLIST_FILE = CoronaContact/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2569,6 +2574,7 @@
 				MARKETING_VERSION = 1.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = at.roteskreuz.stopcorona.stage;
 				PRODUCT_NAME = "Stopp Corona";
+				PROVISIONING_PROFILE_SPECIFIER = "Stopp Corona Stage - Exposure Notification";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
