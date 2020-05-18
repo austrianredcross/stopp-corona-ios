@@ -18,7 +18,6 @@ target 'CoronaContact' do
   pod 'Firebase/Messaging'
   pod 'lottie-ios'
   pod 'SwiftyBeaver'
-  pod 'p2pkit'
   pod 'SQLiteMigrationManager.swift'
 
   target 'CoronaContactTests' do

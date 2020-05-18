@@ -8,7 +8,6 @@ import Resolver
 
 class MainViewModel: ViewModel {
 
-    @Injected private var p2pkit: P2PKitService
     @Injected private var notificationService: NotificationService
 
     @Injected private var repository: HealthRepository
@@ -17,7 +16,8 @@ class MainViewModel: ViewModel {
     weak var viewController: MainViewController?
 
     var automaticHandshakePaused: Bool {
-        p2pkit.state == .suspended
+        // TODO: new implementation
+        return false
     }
 
     var displayNotifications: Bool {
@@ -29,7 +29,10 @@ class MainViewModel: ViewModel {
             || isUnderSelfMonitoring
             || repository.contactHealthStatus != nil
     }
-    var backgroundServiceActive: Bool { p2pkit.isActive }
+    var backgroundServiceActive: Bool {
+        // TODO: new implementation
+        return false
+    }
     var isBackgroundHandshakeActive: Bool { !UserDefaults.standard.backgroundHandShakeDisabled }
 
     var isUnderSelfMonitoring: Bool {
@@ -96,14 +99,9 @@ class MainViewModel: ViewModel {
                                                selector: #selector(updateView),
                                                name: .DatabaseSicknessUpdated,
                                                object: nil)
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(updateView),
-                                               name: .P2PDiscoveryChanged,
-                                               object: nil)
     }
 
     func onboardingJustFinished() {
-        p2pkit.start()
         notificationService.askForPermissions()
     }
 
@@ -218,15 +216,6 @@ class MainViewModel: ViewModel {
     }
 
     func backgroundDiscovery(enable: Bool) {
-        if enable {
-            if p2pkit.unauthorized {
-                coordinator?.showMissingPermissions(type: .bluetooth)
-                updateView()
-            } else {
-                p2pkit.start()
-            }
-        } else {
-            p2pkit.stop()
-        }
+       // TODO: new implementation
     }
 }

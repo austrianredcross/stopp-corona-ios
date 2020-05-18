@@ -14,7 +14,6 @@ class MainCoordinator: Coordinator, ShareSheetPresentable {
     }
 
     @Injected private var notificationService: NotificationService
-    @Injected private var p2pkit: P2PKitService
     private weak var mainViewModel: MainViewModel?
 
     init(navigationController: UINavigationController) {
