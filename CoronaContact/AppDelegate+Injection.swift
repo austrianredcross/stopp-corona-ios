@@ -23,5 +23,8 @@ extension Resolver: ResolverRegistering {
         registerNotificationServices()
         registerAppUpdateServices()
         registerHealthRepository()
+        if #available(iOS 13.4, *) {
+            registerExposureServices()
+        }
     }
 }
