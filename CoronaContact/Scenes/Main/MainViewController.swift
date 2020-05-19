@@ -188,7 +188,7 @@ final class MainViewController: UIViewController, StoryboardBased, ViewModelBase
     private func configureAutomationHandshakeView() {
         guard let viewModel = viewModel else { return }
 
-        if viewModel.isBackgroundHandshakeActive == true {
+        if viewModel.isBackgroundHandshakeDisabled == false {
             automaticHandshakeInactiveView.isHidden = true
             automaticHandshakeActiveView.isHidden = false
             automaticHandshakeAnimationView.play()
