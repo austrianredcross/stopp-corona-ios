@@ -18,7 +18,13 @@ class ExposureManager {
     private let manager = ENManager()
     private let log = ContextLogger(context: .exposure)
     var kvoToken: NSKeyValueObservation?
-    var exposureNotificationStatus: ENStatus { manager.exposureNotificationStatus }
+    var exposureNotificationStatus: ENStatus {
+        manager.exposureNotificationStatus
+    }
+
+    public var authorizationStatus: ENAuthorizationStatus {
+        ENManager.authorizationStatus
+    }
 
     init() {
         manager.activate { _ in
@@ -44,6 +50,12 @@ class ExposureManager {
         manager.invalidate()
     }
 
+    func detectExposures(completion: @escaping (Bool) -> Void) -> Progress {
+        let progress = Progress()
+        completion(true)
+        return progress
+    }
+
     func enableExposureNotifications(_ enabled: Bool) {
         localStorage.backgroundHandshakeDisabled = !enabled
 
@@ -53,6 +65,29 @@ class ExposureManager {
             self.log.info("setExposureNotificationEnabled \(enabled) error:\(String(describing: error))")
             if let error = error as? ENError, error.code == .notAuthorized {
                 // TODO: error handling
+            }
+        }
+    }
+
+    func getDiagnosisKeys(completion: @escaping (Result<[ENTemporaryExposureKey], Error>) -> Void) {
+        manager.getDiagnosisKeys { temporaryExposureKeys, error in
+            if let error = error {
+                completion(.failure(error))
+            } else {
+                self.log.debug("keys: \(temporaryExposureKeys!)")
+                completion(.success(temporaryExposureKeys ?? []))
+            }
+        }
+    }
+
+    // Includes today's key, requires com.apple.developer.exposure-notification-test entitlement
+    func getTestDiagnosisKeys(completion: @escaping (Result<[ENTemporaryExposureKey], Error>) -> Void) {
+        manager.getTestDiagnosisKeys { temporaryExposureKeys, error in
+            if let error = error {
+                completion(.failure(error))
+            } else {
+                self.log.debug("keys: \(temporaryExposureKeys!)")
+                completion(.success(temporaryExposureKeys ?? []))
             }
         }
     }

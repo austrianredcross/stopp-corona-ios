@@ -16,10 +16,14 @@ class DebugViewModel: ViewModel {
     weak var viewController: DebugViewController?
     weak var coordinator: DebugCoordinator?
 
-    @Injected var dba: DatabaseService
-    @Injected var crypto: CryptoService
-    @Injected var network: NetworkService
-    @Injected var notificationService: NotificationService
+    @Injected private var dba: DatabaseService
+    @Injected private var crypto: CryptoService
+    @Injected private var network: NetworkService
+    @Injected private var notificationService: NotificationService
+    @available(iOS 13.5, *)
+    @Injected private var exposureManager: ExposureManager
+
+
     var timer: Timer?
     var numberOfContacts = 0
 
@@ -67,4 +71,15 @@ class DebugViewModel: ViewModel {
     func attestSickness() {
         dba.saveSicknessState(true)
     }
+
+    func exposeDiagnosesKeys(test: Bool = false) {
+        if #available(iOS 13.5, *) {
+            if test {
+                exposureManager.getTestDiagnosisKeys { error in }
+            } else {
+                exposureManager.getDiagnosisKeys { error in}
+            }
+        }
+    }
+
 }
