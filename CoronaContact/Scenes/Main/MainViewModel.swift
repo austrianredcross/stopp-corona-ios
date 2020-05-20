@@ -11,14 +11,14 @@ class MainViewModel: ViewModel {
     @Injected private var repository: HealthRepository
     @Injected private var localStorage: LocalStorage
 
-    @available(iOS 13.4, *)
+    @available(iOS 13.5, *)
     @Injected private var exposureService: ExposureManager
 
     weak var coordinator: MainCoordinator?
     weak var viewController: MainViewController?
 
     var automaticHandshakePaused: Bool {
-        if #available(iOS 13.4, *) {
+        if #available(iOS 13.5, *) {
             return exposureService.exposureNotificationStatus == .bluetoothOff
         } else {
             return false
@@ -37,7 +37,7 @@ class MainViewModel: ViewModel {
     }
 
     var backgroundServiceActive: Bool {
-        if #available(iOS 13.4, *) {
+        if #available(iOS 13.5, *) {
             return exposureService.exposureNotificationStatus == .active
         } else {
             return false
@@ -235,7 +235,7 @@ class MainViewModel: ViewModel {
     }
 
     func backgroundDiscovery(enable: Bool) {
-        if #available(iOS 13.4, *) {
+        if #available(iOS 13.5, *) {
             exposureService.enableExposureNotifications(enable)
         } else {
             // Fallback on earlier versions

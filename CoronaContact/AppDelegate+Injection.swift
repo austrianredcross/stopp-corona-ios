@@ -24,7 +24,7 @@ extension Resolver: ResolverRegistering {
         registerAppUpdateServices()
         registerHealthRepository()
         registerLocalStorageServices()
-        if #available(iOS 13.4, *) {
+        if #available(iOS 13.5, *) {
             registerExposureServices()
         }
     }

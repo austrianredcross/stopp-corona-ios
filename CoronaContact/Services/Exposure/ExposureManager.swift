@@ -12,7 +12,7 @@ extension Notification.Name {
     static let exposureManagerNotificationStatusChanged = Notification.Name("ExposureManagerNotificationStatusChangedNotification")
 }
 
-@available(iOS 13.4, *)
+@available(iOS 13.5, *)
 class ExposureManager {
     @Injected private var localStorage: LocalStorage
     private let manager = ENManager()
