@@ -403,11 +403,11 @@
 "revocation_confirmation_description"                                        = "Danke, dass Sie Ihre Information weitergegeben haben und damit zum Gemeinwohl beitragen.\n\nIhre Kontakte wurden anonym benachrichtigt.";
 "revocation_confirmation_button"                                             = "Fertig";
 "revocation_required_quarantine_completed_headline"                          = "Quarantäne beenden";
-"revocation_required_quarantine_completed_description"                       = "Vielen Dank, dass Sie sich in Quarantäne begeben haben. Sie können die Quarantäne beenden.";
+"revocation_required_quarantine_completed_description"                       = "Vielen Dank, dass Sie sich in Quarantäne begeben haben.\n\nSie können die <b>Quarantäne beenden</b>.";
 "revocation_voluntary_quarantine_completed_headline"                         = "Quarantäne beenden";
-"revocation_voluntary_quarantine_completed_description"                      = "Vielen Dank, dass Sie sich in Quarantäne begeben haben. Sie können die Quarantäne beenden.";
-"revocation_all_clear_headline"                                              = "Status Update";
-"revocation_all_clear_description"                                           = "Der Verdachtsfall bei einem oder mehrerer Ihrer Kontakte hat sich nicht bestätigt. Sie können die Quarantäne beenden. ";
+"revocation_voluntary_quarantine_completed_description"                      = "Vielen Dank, dass Sie sich in Quarantäne begeben haben.\n\nSie können die <b>Quarantäne beenden</b>.";
+"revocation_all_clear_headline"                                              = "Quarantäne beenden";
+"revocation_all_clear_description"                                           = "Infektion oder der Verdachtsfall haben sich bei einem oder mehreren Ihrer Kontakte <b>nicht bestätigt</b>.\n\nSie können die <b>Quarantäne beenden</b>.";
 "share_app_card_headline"                                                    = "Teilen Sie die App!";
 "share_app_card_description"                                                 = "Empfehlen Sie die App und schützen Sie so sich und Ihr Umfeld.";
 "share_app_card_button"                                                      = "App teilen";
