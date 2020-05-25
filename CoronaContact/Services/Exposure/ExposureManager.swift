@@ -56,16 +56,17 @@ class ExposureManager {
         return progress
     }
 
-    func enableExposureNotifications(_ enabled: Bool) {
+    func enableExposureNotifications(_ enabled: Bool, completion: ((Error?) -> Void)? = nil) {
         localStorage.backgroundHandshakeDisabled = !enabled
 
         log.debug("enableExposureNotifications \(enabled)")
         manager.setExposureNotificationEnabled(enabled) { error in
             NotificationCenter.default.post(name: .exposureManagerAuthorizationStatusChanged, object: nil)
             self.log.info("setExposureNotificationEnabled \(enabled) error:\(String(describing: error))")
-            if let error = error as? ENError, error.code == .notAuthorized {
-                // TODO: error handling
+            if error == nil, enabled == true, let delegate = UIApplication.shared.delegate as? AppDelegate {
+                delegate.scheduleBackgroundTaskIfNeeded()
             }
+            completion?(error)
         }
     }
 

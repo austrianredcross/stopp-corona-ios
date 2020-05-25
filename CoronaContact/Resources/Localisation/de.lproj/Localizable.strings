@@ -156,6 +156,7 @@
 "missing_permissions_background_app_refresh_icon_caption"                    = "Hintergrundaktivität";
 "missing_permissions_background_app_refresh_settings"                        = "Bitte erlauben Sie diese Einstellung in den Systemeinstellungen";
 "missing_permissions_background_app_refresh_button"                          = "Einstellungen öffnen";
+"missing_permissions_exposure_framework_icon_caption"                        = "COVID-19 Kontaktmitteilungen";
 "sickness_certificate_personal_data_headline"                                = "Bitte geben Sie Ihre Daten ein";
 "sickness_certificate_personal_data_title"                                   = "Status melden";
 "sickness_certificate_personal_data_description"                             = "Wir werden nach dem nächsten Schritt Ihre engen Kontakte der letzten Tage anonym informieren. Wir validieren Ihre Mobilnummer, damit wir einen Missbrauch dieser Funktion vermeiden können.";

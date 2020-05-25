@@ -156,6 +156,7 @@
 "missing_permissions_background_app_refresh_icon_caption"                    = "Background activity";
 "missing_permissions_background_app_refresh_settings"                        = "Please allow this setting in the system settings";
 "missing_permissions_background_app_refresh_button"                          = "Open settings";
+"missing_permissions_exposure_framework_icon_caption"                        = "COVID-19 Exposure Notifications";
 "sickness_certificate_personal_data_headline"                                = "Please enter your data";
 "sickness_certificate_personal_data_title"                                   = "Report status";
 "sickness_certificate_personal_data_description"                             = "In the next step, we will anonymously inform your direct contacts of the last days.\nWith the mobile number, we ensure that the app is not misused and that infection reports contribute to the common good.";
