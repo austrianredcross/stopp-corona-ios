@@ -5,6 +5,7 @@
 
 import Foundation
 import Resolver
+import ExposureNotification
 
 class MainViewModel: ViewModel {
     @Injected private var notificationService: NotificationService
@@ -44,7 +45,14 @@ class MainViewModel: ViewModel {
         }
     }
 
-    var isBackgroundHandshakeDisabled: Bool { localStorage.backgroundHandshakeDisabled }
+    var isBackgroundHandshakeDisabled: Bool {
+        if #available(iOS 13.5, *) {
+            return exposureService.authorizationStatus != .authorized || localStorage.backgroundHandshakeDisabled
+        } else {
+            return true
+        }
+
+    }
 
     var isUnderSelfMonitoring: Bool {
         if case .isUnderSelfMonitoring = repository.userHealthStatus {
@@ -236,9 +244,11 @@ class MainViewModel: ViewModel {
 
     func backgroundDiscovery(enable: Bool) {
         if #available(iOS 13.5, *) {
-            exposureService.enableExposureNotifications(enable)
-        } else {
-            // Fallback on earlier versions
+            exposureService.enableExposureNotifications(enable) { [weak self] error in
+                if let error = error as? ENError, error.code == .notAuthorized {
+                    self?.coordinator?.showMissingPermissions(type: .exposureFramework)
+                }
+            }
         }
     }
 }
