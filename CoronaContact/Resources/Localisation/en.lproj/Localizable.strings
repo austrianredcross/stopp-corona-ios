@@ -403,11 +403,11 @@
 "revocation_confirmation_description"                                        = "Thank you for sharing your information and contributing to the common good.\n\nYour contacts have been notified anonymously.";
 "revocation_confirmation_button"                                             = "Done";
 "revocation_required_quarantine_completed_headline"                          = "End quarantine";
-"revocation_required_quarantine_completed_description"                       = "Thank you for quarantining yourself. You may terminate the quarantine.";
+"revocation_required_quarantine_completed_description"                       = "Thank you for quarantining yourself.\n\nYou may terminate the quarantine.";
 "revocation_voluntary_quarantine_completed_headline"                         = "End quarantine";
-"revocation_voluntary_quarantine_completed_description"                      = "Thank you for quarantining yourself. You may terminate the quarantine.";
-"revocation_all_clear_headline"                                              = "Status update";
-"revocation_all_clear_description"                                           = "The suspected case with one or more of your contacts has not been confirmed. You may terminate the quarantine. ";
+"revocation_voluntary_quarantine_completed_description"                      = "Thank you for quarantining yourself.\n\nYou may terminate the quarantine.";
+"revocation_all_clear_headline"                                              = "Quarantäne beenden";
+"revocation_all_clear_description"                                           = "Infektion oder der Verdachtsfall haben sich bei einem oder mehreren Ihrer Kontakte <b>nicht bestätigt</b>.\n\nSie können die <b>Quarantäne beenden</b>.";
 "share_app_card_headline"                                                    = "Share the app!";
 "share_app_card_description"                                                 = "Share the app and protect yourself and your environment.";
 "share_app_card_button"                                                      = "Share App";
