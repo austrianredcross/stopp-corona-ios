@@ -56,6 +56,12 @@ class StartMenuCoordinator: Coordinator, ShareSheetPresentable {
         child.start(context: .regular)
     }
 
+    func openSavedIDs() {
+        let child = SavedIDsCoordinator(navigationController: navigationController)
+        addChildCoordinator(child)
+        child.start()
+    }
+
     func openLicences() {
         let carteViewController = CarteViewController()
         navigationController.pushViewController(carteViewController, animated: true)
