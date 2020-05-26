@@ -4,6 +4,17 @@
 
 [![App Store Download Link](.github/app-store-badge.png)](https://apps.apple.com/at/app/apple-store/id1503717224)
 
+## About
+
+The **Stopp Corona** project is an open source project for bluetooth based contact
+tracing deployed by the Austrian Red Cross in Austria.  For developers interested
+in contributing, other organizations interested in joining forces please have a look
+at the following documents:
+
+* [Covenant](https://github.com/austrianredcross/meta/blob/master/COVENANT.md): the project's ideals and goals
+* [Cooperation and Funding](https://github.com/austrianredcross/meta/blob/master/COOPERATION.md): support the development or join the project
+* [Code of Conduct](https://github.com/austrianredcross/meta/blob/master/CODE_OF_CONDUCT.md): fair guidelines for a friendly discourse
+
 ## Getting Started
 
 ### Requirements
