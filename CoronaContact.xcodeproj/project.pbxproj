@@ -206,6 +206,7 @@
 		615D36642438C25400B608AB /* LoggingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615D36632438C25400B608AB /* LoggingService.swift */; };
 		616518E52460777C001219A7 /* ShareAppCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616518E42460777C001219A7 /* ShareAppCardView.swift */; };
 		616518E72460778C001219A7 /* ShareAppCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 616518E62460778C001219A7 /* ShareAppCardView.xib */; };
+		61653681247D114F0088A9D6 /* TracingKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61653680247D114F0088A9D6 /* TracingKeys.swift */; };
 		616E1DA9243486C700109435 /* ArrowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616E1DA8243486C700109435 /* ArrowButton.swift */; };
 		618A6651242B8B84001BDBBF /* Collection+safe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618A6650242B8B84001BDBBF /* Collection+safe.swift */; };
 		61BB41DA243684590083053B /* Revocation+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D0F5702435EF1B0026C91A /* Revocation+Injection.swift */; };
@@ -539,6 +540,7 @@
 		615D36632438C25400B608AB /* LoggingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggingService.swift; sourceTree = "<group>"; };
 		616518E42460777C001219A7 /* ShareAppCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareAppCardView.swift; sourceTree = "<group>"; };
 		616518E62460778C001219A7 /* ShareAppCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShareAppCardView.xib; sourceTree = "<group>"; };
+		61653680247D114F0088A9D6 /* TracingKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TracingKeys.swift; sourceTree = "<group>"; };
 		616E1DA8243486C700109435 /* ArrowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrowButton.swift; sourceTree = "<group>"; };
 		618A6650242B8B84001BDBBF /* Collection+safe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+safe.swift"; sourceTree = "<group>"; };
 		61AB6EF024573737006B4190 /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
@@ -991,6 +993,7 @@
 				4B25BA9C2429592A00CDD1CF /* UserHealthStatus.swift */,
 				61459A56242AC48800DC88A7 /* Website.swift */,
 				83974BF870B575EAC8607D3D /* P2PKitEvent.swift */,
+				61653680247D114F0088A9D6 /* TracingKeys.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2124,6 +2127,7 @@
 				4BD0B8DC2427AF6400BFA123 /* NotificationService.swift in Sources */,
 				614D72052428E82700CC545D /* ContactSicknessViewModel.swift in Sources */,
 				6153A52924264A2D006A8570 /* ActivityView.swift in Sources */,
+				61653681247D114F0088A9D6 /* TracingKeys.swift in Sources */,
 				61C4A47924279433004D18BB /* UIActivityIndicatorView+scale.swift in Sources */,
 				9215254F2427C74A0023F469 /* SelfTestingSelfMonitoringViewController.swift in Sources */,
 				61D0F54A24352E960026C91A /* RevocationStatusReportViewController.swift in Sources */,
