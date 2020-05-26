@@ -64,7 +64,11 @@ extension ContactHealthStatus {
     }
 
     var buttonNotification: String {
-        "contact_health_status_quarantine_days_button".localized
+        if quarantineDays == nil {
+            return "general_additional_info".localized
+        }
+
+        return "contact_health_status_quarantine_days_button".localized
     }
 
     var color: UIColor {
@@ -165,7 +169,7 @@ extension ContactHealthStatus {
     }
 
     var endOfQuarantine: String? {
-        guard let quarantineDays = self.quarantineDays, let date = Date().addDays(quarantineDays) else {
+        guard let quarantineDays = quarantineDays, let date = Date().addDays(quarantineDays) else {
             return nil
         }
 
