@@ -11,13 +11,11 @@ target 'CoronaContact' do
   pod 'Moya'
   pod 'SwiftRichString'
   pod 'Reusable'
-  pod 'SQLite.swift', '~> 0.12.0'
   pod 'M13Checkbox'
   pod 'Carte'
   pod 'Firebase/Messaging'
   pod 'lottie-ios'
   pod 'SwiftyBeaver'
-  pod 'SQLiteMigrationManager.swift'
 
   target 'CoronaContactTests' do
     inherit! :search_paths
