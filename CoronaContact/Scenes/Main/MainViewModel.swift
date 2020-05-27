@@ -5,35 +5,54 @@
 
 import Foundation
 import Resolver
+import ExposureNotification
 
 class MainViewModel: ViewModel {
-
     @Injected private var notificationService: NotificationService
-
     @Injected private var repository: HealthRepository
+    @Injected private var localStorage: LocalStorage
+
+    @available(iOS 13.5, *)
+    @Injected private var exposureService: ExposureManager
 
     weak var coordinator: MainCoordinator?
     weak var viewController: MainViewController?
 
     var automaticHandshakePaused: Bool {
-        // TODO: new implementation
-        return false
+        if #available(iOS 13.5, *) {
+            return exposureService.exposureNotificationStatus == .bluetoothOff
+        } else {
+            return false
+        }
     }
 
     var displayNotifications: Bool {
         displayHealthStatus || repository.revocationStatus != nil
     }
+
     var displayHealthStatus: Bool {
         repository.isProbablySick
             || repository.hasAttestedSickness
             || isUnderSelfMonitoring
             || repository.contactHealthStatus != nil
     }
+
     var backgroundServiceActive: Bool {
-        // TODO: new implementation
-        return false
+        if #available(iOS 13.5, *) {
+            return exposureService.exposureNotificationStatus == .active
+        } else {
+            return false
+        }
     }
-    var isBackgroundHandshakeActive: Bool { !UserDefaults.standard.backgroundHandShakeDisabled }
+
+    var isBackgroundHandshakeDisabled: Bool {
+        if #available(iOS 13.5, *) {
+            return exposureService.authorizationStatus != .authorized || localStorage.backgroundHandshakeDisabled
+        } else {
+            return true
+        }
+
+    }
 
     var isUnderSelfMonitoring: Bool {
         if case .isUnderSelfMonitoring = repository.userHealthStatus {
@@ -98,6 +117,14 @@ class MainViewModel: ViewModel {
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(updateView),
                                                name: .DatabaseSicknessUpdated,
+                                               object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(updateView),
+                                               name: .exposureManagerAuthorizationStatusChanged,
+                                               object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(updateView),
+                                               name: .exposureManagerNotificationStatusChanged,
                                                object: nil)
     }
 
@@ -212,6 +239,12 @@ class MainViewModel: ViewModel {
     }
 
     func backgroundDiscovery(enable: Bool) {
-       // TODO: new implementation
+        if #available(iOS 13.5, *) {
+            exposureService.enableExposureNotifications(enable) { [weak self] error in
+                if let error = error as? ENError, error.code == .notAuthorized {
+                    self?.coordinator?.showMissingPermissions(type: .exposureFramework)
+                }
+            }
+        }
     }
 }
