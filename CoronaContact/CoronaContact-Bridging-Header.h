@@ -6,6 +6,6 @@
 #ifndef CoronaContact_Bridging_Header_h
 #define CoronaContact_Bridging_Header_h
 
-#import <GNSMessages.h>
+// TODO: remove unused bridging header
 
 #endif /* CoronaContact_Bridging_Header_h */

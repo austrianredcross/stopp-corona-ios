@@ -6,7 +6,6 @@ use_frameworks!
 
 target 'CoronaContact' do
   # Pods for CoronaContact
-  pod 'NearbyMessages'
   pod 'SwiftLint'
   pod 'Resolver'
   pod 'Moya'

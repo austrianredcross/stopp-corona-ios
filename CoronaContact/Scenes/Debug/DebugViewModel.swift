@@ -3,12 +3,12 @@
 // CoronaContact
 //
 
-import UIKit
 import Resolver
+import UIKit
 
 // swiftlint:disable:line_length
 let simulatedKey = "MIGJAoGBAMvH7iUvrAODD2NwS7ZRRFrr31sJdJHpvhFaR4EZt6lIZvXFzWnqdvRCg3VmpdsJtqzsZEzsFhINXSfNpXAFj2Sb67Yrs4kWhVtEXq" +
-        "I0wuYVH0qsCvfnqGTqYiyp+LzD66FkmCnVvnFxoTaQOB3K0B3DPEkgAlmLQdSgYWfIj1Z3AgMBAAE="
+    "I0wuYVH0qsCvfnqGTqYiyp+LzD66FkmCnVvnFxoTaQOB3K0B3DPEkgAlmLQdSgYWfIj1Z3AgMBAAE="
 
 // swiftlint:enable:line_length
 
@@ -24,7 +24,7 @@ class DebugViewModel: ViewModel {
     var numberOfContacts = 0
 
     init(coordintator: DebugCoordinator) {
-        self.coordinator = coordintator
+        coordinator = coordintator
     }
 
     func close() {
@@ -40,14 +40,7 @@ class DebugViewModel: ViewModel {
     }
 
     func addHandShakes() {
-        var date = Date()
-        let calendar = Calendar.current
-
-        for _ in 1...3 {
-            let rco = RemoteContact(name: "1234", key: Data(base64Encoded: simulatedKey)!, timestamp: date)
-            _ = dba.saveContact(rco)
-            date = calendar.date(byAdding: .hour, value: -2, to: date)!
-        }
+        // TODO: remove
     }
 
     func addRedInfectionMessage() {

@@ -4,8 +4,8 @@
 //
 
 import Foundation
-import SQLite
 import Resolver
+import SQLite
 import SQLiteMigrationManager
 
 enum DatabaseError: Error {
@@ -119,22 +119,6 @@ class DatabaseService {
             try dba.run(query.delete())
         } catch {
             log.error("delete failed: \(error)", context: .database)
-        }
-    }
-
-    func saveContact(_ contact: RemoteContact) {
-        do {
-            let lastHour = contact.timestamp.lastFullHour()
-            let insert = try dba?.run(contacts.insert(or: .replace, pubkey <- contact.key,
-                                                      timestamp <- lastHour,
-                                                      autoDiscovered <- contact.automaticDiscovered))
-            let info: [AnyHashable: Any] = ["pubKey": contact.key, "autoDiscovered": contact.automaticDiscovered]
-            DispatchQueue.main.async {
-                NotificationCenter.default.post(name: .DatabaseServiceNewContact, object: nil, userInfo: info)
-            }
-            log.verbose("inserted contact: \(String(describing: insert))", context: .database)
-        } catch {
-            log.error("insertion failed: \(error)", context: .database)
         }
     }
 

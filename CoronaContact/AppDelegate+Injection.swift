@@ -14,7 +14,6 @@ extension Resolver: ResolverRegistering {
         registerConfigurationServices()
         registerDatabaseServices()
         registerCryptoServices()
-        registerNearbyServices()
         registerNetworkServices()
         registerSelfTestingDependencies()
         registerSicknessCertificateDependencies()
