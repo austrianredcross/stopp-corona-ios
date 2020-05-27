@@ -9,7 +9,6 @@ import Moya
 enum NetworkEndpoint: TargetType {
     case configuration
     case infectionMessages(fromId: String?, addressPrefix: String)
-    case infectionInfo(InfectionInfo)
     case requestTan(RequestTan)
     case publish(TracingKeys)
 }
@@ -31,8 +30,6 @@ extension NetworkEndpoint {
             return "/configuration"
         case .infectionMessages:
             return "/infection-messages"
-        case .infectionInfo:
-            return "/infection-info"
         case .requestTan:
             return "/request-tan"
         case .publish:
@@ -46,8 +43,6 @@ extension NetworkEndpoint {
             return .get
         case .requestTan, .publish:
             return .post
-        case .infectionInfo:
-            return .put
         }
     }
 
@@ -62,8 +57,6 @@ extension NetworkEndpoint {
             }
 
             return .requestParameters(parameters: parameters, encoding: URLEncoding.queryString)
-        case let .infectionInfo(infectionInfo):
-            return .requestCustomJSONEncodable(infectionInfo, encoder: JSONEncoder.withApiDateFormat)
         case let .requestTan(requestTan):
             return .requestJSONEncodable(requestTan)
         case let .publish(tracingKeys):
