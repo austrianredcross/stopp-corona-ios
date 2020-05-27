@@ -73,7 +73,7 @@ public class KeyboardAdjustingBehavior: NSObject {
         scrollView.contentInset = insets
 
         // Also adjust scroll indicator but ignore the padding otherwise they might show a gap
-        insets = scrollView.scrollIndicatorInsets
+        insets = scrollView.verticalScrollIndicatorInsets
         insets.bottom = keyboardViewEndFrame.size.height
         scrollView.scrollIndicatorInsets = insets
 

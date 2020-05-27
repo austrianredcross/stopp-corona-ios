@@ -32,7 +32,7 @@ class ActivityView: UIView {
             label.textColor = .ccBlack
         }
 
-        activity.style = .whiteLarge
+        activity.style = .large
         activity.color = .ccRouge
         activity.startAnimating()
 
