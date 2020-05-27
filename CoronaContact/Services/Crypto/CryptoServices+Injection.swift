@@ -8,7 +8,6 @@ import Resolver
 
 extension Resolver {
     public static func registerCryptoServices() {
-        register { RSASwiftGenerator() }.scope(application)
         register { CryptoService() }.scope(application)
     }
 }

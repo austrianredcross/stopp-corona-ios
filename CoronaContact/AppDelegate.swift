@@ -46,7 +46,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                             context: .application)
 
         databaseService.migrate()
-        cryptoService.createKeysIfNeeded()
 
         UNUserNotificationCenter.current().delegate = self
 

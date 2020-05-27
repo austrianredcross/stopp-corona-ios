@@ -12,11 +12,7 @@ class MessageUpdateService {
     private var isUpdating = false
 
     func update() {
-        DispatchQueue.global(qos: .default).async { [weak self] in
-            if self?.crypto.getPublicKey() != nil {
-                self?.requestUpdate(lastDownloadedMessage: UserDefaults.standard.lastDownloadedMessage)
-            }
-        }
+        // TODO: remove
     }
 
     private func requestUpdate(lastDownloadedMessage: Int) {

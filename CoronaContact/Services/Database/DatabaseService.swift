@@ -23,18 +23,6 @@ class DatabaseService {
         let file = "\(path)/db.sqlite3"
     }
 
-    func getContactByPublicKey(_ pubKey: Data) -> Contact? {
-        return nil
-    }
-
-    func updateWarningTypeOnAllOutgoingMessages(type: InfectionWarningType) {
-
-    }
-
-    func saveIncomingInfectionWarning(uuid: String, warningType: InfectionWarningType, contactTimeStamp: Date,
-                                      completion: ((InfectionWarning?) -> Void)? = nil) {
-
-    }
 
     func getIncomingInfectionWarnings(type warningType: InfectionWarningType? = nil, completion: @escaping ([InfectionWarning]) -> Void) {
 

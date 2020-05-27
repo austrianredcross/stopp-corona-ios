@@ -44,13 +44,11 @@ class DebugViewModel: ViewModel {
     }
 
     func addRedInfectionMessage() {
-        let date = Calendar.current.date(byAdding: .hour, value: -2, to: Date())!
-        dba.saveIncomingInfectionWarning(uuid: UUID().uuidString, warningType: .red, contactTimeStamp: date)
+        // TODO: remove
     }
 
     func addYellowInfectionMessage() {
-        let date = Calendar.current.date(byAdding: .hour, value: -2, to: Date())!
-        dba.saveIncomingInfectionWarning(uuid: UUID().uuidString, warningType: .yellow, contactTimeStamp: date)
+        // TODO: remove
     }
 
     func scheduleTestNotifications() {
