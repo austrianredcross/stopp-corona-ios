@@ -19,14 +19,6 @@ private let timeString: (Date) -> String = { date in
 struct InfectionWarning {
     let type: InfectionWarningType
     let timeStamp: Date
-
-    var handshakeDescription: String {
-        let date = timeStamp.relativeTime
-        let startTime = timeString(timeStamp)
-        let endTime = timeString(timeStamp.nextHour())
-
-        return String(format: "contact_sickness_handshake_date".localized, date, startTime, endTime)
-    }
 }
 
 struct ParsedInfectionWarning {

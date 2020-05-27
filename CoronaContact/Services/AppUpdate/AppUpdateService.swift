@@ -8,7 +8,7 @@ import UIKit
 class AppUpdateService {
 
     private var window: UIWindow? {
-        UIApplication.shared.keyWindow
+        UIWindow.key
     }
     private var isDisplayingUpdateAlert = false
 

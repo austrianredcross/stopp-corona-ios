@@ -31,21 +31,11 @@ enum RevocationStatus {
     }
 
     private var iconFileName: String? {
-        switch self {
-        case .completedVoluntaryQuarantine, .completedRequiredQuarantine:
-            return "checkmarkWhite"
-        case .allClear:
-            return nil
-        }
+        "checkmarkWhite"
     }
 
     var color: UIColor? {
-        switch self {
-        case .completedVoluntaryQuarantine, .completedRequiredQuarantine:
-            return .ccGreen
-        case .allClear:
-            return nil
-        }
+        .ccGreen
     }
 
     var headline: String {
