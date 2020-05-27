@@ -6,8 +6,16 @@
 import Foundation
 import ExposureNotification
 
-@available(iOS 13.5, *)
 struct TracingKeys: Codable {
+
+    private enum CodingKeys: String, CodingKey {
+        case
+        temporaryExposureKeys = "temporaryTracingKeys",
+        regions, appPackageName, platform, diagnosisStatus,
+        diagnosisType, deviceVerificationPayload,
+        verificationAuthorityName, verificationPayload
+    }
+
     let temporaryExposureKeys: [TemporaryExposureKey]
     let regions: [String]
     let appPackageName: String
@@ -19,13 +27,13 @@ struct TracingKeys: Codable {
     let verificationPayload: Verification
 
     init(temporaryExposureKeys: [TemporaryExposureKey],
-         diagnosisStatus: Int, diagnosisType: DiagnosisType,
+         diagnosisType: DiagnosisType,
          verificationPayload: Verification) {
         self.temporaryExposureKeys = temporaryExposureKeys
         self.regions = ["AT"]
         self.appPackageName = NetworkConfiguration.appId
         self.platform = "ios"
-        self.diagnosisStatus = diagnosisStatus
+        self.diagnosisStatus = diagnosisType.statusCode
         self.diagnosisType = diagnosisType
         self.deviceVerificationPayload = nil
         self.verificationAuthorityName = "RedCross"
@@ -37,6 +45,17 @@ enum DiagnosisType: String, Codable {
     case red = "red-warning"
     case yellow = "yellow-warning"
     case green = "green-warning"
+
+    var statusCode: Int {
+        switch self {
+        case .red:
+            return 2
+        case .yellow:
+            return 1
+        case .green:
+            return 0
+        }
+    }
 }
 
 struct Verification: Codable {
@@ -45,7 +64,6 @@ struct Verification: Codable {
     let authorization: String
 }
 
-@available(iOS 13.5, *)
 struct TemporaryExposureKey: Codable {
     let key: String
     let password: String

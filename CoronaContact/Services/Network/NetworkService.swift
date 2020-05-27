@@ -63,4 +63,17 @@ final class NetworkService {
             }
         }
     }
+
+    func sendTracingKeys(_ tracingKeys: TracingKeys, completion: @escaping (Result<SuccessResponse, TracingKeysError>) -> Void) {
+        client.request(.publish(tracingKeys)) { (result: Result<SuccessResponse, NetworkError>) in
+            switch result {
+            case let .failure((.unknownError(statusCode, _, _))):
+                completion(.failure(self.parseTracingKeysError(statusCode: statusCode)))
+            case .failure:
+                completion(.failure(self.parseTracingKeysError(statusCode: nil)))
+            case .success(let response):
+                completion(.success(response))
+            }
+        }
+    }
 }

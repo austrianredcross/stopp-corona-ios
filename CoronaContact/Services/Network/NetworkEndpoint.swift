@@ -11,7 +11,6 @@ enum NetworkEndpoint: TargetType {
     case infectionMessages(fromId: String?, addressPrefix: String)
     case infectionInfo(InfectionInfo)
     case requestTan(RequestTan)
-    @available(iOS 13.5, *)
     case publish(TracingKeys)
 }
 

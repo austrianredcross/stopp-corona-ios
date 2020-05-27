@@ -5,12 +5,12 @@
 
 import Foundation
 import Resolver
+import ExposureNotification
 
 class SicknessCertificateFlowController {
 
-    @Injected private var databaseService: DatabaseService
+    @Injected private var exposureManager: ExposureManager
     @Injected private var networkService: NetworkService
-    @Injected private var cryptoService: CryptoService
 
     enum Flow {
         case personalData
@@ -22,8 +22,7 @@ class SicknessCertificateFlowController {
     var flow: Flow = .personalData
     var personalData: PersonalData?
     var tanUUID: String?
-    var infectionInfo: InfectionInfo?
-    var infectionWarnings: [OutGoingInfectionWarningWithAddressPrefix] = []
+    var tracingKeys: TracingKeys?
 
     func tanConfirmation(personalData: PersonalData, completion: @escaping (Result<Void, NetworkService.DisplayableError>) -> Void) {
         self.personalData = personalData
@@ -41,38 +40,47 @@ class SicknessCertificateFlowController {
     }
 
     func statusReport(tanNumber: String) {
-        guard let personalData = personalData, let tanUUID = tanUUID else {
+        guard let tanUUID = tanUUID else {
             return
         }
 
-        infectionWarnings = (try? cryptoService.createInfectionWarnings(type: .red).get()) ?? []
-        let infectionMessages = infectionWarnings.map { warning in
-            UploadInfectionMessage(message: warning.outGoingInfectionWarning.base64encoded, addressPrefix: warning.addressPrefix)
-        }
+        let verfication = Verification(uuid: tanUUID, authorization: tanNumber)
 
-        flow = .statusReport
-        infectionInfo = InfectionInfo(uuid: tanUUID, personalData: personalData, infectionMessages: infectionMessages, authorization: tanNumber)
+        exposureManager.getDiagnosisKeys { [weak self] result in
+            switch result {
+            case .success(let temporaryExposureKeys):
+                self?.flow = .statusReport
+                self?.parseTemporaryExposureKeys(temporaryExposureKeys, verification: verfication)
+            case .failure(let error):
+                LoggingService.error("Couldn't get diagnosis keys from the exposure manager: \(error)", context: .exposure)
+            }
+        }
     }
 
-    func submit(completion: @escaping (Result<Void, NetworkService.InfectionInfoError>) -> Void) {
-        guard let infectionInfo = infectionInfo else {
+    private func parseTemporaryExposureKeys(_ temporaryExposureKeys: [ENTemporaryExposureKey],
+                                            verification: Verification) {
+        let temporaryExposureKeys = temporaryExposureKeys.map(TemporaryExposureKey.init)
+        tracingKeys = TracingKeys(
+            temporaryExposureKeys: temporaryExposureKeys,
+            diagnosisType: .red,
+            verificationPayload: verification
+        )
+    }
+
+    func submit(completion: @escaping (Result<Void, NetworkService.TracingKeysError>) -> Void) {
+        guard let tracingKeys = tracingKeys else {
             return
         }
 
-        networkService.sendInfectionInfo(infectionInfo) { [weak self] result in
+        networkService.sendTracingKeys(tracingKeys) { [weak self] result in
             switch result {
             case .success(let response):
                 print(response)
                 self?.flow = .done
-                self?.saveInfectionMessages()
                 completion(.success(()))
             case .failure(let error):
                 completion(.failure(error))
             }
         }
-    }
-
-    private func saveInfectionMessages() {
-        databaseService.saveOutgoingInfectionWarnings(infectionWarnings.map { $0.outGoingInfectionWarning })
     }
 }
