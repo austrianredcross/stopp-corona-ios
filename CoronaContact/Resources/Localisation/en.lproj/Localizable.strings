@@ -2,6 +2,7 @@
 "current_language"                                                           = "en";
 "general_validation_required"                                                = "Required";
 "general_ok"                                                                 = "OK";
+"general_cancel"                                                             = "Cancel";
 "general_loading"                                                            = "Loading...";
 "general_server_error"                                                       = "There was an error processing the request.";
 "general_server_connection_error_description"                                = "There was a server problem. Please try again later.";
@@ -434,6 +435,9 @@
 "saved_IDs_delete_subtitle"                                                  = "Möchten Sie alle Keys löschen?";
 "saved_IDs_delete_description"                                               = "Sollten Sie Keys löschen, können diese nicht benachrichtigt werden, sobald Sie sich als erkrankt oder einen Vedacht bei sich melden.";
 "saved_IDs_delete_button"                                                    = "Gespeicherte Keys löschen";
+"saved_IDs_delete_alert_title"                                               = "Alle IDs löschen?";
+"saved_IDs_delete_alert_message"                                             = "Wenn Sie Keys löschen, können die dazugehörigen Kontakte nicht benachrichtigt werden.";
+"saved_IDs_delete_alert_delete_button"                                       = "Löschen";
 "handshake_code_00"                                                          = "Meise";
 "handshake_code_01"                                                          = "Tukan";
 "handshake_code_02"                                                          = "Gämse";
