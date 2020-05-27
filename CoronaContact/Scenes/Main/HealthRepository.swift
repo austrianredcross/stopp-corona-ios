@@ -108,43 +108,4 @@ class HealthRepository {
             }
         })
     }
-
-    func cleanupOldHealthReportsAndContacts() {
-        let currentDate = Date()
-        let greenMessageExpireDuration = 72 /// hours
-        guard let selfDiagnosedTime = Calendar.current.date(byAdding: .hour,
-                                                            value: -configService.currentConfig.selfDiagnosedQuarantine,
-                                                            to: currentDate),
-              let redQuarantineTime = Calendar.current.date(byAdding: .hour,
-                                                            value: -configService.currentConfig.redWarningQuarantine,
-                                                            to: currentDate),
-              let yellowQuarantineTime = Calendar.current.date(byAdding: .hour,
-                                                               value: -configService.currentConfig.yellowWarningQuarantine,
-                                                               to: currentDate),
-              let symptomsWarnTime = Calendar.current.date(byAdding: .hour,
-                                                           value: -configService.currentConfig.warnBeforeSymptoms,
-                                                           to: currentDate),
-              let greenExpireTime = Calendar.current.date(byAdding: .hour,
-                                                          value: -greenMessageExpireDuration,
-                                                          to: currentDate)
-                else {
-            return
-        }
-
-        // delete old contacts
-        if isProbablySick {
-            dba.deleteContacts(before: selfDiagnosedTime)
-        } else {
-            dba.deleteContacts(before: symptomsWarnTime)
-        }
-
-        // delete old outgoing messages
-        dba.deleteOutgoingMessages(before: redQuarantineTime)
-        dba.deleteOutgoingMessages(before: yellowQuarantineTime, type: .yellow)
-
-        // delete old incoming messages
-        dba.deleteIncomingMessages(before: redQuarantineTime)
-        dba.deleteIncomingMessages(before: yellowQuarantineTime, type: .yellow)
-        dba.deleteIncomingMessages(before: greenExpireTime, type: .green)
-    }
 }

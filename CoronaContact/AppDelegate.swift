@@ -47,7 +47,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         databaseService.migrate()
         cryptoService.createKeysIfNeeded()
-        healthRepository.cleanupOldHealthReportsAndContacts()
 
         UNUserNotificationCenter.current().delegate = self
 
