@@ -17,7 +17,7 @@ protocol ActivityPresentableFullscreen: ActivityPresentable, ActivityPresentable
 extension ActivityPresentable where Self: UIViewController {
 
     private var hostView: UIView? {
-        if activityPresentationStyle == .overFullscreen, let keyWindow = UIApplication.shared.keyWindow {
+        if activityPresentationStyle == .overFullscreen, let keyWindow = UIWindow.key {
             return keyWindow
         } else {
             return view
