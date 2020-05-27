@@ -12,6 +12,10 @@ class SavedIDsViewModel: ViewModel {
         self.coordinator = coordinator
     }
 
+    func deleteAll() {
+        #warning("Not implemented yet")
+    }
+
     func finish() {
         coordinator?.finish(animated: true)
     }

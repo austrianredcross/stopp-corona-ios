@@ -82,7 +82,7 @@
                                                             <userDefinedRuntimeAttribute type="string" keyPath="transKeyNormal" value="saved_IDs_delete_button"/>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <action selector="deleteKeysButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="V4j-tN-upU"/>
+                                                            <action selector="deleteKeysButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ttM-bn-zWo"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
