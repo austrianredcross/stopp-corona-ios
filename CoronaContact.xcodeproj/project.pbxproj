@@ -272,7 +272,6 @@
 		839742C47A14834F1B2C24F6 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83974BF5DD12A8B96C4A52A8 /* MainViewModel.swift */; };
 		839742CA8F8A4CC34C042091 /* RemoteContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839741E9DA65C125979BF49B /* RemoteContact.swift */; };
 		839743F271E19BEF66B89E3A /* OnboardingViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 839746C7B319EBECC38557CB /* OnboardingViewController.storyboard */; };
-		83974446820E896F7EA22DD5 /* .swift-version in Resources */ = {isa = PBXBuildFile; fileRef = 83974AEA5100D458B6BDC435 /* .swift-version */; };
 		8397446DA0EAC8E79B9445BA /* TransButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8397498ADF6B7522C4D9AC93 /* TransButton.swift */; };
 		839744A261CFAE17A42C84A1 /* M004RemovalOfP2PKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83974C150BC2CBB287C5D996 /* M004RemovalOfP2PKit.swift */; };
 		8397463D0CC798F8B4976AB8 /* P2PKitEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83974BF870B575EAC8607D3D /* P2PKitEvent.swift */; };
@@ -638,7 +637,6 @@
 		839749E3CBDBB38005CA7495 /* DatabaseService+Injection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DatabaseService+Injection.swift"; sourceTree = "<group>"; };
 		83974A1DA608C99ABD0EC3A3 /* History.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 		83974A49A7C70671FCD757CD /* ContactLabelTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactLabelTableViewCell.swift; sourceTree = "<group>"; };
-		83974AEA5100D458B6BDC435 /* .swift-version */ = {isa = PBXFileReference; lastKnownFileType = "file.swift-version"; path = ".swift-version"; sourceTree = "<group>"; };
 		83974B0D3420CEC1F08FB85D /* NetworkSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkSession.swift; sourceTree = "<group>"; };
 		83974B392C3F97B048440E20 /* InfectionWarning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfectionWarning.swift; sourceTree = "<group>"; };
 		83974B4E7DDB0AFD2F931B97 /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
@@ -770,7 +768,6 @@
 				D8CCFEB4C0D0BFC0B807E51D /* Frameworks */,
 				614FE8C12451C6A10056803D /* README.md */,
 				615D365F2438B26400B608AB /* mtc-suppressions.txt */,
-				83974AEA5100D458B6BDC435 /* .swift-version */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1832,7 +1829,6 @@
 				61459A53242ABFE200DC88A7 /* de.terms-of-use.html in Resources */,
 				4ED175BC245836F100248D3B /* server.der in Resources */,
 				61D1A3DD242A58B1007F82ED /* ContactHelpViewController.storyboard in Resources */,
-				83974446820E896F7EA22DD5 /* .swift-version in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2437,7 +2433,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 20;
-				DEVELOPMENT_TEAM = 56P9N5C6WJ;
+				DEVELOPMENT_TEAM = "$(DEVELOPMENT_TEAM)";
 				ENABLE_TESTABILITY = NO;
 				INFOPLIST_FILE = CoronaContact/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
