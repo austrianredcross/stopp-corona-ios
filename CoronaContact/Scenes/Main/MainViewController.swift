@@ -67,7 +67,7 @@ final class MainViewController: UIViewController, StoryboardBased, ViewModelBase
     private func setupLaunchScreen() {
         launchScreenView = LaunchScreenView.loadFromNib()
 
-        if let currentWindow  = UIApplication.shared.keyWindow {
+        if let currentWindow  = UIWindow.key {
             currentWindow.embedSubview(launchScreenView)
 
             Timer.scheduledTimer(withTimeInterval: AppConfiguration.launchScreenDuration, repeats: false) { [weak self] _ in
