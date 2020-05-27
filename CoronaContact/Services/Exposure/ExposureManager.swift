@@ -17,7 +17,7 @@ class ExposureManager {
     @Injected private var localStorage: LocalStorage
     private let manager = ENManager()
     private let log = ContextLogger(context: .exposure)
-    var kvoToken: NSKeyValueObservation?
+    private var kvoToken: NSKeyValueObservation?
     var exposureNotificationStatus: ENStatus {
         manager.exposureNotificationStatus
     }
@@ -63,7 +63,7 @@ class ExposureManager {
         manager.setExposureNotificationEnabled(enabled) { error in
             NotificationCenter.default.post(name: .exposureManagerAuthorizationStatusChanged, object: nil)
             self.log.info("setExposureNotificationEnabled \(enabled) error:\(String(describing: error))")
-            if error == nil, enabled == true, let delegate = UIApplication.shared.delegate as? AppDelegate {
+            if error == nil, enabled, let delegate = UIApplication.shared.delegate as? AppDelegate {
                 delegate.scheduleBackgroundTaskIfNeeded()
             }
             completion?(error)
