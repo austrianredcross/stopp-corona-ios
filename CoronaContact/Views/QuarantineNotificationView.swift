@@ -51,12 +51,7 @@ enum QuarantineNotificationAppearance {
 
 extension RevocationStatus {
     var notificationAppearance: QuarantineNotificationAppearance {
-        switch self {
-        case .allClear:
-            return .regular
-        default:
-            return .color
-        }
+        .color
     }
 }
 
@@ -87,7 +82,8 @@ class QuarantineNotificationView: UIView, NibOwnerLoadable {
     }
     @IBInspectable var descriptionText: String = "" {
         didSet {
-            descriptionLabel.text = descriptionText
+            descriptionLabel.styledText = descriptionText
+            descriptionLabel.textColor = appearance.textColor
         }
     }
     @IBInspectable var buttonText: String = "" {
@@ -124,7 +120,7 @@ class QuarantineNotificationView: UIView, NibOwnerLoadable {
             closeButton.isHidden = true
         }
     }
-    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: TransLabel!
     @IBOutlet weak var primaryButtonContainerView: UIView!
     @IBOutlet weak var quarantineCounterLabel: PaddingLabel! {
         didSet {

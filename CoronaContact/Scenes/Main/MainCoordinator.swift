@@ -111,12 +111,6 @@ class MainCoordinator: Coordinator, ShareSheetPresentable {
         viewModel?.infectionWarnings = infectionWarnings
     }
 
-    func history() {
-        let child = HistoryCoordinator(navigationController: navigationController)
-        addChildCoordinator(child)
-        child.start()
-    }
-
     override func start() {
         let viewModel = MainViewModel(with: self)
         let viewController = MainViewController.instantiate(with: viewModel)

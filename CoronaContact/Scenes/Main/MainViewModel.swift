@@ -238,10 +238,6 @@ class MainViewModel: ViewModel {
         }
     }
 
-    func history() {
-        coordinator?.history()
-    }
-
     func backgroundDiscovery(enable: Bool) {
         if #available(iOS 13.5, *) {
             exposureService.enableExposureNotifications(enable) { [weak self] error in
