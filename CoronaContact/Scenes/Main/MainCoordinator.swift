@@ -20,12 +20,6 @@ class MainCoordinator: Coordinator, ShareSheetPresentable {
         self.navigationController = navigationController
     }
 
-    func contacts() {
-        let child = ContactCoordinator(navigationController: navigationController)
-        addChildCoordinator(child)
-        child.start()
-    }
-
     func help() {
         let child = MainHelpCoordinator(navigationController: navigationController)
         addChildCoordinator(child)

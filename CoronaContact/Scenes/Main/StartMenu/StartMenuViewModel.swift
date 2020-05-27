@@ -34,7 +34,7 @@ class StartMenuViewModel: ViewModel {
     }
 
     func manualHandshake() {
-        coordinator?.contacts()
+       // TODO: remove manual handshake from menu
     }
 
     func checkSymptoms() {

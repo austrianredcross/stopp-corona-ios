@@ -240,7 +240,7 @@ final class MainViewController: UIViewController, StoryboardBased, ViewModelBase
     }
 
     @IBAction func contactTapped(_ sender: Any) {
-        viewModel?.contacts()
+        // TODO: remove manual handshake from view
     }
 
     @IBAction func helpTapped(_ sender: Any) {

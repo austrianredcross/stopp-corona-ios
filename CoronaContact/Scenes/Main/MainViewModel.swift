@@ -163,10 +163,6 @@ class MainViewModel: ViewModel {
         }
     }
 
-    func contacts() {
-        coordinator?.contacts()
-    }
-
     func help() {
         coordinator?.help()
     }
