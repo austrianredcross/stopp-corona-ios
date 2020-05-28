@@ -34,7 +34,7 @@ final class SavedIDsViewController: UIViewController, StoryboardBased, ViewModel
         title = "saved_IDs_title".localized
     }
 
-    @IBAction func deleteKeysButtonTapped(_ sender: Any) {
+    @IBAction func deleteExposureLogButtonTapped(_ sender: Any) {
         viewModel?.deleteExposureLog()
     }
 }
