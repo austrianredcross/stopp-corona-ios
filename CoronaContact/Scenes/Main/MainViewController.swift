@@ -239,10 +239,6 @@ final class MainViewController: UIViewController, StoryboardBased, ViewModelBase
         sicknessCertificateStackView.isHidden = viewModel.hasAttestedSickness
     }
 
-    @IBAction func contactTapped(_ sender: Any) {
-        // TODO: remove manual handshake from view
-    }
-
     @IBAction func helpTapped(_ sender: Any) {
         viewModel?.help()
     }

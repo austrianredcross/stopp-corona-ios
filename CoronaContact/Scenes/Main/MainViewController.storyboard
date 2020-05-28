@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cMg-fw-Upr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cMg-fw-Upr">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -21,16 +20,16 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="LRQ-jj-iOr">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="5139"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="6528"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="lCg-hq-PQX" customClass="BackgroundStackView" customModule="Stopp_Corona" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="4144"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="5567"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="YI5-cn-OEb" customClass="BackgroundStackView" customModule="Stopp_Corona" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="3984"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="5407"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" id="V0K-Xc-uxn" customClass="QuarantineNotificationView" customModule="Stopp_Corona" customModuleProvider="target">
-                                                                <rect key="frame" x="24" y="32" width="366" height="3920"/>
+                                                                <rect key="frame" x="24" y="32" width="366" height="5343"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <directionalEdgeInsets key="directionalLayoutMargins" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
@@ -44,7 +43,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Fou-Vk-7Vd" customClass="BackgroundStackView" customModule="Stopp_Corona" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="4000" width="414" height="64"/>
+                                                        <rect key="frame" x="0.0" y="5423" width="414" height="64"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" id="HaI-te-2jm" customClass="QuarantineNotificationView" customModule="Stopp_Corona" customModuleProvider="target">
                                                                 <rect key="frame" x="24" y="32" width="366" height="0.0"/>
@@ -60,7 +59,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="uRh-NA-Ut9" customClass="BackgroundStackView" customModule="Stopp_Corona" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="4080" width="414" height="64"/>
+                                                        <rect key="frame" x="0.0" y="5503" width="414" height="64"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" id="OE9-hK-5KZ" userLabel="Revocation Status View" customClass="QuarantineNotificationView" customModule="Stopp_Corona" customModuleProvider="target">
                                                                 <rect key="frame" x="24" y="32" width="366" height="0.0"/>
@@ -83,10 +82,10 @@
                                                 </userDefinedRuntimeAttributes>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="UBG-G7-xn7">
-                                                <rect key="frame" x="0.0" y="4144" width="414" height="995"/>
+                                                <rect key="frame" x="0.0" y="5567" width="414" height="961"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Srk-vI-HVb" customClass="BackgroundStackView" customModule="Stopp_Corona" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="614"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="580"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="QhG-ow-rIx">
                                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="20.5"/>
@@ -251,21 +250,8 @@
                                                                     <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="automatic_handshake_description_on"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </label>
-                                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qPd-kN-lVk" customClass="PrimaryButton" customModule="Stopp_Corona" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="549" width="414" height="34"/>
-                                                                <state key="normal" title="main_button_start_manual_handshake"/>
-                                                                <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                        <real key="value" value="8"/>
-                                                                    </userDefinedRuntimeAttribute>
-                                                                    <userDefinedRuntimeAttribute type="string" keyPath="transKeyNormal" value="main_button_start_manual_handshake"/>
-                                                                </userDefinedRuntimeAttributes>
-                                                                <connections>
-                                                                    <action selector="contactTapped:" destination="cMg-fw-Upr" eventType="touchUpInside" id="S6Q-kH-Z5i"/>
-                                                                </connections>
-                                                            </button>
                                                             <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bwj-rZ-iik" customClass="TransButton" customModule="Stopp_Corona" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="583" width="414" height="31"/>
+                                                                <rect key="frame" x="0.0" y="549" width="414" height="31"/>
                                                                 <inset key="contentEdgeInsets" minX="0.0" minY="5" maxX="0.0" maxY="4"/>
                                                                 <inset key="imageEdgeInsets" minX="6" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                                 <state key="normal" title="automatic_handshake_information_hint" image="exclamationMark">
@@ -293,7 +279,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="5ah-cw-edb" customClass="BackgroundStackView" customModule="Stopp_Corona" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="614" width="414" height="64"/>
+                                                        <rect key="frame" x="0.0" y="580" width="414" height="64"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" id="AGc-IG-ele" customClass="ShareAppCardView" customModule="Stopp_Corona" customModuleProvider="target">
                                                                 <rect key="frame" x="24" y="32" width="366" height="0.0"/>
@@ -309,7 +295,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="GTB-hm-U6b" customClass="BackgroundStackView" customModule="Stopp_Corona" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="678" width="414" height="158.5"/>
+                                                        <rect key="frame" x="0.0" y="644" width="414" height="158.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="main_body_feel_today" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Hz-wg-DQv" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
                                                                 <rect key="frame" x="8" y="32" width="398" height="20.5"/>
@@ -349,7 +335,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="xbI-dq-Sh6" customClass="BackgroundStackView" customModule="Stopp_Corona" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="836.5" width="414" height="158.5"/>
+                                                        <rect key="frame" x="0.0" y="802.5" width="414" height="158.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="main_body_covid_alert" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jeh-sj-ljK" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
                                                                 <rect key="frame" x="8" y="32" width="398" height="20.5"/>
@@ -429,7 +415,6 @@
                         <outlet property="backgroundHandshakeDescriptionLabel" destination="Cfj-2h-wvg" id="SCv-Kj-35y"/>
                         <outlet property="backgroundHandshakeSwitch" destination="a5U-cE-Iel" id="RGF-qQ-O3s"/>
                         <outlet property="backgroundHandshakeSwitchLabel" destination="4VM-hh-sEq" id="5cG-3e-ofg"/>
-                        <outlet property="contactButton" destination="qPd-kN-lVk" id="JV2-b8-wWO"/>
                         <outlet property="contactHealthStatusView" destination="HaI-te-2jm" id="d4c-LP-JRa"/>
                         <outlet property="contactHealthWrapperView" destination="Fou-Vk-7Vd" id="W1S-dt-BlM"/>
                         <outlet property="handshakePausedInformation" destination="XGd-27-msX" id="WbK-Hl-2gy"/>
