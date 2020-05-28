@@ -15,7 +15,7 @@ final class SavedIDsCoordinator: Coordinator {
         return controller
     }()
 
-    private weak var deletionSuccessViewController: SavedIDsDeletionSuccessViewController?
+    private weak var deletionSuccessScene: UIViewController?
 
     let navigationController: UINavigationController
 
@@ -34,14 +34,15 @@ final class SavedIDsCoordinator: Coordinator {
     /// Shows a `SavedIDsDeletionSuccessViewController` as feedback after keys have been deleted.
     func didDeleteKeys() {
         let controller = makeDeletionSuccessViewController()
-        controller.modalPresentationStyle = .fullScreen
-        self.deletionSuccessViewController = controller
-        rootViewController.present(controller, animated: true, completion: nil)
+        let navigationController = UINavigationController(rootViewController: controller)
+        navigationController.modalPresentationStyle = .fullScreen
+        self.deletionSuccessScene = navigationController
+        rootViewController.present(navigationController, animated: true, completion: nil)
     }
 
     /// Dismisses the `confirmationViewController` and closes the menu to land back on the main screen
     func deletionConfirmationAcknowledged() {
-        deletionSuccessViewController?.dismiss(animated: true, completion: nil)
+        deletionSuccessScene?.dismiss(animated: true, completion: nil)
 
         guard let menuCoordinator = ancestors.firstOfType(StartMenuCoordinator.self) else {
             assertionFailure("Could not find the start menu coordinator.")
