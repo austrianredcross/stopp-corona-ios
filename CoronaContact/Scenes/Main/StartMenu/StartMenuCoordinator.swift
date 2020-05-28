@@ -92,7 +92,7 @@ class StartMenuCoordinator: Coordinator, ShareSheetPresentable {
 
     func closeMenu() {
         let navigationStack = navigationController.viewControllers
-        guard let menuIndex = navigationController.viewControllers.firstIndex(of: rootViewController) else {
+        guard let menuIndex = navigationStack.firstIndex(of: rootViewController) else {
             return
         }
         let targetIndex = navigationStack.index(before: menuIndex)
