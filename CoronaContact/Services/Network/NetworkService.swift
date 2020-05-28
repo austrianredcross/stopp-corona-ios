@@ -37,19 +37,6 @@ final class NetworkService {
         client.request(.infectionMessages(fromId: fromId, addressPrefix: addressPrefix), completion: completion)
     }
 
-    func sendInfectionInfo(_ infectionInfo: InfectionInfo, completion: @escaping (Result<SuccessResponse, InfectionInfoError>) -> Void) {
-        client.request(.infectionInfo(infectionInfo)) { (result: Result<SuccessResponse, NetworkError>) in
-            switch result {
-            case let .failure((.unknownError(statusCode, _, _))):
-                completion(.failure(self.parseInfectionInfoError(statusCode: statusCode)))
-            case .failure:
-                completion(.failure(self.parseInfectionInfoError(statusCode: nil)))
-            case .success(let response):
-                completion(.success(response))
-            }
-        }
-    }
-
     func requestTan(mobileNumber: String, completion: @escaping (Result<RequestTanResponse, DisplayableError>) -> Void) {
         let requestTan = RequestTan(phoneNumber: mobileNumber)
         client.request(.requestTan(requestTan)) { (result: Result<RequestTanResponse, NetworkError>) in
@@ -58,6 +45,19 @@ final class NetworkService {
                 completion(.failure(self.parseTanEror(statusCode: statusCode)))
             case .failure:
                 completion(.failure(self.parseTanEror(statusCode: nil)))
+            case .success(let response):
+                completion(.success(response))
+            }
+        }
+    }
+
+    func sendTracingKeys(_ tracingKeys: TracingKeys, completion: @escaping (Result<SuccessResponse, TracingKeysError>) -> Void) {
+        client.request(.publish(tracingKeys)) { (result: Result<SuccessResponse, NetworkError>) in
+            switch result {
+            case let .failure((.unknownError(statusCode, _, _))):
+                completion(.failure(self.parseTracingKeysError(statusCode: statusCode)))
+            case .failure:
+                completion(.failure(self.parseTracingKeysError(statusCode: nil)))
             case .success(let response):
                 completion(.success(response))
             }

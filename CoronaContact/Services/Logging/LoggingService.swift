@@ -11,11 +11,11 @@ enum LoggingContext: String {
     case network
     case handshake
     case navigation
-    case p2pkit
     case database
     case application
     case bluetooth
     case nearby
+    case exposure
 
     var description: String {
         rawValue.uppercased()

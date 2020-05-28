@@ -44,7 +44,7 @@ class RevokeSicknessTanConfirmationViewModel: ViewModel {
             return
         }
 
-        flowController.revokeSickness(tanNumber: tanNumber)
+        flowController.statusReport(tanNumber: tanNumber)
         coordinator?.reportStatus()
     }
 }

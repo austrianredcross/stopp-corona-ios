@@ -23,7 +23,7 @@ class SicknessCertificatePersonalDataViewModel: ViewModel {
             return
         }
 
-        personalData.warning = .red
+        personalData.diagnosisType = .red
 
         flowController.tanConfirmation(personalData: personalData) { [weak self] result in
             completion()
