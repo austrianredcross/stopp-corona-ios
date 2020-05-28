@@ -3,7 +3,7 @@
 //  CoronaContact
 //
 
-import Foundation
+import UIKit
 
 class SavedIDsViewModel: ViewModel {
     weak var coordinator: SavedIDsCoordinator?
@@ -12,8 +12,15 @@ class SavedIDsViewModel: ViewModel {
         self.coordinator = coordinator
     }
 
-    func deleteAll() {
-        #warning("Not implemented yet")
+    func deleteExposureLog() {
+        guard let settingsURL = URL(string: UIApplication.openSettingsURLString) else {
+            assertionFailure()
+            return
+        }
+        let app = UIApplication.shared
+        if app.canOpenURL(settingsURL) {
+            app.open(settingsURL, options: [:], completionHandler: nil)
+        }
     }
 
     func finish() {

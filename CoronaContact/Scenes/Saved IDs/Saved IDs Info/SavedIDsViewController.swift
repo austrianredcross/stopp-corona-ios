@@ -8,7 +8,7 @@ import Reusable
 
 final class SavedIDsViewController: UIViewController, StoryboardBased, ViewModelBased, FlashableScrollIndicators {
 
-    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet var scrollView: UIScrollView!
 
     var viewModel: SavedIDsViewModel?
 
@@ -35,5 +35,6 @@ final class SavedIDsViewController: UIViewController, StoryboardBased, ViewModel
     }
 
     @IBAction func deleteKeysButtonTapped(_ sender: Any) {
+        viewModel?.deleteExposureLog()
     }
 }
