@@ -6,7 +6,7 @@
 import UIKit
 import Reusable
 
-final class SavedIDsDeletionConfirmationViewController: UIViewController, StoryboardBased, ViewModelBased, FlashableScrollIndicators {
+final class SavedIDsDeletionSuccessViewController: UIViewController, StoryboardBased, ViewModelBased, FlashableScrollIndicators {
 
     @IBOutlet weak var scrollView: UIScrollView!
 

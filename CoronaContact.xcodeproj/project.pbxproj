@@ -252,8 +252,8 @@
 		61F50DD92439EC8500798264 /* MissingPermissionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F50DD52439EC8500798264 /* MissingPermissionsViewController.swift */; };
 		61F50DDA2439EC8500798264 /* MissingPermissionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F50DD62439EC8500798264 /* MissingPermissionsViewModel.swift */; };
 		61F50DE0243A310400798264 /* handshakeActive.json in Resources */ = {isa = PBXBuildFile; fileRef = 61F50DDF243A310400798264 /* handshakeActive.json */; };
-		7801E220247EADF900C69328 /* SavedIDsDeletionConfirmationViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 780D5BC8247EA1C100B80B83 /* SavedIDsDeletionConfirmationViewController.storyboard */; };
-		7801E221247EADFC00C69328 /* SavedIDsDeletionConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780D5BCB247EA1C200B80B83 /* SavedIDsDeletionConfirmationViewController.swift */; };
+		7801E220247EADF900C69328 /* SavedIDsDeletionSuccessViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 780D5BC8247EA1C100B80B83 /* SavedIDsDeletionSuccessViewController.storyboard */; };
+		7801E221247EADFC00C69328 /* SavedIDsDeletionSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780D5BCB247EA1C200B80B83 /* SavedIDsDeletionSuccessViewController.swift */; };
 		7801E222247EAE0000C69328 /* SavedIDsDeletionConfirmationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780D5BC9247EA1C100B80B83 /* SavedIDsDeletionConfirmationViewModel.swift */; };
 		7801E224247FC18200C69328 /* Coordinator+Ancestors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7801E223247FC18200C69328 /* Coordinator+Ancestors.swift */; };
 		7801E226247FC1C100C69328 /* Sequence+firstOfType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7801E225247FC1C100C69328 /* Sequence+firstOfType.swift */; };
@@ -607,9 +607,9 @@
 		73658E7C34BA89738AB6F79B /* Pods-CoronaContactTests.development.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoronaContactTests.development.xcconfig"; path = "Target Support Files/Pods-CoronaContactTests/Pods-CoronaContactTests.development.xcconfig"; sourceTree = "<group>"; };
 		7801E223247FC18200C69328 /* Coordinator+Ancestors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Coordinator+Ancestors.swift"; sourceTree = "<group>"; };
 		7801E225247FC1C100C69328 /* Sequence+firstOfType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+firstOfType.swift"; sourceTree = "<group>"; };
-		780D5BC8247EA1C100B80B83 /* SavedIDsDeletionConfirmationViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SavedIDsDeletionConfirmationViewController.storyboard; sourceTree = "<group>"; };
+		780D5BC8247EA1C100B80B83 /* SavedIDsDeletionSuccessViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SavedIDsDeletionSuccessViewController.storyboard; sourceTree = "<group>"; };
 		780D5BC9247EA1C100B80B83 /* SavedIDsDeletionConfirmationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedIDsDeletionConfirmationViewModel.swift; sourceTree = "<group>"; };
-		780D5BCB247EA1C200B80B83 /* SavedIDsDeletionConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedIDsDeletionConfirmationViewController.swift; sourceTree = "<group>"; };
+		780D5BCB247EA1C200B80B83 /* SavedIDsDeletionSuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedIDsDeletionSuccessViewController.swift; sourceTree = "<group>"; };
 		7829D820247D50790015F5A5 /* SavedIDsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedIDsViewController.swift; sourceTree = "<group>"; };
 		7829D821247D507A0015F5A5 /* SavedIDsCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedIDsCoordinator.swift; sourceTree = "<group>"; };
 		7829D822247D507A0015F5A5 /* SavedIDsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedIDsViewModel.swift; sourceTree = "<group>"; };
@@ -1379,8 +1379,8 @@
 		780D5BC7247EA1AB00B80B83 /* Deletion Confirmation */ = {
 			isa = PBXGroup;
 			children = (
-				780D5BC8247EA1C100B80B83 /* SavedIDsDeletionConfirmationViewController.storyboard */,
-				780D5BCB247EA1C200B80B83 /* SavedIDsDeletionConfirmationViewController.swift */,
+				780D5BC8247EA1C100B80B83 /* SavedIDsDeletionSuccessViewController.storyboard */,
+				780D5BCB247EA1C200B80B83 /* SavedIDsDeletionSuccessViewController.swift */,
 				780D5BC9247EA1C100B80B83 /* SavedIDsDeletionConfirmationViewModel.swift */,
 			);
 			path = "Deletion Confirmation";
@@ -1809,7 +1809,7 @@
 				61459A55242AC15F00DC88A7 /* de.privacy-and-terms-of-use.html in Resources */,
 				61D0F55024352E960026C91A /* RevocationTanConfirmationViewController.storyboard in Resources */,
 				6103207D243F28A000ED3A20 /* en.terms-of-use.html in Resources */,
-				7801E220247EADF900C69328 /* SavedIDsDeletionConfirmationViewController.storyboard in Resources */,
+				7801E220247EADF900C69328 /* SavedIDsDeletionSuccessViewController.storyboard in Resources */,
 				61546555242D1A7D0003D3D3 /* AnswerView.xib in Resources */,
 				921525602427C7AA0023F469 /* SelfTestingSuspicionViewController.storyboard in Resources */,
 				614D723A242909C000CC545D /* SelfTestingConfirmationViewController.storyboard in Resources */,
@@ -2158,7 +2158,7 @@
 				61D0F54B24352E960026C91A /* RevocationStatusReportCoordinator.swift in Sources */,
 				61032065243E0AE400ED3A20 /* FlashableScrollIndicators.swift in Sources */,
 				61D1A3E5242A58CA007F82ED /* MainHelpCoordinator.swift in Sources */,
-				7801E221247EADFC00C69328 /* SavedIDsDeletionConfirmationViewController.swift in Sources */,
+				7801E221247EADFC00C69328 /* SavedIDsDeletionSuccessViewController.swift in Sources */,
 				839742CA8F8A4CC34C042091 /* RemoteContact.swift in Sources */,
 				92FFC9BF24267D8200CC541B /* SelfTestingCheckSymptomsViewController.swift in Sources */,
 				4ED175D32460705200248D3B /* RevokeSicknessTanConfirmationViewModel.swift in Sources */,
