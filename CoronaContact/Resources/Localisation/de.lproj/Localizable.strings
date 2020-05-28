@@ -433,7 +433,7 @@
 "saved_IDs_subtitle"                                                         = "Diese App speichert Zufalls-IDs";
 "saved_IDs_description"                                                      = "Diese App speichert Zufalls-IDs von Kontakten, die auch die App nutzen. Diese werden benachrichtigt, sollten Sie sich als krank oder einen Verdacht bei sich melden. Die Zufalls-IDs werden automatisch nach ein paar Tagen gelöscht.";
 "saved_IDs_delete_subtitle"                                                  = "Möchten Sie jetzt die Zufalls-IDs löschen?";
-"saved_IDs_delete_description"                                               = "Sollten Sie die Zufalls-IDs löschen, können diese nicht benachrichtig werden, wenn Sie sich als erkrankt oder einen Vedacht bei sich melden.\nÖffnen Sie die App-Einstellungen. Dort finden Sie unten einen Link zu den Einstellungen des COVID-Kontaktprotokolls. Bei den Einstellungen des COVID-19 Kontaktprotokolls können Sie die Zufalls-IDs löschen.";
+"saved_IDs_delete_description"                                               = "Sollten Sie die Zufalls-IDs löschen, können diese nicht benachrichtigt werden, wenn Sie sich als erkrankt oder einen Vedacht bei sich melden.\nÖffnen Sie die App-Einstellungen. Dort finden Sie unten einen Link zu den Einstellungen des COVID-Kontaktprotokolls. Bei den Einstellungen des COVID-19 Kontaktprotokolls können Sie die Zufalls-IDs löschen.";
 "saved_IDs_delete_button"                                                    = "App-Einstellungen öffnen";
 "handshake_code_00"                                                          = "Meise";
 "handshake_code_01"                                                          = "Tukan";
