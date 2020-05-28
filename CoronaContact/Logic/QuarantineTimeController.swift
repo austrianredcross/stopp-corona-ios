@@ -123,6 +123,8 @@ class QuarantineTimeController {
 
     @Injected private var databaseService: DatabaseService
     @Injected private var notificationService: NotificationService
+    @Injected private var localStorage: LocalStorage
+
     private let timeConfiguration: QuarantineTimeConfiguration
     private let calendar = Calendar.current
     private var dateGenerator: () -> Date = {
@@ -149,14 +151,6 @@ class QuarantineTimeController {
     private func registerObservers() {
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(refresh),
-                                               name: .DatabaseServiceNewContact,
-                                               object: nil)
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(refresh),
-                                               name: .DatabaseServiceNewSickContact,
-                                               object: nil)
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(refresh),
                                                name: .DatabaseSicknessUpdated,
                                                object: nil)
     }
@@ -180,66 +174,11 @@ class QuarantineTimeController {
     }
 
     func quarantineStatus(completion: @escaping (QuarantineStatus) -> Void) {
-        if UserDefaults.standard.hasAttestedSickness {
+        if localStorage.hasAttestedSickness {
             return completion(.inProgressIndefinitely)
         }
 
-        databaseService.getIncomingInfectionWarnings { [weak self] warnings in
-            guard let self = self else {
-                completion(.unknown)
-                return
-            }
-
-            var endOfQuarantines = [QuarantineEnd]()
-
-            let sortedWarnings = warnings.sorted { $0.timeStamp.compare($1.timeStamp) == .orderedAscending }
-            let redWarning = sortedWarnings.first { $0.type == .red }
-            let yellowWarning = sortedWarnings.first { $0.type == .yellow }
-            let greenWarning = sortedWarnings.first { $0.type == .green }
-
-            if let latestRedWarning = redWarning {
-                let endOfQuarantine = QuarantineEnd(
-                    type: .red,
-                    date: self.addDays(self.timeConfiguration.redWarning, to: latestRedWarning.timeStamp)
-                )
-                endOfQuarantines.append(endOfQuarantine)
-            }
-
-            if let latestYellowWarning = yellowWarning {
-                let endOfQuarantine = QuarantineEnd(
-                    type: .yellow,
-                    date: self.addDays(self.timeConfiguration.yellowWarning, to: latestYellowWarning.timeStamp)
-                )
-                endOfQuarantines.append(endOfQuarantine)
-            }
-
-            if let isProbablySickAt = UserDefaults.standard.isProbablySickAt {
-                let endOfQuarantine = QuarantineEnd(
-                    type: .selfDiagnosed,
-                    date: self.addDays(self.timeConfiguration.probablySick, to: isProbablySickAt)
-                )
-                endOfQuarantines.append(endOfQuarantine)
-            }
-
-            if greenWarning != nil, endOfQuarantines.count == 0 {
-                completion(.cleared)
-                return
-            }
-
-            let sortedQuarantines = endOfQuarantines.sorted { $0.date.compare($1.date) == .orderedDescending }
-
-            if let longestQuarantine = sortedQuarantines.first {
-                if let daysUntilEnd = longestQuarantine.numberOfDays, daysUntilEnd <= 0 {
-                    completion(.completed(longestQuarantine))
-                    return
-                }
-
-                completion(.inProgress(longestQuarantine))
-                return
-            }
-
-            completion(.unknown)
-        }
+        // TODO: add new calculation
     }
 
     private func scheduleNotification(for quarantineStatus: QuarantineStatus) {

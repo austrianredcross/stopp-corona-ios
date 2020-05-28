@@ -17,7 +17,7 @@ class DebugViewModel: ViewModel {
     weak var coordinator: DebugCoordinator?
 
     @Injected private var dba: DatabaseService
-    @Injected private var crypto: CryptoService
+    @Injected private var localStorage: LocalStorage
     @Injected private var network: NetworkService
     @Injected private var notificationService: NotificationService
     @available(iOS 13.5, *)
@@ -60,7 +60,7 @@ class DebugViewModel: ViewModel {
     }
 
     func attestSickness() {
-        dba.saveSicknessState(true)
+        localStorage.saveSicknessState(true)
     }
 
     func exposeDiagnosesKeys(test: Bool = false) {

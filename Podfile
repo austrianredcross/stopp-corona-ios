@@ -16,6 +16,8 @@ target 'CoronaContact' do
   pod 'Firebase/Messaging'
   pod 'lottie-ios'
   pod 'SwiftyBeaver'
+  pod 'SQLite.swift'
+  pod 'SQLiteMigrationManager.swift'
 
   target 'CoronaContactTests' do
     inherit! :search_paths

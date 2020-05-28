@@ -107,14 +107,6 @@ class MainViewModel: ViewModel {
 
     private func registerObservers() {
         NotificationCenter.default.addObserver(self,
-                                               selector: #selector(checkNewContact),
-                                               name: .DatabaseServiceNewContact,
-                                               object: nil)
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(checkNewSickContacts),
-                                               name: .DatabaseServiceNewSickContact,
-                                               object: nil)
-        NotificationCenter.default.addObserver(self,
                                                selector: #selector(updateView),
                                                name: .DatabaseSicknessUpdated,
                                                object: nil)
@@ -138,21 +130,11 @@ class MainViewModel: ViewModel {
     }
 
     @objc func viewWillAppear() {
-        checkNewContact()
-        checkNewSickContacts()
         repository.refresh()
     }
 
     @objc func updateView() {
         viewController?.updateView()
-    }
-
-    @objc func checkNewContact() {
-        repository.checkNewContact()
-    }
-
-    @objc func checkNewSickContacts() {
-        repository.checkNewSickContacts()
     }
 
     func tappedPrimaryButtonInUserHealthStatus() {

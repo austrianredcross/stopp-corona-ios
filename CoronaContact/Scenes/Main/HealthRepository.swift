@@ -85,27 +85,14 @@ class HealthRepository {
 
         userHealthStatus = UserHealthStatus(quarantineDays: quarantineStatus.numberOfDays)
 
+        /* TODO: redo new system
         dba.getIncomingInfectionWarnings { [weak self] infectionWarnings in
             self?.contactHealthStatus = ContactHealthStatus(
                     basedOn: infectionWarnings,
                     quarantineDays: quarantineStatus.numberOfDays
             )
         }
+        */
     }
 
-    func checkNewContact() {
-        dba.getContactCount { [weak self] count in
-            DispatchQueue.main.async {
-                self?.numberOfContacts = count
-            }
-        }
-    }
-
-    func checkNewSickContacts() {
-        dba.getIncomingInfectionWarnings(completion: { [weak self] infectionWarnings in
-            DispatchQueue.main.async {
-                self?.infectionWarnings = infectionWarnings
-            }
-        })
-    }
 }

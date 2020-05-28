@@ -9,8 +9,6 @@ import SwiftRichString
 import Resolver
 
 class DebugViewController: UIViewController, StoryboardBased, ViewModelBased, Reusable {
-    @Injected private var crypto: CryptoService
-
     var viewModel: DebugViewModel? {
         didSet {
             viewModel?.viewController = self

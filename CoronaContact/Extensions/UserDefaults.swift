@@ -8,8 +8,6 @@ import UIKit
 extension UserDefaults {
 
     struct Keys {
-        static let hasAttestedSickness          = "has_attested_sickness"
-        static let attestedSicknessAt           = "attested_sickness_at"
         static let lastDownloadedMessage        = "last_downloaded_message"
         static let hasSeenOnboarding            = "has_seen_onboarding_2"
         static let agreedToDataPrivacyAt        = "agreed_to_data_privacy_at_2"
@@ -25,23 +23,6 @@ extension UserDefaults {
         static let allClearQuarantine           = "all_clear_quarantine"
     }
 
-    var hasAttestedSickness: Bool {
-        get {
-            bool(forKey: Keys.hasAttestedSickness)
-        }
-        set {
-            set(newValue, forKey: Keys.hasAttestedSickness)
-        }
-    }
-
-    var attestedSicknessAt: Date? {
-        get {
-            object(forKey: Keys.attestedSicknessAt) as? Date
-        }
-        set {
-            set(newValue, forKey: Keys.attestedSicknessAt)
-        }
-    }
 
     var lastDownloadedMessage: Int {
         get {

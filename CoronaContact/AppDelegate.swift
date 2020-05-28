@@ -23,7 +23,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private var serivcesInitialized: Bool = false
 
     @Injected private var configService: ConfigurationService
-    @Injected private var cryptoService: CryptoService
     @Injected private var appUpdateService: AppUpdateService
     @Injected private var notificationService: NotificationService
     @Injected private var databaseService: DatabaseService
@@ -49,7 +48,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         log.info("Application starting with launchOptions: \(String(describing: launchOptions))")
 
-        databaseService.migrate()
         if #available(iOS 13.5, *) {
             registerBackgroundTask()
         }
@@ -77,8 +75,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         Messaging.messaging().delegate = self
         application.registerForRemoteNotifications()
-        subscribeToAddressPrefixTopic()
-
         serivcesInitialized = true
     }
 
@@ -141,15 +137,8 @@ extension AppDelegate {
 // MARK: Messaging
 
 extension AppDelegate: MessagingDelegate {
-    private func subscribeToAddressPrefixTopic() {
-        guard let addressPrefix = cryptoService.getMyPublicKeyPrefix() else {
-            return
-        }
-        Messaging.messaging().subscribe(toTopic: addressPrefix)
-    }
-
     func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
-        subscribeToAddressPrefixTopic()
+        Messaging.messaging().subscribe(toTopic: "all")
     }
 }
 
