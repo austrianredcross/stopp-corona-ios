@@ -20,29 +20,23 @@ extension NetworkService {
         let description: String
     }
 
-    struct InfectionInfoError: Error {
+    struct TracingKeysError: Error {
 
         let displayableError: DisplayableError
         let personalDataInvalid: Bool
         let tanInvalid: Bool
     }
 
-    func parseInfectionInfoError(statusCode: HTTPStatusCode?) -> InfectionInfoError {
+    func parseTracingKeysError(statusCode: HTTPStatusCode?) -> TracingKeysError {
         switch statusCode?.rawValue {
-        case 400:
-            let displayableError = DisplayableError(
-                title: "sickness_certificate_report_status_invalid_birth_date_error".localized,
-                description: "sickness_certificate_report_status_invalid_birth_date_error_description".localized
-            )
-            return InfectionInfoError(displayableError: displayableError, personalDataInvalid: true, tanInvalid: false)
         case 403:
             let displayableError = DisplayableError(
                 title: "sickness_certificate_report_status_invalid_tan_error".localized,
                 description: "sickness_certificate_report_status_invalid_tan_error_description".localized
             )
-            return InfectionInfoError(displayableError: displayableError, personalDataInvalid: false, tanInvalid: true)
+            return TracingKeysError(displayableError: displayableError, personalDataInvalid: false, tanInvalid: true)
         default:
-            return InfectionInfoError(displayableError: Self.generalServerError, personalDataInvalid: false, tanInvalid: false)
+            return TracingKeysError(displayableError: Self.generalServerError, personalDataInvalid: false, tanInvalid: false)
         }
     }
 

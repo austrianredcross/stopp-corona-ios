@@ -23,7 +23,6 @@ extension UserDefaults {
         static let completedVoluntaryQuarantine = "completed_voluntary_quarantine"
         static let completedRequiredQuarantine  = "completed_required_quarantine"
         static let allClearQuarantine           = "all_clear_quarantine"
-        static let backgroundHandshakeDisabled  = "background_handshake_disabled"
     }
 
     var hasAttestedSickness: Bool {
@@ -153,15 +152,6 @@ extension UserDefaults {
         }
         set {
             set(newValue, forKey: Keys.allClearQuarantine)
-        }
-    }
-
-    var backgroundHandShakeDisabled: Bool {
-        get {
-            bool(forKey: Keys.backgroundHandshakeDisabled)
-        }
-        set {
-            set(newValue, forKey: Keys.backgroundHandshakeDisabled)
         }
     }
 

@@ -16,11 +16,13 @@ extension Resolver: ResolverRegistering {
         registerCryptoServices()
         registerNetworkServices()
         registerSelfTestingDependencies()
-        registerSicknessCertificateDependencies()
         registerRevocationDependencies()
         registerRevokeSicknessDependencies()
         registerNotificationServices()
         registerAppUpdateServices()
         registerHealthRepository()
+        registerLocalStorageServices()
+        registerSicknessCertificateDependencies()
+        registerExposureServices()
     }
 }

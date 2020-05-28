@@ -23,7 +23,7 @@ class SelfTestingPersonalDataViewModel: ViewModel {
             return
         }
 
-        personalData.warning = .yellow
+        personalData.diagnosisType = .yellow
 
         flowController.tanConfirmation(personalData: personalData) { [weak self] result in
             completion()

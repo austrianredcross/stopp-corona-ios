@@ -3,11 +3,12 @@
 //  CoronaContact
 //
 
-import UIKit
-import Resolver
-import UserNotifications
+import BackgroundTasks
 import Firebase
 import Lottie
+import Resolver
+import UIKit
+import UserNotifications
 
 enum ScreenSize {
     case small, medium, large
@@ -15,9 +16,9 @@ enum ScreenSize {
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
     var window: UIWindow?
     var appCoordinator: ApplicationCoordinator!
+    let log = ContextLogger(context: .application)
 
     private var serivcesInitialized: Bool = false
 
@@ -29,6 +30,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     @Injected private var messageUpdateService: MessageUpdateService
     @Injected private var databaseService: DatabaseService
     @Injected private var healthRepository: HealthRepository
+    @Injected private var localStorage: LocalStorage
+    @available(iOS 13.5, *)
+    @Injected private var exposureManager: ExposureManager
 
     lazy var screenSize: ScreenSize = {
         let width = UIScreen.main.bounds.size.width
@@ -38,14 +42,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-
         registerFontStyles()
         styleNavigationBar()
 
-        LoggingService.info("Application starting with launchOptions: \(String(describing: launchOptions))",
-                            context: .application)
+        log.info("Application starting with launchOptions: \(String(describing: launchOptions))")
 
         databaseService.migrate()
+        if #available(iOS 13.5, *) {
+            registerBackgroundTask()
+        }
 
         UNUserNotificationCenter.current().delegate = self
 
@@ -91,6 +96,46 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 }
 
+// MARK: exposure notification background task
+
+@available(iOS 13.5, *)
+extension AppDelegate {
+    static let backgroundTaskIdentifier = Bundle.main.bundleIdentifier! + ".exposure-notification"
+
+    func registerBackgroundTask() {
+        BGTaskScheduler.shared.register(forTaskWithIdentifier: AppDelegate.backgroundTaskIdentifier, using: .main) { task in
+
+            // Perform the exposure detection
+            let progress = self.exposureManager.detectExposures { success in
+                task.setTaskCompleted(success: success)
+            }
+
+            // Handle running out of time
+            task.expirationHandler = {
+                progress.cancel()
+                // LocalStore.shared.exposureDetectionErrorLocalizedDescription = NSLocalizedString("BACKGROUND_TIMEOUT", comment: "Error")
+            }
+
+            // Schedule the next background task
+            self.scheduleBackgroundTaskIfNeeded()
+        }
+
+        scheduleBackgroundTaskIfNeeded()
+    }
+
+    func scheduleBackgroundTaskIfNeeded() {
+        guard exposureManager.authorizationStatus == .authorized else { return }
+        let taskRequest = BGProcessingTaskRequest(identifier: AppDelegate.backgroundTaskIdentifier)
+        taskRequest.requiresNetworkConnectivity = true
+        do {
+            try BGTaskScheduler.shared.submit(taskRequest)
+            log.debug("background task scheduled \(AppDelegate.backgroundTaskIdentifier)")
+        } catch {
+            log.error("Unable to schedule background task: \(error)")
+        }
+    }
+}
+
 // MARK: Messaging
 
 extension AppDelegate: MessagingDelegate {
@@ -122,7 +167,6 @@ extension AppDelegate {
 }
 
 extension AppDelegate: UNUserNotificationCenterDelegate {
-
     func userNotificationCenter(_ center: UNUserNotificationCenter,
                                 didReceive response: UNNotificationResponse,
                                 withCompletionHandler
