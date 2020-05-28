@@ -34,7 +34,7 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                                 <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="h1b"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="h1"/>
                                                                     <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="saved_IDs_deletion_confirmation_subtitle"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </label>
