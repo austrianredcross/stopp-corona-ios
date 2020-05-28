@@ -24,10 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     @Injected private var configService: ConfigurationService
     @Injected private var cryptoService: CryptoService
-    @Injected private var msgUpdateService: MessageUpdateService
     @Injected private var appUpdateService: AppUpdateService
     @Injected private var notificationService: NotificationService
-    @Injected private var messageUpdateService: MessageUpdateService
     @Injected private var databaseService: DatabaseService
     @Injected private var healthRepository: HealthRepository
     @Injected private var localStorage: LocalStorage
@@ -36,7 +34,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     lazy var screenSize: ScreenSize = {
         let width = UIScreen.main.bounds.size.width
-        if width >= 414 { return .large } else if width >= 375 { return .medium }
+        if width >= 414 {
+            return .large
+        } else if width >= 375 {
+            return .medium
+        }
         return .small
     }()
 
@@ -66,10 +68,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func initializeExternalServices(_ application: UIApplication) {
-        guard serivcesInitialized == false else { return }
+        guard serivcesInitialized == false else {
+            return
+        }
 
         configService.update()
-        msgUpdateService.update()
 
         FirebaseApp.configure()
         Messaging.messaging().delegate = self
@@ -80,7 +83,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any]) {
-        msgUpdateService.update()
+        // TODO: what should happen on push notification?
     }
 
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
@@ -90,9 +93,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         appUpdateService.showUpdateAlertIfNecessary()
-        if serivcesInitialized {
-            msgUpdateService.update()
-        }
     }
 }
 
@@ -124,7 +124,9 @@ extension AppDelegate {
     }
 
     func scheduleBackgroundTaskIfNeeded() {
-        guard exposureManager.authorizationStatus == .authorized else { return }
+        guard exposureManager.authorizationStatus == .authorized else {
+            return
+        }
         let taskRequest = BGProcessingTaskRequest(identifier: AppDelegate.backgroundTaskIdentifier)
         taskRequest.requiresNetworkConnectivity = true
         do {
@@ -181,7 +183,6 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
                                 willPresent notification: UNNotification,
                                 withCompletionHandler
                                 completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        msgUpdateService.update()
         completionHandler([.alert, .sound])
     }
 }

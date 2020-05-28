@@ -253,9 +253,7 @@
 		8397407B842054D9947D6AB7 /* configuration.json in Resources */ = {isa = PBXBuildFile; fileRef = 8397422DDB8AFB76E5110DB0 /* configuration.json */; };
 		8397409A6F3CF92410AAEE06 /* TransLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8397474245A5951193FA02B7 /* TransLabel.swift */; };
 		8397409E6D4A0FD3F83CE213 /* ConfigurationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83974E4BF20807E7150F5CDD /* ConfigurationService.swift */; };
-		839740A169112CCF5D5A3C10 /* MessageUpdateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8397482B5EB2DBA92C193311 /* MessageUpdateService.swift */; };
 		839741974FFF610B5F936C7D /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83974A1DA608C99ABD0EC3A3 /* History.swift */; };
-		839742207FE8739EB66870E3 /* MessageUpdate+injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839742D5EEDF8B25D481FF0E /* MessageUpdate+injection.swift */; };
 		839742C47A14834F1B2C24F6 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83974BF5DD12A8B96C4A52A8 /* MainViewModel.swift */; };
 		839743F271E19BEF66B89E3A /* OnboardingViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 839746C7B319EBECC38557CB /* OnboardingViewController.storyboard */; };
 		8397446DA0EAC8E79B9445BA /* TransButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8397498ADF6B7522C4D9AC93 /* TransButton.swift */; };
@@ -579,7 +577,6 @@
 		7068854DCB7D47DCD40F96AD /* Pods_CoronaContact.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoronaContact.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		73658E7C34BA89738AB6F79B /* Pods-CoronaContactTests.development.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoronaContactTests.development.xcconfig"; path = "Target Support Files/Pods-CoronaContactTests/Pods-CoronaContactTests.development.xcconfig"; sourceTree = "<group>"; };
 		8397422DDB8AFB76E5110DB0 /* configuration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = configuration.json; sourceTree = "<group>"; };
-		839742D5EEDF8B25D481FF0E /* MessageUpdate+injection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MessageUpdate+injection.swift"; sourceTree = "<group>"; };
 		83974345BBD0522CFDA25B76 /* ConfigurationService+Injection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ConfigurationService+Injection.swift"; sourceTree = "<group>"; };
 		839743E9E3569B229703A3F8 /* OutgoingInfectionMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutgoingInfectionMessage.swift; sourceTree = "<group>"; };
 		839744713BE877F4659927B5 /* AutoMarginTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoMarginTableViewCell.swift; sourceTree = "<group>"; };
@@ -591,7 +588,6 @@
 		8397474245A5951193FA02B7 /* TransLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransLabel.swift; sourceTree = "<group>"; };
 		839747825714F0364F308D55 /* MainCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		839747A974BEBD27078B488B /* NSString+localized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSString+localized.swift"; sourceTree = "<group>"; };
-		8397482B5EB2DBA92C193311 /* MessageUpdateService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageUpdateService.swift; sourceTree = "<group>"; };
 		8397485959B7EA28E150A5EB /* UserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		8397498ADF6B7522C4D9AC93 /* TransButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransButton.swift; sourceTree = "<group>"; };
 		839749AD5CC31574CCB7808B /* AppDelegate+Injection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Injection.swift"; sourceTree = "<group>"; };
@@ -1424,15 +1420,6 @@
 			path = Configuration;
 			sourceTree = "<group>";
 		};
-		8397471D7E8B66E8AD6DEC7F /* MessageUpdate */ = {
-			isa = PBXGroup;
-			children = (
-				8397482B5EB2DBA92C193311 /* MessageUpdateService.swift */,
-				839742D5EEDF8B25D481FF0E /* MessageUpdate+injection.swift */,
-			);
-			path = MessageUpdate;
-			sourceTree = "<group>";
-		};
 		839749502F0950BD2AFD1311 /* Crypto */ = {
 			isa = PBXGroup;
 			children = (
@@ -1467,7 +1454,6 @@
 				83974DD069D0B61BA357C484 /* Database */,
 				83974647D941FDC0A47E6DFA /* Configuration */,
 				614BA9E22423C31C006797AA /* Network */,
-				8397471D7E8B66E8AD6DEC7F /* MessageUpdate */,
 				4E5254CF2472B85D00B6C3A4 /* Exposure */,
 			);
 			path = Services;
@@ -2089,8 +2075,6 @@
 				4ED175B82458347400248D3B /* DebugViewModel.swift in Sources */,
 				83974070AAD41799D50EE1F8 /* Contact.swift in Sources */,
 				83974E1C0C969B298357EDD5 /* InfectionWarning.swift in Sources */,
-				839740A169112CCF5D5A3C10 /* MessageUpdateService.swift in Sources */,
-				839742207FE8739EB66870E3 /* MessageUpdate+injection.swift in Sources */,
 				839748175DA5F72BBA63DB45 /* UserDefaults.swift in Sources */,
 				4E5254D12472B89200B6C3A4 /* ExposureManager.swift in Sources */,
 				83974FB0112B30AA0C833CBB /* OnboardingCoordinator.swift in Sources */,
