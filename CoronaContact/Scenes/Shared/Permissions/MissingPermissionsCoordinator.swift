@@ -10,6 +10,7 @@ final class MissingPermissionsCoordinator: Coordinator {
     enum PermissionType {
         case bluetooth
         case backgroundAppRefresh
+        case exposureFramework
 
         var viewController: MissingPermissionsViewController {
             switch self {
@@ -17,6 +18,8 @@ final class MissingPermissionsCoordinator: Coordinator {
                 return .bluetooth
             case .backgroundAppRefresh:
                 return .backgroundAppRefresh
+            case .exposureFramework:
+                return .exposureFramework
             }
         }
     }

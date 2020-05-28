@@ -9,8 +9,8 @@ import Moya
 enum NetworkEndpoint: TargetType {
     case configuration
     case infectionMessages(fromId: String?, addressPrefix: String)
-    case infectionInfo(InfectionInfo)
     case requestTan(RequestTan)
+    case publish(TracingKeys)
 }
 
 // MARK: - TargetType Protocol Implementation
@@ -30,10 +30,10 @@ extension NetworkEndpoint {
             return "/configuration"
         case .infectionMessages:
             return "/infection-messages"
-        case .infectionInfo:
-            return "/infection-info"
         case .requestTan:
             return "/request-tan"
+        case .publish:
+            return "/publish"
         }
     }
 
@@ -41,10 +41,8 @@ extension NetworkEndpoint {
         switch self {
         case .configuration, .infectionMessages:
             return .get
-        case .requestTan:
+        case .requestTan, .publish:
             return .post
-        case .infectionInfo:
-            return .put
         }
     }
 
@@ -59,10 +57,10 @@ extension NetworkEndpoint {
             }
 
             return .requestParameters(parameters: parameters, encoding: URLEncoding.queryString)
-        case let .infectionInfo(infectionInfo):
-            return .requestCustomJSONEncodable(infectionInfo, encoder: JSONEncoder.withApiDateFormat)
         case let .requestTan(requestTan):
             return .requestJSONEncodable(requestTan)
+        case let .publish(tracingKeys):
+            return .requestJSONEncodable(tracingKeys)
         }
     }
 

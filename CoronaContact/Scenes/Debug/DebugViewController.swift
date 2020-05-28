@@ -21,12 +21,16 @@ class DebugViewController: UIViewController, StoryboardBased, ViewModelBased, Re
         viewModel?.close()
     }
 
-    @IBAction func shareLogButtonTapped(_ sender: Any) {
-        viewModel?.shareLog()
+    @IBAction func exposeDiagnosesKeysButtonPressed(_ sender: Any) {
+        viewModel?.exposeDiagnosesKeys()
     }
 
-    @IBAction func resetLogButtonTapped(_ sender: Any) {
-        viewModel?.resetLog()
+    @IBAction func exposeDiagnosesKeysTestButtonPressed(_ sender: Any) {
+        viewModel?.exposeDiagnosesKeys(test: true)
+    }
+
+    @IBAction func shareLogButtonTapped(_ sender: Any) {
+        viewModel?.shareLog()
     }
 
     @IBAction func addHandshakeAction(_ sender: Any) {
@@ -60,4 +64,10 @@ class DebugViewController: UIViewController, StoryboardBased, ViewModelBased, Re
         UserDefaults.standard.isProbablySickAt = Date()
         NotificationCenter.default.post(name: .DatabaseSicknessUpdated, object: nil)
     }
+
+
+    @IBAction func resetLogButtonTapped(_ sender: Any) {
+        viewModel?.resetLog()
+    }
+
 }

@@ -90,4 +90,20 @@ extension MissingPermissionsViewController {
 
         return viewController
     }
+
+    static var exposureFramework: MissingPermissionsViewController {
+        let viewController = instantiate()
+        let representation = MissingPermissionsRepresentable(
+            title: "missing_permissions_background_app_refresh_title".localized,
+            headline: "missing_permissions_background_app_refresh_headline".localized,
+            description: "missing_permissions_background_app_refresh_description".localized,
+            icon: UIImage(named: "covid19Icon")!,
+            iconCaption: "missing_permissions_exposure_framework_icon_caption".localized,
+            settingsText: "missing_permissions_background_app_refresh_settings".localized,
+            buttonText: "missing_permissions_background_app_refresh_button".localized
+        )
+        viewController.configure(with: representation)
+
+        return viewController
+    }
 }
