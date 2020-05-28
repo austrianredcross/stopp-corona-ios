@@ -252,6 +252,10 @@
 		61F50DD92439EC8500798264 /* MissingPermissionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F50DD52439EC8500798264 /* MissingPermissionsViewController.swift */; };
 		61F50DDA2439EC8500798264 /* MissingPermissionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F50DD62439EC8500798264 /* MissingPermissionsViewModel.swift */; };
 		61F50DE0243A310400798264 /* handshakeActive.json in Resources */ = {isa = PBXBuildFile; fileRef = 61F50DDF243A310400798264 /* handshakeActive.json */; };
+		7829D824247D507A0015F5A5 /* SavedIDsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7829D820247D50790015F5A5 /* SavedIDsViewController.swift */; };
+		7829D825247D507A0015F5A5 /* SavedIDsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7829D821247D507A0015F5A5 /* SavedIDsCoordinator.swift */; };
+		7829D826247D507A0015F5A5 /* SavedIDsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7829D822247D507A0015F5A5 /* SavedIDsViewModel.swift */; };
+		7829D827247D507A0015F5A5 /* SavedIDsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7829D823247D507A0015F5A5 /* SavedIDsViewController.storyboard */; };
 		839740094A9E228FB41E3A8C /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83974DE622CC5A770112F3AE /* ContactViewController.swift */; };
 		83974070AAD41799D50EE1F8 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8397467D70446583EE496204 /* Contact.swift */; };
 		8397407B842054D9947D6AB7 /* configuration.json in Resources */ = {isa = PBXBuildFile; fileRef = 8397422DDB8AFB76E5110DB0 /* configuration.json */; };
@@ -596,6 +600,10 @@
 		61FABCB02432368E0085786B /* Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Base.xcconfig; sourceTree = "<group>"; };
 		7068854DCB7D47DCD40F96AD /* Pods_CoronaContact.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoronaContact.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		73658E7C34BA89738AB6F79B /* Pods-CoronaContactTests.development.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoronaContactTests.development.xcconfig"; path = "Target Support Files/Pods-CoronaContactTests/Pods-CoronaContactTests.development.xcconfig"; sourceTree = "<group>"; };
+		7829D820247D50790015F5A5 /* SavedIDsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedIDsViewController.swift; sourceTree = "<group>"; };
+		7829D821247D507A0015F5A5 /* SavedIDsCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedIDsCoordinator.swift; sourceTree = "<group>"; };
+		7829D822247D507A0015F5A5 /* SavedIDsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedIDsViewModel.swift; sourceTree = "<group>"; };
+		7829D823247D507A0015F5A5 /* SavedIDsViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SavedIDsViewController.storyboard; sourceTree = "<group>"; };
 		839741473EE54F93E5209C23 /* ContactViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactViewModel.swift; sourceTree = "<group>"; };
 		839741E9DA65C125979BF49B /* RemoteContact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteContact.swift; sourceTree = "<group>"; };
 		839741EC748857F03478F319 /* NearbyServices+Injection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NearbyServices+Injection.swift"; sourceTree = "<group>"; };
@@ -1358,6 +1366,25 @@
 			path = Configuration;
 			sourceTree = "<group>";
 		};
+		7829D815247D37CB0015F5A5 /* Saved IDs */ = {
+			isa = PBXGroup;
+			children = (
+				7829D816247D37F90015F5A5 /* Saved IDs Info */,
+			);
+			path = "Saved IDs";
+			sourceTree = "<group>";
+		};
+		7829D816247D37F90015F5A5 /* Saved IDs Info */ = {
+			isa = PBXGroup;
+			children = (
+				7829D823247D507A0015F5A5 /* SavedIDsViewController.storyboard */,
+				7829D821247D507A0015F5A5 /* SavedIDsCoordinator.swift */,
+				7829D820247D50790015F5A5 /* SavedIDsViewController.swift */,
+				7829D822247D507A0015F5A5 /* SavedIDsViewModel.swift */,
+			);
+			path = "Saved IDs Info";
+			sourceTree = "<group>";
+		};
 		83974095C18852AFA32AC3C8 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
@@ -1415,6 +1442,7 @@
 				6153A4B5242598DB006A8570 /* SicknessCertificate */,
 				4ED175BD24605D2100248D3B /* RevokeSickness */,
 				61D0F53824352E960026C91A /* Revocation */,
+				7829D815247D37CB0015F5A5 /* Saved IDs */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -1741,6 +1769,7 @@
 				61D1A3D4242A3C40007F82ED /* Localizable.strings in Resources */,
 				4ED175BA245836E000248D3B /* GoogleService-Info.plist in Resources */,
 				616518E72460778C001219A7 /* ShareAppCardView.xib in Resources */,
+				7829D827247D507A0015F5A5 /* SavedIDsViewController.storyboard in Resources */,
 				4E44EDEB2424D076000CC695 /* ContactLabelTableViewCell.xib in Resources */,
 				61546541242CBE7F0003D3D3 /* SelfMonitoringGuidelinesViewController.storyboard in Resources */,
 				614D72302429084B00CC545D /* SelfTestingTanConfirmationViewController.storyboard in Resources */,
@@ -1974,6 +2003,7 @@
 				614BA9F82423C31C006797AA /* HTTPStatusCode.swift in Sources */,
 				6153A52824264A2D006A8570 /* ActivityModalPresentable.swift in Sources */,
 				6153A4DA242598DC006A8570 /* SicknessCertificatePersonalDataViewModel.swift in Sources */,
+				7829D825247D507A0015F5A5 /* SavedIDsCoordinator.swift in Sources */,
 				6153A4F724259932006A8570 /* NotificationToken.swift in Sources */,
 				614D720D2428E87000CC545D /* QuarantineGuidelinesViewController.swift in Sources */,
 				614BA9F12423C31C006797AA /* NetworkService+Injection.swift in Sources */,
@@ -1981,6 +2011,7 @@
 				614D722E2429084B00CC545D /* SelfTestingTanConfirmationViewModel.swift in Sources */,
 				616E1DA9243486C700109435 /* ArrowButton.swift in Sources */,
 				4B7379ED2423DA7A00DF338E /* StartMenuCoordinator.swift in Sources */,
+				7829D824247D507A0015F5A5 /* SavedIDsViewController.swift in Sources */,
 				4EB52F00243C72FA0004FAA0 /* Benchmark.swift in Sources */,
 				8922A16C243D1DD6004E9D42 /* HealthRepository.swift in Sources */,
 				6153A4D5242598DC006A8570 /* SicknessCertificateConfirmationViewController.swift in Sources */,
@@ -2143,6 +2174,7 @@
 				61C4A46C24275C38004D18BB /* UIView+Shadow.swift in Sources */,
 				614D72042428E82700CC545D /* ContactSicknessViewController.swift in Sources */,
 				614BA9F72423C31C006797AA /* NetworkError.swift in Sources */,
+				7829D826247D507A0015F5A5 /* SavedIDsViewModel.swift in Sources */,
 				61D0F55824352EA90026C91A /* CheckboxLabelView.swift in Sources */,
 				8397446DA0EAC8E79B9445BA /* TransButton.swift in Sources */,
 				614BAA072423C334006797AA /* IncomingInfectionMessage.swift in Sources */,

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--SavedI Ds View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="SavedIDsViewController" customModule="Stopp_Corona" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="8ba-P9-42c">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="png-ah-PJ2">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="449.5"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="NSW-c7-oNH">
+                                                <rect key="frame" x="24" y="40" width="366" height="369.5"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="qEd-ph-Jjv" userLabel="Text Stack">
+                                                        <rect key="frame" x="0.0" y="0.0" width="366" height="299.5"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_Diese App speichert IDs" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wqm-Lj-Zex" userLabel="Subtitle" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="366" height="20.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="boldRed"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="saved_IDs_subtitle"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IiV-s3-o9I" userLabel="Description" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="52.5" width="366" height="101.5"/>
+                                                                <string key="text">_Diese App speichert Keys von Kontakten, die auch die App nutzen. Diese werden benachrichtigt, sollten Sie sich als krank oder einen Verdacht bei sich melden. Diese werden automatisch nach ein paar Tagen gelöscht.</string>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="body"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="saved_IDs_description"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_Möchten Sie alle Keys löschen?" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lfb-z6-8ts" userLabel="Delete Subtitle" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="186" width="366" height="20.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="boldRed"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="saved_IDs_delete_subtitle"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dVr-Jm-2dL" userLabel="Delete Description" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="238.5" width="366" height="61"/>
+                                                                <string key="text">_Sollten Sie Keys löschen, können diese nicht benachrichtigt werden, sobald Sie sich als erkrankt oder einen Vedacht bei sich melden.</string>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="body"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="saved_IDs_delete_description"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pn5-0K-cTZ" userLabel="Delete Button" customClass="PrimaryButton" customModule="Stopp_Corona" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="339.5" width="366" height="30"/>
+                                                        <state key="normal" title="_Gespeicherte Keys löschen">
+                                                            <color key="titleColor" name="ccBlack"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="transKeyNormal" value="saved_IDs_delete_button"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="deleteKeysButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ttM-bn-zWo"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstItem="NSW-c7-oNH" firstAttribute="leading" secondItem="png-ah-PJ2" secondAttribute="leadingMargin" id="0Od-v4-4u8"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="NSW-c7-oNH" secondAttribute="bottom" priority="999" id="D92-Fd-Arw"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="NSW-c7-oNH" secondAttribute="trailing" id="nKe-U2-zi5"/>
+                                            <constraint firstItem="NSW-c7-oNH" firstAttribute="top" secondItem="png-ah-PJ2" secondAttribute="topMargin" id="uZK-fL-tR3"/>
+                                        </constraints>
+                                        <directionalEdgeInsets key="directionalLayoutMargins" top="40" leading="24" bottom="40" trailing="24"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="png-ah-PJ2" firstAttribute="centerX" secondItem="8ba-P9-42c" secondAttribute="centerX" id="Fpz-yj-Lzw"/>
+                                    <constraint firstItem="png-ah-PJ2" firstAttribute="leading" secondItem="8ba-P9-42c" secondAttribute="leading" id="LRj-iv-gEA"/>
+                                    <constraint firstAttribute="bottom" secondItem="png-ah-PJ2" secondAttribute="bottom" priority="250" id="TSi-Su-Whs"/>
+                                    <constraint firstItem="png-ah-PJ2" firstAttribute="centerY" secondItem="8ba-P9-42c" secondAttribute="centerY" priority="250" id="WoZ-hb-okN"/>
+                                    <constraint firstAttribute="trailing" secondItem="png-ah-PJ2" secondAttribute="trailing" id="ZBf-0K-R7x"/>
+                                    <constraint firstItem="png-ah-PJ2" firstAttribute="top" secondItem="8ba-P9-42c" secondAttribute="top" id="dJD-vd-MYK"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="O4p-ta-w2r"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="QAy-q1-rD4"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="8ba-P9-42c" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="KXe-a1-dTq"/>
+                            <constraint firstItem="8ba-P9-42c" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Rbc-O9-pjW"/>
+                            <constraint firstItem="8ba-P9-42c" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="U3c-j2-6r8"/>
+                            <constraint firstItem="8ba-P9-42c" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="WYj-DQ-LvN"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="scrollView" destination="8ba-P9-42c" id="dzQ-al-z3p"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="131"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="ccBlack">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

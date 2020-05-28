@@ -76,6 +76,10 @@ final class StartMenuViewController: UIViewController, StoryboardBased, Flashabl
         viewModel?.website(.homepage)
     }
 
+    @IBAction func savedIDsButtonTapped(_ sender: Any) {
+        viewModel?.openSavedIDs()
+    }
+
     @IBAction func openSourceLicensesTapped(_ sender: Any) {
         viewModel?.openSourceLicenses()
     }
