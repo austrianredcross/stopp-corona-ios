@@ -438,6 +438,10 @@
 "saved_IDs_delete_alert_title"                                               = "Alle IDs löschen?";
 "saved_IDs_delete_alert_message"                                             = "Wenn Sie Keys löschen, können die dazugehörigen Kontakte nicht benachrichtigt werden.";
 "saved_IDs_delete_alert_delete_button"                                       = "Löschen";
+"saved_IDs_deletion_confirmation_title"                                      = "Status ändern";
+"saved_IDs_deletion_confirmation_subtitle"                                   = "Gespeicherte Keys gelöscht";
+"saved_IDs_deletion_confirmation_description"                                = "Die Kontakte zu den Keys werden nicht mehr benachrichtigt.";
+"saved_IDs_deletion_confirmation_button_title"                               = "Zurück zur Startseite";
 "handshake_code_00"                                                          = "Meise";
 "handshake_code_01"                                                          = "Tukan";
 "handshake_code_02"                                                          = "Gämse";

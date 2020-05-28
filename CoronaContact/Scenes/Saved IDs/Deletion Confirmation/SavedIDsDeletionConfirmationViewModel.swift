@@ -1,20 +1,19 @@
 //
-//  SavedIDsViewModel.swift
+//  SavedIDsDeletionConfirmationViewModel.swift
 //  CoronaContact
 //
 
 import Foundation
 
-class SavedIDsViewModel: ViewModel {
+class SavedIDsDeletionConfirmationViewModel: ViewModel {
     weak var coordinator: SavedIDsCoordinator?
 
     init(_ coordinator: SavedIDsCoordinator) {
         self.coordinator = coordinator
     }
 
-    func deleteAll() {
-        #warning("Not implemented yet")
-        coordinator?.didDeleteKeys()
+    func deletionConfirmationAcknowledged() {
+        coordinator?.deletionConfirmationAcknowledged()
     }
 
     func finish() {
