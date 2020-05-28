@@ -260,11 +260,6 @@
 		61F50DD92439EC8500798264 /* MissingPermissionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F50DD52439EC8500798264 /* MissingPermissionsViewController.swift */; };
 		61F50DDA2439EC8500798264 /* MissingPermissionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F50DD62439EC8500798264 /* MissingPermissionsViewModel.swift */; };
 		61F50DE0243A310400798264 /* handshakeActive.json in Resources */ = {isa = PBXBuildFile; fileRef = 61F50DDF243A310400798264 /* handshakeActive.json */; };
-		7801E220247EADF900C69328 /* SavedIDsDeletionSuccessViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 780D5BC8247EA1C100B80B83 /* SavedIDsDeletionSuccessViewController.storyboard */; };
-		7801E221247EADFC00C69328 /* SavedIDsDeletionSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780D5BCB247EA1C200B80B83 /* SavedIDsDeletionSuccessViewController.swift */; };
-		7801E222247EAE0000C69328 /* SavedIDsDeletionConfirmationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780D5BC9247EA1C100B80B83 /* SavedIDsDeletionConfirmationViewModel.swift */; };
-		7801E224247FC18200C69328 /* Coordinator+Ancestors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7801E223247FC18200C69328 /* Coordinator+Ancestors.swift */; };
-		7801E226247FC1C100C69328 /* Sequence+firstOfType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7801E225247FC1C100C69328 /* Sequence+firstOfType.swift */; };
 		7829D824247D507A0015F5A5 /* SavedIDsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7829D820247D50790015F5A5 /* SavedIDsViewController.swift */; };
 		7829D825247D507A0015F5A5 /* SavedIDsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7829D821247D507A0015F5A5 /* SavedIDsCoordinator.swift */; };
 		7829D826247D507A0015F5A5 /* SavedIDsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7829D822247D507A0015F5A5 /* SavedIDsViewModel.swift */; };
@@ -622,11 +617,6 @@
 		61FABCB02432368E0085786B /* Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Base.xcconfig; sourceTree = "<group>"; };
 		7068854DCB7D47DCD40F96AD /* Pods_CoronaContact.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoronaContact.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		73658E7C34BA89738AB6F79B /* Pods-CoronaContactTests.development.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoronaContactTests.development.xcconfig"; path = "Target Support Files/Pods-CoronaContactTests/Pods-CoronaContactTests.development.xcconfig"; sourceTree = "<group>"; };
-		7801E223247FC18200C69328 /* Coordinator+Ancestors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Coordinator+Ancestors.swift"; sourceTree = "<group>"; };
-		7801E225247FC1C100C69328 /* Sequence+firstOfType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+firstOfType.swift"; sourceTree = "<group>"; };
-		780D5BC8247EA1C100B80B83 /* SavedIDsDeletionSuccessViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SavedIDsDeletionSuccessViewController.storyboard; sourceTree = "<group>"; };
-		780D5BC9247EA1C100B80B83 /* SavedIDsDeletionConfirmationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedIDsDeletionConfirmationViewModel.swift; sourceTree = "<group>"; };
-		780D5BCB247EA1C200B80B83 /* SavedIDsDeletionSuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedIDsDeletionSuccessViewController.swift; sourceTree = "<group>"; };
 		7829D820247D50790015F5A5 /* SavedIDsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedIDsViewController.swift; sourceTree = "<group>"; };
 		7829D821247D507A0015F5A5 /* SavedIDsCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedIDsCoordinator.swift; sourceTree = "<group>"; };
 		7829D822247D507A0015F5A5 /* SavedIDsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedIDsViewModel.swift; sourceTree = "<group>"; };
@@ -1416,21 +1406,10 @@
 			path = Configuration;
 			sourceTree = "<group>";
 		};
-		780D5BC7247EA1AB00B80B83 /* Deletion Confirmation */ = {
-			isa = PBXGroup;
-			children = (
-				780D5BC8247EA1C100B80B83 /* SavedIDsDeletionSuccessViewController.storyboard */,
-				780D5BCB247EA1C200B80B83 /* SavedIDsDeletionSuccessViewController.swift */,
-				780D5BC9247EA1C100B80B83 /* SavedIDsDeletionConfirmationViewModel.swift */,
-			);
-			path = "Deletion Confirmation";
-			sourceTree = "<group>";
-		};
 		7829D815247D37CB0015F5A5 /* Saved IDs */ = {
 			isa = PBXGroup;
 			children = (
 				7829D816247D37F90015F5A5 /* Saved IDs Info */,
-				780D5BC7247EA1AB00B80B83 /* Deletion Confirmation */,
 			);
 			path = "Saved IDs";
 			sourceTree = "<group>";
@@ -1486,7 +1465,6 @@
 				618A6650242B8B84001BDBBF /* Collection+safe.swift */,
 				61D0F55F243534980026C91A /* UIView+roundedCorners.swift */,
 				610571AC247E9131009A715E /* UIWindow+key.swift */,
-				7801E225247FC1C100C69328 /* Sequence+firstOfType.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1649,7 +1627,6 @@
 			children = (
 				83974D3FCE9D7093717ED324 /* Coordinator.swift */,
 				613AF72C24618DE80089085E /* Coordinator+ShareSheet.swift */,
-				7801E223247FC18200C69328 /* Coordinator+Ancestors.swift */,
 				83974B4E7DDB0AFD2F931B97 /* ApplicationCoordinator.swift */,
 			);
 			path = Coordinators;
@@ -1851,7 +1828,6 @@
 				61459A55242AC15F00DC88A7 /* de.privacy-and-terms-of-use.html in Resources */,
 				61D0F55024352E960026C91A /* RevocationTanConfirmationViewController.storyboard in Resources */,
 				6103207D243F28A000ED3A20 /* en.terms-of-use.html in Resources */,
-				7801E220247EADF900C69328 /* SavedIDsDeletionSuccessViewController.storyboard in Resources */,
 				61546555242D1A7D0003D3D3 /* AnswerView.xib in Resources */,
 				921525602427C7AA0023F469 /* SelfTestingSuspicionViewController.storyboard in Resources */,
 				614D723A242909C000CC545D /* SelfTestingConfirmationViewController.storyboard in Resources */,
@@ -2204,7 +2180,6 @@
 				61D0F54B24352E960026C91A /* RevocationStatusReportCoordinator.swift in Sources */,
 				61032065243E0AE400ED3A20 /* FlashableScrollIndicators.swift in Sources */,
 				61D1A3E5242A58CA007F82ED /* MainHelpCoordinator.swift in Sources */,
-				7801E221247EADFC00C69328 /* SavedIDsDeletionSuccessViewController.swift in Sources */,
 				839742CA8F8A4CC34C042091 /* RemoteContact.swift in Sources */,
 				92FFC9BF24267D8200CC541B /* SelfTestingCheckSymptomsViewController.swift in Sources */,
 				4ED175D32460705200248D3B /* RevokeSicknessTanConfirmationViewModel.swift in Sources */,
@@ -2253,9 +2228,7 @@
 				614BAA072423C334006797AA /* IncomingInfectionMessage.swift in Sources */,
 				613E3617242E5ADA009421A8 /* MicrophoneInfoViewModel.swift in Sources */,
 				614BA9F42423C31C006797AA /* Response+parseJSON.swift in Sources */,
-				7801E222247EAE0000C69328 /* SavedIDsDeletionConfirmationViewModel.swift in Sources */,
 				614A0027243CFB3500ACBD0A /* BubbleArrowButton.swift in Sources */,
-				7801E226247FC1C100C69328 /* Sequence+firstOfType.swift in Sources */,
 				615D36352437417600B608AB /* AttestedSicknessGuidelinesViewModel.swift in Sources */,
 				6153A4D3242598DC006A8570 /* SicknessCertificateStatusReportCoordinator.swift in Sources */,
 				83974ABF4A7552BBADBEA195 /* RSAGenerator.swift in Sources */,
@@ -2276,7 +2249,6 @@
 				615D36642438C25400B608AB /* LoggingService.swift in Sources */,
 				839748AF8A2EE9168002C226 /* DatabaseService+Injection.swift in Sources */,
 				4E019BDE24269556004FF670 /* ContactCoordinator.swift in Sources */,
-				7801E224247FC18200C69328 /* Coordinator+Ancestors.swift in Sources */,
 				4B82571C24266A32007E25C6 /* StartMenuSimpleWebViewCoordinator.swift in Sources */,
 				6153A4D4242598DC006A8570 /* SicknessCertificateStatusReportViewModel.swift in Sources */,
 				61D1A3E4242A58C9007F82ED /* MainHelpViewModel.swift in Sources */,

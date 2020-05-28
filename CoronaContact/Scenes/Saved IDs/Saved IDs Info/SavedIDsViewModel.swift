@@ -14,7 +14,6 @@ class SavedIDsViewModel: ViewModel {
 
     func deleteAll() {
         #warning("Not implemented yet")
-        coordinator?.didDeleteKeys()
     }
 
     func finish() {

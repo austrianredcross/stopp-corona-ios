@@ -35,19 +35,5 @@ final class SavedIDsViewController: UIViewController, StoryboardBased, ViewModel
     }
 
     @IBAction func deleteKeysButtonTapped(_ sender: Any) {
-        let alert = UIAlertController(title: "saved_IDs_delete_alert_title".localized,
-                                      message: "saved_IDs_delete_alert_message".localized,
-                                      preferredStyle: .alert)
-
-        let delete = UIAlertAction(title: "saved_IDs_delete_alert_delete_button".localized,
-                                   style: .destructive,
-                                   handler: { [viewModel] _ in viewModel?.deleteAll() })
-        let cancel = UIAlertAction(title: "general_cancel".localized,
-                                   style: .cancel,
-                                   handler: nil)
-
-        alert.addAction(delete)
-        alert.addAction(cancel)
-        present(alert, animated: true, completion: nil)
     }
 }
