@@ -17,15 +17,13 @@ extension Resolver: ResolverRegistering {
         registerNearbyServices()
         registerNetworkServices()
         registerSelfTestingDependencies()
-        registerSicknessCertificateDependencies()
         registerRevocationDependencies()
         registerRevokeSicknessDependencies()
         registerNotificationServices()
         registerAppUpdateServices()
         registerHealthRepository()
         registerLocalStorageServices()
-        if #available(iOS 13.5, *) {
-            registerExposureServices()
-        }
+        registerSicknessCertificateDependencies()
+        registerExposureServices()
     }
 }

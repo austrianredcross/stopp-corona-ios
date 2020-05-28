@@ -86,6 +86,7 @@
 		6103207D243F28A000ED3A20 /* en.terms-of-use.html in Resources */ = {isa = PBXBuildFile; fileRef = 6103207A243F289F00ED3A20 /* en.terms-of-use.html */; };
 		6103207E243F28A000ED3A20 /* en.privacy.html in Resources */ = {isa = PBXBuildFile; fileRef = 6103207B243F289F00ED3A20 /* en.privacy.html */; };
 		610571AD247E9131009A715E /* UIWindow+key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610571AC247E9131009A715E /* UIWindow+key.swift */; };
+		610571AF247E9EBE009A715E /* ReportHealthStatusFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610571AE247E9EBE009A715E /* ReportHealthStatusFlowController.swift */; };
 		611B78B9242816950040CCB3 /* UIWindow+topMostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611B78B7242816950040CCB3 /* UIWindow+topMostViewController.swift */; };
 		611B78BA242816950040CCB3 /* UIApplication+AppStoreAppId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611B78B8242816950040CCB3 /* UIApplication+AppStoreAppId.swift */; };
 		611B78BE242816BE0040CCB3 /* AppUpdateService+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611B78BC242816BE0040CCB3 /* AppUpdateService+Injection.swift */; };
@@ -213,6 +214,7 @@
 		615D36642438C25400B608AB /* LoggingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615D36632438C25400B608AB /* LoggingService.swift */; };
 		616518E52460777C001219A7 /* ShareAppCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616518E42460777C001219A7 /* ShareAppCardView.swift */; };
 		616518E72460778C001219A7 /* ShareAppCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 616518E62460778C001219A7 /* ShareAppCardView.xib */; };
+		61653681247D114F0088A9D6 /* TracingKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61653680247D114F0088A9D6 /* TracingKeys.swift */; };
 		616E1DA9243486C700109435 /* ArrowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616E1DA8243486C700109435 /* ArrowButton.swift */; };
 		618A6651242B8B84001BDBBF /* Collection+safe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618A6650242B8B84001BDBBF /* Collection+safe.swift */; };
 		61BB41DA243684590083053B /* Revocation+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D0F5702435EF1B0026C91A /* Revocation+Injection.swift */; };
@@ -425,6 +427,7 @@
 		6103207A243F289F00ED3A20 /* en.terms-of-use.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "en.terms-of-use.html"; sourceTree = "<group>"; };
 		6103207B243F289F00ED3A20 /* en.privacy.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = en.privacy.html; sourceTree = "<group>"; };
 		610571AC247E9131009A715E /* UIWindow+key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+key.swift"; sourceTree = "<group>"; };
+		610571AE247E9EBE009A715E /* ReportHealthStatusFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportHealthStatusFlowController.swift; sourceTree = "<group>"; };
 		611B78B7242816950040CCB3 /* UIWindow+topMostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIWindow+topMostViewController.swift"; sourceTree = "<group>"; };
 		611B78B8242816950040CCB3 /* UIApplication+AppStoreAppId.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+AppStoreAppId.swift"; sourceTree = "<group>"; };
 		611B78BC242816BE0040CCB3 /* AppUpdateService+Injection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppUpdateService+Injection.swift"; sourceTree = "<group>"; };
@@ -554,6 +557,7 @@
 		615D36632438C25400B608AB /* LoggingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggingService.swift; sourceTree = "<group>"; };
 		616518E42460777C001219A7 /* ShareAppCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareAppCardView.swift; sourceTree = "<group>"; };
 		616518E62460778C001219A7 /* ShareAppCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShareAppCardView.xib; sourceTree = "<group>"; };
+		61653680247D114F0088A9D6 /* TracingKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TracingKeys.swift; sourceTree = "<group>"; };
 		616E1DA8243486C700109435 /* ArrowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrowButton.swift; sourceTree = "<group>"; };
 		618A6650242B8B84001BDBBF /* Collection+safe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+safe.swift"; sourceTree = "<group>"; };
 		61AB6EF024573737006B4190 /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
@@ -1026,6 +1030,7 @@
 				4B25BA9C2429592A00CDD1CF /* UserHealthStatus.swift */,
 				61459A56242AC48800DC88A7 /* Website.swift */,
 				83974BF870B575EAC8607D3D /* P2PKitEvent.swift */,
+				61653680247D114F0088A9D6 /* TracingKeys.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1274,6 +1279,7 @@
 			isa = PBXGroup;
 			children = (
 				61D0F53024352E240026C91A /* QuarantineTimeController.swift */,
+				610571AE247E9EBE009A715E /* ReportHealthStatusFlowController.swift */,
 			);
 			path = Logic;
 			sourceTree = "<group>";
@@ -2168,6 +2174,7 @@
 				4BD0B8DC2427AF6400BFA123 /* NotificationService.swift in Sources */,
 				614D72052428E82700CC545D /* ContactSicknessViewModel.swift in Sources */,
 				6153A52924264A2D006A8570 /* ActivityView.swift in Sources */,
+				61653681247D114F0088A9D6 /* TracingKeys.swift in Sources */,
 				61C4A47924279433004D18BB /* UIActivityIndicatorView+scale.swift in Sources */,
 				9215254F2427C74A0023F469 /* SelfTestingSelfMonitoringViewController.swift in Sources */,
 				61D0F54A24352E960026C91A /* RevocationStatusReportViewController.swift in Sources */,
@@ -2213,6 +2220,7 @@
 				4B82571C24266A32007E25C6 /* StartMenuSimpleWebViewCoordinator.swift in Sources */,
 				6153A4D4242598DC006A8570 /* SicknessCertificateStatusReportViewModel.swift in Sources */,
 				61D1A3E4242A58C9007F82ED /* MainHelpViewModel.swift in Sources */,
+				610571AF247E9EBE009A715E /* ReportHealthStatusFlowController.swift in Sources */,
 				9215255D2427C7AA0023F469 /* SelfTestingSuspicionCoordinator.swift in Sources */,
 				6153A4F624259932006A8570 /* InputValidation.swift in Sources */,
 				61D1A3DB242A58B1007F82ED /* ContactHelpViewController.swift in Sources */,
