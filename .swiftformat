@@ -1,0 +1,5 @@
+--swiftversion 5.2
+--exclude Pods,Generated
+--header "//\n//  {file}\n//  CoronaContact\n"
+--stripunusedargs closure-only
+--importgrouping testable-bottom
