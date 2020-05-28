@@ -89,4 +89,16 @@ class StartMenuCoordinator: Coordinator, ShareSheetPresentable {
         }
         parentCoordinator?.didFinish(self)
     }
+
+    func closeMenu() {
+        let navigationStack = navigationController.viewControllers
+        guard let menuIndex = navigationController.viewControllers.firstIndex(of: rootViewController) else {
+            return
+        }
+        let targetIndex = navigationStack.index(before: menuIndex)
+        let target = navigationStack[targetIndex]
+
+        navigationController.popToViewController(target, animated: true)
+        parentCoordinator?.didFinish(self)
+    }
 }
