@@ -18,7 +18,6 @@ class RevocationConfirmationViewModel: ViewModel {
         localStorage.isProbablySickAt = nil
         localStorage.isUnderSelfMonitoring = false
         localStorage.completedVoluntaryQuarantine = true
-        NotificationCenter.default.post(name: .DatabaseSicknessUpdated, object: nil)
     }
 
     func returnToMain() {

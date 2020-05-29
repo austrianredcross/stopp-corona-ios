@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var appCoordinator: ApplicationCoordinator!
     let log = ContextLogger(context: .application)
-    var observers = [NSObjectProtocol]()
+    private var observers = [NSObjectProtocol]()
 
     private var serivcesInitialized: Bool = false
 

@@ -17,10 +17,9 @@ class SelfTestingSelfMonitoringViewModel: ViewModel {
     }
 
     func onViewDidLoad() {
-        localStorage.isUnderSelfMonitoring = true
         localStorage.performedSelfTestAt = Date()
+        localStorage.isUnderSelfMonitoring = true
 
-        NotificationCenter.default.post(name: .DatabaseSicknessUpdated, object: nil)
         notificationService.addSelfTestReminderNotificationIn()
     }
 

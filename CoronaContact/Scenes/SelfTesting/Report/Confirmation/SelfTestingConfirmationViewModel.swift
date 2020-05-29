@@ -16,7 +16,6 @@ class SelfTestingConfirmationViewModel: ViewModel {
 
     func onViewDidLoad() {
         localStorage.isProbablySickAt = Date()
-        NotificationCenter.default.post(name: .DatabaseSicknessUpdated, object: nil)
     }
 
     func showQuarantineGuidelines() {

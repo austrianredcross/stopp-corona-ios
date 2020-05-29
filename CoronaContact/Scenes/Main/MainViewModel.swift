@@ -11,9 +11,8 @@ class MainViewModel: ViewModel {
     @Injected private var notificationService: NotificationService
     @Injected private var repository: HealthRepository
     @Injected private var localStorage: LocalStorage
-
-    @available(iOS 13.5, *)
     @Injected private var exposureService: ExposureManager
+    private var observers = [NSObjectProtocol]()
 
     weak var coordinator: MainCoordinator?
     weak var viewController: MainViewController?
@@ -62,11 +61,21 @@ class MainViewModel: ViewModel {
         return false
     }
 
-    var hasAttestedSickness: Bool { repository.hasAttestedSickness }
-    var isProbablySick: Bool { repository.isProbablySick }
-    var revocationStatus: RevocationStatus? { repository.revocationStatus }
-    var contactHealthStatus: ContactHealthStatus? { repository.contactHealthStatus }
-    var userHealthStatus: UserHealthStatus { repository.userHealthStatus }
+    var hasAttestedSickness: Bool {
+        repository.hasAttestedSickness
+    }
+    var isProbablySick: Bool {
+        repository.isProbablySick
+    }
+    var revocationStatus: RevocationStatus? {
+        repository.revocationStatus
+    }
+    var contactHealthStatus: ContactHealthStatus? {
+        repository.contactHealthStatus
+    }
+    var userHealthStatus: UserHealthStatus {
+        repository.userHealthStatus
+    }
 
     private var subscriptions: Set<AnySubscription> = []
 
@@ -95,22 +104,22 @@ class MainViewModel: ViewModel {
     }
 
     deinit {
-        NotificationCenter.default.removeObserver(self)
+        for observer in observers {
+            NotificationCenter.default.removeObserver(observer)
+        }
     }
 
     private func registerObservers() {
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(updateView),
-                                               name: .DatabaseSicknessUpdated,
-                                               object: nil)
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(updateView),
-                                               name: .exposureManagerAuthorizationStatusChanged,
-                                               object: nil)
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(updateView),
-                                               name: .exposureManagerNotificationStatusChanged,
-                                               object: nil)
+        observers.append(localStorage.$attestedSicknessAt.addObserver(using: updateView))
+        observers.append(localStorage.$isProbablySickAt.addObserver(using: updateView))
+        observers.append(localStorage.$isUnderSelfMonitoring.addObserver(using: updateView))
+        let center = NotificationCenter.default
+        observers.append(center.addObserver(forName: .exposureManagerAuthorizationStatusChanged, object: nil, queue: nil, using: { [unowned self] _ in
+            self.updateView()
+        }))
+        observers.append(center.addObserver(forName: .exposureManagerNotificationStatusChanged, object: nil, queue: nil, using: { [unowned self] _ in
+            self.updateView()
+        }))
     }
 
     func onboardingJustFinished() {

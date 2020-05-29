@@ -23,7 +23,6 @@ class SelfTestingHintViewModel: ViewModel {
         if localStorage.isUnderSelfMonitoring {
             localStorage.isUnderSelfMonitoring = false
             notificationService.removeSelfTestReminderNotification()
-            NotificationCenter.default.post(name: .DatabaseSicknessUpdated, object: nil)
         }
     }
 

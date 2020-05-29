@@ -125,6 +125,7 @@ class QuarantineTimeController {
     @Injected private var notificationService: NotificationService
     @Injected private var localStorage: LocalStorage
 
+    private var observers = [NSObjectProtocol]()
     private let timeConfiguration: QuarantineTimeConfiguration
     private let calendar = Calendar.current
     private var dateGenerator: () -> Date = {
@@ -149,10 +150,8 @@ class QuarantineTimeController {
     }
 
     private func registerObservers() {
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(refresh),
-                                               name: .DatabaseSicknessUpdated,
-                                               object: nil)
+        observers.append(localStorage.$attestedSicknessAt.addObserver(using: refresh))
+        observers.append(localStorage.$isProbablySickAt.addObserver(using: refresh))
     }
 
     public func refreshIfNecessary() {
@@ -205,5 +204,11 @@ class QuarantineTimeController {
 
     private func addDays(_ days: Int, to date: Date) -> Date {
         calendar.date(byAdding: .day, value: days, to: date)!
+    }
+
+    deinit {
+        for observer in observers {
+            NotificationCenter.default.removeObserver(observer)
+        }
     }
 }

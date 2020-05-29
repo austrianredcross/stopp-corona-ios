@@ -54,14 +54,12 @@ class DebugViewController: UIViewController, StoryboardBased, ViewModelBased, Re
     }
 
     @IBAction func isUnderSelfMonitoringTapped(_ sender: Any) {
-        localStorage.isUnderSelfMonitoring = true
         localStorage.performedSelfTestAt = Date()
-        NotificationCenter.default.post(name: .DatabaseSicknessUpdated, object: nil)
+        localStorage.isUnderSelfMonitoring = true
     }
 
     @IBAction func isProbablySickTapped(_ sender: Any) {
         localStorage.isProbablySickAt = Date()
-        NotificationCenter.default.post(name: .DatabaseSicknessUpdated, object: nil)
     }
 
 
