@@ -15,7 +15,7 @@ class SicknessCertificateConfirmationViewModel: ViewModel {
     }
 
     func onViewDidLoad() {
-        localStorage.saveSicknessState(true)
+        localStorage.attestedSicknessAt = Date()
     }
 
     func showQuarantineGuidelines() {

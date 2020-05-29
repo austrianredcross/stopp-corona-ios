@@ -15,7 +15,6 @@ class RevocationConfirmationViewModel: ViewModel {
     }
 
     func onViewDidLoad() {
-        localStorage.isProbablySick = false
         localStorage.isProbablySickAt = nil
         localStorage.isUnderSelfMonitoring = false
         localStorage.completedVoluntaryQuarantine = true

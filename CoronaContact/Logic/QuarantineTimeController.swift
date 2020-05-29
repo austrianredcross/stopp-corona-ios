@@ -193,7 +193,6 @@ class QuarantineTimeController {
         switch quarantineStatus {
         case .completed(let end) where end.type == .selfDiagnosed:
             localStorage.completedVoluntaryQuarantine = true
-            localStorage.isProbablySick = false
             localStorage.isProbablySickAt = nil
         case .completed:
             localStorage.completedRequiredQuarantine = true

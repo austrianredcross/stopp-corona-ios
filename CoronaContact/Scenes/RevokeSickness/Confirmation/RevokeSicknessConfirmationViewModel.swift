@@ -15,7 +15,7 @@ class RevokeSicknessConfirmationViewModel: ViewModel {
     }
 
     func onViewDidLoad() {
-        localStorage.saveSicknessState(false)
+        localStorage.attestedSicknessAt = nil
     }
 
     func returnToMain() {

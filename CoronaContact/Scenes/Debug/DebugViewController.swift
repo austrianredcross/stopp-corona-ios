@@ -60,7 +60,6 @@ class DebugViewController: UIViewController, StoryboardBased, ViewModelBased, Re
     }
 
     @IBAction func isProbablySickTapped(_ sender: Any) {
-        localStorage.isProbablySick = true
         localStorage.isProbablySickAt = Date()
         NotificationCenter.default.post(name: .DatabaseSicknessUpdated, object: nil)
     }

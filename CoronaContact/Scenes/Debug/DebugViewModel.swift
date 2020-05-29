@@ -23,7 +23,6 @@ class DebugViewModel: ViewModel {
     @available(iOS 13.5, *)
     @Injected private var exposureManager: ExposureManager
 
-
     var timer: Timer?
     var numberOfContacts = 0
 
@@ -60,7 +59,7 @@ class DebugViewModel: ViewModel {
     }
 
     func attestSickness() {
-        localStorage.saveSicknessState(true)
+        localStorage.attestedSicknessAt = Date()
     }
 
     func exposeDiagnosesKeys(test: Bool = false) {
