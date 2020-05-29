@@ -6,7 +6,6 @@
 import UIKit
 
 final class SuspicionGuidelinesCoordinator: Coordinator {
-
     lazy var rootViewController: SuspicionGuidelinesViewController = {
         SuspicionGuidelinesViewController.instantiate()
     }()

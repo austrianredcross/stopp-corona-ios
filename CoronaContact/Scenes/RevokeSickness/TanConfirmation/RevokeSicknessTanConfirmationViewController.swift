@@ -3,15 +3,14 @@
 //  CoronaContact
 //
 
-import UIKit
 import Reusable
+import UIKit
 
 final class RevokeSicknessTanConfirmationViewController: UIViewController,
     StoryboardBased, ViewModelBased, ActivityModalPresentable, FlashableScrollIndicators {
-
-    @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var tanTextField: StandardTextField!
+    @IBOutlet var scrollView: UIScrollView!
+    @IBOutlet var descriptionLabel: UILabel!
+    @IBOutlet var tanTextField: StandardTextField!
 
     private var keyboardAdjustingBehavior: KeyboardAdjustingBehavior?
     var viewModel: RevokeSicknessTanConfirmationViewModel?

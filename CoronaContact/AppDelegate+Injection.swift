@@ -1,5 +1,5 @@
 //
-//  Appdelegate+Injection.swift
+//  AppDelegate+Injection.swift
 //  CoronaContact
 //
 

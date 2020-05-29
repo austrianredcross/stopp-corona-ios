@@ -11,7 +11,7 @@ import Foundation
 ///
 /// If you want to learn more about this, please have a look at
 /// Ole Begemann's [blog post](https://oleb.net/blog/2018/01/notificationcenter-removeobserver/).
-final public class NotificationToken: NSObject {
+public final class NotificationToken: NSObject {
     let notificationCenter: NotificationCenter
     let token: Any
 

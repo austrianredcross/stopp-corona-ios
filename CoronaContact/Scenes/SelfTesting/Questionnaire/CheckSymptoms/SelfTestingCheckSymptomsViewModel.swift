@@ -7,7 +7,6 @@ import Foundation
 import Resolver
 
 class SelfTestingCheckSymptomsViewModel: ViewModel {
-
     @Injected private var flowController: SelfTestingFlowController
 
     weak var coordinator: SelfTestingCheckSymptomsCoordinator?
@@ -16,6 +15,7 @@ class SelfTestingCheckSymptomsViewModel: ViewModel {
     var question: Question? {
         flowController.question(at: questionIndex)
     }
+
     var isButtonEnabled: Bool {
         flowController.answers[questionIndex] != nil
     }

@@ -6,7 +6,6 @@
 import UIKit
 
 final class SicknessCertificateConfirmationCoordinator: Coordinator {
-
     lazy var rootViewController: SicknessCertificateConfirmationViewController = {
         SicknessCertificateConfirmationViewController.instantiate()
     }()

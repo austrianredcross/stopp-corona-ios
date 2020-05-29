@@ -3,17 +3,17 @@
 //  CoronaContact
 //
 
-import UIKit
-import Reusable
 import Resolver
+import Reusable
 import SwiftRichString
+import UIKit
 
 final class OnboardingPageView: UIView, NibLoadable {
-    @IBOutlet weak var headingLabel: UILabel!
-    @IBOutlet weak var textLabel: UILabel!
-    @IBOutlet weak var textLabel2: UILabel!
-    @IBOutlet weak var button: TransButton!
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet var headingLabel: UILabel!
+    @IBOutlet var textLabel: UILabel!
+    @IBOutlet var textLabel2: UILabel!
+    @IBOutlet var button: TransButton!
+    @IBOutlet var imageView: UIImageView!
 
     var page: OnboardingPage? {
         didSet {

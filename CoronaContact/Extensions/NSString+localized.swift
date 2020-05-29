@@ -11,7 +11,6 @@ extension String {
     }
 
     func locaStyled(style: StyleNames) -> NSAttributedString? {
-        self.localized.set(style: style.rawValue, range: nil)
+        localized.set(style: style.rawValue, range: nil)
     }
-
 }

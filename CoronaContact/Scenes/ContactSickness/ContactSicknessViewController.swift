@@ -3,18 +3,17 @@
 //  CoronaContact
 //
 
-import UIKit
 import Reusable
+import UIKit
 
 final class ContactSicknessViewController: UIViewController, StoryboardBased, ViewModelBased, FlashableScrollIndicators {
-
-    @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var headlineLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: TransLabel!
-    @IBOutlet weak var guidelinesHeadlineLabel: UILabel!
-    @IBOutlet weak var guidelinesEndOfQuarantineLabel: TransLabel!
-    @IBOutlet weak var guidelinesDescriptionLabel: UILabel!
-    @IBOutlet weak var guidelinesInstructionsView: InstructionsView!
+    @IBOutlet var scrollView: UIScrollView!
+    @IBOutlet var headlineLabel: UILabel!
+    @IBOutlet var descriptionLabel: TransLabel!
+    @IBOutlet var guidelinesHeadlineLabel: UILabel!
+    @IBOutlet var guidelinesEndOfQuarantineLabel: TransLabel!
+    @IBOutlet var guidelinesDescriptionLabel: UILabel!
+    @IBOutlet var guidelinesInstructionsView: InstructionsView!
 
     var viewModel: ContactSicknessViewModel?
 

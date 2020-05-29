@@ -6,7 +6,6 @@
 import UIKit
 
 final class RevocationPersonalDataCoordinator: Coordinator, ErrorPresentableCoordinator {
-
     lazy var rootViewController: RevocationPersonalDataViewController = {
         RevocationPersonalDataViewController.instantiate()
     }()

@@ -3,11 +3,10 @@
 //  CoronaContact
 //
 
-import UIKit
 import Resolver
+import UIKit
 
 final class QuarantineGuidelinesCoordinator: Coordinator {
-
     lazy var rootViewController: QuarantineGuidelinesViewController = {
         QuarantineGuidelinesViewController.instantiate()
     }()

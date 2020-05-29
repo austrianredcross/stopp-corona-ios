@@ -30,7 +30,7 @@ import UIKit
  - connect an outlet in your ViewController to the KeyboardAdjustingBehavior object to prevent premature deallocation
  */
 public class KeyboardAdjustingBehavior: NSObject {
-    @IBOutlet public weak var scrollView: UIScrollView!
+    @IBOutlet public var scrollView: UIScrollView!
     public var keyboardPadding: CGFloat = 0
 
     public var keyboardObserverTokens: [NotificationToken] = []
@@ -46,14 +46,16 @@ public class KeyboardAdjustingBehavior: NSObject {
 
         let keyboardShowToken = notificationCenter.observe(
             name: UIResponder.keyboardWillShowNotification,
-            object: nil, queue: nil) { [weak self] in
-                self?.keyboardWillShow(notification: $0)
+            object: nil, queue: nil
+        ) { [weak self] in
+            self?.keyboardWillShow(notification: $0)
         }
 
         let keyboardHideToken = notificationCenter.observe(
             name: UIResponder.keyboardWillHideNotification,
-            object: nil, queue: nil) { [weak self] in
-                self?.keyboardWillHide(notification: $0)
+            object: nil, queue: nil
+        ) { [weak self] in
+            self?.keyboardWillHide(notification: $0)
         }
 
         keyboardObserverTokens = [keyboardShowToken, keyboardHideToken]
@@ -84,8 +86,8 @@ public class KeyboardAdjustingBehavior: NSObject {
                        delay: 0,
                        options: UIView.AnimationOptions(rawValue: UIView.AnimationOptions.RawValue(curveValue)),
                        animations: {
-                                       self.scrollView.scrollToCurrentlyActiveView(animated: false)
-                                   },
+                           self.scrollView.scrollToCurrentlyActiveView(animated: false)
+                       },
                        completion: nil)
     }
 

@@ -6,7 +6,6 @@
 import UIKit
 
 final class MainHelpCoordinator: Coordinator {
-
     lazy var rootViewController: MainHelpViewController = {
         MainHelpViewController.instantiate()
     }()

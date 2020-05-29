@@ -6,7 +6,6 @@
 import UIKit
 
 final class SicknessCertificateStatusReportCoordinator: Coordinator, ErrorPresentableCoordinator {
-
     lazy var rootViewController: SicknessCertificateStatusReportViewController = {
         SicknessCertificateStatusReportViewController.instantiate()
     }()
@@ -22,8 +21,7 @@ final class SicknessCertificateStatusReportCoordinator: Coordinator, ErrorPresen
         navigationController.pushViewController(rootViewController, animated: true)
     }
 
-    override func finish(animated: Bool = false) {
-    }
+    override func finish(animated: Bool = false) {}
 
     func goBackToTanConfirmation() {
         navigationController.popViewController(animated: true)

@@ -3,15 +3,14 @@
 //  CoronaContact
 //
 
-import UIKit
 import Reusable
+import UIKit
 
 class ShareAppCardView: UIView, NibOwnerLoadable {
-
-    @IBOutlet weak var innerView: UIView!
-    @IBOutlet weak var headlineLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: TransLabel!
-    @IBOutlet weak var shareButton: ArrowButton!
+    @IBOutlet var innerView: UIView!
+    @IBOutlet var headlineLabel: UILabel!
+    @IBOutlet var descriptionLabel: TransLabel!
+    @IBOutlet var shareButton: ArrowButton!
 
     var handlePrimaryTap: (() -> Void)?
 

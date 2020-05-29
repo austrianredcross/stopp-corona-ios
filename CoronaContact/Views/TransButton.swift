@@ -3,8 +3,8 @@
 //  CoronaContact
 //
 
-import UIKit
 import SwiftRichString
+import UIKit
 
 // @IBDesignable
 class TransButton: UIButton {

@@ -45,5 +45,6 @@ class Persisted<Value: Codable> {
             block()
         }
     }
+
     // swiftlint:enable discarded_notification_center_observer
 }

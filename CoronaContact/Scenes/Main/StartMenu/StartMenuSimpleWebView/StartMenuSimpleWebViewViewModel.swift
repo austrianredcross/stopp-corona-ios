@@ -6,7 +6,6 @@
 import Foundation
 
 class StartMenuSimpleWebViewViewModel: ViewModel {
-
     weak var coordinator: StartMenuSimpleWebViewCoordinator?
 
     var website: Website = .imprint

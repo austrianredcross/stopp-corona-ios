@@ -6,7 +6,6 @@
 import UIKit
 
 class BubbleArrowButton: ArrowButton {
-
     override func configureButton() {
         super.configureButton()
 

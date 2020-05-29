@@ -7,7 +7,6 @@ import Foundation
 import Resolver
 
 class SelfTestingTanConfirmationViewModel: ViewModel {
-
     @Injected private var flowController: SelfTestingReportFlowController
 
     weak var coordinator: SelfTestingTanConfirmationCoordinator?
@@ -31,7 +30,7 @@ class SelfTestingTanConfirmationViewModel: ViewModel {
             completion()
 
             switch result {
-            case .failure(let error):
+            case let .failure(error):
                 self?.coordinator?.showErrorAlert(title: error.title, error: error.description)
             case .success:
                 break

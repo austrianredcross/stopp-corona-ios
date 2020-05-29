@@ -6,44 +6,43 @@
 import UIKit
 
 extension UIColor {
-
     @nonobjc class var ccRouge: UIColor {
-        return UIColor(named: "ccRouge")!
+        UIColor(named: "ccRouge")!
     }
 
     @nonobjc class var ccRed: UIColor {
-        return UIColor(named: "ccRed")!
+        UIColor(named: "ccRed")!
     }
 
     @nonobjc class var ccBlue: UIColor {
-        return UIColor(named: "ccBlue")!
+        UIColor(named: "ccBlue")!
     }
 
     @nonobjc class var ccGreen: UIColor {
-        return UIColor(named: "ccGreen")!
+        UIColor(named: "ccGreen")!
     }
 
     @nonobjc class var ccYellow: UIColor {
-        return UIColor(named: "ccYellow")!
+        UIColor(named: "ccYellow")!
     }
 
     @nonobjc class var ccBlack: UIColor {
-        return UIColor(named: "ccBlack")!
+        UIColor(named: "ccBlack")!
     }
 
     @nonobjc class var ccBrownGrey: UIColor {
-        return UIColor(named: "ccBrownGrey")!
+        UIColor(named: "ccBrownGrey")!
     }
 
     @nonobjc class var ccWhite: UIColor {
-        return UIColor(named: "ccWhite")!
+        UIColor(named: "ccWhite")!
     }
 
     @nonobjc class var ccLightGrey: UIColor {
-        return UIColor(named: "ccLightGrey")!
+        UIColor(named: "ccLightGrey")!
     }
 
     @nonobjc class var ccCheckboxInactive: UIColor {
-        return UIColor(named: "ccCheckboxInactive")!
+        UIColor(named: "ccCheckboxInactive")!
     }
 }

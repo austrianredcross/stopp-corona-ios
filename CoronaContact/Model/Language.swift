@@ -6,16 +6,15 @@
 import Foundation
 
 enum Language: String, Codable, CaseIterable {
-
     enum CodingKeys: String, CodingKey {
         case
-        german = "de",
-        english = "en",
-        french = "fr",
-        hungarian = "hu",
-        czech = "cz",
-        slovak = "sk",
-        unknown = "HINT"
+            german = "de",
+            english = "en",
+            french = "fr",
+            hungarian = "hu",
+            czech = "cz",
+            slovak = "sk",
+            unknown = "HINT"
     }
 
     case german = "de"

@@ -3,11 +3,10 @@
 //  CoronaContact
 //
 
-import UIKit
 import Resolver
+import UIKit
 
 final class ContactSicknessCoordinator: Coordinator {
-
     lazy var rootViewController: ContactSicknessViewController = {
         ContactSicknessViewController.instantiate()
     }()

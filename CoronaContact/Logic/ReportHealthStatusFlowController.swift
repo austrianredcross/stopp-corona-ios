@@ -3,12 +3,11 @@
 //  CoronaContact
 //
 
+import ExposureNotification
 import Foundation
 import Resolver
-import ExposureNotification
 
 class ReportHealthStatusFlowController {
-
     @Injected private var exposureManager: ExposureManager
     @Injected private var networkService: NetworkService
 
@@ -34,11 +33,11 @@ class ReportHealthStatusFlowController {
 
         networkService.requestTan(mobileNumber: personalData.mobileNumber) { [weak self] result in
             switch result {
-            case .success(let response):
+            case let .success(response):
                 self?.tanUUID = response.uuid
                 self?.flow = .tanConfirmation
                 completion(.success(()))
-            case .failure(let error):
+            case let .failure(error):
                 completion(.failure(error))
             }
         }
@@ -53,10 +52,10 @@ class ReportHealthStatusFlowController {
 
         exposureManager.getDiagnosisKeys { [weak self] result in
             switch result {
-            case .success(let temporaryExposureKeys):
+            case let .success(temporaryExposureKeys):
                 self?.flow = .statusReport
                 self?.parseTemporaryExposureKeys(temporaryExposureKeys, verification: verfication)
-            case .failure(let error):
+            case let .failure(error):
                 LoggingService.error("Couldn't get diagnosis keys from the exposure manager: \(error)", context: .exposure)
             }
         }
@@ -79,11 +78,11 @@ class ReportHealthStatusFlowController {
 
         networkService.sendTracingKeys(tracingKeys) { [weak self] result in
             switch result {
-            case .success(let response):
+            case let .success(response):
                 print(response)
                 self?.flow = .done
                 completion(.success(()))
-            case .failure(let error):
+            case let .failure(error):
                 completion(.failure(error))
             }
         }

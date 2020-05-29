@@ -11,6 +11,7 @@ private let dateString: (Date) -> String = { date in
     dateFormatter.dateFormat = "contact_sickness_date_format".localized
     return dateFormatter.string(from: date)
 }
+
 private let timeString: (Date) -> String = { date in
     dateFormatter.dateFormat = "contact_sickness_time_format".localized
     return dateFormatter.string(from: date)
@@ -31,9 +32,11 @@ private extension Date {
     var isToday: Bool {
         Calendar.current.isDateInToday(self)
     }
+
     var isYesterday: Bool {
         Calendar.current.isDateInYesterday(self)
     }
+
     var relativeTime: String {
         if isToday {
             return "general_today".localized

@@ -3,9 +3,9 @@
 //  CoronaContact
 //
 
+import ExposureNotification
 import Foundation
 import Resolver
-import ExposureNotification
 
 class MainViewModel: ViewModel {
     @Injected private var notificationService: NotificationService
@@ -50,7 +50,6 @@ class MainViewModel: ViewModel {
         } else {
             return true
         }
-
     }
 
     var isUnderSelfMonitoring: Bool {
@@ -64,15 +63,19 @@ class MainViewModel: ViewModel {
     var hasAttestedSickness: Bool {
         repository.hasAttestedSickness
     }
+
     var isProbablySick: Bool {
         repository.isProbablySick
     }
+
     var revocationStatus: RevocationStatus? {
         repository.revocationStatus
     }
+
     var contactHealthStatus: ContactHealthStatus? {
         repository.contactHealthStatus
     }
+
     var userHealthStatus: UserHealthStatus {
         repository.userHealthStatus
     }

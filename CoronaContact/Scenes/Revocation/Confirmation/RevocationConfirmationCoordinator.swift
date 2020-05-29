@@ -6,7 +6,6 @@
 import UIKit
 
 final class RevocationConfirmationCoordinator: Coordinator {
-
     lazy var rootViewController: RevocationConfirmationViewController = {
         RevocationConfirmationViewController.instantiate()
     }()

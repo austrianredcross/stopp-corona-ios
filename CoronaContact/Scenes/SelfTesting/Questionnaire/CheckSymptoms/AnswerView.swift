@@ -3,14 +3,13 @@
 //  CoronaContact
 //
 
-import UIKit
-import Reusable
 import M13Checkbox
+import Reusable
+import UIKit
 
 class AnswerView: UIView, NibLoadable {
-
-    @IBOutlet private weak var checkbox: M13Checkbox!
-    @IBOutlet private weak var answerLabel: UILabel!
+    @IBOutlet private var checkbox: M13Checkbox!
+    @IBOutlet private var answerLabel: UILabel!
 
     var text: String = "" {
         didSet {

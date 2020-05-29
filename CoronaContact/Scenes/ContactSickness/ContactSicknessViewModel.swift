@@ -12,21 +12,27 @@ class ContactSicknessViewModel: ViewModel {
     var title: String? {
         contactHealthStatus?.title
     }
+
     var headline: String? {
         contactHealthStatus?.headline
     }
+
     var description: String? {
         contactHealthStatus?.descriptionOfEncounters(infectionWarnings)
     }
+
     var headlineGuidelines: String? {
         contactHealthStatus?.headlineGuidelines
     }
+
     var endOfQuarantine: String? {
         contactHealthStatus?.endOfQuarantine
     }
+
     var descriptionGuidelines: String? {
         contactHealthStatus?.descriptionGuidelines
     }
+
     var guidelines: [Instruction] {
         contactHealthStatus?.guidelines ?? []
     }
@@ -34,7 +40,7 @@ class ContactSicknessViewModel: ViewModel {
     var contactHealthStatus: ContactHealthStatus?
 
     func viewClosed() {
-        self.coordinator?.finish()
+        coordinator?.finish()
     }
 
     var infectionWarnings: [InfectionWarning] = []

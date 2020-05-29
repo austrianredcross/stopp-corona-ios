@@ -1,10 +1,10 @@
 //
-//  MainViewModel.swift
+//  OnboardingViewModel.swift
 //  CoronaContact
 //
 
-import UIKit
 import Resolver
+import UIKit
 
 struct OnboardingPage {
     let headline: String
@@ -65,7 +65,7 @@ class OnboardingViewModel: ViewModel {
 
     init(with coordinator: OnboardingCoordinator, context: Context = .regular) {
         self.coordinator = coordinator
-        self.currentContext = context
+        currentContext = context
 
         pages = [
             OnboardingPage(
@@ -100,7 +100,7 @@ class OnboardingViewModel: ViewModel {
                 buttonHandler: { [weak self] in
                     self?.termsOfUse()
                 }
-            )
+            ),
         ]
     }
 

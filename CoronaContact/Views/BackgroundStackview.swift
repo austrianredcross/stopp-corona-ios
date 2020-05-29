@@ -1,5 +1,5 @@
 //
-//  UIStackview+Background.swift
+//  BackgroundStackview.swift
 //  CoronaContact
 //
 
@@ -63,9 +63,9 @@ class BackgroundStackView: UIStackView {
         get {
             let margins = super.layoutMargins
             let newMargins = UIEdgeInsets(top: overrideVertMarginMulti > 0 ? overridenMargin * overrideVertMarginMulti : margins.top,
-                    left: overrideHorztMarginMulti > 0 ? overridenMargin * overrideHorztMarginMulti : margins.left,
-                    bottom: overrideVertMarginMulti > 0 ? overridenMargin * overrideVertMarginMulti : margins.bottom,
-                    right: overrideHorztMarginMulti > 0 ? overridenMargin * overrideHorztMarginMulti : margins.right)
+                                          left: overrideHorztMarginMulti > 0 ? overridenMargin * overrideHorztMarginMulti : margins.left,
+                                          bottom: overrideVertMarginMulti > 0 ? overridenMargin * overrideVertMarginMulti : margins.bottom,
+                                          right: overrideHorztMarginMulti > 0 ? overridenMargin * overrideHorztMarginMulti : margins.right)
             return newMargins
         }
         set(newValue) {

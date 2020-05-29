@@ -6,7 +6,6 @@
 import UIKit
 
 class ActivityModalViewController: UIViewController {
-
     let activityView = ActivityView()
     private let configuration: ActivityConfiguration
 

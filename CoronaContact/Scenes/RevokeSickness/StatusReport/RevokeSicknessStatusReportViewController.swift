@@ -3,16 +3,15 @@
 //  CoronaContact
 //
 
-import UIKit
 import Reusable
+import UIKit
 
 final class RevokeSicknessStatusReportViewController: UIViewController,
     StoryboardBased, ViewModelBased, ActivityModalPresentable, FlashableScrollIndicators {
-
-    @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var descriptionLabel: TransLabel!
-    @IBOutlet weak var checkboxLabelView: CheckboxLabelView!
-    @IBOutlet weak var reportStatusButton: UIButton!
+    @IBOutlet var scrollView: UIScrollView!
+    @IBOutlet var descriptionLabel: TransLabel!
+    @IBOutlet var checkboxLabelView: CheckboxLabelView!
+    @IBOutlet var reportStatusButton: UIButton!
 
     var viewModel: RevokeSicknessStatusReportViewModel?
 

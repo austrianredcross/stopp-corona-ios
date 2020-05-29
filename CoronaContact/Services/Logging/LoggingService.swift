@@ -24,7 +24,6 @@ enum LoggingContext: String {
 }
 
 class LoggingService {
-
     static var logFileURL: URL {
         let folderURLs = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask)
         return folderURLs[0].appendingPathComponent("application.log")
@@ -40,12 +39,12 @@ class LoggingService {
         file.format = "$Dyyyy-MM-dd HH:mm:ss.SSS$d $C[$X] $L$c $N.$F:$l - $M"
 
         #if DEBUG
-        file.asynchronously = false
+            file.asynchronously = false
         #endif
 
         #if LOGGING
-        SwiftyBeaver.addDestination(console)
-        SwiftyBeaver.addDestination(file)
+            SwiftyBeaver.addDestination(console)
+            SwiftyBeaver.addDestination(file)
         #endif
     }
 

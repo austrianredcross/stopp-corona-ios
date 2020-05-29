@@ -1,6 +1,6 @@
 //
-// DebugCoordinator.swift
-// CoronaContact
+//  DebugCoordinator.swift
+//  CoronaContact
 //
 
 import UIKit

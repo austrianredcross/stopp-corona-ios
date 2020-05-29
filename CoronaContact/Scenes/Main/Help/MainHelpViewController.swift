@@ -3,14 +3,13 @@
 //  CoronaContact
 //
 
-import UIKit
 import Reusable
+import UIKit
 
 final class MainHelpViewController: UIViewController, StoryboardBased, ViewModelBased, FlashableScrollIndicators {
-
-    @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var innerView: UIView!
-    @IBOutlet weak var instructionsView: InstructionsView!
+    @IBOutlet var scrollView: UIScrollView!
+    @IBOutlet var innerView: UIView!
+    @IBOutlet var instructionsView: InstructionsView!
 
     var viewModel: MainHelpViewModel?
 
@@ -34,7 +33,7 @@ final class MainHelpViewController: UIViewController, StoryboardBased, ViewModel
             .init(index: 1, text: "automatic_handshake_help_instruction_first".localized),
             .init(index: 2, text: "automatic_handshake_help_instruction_second".localized),
             .init(index: 3, text: "automatic_handshake_help_instruction_third".localized),
-            .init(index: 4, text: "automatic_handshake_help_instruction_fourth".localized)
+            .init(index: 4, text: "automatic_handshake_help_instruction_fourth".localized),
         ]
     }
 
