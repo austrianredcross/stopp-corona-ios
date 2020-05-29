@@ -8,7 +8,7 @@ import Reusable
 
 final class SavedIDsViewController: UIViewController, StoryboardBased, ViewModelBased, FlashableScrollIndicators {
 
-    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet var scrollView: UIScrollView!
 
     var viewModel: SavedIDsViewModel?
 
@@ -34,20 +34,7 @@ final class SavedIDsViewController: UIViewController, StoryboardBased, ViewModel
         title = "saved_IDs_title".localized
     }
 
-    @IBAction func deleteKeysButtonTapped(_ sender: Any) {
-        let alert = UIAlertController(title: "saved_IDs_delete_alert_title".localized,
-                                      message: "saved_IDs_delete_alert_message".localized,
-                                      preferredStyle: .alert)
-
-        let delete = UIAlertAction(title: "saved_IDs_delete_alert_delete_button".localized,
-                                   style: .destructive,
-                                   handler: { [viewModel] _ in viewModel?.deleteAll() })
-        let cancel = UIAlertAction(title: "general_cancel".localized,
-                                   style: .cancel,
-                                   handler: nil)
-
-        alert.addAction(delete)
-        alert.addAction(cancel)
-        present(alert, animated: true, completion: nil)
+    @IBAction func deleteExposureLogButtonTapped(_ sender: Any) {
+        viewModel?.deleteExposureLog()
     }
 }
