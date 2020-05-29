@@ -57,7 +57,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         appCoordinator = ApplicationCoordinator(window: window)
         appCoordinator.start()
 
-
         if localStorage.hasSeenOnboarding {
             initializeExternalServices(application)
         } else {

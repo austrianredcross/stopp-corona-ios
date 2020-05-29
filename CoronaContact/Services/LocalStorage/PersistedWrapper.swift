@@ -38,9 +38,12 @@ class Persisted<Value: Codable> {
         self
     }
 
+    // swiftlint:disable discarded_notification_center_observer
+    // disabled because of false positive warning, the observer is not discarded but returned
     func addObserver(using block: @escaping () -> Void) -> NSObjectProtocol {
         NotificationCenter.default.addObserver(forName: notificationName, object: nil, queue: nil) { _ in
             block()
         }
     }
+    // swiftlint:enable discarded_notification_center_observer
 }

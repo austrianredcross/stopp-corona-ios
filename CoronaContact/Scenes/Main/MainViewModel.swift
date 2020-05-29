@@ -114,12 +114,14 @@ class MainViewModel: ViewModel {
         observers.append(localStorage.$isProbablySickAt.addObserver(using: updateView))
         observers.append(localStorage.$isUnderSelfMonitoring.addObserver(using: updateView))
         let center = NotificationCenter.default
-        observers.append(center.addObserver(forName: .exposureManagerAuthorizationStatusChanged, object: nil, queue: nil, using: { [unowned self] _ in
-            self.updateView()
-        }))
-        observers.append(center.addObserver(forName: .exposureManagerNotificationStatusChanged, object: nil, queue: nil, using: { [unowned self] _ in
-            self.updateView()
-        }))
+        observers.append(center.addObserver(forName: ExposureManager.authorizationStatusChangedNotification,
+                                            object: nil,
+                                            queue: nil,
+                                            using: updateViewByNotification))
+        observers.append(center.addObserver(forName: ExposureManager.notificationStatusChangedNotification,
+                                            object: nil,
+                                            queue: nil,
+                                            using: updateViewByNotification))
     }
 
     func onboardingJustFinished() {
@@ -131,12 +133,16 @@ class MainViewModel: ViewModel {
         updateView()
     }
 
-    @objc func viewWillAppear() {
+    func viewWillAppear() {
         repository.refresh()
     }
 
-    @objc func updateView() {
+    func updateView() {
         viewController?.updateView()
+    }
+
+    private func updateViewByNotification(_: Notification) {
+        updateView()
     }
 
     func tappedPrimaryButtonInUserHealthStatus() {

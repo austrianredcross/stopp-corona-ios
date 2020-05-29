@@ -8,7 +8,7 @@ import UIKit
 
 // swiftlint:disable:line_length
 let simulatedKey = "MIGJAoGBAMvH7iUvrAODD2NwS7ZRRFrr31sJdJHpvhFaR4EZt6lIZvXFzWnqdvRCg3VmpdsJtqzsZEzsFhINXSfNpXAFj2Sb67Yrs4kWhVtEXq" +
-    "I0wuYVH0qsCvfnqGTqYiyp+LzD66FkmCnVvnFxoTaQOB3K0B3DPEkgAlmLQdSgYWfIj1Z3AgMBAAE="
+        "I0wuYVH0qsCvfnqGTqYiyp+LzD66FkmCnVvnFxoTaQOB3K0B3DPEkgAlmLQdSgYWfIj1Z3AgMBAAE="
 
 // swiftlint:enable:line_length
 
@@ -20,7 +20,6 @@ class DebugViewModel: ViewModel {
     @Injected private var localStorage: LocalStorage
     @Injected private var network: NetworkService
     @Injected private var notificationService: NotificationService
-    @available(iOS 13.5, *)
     @Injected private var exposureManager: ExposureManager
 
     var timer: Timer?
@@ -42,18 +41,6 @@ class DebugViewModel: ViewModel {
         LoggingService.deleteLogFile()
     }
 
-    func addHandShakes() {
-        // TODO: remove
-    }
-
-    func addRedInfectionMessage() {
-        // TODO: remove
-    }
-
-    func addYellowInfectionMessage() {
-        // TODO: remove
-    }
-
     func scheduleTestNotifications() {
         notificationService.showTestNotifications()
     }
@@ -63,11 +50,11 @@ class DebugViewModel: ViewModel {
     }
 
     func exposeDiagnosesKeys(test: Bool = false) {
-        if #available(iOS 13.5, *) {
-            if test {
-                exposureManager.getTestDiagnosisKeys { error in }
-            } else {
-                exposureManager.getDiagnosisKeys { error in}
+        if test {
+            exposureManager.getTestDiagnosisKeys { error in
+            }
+        } else {
+            exposureManager.getDiagnosisKeys { error in
             }
         }
     }
