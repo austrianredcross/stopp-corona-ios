@@ -16,6 +16,7 @@ enum LoggingContext: String {
     case bluetooth
     case nearby
     case exposure
+    case storage
 
     var description: String {
         rawValue.uppercased()

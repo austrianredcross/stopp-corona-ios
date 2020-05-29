@@ -7,6 +7,7 @@ import Foundation
 
 @propertyWrapper
 class Persisted<Value: Codable> {
+    let log = ContextLogger(context: .storage)
 
     init(userDefaultsKey: String, notificationName: Notification.Name, defaultValue: Value) {
         self.userDefaultsKey = userDefaultsKey
@@ -27,15 +28,18 @@ class Persisted<Value: Codable> {
 
     var wrappedValue: Value {
         didSet {
+            log.debug("changed value \(userDefaultsKey) to \(wrappedValue)")
             UserDefaults.standard.set(try? JSONEncoder().encode(wrappedValue), forKey: userDefaultsKey)
             NotificationCenter.default.post(name: notificationName, object: nil)
         }
     }
 
-    var projectedValue: Persisted<Value> { self }
+    var projectedValue: Persisted<Value> {
+        self
+    }
 
     func addObserver(using block: @escaping () -> Void) -> NSObjectProtocol {
-        return NotificationCenter.default.addObserver(forName: notificationName, object: nil, queue: nil) { _ in
+        NotificationCenter.default.addObserver(forName: notificationName, object: nil, queue: nil) { _ in
             block()
         }
     }

@@ -9,6 +9,8 @@ import SwiftRichString
 import Resolver
 
 class DebugViewController: UIViewController, StoryboardBased, ViewModelBased, Reusable {
+    @Injected private var localStorage: LocalStorage
+
     var viewModel: DebugViewModel? {
         didSet {
             viewModel?.viewController = self
@@ -52,14 +54,14 @@ class DebugViewController: UIViewController, StoryboardBased, ViewModelBased, Re
     }
 
     @IBAction func isUnderSelfMonitoringTapped(_ sender: Any) {
-        UserDefaults.standard.isUnderSelfMonitoring = true
-        UserDefaults.standard.performedSelfTestAt = Date()
+        localStorage.isUnderSelfMonitoring = true
+        localStorage.performedSelfTestAt = Date()
         NotificationCenter.default.post(name: .DatabaseSicknessUpdated, object: nil)
     }
 
     @IBAction func isProbablySickTapped(_ sender: Any) {
-        UserDefaults.standard.isProbablySick = true
-        UserDefaults.standard.isProbablySickAt = Date()
+        localStorage.isProbablySick = true
+        localStorage.isProbablySickAt = Date()
         NotificationCenter.default.post(name: .DatabaseSicknessUpdated, object: nil)
     }
 

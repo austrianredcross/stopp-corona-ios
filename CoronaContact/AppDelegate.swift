@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var appCoordinator: ApplicationCoordinator!
     let log = ContextLogger(context: .application)
+    var observers = [NSObjectProtocol]()
 
     private var serivcesInitialized: Bool = false
 
@@ -28,7 +29,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     @Injected private var databaseService: DatabaseService
     @Injected private var healthRepository: HealthRepository
     @Injected private var localStorage: LocalStorage
-    @available(iOS 13.5, *)
     @Injected private var exposureManager: ExposureManager
 
     lazy var screenSize: ScreenSize = {
@@ -48,9 +48,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         log.info("Application starting with launchOptions: \(String(describing: launchOptions))")
 
-        if #available(iOS 13.5, *) {
-            registerBackgroundTask()
-        }
+        appUpdateService.cleanupOldData()
+        registerBackgroundTask()
 
         UNUserNotificationCenter.current().delegate = self
 
@@ -58,8 +57,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         appCoordinator = ApplicationCoordinator(window: window)
         appCoordinator.start()
 
-        if UserDefaults.standard.hasSeenOnboarding {
+
+        if localStorage.hasSeenOnboarding {
             initializeExternalServices(application)
+        } else {
+            observers.append(localStorage.$hasSeenOnboarding.addObserver { [unowned self] in
+                self.initializeExternalServices(application)
+            })
         }
 
         return true
@@ -89,6 +93,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         appUpdateService.showUpdateAlertIfNecessary()
+    }
+
+    deinit {
+        for observer in observers {
+            NotificationCenter.default.removeObserver(observer)
+        }
     }
 }
 

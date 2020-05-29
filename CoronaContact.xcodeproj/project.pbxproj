@@ -260,7 +260,6 @@
 		8397468B2A696988BB980A18 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83974639DCEE7C5E6BF2008F /* OnboardingViewModel.swift */; };
 		8397474986C333D32BC0DB0F /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83974D3FCE9D7093717ED324 /* Coordinator.swift */; };
 		839748117E82124039816540 /* AppDelegate+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839749AD5CC31574CCB7808B /* AppDelegate+Injection.swift */; };
-		839748175DA5F72BBA63DB45 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8397485959B7EA28E150A5EB /* UserDefaults.swift */; };
 		8397485AF4D5FC35155ED797 /* ConfigurationService+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83974345BBD0522CFDA25B76 /* ConfigurationService+Injection.swift */; };
 		839748AF8A2EE9168002C226 /* DatabaseService+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839749E3CBDBB38005CA7495 /* DatabaseService+Injection.swift */; };
 		83974901AF9ABB4176C37AD0 /* OnboardingConsentPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839746E980E1878DBDF978AE /* OnboardingConsentPageView.swift */; };
@@ -585,7 +584,6 @@
 		8397474245A5951193FA02B7 /* TransLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransLabel.swift; sourceTree = "<group>"; };
 		839747825714F0364F308D55 /* MainCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		839747A974BEBD27078B488B /* NSString+localized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSString+localized.swift"; sourceTree = "<group>"; };
-		8397485959B7EA28E150A5EB /* UserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		8397498ADF6B7522C4D9AC93 /* TransButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransButton.swift; sourceTree = "<group>"; };
 		839749AD5CC31574CCB7808B /* AppDelegate+Injection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Injection.swift"; sourceTree = "<group>"; };
 		839749E3CBDBB38005CA7495 /* DatabaseService+Injection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DatabaseService+Injection.swift"; sourceTree = "<group>"; };
@@ -1355,7 +1353,6 @@
 				4EDB47F92422086B000CE24A /* UIView+ShadowBorders.swift */,
 				611B78B7242816950040CCB3 /* UIWindow+topMostViewController.swift */,
 				4E9C7B942421126200800B97 /* ViewModelBased.swift */,
-				8397485959B7EA28E150A5EB /* UserDefaults.swift */,
 				17CE98EF2576F57F776FBC3D /* UIApplication+SafariViewController.swift */,
 				618A6650242B8B84001BDBBF /* Collection+safe.swift */,
 				61D0F55F243534980026C91A /* UIView+roundedCorners.swift */,
@@ -2059,7 +2056,6 @@
 				4ED175B82458347400248D3B /* DebugViewModel.swift in Sources */,
 				83974070AAD41799D50EE1F8 /* Contact.swift in Sources */,
 				83974E1C0C969B298357EDD5 /* InfectionWarning.swift in Sources */,
-				839748175DA5F72BBA63DB45 /* UserDefaults.swift in Sources */,
 				4E5254D12472B89200B6C3A4 /* ExposureManager.swift in Sources */,
 				83974FB0112B30AA0C833CBB /* OnboardingCoordinator.swift in Sources */,
 				17CE9FA0CBB1AA58675A1F5A /* UIApplication+SafariViewController.swift in Sources */,

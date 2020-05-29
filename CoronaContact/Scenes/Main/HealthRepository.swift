@@ -24,7 +24,6 @@ class HealthRepository {
     @Observable var userHealthStatus: UserHealthStatus = .isHealthy
     @Observable var revocationStatus: RevocationStatus?
     @Observable var contactHealthStatus: ContactHealthStatus?
-    @Observable var numberOfContacts = 0
     @Observable var infectionWarnings: [InfectionWarning] = []
 
     var subscriptions = Set<AnySubscription>()

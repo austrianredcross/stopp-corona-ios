@@ -9,7 +9,7 @@ import Resolver
 class SelfTestingHintViewModel: ViewModel {
 
     @Injected private var notificationService: NotificationService
-    var defaults = UserDefaults.standard
+    @Injected private var localStorage: LocalStorage
 
     weak var coordinator: SelfTestingHintCoordinator?
 
@@ -18,10 +18,10 @@ class SelfTestingHintViewModel: ViewModel {
     }
 
     func onViewDidLoad() {
-        defaults.performedSelfTestAt = Date()
+        localStorage.performedSelfTestAt = Date()
 
-        if defaults.isUnderSelfMonitoring {
-            defaults.isUnderSelfMonitoring = false
+        if localStorage.isUnderSelfMonitoring {
+            localStorage.isUnderSelfMonitoring = false
             notificationService.removeSelfTestReminderNotification()
             NotificationCenter.default.post(name: .DatabaseSicknessUpdated, object: nil)
         }

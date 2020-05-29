@@ -14,6 +14,7 @@ class MainCoordinator: Coordinator, ShareSheetPresentable {
     }
 
     @Injected private var notificationService: NotificationService
+    @Injected private var localStorage: LocalStorage
     private weak var mainViewModel: MainViewModel?
 
     init(navigationController: UINavigationController) {
@@ -112,7 +113,7 @@ class MainCoordinator: Coordinator, ShareSheetPresentable {
         mainViewModel = viewModel
         navigationController.pushViewController(viewController, animated: false)
 
-        if !UserDefaults.standard.hasSeenOnboarding {
+        if !localStorage.hasSeenOnboarding {
             DispatchQueue.main.async { self.onboarding() }
         } else {
             notificationService.dismissAllNotifications()

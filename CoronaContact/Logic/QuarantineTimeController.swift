@@ -192,13 +192,13 @@ class QuarantineTimeController {
     private func setupRevocation(for quarantineStatus: QuarantineStatus) {
         switch quarantineStatus {
         case .completed(let end) where end.type == .selfDiagnosed:
-            UserDefaults.standard.completedVoluntaryQuarantine = true
-            UserDefaults.standard.isProbablySick = false
-            UserDefaults.standard.isProbablySickAt = nil
+            localStorage.completedVoluntaryQuarantine = true
+            localStorage.isProbablySick = false
+            localStorage.isProbablySickAt = nil
         case .completed:
-            UserDefaults.standard.completedRequiredQuarantine = true
+            localStorage.completedRequiredQuarantine = true
         case .cleared:
-            UserDefaults.standard.allClearQuarantine = true
+            localStorage.allClearQuarantine = true
         default:
             break
         }

@@ -26,9 +26,9 @@ enum UserHealthStatus {
 
         if localStorage.hasAttestedSickness {
             self = .hasAttestedSickness
-        } else if UserDefaults.standard.isProbablySick {
+        } else if localStorage.isProbablySick {
             self = .isProbablySick(quarantineDays: quarantineDays)
-        } else if UserDefaults.standard.isUnderSelfMonitoring {
+        } else if localStorage.isUnderSelfMonitoring {
             self = .isUnderSelfMonitoring
         } else {
             self = .isHealthy

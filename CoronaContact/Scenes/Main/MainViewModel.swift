@@ -67,7 +67,6 @@ class MainViewModel: ViewModel {
     var revocationStatus: RevocationStatus? { repository.revocationStatus }
     var contactHealthStatus: ContactHealthStatus? { repository.contactHealthStatus }
     var userHealthStatus: UserHealthStatus { repository.userHealthStatus }
-    var numberOfContacts: Int { repository.numberOfContacts }
 
     private var subscriptions: Set<AnySubscription> = []
 
@@ -83,12 +82,6 @@ class MainViewModel: ViewModel {
             .add(to: &subscriptions)
 
         repository.$userHealthStatus
-            .subscribe { [weak self] _ in
-                self?.updateView()
-            }
-            .add(to: &subscriptions)
-
-        repository.$numberOfContacts
             .subscribe { [weak self] _ in
                 self?.updateView()
             }

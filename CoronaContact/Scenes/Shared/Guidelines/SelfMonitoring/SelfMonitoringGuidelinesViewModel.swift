@@ -4,6 +4,7 @@
 //
 
 import Foundation
+import Resolver
 
 private let dateFormatter = DateFormatter()
 
@@ -13,6 +14,7 @@ private let dateString: (Date) -> String = { date in
 }
 
 class SelfMonitoringGuidelinesViewModel: ViewModel {
+    @Injected private var localStorage: LocalStorage
     weak var coordinator: SelfMonitoringGuidelinesCoordinator?
 
     init(with coordinator: SelfMonitoringGuidelinesCoordinator) {
@@ -20,7 +22,7 @@ class SelfMonitoringGuidelinesViewModel: ViewModel {
     }
 
     var dateLabel: String {
-        guard let date = UserDefaults.standard.performedSelfTestAt else {
+        guard let date = localStorage.performedSelfTestAt else {
             return ""
         }
 
