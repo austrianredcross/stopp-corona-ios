@@ -4,6 +4,7 @@
 //
 
 import UIKit
+import Resolver
 
 struct OnboardingPage {
     let headline: String
@@ -24,14 +25,15 @@ struct OnboardingPage {
 }
 
 class OnboardingViewModel: ViewModel {
+    @Injected private var localStorage: LocalStorage
 
     public var agreementToDataPrivacy = false {
         didSet {
             if agreementToDataPrivacy {
-                UserDefaults.standard.agreedToDataPrivacyAt = Date()
+                localStorage.agreedToDataPrivacyAt = Date()
                 viewController?.isButtonEnabled = true
             } else {
-                UserDefaults.standard.agreedToDataPrivacyAt = nil
+                localStorage.agreedToDataPrivacyAt = nil
                 viewController?.isButtonEnabled = false
             }
         }
@@ -139,7 +141,7 @@ class OnboardingViewModel: ViewModel {
     }
 
     func completedLegalOnboarding() {
-        UserDefaults.standard.hasSeenOnboarding = true
+        localStorage.hasSeenOnboarding = true
         coordinator?.finish(animated: true)
     }
 

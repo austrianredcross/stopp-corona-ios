@@ -6,18 +6,17 @@ use_frameworks!
 
 target 'CoronaContact' do
   # Pods for CoronaContact
-  pod 'NearbyMessages'
   pod 'SwiftLint'
   pod 'Resolver'
   pod 'Moya'
   pod 'SwiftRichString'
   pod 'Reusable'
-  pod 'SQLite.swift', '~> 0.12.0'
   pod 'M13Checkbox'
   pod 'Carte'
   pod 'Firebase/Messaging'
   pod 'lottie-ios'
   pod 'SwiftyBeaver'
+  pod 'SQLite.swift'
   pod 'SQLiteMigrationManager.swift'
 
   target 'CoronaContactTests' do

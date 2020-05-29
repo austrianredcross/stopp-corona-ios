@@ -35,7 +35,6 @@ final class MainViewController: UIViewController, StoryboardBased, ViewModelBase
     @IBOutlet weak var backgroundHandshakeSwitchLabel: TransLabel!
     @IBOutlet weak var backgroundHandshakeActiveStateLabel: TransLabel!
     @IBOutlet weak var backgroundHandshakeDescriptionLabel: TransLabel!
-    @IBOutlet weak var contactButton: PrimaryButton!
     @IBOutlet weak var handshakePausedInformation: UIView!
 
     private weak var launchScreenView: LaunchScreenView!
@@ -95,8 +94,6 @@ final class MainViewController: UIViewController, StoryboardBased, ViewModelBase
         configureSelfTestingView()
         configureSicknessCertificateView()
         configureAutomationHandshakeView()
-
-        contactButton.isEnabled = !viewModel.hasAttestedSickness
     }
 
     private func configureUserHealthstatusView() {
@@ -237,10 +234,6 @@ final class MainViewController: UIViewController, StoryboardBased, ViewModelBase
         guard let viewModel = viewModel else { return }
 
         sicknessCertificateStackView.isHidden = viewModel.hasAttestedSickness
-    }
-
-    @IBAction func contactTapped(_ sender: Any) {
-        viewModel?.contacts()
     }
 
     @IBAction func helpTapped(_ sender: Any) {

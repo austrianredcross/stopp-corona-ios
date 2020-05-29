@@ -4,6 +4,7 @@
 //
 
 import UIKit
+import Resolver
 
 private let dateFormatter = DateFormatter()
 
@@ -21,12 +22,13 @@ enum UserHealthStatus {
     /// most severy state wins
     init(quarantineDays: Int? = nil) {
         let quarantineDays = quarantineDays ?? 0
+        let localStorage: LocalStorage = Resolver.resolve()
 
-        if UserDefaults.standard.hasAttestedSickness {
+        if localStorage.hasAttestedSickness {
             self = .hasAttestedSickness
-        } else if UserDefaults.standard.isProbablySick {
+        } else if localStorage.isProbablySick {
             self = .isProbablySick(quarantineDays: quarantineDays)
-        } else if UserDefaults.standard.isUnderSelfMonitoring {
+        } else if localStorage.isUnderSelfMonitoring {
             self = .isUnderSelfMonitoring
         } else {
             self = .isHealthy

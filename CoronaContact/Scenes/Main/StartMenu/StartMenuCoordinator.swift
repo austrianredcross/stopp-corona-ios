@@ -22,12 +22,6 @@ class StartMenuCoordinator: Coordinator, ShareSheetPresentable {
         navigationController.pushViewController(rootViewController, animated: true)
     }
 
-    func contacts() {
-        let child = ContactCoordinator(navigationController: navigationController)
-        addChildCoordinator(child)
-        child.start()
-    }
-
     func selfTesting() {
         let child = SelfTestingCoordinator(navigationController: navigationController)
         addChildCoordinator(child)

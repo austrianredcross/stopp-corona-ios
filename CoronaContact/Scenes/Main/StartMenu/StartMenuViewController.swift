@@ -44,10 +44,6 @@ final class StartMenuViewController: UIViewController, StoryboardBased, Flashabl
         viewModel?.closeMenu()
     }
 
-    @IBAction func manualHandshakeButtonTapped(_ sender: Any) {
-        viewModel?.manualHandshake()
-    }
-
     @IBAction func checkSymptomsButtonTapped(_ sender: Any) {
         viewModel?.checkSymptoms()
     }

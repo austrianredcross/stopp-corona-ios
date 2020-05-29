@@ -54,11 +54,27 @@ class AppUpdateService {
         }
     }
 
+    func cleanupOldData() {
+        removeObseleteUserDefaults()
+    }
+
+    private func removeObseleteUserDefaults() {
+        let obsoleteKeys = [
+            "last_downloaded_message",
+            "not_fresh_installed",
+            "tracking_id",
+            "hide_microphone_info_dialog",
+            "is_probably_sick",
+            "has_attested_sickness"
+        ]
+        obsoleteKeys.forEach(UserDefaults.standard.removeObject(forKey:))
+    }
+
     private func openAppStore() {
         guard let url = UIApplication.appStoreAppDeepUrl,
-            UIApplication.shared.canOpenURL(url) else {
-                print("Can't Open App Store on the simulator")
-                return
+              UIApplication.shared.canOpenURL(url) else {
+            print("Can't Open App Store on the simulator")
+            return
         }
 
         UIApplication.shared.open(url, options: [:])

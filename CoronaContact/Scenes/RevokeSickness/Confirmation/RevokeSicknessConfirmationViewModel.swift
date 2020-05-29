@@ -4,18 +4,18 @@
 //
 
 import Foundation
+import Resolver
 
 class RevokeSicknessConfirmationViewModel: ViewModel {
     weak var coordinator: RevokeSicknessConfirmationCoordinator?
+    @Injected private var localStorage: LocalStorage
 
     init(with coordinator: RevokeSicknessConfirmationCoordinator) {
         self.coordinator = coordinator
     }
 
     func onViewDidLoad() {
-        UserDefaults.standard.attestedSicknessAt = nil
-        UserDefaults.standard.hasAttestedSickness = false
-        NotificationCenter.default.post(name: .DatabaseSicknessUpdated, object: nil)
+        localStorage.attestedSicknessAt = nil
     }
 
     func returnToMain() {

@@ -16,6 +16,7 @@ private let dateString: (Date) -> String = { date in
 class RevokeSicknessStatusReportViewModel: ViewModel {
 
     @Injected private var flowController: RevokeSicknessFlowController
+    @Injected private var localStorage: LocalStorage
 
     weak var coordinator: RevokeSicknessStatusReportCoordinator?
 
@@ -26,7 +27,7 @@ class RevokeSicknessStatusReportViewModel: ViewModel {
     }
 
     var dateLabel: String? {
-        guard let date = UserDefaults.standard.attestedSicknessAt else {
+        guard let date = localStorage.attestedSicknessAt else {
             return nil
         }
 

@@ -9,7 +9,7 @@ import SwiftRichString
 import Resolver
 
 class DebugViewController: UIViewController, StoryboardBased, ViewModelBased, Reusable {
-    @Injected private var crypto: CryptoService
+    @Injected private var localStorage: LocalStorage
 
     var viewModel: DebugViewModel? {
         didSet {
@@ -33,18 +33,6 @@ class DebugViewController: UIViewController, StoryboardBased, ViewModelBased, Re
         viewModel?.shareLog()
     }
 
-    @IBAction func addHandshakeAction(_ sender: Any) {
-        viewModel?.addHandShakes()
-    }
-
-    @IBAction func addRedInfectionMessage(_ sender: Any) {
-        viewModel?.addRedInfectionMessage()
-    }
-
-    @IBAction func addYellowInfectionMessage(_ sender: Any) {
-        viewModel?.addYellowInfectionMessage()
-    }
-
     @IBAction func scheduleTestNotifications(_ sender: Any) {
         viewModel?.scheduleTestNotifications()
     }
@@ -54,17 +42,13 @@ class DebugViewController: UIViewController, StoryboardBased, ViewModelBased, Re
     }
 
     @IBAction func isUnderSelfMonitoringTapped(_ sender: Any) {
-        UserDefaults.standard.isUnderSelfMonitoring = true
-        UserDefaults.standard.performedSelfTestAt = Date()
-        NotificationCenter.default.post(name: .DatabaseSicknessUpdated, object: nil)
+        localStorage.performedSelfTestAt = Date()
+        localStorage.isUnderSelfMonitoring = true
     }
 
     @IBAction func isProbablySickTapped(_ sender: Any) {
-        UserDefaults.standard.isProbablySick = true
-        UserDefaults.standard.isProbablySickAt = Date()
-        NotificationCenter.default.post(name: .DatabaseSicknessUpdated, object: nil)
+        localStorage.isProbablySickAt = Date()
     }
-
 
     @IBAction func resetLogButtonTapped(_ sender: Any) {
         viewModel?.resetLog()

@@ -33,10 +33,6 @@ class StartMenuViewModel: ViewModel {
         coordinator?.finish()
     }
 
-    func manualHandshake() {
-        coordinator?.contacts()
-    }
-
     func checkSymptoms() {
         coordinator?.selfTesting()
     }
