@@ -3,8 +3,8 @@
 //  CoronaContact
 //
 
-import UIKit
 import Carte
+import UIKit
 
 class StartMenuCoordinator: Coordinator, ShareSheetPresentable {
     var navigationController: UINavigationController

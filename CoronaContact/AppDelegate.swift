@@ -161,7 +161,7 @@ extension AppDelegate {
         navigationBarAppearace.setBackgroundImage(UIImage(), for: .default)
         navigationBarAppearace.shadowImage = UIImage()
         navigationBarAppearace.titleTextAttributes = [
-            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17, weight: .semibold)
+            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17, weight: .semibold),
         ]
     }
 }

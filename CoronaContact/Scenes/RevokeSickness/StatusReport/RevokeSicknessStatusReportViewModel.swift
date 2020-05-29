@@ -14,7 +14,6 @@ private let dateString: (Date) -> String = { date in
 }
 
 class RevokeSicknessStatusReportViewModel: ViewModel {
-
     @Injected private var flowController: RevokeSicknessFlowController
     @Injected private var localStorage: LocalStorage
 
@@ -47,17 +46,17 @@ class RevokeSicknessStatusReportViewModel: ViewModel {
             completion()
 
             switch result {
-            case .failure(let error):
+            case let .failure(error):
                 self?.coordinator?.showErrorAlert(
-                        title: error.displayableError.title,
-                        error: error.displayableError.description,
-                        closeAction: { _ in
-                            if error.personalDataInvalid {
-                                self?.coordinator?.goBackToPersonalData()
-                            } else if error.tanInvalid {
-                                self?.coordinator?.goBackToTanConfirmation()
-                            }
+                    title: error.displayableError.title,
+                    error: error.displayableError.description,
+                    closeAction: { _ in
+                        if error.personalDataInvalid {
+                            self?.coordinator?.goBackToPersonalData()
+                        } else if error.tanInvalid {
+                            self?.coordinator?.goBackToTanConfirmation()
                         }
+                    }
                 )
             case .success:
                 self?.coordinator?.showConfirmation()

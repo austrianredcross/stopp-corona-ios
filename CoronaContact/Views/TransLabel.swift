@@ -3,9 +3,9 @@
 //  CoronaContact
 //
 
-import UIKit
-import SwiftRichString
 import Resolver
+import SwiftRichString
+import UIKit
 
 // SLOW @IBDesignable
 class TransLabel: UILabel {

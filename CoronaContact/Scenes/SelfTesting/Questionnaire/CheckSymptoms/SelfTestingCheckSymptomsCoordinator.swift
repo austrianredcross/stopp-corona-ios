@@ -6,7 +6,6 @@
 import UIKit
 
 final class SelfTestingCheckSymptomsCoordinator: Coordinator {
-
     lazy var rootViewController: SelfTestingCheckSymptomsViewController = {
         SelfTestingCheckSymptomsViewController.instantiate()
     }()

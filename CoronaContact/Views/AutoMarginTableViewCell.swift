@@ -1,10 +1,10 @@
 //
-//  ContactLabelTabelViewCell.swift
+//  AutoMarginTableViewCell.swift
 //  CoronaContact
 //
 
-import UIKit
 import Reusable
+import UIKit
 
 class AutoMarginTableViewCell: UITableViewCell {
     override func awakeFromNib() {
@@ -18,6 +18,6 @@ class AutoMarginTableViewCell: UITableViewCell {
                 overridenMargin = 24
             }
         }
-        self.layoutMargins = UIEdgeInsets(top: 0, left: overridenMargin, bottom: 0, right: overridenMargin)
+        layoutMargins = UIEdgeInsets(top: 0, left: overridenMargin, bottom: 0, right: overridenMargin)
     }
 }

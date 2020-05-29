@@ -3,8 +3,8 @@
 //  CoronaContact
 //
 
-import UIKit
 import Resolver
+import UIKit
 
 private let dateFormatter = DateFormatter()
 
@@ -87,7 +87,7 @@ enum UserHealthStatus {
 
     var quarantineDays: Int? {
         switch self {
-        case .isProbablySick(let quarantineDays):
+        case let .isProbablySick(quarantineDays):
             return quarantineDays
         default:
             return nil

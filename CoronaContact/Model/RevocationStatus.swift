@@ -3,8 +3,8 @@
 //  CoronaContact
 //
 
-import UIKit
 import Resolver
+import UIKit
 
 enum RevocationStatus {
     case completedRequiredQuarantine

@@ -3,11 +3,10 @@
 //  CoronaContact
 //
 
-import UIKit
 import M13Checkbox
+import UIKit
 
 class CheckboxView: M13Checkbox {
-
     override var isEnabled: Bool {
         didSet {
             configureCurrentState()

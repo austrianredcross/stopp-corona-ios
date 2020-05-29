@@ -3,12 +3,11 @@
 //  CoronaContact
 //
 
-import UIKit
 import Reusable
+import UIKit
 
 final class LaunchScreenViewController: UIViewController, StoryboardBased {
-
-    @IBOutlet private weak var launchScreenView: LaunchScreenView!
+    @IBOutlet private var launchScreenView: LaunchScreenView!
 
     func fadeOut(withDuration duration: TimeInterval) {
         launchScreenView.startFadeOutAnimation(withDuration: duration)

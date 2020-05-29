@@ -3,11 +3,10 @@
 //  CoronaContact
 //
 
-import UIKit
 import Reusable
+import UIKit
 
 struct ButtonAction {
-
     let title: String
     let handler: () -> Void
 
@@ -56,7 +55,6 @@ extension RevocationStatus {
 }
 
 class QuarantineNotificationView: UIView, NibOwnerLoadable {
-
     @IBInspectable var indicatorColor: UIColor? {
         didSet {
             if let indicatorColor = indicatorColor {
@@ -64,6 +62,7 @@ class QuarantineNotificationView: UIView, NibOwnerLoadable {
             }
         }
     }
+
     @IBInspectable var icon: UIImage? {
         didSet {
             if let icon = icon {
@@ -75,27 +74,32 @@ class QuarantineNotificationView: UIView, NibOwnerLoadable {
             }
         }
     }
+
     @IBInspectable var headlineText: String = "" {
         didSet {
             headlineLabel.text = headlineText
         }
     }
+
     @IBInspectable var descriptionText: String = "" {
         didSet {
             descriptionLabel.styledText = descriptionText
             descriptionLabel.textColor = appearance.textColor
         }
     }
+
     @IBInspectable var buttonText: String = "" {
         didSet {
             primaryButton.styledTextNormal = buttonText
         }
     }
+
     @IBInspectable var isPrimaryButtonEnabed: Bool = true {
         didSet {
             primaryButtonContainerView.isHidden = !isPrimaryButtonEnabed
         }
     }
+
     var quarantineCounter: Int? {
         didSet {
             if let quarantineCounter = quarantineCounter {
@@ -106,29 +110,32 @@ class QuarantineNotificationView: UIView, NibOwnerLoadable {
             }
         }
     }
+
     var appearance: QuarantineNotificationAppearance = .color {
         didSet {
             configureAppearance()
         }
     }
 
-    @IBOutlet weak var iconImageView: UIImageView!
-    @IBOutlet weak var innerView: UIView!
-    @IBOutlet weak var headlineLabel: UILabel!
-    @IBOutlet weak var closeButton: UIButton! {
+    @IBOutlet var iconImageView: UIImageView!
+    @IBOutlet var innerView: UIView!
+    @IBOutlet var headlineLabel: UILabel!
+    @IBOutlet var closeButton: UIButton! {
         didSet {
             closeButton.isHidden = true
         }
     }
-    @IBOutlet weak var descriptionLabel: TransLabel!
-    @IBOutlet weak var primaryButtonContainerView: UIView!
-    @IBOutlet weak var quarantineCounterLabel: PaddingLabel! {
+
+    @IBOutlet var descriptionLabel: TransLabel!
+    @IBOutlet var primaryButtonContainerView: UIView!
+    @IBOutlet var quarantineCounterLabel: PaddingLabel! {
         didSet {
             quarantineCounterLabel.isHidden = true
         }
     }
-    @IBOutlet weak var primaryButton: ArrowButton!
-    @IBOutlet weak var buttonsStackView: UIStackView!
+
+    @IBOutlet var primaryButton: ArrowButton!
+    @IBOutlet var buttonsStackView: UIStackView!
 
     var handlePrimaryTap: (() -> Void)?
     var handleClose: (() -> Void)?

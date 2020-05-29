@@ -3,14 +3,13 @@
 //  CoronaContact
 //
 
-import UIKit
-import Reusable
 import M13Checkbox
+import Reusable
+import UIKit
 
 final class OnboardingConsentPageView: UIView, NibLoadable {
-
-    @IBOutlet weak var checkbox: M13Checkbox!
-    @IBOutlet weak var consentLabel: TransLabel!
+    @IBOutlet var checkbox: M13Checkbox!
+    @IBOutlet var consentLabel: TransLabel!
 
     weak var viewModel: OnboardingViewModel?
 

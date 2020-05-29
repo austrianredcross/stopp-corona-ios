@@ -23,9 +23,9 @@ class ConfigurationService {
     func update() {
         networkService.fetchConfiguration { [weak self] result in
             switch result {
-            case .success(let data):
+            case let .success(data):
                 self?.saveToDisk(data)
-            case .failure(let error):
+            case let .failure(error):
                 print("error updating config: \(error)")
                 return
             }

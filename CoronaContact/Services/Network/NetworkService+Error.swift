@@ -8,20 +8,17 @@ import Foundation
 // MARK: - Error handling
 
 extension NetworkService {
-
     private static let generalServerError = DisplayableError(
         title: "general_server_error".localized,
         description: "general_server_connection_error_description".localized
     )
 
     struct DisplayableError: Error {
-
         let title: String
         let description: String
     }
 
     struct TracingKeysError: Error {
-
         let displayableError: DisplayableError
         let personalDataInvalid: Bool
         let tanInvalid: Bool

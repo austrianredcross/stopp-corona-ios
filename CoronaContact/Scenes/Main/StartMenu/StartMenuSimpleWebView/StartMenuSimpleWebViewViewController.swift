@@ -3,22 +3,22 @@
 //  CoronaContact
 //
 
-import UIKit
 import Reusable
+import UIKit
 import WebKit
 
 final class StartMenuSimpleWebViewViewController: UIViewController, StoryboardBased, ViewModelBased {
     var viewModel: StartMenuSimpleWebViewViewModel?
     var navigationBarHidden = false
 
-    @IBOutlet weak var webView: WKWebView!
-    @IBOutlet weak var closeButton: UIBarButtonItem!
+    @IBOutlet var webView: WKWebView!
+    @IBOutlet var closeButton: UIBarButtonItem!
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if navigationController?.navigationBar.isHidden == true {
-                navigationBarHidden = false
-                navigationController?.setNavigationBarHidden(false, animated: true)
+            navigationBarHidden = false
+            navigationController?.setNavigationBarHidden(false, animated: true)
         }
         if presentingViewController == nil {
             navigationItem.rightBarButtonItems = []
@@ -30,7 +30,6 @@ final class StartMenuSimpleWebViewViewController: UIViewController, StoryboardBa
         if navigationBarHidden {
             navigationController?.setNavigationBarHidden(true, animated: true)
         }
-
     }
 
     override func didMove(toParent parent: UIViewController?) {

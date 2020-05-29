@@ -3,11 +3,10 @@
 //  CoronaContact
 //
 
-import UIKit
 import Resolver
+import UIKit
 
 class MainCoordinator: Coordinator, ShareSheetPresentable {
-
     var navigationController: UINavigationController
     var rootViewController: UIViewController {
         navigationController

@@ -3,24 +3,25 @@
 //  CoronaContact
 //
 
-import UIKit
 import Reusable
+import UIKit
 
 class CheckboxLabelView: UIView, NibOwnerLoadable {
-
-    @IBOutlet weak var label: UILabel!
-    @IBOutlet weak var checkbox: CheckboxView!
+    @IBOutlet var label: UILabel!
+    @IBOutlet var checkbox: CheckboxView!
 
     @IBInspectable private var labelStyleName: String? {
         didSet {
             label?.styleName = labelStyleName
         }
     }
+
     @IBInspectable private var labelTransKey: String? {
         didSet {
             label?.text = labelTransKey?.localized
         }
     }
+
     @IBInspectable private var labelText: String? {
         didSet {
             label?.text = labelText

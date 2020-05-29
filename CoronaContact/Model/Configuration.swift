@@ -8,7 +8,6 @@ import Foundation
 // MARK: - Configuration
 
 struct Configuration: Codable {
-
     private enum CodingKeys: String, CodingKey {
         case warnBeforeSymptoms = "warn_before_symptoms"
         case redWarningQuarantine = "red_warning_quarantine"
@@ -30,7 +29,6 @@ struct Configuration: Codable {
 // MARK: Decodable
 
 extension Configuration {
-
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         let questionnaireContainer = try container.nestedContainer(keyedBy: Language.CodingKeys.self, forKey: .diagnosticQuestionnaire)
@@ -47,17 +45,16 @@ extension Configuration {
             let value = try questionnaireContainer.decodeIfPresent(Questionnaire.self, forKey: languageKey)
             questionnaires[language] = value
         }
-        self.diagnosticQuestionnaire = questionnaires
-        self.warnBeforeSymptoms = try container.decode(Int.self, forKey: .warnBeforeSymptoms)
-        self.redWarningQuarantine = try container.decode(Int.self, forKey: .redWarningQuarantine)
-        self.yellowWarningQuarantine = try container.decode(Int.self, forKey: .yellowWarningQuarantine)
-        self.selfDiagnosedQuarantine = try container.decode(Int.self, forKey: .selfDiagnosedQuarantine)
+        diagnosticQuestionnaire = questionnaires
+        warnBeforeSymptoms = try container.decode(Int.self, forKey: .warnBeforeSymptoms)
+        redWarningQuarantine = try container.decode(Int.self, forKey: .redWarningQuarantine)
+        yellowWarningQuarantine = try container.decode(Int.self, forKey: .yellowWarningQuarantine)
+        selfDiagnosedQuarantine = try container.decode(Int.self, forKey: .selfDiagnosedQuarantine)
     }
 }
 
 // MARK: - ConfigurationRespone
 
 struct ConfigurationResponse: Codable {
-
     let configuration: Configuration
 }

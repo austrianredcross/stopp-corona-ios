@@ -6,7 +6,6 @@
 import UIKit
 
 class SecondaryButton: TransButton {
-
     override func updateTranslation() {
         if let transKeyNormal = transKeyNormal {
             setAttributedTitle(transKeyNormal.locaStyled(style: .secondaryButton), for: .normal)

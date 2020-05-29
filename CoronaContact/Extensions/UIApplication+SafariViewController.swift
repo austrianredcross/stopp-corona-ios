@@ -3,11 +3,10 @@
 //  CoronaContact
 //
 
-import UIKit
 import SafariServices
+import UIKit
 
 extension UIApplication {
-
     func openURLinSafariVC(_ url: URL, from viewController: UIViewController? = nil) {
         let safariVC = SFSafariViewController(url: url)
         if let appDelegate = UIApplication.shared.delegate as? AppDelegate {

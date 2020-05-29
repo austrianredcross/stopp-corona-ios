@@ -7,7 +7,6 @@ import Foundation
 import Resolver
 
 class SelfTestingHintViewModel: ViewModel {
-
     @Injected private var notificationService: NotificationService
     @Injected private var localStorage: LocalStorage
 

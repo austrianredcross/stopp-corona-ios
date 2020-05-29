@@ -6,7 +6,6 @@
 import UIKit
 
 final class MissingPermissionsCoordinator: Coordinator {
-
     enum PermissionType {
         case bluetooth
         case backgroundAppRefresh
@@ -28,7 +27,7 @@ final class MissingPermissionsCoordinator: Coordinator {
     var navigationController: UINavigationController
 
     init(type: PermissionType, navigationController: UINavigationController) {
-        self.rootViewController = type.viewController
+        rootViewController = type.viewController
         self.navigationController = navigationController
     }
 

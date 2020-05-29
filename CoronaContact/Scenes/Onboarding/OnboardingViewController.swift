@@ -1,5 +1,5 @@
 //
-//  MainViewController.swift
+//  OnboardingViewController.swift
 //  CoronaContact
 //
 
@@ -12,12 +12,13 @@ final class OnboardingViewController: UIViewController, StoryboardBased, ViewMod
             viewModel?.viewController = self
         }
     }
+
     var currentPage = -1
 
-    @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var stackView: UIStackView!
-    @IBOutlet weak var pageControl: UIPageControl!
-    @IBOutlet weak var button: UIButton!
+    @IBOutlet var scrollView: UIScrollView!
+    @IBOutlet var stackView: UIStackView!
+    @IBOutlet var pageControl: UIPageControl!
+    @IBOutlet var button: UIButton!
 
     public var isButtonEnabled: Bool {
         get { button.isEnabled }
@@ -58,7 +59,7 @@ final class OnboardingViewController: UIViewController, StoryboardBased, ViewMod
     func addLegalPage() {
         let view = OnboardingConsentPageView.loadFromNib()
         view.viewModel = viewModel
-        self.stackView.addArrangedSubview(view)
+        stackView.addArrangedSubview(view)
         view.widthAnchor.constraint(equalTo: scrollView.frameLayoutGuide.widthAnchor, constant: 0).isActive = true
         view.heightAnchor.constraint(equalTo: scrollView.frameLayoutGuide.heightAnchor, constant: 0).isActive = true
     }
@@ -76,11 +77,9 @@ final class OnboardingViewController: UIViewController, StoryboardBased, ViewMod
     @IBAction func buttonPressed(_ sender: Any) {
         viewModel?.buttonPressed()
     }
-
 }
 
 extension OnboardingViewController: UIScrollViewDelegate {
-
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let value = scrollView.contentOffset.x / scrollView.frame.size.width
         let currentPage = Int(round(value))

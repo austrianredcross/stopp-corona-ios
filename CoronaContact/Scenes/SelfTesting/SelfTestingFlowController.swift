@@ -7,7 +7,6 @@ import Foundation
 import Resolver
 
 class SelfTestingFlowController {
-
     var questionaire: Questionnaire?
     var answers = [Int: Answer]()
 

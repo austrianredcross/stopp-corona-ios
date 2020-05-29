@@ -12,7 +12,6 @@ import Moya
  Do not use directly, use `NetworkService` instead.
  */
 final class NetworkClient {
-
     typealias PayloadCompletion<Payload> = (_ result: Result<Payload, NetworkError>) -> Void
 
     var handleStatusCode: ((Int) -> Void)?
@@ -23,7 +22,7 @@ final class NetworkClient {
     func requestPlain(_ target: NetworkEndpoint, completion: @escaping (Result<Data, NetworkError>) -> Void) {
         provider.request(target) { [weak self] result in
             switch result {
-            case .success(let response):
+            case let .success(response):
                 self?.handleStatusCode?(response.statusCode)
 
                 do {
@@ -31,7 +30,7 @@ final class NetworkClient {
                     completion(.success(filteredResponse.data))
                     self?.log.verbose(response.detailedDebugDescription, context: .network)
 
-                } catch let error {
+                } catch {
                     let statusCode = HTTPStatusCode(statusCode: response.statusCode)
                     if statusCode == .notModified {
                         completion(.failure(.notModifiedError))
@@ -44,7 +43,7 @@ final class NetworkClient {
                     self?.log.error(response.detailedDebugDescription, context: .network)
                 }
 
-            case .failure(let error):
+            case let .failure(error):
                 self?.log.error(error.detailedDebugDescription, context: .network)
                 self?.handleStatusCode?(error.errorCode)
 
@@ -59,7 +58,7 @@ final class NetworkClient {
     func request<Payload: Decodable>(_ target: NetworkEndpoint, completion: @escaping (Result<Payload, NetworkError>) -> Void) {
         provider.request(target) { [weak self] result in
             switch result {
-            case .success(let response):
+            case let .success(response):
 
                 self?.handleStatusCode?(response.statusCode)
 
@@ -69,7 +68,7 @@ final class NetworkClient {
                     completion(parsedResponse)
                     self?.log.verbose(response.detailedDebugDescription, context: .network)
 
-                } catch let error {
+                } catch {
                     let statusCode = HTTPStatusCode(statusCode: response.statusCode)
                     if statusCode == .notModified {
                         completion(.failure(.notModifiedError))
@@ -80,9 +79,9 @@ final class NetworkClient {
 
                     completion(.failure(.unknownError(statusCode, error, errorResponse)))
                     self?.log.error(response.detailedDebugDescription, context: .network)
-               }
+                }
 
-            case .failure(let error):
+            case let .failure(error):
                 self?.log.error(error.detailedDebugDescription, context: .network)
                 self?.handleStatusCode?(error.errorCode)
 
@@ -96,7 +95,6 @@ final class NetworkClient {
 }
 
 private extension Response {
-
     var detailedDebugDescription: String {
         var output = [String]()
 
@@ -114,7 +112,6 @@ private extension Response {
 }
 
 private extension MoyaError {
-
     var detailedDebugDescription: String {
         if let moyaResponse = response {
             return moyaResponse.detailedDebugDescription

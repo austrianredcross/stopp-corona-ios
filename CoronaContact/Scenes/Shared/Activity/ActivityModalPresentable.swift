@@ -11,14 +11,13 @@ private struct AssociatedObjectKeys {
 
 /**
  Show and hide activity overlays as modal view controllers.
- 
+
  - note: Use `ActivityModalPresentableFullscreen` if you want the overlay to be full-screen.
  */
 protocol ActivityModalPresentable: ActivityPresentableType {}
 protocol ActivityModalPresentableFullscreen: ActivityModalPresentable, ActivityPresentableFullscreenType {}
 
 extension ActivityModalPresentable where Self: UIViewController {
-
     func showActivity() {
         activityModalManager.showActivity()
     }
@@ -49,19 +48,18 @@ extension ActivityModalPresentable where Self: UIViewController {
 
 /**
  A state machine to keep track of the current status of an activity modal
- 
+
  `.show` and `.hide` events are added to a FIFO queue and handled as quickly
  as possible.
- 
+
  Sometimes an event cannot be handled immediately: e.g. a `.hide` event has
  to wait until an activityModal that is currently animating in is fully
  visible.
- 
+
  Sometimes events are discarded without being handled: e.g. a `.hide` event
  is a no-op if there is no activityModal to hide.
  */
 private class ActivityModalStateMachine {
-
     init(viewController: UIViewController,
          configuration: ActivityConfiguration) {
         self.viewController = viewController
@@ -77,6 +75,7 @@ private class ActivityModalStateMachine {
     }
 
     // MARK: Private members
+
     private weak var viewController: UIViewController?
     private let configuration: ActivityConfiguration
 
@@ -86,9 +85,9 @@ private class ActivityModalStateMachine {
 
     private enum State {
         case idle,
-        animatingIn(ActivityModalViewController),
-        visible(ActivityModalViewController),
-        animatingOut(ActivityModalViewController)
+            animatingIn(ActivityModalViewController),
+            visible(ActivityModalViewController),
+            animatingOut(ActivityModalViewController)
     }
 
     private var eventQueue: [Event] = [] {
@@ -98,6 +97,7 @@ private class ActivityModalStateMachine {
             }
         }
     }
+
     private var state: State = .idle {
         didSet {
             DispatchQueue.main.async {
@@ -111,20 +111,20 @@ private class ActivityModalStateMachine {
 
         switch (state, eventQueue.first) {
         case (.idle, .show?), (.animatingOut, .show?):
-            self.eventQueue = Array(eventQueue.dropFirst())
+            eventQueue = Array(eventQueue.dropFirst())
             showModal(on: viewController)
 
         case (.animatingIn, .show?),
              (.visible, .show?):
-            self.eventQueue = Array(eventQueue.dropFirst())
+            eventQueue = Array(eventQueue.dropFirst())
 
-        case (.visible(let modal), .hide?):
+        case let (.visible(modal), .hide?):
             self.eventQueue = Array(eventQueue.dropFirst())
             hide(modal, from: viewController)
 
         case (.animatingOut, .hide?),
              (.idle, .hide?):
-            self.eventQueue = Array(eventQueue.dropFirst())
+            eventQueue = Array(eventQueue.dropFirst())
 
         case (.animatingIn, .hide?):
             // we have to wait until it's visible before hiding it.
@@ -139,14 +139,14 @@ private class ActivityModalStateMachine {
     /**
      Checks if the conditions are met to work around an iOS issue that caused
      the modal and its presenting viewController never to be removed from memory
-     
+
      Given a viewController **A** that modally presents viewController **B** under
      the following conditions:
      - **B**`.modalPresentationStyle == .overCurrentContext`
      - **A**`.definesPresentationContext == true`
-     
+
      ...then iOS does not automatically dismiss **B** when **A** is dismissed.
-     
+
      To work around this quirk, we don't present the modal modally in this case. We embed
      it using the UIViewController containment API instead.
      */
@@ -194,7 +194,7 @@ private class ActivityModalStateMachine {
             modal.view.topAnchor.constraint(equalTo: viewController.view.topAnchor),
             modal.view.leadingAnchor.constraint(equalTo: viewController.view.leadingAnchor),
             modal.view.trailingAnchor.constraint(equalTo: viewController.view.trailingAnchor),
-            modal.view.bottomAnchor.constraint(equalTo: viewController.view.bottomAnchor)
+            modal.view.bottomAnchor.constraint(equalTo: viewController.view.bottomAnchor),
         ])
 
         modal.didMove(toParent: viewController)

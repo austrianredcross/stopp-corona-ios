@@ -6,7 +6,6 @@
 import UIKit
 
 final class SelfTestingHintCoordinator: Coordinator {
-
     lazy var rootViewController: SelfTestingHintViewController = {
         SelfTestingHintViewController.instantiate()
     }()

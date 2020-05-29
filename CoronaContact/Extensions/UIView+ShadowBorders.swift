@@ -18,6 +18,7 @@ extension UIView {
             layer.borderColor = newValue?.cgColor
         }
     }
+
     @IBInspectable private var borderWidth: CGFloat {
         get {
             layer.borderWidth
@@ -26,6 +27,7 @@ extension UIView {
             layer.borderWidth = newValue
         }
     }
+
     @IBInspectable private var cornerRadius: CGFloat {
         get {
             layer.cornerRadius

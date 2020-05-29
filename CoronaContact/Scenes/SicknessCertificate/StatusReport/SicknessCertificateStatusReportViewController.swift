@@ -3,16 +3,15 @@
 //  CoronaContact
 //
 
-import UIKit
-import Reusable
 import M13Checkbox
+import Reusable
+import UIKit
 
 final class SicknessCertificateStatusReportViewController: UIViewController,
     StoryboardBased, ViewModelBased, ActivityModalPresentable, FlashableScrollIndicators {
-
-    @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var checkbox: M13Checkbox!
-    @IBOutlet weak var reportButton: UIButton!
+    @IBOutlet var scrollView: UIScrollView!
+    @IBOutlet var checkbox: M13Checkbox!
+    @IBOutlet var reportButton: UIButton!
 
     var viewModel: SicknessCertificateStatusReportViewModel?
 

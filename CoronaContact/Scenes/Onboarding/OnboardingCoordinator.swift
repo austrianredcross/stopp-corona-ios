@@ -3,11 +3,10 @@
 //  CoronaContact
 //
 
-import UIKit
 import Resolver
+import UIKit
 
 class OnboardingCoordinator: Coordinator {
-
     var navigationController: UINavigationController
 
     lazy var rootViewController: UINavigationController = {
@@ -43,9 +42,9 @@ class OnboardingCoordinator: Coordinator {
     }
 
     func consent() {
-        //let child = OnboardingConsentCoordinator(navigationController: rootViewController)
-        //addChildCoordinator(child)
-        //child.start()
+        // let child = OnboardingConsentCoordinator(navigationController: rootViewController)
+        // addChildCoordinator(child)
+        // child.start()
     }
 
     func termsOfUse() {

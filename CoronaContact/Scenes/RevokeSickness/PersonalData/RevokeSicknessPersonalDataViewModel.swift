@@ -7,7 +7,6 @@ import Foundation
 import Resolver
 
 class RevokeSicknessPersonalDataViewModel: ViewModel {
-
     @Injected private var flowController: RevokeSicknessFlowController
 
     weak var coordinator: RevokeSicknessPersonalDataCoordinator?
@@ -29,7 +28,7 @@ class RevokeSicknessPersonalDataViewModel: ViewModel {
             completion()
 
             switch result {
-            case .failure(let error):
+            case let .failure(error):
                 self?.coordinator?.showErrorAlert(title: error.title, error: error.description)
             case .success:
                 self?.coordinator?.tanConfirmation()

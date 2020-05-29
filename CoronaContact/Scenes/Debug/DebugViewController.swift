@@ -1,12 +1,12 @@
 //
-// DebugViewController.swift
-// CoronaContact
+//  DebugViewController.swift
+//  CoronaContact
 //
 
-import UIKit
+import Resolver
 import Reusable
 import SwiftRichString
-import Resolver
+import UIKit
 
 class DebugViewController: UIViewController, StoryboardBased, ViewModelBased, Reusable {
     @Injected private var localStorage: LocalStorage
@@ -53,5 +53,4 @@ class DebugViewController: UIViewController, StoryboardBased, ViewModelBased, Re
     @IBAction func resetLogButtonTapped(_ sender: Any) {
         viewModel?.resetLog()
     }
-
 }

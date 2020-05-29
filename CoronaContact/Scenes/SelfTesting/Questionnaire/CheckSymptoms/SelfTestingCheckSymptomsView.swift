@@ -3,16 +3,16 @@
 //  CoronaContact
 //
 
-import UIKit
-import Reusable
-import Resolver
-import SwiftRichString
 import M13Checkbox
+import Resolver
+import Reusable
+import SwiftRichString
+import UIKit
 
 final class SelfTestingCheckSymptomsView: UIView, NibLoadable {
-    @IBOutlet weak var questionTitle: UILabel!
-    @IBOutlet weak var questionText: UILabel!
-    @IBOutlet weak var answersStackView: UIStackView!
+    @IBOutlet var questionTitle: UILabel!
+    @IBOutlet var questionText: UILabel!
+    @IBOutlet var answersStackView: UIStackView!
 
     var handleAnswer: ((Answer) -> Void)?
 

@@ -6,7 +6,6 @@
 import UIKit
 
 class StandardTextField: FloatingTextField {
-
     override func configureView() {
         super.configureView()
 

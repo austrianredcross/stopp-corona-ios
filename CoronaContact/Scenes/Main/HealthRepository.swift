@@ -56,6 +56,7 @@ class HealthRepository {
 
         return false
     }
+
     var hasAttestedSickness: Bool {
         if case .hasAttestedSickness = userHealthStatus {
             return true
@@ -85,13 +86,12 @@ class HealthRepository {
         userHealthStatus = UserHealthStatus(quarantineDays: quarantineStatus.numberOfDays)
 
         /* TODO: redo new system
-        dba.getIncomingInfectionWarnings { [weak self] infectionWarnings in
-            self?.contactHealthStatus = ContactHealthStatus(
-                    basedOn: infectionWarnings,
-                    quarantineDays: quarantineStatus.numberOfDays
-            )
-        }
-        */
+         dba.getIncomingInfectionWarnings { [weak self] infectionWarnings in
+             self?.contactHealthStatus = ContactHealthStatus(
+                     basedOn: infectionWarnings,
+                     quarantineDays: quarantineStatus.numberOfDays
+             )
+         }
+         */
     }
-
 }

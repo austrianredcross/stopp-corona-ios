@@ -34,7 +34,6 @@ struct QuarantineTimeConfiguration {
 }
 
 class QuarantineTimeController {
-
     enum QuarantineType {
         case red
         case yellow
@@ -104,7 +103,7 @@ class QuarantineTimeController {
 
         var date: Date? {
             switch self {
-            case .completed(let end), .inProgress(let end):
+            case let .completed(end), let .inProgress(end):
                 return end.date
             default:
                 return nil
@@ -113,7 +112,7 @@ class QuarantineTimeController {
 
         var numberOfDays: Int? {
             switch self {
-            case .completed(let end), .inProgress(let end):
+            case let .completed(end), let .inProgress(end):
                 return end.numberOfDays
             default:
                 return nil
@@ -134,7 +133,7 @@ class QuarantineTimeController {
 
     private var lastRefreshAt: Date?
 
-    private let subscriber: ((QuarantineStatus) -> Void)
+    private let subscriber: (QuarantineStatus) -> Void
 
     init(timeConfiguration: QuarantineTimeConfiguration = QuarantineTimeConfiguration(),
          databaseService: DatabaseService? = nil,
@@ -190,7 +189,7 @@ class QuarantineTimeController {
 
     private func setupRevocation(for quarantineStatus: QuarantineStatus) {
         switch quarantineStatus {
-        case .completed(let end) where end.type == .selfDiagnosed:
+        case let .completed(end) where end.type == .selfDiagnosed:
             localStorage.completedVoluntaryQuarantine = true
             localStorage.isProbablySickAt = nil
         case .completed:

@@ -1,6 +1,6 @@
 //
-// DebugViewModel.swift
-// CoronaContact
+//  DebugViewModel.swift
+//  CoronaContact
 //
 
 import Resolver
@@ -8,7 +8,7 @@ import UIKit
 
 // swiftlint:disable:line_length
 let simulatedKey = "MIGJAoGBAMvH7iUvrAODD2NwS7ZRRFrr31sJdJHpvhFaR4EZt6lIZvXFzWnqdvRCg3VmpdsJtqzsZEzsFhINXSfNpXAFj2Sb67Yrs4kWhVtEXq" +
-        "I0wuYVH0qsCvfnqGTqYiyp+LzD66FkmCnVvnFxoTaQOB3K0B3DPEkgAlmLQdSgYWfIj1Z3AgMBAAE="
+    "I0wuYVH0qsCvfnqGTqYiyp+LzD66FkmCnVvnFxoTaQOB3K0B3DPEkgAlmLQdSgYWfIj1Z3AgMBAAE="
 
 // swiftlint:enable:line_length
 
@@ -51,12 +51,11 @@ class DebugViewModel: ViewModel {
 
     func exposeDiagnosesKeys(test: Bool = false) {
         if test {
-            exposureManager.getTestDiagnosisKeys { error in
+            exposureManager.getTestDiagnosisKeys { _ in
             }
         } else {
-            exposureManager.getDiagnosisKeys { error in
+            exposureManager.getDiagnosisKeys { _ in
             }
         }
     }
-
 }

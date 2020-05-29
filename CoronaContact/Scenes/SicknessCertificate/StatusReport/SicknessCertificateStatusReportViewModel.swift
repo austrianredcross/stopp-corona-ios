@@ -7,7 +7,6 @@ import Foundation
 import Resolver
 
 class SicknessCertificateStatusReportViewModel: ViewModel {
-
     @Injected private var flowController: SicknessCertificateFlowController
 
     weak var coordinator: SicknessCertificateStatusReportCoordinator?
@@ -31,7 +30,7 @@ class SicknessCertificateStatusReportViewModel: ViewModel {
             completion()
 
             switch result {
-            case .failure(let error):
+            case let .failure(error):
                 self?.coordinator?.showErrorAlert(
                     title: error.displayableError.title,
                     error: error.displayableError.description,
