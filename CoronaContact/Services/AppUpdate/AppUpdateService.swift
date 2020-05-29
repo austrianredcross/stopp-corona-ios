@@ -59,7 +59,7 @@ class AppUpdateService {
     }
 
     private func removeObseleteUserDefaults() {
-        let obseleteKeys = [
+        let obsoleteKeys = [
             "last_downloaded_message",
             "not_fresh_installed",
             "tracking_id",
@@ -67,9 +67,7 @@ class AppUpdateService {
             "is_probably_sick",
             "has_attested_sickness"
         ]
-        obseleteKeys.forEach { key in
-            UserDefaults.standard.removeObject(forKey: key)
-        }
+        obsoleteKeys.forEach(UserDefaults.standard.removeObject(forKey:))
     }
 
     private func openAppStore() {

@@ -7,7 +7,7 @@ import Foundation
 
 class LocalStorage {
     /// the user manually disabled the background handshake
-    @Persisted(userDefaultsKey: "backgroundHandShakeDisabled", notificationName: .init("BackgroundHandshakeDisabled"), defaultValue: false)
+    @Persisted(userDefaultsKey: "background_handshake_disabled", notificationName: .init("BackgroundHandshakeDisabled"), defaultValue: false)
     var backgroundHandshakeDisabled: Bool
 
     /// the date the user declared himself attested sick

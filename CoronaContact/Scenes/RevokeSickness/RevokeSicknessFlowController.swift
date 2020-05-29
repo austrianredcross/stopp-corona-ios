@@ -7,10 +7,10 @@ import Foundation
 import Resolver
 
 class RevokeSicknessFlowController: ReportHealthStatusFlowController {
+    private var localStorage: LocalStorage = Resolver.resolve()
 
     init() {
         let diagnosisType: DiagnosisType
-        let localStorage: LocalStorage = Resolver.resolve()
         if localStorage.isProbablySick {
             diagnosisType = .yellow
         } else {

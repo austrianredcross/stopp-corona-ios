@@ -9,7 +9,7 @@ class DebugCoordinator: Coordinator {
     var navigationController: UINavigationController
 
     lazy var rootViewController: UINavigationController = {
-        let viewController = DebugViewController.instantiate(with: DebugViewModel(coordintator: self))
+        let viewController = DebugViewController.instantiate(with: DebugViewModel(coordinator: self))
         let controller = UINavigationController(rootViewController: viewController)
         return controller
 

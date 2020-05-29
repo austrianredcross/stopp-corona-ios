@@ -25,8 +25,8 @@ class DebugViewModel: ViewModel {
     var timer: Timer?
     var numberOfContacts = 0
 
-    init(coordintator: DebugCoordinator) {
-        coordinator = coordintator
+    init(coordinator: DebugCoordinator) {
+        self.coordinator = coordinator
     }
 
     func close() {
