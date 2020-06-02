@@ -254,6 +254,7 @@
 		7829D827247D507A0015F5A5 /* SavedIDsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7829D823247D507A0015F5A5 /* SavedIDsViewController.storyboard */; };
 		784C2D0C2486A953005160A6 /* AppVersionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784C2D0B2486A953005160A6 /* AppVersionTests.swift */; };
 		784C2D0F2486A97F005160A6 /* WhatsNewRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784C2D0E2486A97F005160A6 /* WhatsNewRepository.swift */; };
+		784C2D112486AA52005160A6 /* AppVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784C2D102486AA52005160A6 /* AppVersion.swift */; };
 		83974070AAD41799D50EE1F8 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8397467D70446583EE496204 /* Contact.swift */; };
 		8397407B842054D9947D6AB7 /* configuration.json in Resources */ = {isa = PBXBuildFile; fileRef = 8397422DDB8AFB76E5110DB0 /* configuration.json */; };
 		8397409A6F3CF92410AAEE06 /* TransLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8397474245A5951193FA02B7 /* TransLabel.swift */; };
@@ -584,6 +585,7 @@
 		7829D823247D507A0015F5A5 /* SavedIDsViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SavedIDsViewController.storyboard; sourceTree = "<group>"; };
 		784C2D0B2486A953005160A6 /* AppVersionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppVersionTests.swift; sourceTree = "<group>"; };
 		784C2D0E2486A97F005160A6 /* WhatsNewRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhatsNewRepository.swift; sourceTree = "<group>"; };
+		784C2D102486AA52005160A6 /* AppVersion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppVersion.swift; sourceTree = "<group>"; };
 		8397422DDB8AFB76E5110DB0 /* configuration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = configuration.json; sourceTree = "<group>"; };
 		83974345BBD0522CFDA25B76 /* ConfigurationService+Injection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ConfigurationService+Injection.swift"; sourceTree = "<group>"; };
 		839743E9E3569B229703A3F8 /* OutgoingInfectionMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutgoingInfectionMessage.swift; sourceTree = "<group>"; };
@@ -1367,6 +1369,7 @@
 		784C2D0D2486A97F005160A6 /* What's New */ = {
 			isa = PBXGroup;
 			children = (
+				784C2D102486AA52005160A6 /* AppVersion.swift */,
 				784C2D0E2486A97F005160A6 /* WhatsNewRepository.swift */,
 			);
 			path = "What's New";
@@ -2026,6 +2029,7 @@
 				6153A52B24264A34006A8570 /* UIView+embedSubview.swift in Sources */,
 				6153A4D2242598DC006A8570 /* SicknessCertificateStatusReportViewController.swift in Sources */,
 				4B82571F24266A32007E25C6 /* StartMenuSimpleWebViewViewModel.swift in Sources */,
+				784C2D112486AA52005160A6 /* AppVersion.swift in Sources */,
 				616518E52460777C001219A7 /* ShareAppCardView.swift in Sources */,
 				614D723C242909C000CC545D /* SelfTestingConfirmationViewModel.swift in Sources */,
 				614BAA092423C334006797AA /* Questionnaire.swift in Sources */,
