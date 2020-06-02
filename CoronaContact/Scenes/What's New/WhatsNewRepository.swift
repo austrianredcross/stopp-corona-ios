@@ -5,7 +5,8 @@
 
 import UIKit
 
-typealias AppVersionHistory = [AppVersion: String]
+typealias AppHistoryItem = String
+typealias AppVersionHistory = [AppVersion: AppHistoryItem]
 var appVersionHistory: AppVersionHistory = [
     "2.0": "We now use Apple's Exposure Notification framework :)",
 ]
@@ -20,6 +21,13 @@ class WhatsNewRepository {
     lazy var currentAppVersion: AppVersion = {
         appInfo.appVersion
     }()
+    
+    var newHistoryItems: [AppHistoryItem] {
+        appVersionHistory
+            .filter { $0.key > lastWhatsNewShown }
+            .sorted(by: ascendingKeys)
+            .map { $0.value }
+    }
     
     var isWhatsNewAvailable: Bool {
         appVersionHistory.contains { $0.key > lastWhatsNewShown }

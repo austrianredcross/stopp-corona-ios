@@ -14,6 +14,7 @@ class MainCoordinator: Coordinator, ShareSheetPresentable {
 
     @Injected private var notificationService: NotificationService
     @Injected private var localStorage: LocalStorage
+    @Injected private var whatsNewRepository: WhatsNewRepository
     private weak var mainViewModel: MainViewModel?
 
     init(navigationController: UINavigationController) {
@@ -24,6 +25,10 @@ class MainCoordinator: Coordinator, ShareSheetPresentable {
         let child = MainHelpCoordinator(navigationController: navigationController)
         addChildCoordinator(child)
         child.start()
+    }
+    
+    func show(_ historyItem: AppHistoryItem) {
+        #warning("Not implemented")
     }
 
     func onboarding() {
@@ -116,6 +121,13 @@ class MainCoordinator: Coordinator, ShareSheetPresentable {
             DispatchQueue.main.async { self.onboarding() }
         } else {
             notificationService.dismissAllNotifications()
+            DispatchQueue.main.async {
+                if self.whatsNewRepository.isWhatsNewAvailable,
+                    let latestHistoryItem = self.whatsNewRepository.newHistoryItems.last {
+                    self.show(latestHistoryItem)
+                    self.whatsNewRepository.currentWhatsNewShown()
+                }
+            }
         }
     }
 
