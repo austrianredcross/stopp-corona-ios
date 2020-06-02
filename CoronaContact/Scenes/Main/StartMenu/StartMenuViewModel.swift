@@ -57,6 +57,10 @@ class StartMenuViewModel: ViewModel {
         page.openInSafariVC()
     }
 
+    func openSavedIDs() {
+        coordinator?.openSavedIDs()
+    }
+
     func openSourceLicenses() {
         coordinator?.openLicences()
     }
