@@ -3,17 +3,16 @@
 //  CoronaContact
 //
 
-import Foundation
 import ExposureNotification
+import Foundation
 
 struct TracingKeys: Codable {
-
     private enum CodingKeys: String, CodingKey {
         case
-        temporaryExposureKeys = "temporaryTracingKeys",
-        regions, appPackageName, platform, diagnosisStatus,
-        diagnosisType, deviceVerificationPayload,
-        verificationAuthorityName, verificationPayload
+            temporaryExposureKeys = "temporaryTracingKeys",
+            regions, appPackageName, platform, diagnosisStatus,
+            diagnosisType, deviceVerificationPayload,
+            verificationAuthorityName, verificationPayload
     }
 
     let temporaryExposureKeys: [TemporaryExposureKey]
@@ -30,13 +29,13 @@ struct TracingKeys: Codable {
          diagnosisType: DiagnosisType,
          verificationPayload: Verification) {
         self.temporaryExposureKeys = temporaryExposureKeys
-        self.regions = ["AT"]
-        self.appPackageName = NetworkConfiguration.appId
-        self.platform = "ios"
-        self.diagnosisStatus = diagnosisType.statusCode
+        regions = ["AT"]
+        appPackageName = NetworkConfiguration.appId
+        platform = "ios"
+        diagnosisStatus = diagnosisType.statusCode
         self.diagnosisType = diagnosisType
-        self.deviceVerificationPayload = nil
-        self.verificationAuthorityName = "RedCross"
+        deviceVerificationPayload = nil
+        verificationAuthorityName = "RedCross"
         self.verificationPayload = verificationPayload
     }
 }
@@ -72,10 +71,10 @@ struct TemporaryExposureKey: Codable {
     let transmissionRisk: ENRiskLevel
 
     init(temporaryExposureKey: ENTemporaryExposureKey) {
-        self.key = temporaryExposureKey.keyData.base64EncodedString()
-        self.password = UUID().uuidString
-        self.intervalNumber = temporaryExposureKey.rollingStartNumber
-        self.intervalCount = temporaryExposureKey.rollingPeriod
-        self.transmissionRisk = temporaryExposureKey.transmissionRiskLevel
+        key = temporaryExposureKey.keyData.base64EncodedString()
+        password = UUID().uuidString
+        intervalNumber = temporaryExposureKey.rollingStartNumber
+        intervalCount = temporaryExposureKey.rollingPeriod
+        transmissionRisk = temporaryExposureKey.transmissionRiskLevel
     }
 }

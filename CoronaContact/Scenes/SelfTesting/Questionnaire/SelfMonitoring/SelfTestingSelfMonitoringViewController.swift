@@ -3,13 +3,12 @@
 //  CoronaContact
 //
 
-import UIKit
 import Reusable
+import UIKit
 
 final class SelfTestingSelfMonitoringViewController: UIViewController, StoryboardBased, ViewModelBased, FlashableScrollIndicators {
-
-    @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var instructionsView: InstructionsView!
+    @IBOutlet var scrollView: UIScrollView!
+    @IBOutlet var instructionsView: InstructionsView!
 
     var viewModel: SelfTestingSelfMonitoringViewModel?
 
@@ -38,7 +37,7 @@ final class SelfTestingSelfMonitoringViewController: UIViewController, Storyboar
         instructionsView.instructions = [
             .init(index: 1, text: "self_testing_self_monitoring_recommendation_1".localized),
             .init(index: 2, text: "self_testing_self_monitoring_recommendation_2".localized),
-            .init(index: 3, text: "self_testing_self_monitoring_recommendation_3".localized)
+            .init(index: 3, text: "self_testing_self_monitoring_recommendation_3".localized),
         ]
     }
 

@@ -6,7 +6,6 @@
 import UIKit
 
 final class SelfTestingStatusReportCoordinator: Coordinator, ErrorPresentableCoordinator {
-
     lazy var rootViewController: SelfTestingStatusReportViewController = {
         SelfTestingStatusReportViewController.instantiate()
     }()
@@ -22,8 +21,7 @@ final class SelfTestingStatusReportCoordinator: Coordinator, ErrorPresentableCoo
         navigationController.pushViewController(rootViewController, animated: true)
     }
 
-    override func finish(animated: Bool = false) {
-    }
+    override func finish(animated: Bool = false) {}
 
     func goBackToTanConfirmation() {
         navigationController.popViewController(animated: true)

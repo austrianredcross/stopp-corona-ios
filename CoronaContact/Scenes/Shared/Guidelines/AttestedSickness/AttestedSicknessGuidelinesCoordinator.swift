@@ -6,7 +6,6 @@
 import UIKit
 
 final class AttestedSicknessGuidelinesCoordinator: Coordinator {
-
     lazy var rootViewController: AttestedSicknessGuidelinesViewController = {
         AttestedSicknessGuidelinesViewController.instantiate()
     }()

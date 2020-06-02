@@ -6,7 +6,6 @@
 import UIKit
 
 final class SelfTestingPersonalDataCoordinator: Coordinator, ErrorPresentableCoordinator {
-
     lazy var rootViewController: SelfTestingPersonalDataViewController = {
         SelfTestingPersonalDataViewController.instantiate()
     }()
@@ -22,8 +21,7 @@ final class SelfTestingPersonalDataCoordinator: Coordinator, ErrorPresentableCoo
         navigationController.pushViewController(rootViewController, animated: true)
     }
 
-    override func finish(animated: Bool = false) {
-    }
+    override func finish(animated: Bool = false) {}
 
     func tanConfirmation() {
         let child = SelfTestingTanConfirmationCoordinator(navigationController: navigationController)

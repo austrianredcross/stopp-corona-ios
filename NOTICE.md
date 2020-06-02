@@ -2109,18 +2109,6 @@ SOFTWARE.
    limitations under the License.
 
 
-## GoogleInterchangeUtilities
-
-Copyright 2016 Google
-
-## GoogleNetworkingUtilities
-
-Copyright 2016 Google
-
-## GoogleSymbolUtilities
-
-Copyright 2016 Google
-
 ## GoogleUtilities
 
 
@@ -2372,10 +2360,6 @@ More information at <a href="http://landonf.org/2009/02/index.html">Landon
 Fuller's blog</a>
 
 
-## GoogleUtilitiesLegacy
-
-Copyright 2018 Google
-
 ## M13Checkbox
 
 Copyright (c) 2016 Brandon McQuilkin
@@ -2412,10 +2396,6 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-
-## NearbyMessages
-
-Copyright 2016 Google
 
 ## PromisesObjC
 

@@ -3,13 +3,12 @@
 //  CoronaContact
 //
 
-import UIKit
 import Reusable
+import UIKit
 
-protocol ViewModel: class {
-}
+protocol ViewModel: AnyObject {}
 
-protocol ViewModelBased: class {
+protocol ViewModelBased: AnyObject {
     associatedtype ViewModel
     var viewModel: ViewModel { get set }
 }

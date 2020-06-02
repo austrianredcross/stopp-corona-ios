@@ -4,6 +4,10 @@ type_name:
   max_length:
     warning: 60
     error: 80
+trailing_comma:
+  mandatory_comma: true
+trailing_whitespace:
+  ignores_empty_lines: true
 
 excluded:
   - Pods

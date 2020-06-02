@@ -3,19 +3,18 @@
 //  CoronaContact
 //
 
+import Resolver
 import Reusable
 import UIKit
-import Resolver
 
 final class StartMenuViewController: UIViewController, StoryboardBased, FlashableScrollIndicators {
-
-    @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var versionLabel: UILabel!
-    @IBOutlet weak var hideableFunctionsView: UIStackView!
-    @IBOutlet weak var handshakeView: UIView!
-    @IBOutlet weak var checkSymptomsView: UIView!
-    @IBOutlet weak var revokeSicknessView: UIView!
-    @IBOutlet weak var reportPositiveDoctorsDiagnosisView: UIView!
+    @IBOutlet var scrollView: UIScrollView!
+    @IBOutlet var versionLabel: UILabel!
+    @IBOutlet var hideableFunctionsView: UIStackView!
+    @IBOutlet var handshakeView: UIView!
+    @IBOutlet var checkSymptomsView: UIView!
+    @IBOutlet var revokeSicknessView: UIView!
+    @IBOutlet var reportPositiveDoctorsDiagnosisView: UIView!
 
     @Injected private var notificationService: NotificationService
 
@@ -42,10 +41,6 @@ final class StartMenuViewController: UIViewController, StoryboardBased, Flashabl
 
     @IBAction func closeMenuTapped(_ sender: Any) {
         viewModel?.closeMenu()
-    }
-
-    @IBAction func manualHandshakeButtonTapped(_ sender: Any) {
-        viewModel?.manualHandshake()
     }
 
     @IBAction func checkSymptomsButtonTapped(_ sender: Any) {

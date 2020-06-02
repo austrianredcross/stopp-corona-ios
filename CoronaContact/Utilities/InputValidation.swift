@@ -50,7 +50,7 @@ protocol ValidationRuleType {
 
 class InputValidation {
     func validate(_ input: ValidateableInputType) -> ValidationError? {
-        if input.isOptional && input.inputValue.isEmpty {
+        if input.isOptional, input.inputValue.isEmpty {
             return nil
         }
         guard !input.inputValue.isEmpty else {
@@ -59,7 +59,7 @@ class InputValidation {
 
         var rules: [ValidationRuleType] = []
         switch input.inputType {
-        case .phone(let errorMessage):
+        case let .phone(errorMessage):
             rules.append(PhoneNumberRule(ruleMessage: errorMessage))
         default:
             break
@@ -107,7 +107,7 @@ final class PhoneNumberRule: ValidationRuleType {
     }
 
     func validate(_ value: String) -> ValidationError? {
-        let set = CharacterSet.decimalDigits.union(.whitespaces).union(CharacterSet.init(charactersIn: "+"))
+        let set = CharacterSet.decimalDigits.union(.whitespaces).union(CharacterSet(charactersIn: "+"))
 
         guard set.isSuperset(of: CharacterSet(charactersIn: value)),
             value.first == "+" else {

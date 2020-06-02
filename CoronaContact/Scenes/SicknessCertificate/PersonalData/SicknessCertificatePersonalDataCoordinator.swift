@@ -6,7 +6,6 @@
 import UIKit
 
 final class SicknessCertificatePersonalDataCoordinator: Coordinator, ErrorPresentableCoordinator {
-
     lazy var rootViewController: SicknessCertificatePersonalDataViewController = {
         SicknessCertificatePersonalDataViewController.instantiate()
     }()

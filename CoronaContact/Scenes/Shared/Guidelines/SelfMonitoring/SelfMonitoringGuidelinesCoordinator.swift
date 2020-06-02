@@ -6,7 +6,6 @@
 import UIKit
 
 final class SelfMonitoringGuidelinesCoordinator: Coordinator {
-
     lazy var rootViewController: SelfMonitoringGuidelinesViewController = {
         SelfMonitoringGuidelinesViewController.instantiate()
     }()

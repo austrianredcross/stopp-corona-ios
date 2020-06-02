@@ -6,7 +6,6 @@
 import Foundation
 
 extension Date {
-
     /// Disregards time of day
     func days(until date: Date?) -> Int? {
         guard let date = date else {

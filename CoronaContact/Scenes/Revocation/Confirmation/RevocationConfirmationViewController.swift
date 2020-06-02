@@ -3,12 +3,11 @@
 //  CoronaContact
 //
 
-import UIKit
 import Reusable
+import UIKit
 
 final class RevocationConfirmationViewController: UIViewController, StoryboardBased, ViewModelBased, FlashableScrollIndicators {
-
-    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet var scrollView: UIScrollView!
 
     var viewModel: RevocationConfirmationViewModel?
 

@@ -7,12 +7,12 @@ import UIKit
 
 @IBDesignable
 class ProgressView: UIView {
-
     @IBInspectable var numberOfSteps: Int = 3 {
         didSet {
             configureSteps()
         }
     }
+
     @IBInspectable var currentStep: Int = 0 {
         didSet {
             updateCurrentStep()
@@ -63,7 +63,7 @@ class ProgressView: UIView {
             stackView.leadingAnchor.constraint(equalTo: leadingAnchor),
             stackView.trailingAnchor.constraint(equalTo: trailingAnchor),
             stackView.topAnchor.constraint(equalTo: topAnchor),
-            stackView.heightAnchor.constraint(equalToConstant: 8)
+            stackView.heightAnchor.constraint(equalToConstant: 8),
         ])
     }
 
@@ -73,7 +73,7 @@ class ProgressView: UIView {
         }
         stepsViews = []
 
-        for _ in 0..<numberOfSteps {
+        for _ in 0 ..< numberOfSteps {
             addStep()
         }
 
@@ -90,7 +90,7 @@ class ProgressView: UIView {
         NSLayoutConstraint.activate([
             label.trailingAnchor.constraint(equalTo: trailingAnchor),
             label.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 4),
-            label.bottomAnchor.constraint(equalTo: bottomAnchor)
+            label.bottomAnchor.constraint(equalTo: bottomAnchor),
         ])
     }
 
@@ -107,7 +107,7 @@ class ProgressView: UIView {
             return
         }
 
-        stepsViews.enumerated().forEach { (index, stepView) in
+        stepsViews.enumerated().forEach { index, stepView in
             if currentStep >= index {
                 stepView.backgroundColor = .ccRouge
             } else {

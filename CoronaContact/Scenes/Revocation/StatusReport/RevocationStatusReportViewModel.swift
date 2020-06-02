@@ -14,8 +14,8 @@ private let dateString: (Date) -> String = { date in
 }
 
 class RevocationStatusReportViewModel: ViewModel {
-
     @Injected private var flowController: RevocationFlowController
+    @Injected private var localStorage: LocalStorage
 
     weak var coordinator: RevocationStatusReportCoordinator?
 
@@ -26,7 +26,7 @@ class RevocationStatusReportViewModel: ViewModel {
     }
 
     var dateLabel: String? {
-        guard let date = UserDefaults.standard.isProbablySickAt else {
+        guard let date = localStorage.isProbablySickAt else {
             return nil
         }
 
@@ -46,7 +46,7 @@ class RevocationStatusReportViewModel: ViewModel {
             completion()
 
             switch result {
-            case .failure(let error):
+            case let .failure(error):
                 self?.coordinator?.showErrorAlert(
                     title: error.displayableError.title,
                     error: error.displayableError.description,

@@ -6,7 +6,6 @@
 import UIKit
 
 final class SicknessCertificateCoordinator: Coordinator {
-
     var navigationController: UINavigationController
 
     init(navigationController: UINavigationController) {

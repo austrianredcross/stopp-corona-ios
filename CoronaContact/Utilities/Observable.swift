@@ -24,7 +24,7 @@ final class AnySubscription: Hashable {
 
     init<T>(_ subscription: Subscription<T>) {
         self.subscription = subscription
-        self.identifier = ObjectIdentifier(subscription)
+        identifier = ObjectIdentifier(subscription)
     }
 
     func add(to subscriptions: inout Set<AnySubscription>) {
@@ -54,19 +54,19 @@ struct WeakArray<Element: AnyObject> {
         items = elements.map { WeakBox($0) }
     }
 
-    init() { }
+    init() {}
 }
 
 extension WeakArray: Collection {
-    var startIndex: Int { return items.startIndex }
-    var endIndex: Int { return items.endIndex }
+    var startIndex: Int { items.startIndex }
+    var endIndex: Int { items.endIndex }
 
     subscript(_ index: Int) -> Element? {
-        return items[index].unbox
+        items[index].unbox
     }
 
     func index(after idx: Int) -> Int {
-        return items.index(after: idx)
+        items.index(after: idx)
     }
 
     mutating func append(_ newElement: Element) {

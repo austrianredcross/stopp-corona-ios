@@ -3,27 +3,21 @@
 //  CoronaContact
 //
 
-import UIKit
 import Resolver
+import UIKit
 
 class MainCoordinator: Coordinator, ShareSheetPresentable {
-
     var navigationController: UINavigationController
     var rootViewController: UIViewController {
         navigationController
     }
 
     @Injected private var notificationService: NotificationService
+    @Injected private var localStorage: LocalStorage
     private weak var mainViewModel: MainViewModel?
 
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
-    }
-
-    func contacts() {
-        let child = ContactCoordinator(navigationController: navigationController)
-        addChildCoordinator(child)
-        child.start()
     }
 
     func help() {
@@ -118,7 +112,7 @@ class MainCoordinator: Coordinator, ShareSheetPresentable {
         mainViewModel = viewModel
         navigationController.pushViewController(viewController, animated: false)
 
-        if !UserDefaults.standard.hasSeenOnboarding {
+        if !localStorage.hasSeenOnboarding {
             DispatchQueue.main.async { self.onboarding() }
         } else {
             notificationService.dismissAllNotifications()

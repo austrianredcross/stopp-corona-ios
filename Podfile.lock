@@ -41,11 +41,6 @@ PODS:
   - GoogleDataTransportCCTSupport (2.0.1):
     - GoogleDataTransport (~> 5.1)
     - nanopb (~> 0.3.901)
-  - GoogleInterchangeUtilities (1.2.2):
-    - GoogleSymbolUtilities (~> 1.1)
-  - GoogleNetworkingUtilities (1.2.2):
-    - GoogleSymbolUtilities (~> 1.1)
-  - GoogleSymbolUtilities (1.1.2)
   - GoogleUtilities/AppDelegateSwizzler (6.5.2):
     - GoogleUtilities/Environment
     - GoogleUtilities/Logger
@@ -62,8 +57,6 @@ PODS:
     - GoogleUtilities/Logger
   - GoogleUtilities/UserDefaults (6.5.2):
     - GoogleUtilities/Logger
-  - GoogleUtilitiesLegacy (1.3.2):
-    - GoogleSymbolUtilities (~> 1.1)
   - lottie-ios (3.1.6)
   - M13Checkbox (3.4.0)
   - Moya (14.0.0):
@@ -75,11 +68,6 @@ PODS:
     - nanopb/encode (= 0.3.9011)
   - nanopb/decode (0.3.9011)
   - nanopb/encode (0.3.9011)
-  - NearbyMessages (1.1.1):
-    - GoogleInterchangeUtilities (~> 1.2)
-    - GoogleNetworkingUtilities (~> 1.2)
-    - GoogleSymbolUtilities (~> 1.1)
-    - GoogleUtilitiesLegacy (~> 1.3)
   - PromisesObjC (1.2.8)
   - Protobuf (3.11.4)
   - Resolver (1.1.2)
@@ -103,10 +91,9 @@ DEPENDENCIES:
   - lottie-ios
   - M13Checkbox
   - Moya
-  - NearbyMessages
   - Resolver
   - Reusable
-  - SQLite.swift (~> 0.12.0)
+  - SQLite.swift
   - SQLiteMigrationManager.swift
   - SwiftLint
   - SwiftRichString
@@ -126,16 +113,11 @@ SPEC REPOS:
     - FirebaseMessaging
     - GoogleDataTransport
     - GoogleDataTransportCCTSupport
-    - GoogleInterchangeUtilities
-    - GoogleNetworkingUtilities
-    - GoogleSymbolUtilities
     - GoogleUtilities
-    - GoogleUtilitiesLegacy
     - lottie-ios
     - M13Checkbox
     - Moya
     - nanopb
-    - NearbyMessages
     - PromisesObjC
     - Protobuf
     - Resolver
@@ -159,16 +141,11 @@ SPEC CHECKSUMS:
   FirebaseMessaging: 4ec33842d36b3319e062e51fb8b35a74f726950d
   GoogleDataTransport: b29a21d813e906014ca16c00897827e40e4a24ab
   GoogleDataTransportCCTSupport: 6f15a89b0ca35d6fa523e1f752ef818588885988
-  GoogleInterchangeUtilities: d5bc4d88d5b661ab72f9d70c58d02ca8c27ad1f7
-  GoogleNetworkingUtilities: 3edd3a8161347494f2da60ea0deddc8a472d94cb
-  GoogleSymbolUtilities: 631ee17048aa5e9ab133470d768ea997a5ef9b96
   GoogleUtilities: ad0f3b691c67909d03a3327cc205222ab8f42e0e
-  GoogleUtilitiesLegacy: 5501bedec1646bd284286eb5fc9453f7e23a12f4
   lottie-ios: 85ce835dd8c53e02509f20729fc7d6a4e6645a0a
   M13Checkbox: 6f59404540ac98ba83a3d1afac335895a40c6a5d
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
-  NearbyMessages: bd9e88f2df7fbab78be58fed58580d5d5bd62cbf
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
   Protobuf: 176220c526ad8bd09ab1fb40a978eac3fef665f7
   Resolver: e04ca5a9a19906f2e5cdceb2b90edd3b5daed049
@@ -179,6 +156,6 @@ SPEC CHECKSUMS:
   SwiftRichString: 9a6a70b4fe2cf428e38348b5ada5400da74621fd
   SwiftyBeaver: d39e7c376bf15e9fffca8263b8fd1f42ea56aa2d
 
-PODFILE CHECKSUM: ac802f91838ddd0cf381cdac478be090037237ca
+PODFILE CHECKSUM: f6cba09b3f1ab7d242c2e1d182eed0f02a9cb97e
 
 COCOAPODS: 1.9.1

@@ -8,11 +8,10 @@ import Foundation
 // MARK: - PersonalData
 
 struct PersonalData: Codable {
-
     private enum CodingKeys: String, CodingKey {
         case
-        mobileNumber = "mobile-number",
-        diagnosisType = "type"
+            mobileNumber = "mobile-number",
+            diagnosisType = "type"
     }
 
     let mobileNumber: String

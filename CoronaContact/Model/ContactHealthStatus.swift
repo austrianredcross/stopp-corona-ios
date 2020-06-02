@@ -1,12 +1,11 @@
 //
-//  HealthStatus.swift
+//  ContactHealthStatus.swift
 //  CoronaContact
 //
 
 import UIKit
 
 enum ContactHealthStatus {
-
     case mixed(quarantineDays: Int? = 0)
     case red(quarantineDays: Int? = 0)
     case yellow(quarantineDays: Int? = 0)
@@ -34,7 +33,6 @@ enum ContactHealthStatus {
 // MARK: - Notification in the Dashboard
 
 extension ContactHealthStatus {
-
     var headlineNotification: String {
         "contact_health_status_headline".localized
     }
@@ -56,9 +54,9 @@ extension ContactHealthStatus {
 
     var quarantineDays: Int? {
         switch self {
-        case .mixed(let quarantineDays),
-             .red(let quarantineDays),
-             .yellow(let quarantineDays):
+        case let .mixed(quarantineDays),
+             let .red(quarantineDays),
+             let .yellow(quarantineDays):
             return quarantineDays
         }
     }
@@ -87,7 +85,6 @@ extension ContactHealthStatus {
     private var icon: String {
         "WarningIconWhite"
     }
-
 }
 
 // MARK: - Contact Sickness Screen
@@ -100,7 +97,6 @@ private let dateString: (Date) -> String = { date in
 }
 
 extension ContactHealthStatus {
-
     var title: String {
         switch self {
         case .mixed:
@@ -186,7 +182,7 @@ extension ContactHealthStatus {
             .init(index: 1, text: "contact_sickness_guidelines_first".localized),
             .init(index: 2, text: "contact_sickness_guidelines_second".localized),
             .init(index: 3, text: "contact_sickness_guidelines_third".localized),
-            .init(index: 4, text: "contact_sickness_guidelines_fourth".localized)
+            .init(index: 4, text: "contact_sickness_guidelines_fourth".localized),
         ]
     }
 }

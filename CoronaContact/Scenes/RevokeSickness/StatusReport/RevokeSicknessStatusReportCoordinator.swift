@@ -6,7 +6,6 @@
 import UIKit
 
 final class RevokeSicknessStatusReportCoordinator: Coordinator, ErrorPresentableCoordinator {
-
     lazy var rootViewController: RevokeSicknessStatusReportViewController = {
         RevokeSicknessStatusReportViewController.instantiate()
     }()

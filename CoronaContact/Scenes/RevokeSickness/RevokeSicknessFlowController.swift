@@ -4,12 +4,14 @@
 //
 
 import Foundation
+import Resolver
 
 class RevokeSicknessFlowController: ReportHealthStatusFlowController {
+    private var localStorage: LocalStorage = Resolver.resolve()
 
     init() {
         let diagnosisType: DiagnosisType
-        if UserDefaults.standard.isProbablySick {
+        if localStorage.isProbablySick {
             diagnosisType = .yellow
         } else {
             diagnosisType = .green

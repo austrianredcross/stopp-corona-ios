@@ -3,6 +3,7 @@
 //  CoronaContact
 //
 
+import Resolver
 import UIKit
 
 enum RevocationStatus {
@@ -11,11 +12,12 @@ enum RevocationStatus {
     case allClear
 
     init?() {
-        if UserDefaults.standard.completedVoluntaryQuarantine {
+        let localStorage: LocalStorage = Resolver.resolve()
+        if localStorage.completedVoluntaryQuarantine {
             self = .completedVoluntaryQuarantine
-        } else if UserDefaults.standard.completedRequiredQuarantine {
+        } else if localStorage.completedRequiredQuarantine {
             self = .completedRequiredQuarantine
-        } else if UserDefaults.standard.allClearQuarantine {
+        } else if localStorage.allClearQuarantine {
             self = .allClear
         } else {
             return nil
@@ -68,8 +70,9 @@ enum RevocationStatus {
     }
 
     func clear() {
-        UserDefaults.standard.completedVoluntaryQuarantine = false
-        UserDefaults.standard.completedRequiredQuarantine = false
-        UserDefaults.standard.allClearQuarantine = false
+        let localStorage: LocalStorage = Resolver.resolve()
+        localStorage.completedVoluntaryQuarantine = false
+        localStorage.completedRequiredQuarantine = false
+        localStorage.allClearQuarantine = false
     }
 }

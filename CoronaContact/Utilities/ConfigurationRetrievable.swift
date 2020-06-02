@@ -6,7 +6,6 @@
 import Foundation
 
 protocol ConfigurationRetrievable {
-
     static func value<A>(for key: String) -> A where A: LosslessStringConvertible
     static func value<A, B>(for key: String, _ transform: (A) -> B) -> B where A: LosslessStringConvertible
 }

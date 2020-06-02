@@ -32,7 +32,7 @@ struct DateFormatters {
     }
 }
 
-var dateFormatters = DateFormatters { (formatter, format) in
+var dateFormatters = DateFormatters { formatter, format in
     formatter.dateStyle = .short
     formatter.dateFormat = format.rawValue
 }
@@ -42,7 +42,6 @@ extension JSONEncoder.DateEncodingStrategy {
 }
 
 extension JSONEncoder {
-
     static let withApiDateFormat: JSONEncoder = {
         let encoder = JSONEncoder()
         encoder.dateEncodingStrategy = .api

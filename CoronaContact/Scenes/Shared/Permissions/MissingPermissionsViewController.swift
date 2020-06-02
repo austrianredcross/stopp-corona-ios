@@ -3,11 +3,10 @@
 //  CoronaContact
 //
 
-import UIKit
 import Reusable
+import UIKit
 
 struct MissingPermissionsRepresentable {
-
     let title: String
     let headline: String
     let description: String
@@ -18,13 +17,12 @@ struct MissingPermissionsRepresentable {
 }
 
 final class MissingPermissionsViewController: UIViewController, StoryboardBased, ViewModelBased {
-
-    @IBOutlet weak var headlineLabel: TransLabel!
-    @IBOutlet weak var descriptionLabel: TransLabel!
-    @IBOutlet weak var iconImageView: UIImageView!
-    @IBOutlet weak var iconCaptionLabel: TransLabel!
-    @IBOutlet weak var settingsLabel: TransLabel!
-    @IBOutlet weak var button: TransButton!
+    @IBOutlet var headlineLabel: TransLabel!
+    @IBOutlet var descriptionLabel: TransLabel!
+    @IBOutlet var iconImageView: UIImageView!
+    @IBOutlet var iconCaptionLabel: TransLabel!
+    @IBOutlet var settingsLabel: TransLabel!
+    @IBOutlet var button: TransButton!
 
     var viewModel: MissingPermissionsViewModel?
 
@@ -58,7 +56,6 @@ final class MissingPermissionsViewController: UIViewController, StoryboardBased,
 }
 
 extension MissingPermissionsViewController {
-
     static var bluetooth: MissingPermissionsViewController {
         let viewController = instantiate()
         let representation = MissingPermissionsRepresentable(

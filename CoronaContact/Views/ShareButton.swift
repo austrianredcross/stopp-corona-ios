@@ -7,7 +7,6 @@ import Foundation
 import UIKit
 
 class ShareButton: ArrowButton {
-
     var leftImageSize: CGFloat = 24
 
     lazy var leftImageView: UIImageView = {
@@ -35,7 +34,7 @@ class ShareButton: ArrowButton {
             leftImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: spacing),
             leftImageView.widthAnchor.constraint(equalToConstant: leftImageSize),
             leftImageView.heightAnchor.constraint(equalTo: leftImageView.widthAnchor),
-            leftImageView.centerYAnchor.constraint(equalTo: centerYAnchor)
+            leftImageView.centerYAnchor.constraint(equalTo: centerYAnchor),
         ])
     }
 

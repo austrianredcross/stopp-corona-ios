@@ -6,7 +6,6 @@
 import UIKit
 
 final class RevocationStatusReportCoordinator: Coordinator, ErrorPresentableCoordinator {
-
     lazy var rootViewController: RevocationStatusReportViewController = {
         RevocationStatusReportViewController.instantiate()
     }()
@@ -22,8 +21,7 @@ final class RevocationStatusReportCoordinator: Coordinator, ErrorPresentableCoor
         navigationController.pushViewController(rootViewController, animated: true)
     }
 
-    override func finish(animated: Bool = false) {
-    }
+    override func finish(animated: Bool = false) {}
 
     func goBackToTanConfirmation() {
         navigationController.popViewController(animated: true)

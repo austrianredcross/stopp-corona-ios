@@ -19,24 +19,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var appCoordinator: ApplicationCoordinator!
     let log = ContextLogger(context: .application)
+    private var observers = [NSObjectProtocol]()
 
     private var serivcesInitialized: Bool = false
 
     @Injected private var configService: ConfigurationService
-    @Injected private var cryptoService: CryptoService
-    @Injected private var msgUpdateService: MessageUpdateService
     @Injected private var appUpdateService: AppUpdateService
     @Injected private var notificationService: NotificationService
-    @Injected private var messageUpdateService: MessageUpdateService
     @Injected private var databaseService: DatabaseService
     @Injected private var healthRepository: HealthRepository
     @Injected private var localStorage: LocalStorage
-    @available(iOS 13.5, *)
     @Injected private var exposureManager: ExposureManager
 
     lazy var screenSize: ScreenSize = {
         let width = UIScreen.main.bounds.size.width
-        if width >= 414 { return .large } else if width >= 375 { return .medium }
+        if width >= 414 {
+            return .large
+        } else if width >= 375 {
+            return .medium
+        }
         return .small
     }()
 
@@ -47,12 +48,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         log.info("Application starting with launchOptions: \(String(describing: launchOptions))")
 
-        databaseService.migrate()
-        cryptoService.createKeysIfNeeded()
-        healthRepository.cleanupOldHealthReportsAndContacts()
-        if #available(iOS 13.5, *) {
-            registerBackgroundTask()
-        }
+        appUpdateService.cleanupOldData()
+        registerBackgroundTask()
 
         UNUserNotificationCenter.current().delegate = self
 
@@ -60,29 +57,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         appCoordinator = ApplicationCoordinator(window: window)
         appCoordinator.start()
 
-        if UserDefaults.standard.hasSeenOnboarding {
+        if localStorage.hasSeenOnboarding {
             initializeExternalServices(application)
+        } else {
+            observers.append(localStorage.$hasSeenOnboarding.addObserver { [unowned self] in
+                self.initializeExternalServices(application)
+            })
         }
 
         return true
     }
 
     func initializeExternalServices(_ application: UIApplication) {
-        guard serivcesInitialized == false else { return }
+        guard serivcesInitialized == false else {
+            return
+        }
 
         configService.update()
-        msgUpdateService.update()
 
         FirebaseApp.configure()
         Messaging.messaging().delegate = self
         application.registerForRemoteNotifications()
-        subscribeToAddressPrefixTopic()
-
         serivcesInitialized = true
     }
 
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any]) {
-        msgUpdateService.update()
+        // TODO: what should happen on push notification?
     }
 
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
@@ -92,8 +92,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         appUpdateService.showUpdateAlertIfNecessary()
-        if serivcesInitialized {
-            msgUpdateService.update()
+    }
+
+    deinit {
+        for observer in observers {
+            NotificationCenter.default.removeObserver(observer)
         }
     }
 }
@@ -126,7 +129,9 @@ extension AppDelegate {
     }
 
     func scheduleBackgroundTaskIfNeeded() {
-        guard exposureManager.authorizationStatus == .authorized else { return }
+        guard exposureManager.authorizationStatus == .authorized else {
+            return
+        }
         let taskRequest = BGProcessingTaskRequest(identifier: AppDelegate.backgroundTaskIdentifier)
         taskRequest.requiresNetworkConnectivity = true
         do {
@@ -141,15 +146,8 @@ extension AppDelegate {
 // MARK: Messaging
 
 extension AppDelegate: MessagingDelegate {
-    private func subscribeToAddressPrefixTopic() {
-        guard let addressPrefix = cryptoService.getMyPublicKeyPrefix() else {
-            return
-        }
-        Messaging.messaging().subscribe(toTopic: addressPrefix)
-    }
-
     func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
-        subscribeToAddressPrefixTopic()
+        Messaging.messaging().subscribe(toTopic: "all")
     }
 }
 
@@ -163,7 +161,7 @@ extension AppDelegate {
         navigationBarAppearace.setBackgroundImage(UIImage(), for: .default)
         navigationBarAppearace.shadowImage = UIImage()
         navigationBarAppearace.titleTextAttributes = [
-            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17, weight: .semibold)
+            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17, weight: .semibold),
         ]
     }
 }
@@ -183,7 +181,6 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
                                 willPresent notification: UNNotification,
                                 withCompletionHandler
                                 completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        msgUpdateService.update()
         completionHandler([.alert, .sound])
     }
 }

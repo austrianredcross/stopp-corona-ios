@@ -15,14 +15,13 @@ import Resolver
  ```
  */
 final class NetworkService {
-
     @Injected var appUpdateService: AppUpdateService
 
     private let client: NetworkClient
 
     init() {
-        self.client = NetworkClient()
-        self.client.handleStatusCode = { [weak self] statusCode in
+        client = NetworkClient()
+        client.handleStatusCode = { [weak self] statusCode in
             self?.filterStatusCode(statusCode)
         }
     }
@@ -41,11 +40,11 @@ final class NetworkService {
         let requestTan = RequestTan(phoneNumber: mobileNumber)
         client.request(.requestTan(requestTan)) { (result: Result<RequestTanResponse, NetworkError>) in
             switch result {
-            case let .failure((.unknownError(statusCode, _, _))):
+            case let .failure(.unknownError(statusCode, _, _)):
                 completion(.failure(self.parseTanEror(statusCode: statusCode)))
             case .failure:
                 completion(.failure(self.parseTanEror(statusCode: nil)))
-            case .success(let response):
+            case let .success(response):
                 completion(.success(response))
             }
         }
@@ -54,11 +53,11 @@ final class NetworkService {
     func sendTracingKeys(_ tracingKeys: TracingKeys, completion: @escaping (Result<SuccessResponse, TracingKeysError>) -> Void) {
         client.request(.publish(tracingKeys)) { (result: Result<SuccessResponse, NetworkError>) in
             switch result {
-            case let .failure((.unknownError(statusCode, _, _))):
+            case let .failure(.unknownError(statusCode, _, _)):
                 completion(.failure(self.parseTracingKeysError(statusCode: statusCode)))
             case .failure:
                 completion(.failure(self.parseTracingKeysError(statusCode: nil)))
-            case .success(let response):
+            case let .success(response):
                 completion(.success(response))
             }
         }

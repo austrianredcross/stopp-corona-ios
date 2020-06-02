@@ -6,7 +6,6 @@
 import UIKit
 
 class FloatingTextField: UITextField, ValidateableInputType {
-
     enum ErrorState {
         case none
         case message(String)
@@ -23,11 +22,13 @@ class FloatingTextField: UITextField, ValidateableInputType {
             label.insets = labelInsets
         }
     }
+
     @IBInspectable var labelText: String = "" {
         didSet {
             label?.text = labelText
         }
     }
+
     var labelFont: UIFont? {
         didSet {
             guard let font = labelFont else {
@@ -46,6 +47,7 @@ class FloatingTextField: UITextField, ValidateableInputType {
             configurePlaceholder(newValue, font: placeholderFont)
         }
     }
+
     var placeholderFont: UIFont? {
         didSet {
             guard let font = placeholderFont else {
@@ -100,6 +102,7 @@ class FloatingTextField: UITextField, ValidateableInputType {
 
         return errorLabel.frame.height
     }
+
     private var calculatedErrorLabelTopPadding: CGFloat {
         guard errorIsVisible else {
             return 0
@@ -119,6 +122,7 @@ class FloatingTextField: UITextField, ValidateableInputType {
 
         return UIEdgeInsets(top: topInset, left: insets.left, bottom: insets.bottom, right: insets.right)
     }
+
     private var calculatedBorderWidth: CGFloat {
         isEditing ? 2.0 : 1.0
     }
@@ -136,6 +140,7 @@ class FloatingTextField: UITextField, ValidateableInputType {
     var inputValue: String {
         text ?? ""
     }
+
     var inputType: ValidateableInputContent = .text {
         didSet {
             switch inputType {
@@ -220,7 +225,7 @@ class FloatingTextField: UITextField, ValidateableInputType {
             borderView.leadingAnchor.constraint(equalTo: leadingAnchor),
             borderView.topAnchor.constraint(equalTo: topAnchor),
             borderView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            borderView.heightAnchor.constraint(equalToConstant: desiredHeight)
+            borderView.heightAnchor.constraint(equalToConstant: desiredHeight),
         ])
     }
 
@@ -239,7 +244,7 @@ class FloatingTextField: UITextField, ValidateableInputType {
 
         NSLayoutConstraint.activate([
             labelTopConstraint,
-            labelLeadingConstraint
+            labelLeadingConstraint,
         ])
     }
 
@@ -255,7 +260,7 @@ class FloatingTextField: UITextField, ValidateableInputType {
         NSLayoutConstraint.activate([
             errorLabel.leadingAnchor.constraint(equalTo: borderView.leadingAnchor),
             errorLabel.topAnchor.constraint(equalTo: borderView.bottomAnchor, constant: errorLabelTopPadding),
-            errorLabel.trailingAnchor.constraint(equalTo: borderView.trailingAnchor)
+            errorLabel.trailingAnchor.constraint(equalTo: borderView.trailingAnchor),
         ])
     }
 
@@ -281,7 +286,7 @@ class FloatingTextField: UITextField, ValidateableInputType {
             invalidateIntrinsicContentSize()
         }
 
-        guard case .message(let error) = error else {
+        guard case let .message(error) = error else {
             removeError()
             return
         }
@@ -336,7 +341,7 @@ extension FloatingTextField {
                 switch validationError {
                 case .empty:
                     return "general_validation_required".localized
-                case .invalid(let reason):
+                case let .invalid(reason):
                     return reason
                 }
             }()
@@ -357,7 +362,6 @@ extension FloatingTextField {
 // MARK: - InputElementType
 
 extension FloatingTextField: InputElementType {
-
     public func shouldBecomeFirstResponder() {
         _ = becomeFirstResponder()
     }

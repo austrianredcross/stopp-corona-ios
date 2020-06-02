@@ -6,7 +6,6 @@
 import UIKit
 
 extension UIView {
-
     /// SwifterSwift: Add shadow to view.
     ///
     /// - Parameters:

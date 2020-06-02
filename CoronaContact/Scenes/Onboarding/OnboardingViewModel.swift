@@ -1,8 +1,9 @@
 //
-//  MainViewModel.swift
+//  OnboardingViewModel.swift
 //  CoronaContact
 //
 
+import Resolver
 import UIKit
 
 struct OnboardingPage {
@@ -24,14 +25,15 @@ struct OnboardingPage {
 }
 
 class OnboardingViewModel: ViewModel {
+    @Injected private var localStorage: LocalStorage
 
     public var agreementToDataPrivacy = false {
         didSet {
             if agreementToDataPrivacy {
-                UserDefaults.standard.agreedToDataPrivacyAt = Date()
+                localStorage.agreedToDataPrivacyAt = Date()
                 viewController?.isButtonEnabled = true
             } else {
-                UserDefaults.standard.agreedToDataPrivacyAt = nil
+                localStorage.agreedToDataPrivacyAt = nil
                 viewController?.isButtonEnabled = false
             }
         }
@@ -63,7 +65,7 @@ class OnboardingViewModel: ViewModel {
 
     init(with coordinator: OnboardingCoordinator, context: Context = .regular) {
         self.coordinator = coordinator
-        self.currentContext = context
+        currentContext = context
 
         pages = [
             OnboardingPage(
@@ -98,7 +100,7 @@ class OnboardingViewModel: ViewModel {
                 buttonHandler: { [weak self] in
                     self?.termsOfUse()
                 }
-            )
+            ),
         ]
     }
 
@@ -139,7 +141,7 @@ class OnboardingViewModel: ViewModel {
     }
 
     func completedLegalOnboarding() {
-        UserDefaults.standard.hasSeenOnboarding = true
+        localStorage.hasSeenOnboarding = true
         coordinator?.finish(animated: true)
     }
 

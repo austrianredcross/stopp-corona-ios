@@ -3,9 +3,9 @@
 //  CoronaContact
 //
 
+import Resolver
 import UIKit
 import UserNotifications
-import Resolver
 
 struct NotificationServiceKeys {
     static let selfTestPush = "selfTestPush"
@@ -36,13 +36,13 @@ class NotificationService: NSObject {
     func showSuspectedSickContactNotification(_ warning: InfectionWarning) {
         let title = "local_notification_suspected_sick_contact_headline".localized
         let body = "local_notification_suspected_sick_contact_message".localized
-        self.showNotification(title: title, body: body)
+        showNotification(title: title, body: body)
     }
 
     func showCertifiedSickContactNotification(_ warning: InfectionWarning) {
         let title = "local_notification_sick_contact_headline".localized
         let body = "local_notification_sick_contact_message".localized
-        self.showNotification(title: title, body: body)
+        showNotification(title: title, body: body)
     }
 
     func showQuarantineCompletedNotification(endOfQuarantine: Date) {
@@ -62,11 +62,11 @@ class NotificationService: NSObject {
 
         let titleRed = "TEST: \("local_notification_sick_contact_headline".localized))"
         let bodyRed = "local_notification_sick_contact_message".localized
-        self.showNotification(title: titleRed, body: bodyRed, delay: 5)
+        showNotification(title: titleRed, body: bodyRed, delay: 5)
 
         let titleYellow = "TEST: \("local_notification_suspected_sick_contact_headline".localized)"
         let bodyYellow = "local_notification_suspected_sick_contact_message".localized
-        self.showNotification(title: titleYellow, body: bodyYellow, delay: 5)
+        showNotification(title: titleYellow, body: bodyYellow, delay: 5)
     }
 
     func showNotification(title: String, body: String, delay: Int = 0) {
@@ -82,8 +82,8 @@ class NotificationService: NSObject {
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
 
         let request = UNNotificationRequest(identifier: UUID().uuidString,
-                                                 content: content,
-                                                 trigger: trigger)
+                                            content: content,
+                                            trigger: trigger)
 
         notificationCenter.add(request)
     }
@@ -107,7 +107,6 @@ class NotificationService: NSObject {
     }
 
     func addSelfTestReminderNotificationIn(seconds: TimeInterval = 60 * 60 * 6) {
-
         removeSelfTestReminderNotification()
 
         let content = UNMutableNotificationContent()
@@ -120,8 +119,8 @@ class NotificationService: NSObject {
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: seconds, repeats: false)
 
         let request = UNNotificationRequest(identifier: NotificationServiceKeys.selfTestPush,
-                content: content,
-                trigger: trigger)
+                                            content: content,
+                                            trigger: trigger)
 
         notificationCenter.add(request)
     }

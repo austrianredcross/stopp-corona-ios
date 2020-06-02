@@ -4,8 +4,10 @@
 //
 
 import Foundation
+import Resolver
 
 class RevocationConfirmationViewModel: ViewModel {
+    @Injected private var localStorage: LocalStorage
     weak var coordinator: RevocationConfirmationCoordinator?
 
     init(with coordinator: RevocationConfirmationCoordinator) {
@@ -13,11 +15,9 @@ class RevocationConfirmationViewModel: ViewModel {
     }
 
     func onViewDidLoad() {
-        UserDefaults.standard.isProbablySick = false
-        UserDefaults.standard.isProbablySickAt = nil
-        UserDefaults.standard.isUnderSelfMonitoring = false
-        UserDefaults.standard.completedVoluntaryQuarantine = true
-        NotificationCenter.default.post(name: .DatabaseSicknessUpdated, object: nil)
+        localStorage.isProbablySickAt = nil
+        localStorage.isUnderSelfMonitoring = false
+        localStorage.completedVoluntaryQuarantine = true
     }
 
     func returnToMain() {

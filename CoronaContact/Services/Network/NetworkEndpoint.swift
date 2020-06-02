@@ -14,6 +14,7 @@ enum NetworkEndpoint: TargetType {
 }
 
 // MARK: - TargetType Protocol Implementation
+
 extension NetworkEndpoint {
     var baseURL: URL {
         switch self {
@@ -80,7 +81,7 @@ extension NetworkEndpoint {
         return [
             NetworkConfiguration.HeaderKeys.authorizationKey: authorizationKey,
             NetworkConfiguration.HeaderKeys.appId: NetworkConfiguration.appId,
-            NetworkConfiguration.HeaderKeys.contentType: NetworkConfiguration.HeaderValues.contentType
+            NetworkConfiguration.HeaderKeys.contentType: NetworkConfiguration.HeaderValues.contentType,
         ]
     }
 }

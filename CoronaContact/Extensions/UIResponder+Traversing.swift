@@ -14,7 +14,7 @@ extension UIResponder {
        - view: Stop searching when `view` is encountered. If `nil`, the responder chain may be traversed to the end.
      */
     func first<T: UIResponder>(ofType type: T.Type, stopAt view: UIView?) -> T? {
-        return first(stopAt: view, matching: { $0 is T }) as? T
+        first(stopAt: view, matching: { $0 is T }) as? T
     }
 
     private func first(stopAt view: UIView?, matching predicate: (UIResponder) -> Bool) -> UIResponder? {
@@ -24,6 +24,6 @@ extension UIResponder {
         if let view = view, self === view {
             return nil
         }
-        return self.next?.first(stopAt: view, matching: predicate)
+        return next?.first(stopAt: view, matching: predicate)
     }
 }

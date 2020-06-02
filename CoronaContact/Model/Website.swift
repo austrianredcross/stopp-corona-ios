@@ -6,13 +6,13 @@
 import UIKit
 
 enum Website: String {
-    case imprint = "imprint"
-    case privacy = "privacy"
+    case imprint
+    case privacy
     case termsOfUse = "terms-of-use"
     case privacyAndTermsOfUse = "privacy-and-terms-of-use"
 
     private var localisedFileName: String {
-        return Language.current.rawValue + "." + rawValue
+        Language.current.rawValue + "." + rawValue
     }
 
     var url: URL {
@@ -43,7 +43,6 @@ enum ExternalWebsite: String {
 }
 
 extension ExternalWebsite {
-
     func openInSafariVC(from viewController: UIViewController? = nil) {
         guard let url = url else {
             return

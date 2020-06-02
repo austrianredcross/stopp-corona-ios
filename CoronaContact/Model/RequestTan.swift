@@ -6,6 +6,5 @@
 import Foundation
 
 struct RequestTan: Codable {
-
     let phoneNumber: String
 }

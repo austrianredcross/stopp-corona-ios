@@ -6,7 +6,6 @@
 import UIKit
 
 final class SelfTestingTanConfirmationCoordinator: Coordinator, ErrorPresentableCoordinator {
-
     lazy var rootViewController: SelfTestingTanConfirmationViewController = {
         SelfTestingTanConfirmationViewController.instantiate()
     }()

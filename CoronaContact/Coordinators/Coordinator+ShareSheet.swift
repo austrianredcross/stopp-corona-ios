@@ -12,7 +12,6 @@ protocol ShareSheetPresentable {
 }
 
 extension ShareSheetPresentable where Self: Coordinator {
-
     func presentActivity(activityItems: [Any], applicationActivities: [UIActivity]? = nil) {
         let activityViewController = UIActivityViewController(activityItems: activityItems, applicationActivities: applicationActivities)
         rootViewController.present(activityViewController, animated: true, completion: nil)

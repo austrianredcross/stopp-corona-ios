@@ -6,7 +6,6 @@
 import UIKit
 
 class SelfTestingCoordinator: Coordinator {
-
     var navigationController: UINavigationController
 
     init(navigationController: UINavigationController) {
