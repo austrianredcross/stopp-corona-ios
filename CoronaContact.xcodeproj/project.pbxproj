@@ -255,6 +255,7 @@
 		784C2D0C2486A953005160A6 /* AppVersionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784C2D0B2486A953005160A6 /* AppVersionTests.swift */; };
 		784C2D0F2486A97F005160A6 /* WhatsNewRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784C2D0E2486A97F005160A6 /* WhatsNewRepository.swift */; };
 		784C2D112486AA52005160A6 /* AppVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784C2D102486AA52005160A6 /* AppVersion.swift */; };
+		784C2D132486BAE1005160A6 /* WhatsNewRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784C2D122486BAE1005160A6 /* WhatsNewRepositoryTests.swift */; };
 		83974070AAD41799D50EE1F8 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8397467D70446583EE496204 /* Contact.swift */; };
 		8397407B842054D9947D6AB7 /* configuration.json in Resources */ = {isa = PBXBuildFile; fileRef = 8397422DDB8AFB76E5110DB0 /* configuration.json */; };
 		8397409A6F3CF92410AAEE06 /* TransLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8397474245A5951193FA02B7 /* TransLabel.swift */; };
@@ -586,6 +587,7 @@
 		784C2D0B2486A953005160A6 /* AppVersionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppVersionTests.swift; sourceTree = "<group>"; };
 		784C2D0E2486A97F005160A6 /* WhatsNewRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhatsNewRepository.swift; sourceTree = "<group>"; };
 		784C2D102486AA52005160A6 /* AppVersion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppVersion.swift; sourceTree = "<group>"; };
+		784C2D122486BAE1005160A6 /* WhatsNewRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsNewRepositoryTests.swift; sourceTree = "<group>"; };
 		8397422DDB8AFB76E5110DB0 /* configuration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = configuration.json; sourceTree = "<group>"; };
 		83974345BBD0522CFDA25B76 /* ConfigurationService+Injection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ConfigurationService+Injection.swift"; sourceTree = "<group>"; };
 		839743E9E3569B229703A3F8 /* OutgoingInfectionMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutgoingInfectionMessage.swift; sourceTree = "<group>"; };
@@ -1362,6 +1364,7 @@
 			isa = PBXGroup;
 			children = (
 				784C2D0B2486A953005160A6 /* AppVersionTests.swift */,
+				784C2D122486BAE1005160A6 /* WhatsNewRepositoryTests.swift */,
 			);
 			path = "What's New";
 			sourceTree = "<group>";
@@ -2135,6 +2138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				784C2D132486BAE1005160A6 /* WhatsNewRepositoryTests.swift in Sources */,
 				784C2D0C2486A953005160A6 /* AppVersionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

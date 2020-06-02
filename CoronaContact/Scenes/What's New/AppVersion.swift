@@ -6,7 +6,7 @@
 import UIKit
 
 protocol AppInfo {
-    func appVersion() -> AppVersion
+    var appVersion: AppVersion { get }
 }
 
 extension Bundle {
@@ -19,7 +19,7 @@ extension Bundle {
 }
 
 extension UIApplication: AppInfo {
-    func appVersion() -> AppVersion {
+    var appVersion: AppVersion {
         let bundle = Bundle.main
         guard
             let versionString = bundle.appVersion,
@@ -33,7 +33,7 @@ extension UIApplication: AppInfo {
     }
 }
 
-public struct AppVersion: Codable, Comparable {
+public struct AppVersion: Codable, Comparable, Hashable {
 
     /// The `2` in `2.5.1`
     public let major: Int
@@ -74,11 +74,24 @@ public struct AppVersion: Codable, Comparable {
         lhs.major < rhs.major || lhs.minor < rhs.minor || lhs.patch < rhs.patch
     }
 
+    /// A version object for an app that has not been installed previously
+    ///
+    /// This object is used as the default version when checking for the previously installed
+    /// app version. When comparing the current app version against `notPreviouslyInstalled`,
+    /// the current version is lower, therefore the what's new info will not be shown on new installations.
+    ///
+    /// - note: `notPreviouslyInstalled > any other AppVersion`
     public static var notPreviouslyInstalled: AppVersion {
-        AppVersion(major: 0, minor: 0, patch: 0)
+        AppVersion(major: .max, minor: .max, patch: .max)
     }
 
     public static var current: AppVersion {
-        UIApplication.shared.appVersion()
+        UIApplication.shared.appVersion
+    }
+}
+
+extension AppVersion: ExpressibleByStringLiteral {
+    public init(stringLiteral value: StringLiteralType) {
+        self.init(versionString: value)!
     }
 }
