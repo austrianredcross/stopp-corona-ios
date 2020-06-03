@@ -14,6 +14,6 @@ class WhatsNewViewController: UIViewController, StoryboardBased {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        whatsNewLabel.text = viewModel.whatsNewText
+        whatsNewLabel.attributedText = viewModel.whatsNewText?.locaStyled(style: .body)
     }
 }
