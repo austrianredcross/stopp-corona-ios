@@ -435,6 +435,9 @@
 "saved_IDs_delete_subtitle"                                                  = "Möchten Sie jetzt die Zufalls-IDs löschen?";
 "saved_IDs_delete_description"                                               = "Sollten Sie die Zufalls-IDs löschen, können diese nicht benachrichtigt werden, wenn Sie sich als erkrankt oder einen Vedacht bei sich melden.\nÖffnen Sie die App-Einstellungen. Dort finden Sie unten einen Link zu den Einstellungen des COVID-Kontaktprotokolls. Bei den Einstellungen des COVID-19 Kontaktprotokolls können Sie die Zufalls-IDs löschen.";
 "saved_IDs_delete_button"                                                    = "App-Einstellungen öffnen";
+"whats_new_title"                                                            = "Was ist neu?";
+"whats_new_button_title"                                                     = "Alles klar!";
+"whats_new_in_2.0.0"                                                         = "Wir nutzen in dieser Version die <bred>Apple und Google COVID-19 API</bred>. Die Benachrichtigungen werden weiterhin anonym ausgetauscht und es werden daher an ein paar Stellen die Infos etwas anders dargestellt.";
 "handshake_code_00"                                                          = "Meise";
 "handshake_code_01"                                                          = "Tukan";
 "handshake_code_02"                                                          = "Gämse";
