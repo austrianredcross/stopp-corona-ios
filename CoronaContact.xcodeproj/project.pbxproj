@@ -256,6 +256,9 @@
 		784C2D0F2486A97F005160A6 /* WhatsNewRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784C2D0E2486A97F005160A6 /* WhatsNewRepository.swift */; };
 		784C2D112486AA52005160A6 /* AppVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784C2D102486AA52005160A6 /* AppVersion.swift */; };
 		784C2D132486BAE1005160A6 /* WhatsNewRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784C2D122486BAE1005160A6 /* WhatsNewRepositoryTests.swift */; };
+		784C2D1724878764005160A6 /* WhatsNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784C2D1624878764005160A6 /* WhatsNewViewController.swift */; };
+		784C2D192487879C005160A6 /* WhatsNewViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 784C2D182487879C005160A6 /* WhatsNewViewController.storyboard */; };
+		784C2D1B24878885005160A6 /* WhatsNewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784C2D1A24878885005160A6 /* WhatsNewCoordinator.swift */; };
 		83974070AAD41799D50EE1F8 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8397467D70446583EE496204 /* Contact.swift */; };
 		8397407B842054D9947D6AB7 /* configuration.json in Resources */ = {isa = PBXBuildFile; fileRef = 8397422DDB8AFB76E5110DB0 /* configuration.json */; };
 		8397409A6F3CF92410AAEE06 /* TransLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8397474245A5951193FA02B7 /* TransLabel.swift */; };
@@ -588,6 +591,9 @@
 		784C2D0E2486A97F005160A6 /* WhatsNewRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhatsNewRepository.swift; sourceTree = "<group>"; };
 		784C2D102486AA52005160A6 /* AppVersion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppVersion.swift; sourceTree = "<group>"; };
 		784C2D122486BAE1005160A6 /* WhatsNewRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsNewRepositoryTests.swift; sourceTree = "<group>"; };
+		784C2D1624878764005160A6 /* WhatsNewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsNewViewController.swift; sourceTree = "<group>"; };
+		784C2D182487879C005160A6 /* WhatsNewViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WhatsNewViewController.storyboard; sourceTree = "<group>"; };
+		784C2D1A24878885005160A6 /* WhatsNewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsNewCoordinator.swift; sourceTree = "<group>"; };
 		8397422DDB8AFB76E5110DB0 /* configuration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = configuration.json; sourceTree = "<group>"; };
 		83974345BBD0522CFDA25B76 /* ConfigurationService+Injection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ConfigurationService+Injection.swift"; sourceTree = "<group>"; };
 		839743E9E3569B229703A3F8 /* OutgoingInfectionMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutgoingInfectionMessage.swift; sourceTree = "<group>"; };
@@ -1374,6 +1380,9 @@
 			children = (
 				784C2D102486AA52005160A6 /* AppVersion.swift */,
 				784C2D0E2486A97F005160A6 /* WhatsNewRepository.swift */,
+				784C2D1624878764005160A6 /* WhatsNewViewController.swift */,
+				784C2D182487879C005160A6 /* WhatsNewViewController.storyboard */,
+				784C2D1A24878885005160A6 /* WhatsNewCoordinator.swift */,
 			);
 			path = "What's New";
 			sourceTree = "<group>";
@@ -1704,6 +1713,7 @@
 				61546541242CBE7F0003D3D3 /* SelfMonitoringGuidelinesViewController.storyboard in Resources */,
 				614D72302429084B00CC545D /* SelfTestingTanConfirmationViewController.storyboard in Resources */,
 				4E1F2EC324646B550088B8F8 /* sms.der in Resources */,
+				784C2D192487879C005160A6 /* WhatsNewViewController.storyboard in Resources */,
 				4E0B3E45241F995E00EF60EE /* LaunchScreen.storyboard in Resources */,
 				613E35F6242E3F65009421A8 /* LaunchScreenViewController.storyboard in Resources */,
 				6103207C243F28A000ED3A20 /* en.privacy-and-terms-of-use.html in Resources */,
@@ -1931,6 +1941,7 @@
 				4E9BF7082420C31400B360A4 /* MainViewController.swift in Sources */,
 				614BAA0E2423C334006797AA /* Configuration.swift in Sources */,
 				615D36322437417600B608AB /* AttestedSicknessGuidelinesCoordinator.swift in Sources */,
+				784C2D1B24878885005160A6 /* WhatsNewCoordinator.swift in Sources */,
 				4EDB47F62421EF46000CE24A /* UIColor+NamedColors.swift in Sources */,
 				6153A52224264A2D006A8570 /* ActivityConfiguration.swift in Sources */,
 				614D722D2429084900CC545D /* SelfTestingStatusReportViewModel.swift in Sources */,
@@ -2079,6 +2090,7 @@
 				4ED175C724606AFE00248D3B /* RevokeSicknessPersonalDataViewController.swift in Sources */,
 				6153A4ED24259929006A8570 /* UIScrollView+ScrollToVisible.swift in Sources */,
 				61C4A46C24275C38004D18BB /* UIView+Shadow.swift in Sources */,
+				784C2D1724878764005160A6 /* WhatsNewViewController.swift in Sources */,
 				614D72042428E82700CC545D /* ContactSicknessViewController.swift in Sources */,
 				614BA9F72423C31C006797AA /* NetworkError.swift in Sources */,
 				7829D826247D507A0015F5A5 /* SavedIDsViewModel.swift in Sources */,

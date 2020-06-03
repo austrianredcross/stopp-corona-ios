@@ -28,7 +28,9 @@ class MainCoordinator: Coordinator, ShareSheetPresentable {
     }
     
     func show(_ historyItem: AppHistoryItem) {
-        #warning("Not implemented")
+        let child = WhatsNewCoordinator(presentingController: rootViewController)
+        addChildCoordinator(child)
+        child.start()
     }
 
     func onboarding() {
