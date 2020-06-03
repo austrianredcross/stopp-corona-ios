@@ -9,7 +9,7 @@ typealias AppHistoryItem = String
 typealias AppVersionHistory = [AppVersion: AppHistoryItem]
 
 var appVersionHistory: AppVersionHistory = [
-    "2.0": "We now use Apple's Exposure Notification framework :)",
+    "2.0": "whats_new_in_2.0.0".localized,
 ]
 var firstHistoryItemVersion: AppVersion = {
     appVersionHistory.keys.sorted(by: <).first!
@@ -25,6 +25,12 @@ class WhatsNewRepository {
     lazy var currentAppVersion: AppVersion = {
         appInfo.appVersion
     }()
+    
+    var allHistoryItems: [AppHistoryItem] {
+        appVersionHistory
+            .sorted(by: ascendingKeys)
+            .map { $0.value }
+    }
     
     var newHistoryItems: [AppHistoryItem] {
         appVersionHistory

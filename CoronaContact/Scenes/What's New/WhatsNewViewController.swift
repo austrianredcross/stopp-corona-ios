@@ -8,6 +8,12 @@ import Reusable
 
 class WhatsNewViewController: UIViewController, StoryboardBased {
     
+    let viewModel = WhatsNewViewModel()
     
+    @IBOutlet private weak var whatsNewLabel: TransLabel!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        whatsNewLabel.text = viewModel.whatsNewText
+    }
 }

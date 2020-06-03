@@ -99,6 +99,9 @@
                         <viewLayoutGuide key="safeArea" id="SgD-It-4nT"/>
                     </view>
                     <size key="freeformSize" width="414" height="360"/>
+                    <connections>
+                        <outlet property="whatsNewLabel" destination="mSt-B6-qg5" id="175-BD-wfq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PIu-9M-65L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
