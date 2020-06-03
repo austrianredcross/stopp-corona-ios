@@ -3,6 +3,7 @@
 //  CoronaContact
 //
 
+#if DEBUG || STAGE
 import UIKit
 import Resolver
 
@@ -67,3 +68,4 @@ extension DebugAppHistoryViewController: UITableViewDelegate {
         tableView.reloadData()
     }
 }
+#endif
