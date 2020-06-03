@@ -259,6 +259,7 @@
 		784C2D1724878764005160A6 /* WhatsNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784C2D1624878764005160A6 /* WhatsNewViewController.swift */; };
 		784C2D192487879C005160A6 /* WhatsNewViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 784C2D182487879C005160A6 /* WhatsNewViewController.storyboard */; };
 		784C2D1B24878885005160A6 /* WhatsNewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784C2D1A24878885005160A6 /* WhatsNewCoordinator.swift */; };
+		784C2D1D2487B19A005160A6 /* DebugAppHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784C2D1C2487B19A005160A6 /* DebugAppHistoryViewController.swift */; };
 		83974070AAD41799D50EE1F8 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8397467D70446583EE496204 /* Contact.swift */; };
 		8397407B842054D9947D6AB7 /* configuration.json in Resources */ = {isa = PBXBuildFile; fileRef = 8397422DDB8AFB76E5110DB0 /* configuration.json */; };
 		8397409A6F3CF92410AAEE06 /* TransLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8397474245A5951193FA02B7 /* TransLabel.swift */; };
@@ -594,6 +595,7 @@
 		784C2D1624878764005160A6 /* WhatsNewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsNewViewController.swift; sourceTree = "<group>"; };
 		784C2D182487879C005160A6 /* WhatsNewViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WhatsNewViewController.storyboard; sourceTree = "<group>"; };
 		784C2D1A24878885005160A6 /* WhatsNewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsNewCoordinator.swift; sourceTree = "<group>"; };
+		784C2D1C2487B19A005160A6 /* DebugAppHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugAppHistoryViewController.swift; sourceTree = "<group>"; };
 		8397422DDB8AFB76E5110DB0 /* configuration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = configuration.json; sourceTree = "<group>"; };
 		83974345BBD0522CFDA25B76 /* ConfigurationService+Injection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ConfigurationService+Injection.swift"; sourceTree = "<group>"; };
 		839743E9E3569B229703A3F8 /* OutgoingInfectionMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutgoingInfectionMessage.swift; sourceTree = "<group>"; };
@@ -833,6 +835,7 @@
 				4ED175B12458347400248D3B /* DebugCoordinator.swift */,
 				4ED175B22458347400248D3B /* DebugViewController.swift */,
 				4ED175B32458347400248D3B /* DebugViewModel.swift */,
+				784C2D1C2487B19A005160A6 /* DebugAppHistoryViewController.swift */,
 			);
 			path = Debug;
 			sourceTree = "<group>";
@@ -2035,6 +2038,7 @@
 				6153A4E4242598DC006A8570 /* SicknessCertificateTanConfirmationViewController.swift in Sources */,
 				4E019BDA24265DF7004FF670 /* Data+uuid.swift in Sources */,
 				4E019BD8242604D6004FF670 /* SelectedRoundCornersView.swift in Sources */,
+				784C2D1D2487B19A005160A6 /* DebugAppHistoryViewController.swift in Sources */,
 				61459A57242AC48800DC88A7 /* Website.swift in Sources */,
 				61546542242CBE7F0003D3D3 /* SelfMonitoringGuidelinesViewController.swift in Sources */,
 				4E1AAEF4246186FA00D43E2B /* RevocationConfirmationViewController.swift in Sources */,

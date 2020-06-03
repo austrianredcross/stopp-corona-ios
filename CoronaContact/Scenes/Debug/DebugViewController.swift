@@ -16,6 +16,10 @@ class DebugViewController: UIViewController, StoryboardBased, ViewModelBased, Re
             viewModel?.viewController = self
         }
     }
+    
+    @IBAction func exitToMain(_ sender: UIStoryboardSegue) {
+        close(sender)
+    }
 
     @IBAction func close(_ sender: Any) {
         viewModel?.close()
