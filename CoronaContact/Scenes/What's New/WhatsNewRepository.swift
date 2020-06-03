@@ -39,6 +39,8 @@ class WhatsNewRepository {
         // install or an upgrade. We have to show the history item:
         #warning("Remove this check for the first update after 2.0")
         if lastWhatsNewShown == .notPreviouslyInstalled && currentAppVersion == firstHistoryItemVersion {
+            // using a very old versuon number in order to show what's new for 2.0:
+            lastWhatsNewShown = "0.0.1"
             return true
         }
         
