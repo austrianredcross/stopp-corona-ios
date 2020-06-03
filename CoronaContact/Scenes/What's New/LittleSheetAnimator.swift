@@ -11,6 +11,7 @@ class LittleSheetAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     var presenting = true
     let height: CGFloat = 360
     let cornerRadius: CGFloat = 8
+    let tintAlpha: CGFloat = 0.5
     
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         duration
@@ -18,17 +19,17 @@ class LittleSheetAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         let container = transitionContext.containerView
-        guard let toViewController = transitionContext.viewController(forKey: .to) as? WhatsNewViewController else {
+        guard let whatsNewVC = transitionContext.viewController(forKey: presenting ? .to : .from) as? WhatsNewViewController else {
             fatalError()
         }
-        let toView = toViewController.view!
+        let whatsNewView = whatsNewVC.view!
         
         let tinting = UIView()
         tinting.frame = container.frame
         tinting.backgroundColor = .black
-        tinting.alpha = 0
+        tinting.alpha = presenting ? 0 : tintAlpha
         
-        let preferredHeight = toViewController.preferredHeight(forWidth: container.frame.size.width)
+        let preferredHeight = whatsNewVC.preferredHeight(forWidth: container.frame.size.width)
         let height = min(preferredHeight, container.frame.size.height - 40)
         
         let frame = container.bounds
@@ -42,18 +43,23 @@ class LittleSheetAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         mask.layer.cornerRadius = cornerRadius
         mask.layer.masksToBounds = true
         
+        if !presenting {
+            for view in container.subviews {
+                view.removeFromSuperview()
+            }
+        }
         container.addSubview(tinting)
         container.addSubview(mask)
-        mask.addSubview(toView)
+        mask.addSubview(whatsNewView)
         
-        mask.frame = CGRect(origin: origin, size: maskSize)
-        toView.frame = CGRect(origin: .zero, size: size)
+        mask.frame = CGRect(origin: presenting ? origin : destinationOrigin, size: maskSize)
+        whatsNewView.frame = CGRect(origin: .zero, size: size)
         
         UIView.animate(
             withDuration: duration,
             animations: {
-                mask.frame = CGRect(origin: destinationOrigin, size: maskSize)
-                tinting.alpha = 0.5
+                mask.frame = CGRect(origin: self.presenting ? destinationOrigin : origin, size: maskSize)
+                tinting.alpha = self.presenting ? self.tintAlpha : 0
             },
             completion: { _ in
                 transitionContext.completeTransition(true)

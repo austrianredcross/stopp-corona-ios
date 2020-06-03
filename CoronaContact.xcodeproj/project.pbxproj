@@ -262,6 +262,7 @@
 		784C2D1D2487B19A005160A6 /* DebugAppHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784C2D1C2487B19A005160A6 /* DebugAppHistoryViewController.swift */; };
 		784C2D212487F93B005160A6 /* LittleSheetAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784C2D202487F93B005160A6 /* LittleSheetAnimator.swift */; };
 		784C2D23248856E4005160A6 /* WhatsNewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784C2D22248856E4005160A6 /* WhatsNewViewModel.swift */; };
+		784C2D24248860D9005160A6 /* WhatsNewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784C2D1A24878885005160A6 /* WhatsNewCoordinator.swift */; };
 		83974070AAD41799D50EE1F8 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8397467D70446583EE496204 /* Contact.swift */; };
 		8397407B842054D9947D6AB7 /* configuration.json in Resources */ = {isa = PBXBuildFile; fileRef = 8397422DDB8AFB76E5110DB0 /* configuration.json */; };
 		8397409A6F3CF92410AAEE06 /* TransLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8397474245A5951193FA02B7 /* TransLabel.swift */; };
@@ -2164,6 +2165,7 @@
 			files = (
 				784C2D132486BAE1005160A6 /* WhatsNewRepositoryTests.swift in Sources */,
 				784C2D0C2486A953005160A6 /* AppVersionTests.swift in Sources */,
+				784C2D24248860D9005160A6 /* WhatsNewCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

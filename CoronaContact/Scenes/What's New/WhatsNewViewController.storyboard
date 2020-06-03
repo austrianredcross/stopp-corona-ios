@@ -54,7 +54,7 @@
                                                             </label>
                                                         </subviews>
                                                     </stackView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cSJ-un-Xan" userLabel="Delete Button" customClass="PrimaryButton" customModule="Stopp_Corona" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cSJ-un-Xan" userLabel="OK Button" customClass="PrimaryButton" customModule="Stopp_Corona" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="343" width="366" height="30"/>
                                                         <state key="normal" title="_Alles klar!">
                                                             <color key="titleColor" name="ccBlack"/>
@@ -62,6 +62,9 @@
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="transKeyNormal" value="whats_new_button_title"/>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="okButtonTapped:" destination="Qel-OV-99A" eventType="touchUpInside" id="Ebb-dZ-Q8E"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>

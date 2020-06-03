@@ -31,7 +31,14 @@ final class WhatsNewCoordinator: Coordinator {
     override func start() {
         rootViewController.modalPresentationStyle = .overFullScreen
         rootViewController.transitioningDelegate = self
+        rootViewController.coordinator = self
         presentingController.present(rootViewController, animated: true, completion: nil)
+    }
+    
+    func dismiss() {
+        rootViewController.dismiss(animated: true, completion: {
+            self.finish()
+        })
     }
 
     // MARK: - Housekeeping
@@ -46,10 +53,12 @@ extension WhatsNewCoordinator: UIViewControllerTransitioningDelegate {
     func animationController(forPresented presented: UIViewController,
                              presenting: UIViewController,
                              source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        sheetTransition
+        sheetTransition.presenting = true
+        return sheetTransition
     }
     
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        nil
+        sheetTransition.presenting = false
+        return sheetTransition
     }
 }

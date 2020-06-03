@@ -9,6 +9,7 @@ import Reusable
 class WhatsNewViewController: UIViewController, StoryboardBased {
     
     let viewModel = WhatsNewViewModel()
+    weak var coordinator: WhatsNewCoordinator?
     
     @IBOutlet private weak var whatsNewLabel: TransLabel!
     @IBOutlet private weak var scrollView: UIScrollView!
@@ -21,5 +22,9 @@ class WhatsNewViewController: UIViewController, StoryboardBased {
     func preferredHeight(forWidth width: CGFloat) -> CGFloat {
         view.layoutIfNeeded()
         return scrollView.contentSize.height
+    }
+    
+    @IBAction func okButtonTapped(_ sender: Any) {
+        coordinator?.dismiss()
     }
 }
