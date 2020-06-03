@@ -13,11 +13,11 @@
             <objects>
                 <viewController id="Qel-OV-99A" userLabel="What's New" customClass="WhatsNewViewController" customModule="Stopp_Corona" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="h3w-Vl-fvZ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="360"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="450"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="rXz-Pg-8Cc">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="360"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="450"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oT7-iM-ViQ">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="453"/>
@@ -98,8 +98,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SgD-It-4nT"/>
                     </view>
-                    <size key="freeformSize" width="414" height="360"/>
+                    <size key="freeformSize" width="414" height="450"/>
                     <connections>
+                        <outlet property="scrollView" destination="rXz-Pg-8Cc" id="zyh-jT-a83"/>
                         <outlet property="whatsNewLabel" destination="mSt-B6-qg5" id="175-BD-wfq"/>
                     </connections>
                 </viewController>

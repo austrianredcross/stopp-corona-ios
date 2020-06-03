@@ -18,12 +18,18 @@ class LittleSheetAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         let container = transitionContext.containerView
-        let toView = transitionContext.view(forKey: .to)!
+        guard let toViewController = transitionContext.viewController(forKey: .to) as? WhatsNewViewController else {
+            fatalError()
+        }
+        let toView = toViewController.view!
         
         let tinting = UIView()
         tinting.frame = container.frame
         tinting.backgroundColor = .black
         tinting.alpha = 0
+        
+        let preferredHeight = toViewController.preferredHeight(forWidth: container.frame.size.width)
+        let height = min(preferredHeight, container.frame.size.height - 40)
         
         let frame = container.bounds
         let origin = CGPoint(x: 0, y: frame.maxY)

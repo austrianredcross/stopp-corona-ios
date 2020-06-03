@@ -1387,11 +1387,11 @@
 			children = (
 				784C2D102486AA52005160A6 /* AppVersion.swift */,
 				784C2D0E2486A97F005160A6 /* WhatsNewRepository.swift */,
-				784C2D1624878764005160A6 /* WhatsNewViewController.swift */,
-				784C2D182487879C005160A6 /* WhatsNewViewController.storyboard */,
 				784C2D1A24878885005160A6 /* WhatsNewCoordinator.swift */,
-				784C2D202487F93B005160A6 /* LittleSheetAnimator.swift */,
+				784C2D182487879C005160A6 /* WhatsNewViewController.storyboard */,
+				784C2D1624878764005160A6 /* WhatsNewViewController.swift */,
 				784C2D22248856E4005160A6 /* WhatsNewViewModel.swift */,
+				784C2D202487F93B005160A6 /* LittleSheetAnimator.swift */,
 			);
 			path = "What's New";
 			sourceTree = "<group>";
