@@ -18,6 +18,7 @@ final class WhatsNewCoordinator: Coordinator {
     }()
 
     let presentingController: UIViewController
+    let sheetTransition = LittleSheetAnimator()
 
     // MARK: - Lifecycle
 
@@ -28,6 +29,8 @@ final class WhatsNewCoordinator: Coordinator {
     // MARK: - Coordination
 
     override func start() {
+        rootViewController.modalPresentationStyle = .overFullScreen
+        rootViewController.transitioningDelegate = self
         presentingController.present(rootViewController, animated: true, completion: nil)
     }
 
@@ -35,5 +38,18 @@ final class WhatsNewCoordinator: Coordinator {
 
     override func finish(animated: Bool = false) {
         parentCoordinator?.didFinish(self)
+    }
+}
+
+// MARK: - Transition
+extension WhatsNewCoordinator: UIViewControllerTransitioningDelegate {
+    func animationController(forPresented presented: UIViewController,
+                             presenting: UIViewController,
+                             source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        sheetTransition
+    }
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        nil
     }
 }
