@@ -10,5 +10,6 @@ import Resolver
 extension Resolver {
     public static func registerExposureServices() {
         register { ExposureManager() }.scope(application)
+        register { ExposureKeyManager() }.scope(application)
     }
 }

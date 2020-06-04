@@ -78,7 +78,8 @@ final class NetworkClient {
                     let errorResponse = response.parseError()
 
                     completion(.failure(.unknownError(statusCode, error, errorResponse)))
-                    self?.log.error(response.detailedDebugDescription, context: .network)
+                    let text = String(data: response.data, encoding: .utf8)
+                    self?.log.error("\(response.detailedDebugDescription) data: \(text)", context: .network)
                 }
 
             case let .failure(error):

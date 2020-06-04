@@ -3,16 +3,18 @@
 //  CoronaContact
 //
 
+import CryptoKit
 import ExposureNotification
 import Foundation
+import SQLite
 
 struct TracingKeys: Codable {
     private enum CodingKeys: String, CodingKey {
         case
-            temporaryExposureKeys = "temporaryTracingKeys",
-            regions, appPackageName, platform, diagnosisStatus,
-            diagnosisType, deviceVerificationPayload,
-            verificationAuthorityName, verificationPayload
+                temporaryExposureKeys = "temporaryTracingKeys",
+                regions, appPackageName, platform, diagnosisStatus,
+                diagnosisType, deviceVerificationPayload,
+                verificationAuthorityName, verificationPayload
     }
 
     let temporaryExposureKeys: [TemporaryExposureKey]
@@ -57,6 +59,26 @@ enum DiagnosisType: String, Codable {
     }
 }
 
+extension DiagnosisType: Value {
+
+    public static var declaredDatatype = Int.declaredDatatype
+
+    public static func fromDatatypeValue(_ datatypeValue: Int) -> DiagnosisType {
+        switch datatypeValue {
+        case 2:
+            return DiagnosisType.red
+        case 1:
+            return DiagnosisType.yellow
+        default:
+            return DiagnosisType.green
+        }
+    }
+
+    public var datatypeValue: Int {
+        self.statusCode
+    }
+}
+
 struct Verification: Codable {
     /// An uuid which was requested via the `/request-tan` endpoint
     let uuid: String
@@ -64,17 +86,47 @@ struct Verification: Codable {
 }
 
 struct TemporaryExposureKey: Codable {
+    static let table = Table("exposureKeys")
+    static let key = Expression<String>("key")
+    static let password = Expression<String>("password")
+    static let diagnosisType = Expression<DiagnosisType>("diagnosis")
+    static let intervalNumber = Expression<ENIntervalNumber>("interval")
+    static let intervalCount = Expression<ENIntervalNumber>("count")
+    static let transmissionRisk = Expression<ENRiskLevel>("risk")
+
     let key: String
     let password: String
     let intervalNumber: ENIntervalNumber
     let intervalCount: ENIntervalNumber
     let transmissionRisk: ENRiskLevel
 
-    init(temporaryExposureKey: ENTemporaryExposureKey) {
+    init(temporaryExposureKey: ENTemporaryExposureKey, salt: Data) {
         key = temporaryExposureKey.keyData.base64EncodedString()
-        password = UUID().uuidString
+        var passwordData = salt
+        passwordData.append(temporaryExposureKey.keyData)
+        password = SHA256.hash(data: passwordData).compactMap {
+            String(format: "%02x", $0)
+        }.joined()
         intervalNumber = temporaryExposureKey.rollingStartNumber
         intervalCount = temporaryExposureKey.rollingPeriod
         transmissionRisk = temporaryExposureKey.transmissionRiskLevel
+    }
+
+    static func persistKeys(dbs: DatabaseService, keys: [TemporaryExposureKey]) throws {
+        do {
+            try keys.forEach { key in
+                let insert = TemporaryExposureKey.table.insert(
+                        TemporaryExposureKey.key <- key.key,
+                        TemporaryExposureKey.password <- key.password,
+                        TemporaryExposureKey.intervalNumber <- key.intervalNumber,
+                        TemporaryExposureKey.intervalCount <- key.intervalCount,
+                        TemporaryExposureKey.transmissionRisk <- key.transmissionRisk
+                )
+                try dbs.dba.run(insert)
+            }
+        } catch {
+            dbs.log.error(error)
+            throw error
+        }
     }
 }

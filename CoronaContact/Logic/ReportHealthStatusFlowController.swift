@@ -9,6 +9,7 @@ import Resolver
 
 class ReportHealthStatusFlowController {
     @Injected private var exposureManager: ExposureManager
+    @Injected private var exposureKeyManager: ExposureKeyManager
     @Injected private var networkService: NetworkService
 
     enum Flow {
@@ -63,7 +64,8 @@ class ReportHealthStatusFlowController {
 
     private func parseTemporaryExposureKeys(_ temporaryExposureKeys: [ENTemporaryExposureKey],
                                             verification: Verification) {
-        let temporaryExposureKeys = temporaryExposureKeys.map(TemporaryExposureKey.init)
+        let temporaryExposureKeys = exposureKeyManager.getKeysForUpload(keys: temporaryExposureKeys)
+
         tracingKeys = TracingKeys(
             temporaryExposureKeys: temporaryExposureKeys,
             diagnosisType: diagnosisType,

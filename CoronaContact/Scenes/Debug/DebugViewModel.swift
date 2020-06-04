@@ -21,6 +21,7 @@ class DebugViewModel: ViewModel {
     @Injected private var network: NetworkService
     @Injected private var notificationService: NotificationService
     @Injected private var exposureManager: ExposureManager
+    @Injected private var exposureKeyManager: ExposureKeyManager
 
     var timer: Timer?
     var numberOfContacts = 0
@@ -51,10 +52,15 @@ class DebugViewModel: ViewModel {
 
     func exposeDiagnosesKeys(test: Bool = false) {
         if test {
-            exposureManager.getTestDiagnosisKeys { _ in
+            exposureManager.getTestDiagnosisKeys { keyResult in
+                if case let .success(keys) = keyResult {
+                    let ukeys = self.exposureKeyManager.getKeysForUpload(keys: keys)
+                    self.exposureKeyManager.persistKeysAfterUpload(keys: ukeys)
+                    LoggingService.info("\(ukeys)")
+                }
             }
         } else {
-            exposureManager.getDiagnosisKeys { _ in
+            exposureManager.getDiagnosisKeys { keyResult in
             }
         }
     }
