@@ -6,7 +6,6 @@
 import UIKit
 
 final class SavedIDsCoordinator: Coordinator {
-
     // MARK: - Properties
 
     private lazy var rootViewController: SavedIDsViewController = {
