@@ -30,7 +30,7 @@ class SelfTestingStatusReportViewModel: ViewModel {
             completion()
 
             switch result {
-            case let .failure(error):
+            case let .failure(.submission(error)):
                 self?.coordinator?.showErrorAlert(
                     title: error.displayableError.title,
                     error: error.displayableError.description,
@@ -44,6 +44,8 @@ class SelfTestingStatusReportViewModel: ViewModel {
                 )
             case .success:
                 self?.coordinator?.showConfirmation()
+            default:
+                break
             }
         }
     }
