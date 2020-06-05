@@ -28,10 +28,12 @@ class SicknessCertificatePersonalDataViewModel: ViewModel {
             completion()
 
             switch result {
-            case let .failure(error):
+            case let .failure(.tanConfirmation(error)):
                 self?.coordinator?.showErrorAlert(title: error.title, error: error.description)
             case .success:
                 self?.coordinator?.tanConfirmation()
+            default:
+                break
             }
         }
     }

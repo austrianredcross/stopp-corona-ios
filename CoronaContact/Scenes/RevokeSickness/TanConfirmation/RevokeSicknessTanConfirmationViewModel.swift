@@ -30,9 +30,11 @@ class RevokeSicknessTanConfirmationViewModel: ViewModel {
             completion()
 
             switch result {
-            case let .failure(error):
+            case let .failure(.tanConfirmation(error)):
                 self?.coordinator?.showErrorAlert(title: error.title, error: error.description)
             case .success:
+                break
+            default:
                 break
             }
         }
