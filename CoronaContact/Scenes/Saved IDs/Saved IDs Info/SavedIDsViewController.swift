@@ -3,11 +3,10 @@
 //  CoronaContact
 //
 
-import UIKit
 import Reusable
+import UIKit
 
 final class SavedIDsViewController: UIViewController, StoryboardBased, ViewModelBased, FlashableScrollIndicators {
-
     @IBOutlet var scrollView: UIScrollView!
 
     var viewModel: SavedIDsViewModel?
