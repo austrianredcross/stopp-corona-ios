@@ -13,7 +13,6 @@ final class WhatsNewCoordinator: Coordinator {
 
     private lazy var rootViewController: WhatsNewViewController = {
         let controller = WhatsNewViewController.instantiate()
-//        controller.viewModel = SavedIDsViewModel(self)
         return controller
     }()
 
