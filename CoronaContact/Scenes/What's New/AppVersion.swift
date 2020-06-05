@@ -11,10 +11,10 @@ protocol AppInfo {
 
 extension Bundle {
     var appVersion: String? {
-        return infoDictionary?["CFBundleShortVersionString"] as? String
+        infoDictionary?["CFBundleShortVersionString"] as? String
     }
     var appBuild: String? {
-        return infoDictionary?["CFBundleVersion"] as? String
+        infoDictionary?["CFBundleVersion"] as? String
     }
 }
 
