@@ -20,7 +20,7 @@ final class MainHelpCoordinator: Coordinator {
         rootViewController.viewModel = MainHelpViewModel(with: self)
         rootViewController.modalPresentationStyle = .overFullScreen
         rootViewController.modalTransitionStyle = .crossDissolve
-        navigationController.present(rootViewController, animated: true, completion: nil)
+        navigationController.pushViewController(rootViewController, animated: true)
     }
 
     override func finish(animated: Bool = false) {
