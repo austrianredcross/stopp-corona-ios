@@ -135,7 +135,7 @@
 "contact_help_faq_button"                                                    = "Zu den FAQs";
 "contact_help_faq_link"                                                      = "https://www.roteskreuz.at/site/faq-app-stopp-corona/";
 "contact_help_medical_disclaimer"                                            = "Aus medizinischen Gründen: Diese App funktioniert auch auf Distanz. Bitte halten Sie mindestens 1 Meter Abstand.";
-"automatic_handshake_help_headline"                                          = "So funktioniert es:";
+"automatic_handshake_help_title"                                             = "So funktioniert es";
 "automatic_handshake_help_instruction_first"                                 = "Aktivieren Sie den automatischen Handshake in der App und aktivieren Sie Bluetooth.";
 "automatic_handshake_help_instruction_second"                                = "Ihr Gerät kann über Bluetooth Zufalls-IDs mit anderen App-Nutzern austauschen.";
 "automatic_handshake_help_instruction_third"                                 = "Die Zufalls-IDs werden im COVID-19 Kontaktprotokoll Ihres Geräts gespeichert.";

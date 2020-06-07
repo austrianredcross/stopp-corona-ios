@@ -8,7 +8,6 @@ import UIKit
 
 final class MainHelpViewController: UIViewController, StoryboardBased, ViewModelBased, FlashableScrollIndicators {
     @IBOutlet var scrollView: UIScrollView!
-    @IBOutlet var innerView: UIView!
     @IBOutlet var instructionsView: InstructionsView!
 
     var viewModel: MainHelpViewModel?
@@ -26,8 +25,7 @@ final class MainHelpViewController: UIViewController, StoryboardBased, ViewModel
     }
 
     private func setupUI() {
-        innerView.layer.cornerRadius = 8
-        innerView.addStandardShadow()
+        title = "automatic_handshake_help_title".localized
 
         instructionsView.instructions = [
             .init(index: 1, text: "automatic_handshake_help_instruction_first".localized),
@@ -39,9 +37,5 @@ final class MainHelpViewController: UIViewController, StoryboardBased, ViewModel
 
     @IBAction func faqButtonTapped(_ sender: Any) {
         viewModel?.openFAQ()
-    }
-
-    @IBAction func closeButtonTapped(_ sender: Any) {
-        viewModel?.close()
     }
 }

@@ -10,15 +10,25 @@ import UIKit
 
 class DebugViewController: UIViewController, StoryboardBased, ViewModelBased, Reusable {
     @Injected private var localStorage: LocalStorage
+    @IBOutlet var currentStateLabel: UILabel!
+    @IBOutlet var probablySickButton: SecondaryButton!
+    @IBOutlet var attestedSickButton: SecondaryButton!
+    @IBOutlet var revokeProbablySickButton: SecondaryButton!
+    @IBOutlet var revokeAttestedSickButton: SecondaryButton!
 
     var viewModel: DebugViewModel? {
         didSet {
             viewModel?.viewController = self
         }
     }
-    
+
     @IBAction func exitToMain(_ sender: UIStoryboardSegue) {
         close(sender)
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel?.updateView()
     }
 
     @IBAction func close(_ sender: Any) {
@@ -33,25 +43,28 @@ class DebugViewController: UIViewController, StoryboardBased, ViewModelBased, Re
         viewModel?.exposeDiagnosesKeys(test: true)
     }
 
-    @IBAction func shareLogButtonTapped(_ sender: Any) {
-        viewModel?.shareLog()
+    // - sickness state
+
+    @IBAction func setSelftestedSick(_ sender: Any) {
+        viewModel?.probablySickness()
     }
 
-    @IBAction func scheduleTestNotifications(_ sender: Any) {
-        viewModel?.scheduleTestNotifications()
-    }
-
-    @IBAction func attestSickness(_ sender: Any) {
+    @IBAction func setAttestedSick(_ sender: Any) {
         viewModel?.attestSickness()
     }
 
-    @IBAction func isUnderSelfMonitoringTapped(_ sender: Any) {
-        localStorage.performedSelfTestAt = Date()
-        localStorage.isUnderSelfMonitoring = true
+    @IBAction func revokeProbablySickButtonPressed(_ sender: Any) {
+        viewModel?.revokeProbablySick()
     }
 
-    @IBAction func isProbablySickTapped(_ sender: Any) {
-        localStorage.isProbablySickAt = Date()
+    @IBAction func revokeAttestedSickButton(_ sender: Any) {
+        viewModel?.revokeAttestedSick()
+    }
+
+    // - Mark log settings
+
+    @IBAction func shareLogButtonTapped(_ sender: Any) {
+        viewModel?.shareLog()
     }
 
     @IBAction func resetLogButtonTapped(_ sender: Any) {

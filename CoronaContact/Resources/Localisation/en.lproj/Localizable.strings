@@ -135,7 +135,7 @@
 "contact_help_faq_button"                                                    = "Go to the FAQs";
 "contact_help_faq_link"                                                      = "https://www.roteskreuz.at/site/faq-app-stopp-corona/";
 "contact_help_medical_disclaimer"                                            = "For medical reasons: This app also works remotely. Please keep at least 1 meter distance.";
-"automatic_handshake_help_headline"                                          = "Here’s how it works:";
+"automatic_handshake_help_title"                                             = "Here’s how it works";
 "automatic_handshake_help_instruction_first"                                 = "Activate the automatic handshake in the app and allow background activities for this app.";
 "automatic_handshake_help_instruction_second"                                = "Bluetooth signals are sent and received by other app users.";
 "automatic_handshake_help_instruction_third"                                 = "Entries in the contact diary are created automatically (e.g.: if other devices are received at least 15 minutes within 2 meters)";
