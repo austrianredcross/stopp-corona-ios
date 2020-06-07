@@ -7,8 +7,7 @@ import Reusable
 import UIKit
 
 class WhatsNewViewController: UIViewController, StoryboardBased {
-    let viewModel = WhatsNewViewModel()
-    weak var coordinator: WhatsNewCoordinator?
+    var viewModel: WhatsNewViewModel!
 
     @IBOutlet private var whatsNewLabel: TransLabel!
     @IBOutlet private var scrollView: UIScrollView!
@@ -24,6 +23,6 @@ class WhatsNewViewController: UIViewController, StoryboardBased {
     }
 
     @IBAction func okButtonTapped(_ sender: Any) {
-        coordinator?.dismiss()
+        viewModel.okButtonTapped()
     }
 }

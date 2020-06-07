@@ -29,7 +29,9 @@ final class WhatsNewCoordinator: Coordinator {
     override func start() {
         rootViewController.modalPresentationStyle = .overFullScreen
         rootViewController.transitioningDelegate = self
-        rootViewController.coordinator = self
+        let viewModel = WhatsNewViewModel()
+        viewModel.coordinator = self
+        rootViewController.viewModel = viewModel
         presentingController.present(rootViewController, animated: true, completion: nil)
     }
 
