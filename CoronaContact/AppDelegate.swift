@@ -5,6 +5,7 @@
 
 import BackgroundTasks
 import Firebase
+import FirebaseMessaging
 import Lottie
 import Resolver
 import UIKit
