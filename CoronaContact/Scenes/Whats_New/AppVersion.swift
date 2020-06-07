@@ -13,6 +13,7 @@ extension Bundle {
     var appVersion: String? {
         infoDictionary?["CFBundleShortVersionString"] as? String
     }
+
     var appBuild: String? {
         infoDictionary?["CFBundleVersion"] as? String
     }
@@ -34,7 +35,6 @@ extension UIApplication: AppInfo {
 }
 
 public struct AppVersion: Codable, Comparable, Hashable, CustomStringConvertible {
-
     /// The `2` in `2.5.1`
     public let major: Int
 
@@ -88,7 +88,7 @@ public struct AppVersion: Codable, Comparable, Hashable, CustomStringConvertible
     public static var current: AppVersion {
         UIApplication.shared.appVersion
     }
-    
+
     public var description: String {
         "\(major).\(minor).\(patch)"
     }

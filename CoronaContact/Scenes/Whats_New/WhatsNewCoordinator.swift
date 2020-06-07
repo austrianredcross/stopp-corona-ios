@@ -8,7 +8,6 @@ import Foundation
 import UIKit
 
 final class WhatsNewCoordinator: Coordinator {
-
     // MARK: - Properties
 
     private lazy var rootViewController: WhatsNewViewController = {
@@ -33,7 +32,7 @@ final class WhatsNewCoordinator: Coordinator {
         rootViewController.coordinator = self
         presentingController.present(rootViewController, animated: true, completion: nil)
     }
-    
+
     func dismiss() {
         rootViewController.dismiss(animated: true, completion: {
             self.finish()
@@ -48,6 +47,7 @@ final class WhatsNewCoordinator: Coordinator {
 }
 
 // MARK: - Transition
+
 extension WhatsNewCoordinator: UIViewControllerTransitioningDelegate {
     func animationController(forPresented presented: UIViewController,
                              presenting: UIViewController,
@@ -55,7 +55,7 @@ extension WhatsNewCoordinator: UIViewControllerTransitioningDelegate {
         sheetTransition.presenting = true
         return sheetTransition
     }
-    
+
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         sheetTransition.presenting = false
         return sheetTransition
