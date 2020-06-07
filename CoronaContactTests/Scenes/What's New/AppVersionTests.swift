@@ -1,13 +1,12 @@
 //
 //  AppVersionTests.swift
-//  CoronaContactTests
+//  CoronaContact
 //
 
 import XCTest
 @testable import Stopp_Corona
 
 class AppVersionTests: XCTestCase {
-
     func testLowerMajorAppVersion_isOlder() {
         // given
         let older = AppVersion(major: 2, minor: 5, patch: 0)
@@ -60,5 +59,4 @@ class AppVersionTests: XCTestCase {
         XCTAssertEqual(version?.minor, 0)
         XCTAssertEqual(version?.patch, 0)
     }
-
 }
