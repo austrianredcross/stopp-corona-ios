@@ -27,12 +27,20 @@ class WhatsNewRepositoryTests: XCTestCase {
         super.tearDown()
     }
 
+    // MARK: - Helpers
+
+    private func injectHistory(_ historyEntries: AppVersionHistory.AppVersionHistoryDictionary) {
+        var history = AppVersionHistory()
+        history.history = historyEntries
+        sut.appVersionHistory = history
+    }
+
+    // MARK: - Tests
+
     func testIsWhatsNewAvailable_true() {
         // given
         sut.lastWhatsNewShown = "2.0"
-        appVersionHistory = [
-            "3.0": "There's something new...",
-        ]
+        injectHistory(["3.0": "There's something new..."])
 
         // then
         XCTAssertTrue(sut.isWhatsNewAvailable)
@@ -41,9 +49,7 @@ class WhatsNewRepositoryTests: XCTestCase {
     func testIsWhatsNewAvailable_false() {
         // given
         sut.lastWhatsNewShown = "2.0"
-        appVersionHistory = [
-            "1.0": "This was new in the old version...",
-        ]
+        injectHistory(["1.0": "This was new in the old version..."])
 
         // then
         XCTAssertFalse(sut.isWhatsNewAvailable)
@@ -52,9 +58,7 @@ class WhatsNewRepositoryTests: XCTestCase {
     func testIsWhatsNewAvailable_falseOnFirstInstall() {
         // given
         sut.lastWhatsNewShown = .notPreviouslyInstalled
-        appVersionHistory = [
-            "3.0": "There's something new...",
-        ]
+        injectHistory(["3.0": "There's something new..."])
 
         // then
         XCTAssertFalse(sut.isWhatsNewAvailable)
@@ -74,9 +78,7 @@ class WhatsNewRepositoryTests: XCTestCase {
     func testIsWhatsNewAvailable_false_afterCurrentHasBeenShown() {
         // given
         sut.lastWhatsNewShown = "2.0"
-        appVersionHistory = [
-            "3.0": "There's something new...",
-        ]
+        injectHistory(["3.0": "There's something new..."])
 
         // when
         sut.currentWhatsNewShown()

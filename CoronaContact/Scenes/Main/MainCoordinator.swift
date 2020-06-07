@@ -27,7 +27,7 @@ class MainCoordinator: Coordinator, ShareSheetPresentable {
         child.start()
     }
 
-    func show(_ historyItem: AppHistoryItem) {
+    func show(_ historyItem: AppVersionHistory.Content) {
         let child = WhatsNewCoordinator(presentingController: rootViewController)
         addChildCoordinator(child)
         child.start()

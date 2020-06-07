@@ -8,6 +8,8 @@
     import UIKit
 
     class DebugAppHistoryViewController: UIViewController {
+        var appVersionHistory = AppVersionHistory()
+
         struct VersionPresentation {
             let version: AppVersion
             var text: String {
@@ -23,7 +25,7 @@
         @Injected private var whatsNewRepository: WhatsNewRepository
 
         private lazy var versions: [VersionPresentation] = {
-            var availableVersions = Set(appVersionHistory.keys)
+            var availableVersions = appVersionHistory.versions
             availableVersions.insert(whatsNewRepository.lastWhatsNewShown)
             availableVersions.insert(.notPreviouslyInstalled)
             availableVersions.insert("1.2.1")

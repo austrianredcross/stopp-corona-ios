@@ -5,18 +5,9 @@
 
 import UIKit
 
-typealias AppHistoryItem = String
-typealias AppVersionHistory = [AppVersion: AppHistoryItem]
-
-var appVersionHistory: AppVersionHistory = [
-    "2.0": "whats_new_in_2.0.0".localized,
-]
-var firstHistoryItemVersion: AppVersion = {
-    appVersionHistory.keys.sorted(by: <).first!
-}()
-
 class WhatsNewRepository {
     var appInfo: AppInfo = UIApplication.shared
+    var appVersionHistory = AppVersionHistory()
 
     @Persisted(userDefaultsKey: "lastWhatsNewShown", notificationName: .init("lastWhatsNewShownDidChange"), defaultValue: .notPreviouslyInstalled)
     var lastWhatsNewShown: AppVersion
@@ -25,13 +16,13 @@ class WhatsNewRepository {
         appInfo.appVersion
     }()
 
-    var allHistoryItems: [AppHistoryItem] {
+    var allHistoryItems: [AppVersionHistory.Content] {
         appVersionHistory
             .sorted(by: ascendingKeys)
             .map { $0.value }
     }
 
-    var newHistoryItems: [AppHistoryItem] {
+    var newHistoryItems: [AppVersionHistory.Content] {
         appVersionHistory
             .filter { $0.key > lastWhatsNewShown }
             .sorted(by: ascendingKeys)
@@ -42,7 +33,7 @@ class WhatsNewRepository {
         // for the first upgrade to version 2.0 we cannot detect if it is a new
         // install or an upgrade. We have to show the history item:
         #warning("Remove this check for the first update after 2.0")
-        if lastWhatsNewShown == .notPreviouslyInstalled, currentAppVersion == firstHistoryItemVersion {
+        if lastWhatsNewShown == .notPreviouslyInstalled, currentAppVersion == appVersionHistory.firstVersion {
             // using a very old version number in order to show what's new for 2.0:
             lastWhatsNewShown = "0.0.1"
             return true
