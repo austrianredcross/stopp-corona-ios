@@ -58,7 +58,8 @@ class WhatsNewRepositoryTests: XCTestCase {
     func testIsWhatsNewAvailable_falseOnFirstInstall() {
         // given
         sut.lastWhatsNewShown = .notPreviouslyInstalled
-        injectHistory(["3.0": "There's something new..."])
+        injectHistory(["2.0": "Those were the days...",
+                       "3.0": "There's something new..."])
 
         // then
         XCTAssertFalse(sut.isWhatsNewAvailable)
