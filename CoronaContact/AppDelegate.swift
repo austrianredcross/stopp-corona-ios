@@ -4,7 +4,6 @@
 //
 
 import BackgroundTasks
-import Firebase
 import Lottie
 import Resolver
 import UIKit
@@ -75,14 +74,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         configService.update()
 
-        FirebaseApp.configure()
-        Messaging.messaging().delegate = self
         application.registerForRemoteNotifications()
         serivcesInitialized = true
-    }
-
-    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any]) {
-        // TODO: what should happen on push notification?
     }
 
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
@@ -140,14 +133,6 @@ extension AppDelegate {
         } catch {
             log.error("Unable to schedule background task: \(error)")
         }
-    }
-}
-
-// MARK: Messaging
-
-extension AppDelegate: MessagingDelegate {
-    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
-        Messaging.messaging().subscribe(toTopic: "all")
     }
 }
 
