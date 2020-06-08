@@ -19,7 +19,8 @@ final class NetworkClient {
     private let provider = MoyaProvider<NetworkEndpoint>(session: NetworkSession.session())
     private let log = LoggingService.self
 
-    func requestPlain(_ target: NetworkEndpoint, completion: @escaping (Result<Data, NetworkError>) -> Void) {
+    @discardableResult
+    func requestPlain(_ target: NetworkEndpoint, completion: @escaping (Result<Data, NetworkError>) -> Void) -> Cancellable {
         provider.request(target) { [weak self] result in
             switch result {
             case let .success(response):
@@ -55,7 +56,8 @@ final class NetworkClient {
         }
     }
 
-    func request<Payload: Decodable>(_ target: NetworkEndpoint, completion: @escaping (Result<Payload, NetworkError>) -> Void) {
+    @discardableResult
+    func request<Payload: Decodable>(_ target: NetworkEndpoint, completion: @escaping (Result<Payload, NetworkError>) -> Void) -> Cancellable {
         provider.request(target) { [weak self] result in
             switch result {
             case let .success(response):

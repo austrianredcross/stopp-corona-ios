@@ -84,6 +84,7 @@ PODS:
   - SwiftLint (0.39.2)
   - SwiftRichString (3.7.1)
   - SwiftyBeaver (1.9.0)
+  - ZIPFoundation (0.9.11)
 
 DEPENDENCIES:
   - Carte
@@ -98,6 +99,7 @@ DEPENDENCIES:
   - SwiftLint
   - SwiftRichString
   - SwiftyBeaver
+  - ZIPFoundation (~> 0.9)
 
 SPEC REPOS:
   trunk:
@@ -127,6 +129,7 @@ SPEC REPOS:
     - SwiftLint
     - SwiftRichString
     - SwiftyBeaver
+    - ZIPFoundation
 
 SPEC CHECKSUMS:
   Alamofire: df2f8f826963b08b9a870791ad48e07a10090b2e
@@ -155,7 +158,8 @@ SPEC CHECKSUMS:
   SwiftLint: 22ccbbe3b8008684be5955693bab135e0ed6a447
   SwiftRichString: 9a6a70b4fe2cf428e38348b5ada5400da74621fd
   SwiftyBeaver: d39e7c376bf15e9fffca8263b8fd1f42ea56aa2d
+  ZIPFoundation: b1f0de4eed33e74a676f76e12559ab6b75990197
 
-PODFILE CHECKSUM: f6cba09b3f1ab7d242c2e1d182eed0f02a9cb97e
+PODFILE CHECKSUM: 7b6ebfbe8903fb2eab9eb26e326b7bb9dddbbd5a
 
 COCOAPODS: 1.9.1

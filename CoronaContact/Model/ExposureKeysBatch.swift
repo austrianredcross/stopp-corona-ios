@@ -27,7 +27,7 @@ struct Batch: Codable {
     let filePaths: [String]
 }
 
-enum BatchType {
+enum BatchType: String {
     case full
     case daily
 }

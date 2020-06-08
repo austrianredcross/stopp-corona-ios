@@ -14,13 +14,12 @@ struct FileDownloadDestination {
         options: [.removePreviousFile, .createIntermediateDirectories]
     )
 
-    static func makeDestination(appending pathComponents: [String]) -> DownloadDestination {
-        { url, response in
-            var (destinationURL, options) = defaultDestination(url, response)
-            destinationURL = destinationURL.deletingLastPathComponent()
-            pathComponents.forEach { destinationURL.appendPathComponent($0) }
+    static func makeDestination(for url: URL) -> DownloadDestination {
+        // swiftformat:disable:next redundantReturn
+        return { temporaryURL, response in
+            let (_, options) = defaultDestination(temporaryURL, response)
 
-            return (destinationURL, options)
+            return (url, options)
         }
     }
 }

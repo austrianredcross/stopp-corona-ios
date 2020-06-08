@@ -18,6 +18,7 @@ target 'CoronaContact' do
   pod 'SwiftyBeaver'
   pod 'SQLite.swift'
   pod 'SQLiteMigrationManager.swift'
+  pod 'ZIPFoundation', '~> 0.9'
 
   target 'CoronaContactTests' do
     inherit! :search_paths
