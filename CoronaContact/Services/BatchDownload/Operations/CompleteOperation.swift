@@ -5,7 +5,7 @@
 
 import Foundation
 
-class CompleteOperation: AsyncResultOperation<Void, DownloadError> {
+class CompleteOperation: AsyncResultOperation<Void, BatchDownloadError> {
     override func main() {
         finish(with: .success(()))
     }

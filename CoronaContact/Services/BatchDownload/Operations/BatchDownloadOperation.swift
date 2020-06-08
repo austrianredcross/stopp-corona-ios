@@ -6,7 +6,7 @@
 import Foundation
 import Moya
 
-class BatchDownloadOperation: ChainedAsyncResultOperation<Void, DownloadedBatch, DownloadError> {
+class BatchDownloadOperation: ChainedAsyncResultOperation<Void, DownloadedBatch, BatchDownloadError> {
     private let path: String
     private let batch: Batch
     private let batchType: BatchType

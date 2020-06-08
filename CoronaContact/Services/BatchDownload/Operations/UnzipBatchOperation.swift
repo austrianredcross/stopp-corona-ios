@@ -6,7 +6,7 @@
 import Foundation
 import ZIPFoundation
 
-class UnzipBatchOperation: ChainedAsyncResultOperation<DownloadedBatch, UnzippedBatch, DownloadError> {
+class UnzipBatchOperation: ChainedAsyncResultOperation<DownloadedBatch, UnzippedBatch, BatchDownloadError> {
     private let fileManager = FileManager.default
 
     override func main() {

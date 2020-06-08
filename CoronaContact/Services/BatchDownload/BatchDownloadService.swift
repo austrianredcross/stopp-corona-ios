@@ -5,7 +5,7 @@
 
 import Foundation
 
-enum DownloadError: Error {
+enum BatchDownloadError: Error {
     case noResult
     case cancelled
     case fileMove(Error)
@@ -21,14 +21,14 @@ final class BatchDownloadService {
     }()
 
     private let networkService: NetworkService
-    private var completionHandler: ((Result<[UnzippedBatch], DownloadError>) -> Void)?
+    private var completionHandler: ((Result<[UnzippedBatch], BatchDownloadError>) -> Void)?
     private var unzippedBatches = [UnzippedBatch]()
 
     init() {
         networkService = NetworkService()
     }
 
-    func startBatchDownload(completionHandler: @escaping (Result<[UnzippedBatch], DownloadError>) -> Void) {
+    func startBatchDownload(completionHandler: @escaping (Result<[UnzippedBatch], BatchDownloadError>) -> Void) {
         unzippedBatches = []
         self.completionHandler = completionHandler
 
@@ -95,7 +95,7 @@ final class BatchDownloadService {
         return completeOperation
     }
 
-    private func handleCompletion<Success>(of operation: AsyncResultOperation<Success, DownloadError>) -> () -> Void {
+    private func handleCompletion<Success>(of operation: AsyncResultOperation<Success, BatchDownloadError>) -> () -> Void {
         // swiftformat:disable:next redundantReturn
         return {
             guard let result = operation.result else {
