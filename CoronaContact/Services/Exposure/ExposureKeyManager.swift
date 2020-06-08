@@ -3,10 +3,10 @@
 //  CoronaContact
 //
 
+import CryptoKit
 import ExposureNotification
 import Foundation
 import Resolver
-import CryptoKit
 
 class ExposureKeyManager {
     let localStorage: LocalStorage = Resolver.resolve()
@@ -36,14 +36,11 @@ class ExposureKeyManager {
         }
     }
 
-    func getKeysForUpload(keys: [ENTemporaryExposureKey]) -> [TemporaryExposureKey] {
-        return keys.map {
-            TemporaryExposureKey.init(temporaryExposureKey: $0, salt: exposureKeySalt)
+    func getKeysForUpload(keys: [ENTemporaryExposureKey]) throws -> [TemporaryExposureKey] {
+        let timestamps = keys.map(\.rollingStartNumber)
+        let passwords = try TracingKeyPassword.getPasswordsFor(timestamps: timestamps)
+        return keys.map { key in
+            TemporaryExposureKey(temporaryExposureKey: key, password: passwords[key.rollingStartNumber])
         }
     }
-
-    func persistKeysAfterUpload(keys:[TemporaryExposureKey], database: DatabaseService = Resolver.resolve()) {
-        try? TemporaryExposureKey.persistKeys(dbs: database, keys: keys)
-    }
-
 }

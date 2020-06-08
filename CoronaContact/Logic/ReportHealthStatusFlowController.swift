@@ -85,11 +85,11 @@ class ReportHealthStatusFlowController {
     }
 
     private func parseTemporaryExposureKeys(_ temporaryExposureKeys: [ENTemporaryExposureKey],
-                                            verification: Verification) {
-        let temporaryExposureKeys = exposureKeyManager.getKeysForUpload(keys: temporaryExposureKeys)
+                                            verification: Verification) -> TracingKeys {
+        let temporaryExposureKeys = try? exposureKeyManager.getKeysForUpload(keys: temporaryExposureKeys)
 
-        tracingKeys = TracingKeys(
-            temporaryExposureKeys: temporaryExposureKeys,
+        return TracingKeys(
+            temporaryExposureKeys: temporaryExposureKeys ?? [],
             diagnosisType: diagnosisType,
             verificationPayload: verification
         )

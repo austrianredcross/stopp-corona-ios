@@ -3,6 +3,7 @@
 //  CoronaContact
 //
 
+import ExposureNotification
 import Resolver
 import UIKit
 
@@ -83,17 +84,18 @@ class DebugViewModel: ViewModel {
     }
 
     func exposeDiagnosesKeys(test: Bool = false) {
-        if test {
-            exposureManager.getTestDiagnosisKeys { keyResult in
-                if case let .success(keys) = keyResult {
-                    let ukeys = self.exposureKeyManager.getKeysForUpload(keys: keys)
-                    self.exposureKeyManager.persistKeysAfterUpload(keys: ukeys)
-                    LoggingService.info("\(ukeys)")
+        let debugFun: (Result<[ENTemporaryExposureKey], Error>) -> Void = { keyResult in
+            if case let .success(keys) = keyResult {
+                let ukeys = try? self.exposureKeyManager.getKeysForUpload(keys: keys)
+                ukeys?.forEach { key in
+                    LoggingService.debug("ExposureKey: \(key.intervalNumber) \(key.intervalNumberDate) \(key.password.prefix(10))")
                 }
             }
+        }
+        if test {
+            exposureManager.getTestDiagnosisKeys(completion: debugFun)
         } else {
-            exposureManager.getDiagnosisKeys { _ in
-            }
+            exposureManager.getDiagnosisKeys(completion: debugFun)
         }
     }
 
