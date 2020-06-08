@@ -3,7 +3,6 @@
 //  CoronaContact
 //
 
-import CryptoKit
 import ExposureNotification
 import Foundation
 import SQLite
@@ -56,25 +55,6 @@ enum DiagnosisType: String, Codable {
         case .green:
             return 0
         }
-    }
-}
-
-extension DiagnosisType: Value {
-    public static var declaredDatatype = Int.declaredDatatype
-
-    public static func fromDatatypeValue(_ datatypeValue: Int) -> DiagnosisType {
-        switch datatypeValue {
-        case 2:
-            return DiagnosisType.red
-        case 1:
-            return DiagnosisType.yellow
-        default:
-            return DiagnosisType.green
-        }
-    }
-
-    public var datatypeValue: Int {
-        statusCode
     }
 }
 

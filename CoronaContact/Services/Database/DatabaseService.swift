@@ -39,7 +39,6 @@ class DatabaseService {
     }
 
     private func migrate(_ dba: Connection) {
-
         let manager = SQLiteMigrationManager(db: dba, migrations: [
             M001InitialMigration(),
         ])
