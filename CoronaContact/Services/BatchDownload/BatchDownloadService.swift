@@ -14,6 +14,11 @@ enum BatchDownloadError: Error {
 }
 
 final class BatchDownloadService {
+    enum DownloadRequirement {
+        case all
+        case onlyFullBatch
+    }
+
     private lazy var queue: OperationQueue = {
         let queue = OperationQueue()
         queue.maxConcurrentOperationCount = BatchDownloadConfiguration.maxConcurrentOperationCount
@@ -28,7 +33,8 @@ final class BatchDownloadService {
         networkService = NetworkService()
     }
 
-    func startBatchDownload(completionHandler: @escaping (Result<[UnzippedBatch], BatchDownloadError>) -> Void) {
+    func startBatchDownload(_ downloadRequirement: DownloadRequirement,
+                            completionHandler: @escaping (Result<[UnzippedBatch], BatchDownloadError>) -> Void) {
         unzippedBatches = []
         self.completionHandler = completionHandler
 
@@ -39,7 +45,7 @@ final class BatchDownloadService {
 
             switch result {
             case let .success(batch):
-                let downloadOperations = self.downloadFiles(in: batch)
+                let downloadOperations = self.downloadFiles(in: batch, downloadRequirement: downloadRequirement)
                 let unzipOperations = self.unzipFiles(after: downloadOperations)
                 let completeOperation = self.completeBatchDownload(after: unzipOperations)
 
@@ -60,10 +66,16 @@ final class BatchDownloadService {
         networkService.downloadExposureKeysBatch(completion: completion)
     }
 
-    private func downloadFiles(in batch: ExposureKeysBatch) -> [BatchDownloadOperation] {
+    private func downloadFiles(in batch: ExposureKeysBatch, downloadRequirement: DownloadRequirement) -> [BatchDownloadOperation] {
         let fullBatchDownloadOperations = downloadFiles(at: batch.fullBatch.filePaths, batch: batch.fullBatch, batchType: .full)
-        let dailyBatchesDownloadOperations = batch.dailyBatches.flatMap { batch in
-            downloadFiles(at: batch.filePaths, batch: batch, batchType: .daily)
+
+        let dailyBatchesDownloadOperations: [BatchDownloadOperation]
+        if downloadRequirement == .all {
+            dailyBatchesDownloadOperations = batch.dailyBatches.flatMap { batch in
+                downloadFiles(at: batch.filePaths, batch: batch, batchType: .daily)
+            }
+        } else {
+            dailyBatchesDownloadOperations = []
         }
 
         return fullBatchDownloadOperations + dailyBatchesDownloadOperations
