@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="vfP-tn-zgf" customClass="BackgroundStackView" customModule="Stopp_Corona" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="360"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="377"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Shy-DL-K00" customClass="BackgroundStackView" customModule="Stopp_Corona" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="54.5"/>
@@ -102,9 +103,9 @@
                                                 </userDefinedRuntimeAttributes>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="hha-lk-kKF" customClass="BackgroundStackView" customModule="Stopp_Corona" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="147" width="414" height="156.5"/>
+                                                <rect key="frame" x="0.0" y="147" width="414" height="173.5"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Manual Handshake" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c7I-Ak-yKN">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sickness State" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c7I-Ak-yKN">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
@@ -113,44 +114,50 @@
                                                             <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="bold"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R5x-HR-aRp" userLabel="schedule test LocalNotification" customClass="SecondaryButton" customModule="Stopp_Corona" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="20.5" width="414" height="34"/>
-                                                        <state key="normal" title="schedule test LocalNotification in 5 seconds"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current State" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HnG-C5-yPC">
+                                                        <rect key="frame" x="0.0" y="20.5" width="414" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <color key="textColor" name="ccBrownGrey"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PzY-a4-vyd" userLabel="isProbablySick" customClass="SecondaryButton" customModule="Stopp_Corona" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="37.5" width="414" height="34"/>
+                                                        <state key="normal" title="Krank (Selbsttest)"/>
                                                         <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="transKeyNormal" value="schedule test LocalNotification in 5 seconds"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="transKeyNormal" value="Krank (Selbsttest)"/>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <action selector="scheduleTestNotifications:" destination="5BI-CH-cv0" eventType="touchUpInside" id="GFS-Mp-Uew"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LTp-6A-rZ5" customClass="SecondaryButton" customModule="Stopp_Corona" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="54.5" width="414" height="34"/>
-                                                        <state key="normal" title="isUnderSelfMonitoring"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="transKeyNormal" value="isUnderSelfMonitoring"/>
-                                                        </userDefinedRuntimeAttributes>
-                                                        <connections>
-                                                            <action selector="isUnderSelfMonitoringTapped:" destination="5BI-CH-cv0" eventType="touchUpInside" id="RXf-l7-XAD"/>
+                                                            <action selector="setSelftestedSick:" destination="5BI-CH-cv0" eventType="touchUpInside" id="FgT-cu-k69"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bI7-XL-YcM" userLabel="attest sickness" customClass="SecondaryButton" customModule="Stopp_Corona" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="88.5" width="414" height="34"/>
-                                                        <state key="normal" title="attest sickness"/>
+                                                        <rect key="frame" x="0.0" y="71.5" width="414" height="34"/>
+                                                        <state key="normal" title="Krank (bestätigt)"/>
                                                         <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="transKeyNormal" value="attest sickness"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="transKeyNormal" value="Krank (bestätigt)"/>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <action selector="attestSickness:" destination="5BI-CH-cv0" eventType="touchUpInside" id="OAh-Tb-lrV"/>
+                                                            <action selector="setAttestedSick:" destination="5BI-CH-cv0" eventType="touchUpInside" id="wvj-ah-SNB"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PzY-a4-vyd" userLabel="isProbablySick" customClass="SecondaryButton" customModule="Stopp_Corona" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="122.5" width="414" height="34"/>
-                                                        <state key="normal" title="isProbablySick"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sbo-bO-FKe" userLabel="attest sickness" customClass="SecondaryButton" customModule="Stopp_Corona" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="105.5" width="414" height="34"/>
+                                                        <state key="normal" title="Gesund (bestätigt)"/>
                                                         <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="transKeyNormal" value="isProbablySick"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="transKeyNormal" value="Gesund (bestätigt)"/>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <action selector="isProbablySickTapped:" destination="5BI-CH-cv0" eventType="touchUpInside" id="cT6-pF-tyT"/>
+                                                            <action selector="revokeProbablySickButtonPressed:" destination="5BI-CH-cv0" eventType="touchUpInside" id="2tw-Yl-SJ0"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jWV-sC-jJf" userLabel="attest sickness" customClass="SecondaryButton" customModule="Stopp_Corona" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="139.5" width="414" height="34"/>
+                                                        <state key="normal" title="Versehentlich krankgemeldet"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="transKeyNormal" value="Versehentlich krankgemeldet"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="revokeAttestedSickButton:" destination="5BI-CH-cv0" eventType="touchUpInside" id="5FI-8K-9F2"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -167,7 +174,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="S3W-5S-ezr" customClass="BackgroundStackView" customModule="Stopp_Corona" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="305.5" width="414" height="54.5"/>
+                                                <rect key="frame" x="0.0" y="322.5" width="414" height="54.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Housekeeping" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FgG-jF-xLs">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="20.5"/>
@@ -240,10 +247,22 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="attestedSickButton" destination="bI7-XL-YcM" id="9Yc-CN-Zl4"/>
+                        <outlet property="currentStateLabel" destination="HnG-C5-yPC" id="6K8-ZE-ABC"/>
+                        <outlet property="probablySickButton" destination="PzY-a4-vyd" id="uDg-ke-bo0"/>
+                        <outlet property="revokeAttestedSickButton" destination="jWV-sC-jJf" id="4nz-6t-89u"/>
+                        <outlet property="revokeProbablySickButton" destination="sbo-bO-FKe" id="X21-by-fXO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d0S-yd-5NY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="130.58035714285714"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="ccBrownGrey">
+            <color red="0.47450980392156861" green="0.47450980392156861" blue="0.47450980392156861" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

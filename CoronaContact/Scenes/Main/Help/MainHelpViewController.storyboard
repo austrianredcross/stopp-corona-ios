@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,143 +16,100 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iwk-fE-mTZ">
-                                <rect key="frame" x="24" y="83.5" width="366" height="739"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="47t-tg-g1p">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <subviews>
-                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="47t-tg-g1p">
-                                        <rect key="frame" x="0.0" y="0.0" width="366" height="739"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Og3-xK-V8H">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="237"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Og3-xK-V8H">
-                                                <rect key="frame" x="0.0" y="0.0" width="366" height="350"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="automatic_handshake_help_headline" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TNY-Nr-PI8" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
-                                                        <rect key="frame" x="24" y="72" width="318" height="20.5"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="automatic_handshake_help_headline"/>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="h2"/>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </label>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k0L-jD-tcK" customClass="InstructionsView" customModule="Stopp_Corona" customModuleProvider="target">
-                                                        <rect key="frame" x="4" y="108.5" width="326" height="50"/>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" priority="250" constant="50" id="W8B-Yi-l3X"/>
-                                                        </constraints>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="bubbleColor">
-                                                                <color key="value" name="ccWhite"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </view>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="automatic_handshake_help_disclaimer" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sq1-e4-eRw" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
-                                                        <rect key="frame" x="24" y="174.5" width="318" height="20.5"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="automatic_handshake_help_disclaimer"/>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="bodySmall"/>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="roM-0C-Ufi" customClass="ArrowButton" customModule="Stopp_Corona" customModuleProvider="target">
-                                                        <rect key="frame" x="24" y="219" width="318" height="34"/>
-                                                        <state key="normal" title="automatic_handshake_help_faq_button">
-                                                            <color key="titleColor" name="ccBlack"/>
-                                                        </state>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="transKeyNormal" value="automatic_handshake_help_faq_button"/>
-                                                            <userDefinedRuntimeAttribute type="image" keyPath="arrowImage" value="ExternalLinkIcon"/>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="normalStyle" value="bold"/>
-                                                        </userDefinedRuntimeAttributes>
-                                                        <connections>
-                                                            <action selector="faqButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="c01-Eo-2Ch"/>
-                                                        </connections>
-                                                    </button>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="automatic_handshake_help_medical_disclaimer" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vLo-b0-5aI" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
-                                                        <rect key="frame" x="24" y="269" width="318" height="41"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="automatic_handshake_help_medical_disclaimer"/>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="bodySmall"/>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </label>
-                                                </subviews>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k0L-jD-tcK" customClass="InstructionsView" customModule="Stopp_Corona" customModuleProvider="target">
+                                                <rect key="frame" x="4" y="16" width="374" height="50"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="bottom" secondItem="vLo-b0-5aI" secondAttribute="bottom" constant="40" id="5cz-1n-17o"/>
-                                                    <constraint firstAttribute="trailing" secondItem="vLo-b0-5aI" secondAttribute="trailing" constant="24" id="7Yg-da-Mn4"/>
-                                                    <constraint firstItem="roM-0C-Ufi" firstAttribute="top" secondItem="sq1-e4-eRw" secondAttribute="bottom" constant="24" id="AKZ-RM-vC3"/>
-                                                    <constraint firstItem="k0L-jD-tcK" firstAttribute="leading" secondItem="Og3-xK-V8H" secondAttribute="leading" constant="4" id="BI7-HG-4BD"/>
-                                                    <constraint firstItem="roM-0C-Ufi" firstAttribute="leading" secondItem="Og3-xK-V8H" secondAttribute="leading" constant="24" id="Dpk-Hs-lwb"/>
-                                                    <constraint firstItem="k0L-jD-tcK" firstAttribute="top" secondItem="TNY-Nr-PI8" secondAttribute="bottom" constant="16" id="EWN-kv-Y3f"/>
-                                                    <constraint firstAttribute="trailing" secondItem="TNY-Nr-PI8" secondAttribute="trailing" constant="24" id="H9I-vr-w7v"/>
-                                                    <constraint firstItem="TNY-Nr-PI8" firstAttribute="top" secondItem="Og3-xK-V8H" secondAttribute="top" constant="72" id="Jz9-IU-ra6"/>
-                                                    <constraint firstItem="vLo-b0-5aI" firstAttribute="leading" secondItem="Og3-xK-V8H" secondAttribute="leading" constant="24" id="W0y-lE-ded"/>
-                                                    <constraint firstItem="sq1-e4-eRw" firstAttribute="leading" secondItem="Og3-xK-V8H" secondAttribute="leading" constant="24" id="cLt-hL-V7g"/>
-                                                    <constraint firstAttribute="trailing" secondItem="roM-0C-Ufi" secondAttribute="trailing" constant="24" id="fVb-GZ-WBB"/>
-                                                    <constraint firstItem="sq1-e4-eRw" firstAttribute="top" secondItem="k0L-jD-tcK" secondAttribute="bottom" constant="16" id="g1L-e1-n4n"/>
-                                                    <constraint firstAttribute="trailing" secondItem="sq1-e4-eRw" secondAttribute="trailing" constant="24" id="hyn-uW-BRO"/>
-                                                    <constraint firstItem="TNY-Nr-PI8" firstAttribute="leading" secondItem="Og3-xK-V8H" secondAttribute="leading" constant="24" id="kF0-a2-0bV"/>
-                                                    <constraint firstAttribute="trailing" secondItem="k0L-jD-tcK" secondAttribute="trailing" constant="36" id="lw1-md-rbP"/>
-                                                    <constraint firstItem="vLo-b0-5aI" firstAttribute="top" secondItem="roM-0C-Ufi" secondAttribute="bottom" constant="16" id="qVW-2P-8my"/>
+                                                    <constraint firstAttribute="height" priority="250" constant="50" id="W8B-Yi-l3X"/>
                                                 </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="bubbleColor">
+                                                        <color key="value" name="ccWhite"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="automatic_handshake_help_disclaimer" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sq1-e4-eRw" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
+                                                <rect key="frame" x="24" y="82" width="366" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="automatic_handshake_help_disclaimer"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="bodySmall"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="roM-0C-Ufi" customClass="ArrowButton" customModule="Stopp_Corona" customModuleProvider="target">
+                                                <rect key="frame" x="24" y="126.5" width="366" height="34"/>
+                                                <state key="normal" title="automatic_handshake_help_faq_button">
+                                                    <color key="titleColor" name="ccBlack"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="transKeyNormal" value="automatic_handshake_help_faq_button"/>
+                                                    <userDefinedRuntimeAttribute type="image" keyPath="arrowImage" value="ExternalLinkIcon"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="normalStyle" value="bold"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="faqButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="c01-Eo-2Ch"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="automatic_handshake_help_medical_disclaimer" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vLo-b0-5aI" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
+                                                <rect key="frame" x="24" y="176.5" width="366" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="automatic_handshake_help_medical_disclaimer"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="bodySmall"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="Og3-xK-V8H" firstAttribute="top" secondItem="47t-tg-g1p" secondAttribute="top" id="8na-Qy-2SD"/>
-                                            <constraint firstItem="Og3-xK-V8H" firstAttribute="trailing" secondItem="47t-tg-g1p" secondAttribute="trailing" id="AQc-YW-rXR"/>
-                                            <constraint firstItem="Og3-xK-V8H" firstAttribute="centerX" secondItem="47t-tg-g1p" secondAttribute="centerX" id="CDW-qc-stQ"/>
-                                            <constraint firstItem="Og3-xK-V8H" firstAttribute="leading" secondItem="47t-tg-g1p" secondAttribute="leading" id="N9W-8z-U5J"/>
-                                            <constraint firstItem="Og3-xK-V8H" firstAttribute="centerY" secondItem="47t-tg-g1p" secondAttribute="centerY" priority="250" id="hf8-Ju-VIZ"/>
-                                            <constraint firstAttribute="bottom" secondItem="Og3-xK-V8H" secondAttribute="bottom" priority="250" id="oGO-3k-5CM"/>
+                                            <constraint firstAttribute="bottom" secondItem="vLo-b0-5aI" secondAttribute="bottom" constant="40" id="5cz-1n-17o"/>
+                                            <constraint firstAttribute="trailing" secondItem="vLo-b0-5aI" secondAttribute="trailing" constant="24" id="7Yg-da-Mn4"/>
+                                            <constraint firstItem="roM-0C-Ufi" firstAttribute="top" secondItem="sq1-e4-eRw" secondAttribute="bottom" constant="24" id="AKZ-RM-vC3"/>
+                                            <constraint firstItem="k0L-jD-tcK" firstAttribute="leading" secondItem="Og3-xK-V8H" secondAttribute="leading" constant="4" id="BI7-HG-4BD"/>
+                                            <constraint firstItem="roM-0C-Ufi" firstAttribute="leading" secondItem="Og3-xK-V8H" secondAttribute="leading" constant="24" id="Dpk-Hs-lwb"/>
+                                            <constraint firstItem="k0L-jD-tcK" firstAttribute="top" secondItem="Og3-xK-V8H" secondAttribute="top" constant="16" id="PqI-Ni-6Ie"/>
+                                            <constraint firstItem="vLo-b0-5aI" firstAttribute="leading" secondItem="Og3-xK-V8H" secondAttribute="leading" constant="24" id="W0y-lE-ded"/>
+                                            <constraint firstItem="sq1-e4-eRw" firstAttribute="leading" secondItem="Og3-xK-V8H" secondAttribute="leading" constant="24" id="cLt-hL-V7g"/>
+                                            <constraint firstAttribute="trailing" secondItem="roM-0C-Ufi" secondAttribute="trailing" constant="24" id="fVb-GZ-WBB"/>
+                                            <constraint firstItem="sq1-e4-eRw" firstAttribute="top" secondItem="k0L-jD-tcK" secondAttribute="bottom" constant="16" id="g1L-e1-n4n"/>
+                                            <constraint firstAttribute="trailing" secondItem="sq1-e4-eRw" secondAttribute="trailing" constant="24" id="hyn-uW-BRO"/>
+                                            <constraint firstAttribute="trailing" secondItem="k0L-jD-tcK" secondAttribute="trailing" constant="36" id="lw1-md-rbP"/>
+                                            <constraint firstItem="vLo-b0-5aI" firstAttribute="top" secondItem="roM-0C-Ufi" secondAttribute="bottom" constant="16" id="qVW-2P-8my"/>
                                         </constraints>
-                                        <viewLayoutGuide key="contentLayoutGuide" id="AXF-TP-hCO"/>
-                                        <viewLayoutGuide key="frameLayoutGuide" id="9Qw-Lw-ovO"/>
-                                    </scrollView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zkq-Aa-ix4">
-                                        <rect key="frame" x="310" y="12" width="44" height="44"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="44" id="MAa-Wy-rSw"/>
-                                            <constraint firstAttribute="width" constant="44" id="qd7-5u-yVC"/>
-                                        </constraints>
-                                        <inset key="imageEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
-                                        <state key="normal" image="startMenuClose"/>
-                                        <connections>
-                                            <action selector="closeButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XBM-d5-IdA"/>
-                                        </connections>
-                                    </button>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstItem="47t-tg-g1p" firstAttribute="top" secondItem="Iwk-fE-mTZ" secondAttribute="top" id="H4D-F8-UhE"/>
-                                    <constraint firstAttribute="bottom" secondItem="47t-tg-g1p" secondAttribute="bottom" id="MpA-1m-99q"/>
-                                    <constraint firstItem="47t-tg-g1p" firstAttribute="leading" secondItem="Iwk-fE-mTZ" secondAttribute="leading" id="QEy-yi-N4v"/>
-                                    <constraint firstAttribute="trailing" secondItem="47t-tg-g1p" secondAttribute="trailing" id="TNi-hS-tUE"/>
-                                    <constraint firstItem="zkq-Aa-ix4" firstAttribute="top" secondItem="Iwk-fE-mTZ" secondAttribute="top" constant="12" id="a1l-hU-vky"/>
-                                    <constraint firstAttribute="trailing" secondItem="zkq-Aa-ix4" secondAttribute="trailing" constant="12" id="c5O-Qm-mBX"/>
+                                    <constraint firstItem="Og3-xK-V8H" firstAttribute="top" secondItem="47t-tg-g1p" secondAttribute="top" id="8na-Qy-2SD"/>
+                                    <constraint firstItem="Og3-xK-V8H" firstAttribute="trailing" secondItem="47t-tg-g1p" secondAttribute="trailing" id="AQc-YW-rXR"/>
+                                    <constraint firstItem="Og3-xK-V8H" firstAttribute="centerX" secondItem="47t-tg-g1p" secondAttribute="centerX" id="CDW-qc-stQ"/>
+                                    <constraint firstItem="Og3-xK-V8H" firstAttribute="leading" secondItem="47t-tg-g1p" secondAttribute="leading" id="N9W-8z-U5J"/>
+                                    <constraint firstItem="Og3-xK-V8H" firstAttribute="centerY" secondItem="47t-tg-g1p" secondAttribute="centerY" priority="250" id="hf8-Ju-VIZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="Og3-xK-V8H" secondAttribute="bottom" priority="250" id="oGO-3k-5CM"/>
                                 </constraints>
-                            </view>
+                                <viewLayoutGuide key="contentLayoutGuide" id="AXF-TP-hCO"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="9Qw-Lw-ovO"/>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Iwk-fE-mTZ" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.825" id="ErG-vm-r79"/>
-                            <constraint firstItem="Iwk-fE-mTZ" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="F6S-Pe-sED"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Iwk-fE-mTZ" secondAttribute="bottom" constant="24" id="Hqb-Vs-VyK"/>
-                            <constraint firstItem="Iwk-fE-mTZ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="24" id="RXL-rY-bMX"/>
-                            <constraint firstItem="Iwk-fE-mTZ" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="VkC-Kf-PBn"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Iwk-fE-mTZ" secondAttribute="trailing" constant="24" id="fIc-bg-mA6"/>
-                            <constraint firstItem="Iwk-fE-mTZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="uCB-Lp-8rZ"/>
+                            <constraint firstItem="47t-tg-g1p" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="DaX-cI-0Oi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="47t-tg-g1p" secondAttribute="trailing" id="DbZ-9f-c8u"/>
+                            <constraint firstItem="47t-tg-g1p" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="LmM-mw-2kD"/>
+                            <constraint firstAttribute="bottom" secondItem="47t-tg-g1p" secondAttribute="bottom" id="Waj-xw-9UU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="innerView" destination="Iwk-fE-mTZ" id="VPU-CH-SaO"/>
                         <outlet property="instructionsView" destination="k0L-jD-tcK" id="kTm-wY-iG0"/>
                         <outlet property="scrollView" destination="47t-tg-g1p" id="5Td-9T-Sn1"/>
                     </connections>
@@ -165,7 +121,6 @@
     </scenes>
     <resources>
         <image name="ExternalLinkIcon" width="24" height="24"/>
-        <image name="startMenuClose" width="20" height="21"/>
         <namedColor name="ccBlack">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
