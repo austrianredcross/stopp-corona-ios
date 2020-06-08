@@ -22,6 +22,10 @@ class DebugViewController: UIViewController, StoryboardBased, ViewModelBased, Re
         }
     }
 
+    @IBAction func exitToMain(_ sender: UIStoryboardSegue) {
+        close(sender)
+    }
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         viewModel?.updateView()

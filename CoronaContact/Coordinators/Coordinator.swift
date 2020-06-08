@@ -5,11 +5,12 @@
 
 import UIKit
 
-class Coordinator {
+class Coordinator: NSObject {
     private(set) var childCoordinators: [Coordinator] = []
     weak var parentCoordinator: Coordinator?
 
-    init() {
+    override init() {
+        super.init()
         LoggingService.verbose(self, context: .navigation)
     }
 
@@ -42,12 +43,6 @@ class Coordinator {
 
     deinit {
         LoggingService.verbose(self, context: .navigation)
-    }
-}
-
-extension Coordinator: Equatable {
-    static func == (lhs: Coordinator, rhs: Coordinator) -> Bool {
-        lhs === rhs
     }
 }
 
