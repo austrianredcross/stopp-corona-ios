@@ -6,6 +6,8 @@
 	<string>${API_AUTHORIZATION_KEY}</string>
 	<key>API_BASE_URL</key>
 	<string>${API_BASE_URL}</string>
+	<key>API_CDN_BASE_URL</key>
+	<string>${API_CDN_BASE_URL}</string>
 	<key>API_HOST</key>
 	<string>${API_HOST}</string>
 	<key>API_SMS_AUTHORIZATION_KEY</key>
