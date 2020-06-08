@@ -207,6 +207,7 @@
 		616518E52460777C001219A7 /* ShareAppCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616518E42460777C001219A7 /* ShareAppCardView.swift */; };
 		616518E72460778C001219A7 /* ShareAppCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 616518E62460778C001219A7 /* ShareAppCardView.xib */; };
 		61653681247D114F0088A9D6 /* TracingKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61653680247D114F0088A9D6 /* TracingKeys.swift */; };
+		616B75AB248E33A60030CD6B /* FileDownloadDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616B75AA248E33A60030CD6B /* FileDownloadDestination.swift */; };
 		616E1DA9243486C700109435 /* ArrowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616E1DA8243486C700109435 /* ArrowButton.swift */; };
 		618A6651242B8B84001BDBBF /* Collection+safe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618A6650242B8B84001BDBBF /* Collection+safe.swift */; };
 		61BB41DA243684590083053B /* Revocation+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D0F5702435EF1B0026C91A /* Revocation+Injection.swift */; };
@@ -525,6 +526,7 @@
 		616518E42460777C001219A7 /* ShareAppCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareAppCardView.swift; sourceTree = "<group>"; };
 		616518E62460778C001219A7 /* ShareAppCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShareAppCardView.xib; sourceTree = "<group>"; };
 		61653680247D114F0088A9D6 /* TracingKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TracingKeys.swift; sourceTree = "<group>"; };
+		616B75AA248E33A60030CD6B /* FileDownloadDestination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDownloadDestination.swift; sourceTree = "<group>"; };
 		616E1DA8243486C700109435 /* ArrowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrowButton.swift; sourceTree = "<group>"; };
 		618A6650242B8B84001BDBBF /* Collection+safe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+safe.swift"; sourceTree = "<group>"; };
 		61AB6EF024573737006B4190 /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
@@ -929,6 +931,7 @@
 				6153A52C2426A061006A8570 /* NetworkService+Error.swift */,
 				614BA9E52423C31C006797AA /* NetworkService+Injection.swift */,
 				83974B0D3420CEC1F08FB85D /* NetworkSession.swift */,
+				616B75AA248E33A60030CD6B /* FileDownloadDestination.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -2080,6 +2083,7 @@
 				61546553242D1A6D0003D3D3 /* AnswerView.swift in Sources */,
 				4BD0B8DF2427AF9800BFA123 /* NotificationService+Injection.swift in Sources */,
 				839741974FFF610B5F936C7D /* History.swift in Sources */,
+				616B75AB248E33A60030CD6B /* FileDownloadDestination.swift in Sources */,
 				611B78BE242816BE0040CCB3 /* AppUpdateService+Injection.swift in Sources */,
 				83974E39C51DA3FCCB202E62 /* MainCoordinator.swift in Sources */,
 				83974C2CD7A816EE91AA6583 /* OutgoingInfectionMessage.swift in Sources */,
