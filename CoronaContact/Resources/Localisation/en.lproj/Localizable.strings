@@ -49,7 +49,7 @@
 "main_microphone_explanation_dialog_do_not_show_again"                       = "Don't show again";
 "mandatory_update_title"                                                     = "Download the current version";
 "mandatory_update_message"                                                   = "This version is no longer supported. Download the current version to continue using the app. ";
-"mandatory_update_button"                                                    = "Go to App Store";
+"mandatory_update_button"                                                    = "Check availability";
 "health_status_red_warning_single_contact_headline"                          = "Attention";
 "health_status_red_warning_single_contact_description"                       = "A corona infection has been medically diagnosed in one of your contacts.";
 "health_status_red_warning_single_contact_button"                            = "self-quarantine days";

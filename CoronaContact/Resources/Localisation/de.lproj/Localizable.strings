@@ -49,7 +49,7 @@
 "main_microphone_explanation_dialog_do_not_show_again"                       = "Nicht wieder anzeigen";
 "mandatory_update_title"                                                     = "Aktuelle Version herunterladen";
 "mandatory_update_message"                                                   = "Die derzeitige Version wird nicht mehr unterstützt. Laden Sie bitte eine neue Version der App herunter, damit Sie wieder auf alle Funktionen zugreifen können.";
-"mandatory_update_button"                                                    = "Zum App Store";
+"mandatory_update_button"                                                    = "Verfügbarkeit prüfen";
 "health_status_red_warning_single_contact_headline"                          = "Achtung";
 "health_status_red_warning_single_contact_description"                       = "Corona-Infektion bei einem Ihrer Kontakte ärztlich festgestellt.";
 "health_status_red_warning_single_contact_button"                            = "Quarantäne-Tage";
