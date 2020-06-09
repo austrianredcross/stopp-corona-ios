@@ -6,10 +6,11 @@
 import Foundation
 import Resolver
 import SQLite
+import SQLiteMigrationManager
 
 class DatabaseService {
-    private let dba: Connection?
-    private let log = ContextLogger(context: .database)
+    public let dba: Connection!
+    public let log = ContextLogger(context: .database)
 
     enum DatabaseLocation {
         case file(String)
@@ -26,8 +27,36 @@ class DatabaseService {
         }
     }
 
-    init(location: DatabaseLocation = .file("db")) {
+    init(location: DatabaseLocation = .file("db2")) {
         dba = try? Connection(location.location)
         log.debug("Database \(location.location)")
+        dba!.trace { self.log.debug($0) }
+        if let dba = dba {
+            migrate(dba)
+        } else {
+            log.error("could not create database")
+        }
+    }
+
+    private func migrate(_ dba: Connection) {
+        let manager = SQLiteMigrationManager(db: dba, migrations: [
+            M001InitialMigration(),
+        ])
+
+        do {
+            if !manager.hasMigrationsTable() {
+                log.info("creating migration table")
+                try manager.createMigrationsTable()
+            }
+
+            if manager.needsMigration() {
+                log.info("pending migrations \(manager.pendingMigrations())")
+                try manager.migrateDatabase()
+            }
+
+            log.info("current migrations: \(manager.appliedVersions())")
+        } catch {
+            log.error("migration failed: \(error)")
+        }
     }
 }

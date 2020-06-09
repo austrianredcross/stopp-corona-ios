@@ -3,6 +3,7 @@
 //  CoronaContact
 //
 
+import ExposureNotification
 import Resolver
 import UIKit
 
@@ -22,6 +23,7 @@ class DebugViewModel: ViewModel {
     @Injected private var network: NetworkService
     @Injected private var notificationService: NotificationService
     @Injected private var exposureManager: ExposureManager
+    @Injected private var exposureKeyManager: ExposureKeyManager
 
     init(coordinator: DebugCoordinator) {
         self.coordinator = coordinator
@@ -82,12 +84,18 @@ class DebugViewModel: ViewModel {
     }
 
     func exposeDiagnosesKeys(test: Bool = false) {
+        let debugFun: (Result<[ENTemporaryExposureKey], Error>) -> Void = { keyResult in
+            if case let .success(keys) = keyResult {
+                let ukeys = try? self.exposureKeyManager.getKeysForUpload(keys: keys)
+                ukeys?.forEach { key in
+                    LoggingService.debug("ExposureKey: \(key.intervalNumber) \(key.intervalNumberDate) \(key.password.prefix(10))")
+                }
+            }
+        }
         if test {
-            exposureManager.getTestDiagnosisKeys { _ in
-            }
+            exposureManager.getTestDiagnosisKeys(completion: debugFun)
         } else {
-            exposureManager.getDiagnosisKeys { _ in
-            }
+            exposureManager.getDiagnosisKeys(completion: debugFun)
         }
     }
 
