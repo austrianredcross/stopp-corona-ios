@@ -56,7 +56,7 @@ class AsyncOperation: Operation {
     }
 
     override func main() {
-        fatalError("Subclasses must implement `main` without overriding super.")
+        fatalError("Subclasses must implement `main` without calling super.")
     }
 
     func finish() {
