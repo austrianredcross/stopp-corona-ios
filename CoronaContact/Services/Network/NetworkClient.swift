@@ -66,11 +66,16 @@ final class NetworkClient {
 
                 do {
                     let filteredResponse = try response.filterSuccessfulStatusCodes()
-                    let parsedResponse: Result<Payload, NetworkError> = filteredResponse.parseJSON()
-                    completion(parsedResponse)
+                    completion(.success(try filteredResponse.parseJSON()))
                     self?.log.verbose(response.detailedDebugDescription, context: .network)
 
                 } catch {
+                    if let error = error as? DecodingError {
+                        self?.log.error("\(response.detailedDebugDescription) DecodingError: \(error)", context: .network)
+                        completion(.failure(NetworkError.parsingError(error)))
+                        return
+                    }
+
                     let statusCode = HTTPStatusCode(statusCode: response.statusCode)
                     if statusCode == .notModified {
                         completion(.failure(.notModifiedError))

@@ -13,13 +13,8 @@ private let customDecoder: JSONDecoder = {
 }()
 
 extension Response {
-    func parseJSON<Type: Decodable>() -> Result<Type, NetworkError> {
-        do {
-            let value: Type = try map(Type.self, using: customDecoder)
-            return .success(value)
-        } catch {
-            return .failure(.parsingError(error))
-        }
+    func parseJSON<Type: Decodable>() throws -> Type {
+        try map(Type.self, using: customDecoder)
     }
 
     func parseError() -> ErrorResponse? {
