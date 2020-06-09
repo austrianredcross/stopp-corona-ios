@@ -72,7 +72,7 @@ final class NetworkClient {
                 } catch {
                     if let error = error as? DecodingError {
                         self?.log.error("\(response.detailedDebugDescription) DecodingError: \(error)", context: .network)
-                        completion(.failure(NetworkError.parsingError(error)))
+                        completion(.failure(.parsingError(error)))
                         return
                     }
 
