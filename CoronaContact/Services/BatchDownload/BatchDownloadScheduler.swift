@@ -111,6 +111,14 @@ final class BatchDownloadScheduler {
             log.error("Unable to schedule background task: \(error)")
         }
     }
+
+    #if DEBUG
+        func scheduleBackgroundTaskForDebuggingPurposes() {
+            backgroundTaskScheduler.cancelAllTaskRequests()
+            let oneMinuteFromNow = Date(timeIntervalSinceNow: 60)
+            scheduleBackgroundTask(at: oneMinuteFromNow)
+        }
+    #endif
 }
 
 private extension DateInterval {
