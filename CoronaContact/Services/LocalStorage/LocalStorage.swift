@@ -45,7 +45,4 @@ class LocalStorage {
 
     @Persisted(userDefaultsKey: "all_clear_quarantine", notificationName: .init("allClearQuarantine"), defaultValue: false)
     var allClearQuarantine: Bool
-
-    @Persisted(userDefaultsKey: "exposure_key_salt", notificationName: .init("exposureKeySalt"), defaultValue: nil)
-    var exposureKeySalt: Data?
 }

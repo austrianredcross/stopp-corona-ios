@@ -5,7 +5,6 @@
 
 import ExposureNotification
 import Foundation
-import SQLite
 
 struct TracingKeys: Codable {
     private enum CodingKeys: String, CodingKey {
