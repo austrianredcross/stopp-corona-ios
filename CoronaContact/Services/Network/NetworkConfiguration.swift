@@ -14,6 +14,14 @@ enum NetworkConfiguration: ConfigurationRetrievable {
         AppConfiguration.value(for: "API_SMS_BASE_URL") { URL(string: $0)! }
     }()
 
+    static var cdnBaseURL: URL = {
+        AppConfiguration.value(for: "API_CDN_BASE_URL") { URL(string: $0)! }
+    }()
+
+    static var cdnHostURL: URL = {
+        AppConfiguration.value(for: "API_CDN_HOST_URL") { URL(string: $0)! }
+    }()
+
     static let authorizationKey: String = {
         let authorizationKey: String = AppConfiguration.value(for: "API_AUTHORIZATION_KEY")
         guard !authorizationKey.isEmpty else {

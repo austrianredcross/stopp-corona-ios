@@ -17,6 +17,7 @@ enum LoggingContext: String {
     case nearby
     case exposure
     case storage
+    case batchDownload
 
     var description: String {
         rawValue.uppercased()

@@ -86,6 +86,14 @@
 		611B78BA242816950040CCB3 /* UIApplication+AppStoreAppId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611B78B8242816950040CCB3 /* UIApplication+AppStoreAppId.swift */; };
 		611B78BE242816BE0040CCB3 /* AppUpdateService+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611B78BC242816BE0040CCB3 /* AppUpdateService+Injection.swift */; };
 		611B78BF242816BE0040CCB3 /* AppUpdateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611B78BD242816BE0040CCB3 /* AppUpdateService.swift */; };
+		611D9ED6248E6EEC00EBB420 /* ExposureKeysBatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611D9ED5248E6EEC00EBB420 /* ExposureKeysBatch.swift */; };
+		611D9ED9248E6FD900EBB420 /* BatchDownloadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611D9ED8248E6FD900EBB420 /* BatchDownloadService.swift */; };
+		611D9EDC248E702000EBB420 /* AsyncOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611D9EDB248E702000EBB420 /* AsyncOperation.swift */; };
+		611D9EDE248E703000EBB420 /* BatchDownloadOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611D9EDD248E703000EBB420 /* BatchDownloadOperation.swift */; };
+		611D9EE0248E703E00EBB420 /* UnzipBatchOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611D9EDF248E703E00EBB420 /* UnzipBatchOperation.swift */; };
+		611D9EE2248E704B00EBB420 /* CompleteOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611D9EE1248E704B00EBB420 /* CompleteOperation.swift */; };
+		611D9EE5248E713100EBB420 /* FileManager+unzipItemWithOverride.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611D9EE4248E713100EBB420 /* FileManager+unzipItemWithOverride.swift */; };
+		611D9EE7248E7C9500EBB420 /* BatchDownloadConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611D9EE6248E7C9500EBB420 /* BatchDownloadConfiguration.swift */; };
 		612C4600246414260072ECF7 /* ConfigurationRetrievable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612C45FF246414260072ECF7 /* ConfigurationRetrievable.swift */; };
 		612C460224641C620072ECF7 /* RequestTan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612C460124641C620072ECF7 /* RequestTan.swift */; };
 		613AF72B24616A8B0089085E /* ShareButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613AF72A24616A8B0089085E /* ShareButton.swift */; };
@@ -198,6 +206,8 @@
 		6154654B242CBEA60003D3D3 /* SuspicionGuidelinesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61546547242CBEA60003D3D3 /* SuspicionGuidelinesViewModel.swift */; };
 		61546553242D1A6D0003D3D3 /* AnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61546552242D1A6D0003D3D3 /* AnswerView.swift */; };
 		61546555242D1A7D0003D3D3 /* AnswerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61546554242D1A7D0003D3D3 /* AnswerView.xib */; };
+		6155C6F9248F7437009BDE6B /* BatchDownloadScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6155C6F8248F7437009BDE6B /* BatchDownloadScheduler.swift */; };
+		6155C6FB248F8195009BDE6B /* BatchDownloadScheduler+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6155C6FA248F8195009BDE6B /* BatchDownloadScheduler+Injection.swift */; };
 		615D36322437417600B608AB /* AttestedSicknessGuidelinesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615D362E2437417600B608AB /* AttestedSicknessGuidelinesCoordinator.swift */; };
 		615D36332437417600B608AB /* AttestedSicknessGuidelinesViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 615D362F2437417600B608AB /* AttestedSicknessGuidelinesViewController.storyboard */; };
 		615D36342437417600B608AB /* AttestedSicknessGuidelinesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615D36302437417600B608AB /* AttestedSicknessGuidelinesViewController.swift */; };
@@ -206,6 +216,7 @@
 		616518E52460777C001219A7 /* ShareAppCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616518E42460777C001219A7 /* ShareAppCardView.swift */; };
 		616518E72460778C001219A7 /* ShareAppCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 616518E62460778C001219A7 /* ShareAppCardView.xib */; };
 		61653681247D114F0088A9D6 /* TracingKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61653680247D114F0088A9D6 /* TracingKeys.swift */; };
+		616B75AB248E33A60030CD6B /* FileDownloadDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616B75AA248E33A60030CD6B /* FileDownloadDestination.swift */; };
 		616E1DA9243486C700109435 /* ArrowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616E1DA8243486C700109435 /* ArrowButton.swift */; };
 		618A6651242B8B84001BDBBF /* Collection+safe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618A6650242B8B84001BDBBF /* Collection+safe.swift */; };
 		61BB41DA243684590083053B /* Revocation+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D0F5702435EF1B0026C91A /* Revocation+Injection.swift */; };
@@ -401,6 +412,14 @@
 		611B78B8242816950040CCB3 /* UIApplication+AppStoreAppId.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+AppStoreAppId.swift"; sourceTree = "<group>"; };
 		611B78BC242816BE0040CCB3 /* AppUpdateService+Injection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppUpdateService+Injection.swift"; sourceTree = "<group>"; };
 		611B78BD242816BE0040CCB3 /* AppUpdateService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppUpdateService.swift; sourceTree = "<group>"; };
+		611D9ED5248E6EEC00EBB420 /* ExposureKeysBatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExposureKeysBatch.swift; sourceTree = "<group>"; };
+		611D9ED8248E6FD900EBB420 /* BatchDownloadService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatchDownloadService.swift; sourceTree = "<group>"; };
+		611D9EDB248E702000EBB420 /* AsyncOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncOperation.swift; sourceTree = "<group>"; };
+		611D9EDD248E703000EBB420 /* BatchDownloadOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatchDownloadOperation.swift; sourceTree = "<group>"; };
+		611D9EDF248E703E00EBB420 /* UnzipBatchOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnzipBatchOperation.swift; sourceTree = "<group>"; };
+		611D9EE1248E704B00EBB420 /* CompleteOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteOperation.swift; sourceTree = "<group>"; };
+		611D9EE4248E713100EBB420 /* FileManager+unzipItemWithOverride.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+unzipItemWithOverride.swift"; sourceTree = "<group>"; };
+		611D9EE6248E7C9500EBB420 /* BatchDownloadConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatchDownloadConfiguration.swift; sourceTree = "<group>"; };
 		612C45FF246414260072ECF7 /* ConfigurationRetrievable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationRetrievable.swift; sourceTree = "<group>"; };
 		612C460124641C620072ECF7 /* RequestTan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestTan.swift; sourceTree = "<group>"; };
 		613AF72A24616A8B0089085E /* ShareButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareButton.swift; sourceTree = "<group>"; };
@@ -514,6 +533,8 @@
 		61546547242CBEA60003D3D3 /* SuspicionGuidelinesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuspicionGuidelinesViewModel.swift; sourceTree = "<group>"; };
 		61546552242D1A6D0003D3D3 /* AnswerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerView.swift; sourceTree = "<group>"; };
 		61546554242D1A7D0003D3D3 /* AnswerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnswerView.xib; sourceTree = "<group>"; };
+		6155C6F8248F7437009BDE6B /* BatchDownloadScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatchDownloadScheduler.swift; sourceTree = "<group>"; };
+		6155C6FA248F8195009BDE6B /* BatchDownloadScheduler+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BatchDownloadScheduler+Injection.swift"; sourceTree = "<group>"; };
 		615D362E2437417600B608AB /* AttestedSicknessGuidelinesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttestedSicknessGuidelinesCoordinator.swift; sourceTree = "<group>"; };
 		615D362F2437417600B608AB /* AttestedSicknessGuidelinesViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AttestedSicknessGuidelinesViewController.storyboard; sourceTree = "<group>"; };
 		615D36302437417600B608AB /* AttestedSicknessGuidelinesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttestedSicknessGuidelinesViewController.swift; sourceTree = "<group>"; };
@@ -523,6 +544,7 @@
 		616518E42460777C001219A7 /* ShareAppCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareAppCardView.swift; sourceTree = "<group>"; };
 		616518E62460778C001219A7 /* ShareAppCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShareAppCardView.xib; sourceTree = "<group>"; };
 		61653680247D114F0088A9D6 /* TracingKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TracingKeys.swift; sourceTree = "<group>"; };
+		616B75AA248E33A60030CD6B /* FileDownloadDestination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDownloadDestination.swift; sourceTree = "<group>"; };
 		616E1DA8243486C700109435 /* ArrowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrowButton.swift; sourceTree = "<group>"; };
 		618A6650242B8B84001BDBBF /* Collection+safe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+safe.swift"; sourceTree = "<group>"; };
 		61AB6EF024573737006B4190 /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
@@ -903,6 +925,39 @@
 			path = AppUpdate;
 			sourceTree = "<group>";
 		};
+		611D9ED7248E6FB800EBB420 /* BatchDownload */ = {
+			isa = PBXGroup;
+			children = (
+				611D9EE3248E712A00EBB420 /* Extensions */,
+				611D9EDA248E701300EBB420 /* Operations */,
+				611D9ED8248E6FD900EBB420 /* BatchDownloadService.swift */,
+				6155C6F8248F7437009BDE6B /* BatchDownloadScheduler.swift */,
+				6155C6FA248F8195009BDE6B /* BatchDownloadScheduler+Injection.swift */,
+				611D9EE6248E7C9500EBB420 /* BatchDownloadConfiguration.swift */,
+				616B75AA248E33A60030CD6B /* FileDownloadDestination.swift */,
+			);
+			path = BatchDownload;
+			sourceTree = "<group>";
+		};
+		611D9EDA248E701300EBB420 /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				611D9EDB248E702000EBB420 /* AsyncOperation.swift */,
+				611D9EDD248E703000EBB420 /* BatchDownloadOperation.swift */,
+				611D9EDF248E703E00EBB420 /* UnzipBatchOperation.swift */,
+				611D9EE1248E704B00EBB420 /* CompleteOperation.swift */,
+			);
+			path = Operations;
+			sourceTree = "<group>";
+		};
+		611D9EE3248E712A00EBB420 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				611D9EE4248E713100EBB420 /* FileManager+unzipItemWithOverride.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		613E35F0242E3F64009421A8 /* LaunchScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -966,6 +1021,7 @@
 				61459A56242AC48800DC88A7 /* Website.swift */,
 				83974BF870B575EAC8607D3D /* P2PKitEvent.swift */,
 				61653680247D114F0088A9D6 /* TracingKeys.swift */,
+				611D9ED5248E6EEC00EBB420 /* ExposureKeysBatch.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1461,6 +1517,7 @@
 				83974647D941FDC0A47E6DFA /* Configuration */,
 				614BA9E22423C31C006797AA /* Network */,
 				4E5254CF2472B85D00B6C3A4 /* Exposure */,
+				611D9ED7248E6FB800EBB420 /* BatchDownload */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1860,6 +1917,7 @@
 			files = (
 				614D7239242909C000CC545D /* SelfTestingConfirmationCoordinator.swift in Sources */,
 				61D0F53724352E820026C91A /* RevocationStatus.swift in Sources */,
+				611D9ED6248E6EEC00EBB420 /* ExposureKeysBatch.swift in Sources */,
 				61D0F53124352E240026C91A /* QuarantineTimeController.swift in Sources */,
 				4EDB47FA2422086B000CE24A /* UIView+ShadowBorders.swift in Sources */,
 				614D72072428E82700CC545D /* ContactSicknessCoordinator.swift in Sources */,
@@ -1890,6 +1948,7 @@
 				4E0B3E39241F995D00EF60EE /* AppDelegate.swift in Sources */,
 				4E9BF7082420C31400B360A4 /* MainViewController.swift in Sources */,
 				614BAA0E2423C334006797AA /* Configuration.swift in Sources */,
+				611D9EDC248E702000EBB420 /* AsyncOperation.swift in Sources */,
 				615D36322437417600B608AB /* AttestedSicknessGuidelinesCoordinator.swift in Sources */,
 				4EDB47F62421EF46000CE24A /* UIColor+NamedColors.swift in Sources */,
 				6153A52224264A2D006A8570 /* ActivityConfiguration.swift in Sources */,
@@ -1911,7 +1970,9 @@
 				614BAA0C2423C334006797AA /* InfectionInfo.swift in Sources */,
 				614BA9F02423C31C006797AA /* NetworkEndpoint.swift in Sources */,
 				6153A50124259953006A8570 /* ProgressView.swift in Sources */,
+				611D9EE5248E713100EBB420 /* FileManager+unzipItemWithOverride.swift in Sources */,
 				6153A4E6242598DC006A8570 /* SicknessCertificateTanConfirmationCoordinator.swift in Sources */,
+				611D9EE0248E703E00EBB420 /* UnzipBatchOperation.swift in Sources */,
 				4B82571E24266A32007E25C6 /* StartMenuSimpleWebViewViewController.swift in Sources */,
 				9215253B2427C5E00023F469 /* SelfTestingHintCoordinator.swift in Sources */,
 				8922A16E243DF094004E9D42 /* Observable.swift in Sources */,
@@ -1921,6 +1982,8 @@
 				4ED175B72458347400248D3B /* DebugViewController.swift in Sources */,
 				614BAA0D2423C334006797AA /* SuccessResponse.swift in Sources */,
 				9215255E2427C7AA0023F469 /* SelfTestingSuspicionViewModel.swift in Sources */,
+				6155C6F9248F7437009BDE6B /* BatchDownloadScheduler.swift in Sources */,
+				611D9EE2248E704B00EBB420 /* CompleteOperation.swift in Sources */,
 				4E8984282473F07600499820 /* LocalStorage+Injected.swift in Sources */,
 				614BAA0B2423C334006797AA /* Answer.swift in Sources */,
 				6153A4EF24259929006A8570 /* NotificationCenter+observe.swift in Sources */,
@@ -1961,6 +2024,7 @@
 				613E35F7242E3F65009421A8 /* LaunchScreenView.swift in Sources */,
 				6153A52524264A2D006A8570 /* ActivityPresentable.swift in Sources */,
 				4ED175D92460730E00248D3B /* RevokeSicknessStatusReportCoordinator.swift in Sources */,
+				611D9ED9248E6FD900EBB420 /* BatchDownloadService.swift in Sources */,
 				614D720E2428E87000CC545D /* QuarantineGuidelinesViewModel.swift in Sources */,
 				4B7379E92423D9E600DF338E /* StartMenuViewController.swift in Sources */,
 				6153A4DB242598DC006A8570 /* SicknessCertificatePersonalDataViewController.swift in Sources */,
@@ -1977,6 +2041,7 @@
 				6153A4FF24259953006A8570 /* FloatingTextField.swift in Sources */,
 				4EC81FB72423844E00179CE9 /* SecondaryButton.swift in Sources */,
 				6154654A242CBEA60003D3D3 /* SuspicionGuidelinesViewController.swift in Sources */,
+				611D9EDE248E703000EBB420 /* BatchDownloadOperation.swift in Sources */,
 				6153A4D6242598DC006A8570 /* SicknessCertificateConfirmationViewModel.swift in Sources */,
 				61D0F55224352E960026C91A /* RevocationTanConfirmationCoordinator.swift in Sources */,
 				614D72242429084300CC545D /* SelfTestingPersonalDataViewController.swift in Sources */,
@@ -2005,6 +2070,7 @@
 				83974B1F6F49E544E670E7E3 /* NSString+localized.swift in Sources */,
 				6153A4E3242598DC006A8570 /* SicknessCertificateTanConfirmationViewModel.swift in Sources */,
 				4E1AAEFD2461870700D43E2B /* RevokeSicknessConfirmationViewModel.swift in Sources */,
+				611D9EE7248E7C9500EBB420 /* BatchDownloadConfiguration.swift in Sources */,
 				92FFC9C124267D8200CC541B /* SelfTestingCheckSymptomsViewModel.swift in Sources */,
 				92FFC9C52426806300CC541B /* SelfTestingFlowController.swift in Sources */,
 				4EC81FB52423843300179CE9 /* PrimaryButton.swift in Sources */,
@@ -2057,6 +2123,7 @@
 				6153A52724264A2D006A8570 /* ActivityModalViewController.swift in Sources */,
 				83974960BEEA73146FD4930C /* AutoMarginTableViewCell.swift in Sources */,
 				4ED175D224606F9600248D3B /* RevokeSicknessTanConfirmationViewController.swift in Sources */,
+				6155C6FB248F8195009BDE6B /* BatchDownloadScheduler+Injection.swift in Sources */,
 				83974BFDA169F61FBF77FA24 /* DatabaseService.swift in Sources */,
 				613E35F5242E3F65009421A8 /* LaunchScreenViewController.swift in Sources */,
 				615D36642438C25400B608AB /* LoggingService.swift in Sources */,
@@ -2076,6 +2143,7 @@
 				61546553242D1A6D0003D3D3 /* AnswerView.swift in Sources */,
 				4BD0B8DF2427AF9800BFA123 /* NotificationService+Injection.swift in Sources */,
 				839741974FFF610B5F936C7D /* History.swift in Sources */,
+				616B75AB248E33A60030CD6B /* FileDownloadDestination.swift in Sources */,
 				611B78BE242816BE0040CCB3 /* AppUpdateService+Injection.swift in Sources */,
 				83974E39C51DA3FCCB202E62 /* MainCoordinator.swift in Sources */,
 				83974C2CD7A816EE91AA6583 /* OutgoingInfectionMessage.swift in Sources */,

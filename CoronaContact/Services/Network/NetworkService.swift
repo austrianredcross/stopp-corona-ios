@@ -4,6 +4,7 @@
 //
 
 import Foundation
+import Moya
 import Resolver
 
 /**
@@ -59,6 +60,22 @@ final class NetworkService {
                 completion(.failure(self.parseTracingKeysError(statusCode: nil)))
             case let .success(response):
                 completion(.success(response))
+            }
+        }
+    }
+
+    func downloadExposureKeysBatch(completion: @escaping (Result<ExposureKeysBatch, NetworkError>) -> Void) {
+        client.request(.downloadKeys, completion: completion)
+    }
+
+    func downloadBatch(at filePath: String, to destination: @escaping DownloadDestination,
+                       completion: @escaping (Result<Void, NetworkError>) -> Void) -> Cancellable {
+        client.requestPlain(.downloadBatch(filePath, destination)) { result in
+            switch result {
+            case .success:
+                completion(.success(()))
+            case let .failure(error):
+                completion(.failure(error))
             }
         }
     }

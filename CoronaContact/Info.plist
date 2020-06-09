@@ -6,6 +6,10 @@
 	<string>${API_AUTHORIZATION_KEY}</string>
 	<key>API_BASE_URL</key>
 	<string>${API_BASE_URL}</string>
+	<key>API_CDN_BASE_URL</key>
+	<string>${API_CDN_BASE_URL}</string>
+	<key>API_CDN_HOST_URL</key>
+	<string>${API_CDN_HOST_URL}</string>
 	<key>API_HOST</key>
 	<string>${API_HOST}</string>
 	<key>API_SMS_AUTHORIZATION_KEY</key>
@@ -16,6 +20,10 @@
 	<string>${API_SMS_HOST}</string>
 	<key>APP_STORE_APP_ID</key>
 	<string>1503717224</string>
+	<key>BGTaskSchedulerPermittedIdentifiers</key>
+	<array>
+		<string>$(PRODUCT_BUNDLE_IDENTIFIER).exposure-notification</string>
+	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
@@ -56,6 +64,7 @@
 	<array>
 		<string>bluetooth-central</string>
 		<string>bluetooth-peripheral</string>
+		<string>fetch</string>
 		<string>remote-notification</string>
 	</array>
 	<key>UILaunchStoryboardName</key>

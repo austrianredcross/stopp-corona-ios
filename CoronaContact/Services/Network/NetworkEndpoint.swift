@@ -11,6 +11,8 @@ enum NetworkEndpoint: TargetType {
     case infectionMessages(fromId: String?, addressPrefix: String)
     case requestTan(RequestTan)
     case publish(TracingKeys)
+    case downloadKeys
+    case downloadBatch(String, DownloadDestination)
 }
 
 // MARK: - TargetType Protocol Implementation
@@ -20,6 +22,10 @@ extension NetworkEndpoint {
         switch self {
         case .requestTan:
             return NetworkConfiguration.smsBaseURL
+        case .downloadKeys:
+            return NetworkConfiguration.cdnBaseURL
+        case .downloadBatch:
+            return NetworkConfiguration.cdnHostURL
         default:
             return NetworkConfiguration.baseURL
         }
@@ -35,12 +41,16 @@ extension NetworkEndpoint {
             return "/request-tan"
         case .publish:
             return "/publish"
+        case .downloadKeys:
+            return "/index.json"
+        case let .downloadBatch(path, _):
+            return path
         }
     }
 
     var method: Moya.Method {
         switch self {
-        case .configuration, .infectionMessages:
+        case .configuration, .infectionMessages, .downloadKeys, .downloadBatch:
             return .get
         case .requestTan, .publish:
             return .post
@@ -49,7 +59,7 @@ extension NetworkEndpoint {
 
     var task: Task {
         switch self {
-        case .configuration:
+        case .configuration, .downloadKeys:
             return .requestPlain
         case let .infectionMessages(fromId, addressPrefix):
             var parameters = ["addressPrefix": addressPrefix]
@@ -62,6 +72,8 @@ extension NetworkEndpoint {
             return .requestJSONEncodable(requestTan)
         case let .publish(tracingKeys):
             return .requestJSONEncodable(tracingKeys)
+        case let .downloadBatch(_, downloadDestination):
+            return .downloadDestination(downloadDestination)
         }
     }
 
