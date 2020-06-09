@@ -13,5 +13,6 @@ extension Resolver {
             .resolveProperties { _, exposureManager in
                 exposureManager.batchDownloadScheduler.exposureManager = exposureManager
             }.scope(application)
+        register { ExposureKeyManager() }.scope(application)
     }
 }

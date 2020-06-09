@@ -42,6 +42,7 @@
 		4E8984232473EFB500499820 /* PersistedWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8984222473EFB500499820 /* PersistedWrapper.swift */; };
 		4E8984262473F06300499820 /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8984252473F06300499820 /* LocalStorage.swift */; };
 		4E8984282473F07600499820 /* LocalStorage+Injected.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8984272473F07600499820 /* LocalStorage+Injected.swift */; };
+		4E9B945C2487CE65009FB714 /* ExposureKeyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9B945B2487CE65009FB714 /* ExposureKeyManager.swift */; };
 		4E9BF7062420C2A100B360A4 /* MainViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E9BF7052420C2A100B360A4 /* MainViewController.storyboard */; };
 		4E9BF7082420C31400B360A4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9BF7072420C31400B360A4 /* MainViewController.swift */; };
 		4E9C7B952421126200800B97 /* ViewModelBased.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9C7B942421126200800B97 /* ViewModelBased.swift */; };
@@ -267,6 +268,7 @@
 		8397407B842054D9947D6AB7 /* configuration.json in Resources */ = {isa = PBXBuildFile; fileRef = 8397422DDB8AFB76E5110DB0 /* configuration.json */; };
 		8397409A6F3CF92410AAEE06 /* TransLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8397474245A5951193FA02B7 /* TransLabel.swift */; };
 		8397409E6D4A0FD3F83CE213 /* ConfigurationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83974E4BF20807E7150F5CDD /* ConfigurationService.swift */; };
+		839740FB82072673E0314F53 /* M001InitialMigration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83974E1AF8DDAFD8A4984677 /* M001InitialMigration.swift */; };
 		839741974FFF610B5F936C7D /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83974A1DA608C99ABD0EC3A3 /* History.swift */; };
 		839742C47A14834F1B2C24F6 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83974BF5DD12A8B96C4A52A8 /* MainViewModel.swift */; };
 		839743F271E19BEF66B89E3A /* OnboardingViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 839746C7B319EBECC38557CB /* OnboardingViewController.storyboard */; };
@@ -281,6 +283,7 @@
 		83974960BEEA73146FD4930C /* AutoMarginTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839744713BE877F4659927B5 /* AutoMarginTableViewCell.swift */; };
 		83974A3C096BEC7F5CCBFCC7 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83974ED255ED47321535BA0E /* OnboardingViewController.swift */; };
 		83974B1F6F49E544E670E7E3 /* NSString+localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839747A974BEBD27078B488B /* NSString+localized.swift */; };
+		83974B88D707E8ED8B8BC8AE /* TracingKeyPasswords.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83974462389F1C6D2A516DF1 /* TracingKeyPasswords.swift */; };
 		83974BFDA169F61FBF77FA24 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83974CDC660156EAFABB1829 /* DatabaseService.swift */; };
 		83974C2CD7A816EE91AA6583 /* OutgoingInfectionMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839743E9E3569B229703A3F8 /* OutgoingInfectionMessage.swift */; };
 		83974E01F55C841BAD9C9D1D /* NetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83974B0D3420CEC1F08FB85D /* NetworkSession.swift */; };
@@ -368,6 +371,7 @@
 		4E8984222473EFB500499820 /* PersistedWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistedWrapper.swift; sourceTree = "<group>"; };
 		4E8984252473F06300499820 /* LocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
 		4E8984272473F07600499820 /* LocalStorage+Injected.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocalStorage+Injected.swift"; sourceTree = "<group>"; };
+		4E9B945B2487CE65009FB714 /* ExposureKeyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExposureKeyManager.swift; sourceTree = "<group>"; };
 		4E9BF7052420C2A100B360A4 /* MainViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainViewController.storyboard; sourceTree = "<group>"; };
 		4E9BF7072420C31400B360A4 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		4E9C7B942421126200800B97 /* ViewModelBased.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelBased.swift; sourceTree = "<group>"; };
@@ -605,6 +609,7 @@
 		8397422DDB8AFB76E5110DB0 /* configuration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = configuration.json; sourceTree = "<group>"; };
 		83974345BBD0522CFDA25B76 /* ConfigurationService+Injection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ConfigurationService+Injection.swift"; sourceTree = "<group>"; };
 		839743E9E3569B229703A3F8 /* OutgoingInfectionMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutgoingInfectionMessage.swift; sourceTree = "<group>"; };
+		83974462389F1C6D2A516DF1 /* TracingKeyPasswords.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TracingKeyPasswords.swift; sourceTree = "<group>"; };
 		839744713BE877F4659927B5 /* AutoMarginTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoMarginTableViewCell.swift; sourceTree = "<group>"; };
 		83974639DCEE7C5E6BF2008F /* OnboardingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		8397467D70446583EE496204 /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
@@ -625,6 +630,7 @@
 		83974CDB8D1D885F0FB88CC1 /* OnboardingCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinator.swift; sourceTree = "<group>"; };
 		83974CDC660156EAFABB1829 /* DatabaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
 		83974D3FCE9D7093717ED324 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		83974E1AF8DDAFD8A4984677 /* M001InitialMigration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = M001InitialMigration.swift; sourceTree = "<group>"; };
 		83974E4BF20807E7150F5CDD /* ConfigurationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationService.swift; sourceTree = "<group>"; };
 		83974ED255ED47321535BA0E /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		87895CFEB99369228D18DF33 /* Pods-CoronaContactTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoronaContactTests.debug.xcconfig"; path = "Target Support Files/Pods-CoronaContactTests/Pods-CoronaContactTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -809,6 +815,7 @@
 			children = (
 				4E5254D02472B89200B6C3A4 /* ExposureManager.swift */,
 				4E5254D22472B8AF00B6C3A4 /* Exposure+Injection.swift */,
+				4E9B945B2487CE65009FB714 /* ExposureKeyManager.swift */,
 			);
 			path = Exposure;
 			sourceTree = "<group>";
@@ -1024,6 +1031,7 @@
 				61459A56242AC48800DC88A7 /* Website.swift */,
 				83974BF870B575EAC8607D3D /* P2PKitEvent.swift */,
 				61653680247D114F0088A9D6 /* TracingKeys.swift */,
+				83974462389F1C6D2A516DF1 /* TracingKeyPasswords.swift */,
 				611D9ED5248E6EEC00EBB420 /* ExposureKeysBatch.swift */,
 			);
 			path = Model;
@@ -1442,6 +1450,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		839742C0E9DF010FEDCCD959 /* Migrations */ = {
+			isa = PBXGroup;
+			children = (
+				83974E1AF8DDAFD8A4984677 /* M001InitialMigration.swift */,
+			);
+			path = Migrations;
+			sourceTree = "<group>";
+		};
 		839742CD30B274EE264849F8 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
@@ -1530,6 +1546,7 @@
 			children = (
 				83974CDC660156EAFABB1829 /* DatabaseService.swift */,
 				839749E3CBDBB38005CA7495 /* DatabaseService+Injection.swift */,
+				839742C0E9DF010FEDCCD959 /* Migrations */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -1920,6 +1937,7 @@
 			files = (
 				614D7239242909C000CC545D /* SelfTestingConfirmationCoordinator.swift in Sources */,
 				61D0F53724352E820026C91A /* RevocationStatus.swift in Sources */,
+				4E9B945C2487CE65009FB714 /* ExposureKeyManager.swift in Sources */,
 				611D9ED6248E6EEC00EBB420 /* ExposureKeysBatch.swift in Sources */,
 				61D0F53124352E240026C91A /* QuarantineTimeController.swift in Sources */,
 				4EDB47FA2422086B000CE24A /* UIView+ShadowBorders.swift in Sources */,
@@ -2161,6 +2179,8 @@
 				8397463D0CC798F8B4976AB8 /* P2PKitEvent.swift in Sources */,
 				83974E01F55C841BAD9C9D1D /* NetworkSession.swift in Sources */,
 				4E1AAEF2246186FA00D43E2B /* RevocationConfirmationViewModel.swift in Sources */,
+				839740FB82072673E0314F53 /* M001InitialMigration.swift in Sources */,
+				83974B88D707E8ED8B8BC8AE /* TracingKeyPasswords.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
