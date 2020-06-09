@@ -13,7 +13,6 @@ target 'CoronaContact' do
   pod 'Reusable'
   pod 'M13Checkbox'
   pod 'Carte'
-  pod 'Firebase/Messaging'
   pod 'lottie-ios'
   pod 'SwiftyBeaver'
   pod 'SQLite.swift'
