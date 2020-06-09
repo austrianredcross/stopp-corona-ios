@@ -30,6 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     @Injected private var healthRepository: HealthRepository
     @Injected private var localStorage: LocalStorage
     @Injected private var exposureManager: ExposureManager
+    @Injected private var batchDownloadScheduler: BatchDownloadScheduler
 
     lazy var screenSize: ScreenSize = {
         let width = UIScreen.main.bounds.size.width
@@ -49,7 +50,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         log.info("Application starting with launchOptions: \(String(describing: launchOptions))")
 
         appUpdateService.cleanupOldData()
-        registerBackgroundTask()
+        batchDownloadScheduler.registerBackgroundTask()
 
         UNUserNotificationCenter.current().delegate = self
 
@@ -97,48 +98,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     deinit {
         for observer in observers {
             NotificationCenter.default.removeObserver(observer)
-        }
-    }
-}
-
-// MARK: exposure notification background task
-
-@available(iOS 13.5, *)
-extension AppDelegate {
-    static let backgroundTaskIdentifier = Bundle.main.bundleIdentifier! + ".exposure-notification"
-
-    func registerBackgroundTask() {
-        BGTaskScheduler.shared.register(forTaskWithIdentifier: AppDelegate.backgroundTaskIdentifier, using: .main) { task in
-
-            // Perform the exposure detection
-            let progress = self.exposureManager.detectExposures { success in
-                task.setTaskCompleted(success: success)
-            }
-
-            // Handle running out of time
-            task.expirationHandler = {
-                progress.cancel()
-                // LocalStore.shared.exposureDetectionErrorLocalizedDescription = NSLocalizedString("BACKGROUND_TIMEOUT", comment: "Error")
-            }
-
-            // Schedule the next background task
-            self.scheduleBackgroundTaskIfNeeded()
-        }
-
-        scheduleBackgroundTaskIfNeeded()
-    }
-
-    func scheduleBackgroundTaskIfNeeded() {
-        guard exposureManager.authorizationStatus == .authorized else {
-            return
-        }
-        let taskRequest = BGProcessingTaskRequest(identifier: AppDelegate.backgroundTaskIdentifier)
-        taskRequest.requiresNetworkConnectivity = true
-        do {
-            try BGTaskScheduler.shared.submit(taskRequest)
-            log.debug("background task scheduled \(AppDelegate.backgroundTaskIdentifier)")
-        } catch {
-            log.error("Unable to schedule background task: \(error)")
         }
     }
 }

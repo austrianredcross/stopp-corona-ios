@@ -4,6 +4,7 @@
 //
 
 import Foundation
+import Resolver
 
 enum BatchDownloadError: Error {
     case noResult
@@ -19,22 +20,21 @@ final class BatchDownloadService {
         case onlyFullBatch
     }
 
+    @Injected private var networkService: NetworkService
+
     private lazy var queue: OperationQueue = {
         let queue = OperationQueue()
         queue.maxConcurrentOperationCount = BatchDownloadConfiguration.maxConcurrentOperationCount
         return queue
     }()
 
-    private let networkService: NetworkService
     private var completionHandler: ((Result<[UnzippedBatch], BatchDownloadError>) -> Void)?
     private var unzippedBatches = [UnzippedBatch]()
 
-    init() {
-        networkService = NetworkService()
-    }
-
     func startBatchDownload(_ downloadRequirement: DownloadRequirement,
-                            completionHandler: @escaping (Result<[UnzippedBatch], BatchDownloadError>) -> Void) {
+                            completionHandler: @escaping (Result<[UnzippedBatch], BatchDownloadError>) -> Void) -> Progress {
+        let progress = Progress()
+
         unzippedBatches = []
         self.completionHandler = completionHandler
 
@@ -60,6 +60,12 @@ final class BatchDownloadService {
                 completionHandler(.failure(.network(error)))
             }
         }
+
+        progress.cancellationHandler = { [weak self] in
+            self?.queue.cancelAllOperations()
+        }
+
+        return progress
     }
 
     private func downloadExposureKeysBatch(completion: @escaping (Result<ExposureKeysBatch, NetworkError>) -> Void) {
