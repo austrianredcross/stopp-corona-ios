@@ -38,6 +38,13 @@ final class BatchDownloadScheduler {
 
             return datesToSchedule.filter { !scheduledDates.contains($0) }
         }
+
+        func nextDateToSchedule(for taskRequests: [BGTaskRequest]) -> Date? {
+            let unscheduledDates = self.unscheduledDates(for: taskRequests)
+            let now = Date()
+
+            return unscheduledDates.first { $0 > now }
+        }
     }
 
     weak var exposureManager: ExposureManager?
@@ -81,7 +88,7 @@ final class BatchDownloadScheduler {
                 return
             }
 
-            if let nextScheduledDate = self.timing.unscheduledDates(for: pendingRequests).first {
+            if let nextScheduledDate = self.timing.nextDateToSchedule(for: pendingRequests) {
                 self.scheduleBackgroundTask(at: nextScheduledDate)
             }
         }
