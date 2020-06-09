@@ -21,6 +21,7 @@ extension Resolver: ResolverRegistering {
         registerHealthRepository()
         registerLocalStorageServices()
         registerSicknessCertificateDependencies()
+        registerBatchDownloadServices()
         registerExposureServices()
     }
 }

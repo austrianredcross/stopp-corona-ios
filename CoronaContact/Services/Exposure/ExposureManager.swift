@@ -13,6 +13,7 @@ class ExposureManager {
     static let notificationStatusChangedNotification = Notification.Name("ExposureManagerNotificationStatusChanged")
 
     @Injected private var localStorage: LocalStorage
+    @Injected var batchDownloadScheduler: BatchDownloadScheduler
     private let manager = ENManager()
     private let log = ContextLogger(context: .exposure)
     private var kvoToken: NSKeyValueObservation?
@@ -61,8 +62,8 @@ class ExposureManager {
         manager.setExposureNotificationEnabled(enabled) { error in
             NotificationCenter.default.post(name: ExposureManager.authorizationStatusChangedNotification, object: nil)
             self.log.info("setExposureNotificationEnabled \(enabled) error:\(String(describing: error))")
-            if error == nil, enabled, let delegate = UIApplication.shared.delegate as? AppDelegate {
-                delegate.scheduleBackgroundTaskIfNeeded()
+            if error == nil, enabled {
+                self.batchDownloadScheduler.scheduleBackgroundTaskIfNeeded()
             }
             completion?(error)
         }
