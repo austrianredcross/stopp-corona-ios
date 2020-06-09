@@ -49,6 +49,7 @@ class DebugViewModel: ViewModel {
             viewController?.probablySickButton.isHidden = true
         }
         viewController?.currentStateLabel.text = text
+        viewController?.batchDownloadSchedulerResultLabel.text = localStorage.batchDownloadSchedulerResult
     }
 
     func close() {
