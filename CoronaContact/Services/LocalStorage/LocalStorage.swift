@@ -45,4 +45,7 @@ class LocalStorage {
 
     @Persisted(userDefaultsKey: "all_clear_quarantine", notificationName: .init("allClearQuarantine"), defaultValue: false)
     var allClearQuarantine: Bool
+
+    @Persisted(userDefaultsKey: "batch_download_scheduler_result", notificationName: .init("batchDownloadSchedulerResult"), defaultValue: nil)
+    var batchDownloadSchedulerResult: String?
 }

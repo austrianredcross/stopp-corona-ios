@@ -10,6 +10,7 @@ import UIKit
 
 class DebugViewController: UIViewController, StoryboardBased, ViewModelBased, Reusable {
     @Injected private var localStorage: LocalStorage
+    @IBOutlet var batchDownloadSchedulerResultLabel: UILabel!
     @IBOutlet var currentStateLabel: UILabel!
     @IBOutlet var probablySickButton: SecondaryButton!
     @IBOutlet var attestedSickButton: SecondaryButton!

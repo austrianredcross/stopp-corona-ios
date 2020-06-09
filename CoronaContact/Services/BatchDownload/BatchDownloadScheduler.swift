@@ -5,6 +5,7 @@
 
 import BackgroundTasks
 import Foundation
+import Resolver
 
 final class BatchDownloadScheduler {
     struct Timing {
@@ -47,6 +48,8 @@ final class BatchDownloadScheduler {
         }
     }
 
+    @Injected private var localStorage: LocalStorage
+
     weak var exposureManager: ExposureManager?
 
     private let log = ContextLogger(context: .batchDownload)
@@ -61,14 +64,17 @@ final class BatchDownloadScheduler {
                 switch result {
                 case .success:
                     task.setTaskCompleted(success: true)
-                case .failure:
+                    self.localStorage.batchDownloadSchedulerResult = BatchDownloadSchedulerResult(task: task, error: nil).description
+                case let .failure(error):
                     task.setTaskCompleted(success: false)
+                    self.localStorage.batchDownloadSchedulerResult = BatchDownloadSchedulerResult(task: task, error: .download(error)).description
                 }
             }
 
             // Handle running out of time
             task.expirationHandler = {
                 progress.cancel()
+                self.localStorage.batchDownloadSchedulerResult = BatchDownloadSchedulerResult(task: task, error: .backgroundTimeout).description
             }
 
             // Schedule the next background task

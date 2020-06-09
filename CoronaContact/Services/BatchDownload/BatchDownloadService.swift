@@ -9,7 +9,6 @@ import Resolver
 enum BatchDownloadError: Error {
     case noResult
     case cancelled
-    case fileMove(Error)
     case unzip(Error)
     case network(Error)
 }
@@ -62,6 +61,7 @@ final class BatchDownloadService {
         }
 
         progress.cancellationHandler = { [weak self] in
+            self?.completionHandler = nil
             self?.queue.cancelAllOperations()
         }
 
