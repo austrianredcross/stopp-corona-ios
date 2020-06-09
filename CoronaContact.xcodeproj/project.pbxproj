@@ -54,7 +54,6 @@
 		4ED175B62458347400248D3B /* DebugCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED175B12458347400248D3B /* DebugCoordinator.swift */; };
 		4ED175B72458347400248D3B /* DebugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED175B22458347400248D3B /* DebugViewController.swift */; };
 		4ED175B82458347400248D3B /* DebugViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED175B32458347400248D3B /* DebugViewModel.swift */; };
-		4ED175BA245836E000248D3B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4ED175B9245836E000248D3B /* GoogleService-Info.plist */; };
 		4ED175BC245836F100248D3B /* server.der in Resources */ = {isa = PBXBuildFile; fileRef = 4ED175BB245836F100248D3B /* server.der */; };
 		4ED175C524606AF400248D3B /* RevokeSicknessPersonalDataCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED175C22460663200248D3B /* RevokeSicknessPersonalDataCoordinator.swift */; };
 		4ED175C624606AFA00248D3B /* RevokeSicknessPersonalDataViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4ED175C12460663200248D3B /* RevokeSicknessPersonalDataViewController.storyboard */; };
@@ -380,7 +379,6 @@
 		4ED175B12458347400248D3B /* DebugCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugCoordinator.swift; sourceTree = "<group>"; };
 		4ED175B22458347400248D3B /* DebugViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugViewController.swift; sourceTree = "<group>"; };
 		4ED175B32458347400248D3B /* DebugViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugViewModel.swift; sourceTree = "<group>"; };
-		4ED175B9245836E000248D3B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4ED175BB245836F100248D3B /* server.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = server.der; sourceTree = "<group>"; };
 		4ED175BE24605DAC00248D3B /* RevokeSicknessFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevokeSicknessFlowController.swift; sourceTree = "<group>"; };
 		4ED175BF24605DC600248D3B /* RevokeSickness+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RevokeSickness+Injection.swift"; sourceTree = "<group>"; };
@@ -1369,7 +1367,6 @@
 			children = (
 				4E1F2EC224646B550088B8F8 /* sms.der */,
 				4ED175BB245836F100248D3B /* server.der */,
-				4ED175B9245836E000248D3B /* GoogleService-Info.plist */,
 				61AB6EF024573737006B4190 /* Secrets.xcconfig */,
 				61AB6EF124573771006B4190 /* Secrets.template.xcconfig */,
 				61FABCB02432368E0085786B /* Base.xcconfig */,
@@ -1719,7 +1716,6 @@
 				4EDB47F12421E92E000CE24A /* OnboardingPageView.xib in Resources */,
 				614D72062428E82700CC545D /* ContactSicknessViewController.storyboard in Resources */,
 				61D1A3D4242A3C40007F82ED /* Localizable.strings in Resources */,
-				4ED175BA245836E000248D3B /* GoogleService-Info.plist in Resources */,
 				616518E72460778C001219A7 /* ShareAppCardView.xib in Resources */,
 				7829D827247D507A0015F5A5 /* SavedIDsViewController.storyboard in Resources */,
 				61546541242CBE7F0003D3D3 /* SelfMonitoringGuidelinesViewController.storyboard in Resources */,
