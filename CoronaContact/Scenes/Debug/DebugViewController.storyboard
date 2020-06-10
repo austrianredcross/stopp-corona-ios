@@ -136,6 +136,26 @@
                                                         <color key="textColor" name="ccBrownGrey"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uIX-tZ-IhW" customClass="PrimaryButton" customModule="Stopp_Corona" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="105" width="414" height="34"/>
+                                                        <state key="normal" title="Download all batches (full &amp; all days)"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="transKeyNormal" value="Download all batches (full &amp; all days)"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="downloadAllBatches:" destination="5BI-CH-cv0" eventType="touchUpInside" id="Off-wN-1Y1"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ofS-mQ-lTK" customClass="SecondaryButton" customModule="Stopp_Corona" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="139" width="414" height="34"/>
+                                                        <state key="normal" title="Download only full batch"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="transKeyNormal" value="Download only full batch"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="downloadOnlyFullBatch:" destination="5BI-CH-cv0" eventType="touchUpInside" id="eDK-LY-kX1"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="overrideVertMarginMulti">
