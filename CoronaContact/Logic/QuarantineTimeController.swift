@@ -176,7 +176,36 @@ class QuarantineTimeController {
             return completion(.inProgressIndefinitely)
         }
 
+        var endOfQuarantines = [QuarantineEnd]()
+
         // TODO: add new calculation
+
+        if let isProbablySickAt = localStorage.isProbablySickAt {
+            let endOfQuarantine = QuarantineEnd(
+                type: .selfDiagnosed,
+                date: addDays(timeConfiguration.probablySick, to: isProbablySickAt)
+            )
+            endOfQuarantines.append(endOfQuarantine)
+        }
+
+        let sortedQuarantines = endOfQuarantines.sorted { $0.date.compare($1.date) == .orderedDescending }
+
+        if let longestQuarantine = sortedQuarantines.first {
+            if let daysUntilEnd = longestQuarantine.numberOfDays, daysUntilEnd <= 0 {
+                completion(.completed(longestQuarantine))
+                return
+            }
+
+            completion(.inProgress(longestQuarantine))
+            return
+        }
+
+        if endOfQuarantines.count == 0 {
+            completion(.cleared)
+            return
+        }
+
+        completion(.unknown)
     }
 
     private func scheduleNotification(for quarantineStatus: QuarantineStatus) {
