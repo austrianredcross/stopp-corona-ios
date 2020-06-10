@@ -8,6 +8,7 @@ import Resolver
 
 class SicknessCertificateStatusReportViewModel: ViewModel {
     @Injected private var flowController: SicknessCertificateFlowController
+    @Injected private var healthStateController: HealthStateController
 
     weak var coordinator: SicknessCertificateStatusReportCoordinator?
 
@@ -43,6 +44,7 @@ class SicknessCertificateStatusReportViewModel: ViewModel {
                     }
                 )
             case .success:
+                self?.healthStateController.setProvenSick()
                 self?.coordinator?.showConfirmation()
             default:
                 break

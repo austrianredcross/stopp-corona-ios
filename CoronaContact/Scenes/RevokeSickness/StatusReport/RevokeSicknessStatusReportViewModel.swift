@@ -14,6 +14,7 @@ private let dateString: (Date) -> String = { date in
 }
 
 class RevokeSicknessStatusReportViewModel: ViewModel {
+    @Injected private var healthStateController: HealthStateController
     @Injected private var flowController: RevokeSicknessFlowController
     @Injected private var localStorage: LocalStorage
 
@@ -60,6 +61,7 @@ class RevokeSicknessStatusReportViewModel: ViewModel {
                 )
             case .success:
                 self?.coordinator?.showConfirmation()
+                self?.healthStateController.revokeProvenSickness()
             default:
                 break
             }

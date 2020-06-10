@@ -16,21 +16,23 @@ private let dateString: (Date) -> String = { date in
 enum UserHealthStatus {
     case isHealthy
     case isUnderSelfMonitoring
-    case isProbablySick(quarantineDays: Int = 0)
-    case hasAttestedSickness
+    case isProbablySick(quarantineDays: Int = 0, shouldUploadKeys: Bool = false)
+    case hasAttestedSickness(shouldUploadKeys: Bool = false)
 
     /// most severy state wins
     init(quarantineDays: Int? = nil) {
         let quarantineDays = quarantineDays ?? 0
-        let localStorage: LocalStorage = Resolver.resolve()
+        let healthStatusController: HealthStateController = Resolver.resolve()
+        let canUploadKeys = healthStatusController.canUploadMissingKeys
 
-        if localStorage.hasAttestedSickness {
-            self = .hasAttestedSickness
-        } else if localStorage.isProbablySick {
-            self = .isProbablySick(quarantineDays: quarantineDays)
-        } else if localStorage.isUnderSelfMonitoring {
+        switch healthStatusController.currentHealth {
+        case .provenSick:
+            self = .hasAttestedSickness(shouldUploadKeys: canUploadKeys)
+        case .probablySick:
+            self = .isProbablySick(quarantineDays: quarantineDays, shouldUploadKeys: canUploadKeys)
+        case .isUnderSelfMonitoring:
             self = .isUnderSelfMonitoring
-        } else {
+        case .healthy:
             self = .isHealthy
         }
     }
@@ -86,11 +88,18 @@ enum UserHealthStatus {
     }
 
     var quarantineDays: Int? {
-        switch self {
-        case let .isProbablySick(quarantineDays):
+        if case let .isProbablySick(quarantineDays, _) = self {
             return quarantineDays
+        }
+        return nil
+    }
+
+    var shouldUploadKeys: Bool {
+        switch self {
+        case let .isProbablySick(_, shouldUploadKeys), let .hasAttestedSickness(shouldUploadKeys):
+            return shouldUploadKeys
         default:
-            return nil
+            return false
         }
     }
 

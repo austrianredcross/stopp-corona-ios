@@ -270,7 +270,9 @@
 		8397409E6D4A0FD3F83CE213 /* ConfigurationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83974E4BF20807E7150F5CDD /* ConfigurationService.swift */; };
 		839740FB82072673E0314F53 /* M001InitialMigration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83974E1AF8DDAFD8A4984677 /* M001InitialMigration.swift */; };
 		839741974FFF610B5F936C7D /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83974A1DA608C99ABD0EC3A3 /* History.swift */; };
+		839741E2E417994DF2E5D541 /* Logic+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83974E84788766734214908B /* Logic+Injection.swift */; };
 		839742C47A14834F1B2C24F6 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83974BF5DD12A8B96C4A52A8 /* MainViewModel.swift */; };
+		8397433D8587DD1168A49A1E /* HealthStateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8397469446A67D2D9EA56866 /* HealthStateController.swift */; };
 		839743F271E19BEF66B89E3A /* OnboardingViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 839746C7B319EBECC38557CB /* OnboardingViewController.storyboard */; };
 		8397446DA0EAC8E79B9445BA /* TransButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8397498ADF6B7522C4D9AC93 /* TransButton.swift */; };
 		8397463D0CC798F8B4976AB8 /* P2PKitEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83974BF870B575EAC8607D3D /* P2PKitEvent.swift */; };
@@ -613,6 +615,7 @@
 		839744713BE877F4659927B5 /* AutoMarginTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoMarginTableViewCell.swift; sourceTree = "<group>"; };
 		83974639DCEE7C5E6BF2008F /* OnboardingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		8397467D70446583EE496204 /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		8397469446A67D2D9EA56866 /* HealthStateController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthStateController.swift; sourceTree = "<group>"; };
 		839746C7B319EBECC38557CB /* OnboardingViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnboardingViewController.storyboard; sourceTree = "<group>"; };
 		839746E980E1878DBDF978AE /* OnboardingConsentPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingConsentPageView.swift; sourceTree = "<group>"; };
 		8397474245A5951193FA02B7 /* TransLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransLabel.swift; sourceTree = "<group>"; };
@@ -632,6 +635,7 @@
 		83974D3FCE9D7093717ED324 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		83974E1AF8DDAFD8A4984677 /* M001InitialMigration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = M001InitialMigration.swift; sourceTree = "<group>"; };
 		83974E4BF20807E7150F5CDD /* ConfigurationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationService.swift; sourceTree = "<group>"; };
+		83974E84788766734214908B /* Logic+Injection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Logic+Injection.swift"; sourceTree = "<group>"; };
 		83974ED255ED47321535BA0E /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		87895CFEB99369228D18DF33 /* Pods-CoronaContactTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoronaContactTests.debug.xcconfig"; path = "Target Support Files/Pods-CoronaContactTests/Pods-CoronaContactTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8922A16B243D1DD6004E9D42 /* HealthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthRepository.swift; sourceTree = "<group>"; };
@@ -1282,6 +1286,8 @@
 			children = (
 				61D0F53024352E240026C91A /* QuarantineTimeController.swift */,
 				610571AE247E9EBE009A715E /* ReportHealthStatusFlowController.swift */,
+				8397469446A67D2D9EA56866 /* HealthStateController.swift */,
+				83974E84788766734214908B /* Logic+Injection.swift */,
 			);
 			path = Logic;
 			sourceTree = "<group>";
@@ -2181,6 +2187,8 @@
 				4E1AAEF2246186FA00D43E2B /* RevocationConfirmationViewModel.swift in Sources */,
 				839740FB82072673E0314F53 /* M001InitialMigration.swift in Sources */,
 				83974B88D707E8ED8B8BC8AE /* TracingKeyPasswords.swift in Sources */,
+				8397433D8587DD1168A49A1E /* HealthStateController.swift in Sources */,
+				839741E2E417994DF2E5D541 /* Logic+Injection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

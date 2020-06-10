@@ -37,19 +37,11 @@ class MainViewModel: ViewModel {
     }
 
     var backgroundServiceActive: Bool {
-        if #available(iOS 13.5, *) {
-            return exposureService.exposureNotificationStatus == .active
-        } else {
-            return false
-        }
+        exposureService.exposureNotificationStatus == .active
     }
 
     var isBackgroundHandshakeDisabled: Bool {
-        if #available(iOS 13.5, *) {
-            return exposureService.authorizationStatus != .authorized || localStorage.backgroundHandshakeDisabled
-        } else {
-            return true
-        }
+        exposureService.authorizationStatus != .authorized || localStorage.backgroundHandshakeDisabled
     }
 
     var isUnderSelfMonitoring: Bool {

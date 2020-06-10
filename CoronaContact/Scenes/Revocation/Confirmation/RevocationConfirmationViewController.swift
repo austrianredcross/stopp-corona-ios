@@ -13,8 +13,6 @@ final class RevocationConfirmationViewController: UIViewController, StoryboardBa
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        viewModel?.onViewDidLoad()
         setupUI()
     }
 

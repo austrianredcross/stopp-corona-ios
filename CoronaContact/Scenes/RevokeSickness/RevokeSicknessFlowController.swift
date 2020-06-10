@@ -11,6 +11,9 @@ class RevokeSicknessFlowController: ReportHealthStatusFlowController {
 
     init() {
         let diagnosisType: DiagnosisType
+
+        // we handle a wrong attested sickness revocation here.. so if the user was probably sick before the new
+        // state will also be probably sick, otherwise we tell others we are healthy
         if localStorage.isProbablySick {
             diagnosisType = .yellow
         } else {

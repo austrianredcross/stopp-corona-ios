@@ -48,4 +48,9 @@ class LocalStorage {
 
     @Persisted(userDefaultsKey: "batch_download_scheduler_result", notificationName: .init("batchDownloadSchedulerResult"), defaultValue: nil)
     var batchDownloadSchedulerResult: String?
+
+    /// when the user reports sick we can't upload the keys for the current day, so the user has to upload the missing keys the
+    /// next day. we store the date of the missing keys here
+    @Persisted(userDefaultsKey: "missing_uploaded_keys", notificationName: .init("missingUploadedKeys"), defaultValue: nil)
+    var missingUploadedKeys: Date?
 }
