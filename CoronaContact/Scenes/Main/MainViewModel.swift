@@ -195,8 +195,12 @@ class MainViewModel: ViewModel {
         coordinator?.selfTesting()
     }
 
+    func uploadMissingKeys() {
+        coordinator?.sicknessCertificate(updateKeys: true)
+    }
+
     func sicknessCertificate() {
-        coordinator?.sicknessCertificate()
+        coordinator?.sicknessCertificate(updateKeys: false)
     }
 
     func attestedSicknessGuidelines() {

@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="vfP-tn-zgf" customClass="BackgroundStackView" customModule="Stopp_Corona" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="484"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="518"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Shy-DL-K00" customClass="BackgroundStackView" customModule="Stopp_Corona" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="54.5"/>
@@ -150,7 +150,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="hha-lk-kKF" customClass="BackgroundStackView" customModule="Stopp_Corona" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="254" width="414" height="173.5"/>
+                                                <rect key="frame" x="0.0" y="254" width="414" height="207.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sickness State" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c7I-Ak-yKN">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="20.5"/>
@@ -187,8 +187,18 @@
                                                             <action selector="setAttestedSick:" destination="5BI-CH-cv0" eventType="touchUpInside" id="wvj-ah-SNB"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sbo-bO-FKe" userLabel="attest sickness" customClass="SecondaryButton" customModule="Stopp_Corona" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k6O-jn-oyP" userLabel="move day" customClass="SecondaryButton" customModule="Stopp_Corona" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="105.5" width="414" height="34"/>
+                                                        <state key="normal" title="Krankmeldung verschieben"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="transKeyNormal" value="Krankmeldung verschieben"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="moveSickreportBackADay:" destination="5BI-CH-cv0" eventType="touchUpInside" id="xs4-5T-hn2"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sbo-bO-FKe" userLabel="attest sickness" customClass="SecondaryButton" customModule="Stopp_Corona" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="139.5" width="414" height="34"/>
                                                         <state key="normal" title="Gesund (bestätigt)"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="transKeyNormal" value="Gesund (bestätigt)"/>
@@ -198,7 +208,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jWV-sC-jJf" userLabel="attest sickness" customClass="SecondaryButton" customModule="Stopp_Corona" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="139.5" width="414" height="34"/>
+                                                        <rect key="frame" x="0.0" y="173.5" width="414" height="34"/>
                                                         <state key="normal" title="Versehentlich krankgemeldet"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="transKeyNormal" value="Versehentlich krankgemeldet"/>
@@ -221,7 +231,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="S3W-5S-ezr" customClass="BackgroundStackView" customModule="Stopp_Corona" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="429.5" width="414" height="54.5"/>
+                                                <rect key="frame" x="0.0" y="463.5" width="414" height="54.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Housekeeping" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FgG-jF-xLs">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="20.5"/>
@@ -298,6 +308,7 @@
                         <outlet property="attestedSickButton" destination="bI7-XL-YcM" id="9Yc-CN-Zl4"/>
                         <outlet property="batchDownloadSchedulerResultLabel" destination="8p6-n7-wMc" id="atz-iX-jBt"/>
                         <outlet property="currentStateLabel" destination="HnG-C5-yPC" id="6K8-ZE-ABC"/>
+                        <outlet property="moveSickReportButton" destination="k6O-jn-oyP" id="L8I-2v-3HS"/>
                         <outlet property="probablySickButton" destination="PzY-a4-vyd" id="uDg-ke-bo0"/>
                         <outlet property="revokeAttestedSickButton" destination="jWV-sC-jJf" id="4nz-6t-89u"/>
                         <outlet property="revokeProbablySickButton" destination="sbo-bO-FKe" id="X21-by-fXO"/>
