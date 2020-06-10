@@ -16,7 +16,7 @@ private let dateString: (Date) -> String = { date in
 class RevocationStatusReportViewModel: ViewModel {
     @Injected private var flowController: RevocationFlowController
     @Injected private var localStorage: LocalStorage
-    @Injected private var healthStateController: HealthStateController
+    @Injected private var healthRepository: HealthRepository
 
     weak var coordinator: RevocationStatusReportCoordinator?
 
@@ -60,7 +60,7 @@ class RevocationStatusReportViewModel: ViewModel {
                     }
                 )
             case .success:
-                self?.healthStateController.revokeProbablySick()
+                self?.healthRepository.revokeProbablySick()
                 self?.localStorage.isUnderSelfMonitoring = false
                 self?.localStorage.completedVoluntaryQuarantine = true
                 self?.coordinator?.showConfirmation()

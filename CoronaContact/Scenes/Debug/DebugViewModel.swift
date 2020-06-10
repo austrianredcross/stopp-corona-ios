@@ -24,7 +24,7 @@ class DebugViewModel: ViewModel {
     @Injected private var notificationService: NotificationService
     @Injected private var exposureManager: ExposureManager
     @Injected private var exposureKeyManager: ExposureKeyManager
-    @Injected private var healthStateController: HealthStateController
+    @Injected private var healthRepository: HealthRepository
 
     init(coordinator: DebugCoordinator) {
         self.coordinator = coordinator
@@ -38,16 +38,15 @@ class DebugViewModel: ViewModel {
         viewController?.revokeProbablySickButton.isHidden = true
         viewController?.probablySickButton.isHidden = false
         viewController?.attestedSickButton.isHidden = false
-        switch healthStateController.currentHealth {
-        case .healthy:
-            ()
+        switch healthRepository.userHealthStatus {
+        case .isHealthy: ()
         case .isUnderSelfMonitoring:
             text = "User is self monitoring"
-        case .probablySick:
+        case .isProbablySick:
             text = "User is probably sick"
             viewController?.revokeProbablySickButton.isHidden = false
             viewController?.probablySickButton.isHidden = true
-        case .provenSick:
+        case .hasAttestedSickness:
             text = "User is attested sick"
             viewController?.revokeAttestedSickButton.isHidden = false
             viewController?.probablySickButton.isHidden = true
@@ -74,19 +73,19 @@ class DebugViewModel: ViewModel {
     }
 
     func probablySickness() {
-        healthStateController.setProbablySick()
+        healthRepository.setProbablySick()
     }
 
     func attestSickness() {
-        healthStateController.setProvenSick()
+        healthRepository.setProvenSick()
     }
 
     func revokeProbablySick() {
-        healthStateController.revokeProbablySick()
+        healthRepository.revokeProbablySick()
     }
 
     func revokeAttestedSick() {
-        healthStateController.revokeProvenSickness()
+        healthRepository.revokeProvenSickness()
     }
 
     func exposeDiagnosesKeys(test: Bool = false) {

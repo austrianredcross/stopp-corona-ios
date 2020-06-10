@@ -8,7 +8,7 @@ import Resolver
 
 class SelfTestingStatusReportViewModel: ViewModel {
     @Injected private var flowController: SelfTestingReportFlowController
-    @Injected private var healthStateController: HealthStateController
+    @Injected private var healthRepository: HealthRepository
 
     weak var coordinator: SelfTestingStatusReportCoordinator?
 
@@ -44,7 +44,7 @@ class SelfTestingStatusReportViewModel: ViewModel {
                     }
                 )
             case .success:
-                self?.healthStateController.setProbablySick()
+                self?.healthRepository.setProbablySick()
                 self?.coordinator?.showConfirmation()
             default:
                 break

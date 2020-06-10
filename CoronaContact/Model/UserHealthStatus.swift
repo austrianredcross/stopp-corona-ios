@@ -16,25 +16,34 @@ private let dateString: (Date) -> String = { date in
 enum UserHealthStatus {
     case isHealthy
     case isUnderSelfMonitoring
-    case isProbablySick(quarantineDays: Int = 0, shouldUploadKeys: Bool = false)
-    case hasAttestedSickness(shouldUploadKeys: Bool = false)
+    case isProbablySick(quarantineDays: Int = 0)
+    case hasAttestedSickness
 
     /// most severy state wins
     init(quarantineDays: Int? = nil) {
         let quarantineDays = quarantineDays ?? 0
-        let healthStatusController: HealthStateController = Resolver.resolve()
-        let canUploadKeys = healthStatusController.canUploadMissingKeys
+        let localStorage: LocalStorage = Resolver.resolve()
 
-        switch healthStatusController.currentHealth {
-        case .provenSick:
-            self = .hasAttestedSickness(shouldUploadKeys: canUploadKeys)
-        case .probablySick:
-            self = .isProbablySick(quarantineDays: quarantineDays, shouldUploadKeys: canUploadKeys)
-        case .isUnderSelfMonitoring:
+        if localStorage.hasAttestedSickness {
+            self = .hasAttestedSickness
+        } else if localStorage.isProbablySick {
+            self = .isProbablySick(quarantineDays: quarantineDays)
+        } else if localStorage.isUnderSelfMonitoring {
             self = .isUnderSelfMonitoring
-        case .healthy:
+        } else {
             self = .isHealthy
         }
+    }
+
+    var canUploadMissingKeys: Bool {
+        let localStorage: LocalStorage = Resolver.resolve()
+        guard let missingKeys = localStorage.missingUploadedKeys else {
+            return false
+        }
+        if missingKeys.startOfDayUTC() < Date().startOfDayUTC() {
+            return true
+        }
+        return false
     }
 
     var icon: UIImage {
@@ -88,19 +97,10 @@ enum UserHealthStatus {
     }
 
     var quarantineDays: Int? {
-        if case let .isProbablySick(quarantineDays, _) = self {
+        if case let .isProbablySick(quarantineDays) = self {
             return quarantineDays
         }
         return nil
-    }
-
-    var shouldUploadKeys: Bool {
-        switch self {
-        case let .isProbablySick(_, shouldUploadKeys), let .hasAttestedSickness(shouldUploadKeys):
-            return shouldUploadKeys
-        default:
-            return false
-        }
     }
 
     var endOfQuarantine: String? {

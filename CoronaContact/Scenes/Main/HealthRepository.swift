@@ -19,6 +19,7 @@ extension Resolver {
 class HealthRepository {
     private var quarantineTimeController: QuarantineTimeController!
     @Injected private var dba: DatabaseService
+    @Injected private var localStorage: LocalStorage
     @Injected private var configService: ConfigurationService
 
     @Observable var userHealthStatus: UserHealthStatus = .isHealthy
@@ -93,5 +94,27 @@ class HealthRepository {
              )
          }
          */
+    }
+
+    func setProbablySick() {
+        localStorage.isProbablySickAt = Date()
+        localStorage.missingUploadedKeys = Date()
+    }
+
+    func setProvenSick() {
+        localStorage.attestedSicknessAt = Date()
+        if !localStorage.isProbablySick {
+            localStorage.missingUploadedKeys = Date()
+        }
+    }
+
+    func revokeProbablySick() {
+        localStorage.attestedSicknessAt = nil
+        localStorage.missingUploadedKeys = nil
+    }
+
+    func revokeProvenSickness() {
+        localStorage.attestedSicknessAt = nil
+        localStorage.missingUploadedKeys = nil
     }
 }
