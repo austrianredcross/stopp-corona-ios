@@ -81,7 +81,7 @@ final class BatchDownloadScheduler {
         }
 
         backgroundTaskScheduler.getPendingTaskRequests { pendingRequests in
-            guard pendingRequests.count == 0 else {
+            guard pendingRequests.isEmpty else {
                 return
             }
 
