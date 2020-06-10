@@ -101,8 +101,9 @@ final class BatchDownloadScheduler {
     }
 
     private func scheduleBackgroundTask(at date: Date) {
-        let taskRequest = BGAppRefreshTaskRequest(identifier: backgroundTaskIdentifier)
+        let taskRequest = BGProcessingTaskRequest(identifier: backgroundTaskIdentifier)
         taskRequest.earliestBeginDate = date
+        taskRequest.requiresNetworkConnectivity = true
 
         do {
             try backgroundTaskScheduler.submit(taskRequest)
