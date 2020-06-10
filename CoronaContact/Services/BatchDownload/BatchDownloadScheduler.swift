@@ -14,6 +14,10 @@ final class BatchDownloadScheduler {
         private let dateInterval: DateInterval
         private let datesToSchedule: [Date]
 
+        var nextDateToSchedule: Date? {
+            datesToSchedule.first { $0 > Date() }
+        }
+
         init() {
             startDate = Calendar.current.date(
                 bySettingHour: BatchDownloadConfiguration.Scheduler.startTime.hour,
@@ -33,27 +37,14 @@ final class BatchDownloadScheduler {
                 value: BatchDownloadConfiguration.Scheduler.intervalInHours
             )
         }
-
-        func unscheduledDates(for taskRequests: [BGTaskRequest]) -> [Date] {
-            let scheduledDates = taskRequests.compactMap(\.earliestBeginDate)
-
-            return datesToSchedule.filter { !scheduledDates.contains($0) }
-        }
-
-        func nextDateToSchedule(for taskRequests: [BGTaskRequest]) -> Date? {
-            let unscheduledDates = self.unscheduledDates(for: taskRequests)
-            let now = Date()
-
-            return unscheduledDates.first { $0 > now }
-        }
     }
 
     @Injected private var localStorage: LocalStorage
+    @Injected private var batchDownloadService: BatchDownloadService
 
     weak var exposureManager: ExposureManager?
 
     private let log = ContextLogger(context: .batchDownload)
-    private let batchDownloadService = BatchDownloadService()
     private let backgroundTaskIdentifier = Bundle.main.bundleIdentifier! + ".exposure-notification"
     private let backgroundTaskScheduler = BGTaskScheduler.shared
     private let timing = Timing()
@@ -90,19 +81,20 @@ final class BatchDownloadScheduler {
         }
 
         backgroundTaskScheduler.getPendingTaskRequests { pendingRequests in
-            guard pendingRequests.count == 0 else {
+            guard pendingRequests.isEmpty else {
                 return
             }
 
-            if let nextScheduledDate = self.timing.nextDateToSchedule(for: pendingRequests) {
+            if let nextScheduledDate = self.timing.nextDateToSchedule {
                 self.scheduleBackgroundTask(at: nextScheduledDate)
             }
         }
     }
 
     private func scheduleBackgroundTask(at date: Date) {
-        let taskRequest = BGAppRefreshTaskRequest(identifier: backgroundTaskIdentifier)
+        let taskRequest = BGProcessingTaskRequest(identifier: backgroundTaskIdentifier)
         taskRequest.earliestBeginDate = date
+        taskRequest.requiresNetworkConnectivity = true
 
         do {
             try backgroundTaskScheduler.submit(taskRequest)

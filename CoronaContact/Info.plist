@@ -8,6 +8,8 @@
 	<string>${API_BASE_URL}</string>
 	<key>API_CDN_BASE_URL</key>
 	<string>${API_CDN_BASE_URL}</string>
+	<key>API_CDN_HOST</key>
+	<string>${API_CDN_HOST}</string>
 	<key>API_CDN_HOST_URL</key>
 	<string>${API_CDN_HOST_URL}</string>
 	<key>API_HOST</key>
@@ -65,6 +67,7 @@
 		<string>bluetooth-central</string>
 		<string>bluetooth-peripheral</string>
 		<string>fetch</string>
+		<string>processing</string>
 		<string>remote-notification</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
