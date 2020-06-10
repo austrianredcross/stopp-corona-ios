@@ -39,7 +39,8 @@ class DebugViewModel: ViewModel {
         viewController?.probablySickButton.isHidden = false
         viewController?.attestedSickButton.isHidden = false
         switch healthRepository.userHealthStatus {
-        case .isHealthy: ()
+        case .isHealthy:
+            break
         case .isUnderSelfMonitoring:
             text = "User is self monitoring"
         case .isProbablySick:

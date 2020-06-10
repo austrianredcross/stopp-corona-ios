@@ -98,23 +98,23 @@ class HealthRepository {
 
     func setProbablySick() {
         localStorage.isProbablySickAt = Date()
-        localStorage.missingUploadedKeys = Date()
+        localStorage.missingUploadedKeysAt = Date()
     }
 
     func setProvenSick() {
         localStorage.attestedSicknessAt = Date()
         if !localStorage.isProbablySick {
-            localStorage.missingUploadedKeys = Date()
+            localStorage.missingUploadedKeysAt = Date()
         }
     }
 
     func revokeProbablySick() {
-        localStorage.attestedSicknessAt = nil
-        localStorage.missingUploadedKeys = nil
+        localStorage.isProbablySickAt = nil
+        localStorage.missingUploadedKeysAt = nil
     }
 
     func revokeProvenSickness() {
         localStorage.attestedSicknessAt = nil
-        localStorage.missingUploadedKeys = nil
+        localStorage.missingUploadedKeysAt = nil
     }
 }
