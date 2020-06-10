@@ -28,4 +28,8 @@ enum AppConfiguration: ConfigurationRetrievable {
     static var apiSmsHostName: String {
         AppConfiguration.value(for: "API_SMS_HOST")
     }
+
+    static var apiCdnHostName: String {
+        AppConfiguration.value(for: "API_CDN_HOST")
+    }
 }

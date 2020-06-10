@@ -1,5 +1,5 @@
 //
-//  BatchDownloadScheduler+Injection.swift
+//  BatchDownload+Injection.swift
 //  CoronaContact
 //
 
@@ -8,6 +8,7 @@ import Resolver
 
 extension Resolver {
     static func registerBatchDownloadServices() {
+        register { BatchDownloadService() }.scope(application)
         register { BatchDownloadScheduler() }.scope(application)
     }
 }

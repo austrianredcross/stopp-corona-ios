@@ -11,6 +11,7 @@ import UIKit
 class DebugViewController: UIViewController, StoryboardBased, ViewModelBased, Reusable {
     @Injected private var localStorage: LocalStorage
     @Injected private var batchDownloadScheduler: BatchDownloadScheduler
+    @Injected private var batchDownloadService: BatchDownloadService
     @IBOutlet var batchDownloadSchedulerResultLabel: UILabel!
     @IBOutlet var currentStateLabel: UILabel!
     @IBOutlet var probablySickButton: SecondaryButton!
@@ -45,6 +46,14 @@ class DebugViewController: UIViewController, StoryboardBased, ViewModelBased, Re
 
     @IBAction func scheduleBackgroundTask(_ sender: Any) {
         batchDownloadScheduler.scheduleBackgroundTaskForDebuggingPurposes()
+    }
+
+    @IBAction func downloadAllBatches(_ sender: Any) {
+        _ = batchDownloadService.startBatchDownload(.all) { _ in }
+    }
+
+    @IBAction func downloadOnlyFullBatch(_ sender: Any) {
+        _ = batchDownloadService.startBatchDownload(.onlyFullBatch) { _ in }
     }
 
     // MARK: - sickness state
