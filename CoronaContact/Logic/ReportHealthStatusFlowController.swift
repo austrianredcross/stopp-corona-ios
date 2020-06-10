@@ -9,6 +9,7 @@ import Resolver
 
 class ReportHealthStatusFlowController {
     @Injected private var exposureManager: ExposureManager
+    @Injected private var exposureKeyManager: ExposureKeyManager
     @Injected private var networkService: NetworkService
 
     typealias Completion<Success> = (Result<Success, ReportError>) -> Void
@@ -85,9 +86,10 @@ class ReportHealthStatusFlowController {
 
     private func parseTemporaryExposureKeys(_ temporaryExposureKeys: [ENTemporaryExposureKey],
                                             verification: Verification) -> TracingKeys {
-        let temporaryExposureKeys = temporaryExposureKeys.map(TemporaryExposureKey.init)
+        let temporaryExposureKeys = try? exposureKeyManager.getKeysForUpload(keys: temporaryExposureKeys)
+
         return TracingKeys(
-            temporaryExposureKeys: temporaryExposureKeys,
+            temporaryExposureKeys: temporaryExposureKeys ?? [],
             diagnosisType: diagnosisType,
             verificationPayload: verification
         )

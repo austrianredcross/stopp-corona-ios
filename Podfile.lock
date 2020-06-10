@@ -1,75 +1,12 @@
 PODS:
   - Alamofire (5.0.5)
   - Carte (2.2.1)
-  - Firebase/CoreOnly (6.21.0):
-    - FirebaseCore (= 6.6.5)
-  - Firebase/Messaging (6.21.0):
-    - Firebase/CoreOnly
-    - FirebaseMessaging (~> 4.3.0)
-  - FirebaseAnalyticsInterop (1.5.0)
-  - FirebaseCore (6.6.5):
-    - FirebaseCoreDiagnostics (~> 1.2)
-    - FirebaseCoreDiagnosticsInterop (~> 1.2)
-    - GoogleUtilities/Environment (~> 6.5)
-    - GoogleUtilities/Logger (~> 6.5)
-  - FirebaseCoreDiagnostics (1.2.2):
-    - FirebaseCoreDiagnosticsInterop (~> 1.2)
-    - GoogleDataTransportCCTSupport (~> 2.0)
-    - GoogleUtilities/Environment (~> 6.5)
-    - GoogleUtilities/Logger (~> 6.5)
-    - nanopb (~> 0.3.901)
-  - FirebaseCoreDiagnosticsInterop (1.2.0)
-  - FirebaseInstallations (1.1.1):
-    - FirebaseCore (~> 6.6)
-    - GoogleUtilities/UserDefaults (~> 6.5)
-    - PromisesObjC (~> 1.2)
-  - FirebaseInstanceID (4.3.2):
-    - FirebaseCore (~> 6.6)
-    - FirebaseInstallations (~> 1.0)
-    - GoogleUtilities/Environment (~> 6.5)
-    - GoogleUtilities/UserDefaults (~> 6.5)
-  - FirebaseMessaging (4.3.0):
-    - FirebaseAnalyticsInterop (~> 1.5)
-    - FirebaseCore (~> 6.6)
-    - FirebaseInstanceID (~> 4.3)
-    - GoogleUtilities/AppDelegateSwizzler (~> 6.5)
-    - GoogleUtilities/Environment (~> 6.5)
-    - GoogleUtilities/Reachability (~> 6.5)
-    - GoogleUtilities/UserDefaults (~> 6.5)
-    - Protobuf (>= 3.9.2, ~> 3.9)
-  - GoogleDataTransport (5.1.0)
-  - GoogleDataTransportCCTSupport (2.0.1):
-    - GoogleDataTransport (~> 5.1)
-    - nanopb (~> 0.3.901)
-  - GoogleUtilities/AppDelegateSwizzler (6.5.2):
-    - GoogleUtilities/Environment
-    - GoogleUtilities/Logger
-    - GoogleUtilities/Network
-  - GoogleUtilities/Environment (6.5.2)
-  - GoogleUtilities/Logger (6.5.2):
-    - GoogleUtilities/Environment
-  - GoogleUtilities/Network (6.5.2):
-    - GoogleUtilities/Logger
-    - "GoogleUtilities/NSData+zlib"
-    - GoogleUtilities/Reachability
-  - "GoogleUtilities/NSData+zlib (6.5.2)"
-  - GoogleUtilities/Reachability (6.5.2):
-    - GoogleUtilities/Logger
-  - GoogleUtilities/UserDefaults (6.5.2):
-    - GoogleUtilities/Logger
   - lottie-ios (3.1.6)
   - M13Checkbox (3.4.0)
   - Moya (14.0.0):
     - Moya/Core (= 14.0.0)
   - Moya/Core (14.0.0):
     - Alamofire (~> 5.0)
-  - nanopb (0.3.9011):
-    - nanopb/decode (= 0.3.9011)
-    - nanopb/encode (= 0.3.9011)
-  - nanopb/decode (0.3.9011)
-  - nanopb/encode (0.3.9011)
-  - PromisesObjC (1.2.8)
-  - Protobuf (3.11.4)
   - Resolver (1.1.2)
   - Reusable (4.1.1):
     - Reusable/Storyboard (= 4.1.1)
@@ -84,10 +21,10 @@ PODS:
   - SwiftLint (0.39.2)
   - SwiftRichString (3.7.1)
   - SwiftyBeaver (1.9.0)
+  - ZIPFoundation (0.9.11)
 
 DEPENDENCIES:
   - Carte
-  - Firebase/Messaging
   - lottie-ios
   - M13Checkbox
   - Moya
@@ -98,28 +35,15 @@ DEPENDENCIES:
   - SwiftLint
   - SwiftRichString
   - SwiftyBeaver
+  - ZIPFoundation (~> 0.9)
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - Carte
-    - Firebase
-    - FirebaseAnalyticsInterop
-    - FirebaseCore
-    - FirebaseCoreDiagnostics
-    - FirebaseCoreDiagnosticsInterop
-    - FirebaseInstallations
-    - FirebaseInstanceID
-    - FirebaseMessaging
-    - GoogleDataTransport
-    - GoogleDataTransportCCTSupport
-    - GoogleUtilities
     - lottie-ios
     - M13Checkbox
     - Moya
-    - nanopb
-    - PromisesObjC
-    - Protobuf
     - Resolver
     - Reusable
     - SQLite.swift
@@ -127,27 +51,14 @@ SPEC REPOS:
     - SwiftLint
     - SwiftRichString
     - SwiftyBeaver
+    - ZIPFoundation
 
 SPEC CHECKSUMS:
   Alamofire: df2f8f826963b08b9a870791ad48e07a10090b2e
   Carte: 6bcff4eaa894ff5b979d646de833fec96e04a38c
-  Firebase: f378c80340dd41c0ad0914af740c021eb282a04b
-  FirebaseAnalyticsInterop: 3f86269c38ae41f47afeb43ebf32a001f58fcdae
-  FirebaseCore: 9f495d3afacb7b558711e6218ebb14b1c51b5802
-  FirebaseCoreDiagnostics: e9b4cd8ba60dee0f2d13347332e4b7898cca5b61
-  FirebaseCoreDiagnosticsInterop: 296e2c5f5314500a850ad0b83e9e7c10b011a850
-  FirebaseInstallations: acb3216eb9784d3b1d2d2d635ff74fa892cc0c44
-  FirebaseInstanceID: 7ee0d6777013bb952f377b41965bf132b6a075be
-  FirebaseMessaging: 4ec33842d36b3319e062e51fb8b35a74f726950d
-  GoogleDataTransport: b29a21d813e906014ca16c00897827e40e4a24ab
-  GoogleDataTransportCCTSupport: 6f15a89b0ca35d6fa523e1f752ef818588885988
-  GoogleUtilities: ad0f3b691c67909d03a3327cc205222ab8f42e0e
   lottie-ios: 85ce835dd8c53e02509f20729fc7d6a4e6645a0a
   M13Checkbox: 6f59404540ac98ba83a3d1afac335895a40c6a5d
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
-  nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
-  PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
-  Protobuf: 176220c526ad8bd09ab1fb40a978eac3fef665f7
   Resolver: e04ca5a9a19906f2e5cdceb2b90edd3b5daed049
   Reusable: 53a9acf5c536f229b31b5865782414b508252ddb
   SQLite.swift: d2b4642190917051ce6bd1d49aab565fe794eea3
@@ -155,7 +66,8 @@ SPEC CHECKSUMS:
   SwiftLint: 22ccbbe3b8008684be5955693bab135e0ed6a447
   SwiftRichString: 9a6a70b4fe2cf428e38348b5ada5400da74621fd
   SwiftyBeaver: d39e7c376bf15e9fffca8263b8fd1f42ea56aa2d
+  ZIPFoundation: b1f0de4eed33e74a676f76e12559ab6b75990197
 
-PODFILE CHECKSUM: f6cba09b3f1ab7d242c2e1d182eed0f02a9cb97e
+PODFILE CHECKSUM: 4dfc7799add80bff9e9a2136c41be174b3b8fbd8
 
 COCOAPODS: 1.9.1

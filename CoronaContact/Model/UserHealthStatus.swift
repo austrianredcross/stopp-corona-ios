@@ -19,7 +19,7 @@ enum UserHealthStatus {
     case isProbablySick(quarantineDays: Int = 0)
     case hasAttestedSickness
 
-    /// most severy state wins
+    /// most severe state wins
     init(quarantineDays: Int? = nil) {
         let quarantineDays = quarantineDays ?? 0
         let localStorage: LocalStorage = Resolver.resolve()
@@ -33,6 +33,14 @@ enum UserHealthStatus {
         } else {
             self = .isHealthy
         }
+    }
+
+    var canUploadMissingKeys: Bool {
+        let localStorage: LocalStorage = Resolver.resolve()
+        guard let missingKeysAt = localStorage.missingUploadedKeysAt else {
+            return false
+        }
+        return missingKeysAt.startOfDayUTC() < Date().startOfDayUTC()
     }
 
     var icon: UIImage {
@@ -86,12 +94,10 @@ enum UserHealthStatus {
     }
 
     var quarantineDays: Int? {
-        switch self {
-        case let .isProbablySick(quarantineDays):
+        if case let .isProbablySick(quarantineDays) = self {
             return quarantineDays
-        default:
-            return nil
         }
+        return nil
     }
 
     var endOfQuarantine: String? {

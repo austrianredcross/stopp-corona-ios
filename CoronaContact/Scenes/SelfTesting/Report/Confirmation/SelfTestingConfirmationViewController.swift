@@ -13,9 +13,6 @@ final class SelfTestingConfirmationViewController: UIViewController, StoryboardB
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        viewModel?.onViewDidLoad()
-
         setupUI()
     }
 
