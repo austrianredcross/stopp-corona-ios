@@ -14,6 +14,10 @@ final class BatchDownloadScheduler {
         private let dateInterval: DateInterval
         private let datesToSchedule: [Date]
 
+        var nextDateToSchedule: Date? {
+            datesToSchedule.first { $0 > Date() }
+        }
+
         init() {
             startDate = Calendar.current.date(
                 bySettingHour: BatchDownloadConfiguration.Scheduler.startTime.hour,
@@ -32,19 +36,6 @@ final class BatchDownloadScheduler {
                 by: .hour,
                 value: BatchDownloadConfiguration.Scheduler.intervalInHours
             )
-        }
-
-        func unscheduledDates(for taskRequests: [BGTaskRequest]) -> [Date] {
-            let scheduledDates = taskRequests.compactMap(\.earliestBeginDate)
-
-            return datesToSchedule.filter { !scheduledDates.contains($0) }
-        }
-
-        func nextDateToSchedule(for taskRequests: [BGTaskRequest]) -> Date? {
-            let unscheduledDates = self.unscheduledDates(for: taskRequests)
-            let now = Date()
-
-            return unscheduledDates.first { $0 > now }
         }
     }
 
@@ -94,7 +85,7 @@ final class BatchDownloadScheduler {
                 return
             }
 
-            if let nextScheduledDate = self.timing.nextDateToSchedule(for: pendingRequests) {
+            if let nextScheduledDate = self.timing.nextDateToSchedule {
                 self.scheduleBackgroundTask(at: nextScheduledDate)
             }
         }
