@@ -28,7 +28,7 @@ at the following documents:
 2. `cd` to the project's directory and run `pod install` to install the third party dependencies. In case your spec sources are out of date, run `pod install --repo-update` instead.
 3. Open `CoronaContact.xcworkspace`
 4. You will need to provide your own app secrets in order to run the app. **The app will not build when you do not provide these values**. They can be set in the following places:
-    1. There is a template for a `Secrets.xcconfig` file in the `Configuration` folder. It contains keys for defining the API base URL, the API authorization key, Google Nearby API key, and the P2PKit API key for the staging and production environment.
+    1. There is a template for a `Secrets.xcconfig` file in the `Configuration` folder. It contains keys for defining the API base URL, the API authorization key, and the P2PKit API key for the staging and production environment.
     2. Copy the public server certificate as `Configuration/server.der` into the project. If you don't want to use certificate pinning you have to disable it in `Services/Network/Networksession.swift`
 5. You can choose between three different build schemes:
     1. *CoronaContact (Development)*: used for development, uses staging environment

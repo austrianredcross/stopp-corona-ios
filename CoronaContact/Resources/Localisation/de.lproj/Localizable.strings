@@ -123,7 +123,6 @@
 "contact_saved"                                                              = "Gespeichert";
 "contact_table_all"                                                          = "alle";
 "permissions_missing"                                                        = "Berechtigungen fehlen";
-"permissions_missing_nearby"                                                 = "Für diese Funktion wird Google Nearby benötigt.\n\nDieses wird für einen präzisen digitalen Handshake eingesetzt.";
 "permissions_missing_microphone"                                             = "Mikrofon";
 "permissions_missing_bluetooth"                                              = "Bluetooth";
 "permissions_missing_add"                                                    = "Für die Präzision Ihres digitalen Handshakes werden zusätzlich folgende Berechtigungen benötigt: ";
