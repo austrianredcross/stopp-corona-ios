@@ -14,7 +14,7 @@ class WhatsNewRepository {
     var lastWhatsNewShown: AppVersion
 
     @Injected
-    var localStorage: LocalStorage
+    private var localStorage: LocalStorage
 
     lazy var currentAppVersion: AppVersion = {
         appInfo.appVersion
