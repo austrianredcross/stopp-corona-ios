@@ -13,9 +13,6 @@ final class SicknessCertificateConfirmationViewController: UIViewController, Sto
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        viewModel?.onViewDidLoad()
-
         setupUI()
     }
 

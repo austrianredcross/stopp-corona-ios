@@ -13,8 +13,6 @@ final class RevokeSicknessConfirmationViewController: UIViewController, Storyboa
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        viewModel?.onViewDidLoad()
         setupUI()
     }
 

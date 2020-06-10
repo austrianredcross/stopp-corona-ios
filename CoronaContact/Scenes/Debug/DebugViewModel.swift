@@ -24,6 +24,7 @@ class DebugViewModel: ViewModel {
     @Injected private var notificationService: NotificationService
     @Injected private var exposureManager: ExposureManager
     @Injected private var exposureKeyManager: ExposureKeyManager
+    @Injected private var healthRepository: HealthRepository
 
     init(coordinator: DebugCoordinator) {
         self.coordinator = coordinator
@@ -37,16 +38,20 @@ class DebugViewModel: ViewModel {
         viewController?.revokeProbablySickButton.isHidden = true
         viewController?.probablySickButton.isHidden = false
         viewController?.attestedSickButton.isHidden = false
-
-        if localStorage.hasAttestedSickness {
+        switch healthRepository.userHealthStatus {
+        case .isHealthy:
+            break
+        case .isUnderSelfMonitoring:
+            text = "User is self monitoring"
+        case .isProbablySick:
+            text = "User is probably sick"
+            viewController?.revokeProbablySickButton.isHidden = false
+            viewController?.probablySickButton.isHidden = true
+        case .hasAttestedSickness:
             text = "User is attested sick"
             viewController?.revokeAttestedSickButton.isHidden = false
             viewController?.probablySickButton.isHidden = true
             viewController?.attestedSickButton.isHidden = true
-        } else if localStorage.isProbablySick {
-            text = "User is probably sick"
-            viewController?.revokeProbablySickButton.isHidden = false
-            viewController?.probablySickButton.isHidden = true
         }
         viewController?.currentStateLabel.text = text
         viewController?.batchDownloadSchedulerResultLabel.text = localStorage.batchDownloadSchedulerResult
@@ -69,19 +74,19 @@ class DebugViewModel: ViewModel {
     }
 
     func probablySickness() {
-        localStorage.isProbablySickAt = Date()
+        healthRepository.setProbablySick()
     }
 
     func attestSickness() {
-        localStorage.attestedSicknessAt = Date()
+        healthRepository.setProvenSick()
     }
 
     func revokeProbablySick() {
-        localStorage.isProbablySickAt = nil
+        healthRepository.revokeProbablySick()
     }
 
     func revokeAttestedSick() {
-        localStorage.attestedSicknessAt = nil
+        healthRepository.revokeProvenSickness()
     }
 
     func exposeDiagnosesKeys(test: Bool = false) {
