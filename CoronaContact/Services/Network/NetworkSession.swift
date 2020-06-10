@@ -12,6 +12,7 @@ class NetworkSession {
         let evaluators = [
             AppConfiguration.apiHostName: PublicKeysTrustEvaluator(),
             AppConfiguration.apiSmsHostName: PublicKeysTrustEvaluator(),
+            AppConfiguration.apiCdnHostName: PublicKeysTrustEvaluator(),
         ]
         let trustManager = ServerTrustManager(evaluators: evaluators)
         let configuration = URLSessionConfiguration.af.default

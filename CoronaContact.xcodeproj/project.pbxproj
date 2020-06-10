@@ -95,6 +95,7 @@
 		611D9EE2248E704B00EBB420 /* CompleteOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611D9EE1248E704B00EBB420 /* CompleteOperation.swift */; };
 		611D9EE5248E713100EBB420 /* FileManager+unzipItemWithOverride.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611D9EE4248E713100EBB420 /* FileManager+unzipItemWithOverride.swift */; };
 		611D9EE7248E7C9500EBB420 /* BatchDownloadConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611D9EE6248E7C9500EBB420 /* BatchDownloadConfiguration.swift */; };
+		61251F2324913A1800CEBCCD /* cdn.der in Resources */ = {isa = PBXBuildFile; fileRef = 61251F2224913A1800CEBCCD /* cdn.der */; };
 		612C4600246414260072ECF7 /* ConfigurationRetrievable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612C45FF246414260072ECF7 /* ConfigurationRetrievable.swift */; };
 		612C460224641C620072ECF7 /* RequestTan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612C460124641C620072ECF7 /* RequestTan.swift */; };
 		613AF72B24616A8B0089085E /* ShareButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613AF72A24616A8B0089085E /* ShareButton.swift */; };
@@ -425,6 +426,7 @@
 		611D9EE1248E704B00EBB420 /* CompleteOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteOperation.swift; sourceTree = "<group>"; };
 		611D9EE4248E713100EBB420 /* FileManager+unzipItemWithOverride.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+unzipItemWithOverride.swift"; sourceTree = "<group>"; };
 		611D9EE6248E7C9500EBB420 /* BatchDownloadConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatchDownloadConfiguration.swift; sourceTree = "<group>"; };
+		61251F2224913A1800CEBCCD /* cdn.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = cdn.der; sourceTree = "<group>"; };
 		612C45FF246414260072ECF7 /* ConfigurationRetrievable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationRetrievable.swift; sourceTree = "<group>"; };
 		612C460124641C620072ECF7 /* RequestTan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestTan.swift; sourceTree = "<group>"; };
 		613AF72A24616A8B0089085E /* ShareButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareButton.swift; sourceTree = "<group>"; };
@@ -1376,6 +1378,7 @@
 		61FABC9E2431EBDE0085786B /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
+				61251F2224913A1800CEBCCD /* cdn.der */,
 				4E1F2EC224646B550088B8F8 /* sms.der */,
 				4ED175BB245836F100248D3B /* server.der */,
 				61AB6EF024573737006B4190 /* Secrets.xcconfig */,
@@ -1766,6 +1769,7 @@
 				4EE28121242BA43900BC4C6E /* OnboardingConsentPageView.xib in Resources */,
 				61D0F54924352E960026C91A /* RevocationStatusReportViewController.storyboard in Resources */,
 				614D722A2429084900CC545D /* SelfTestingStatusReportViewController.storyboard in Resources */,
+				61251F2324913A1800CEBCCD /* cdn.der in Resources */,
 				61D1A3D5242A3C40007F82ED /* InfoPlist.strings in Resources */,
 				92FFC9CB24275C3A00CC541B /* SelfTestingCheckSymptomsView.xib in Resources */,
 				92FFC9C024267D8200CC541B /* SelfTestingCheckSymptomsViewController.storyboard in Resources */,
