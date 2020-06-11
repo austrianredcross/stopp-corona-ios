@@ -49,8 +49,14 @@ class RevokeSicknessStatusReportViewModel: ViewModel {
         let uploadDays = configurationService.currentConfig.uploadKeyDays
         let startDate = attestedSicknessAt.addDays(-uploadDays)!
         let endDate = attestedSicknessAt
+        var diagnosisType: DiagnosisType
+        if localStorage.isProbablySick {
+            diagnosisType = .yellow
+        } else {
+            diagnosisType = .green
+        }
 
-        flowController.submit(from: startDate, untilIncluding: endDate) { [weak self] result in
+        flowController.submit(from: startDate, untilIncluding: endDate, diagnosisType: diagnosisType) { [weak self] result in
             completion()
 
             switch result {

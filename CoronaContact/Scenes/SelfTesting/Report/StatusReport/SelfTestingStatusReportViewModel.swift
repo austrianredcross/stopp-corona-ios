@@ -40,7 +40,7 @@ class SelfTestingStatusReportViewModel: ViewModel {
             endDate = missingUploadedKeysAt
         }
 
-        flowController.submit(from: startDate, untilIncluding: endDate) { [weak self] result in
+        flowController.submit(from: startDate, untilIncluding: endDate, diagnosisType: .yellow) { [weak self] result in
             completion()
             guard let self = self else {
                 return

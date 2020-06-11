@@ -19,14 +19,9 @@ class ReportHealthStatusFlowController {
         case submission(NetworkService.TracingKeysError)
     }
 
-    private let diagnosisType: DiagnosisType
     private var tanUUID: String?
     private var verification: Verification?
     var personalData: PersonalData?
-
-    init(diagnosisType: DiagnosisType) {
-        self.diagnosisType = diagnosisType
-    }
 
     func tanConfirmation(personalData: PersonalData, completion: @escaping Completion<Void>) {
         self.personalData = personalData
@@ -50,21 +45,22 @@ class ReportHealthStatusFlowController {
         verification = Verification(uuid: tanUUID, authorization: tanNumber)
     }
 
-    func submit(from startDate: Date, untilIncluding endDate: Date, completion: @escaping Completion<Void>) {
+    func submit(from startDate: Date, untilIncluding endDate: Date, diagnosisType: DiagnosisType, completion: @escaping Completion<Void>) {
         guard let verification = verification else {
             failSilently(completion)
             return
         }
 
-        exposureManager.getKeysForUpload(from: startDate, untilIncluding: endDate) { [weak self] result in
+        exposureManager.getKeysForUpload(from: startDate, untilIncluding: endDate, diagnosisType: diagnosisType) { [weak self] result in
             guard let self = self else { return }
             switch result {
             case let .success(temporaryExposureKeys):
                 let tracingKeys = TracingKeys(
                     temporaryExposureKeys: temporaryExposureKeys,
-                    diagnosisType: self.diagnosisType,
+                    diagnosisType: diagnosisType,
                     verificationPayload: verification
                 )
+                LoggingService.debug("uploading \(diagnosisType)", context: .exposure)
                 self.sendTracingKeys(tracingKeys, completion: completion)
             case .failure:
                 completion(.failure(.unknown))

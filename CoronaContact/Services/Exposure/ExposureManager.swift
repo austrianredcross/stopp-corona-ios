@@ -87,7 +87,7 @@ class ExposureManager {
         }
     }
 
-    func getKeysForUpload(from startDate: Date, untilIncluding endDate: Date, completion: @escaping Completion<[TemporaryExposureKey]>) {
+    func getKeysForUpload(from startDate: Date, untilIncluding endDate: Date, diagnosisType: DiagnosisType, completion: @escaping Completion<[TemporaryExposureKey]>) {
         getDiagnosisKeys { result in
             switch result {
             case let .success(enTemporaryExposureKeys):
@@ -103,7 +103,7 @@ class ExposureManager {
                     let passwords = try TracingKeyPassword.getPasswordsFor(timestamps: timestamps)
 
                     let temporaryExposureKeys = filteredKeys.map { key in
-                        TemporaryExposureKey(temporaryExposureKey: key, password: passwords[key.rollingStartNumber])
+                        TemporaryExposureKey(temporaryExposureKey: key, password: passwords[key.rollingStartNumber], diagnosisType: diagnosisType)
                     }
                     #if DEBUG || STAGE
                         self.log.debug("Uploading Keys: \(startDate) - \(endDate)")
