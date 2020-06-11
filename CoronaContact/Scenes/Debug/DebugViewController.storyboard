@@ -234,7 +234,7 @@
                                                             <userDefinedRuntimeAttribute type="string" keyPath="transKeyNormal" value="Krankmeldung vorverlegen"/>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <action selector="moveSickreportBackADay:" destination="5BI-CH-cv0" eventType="touchUpInside" id="byF-GS-Oed"/>
+                                                            <action selector="moveSickReportBackADay:" destination="5BI-CH-cv0" eventType="touchUpInside" id="byF-GS-Oed"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>

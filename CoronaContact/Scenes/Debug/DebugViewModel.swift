@@ -84,7 +84,7 @@ class DebugViewModel: ViewModel {
         healthRepository.setProvenSick()
     }
 
-    func moveSickreportBackADay() {
+    func moveSickReportBackADay() {
         localStorage.isProbablySickAt = localStorage.isProbablySickAt?.addDays(-1)
         localStorage.attestedSicknessAt = localStorage.attestedSicknessAt?.addDays(-1)
         localStorage.missingUploadedKeysAt = localStorage.missingUploadedKeysAt?.addDays(-1)

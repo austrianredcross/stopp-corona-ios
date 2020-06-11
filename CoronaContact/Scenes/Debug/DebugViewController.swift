@@ -79,8 +79,8 @@ class DebugViewController: UIViewController, StoryboardBased, ViewModelBased, Re
         viewModel?.revokeAttestedSick()
     }
 
-    @IBAction func moveSickreportBackADay(_ sender: Any) {
-        viewModel?.moveSickreportBackADay()
+    @IBAction func moveSickReportBackADay(_ sender: Any) {
+        viewModel?.moveSickReportBackADay()
     }
 
     // MARK: - Mark log settings

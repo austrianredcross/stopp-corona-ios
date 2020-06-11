@@ -189,7 +189,7 @@ class QuarantineNotificationView: UIView, NibOwnerLoadable {
         buttonsStackView.isHidden = false
         let label = TransLabel()
         label.numberOfLines = 0
-        label.attributedText = title.set(style: "body")
+        label.attributedText = title.set(style: StyleNames.body.rawValue)
         buttonsStackView.addArrangedSubview(label)
         buttonsStackView.isHidden = false
     }
