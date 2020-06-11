@@ -102,9 +102,9 @@ final class BatchDownloadScheduler {
                     lastRedContact = date
                 }
             }
+            localStorage.lastRedContact = lastRedContact
+            localStorage.lastYellowContact = lastYellowContact
         }
-        localStorage.lastRedContact = lastRedContact
-        localStorage.lastYellowContact = lastYellowContact
     }
 
     func scheduleBackgroundTaskIfNeeded() {

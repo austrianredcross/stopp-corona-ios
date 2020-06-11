@@ -129,9 +129,9 @@ class DebugViewModel: ViewModel {
                     lastRedContact = date
                 }
             }
+            localStorage.lastRedContact = lastRedContact
+            localStorage.lastYellowContact = lastYellowContact
         }
-        localStorage.lastRedContact = lastRedContact
-        localStorage.lastYellowContact = lastYellowContact
     }
 
     func exposeDiagnosesKeys() {
