@@ -45,6 +45,6 @@ class DetectExposuresOperation: AsyncResultOperation<(Date, Bool), RiskCalculati
 
     private func isEnoughRisk(for summary: ENExposureDetectionSummary) -> Bool {
         #warning("TODO: Determine if there is enough risk to warrant the processing")
-        true
+        return true
     }
 }
