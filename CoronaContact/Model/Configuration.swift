@@ -9,7 +9,6 @@ import Foundation
 
 struct Configuration: Codable {
     private enum CodingKeys: String, CodingKey {
-        case warnBeforeSymptoms = "warn_before_symptoms"
         case redWarningQuarantine = "red_warning_quarantine"
         case yellowWarningQuarantine = "yellow_warning_quarantine"
         case selfDiagnosedQuarantine = "self_diagnosed_quarantine"
@@ -18,7 +17,6 @@ struct Configuration: Codable {
         case uploadKeyDays = "upload_keys_days"
     }
 
-    let warnBeforeSymptoms: Int
     /// Quarantine duration for infected contacts in hours
     let redWarningQuarantine: Int
     /// Quarantine duration for possibly infected contacts in hours
@@ -52,7 +50,6 @@ extension Configuration {
             questionnaires[language] = value
         }
         diagnosticQuestionnaire = questionnaires
-        warnBeforeSymptoms = try container.decode(Int.self, forKey: .warnBeforeSymptoms)
         redWarningQuarantine = try container.decode(Int.self, forKey: .redWarningQuarantine)
         yellowWarningQuarantine = try container.decode(Int.self, forKey: .yellowWarningQuarantine)
         selfDiagnosedQuarantine = try container.decode(Int.self, forKey: .selfDiagnosedQuarantine)
