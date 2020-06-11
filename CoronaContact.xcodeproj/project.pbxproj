@@ -1312,10 +1312,19 @@
 			path = Logging;
 			sourceTree = "<group>";
 		};
+		61B0B07F249282D3003D6C80 /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				6186C701249277A80070B616 /* DetectExposuresOperation.swift */,
+				61DAF6F224922E6500A3B069 /* DetectDailyExposuresOperation.swift */,
+				6186C6FD2492716F0070B616 /* RiskCalculationCompleteOperation.swift */,
+			);
+			path = Operations;
+			sourceTree = "<group>";
+		};
 		61D0F52F24352E240026C91A /* Logic */ = {
 			isa = PBXGroup;
 			children = (
-				61DAF6F42492319B00A3B069 /* RiskCalculation */,
 				61D0F53024352E240026C91A /* QuarantineTimeController.swift */,
 				610571AE247E9EBE009A715E /* ReportHealthStatusFlowController.swift */,
 			);
@@ -1401,11 +1410,9 @@
 		61DAF6F42492319B00A3B069 /* RiskCalculation */ = {
 			isa = PBXGroup;
 			children = (
+				61B0B07F249282D3003D6C80 /* Operations */,
 				61251F202491259D00CEBCCD /* RiskCalculationController.swift */,
 				6129B57C24923B5300E2D15B /* RiskCalculationController+Injection.swift */,
-				6186C701249277A80070B616 /* DetectExposuresOperation.swift */,
-				61DAF6F224922E6500A3B069 /* DetectDailyExposuresOperation.swift */,
-				6186C6FD2492716F0070B616 /* RiskCalculationCompleteOperation.swift */,
 			);
 			path = RiskCalculation;
 			sourceTree = "<group>";
@@ -1630,6 +1637,7 @@
 				614BA9E22423C31C006797AA /* Network */,
 				4E5254CF2472B85D00B6C3A4 /* Exposure */,
 				611D9ED7248E6FB800EBB420 /* BatchDownload */,
+				61DAF6F42492319B00A3B069 /* RiskCalculation */,
 			);
 			path = Services;
 			sourceTree = "<group>";
