@@ -30,19 +30,19 @@ class SelfTestingStatusReportViewModel: ViewModel {
             return
         }
 
-        var startDate = Date().addDays(-3)!
+        var startDate = Date().addDays(-2)!
         var endDate = Date()
 
-        if updateKeys {
-            if let missingUploadedKeysAt = localStorage.missingUploadedKeysAt {
-                startDate = missingUploadedKeysAt
-                endDate = missingUploadedKeysAt
-            }
+        if updateKeys, let missingUploadedKeysAt = localStorage.missingUploadedKeysAt {
+            startDate = missingUploadedKeysAt
+            endDate = missingUploadedKeysAt
         }
 
         flowController.submit(from: startDate, untilIncluding: endDate) { [weak self] result in
             completion()
-            guard let self = self else { return }
+            guard let self = self else {
+                return
+            }
             switch result {
             case let .failure(.submission(error)):
                 self.coordinator?.showErrorAlert(

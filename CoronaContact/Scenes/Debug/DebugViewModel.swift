@@ -23,7 +23,6 @@ class DebugViewModel: ViewModel {
     @Injected private var network: NetworkService
     @Injected private var notificationService: NotificationService
     @Injected private var exposureManager: ExposureManager
-    @Injected private var exposureKeyManager: ExposureKeyManager
     @Injected private var healthRepository: HealthRepository
 
     init(coordinator: DebugCoordinator) {
@@ -98,7 +97,7 @@ class DebugViewModel: ViewModel {
         healthRepository.revokeProvenSickness()
     }
 
-    func exposeDiagnosesKeys(test: Bool = false) {
+    func exposeDiagnosesKeys() {
         let debugFun: (Result<[ENTemporaryExposureKey], Error>) -> Void = { keyResult in
             if case let .success(keys) = keyResult {
                 /*                let ukeys = self.exposureKeyManager.getKeysForUpload(from: Date().addDays(-14)!, untilIncluding: Date())
@@ -108,11 +107,7 @@ class DebugViewModel: ViewModel {
                  */
             }
         }
-        if test {
-            exposureManager.getTestDiagnosisKeys(completion: debugFun)
-        } else {
-            exposureManager.getDiagnosisKeys(completion: debugFun)
-        }
+        exposureManager.getDiagnosisKeys(completion: debugFun)
     }
 
     deinit {

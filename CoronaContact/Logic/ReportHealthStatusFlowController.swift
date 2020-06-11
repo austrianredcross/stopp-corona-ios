@@ -9,7 +9,6 @@ import Resolver
 
 class ReportHealthStatusFlowController {
     @Injected private var exposureManager: ExposureManager
-    @Injected var exposureKeyManager: ExposureKeyManager
     @Injected private var networkService: NetworkService
 
     typealias Completion<Success> = (Result<Success, ReportError>) -> Void
@@ -20,7 +19,7 @@ class ReportHealthStatusFlowController {
         case submission(NetworkService.TracingKeysError)
     }
 
-    let diagnosisType: DiagnosisType
+    private let diagnosisType: DiagnosisType
     private var tanUUID: String?
     private var verification: Verification?
     var personalData: PersonalData?
@@ -57,7 +56,7 @@ class ReportHealthStatusFlowController {
             return
         }
 
-        exposureKeyManager.getKeysForUpload(from: startDate, untilIncluding: endDate) { [weak self] result in
+        exposureManager.getKeysForUpload(from: startDate, untilIncluding: endDate) { [weak self] result in
             guard let self = self else { return }
             switch result {
             case let .success(temporaryExposureKeys):
