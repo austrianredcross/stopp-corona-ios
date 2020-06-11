@@ -10,6 +10,7 @@ class SicknessCertificateStatusReportViewModel: ViewModel {
     @Injected private var flowController: SicknessCertificateFlowController
     @Injected private var healthRepository: HealthRepository
     @Injected private var localStorage: LocalStorage
+    @Injected private var configurationService: ConfigurationService
 
     weak var coordinator: SicknessCertificateStatusReportCoordinator?
     let updateKeys: Bool
@@ -29,10 +30,10 @@ class SicknessCertificateStatusReportViewModel: ViewModel {
         guard isValid else {
             return
         }
-
-        var startDate = Date().addDays(-2)!
+        let uploadDays = configurationService.currentConfig.uploadKeyDays
+        var startDate = Date().addDays(-uploadDays)!
         if let isProbablySickAt = localStorage.isProbablySickAt {
-            startDate = isProbablySickAt.addDays(-2)!
+            startDate = isProbablySickAt.addDays(-uploadDays)!
         }
         var endDate = Date()
 

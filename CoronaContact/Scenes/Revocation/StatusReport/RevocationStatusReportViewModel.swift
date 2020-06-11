@@ -17,6 +17,7 @@ class RevocationStatusReportViewModel: ViewModel {
     @Injected private var flowController: RevocationFlowController
     @Injected private var localStorage: LocalStorage
     @Injected private var healthRepository: HealthRepository
+    @Injected private var configurationService: ConfigurationService
 
     weak var coordinator: RevocationStatusReportCoordinator?
 
@@ -44,7 +45,8 @@ class RevocationStatusReportViewModel: ViewModel {
         }
         guard let isProbablySickAt = localStorage.isProbablySickAt else { fatalError() }
 
-        let startDate = isProbablySickAt.addDays(-2)!
+        let uploadDays = configurationService.currentConfig.uploadKeyDays
+        let startDate = isProbablySickAt.addDays(-uploadDays)!
         let endDate = isProbablySickAt
 
         flowController.submit(from: startDate, untilIncluding: endDate) { [weak self] result in

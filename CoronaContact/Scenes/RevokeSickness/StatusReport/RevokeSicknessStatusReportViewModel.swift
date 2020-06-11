@@ -17,6 +17,7 @@ class RevokeSicknessStatusReportViewModel: ViewModel {
     @Injected private var healthRepository: HealthRepository
     @Injected private var flowController: RevokeSicknessFlowController
     @Injected private var localStorage: LocalStorage
+    @Injected private var configurationService: ConfigurationService
 
     weak var coordinator: RevokeSicknessStatusReportCoordinator?
 
@@ -45,7 +46,8 @@ class RevokeSicknessStatusReportViewModel: ViewModel {
 
         guard let attestedSicknessAt = localStorage.attestedSicknessAt else { fatalError() }
 
-        let startDate = attestedSicknessAt.addDays(-2)!
+        let uploadDays = configurationService.currentConfig.uploadKeyDays
+        let startDate = attestedSicknessAt.addDays(-uploadDays)!
         let endDate = attestedSicknessAt
 
         flowController.submit(from: startDate, untilIncluding: endDate) { [weak self] result in

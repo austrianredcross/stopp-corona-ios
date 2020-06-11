@@ -10,6 +10,7 @@ class SelfTestingStatusReportViewModel: ViewModel {
     @Injected private var flowController: SelfTestingReportFlowController
     @Injected private var healthRepository: HealthRepository
     @Injected private var localStorage: LocalStorage
+    @Injected private var configurationService: ConfigurationService
 
     weak var coordinator: SelfTestingStatusReportCoordinator?
     let updateKeys: Bool
@@ -30,7 +31,8 @@ class SelfTestingStatusReportViewModel: ViewModel {
             return
         }
 
-        var startDate = Date().addDays(-2)!
+        let uploadDays = configurationService.currentConfig.uploadKeyDays
+        var startDate = Date().addDays(-uploadDays)!
         var endDate = Date()
 
         if updateKeys, let missingUploadedKeysAt = localStorage.missingUploadedKeysAt {
