@@ -5,13 +5,27 @@
 
 import Foundation
 
-struct AppVersionHistory: Collection {
-    typealias Content = String
+typealias WhatsNewContent = String
+typealias MaintenanceTasks = HistoryItems<MaintenancePerforming>
+
+enum AppVersionHistory {
+    static let whatsNew = HistoryItems<WhatsNewContent>([
+        "2.0": "whats_new_in_2.0.0".localized,
+    ])
+
+    static let maintenanceTasks = HistoryItems([
+        "2.0": RemoveGoogleDataService(),
+    ])
+}
+
+struct HistoryItems<Content>: Collection {
     typealias AppVersionHistoryDictionary = [AppVersion: Content]
 
-    var history: AppVersionHistoryDictionary = [
-        "2.0": "whats_new_in_2.0.0".localized,
-    ]
+    let history: AppVersionHistoryDictionary
+
+    init(_ history: [AppVersion: Content]) {
+        self.history = history
+    }
 
     lazy var firstVersion: AppVersion = {
         history.keys.sorted(by: <).first!

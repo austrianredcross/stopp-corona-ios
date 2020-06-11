@@ -8,7 +8,7 @@
     import UIKit
 
     class DebugAppHistoryViewController: UIViewController {
-        var appVersionHistory = AppVersionHistory()
+        var appVersionHistory = AppVersionHistory.whatsNew
 
         struct VersionPresentation {
             let version: AppVersion

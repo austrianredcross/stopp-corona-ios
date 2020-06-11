@@ -1406,12 +1406,12 @@
 			path = Configuration;
 			sourceTree = "<group>";
 		};
-		7828A69F24922D92006AEAAC /* CleanupAfterUpdate */ = {
+		7828A69F24922D92006AEAAC /* Maintenance */ = {
 			isa = PBXGroup;
 			children = (
 				7828A6A024922DD0006AEAAC /* RemoveGoogleDataService.swift */,
 			);
-			path = CleanupAfterUpdate;
+			path = Maintenance;
 			sourceTree = "<group>";
 		};
 		7829D815247D37CB0015F5A5 /* Saved IDs */ = {
@@ -1596,7 +1596,7 @@
 		83974D9D12AC236263A86D73 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				7828A69F24922D92006AEAAC /* CleanupAfterUpdate */,
+				7828A69F24922D92006AEAAC /* Maintenance */,
 				4E8984242473F00900499820 /* LocalStorage */,
 				615D36622438C24900B608AB /* Logging */,
 				611B78BB242816BE0040CCB3 /* AppUpdate */,
