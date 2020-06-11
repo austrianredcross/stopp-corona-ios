@@ -3,6 +3,7 @@
 //  CoronaContact
 //
 
+import Resolver
 import UIKit
 
 class AppUpdateService {
@@ -11,6 +12,9 @@ class AppUpdateService {
     }
 
     private var isDisplayingUpdateAlert = false
+
+    @Injected
+    private var maintenanceTaskRepository: MaintenanceTasksRepository
 
     var requiresUpdate = false {
         didSet {
@@ -54,20 +58,11 @@ class AppUpdateService {
         }
     }
 
-    func cleanupOldData() {
-        removeObseleteUserDefaults()
-    }
-
-    private func removeObseleteUserDefaults() {
-        let obsoleteKeys = [
-            "last_downloaded_message",
-            "not_fresh_installed",
-            "tracking_id",
-            "hide_microphone_info_dialog",
-            "is_probably_sick",
-            "has_attested_sickness",
-        ]
-        obsoleteKeys.forEach(UserDefaults.standard.removeObject(forKey:))
+    func performMaintenanceTasks() {
+        for task in maintenanceTaskRepository.newMaintenanceTasks {
+            task.performMaintenance(completion: { _ in })
+        }
+        maintenanceTaskRepository.currentMaintenancePerformed()
     }
 
     private func openAppStore() {

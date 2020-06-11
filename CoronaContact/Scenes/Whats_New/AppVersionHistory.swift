@@ -6,15 +6,18 @@
 import Foundation
 
 typealias WhatsNewContent = String
-typealias MaintenanceTasks = HistoryItems<MaintenancePerforming>
+typealias MaintenanceTasks = HistoryItems<[MaintenancePerforming]>
 
 enum AppVersionHistory {
     static let whatsNew = HistoryItems<WhatsNewContent>([
         "2.0": "whats_new_in_2.0.0".localized,
     ])
 
-    static let maintenanceTasks = HistoryItems([
-        "2.0": RemoveGoogleDataService(),
+    static let maintenanceTasks = MaintenanceTasks([
+        "2.0": [
+            RemoveGoogleData(),
+            RemoveObsoleteUserDefaults(),
+        ],
     ])
 }
 

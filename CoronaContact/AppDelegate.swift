@@ -48,7 +48,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         log.info("Application starting with launchOptions: \(String(describing: launchOptions))")
 
-        appUpdateService.cleanupOldData()
+        appUpdateService.performMaintenanceTasks()
         batchDownloadScheduler.registerBackgroundTask()
 
         UNUserNotificationCenter.current().delegate = self

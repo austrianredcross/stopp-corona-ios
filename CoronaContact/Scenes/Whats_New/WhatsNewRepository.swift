@@ -63,7 +63,7 @@ class WhatsNewRepository {
     }
 }
 
-private func ascendingKeys<K, V>(_ lhs: (key: K, value: V), _ rhs: (key: K, value: V)) -> Bool
+func ascendingKeys<K, V>(_ lhs: (key: K, value: V), _ rhs: (key: K, value: V)) -> Bool
     where K: Comparable {
     lhs.key < rhs.key
 }

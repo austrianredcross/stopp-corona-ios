@@ -1,15 +1,11 @@
 //
-//  RemoveGoogleDataService.swift
+//  RemoveGoogleData.swift
 //  CoronaContact
 //
 
 import Foundation
 
-protocol MaintenancePerforming {
-    func performMaintenance(completion: (_ success: Bool) -> Void)
-}
-
-struct RemoveGoogleDataService: MaintenancePerforming {
+struct RemoveGoogleData: MaintenancePerforming {
     private enum RemovableItem {
         static let googleFolder = "Google"
         static let googleSDKEventsFolder = "google-sdks-events"
