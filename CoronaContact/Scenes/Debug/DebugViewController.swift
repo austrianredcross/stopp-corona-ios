@@ -11,17 +11,23 @@ import UIKit
 class DebugViewController: UIViewController, StoryboardBased, ViewModelBased, Reusable {
     @Injected private var localStorage: LocalStorage
     @Injected private var batchDownloadScheduler: BatchDownloadScheduler
+    @Injected private var batchDownloadService: BatchDownloadService
     @IBOutlet var batchDownloadSchedulerResultLabel: UILabel!
     @IBOutlet var currentStateLabel: UILabel!
     @IBOutlet var probablySickButton: SecondaryButton!
     @IBOutlet var attestedSickButton: SecondaryButton!
     @IBOutlet var revokeProbablySickButton: SecondaryButton!
     @IBOutlet var revokeAttestedSickButton: SecondaryButton!
+    @IBOutlet var moveSickReportButton: SecondaryButton!
 
     var viewModel: DebugViewModel? {
         didSet {
             viewModel?.viewController = self
         }
+    }
+
+    @IBAction func exitToMain(_ sender: UIStoryboardSegue) {
+        close(sender)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -47,6 +53,14 @@ class DebugViewController: UIViewController, StoryboardBased, ViewModelBased, Re
         batchDownloadScheduler.scheduleBackgroundTaskForDebuggingPurposes()
     }
 
+    @IBAction func downloadAllBatches(_ sender: Any) {
+        _ = batchDownloadService.startBatchDownload(.all) { _ in }
+    }
+
+    @IBAction func downloadOnlyFullBatch(_ sender: Any) {
+        _ = batchDownloadService.startBatchDownload(.onlyFullBatch) { _ in }
+    }
+
     // MARK: - sickness state
 
     @IBAction func setSelftestedSick(_ sender: Any) {
@@ -63,6 +77,10 @@ class DebugViewController: UIViewController, StoryboardBased, ViewModelBased, Re
 
     @IBAction func revokeAttestedSickButton(_ sender: Any) {
         viewModel?.revokeAttestedSick()
+    }
+
+    @IBAction func moveSickReportBackADay(_ sender: Any) {
+        viewModel?.moveSickReportBackADay()
     }
 
     // MARK: - Mark log settings

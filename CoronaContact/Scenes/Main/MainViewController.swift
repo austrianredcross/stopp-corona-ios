@@ -130,6 +130,21 @@ final class MainViewController: UIViewController, StoryboardBased, ViewModelBase
                 self?.viewModel?.tappedTertiaryButtonInUserHealthStatus()
             }
         }
+
+        if viewModel.userHealthStatus.canUploadMissingKeys {
+            if case .hasAttestedSickness = viewModel.userHealthStatus {
+                userHealthStatusView.addLabel(title: "sickness_certificate_attest_info_update".localized)
+                userHealthStatusView.addButton(title: "sickness_certificate_attest_button_update".localized) { [weak self] in
+                    self?.viewModel?.uploadMissingKeys()
+                }
+            }
+            if case .isProbablySick = viewModel.userHealthStatus {
+                userHealthStatusView.addLabel(title: "self_testing_symptoms_warning_info_update".localized)
+                userHealthStatusView.addButton(title: "self_testing_symptoms_warning_button_update".localized) { [weak self] in
+                    self?.viewModel?.uploadMissingKeys()
+                }
+            }
+        }
     }
 
     private func configureContactHealthStatusView() {

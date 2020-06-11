@@ -38,6 +38,7 @@ class DebugViewModel: ViewModel {
         viewController?.revokeProbablySickButton.isHidden = true
         viewController?.probablySickButton.isHidden = false
         viewController?.attestedSickButton.isHidden = false
+        viewController?.moveSickReportButton.isHidden = true
         switch healthRepository.userHealthStatus {
         case .isHealthy:
             break
@@ -47,11 +48,13 @@ class DebugViewModel: ViewModel {
             text = "User is probably sick"
             viewController?.revokeProbablySickButton.isHidden = false
             viewController?.probablySickButton.isHidden = true
+            viewController?.moveSickReportButton.isHidden = false
         case .hasAttestedSickness:
             text = "User is attested sick"
             viewController?.revokeAttestedSickButton.isHidden = false
             viewController?.probablySickButton.isHidden = true
             viewController?.attestedSickButton.isHidden = true
+            viewController?.moveSickReportButton.isHidden = false
         }
         viewController?.currentStateLabel.text = text
         viewController?.batchDownloadSchedulerResultLabel.text = localStorage.batchDownloadSchedulerResult
@@ -79,6 +82,12 @@ class DebugViewModel: ViewModel {
 
     func attestSickness() {
         healthRepository.setProvenSick()
+    }
+
+    func moveSickReportBackADay() {
+        localStorage.isProbablySickAt = localStorage.isProbablySickAt?.addDays(-1)
+        localStorage.attestedSicknessAt = localStorage.attestedSicknessAt?.addDays(-1)
+        localStorage.missingUploadedKeysAt = localStorage.missingUploadedKeysAt?.addDays(-1)
     }
 
     func revokeProbablySick() {

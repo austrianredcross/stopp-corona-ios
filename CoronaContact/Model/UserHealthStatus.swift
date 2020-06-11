@@ -43,6 +43,14 @@ enum UserHealthStatus {
         return missingKeysAt.startOfDayUTC() < Date().startOfDayUTC()
     }
 
+    func canRevokeProvenSickness() -> Bool {
+        let localStorage: LocalStorage = Resolver.resolve()
+        guard let attestedSicknessAt = localStorage.attestedSicknessAt else {
+            return false
+        }
+        return attestedSicknessAt.addDays(2)! > Date()
+    }
+
     var icon: UIImage {
         UIImage(named: iconFileName)!
     }
@@ -125,7 +133,7 @@ enum UserHealthStatus {
     var secondaryActionText: String? {
         switch self {
         case .hasAttestedSickness:
-            return "sickness_certificate_attest_button_revoke".localized
+            return canRevokeProvenSickness() ? "sickness_certificate_attest_button_revoke".localized : nil
         case .isUnderSelfMonitoring:
             return "self_testing_symptoms_secondary_button".localized
         case .isProbablySick:

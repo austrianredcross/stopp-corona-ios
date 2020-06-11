@@ -40,11 +40,11 @@ final class BatchDownloadScheduler {
     }
 
     @Injected private var localStorage: LocalStorage
+    @Injected private var batchDownloadService: BatchDownloadService
 
     weak var exposureManager: ExposureManager?
 
     private let log = ContextLogger(context: .batchDownload)
-    private let batchDownloadService = BatchDownloadService()
     private let backgroundTaskIdentifier = Bundle.main.bundleIdentifier! + ".exposure-notification"
     private let backgroundTaskScheduler = BGTaskScheduler.shared
     private let timing = Timing()

@@ -14,6 +14,7 @@ class MainCoordinator: Coordinator, ShareSheetPresentable {
 
     @Injected private var notificationService: NotificationService
     @Injected private var localStorage: LocalStorage
+    @Injected private var whatsNewRepository: WhatsNewRepository
     private weak var mainViewModel: MainViewModel?
 
     init(navigationController: UINavigationController) {
@@ -22,6 +23,12 @@ class MainCoordinator: Coordinator, ShareSheetPresentable {
 
     func help() {
         let child = MainHelpCoordinator(navigationController: navigationController)
+        addChildCoordinator(child)
+        child.start()
+    }
+
+    func show(_ historyItem: AppVersionHistory.Content) {
+        let child = WhatsNewCoordinator(presentingController: rootViewController)
         addChildCoordinator(child)
         child.start()
     }
@@ -48,10 +55,10 @@ class MainCoordinator: Coordinator, ShareSheetPresentable {
         child.start()
     }
 
-    func sicknessCertificate() {
+    func sicknessCertificate(updateKeys: Bool) {
         let child = SicknessCertificateCoordinator(navigationController: navigationController)
         addChildCoordinator(child)
-        child.start()
+        child.start(updateKeys: updateKeys)
     }
 
     func attestedSicknessGuidelines() {
@@ -116,6 +123,13 @@ class MainCoordinator: Coordinator, ShareSheetPresentable {
             DispatchQueue.main.async { self.onboarding() }
         } else {
             notificationService.dismissAllNotifications()
+            DispatchQueue.main.async {
+                if self.whatsNewRepository.isWhatsNewAvailable,
+                    let latestHistoryItem = self.whatsNewRepository.newHistoryItems.last {
+                    self.show(latestHistoryItem)
+                    self.whatsNewRepository.currentWhatsNewShown()
+                }
+            }
         }
     }
 
