@@ -43,10 +43,6 @@ class DebugViewController: UIViewController, StoryboardBased, ViewModelBased, Re
         viewModel?.exposeDiagnosesKeys()
     }
 
-    @IBAction func exposeDiagnosesKeysTestButtonPressed(_ sender: Any) {
-        viewModel?.exposeDiagnosesKeys(test: true)
-    }
-
     // MARK: - Batch Download
 
     @IBAction func scheduleBackgroundTask(_ sender: Any) {

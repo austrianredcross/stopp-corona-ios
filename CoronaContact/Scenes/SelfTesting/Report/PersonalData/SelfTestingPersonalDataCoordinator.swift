@@ -11,6 +11,7 @@ final class SelfTestingPersonalDataCoordinator: Coordinator, ErrorPresentableCoo
     }()
 
     var navigationController: UINavigationController
+    var updateKeys: Bool = false
 
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -24,7 +25,7 @@ final class SelfTestingPersonalDataCoordinator: Coordinator, ErrorPresentableCoo
     override func finish(animated: Bool = false) {}
 
     func tanConfirmation() {
-        let child = SelfTestingTanConfirmationCoordinator(navigationController: navigationController)
+        let child = SelfTestingTanConfirmationCoordinator(navigationController: navigationController, updateKeys: updateKeys)
         addChildCoordinator(child)
         child.start()
     }

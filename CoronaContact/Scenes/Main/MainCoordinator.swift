@@ -49,10 +49,10 @@ class MainCoordinator: Coordinator, ShareSheetPresentable {
         presentShareAppActivity()
     }
 
-    func selfTesting() {
+    func selfTesting(updateKeys: Bool) {
         let child = SelfTestingCoordinator(navigationController: navigationController)
         addChildCoordinator(child)
-        child.start()
+        child.start(updateKeys: updateKeys)
     }
 
     func sicknessCertificate(updateKeys: Bool) {

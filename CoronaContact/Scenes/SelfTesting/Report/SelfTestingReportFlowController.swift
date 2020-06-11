@@ -5,8 +5,4 @@
 
 import Foundation
 
-class SelfTestingReportFlowController: ReportHealthStatusFlowController {
-    init() {
-        super.init(diagnosisType: .yellow)
-    }
-}
+class SelfTestingReportFlowController: ReportHealthStatusFlowController {}

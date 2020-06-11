@@ -42,7 +42,6 @@
 		4E8984232473EFB500499820 /* PersistedWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8984222473EFB500499820 /* PersistedWrapper.swift */; };
 		4E8984262473F06300499820 /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8984252473F06300499820 /* LocalStorage.swift */; };
 		4E8984282473F07600499820 /* LocalStorage+Injected.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8984272473F07600499820 /* LocalStorage+Injected.swift */; };
-		4E9B945C2487CE65009FB714 /* ExposureKeyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9B945B2487CE65009FB714 /* ExposureKeyManager.swift */; };
 		4E9BF7062420C2A100B360A4 /* MainViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E9BF7052420C2A100B360A4 /* MainViewController.storyboard */; };
 		4E9BF7082420C31400B360A4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9BF7072420C31400B360A4 /* MainViewController.swift */; };
 		4E9C7B952421126200800B97 /* ViewModelBased.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9C7B942421126200800B97 /* ViewModelBased.swift */; };
@@ -385,7 +384,6 @@
 		4E8984222473EFB500499820 /* PersistedWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistedWrapper.swift; sourceTree = "<group>"; };
 		4E8984252473F06300499820 /* LocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
 		4E8984272473F07600499820 /* LocalStorage+Injected.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocalStorage+Injected.swift"; sourceTree = "<group>"; };
-		4E9B945B2487CE65009FB714 /* ExposureKeyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExposureKeyManager.swift; sourceTree = "<group>"; };
 		4E9BF7052420C2A100B360A4 /* MainViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainViewController.storyboard; sourceTree = "<group>"; };
 		4E9BF7072420C31400B360A4 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		4E9C7B942421126200800B97 /* ViewModelBased.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelBased.swift; sourceTree = "<group>"; };
@@ -839,7 +837,6 @@
 			children = (
 				4E5254D02472B89200B6C3A4 /* ExposureManager.swift */,
 				4E5254D22472B8AF00B6C3A4 /* Exposure+Injection.swift */,
-				4E9B945B2487CE65009FB714 /* ExposureKeyManager.swift */,
 			);
 			path = Exposure;
 			sourceTree = "<group>";
@@ -2027,7 +2024,6 @@
 			files = (
 				614D7239242909C000CC545D /* SelfTestingConfirmationCoordinator.swift in Sources */,
 				61D0F53724352E820026C91A /* RevocationStatus.swift in Sources */,
-				4E9B945C2487CE65009FB714 /* ExposureKeyManager.swift in Sources */,
 				611D9ED6248E6EEC00EBB420 /* ExposureKeysBatch.swift in Sources */,
 				61D0F53124352E240026C91A /* QuarantineTimeController.swift in Sources */,
 				4EDB47FA2422086B000CE24A /* UIView+ShadowBorders.swift in Sources */,

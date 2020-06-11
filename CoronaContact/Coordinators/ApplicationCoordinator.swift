@@ -57,6 +57,6 @@ class ApplicationCoordinator: Coordinator {
             presented.dismiss(animated: false)
         }
         rootViewController.popToRootViewController(animated: false)
-        mainCoordinator?.selfTesting()
+        mainCoordinator?.selfTesting(updateKeys: false)
     }
 }

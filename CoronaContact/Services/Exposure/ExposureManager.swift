@@ -7,6 +7,8 @@ import ExposureNotification
 import Foundation
 import Resolver
 
+typealias Completion<T> = (Result<T, Error>) -> Void
+
 @available(iOS 13.5, *)
 class ExposureManager {
     static let authorizationStatusChangedNotification = Notification.Name("ExposureManagerAuthorizationStatusChanged")
@@ -70,7 +72,12 @@ class ExposureManager {
     }
 
     func getDiagnosisKeys(completion: @escaping (Result<[ENTemporaryExposureKey], Error>) -> Void) {
-        manager.getDiagnosisKeys { temporaryExposureKeys, error in
+        #if DEBUG || STAGE
+            let keyFunction = manager.getTestDiagnosisKeys
+        #else
+            let keyFunction = manager.getDiagnosisKeys
+        #endif
+        keyFunction { temporaryExposureKeys, error in
             if let error = error {
                 completion(.failure(error))
             } else {
@@ -80,15 +87,51 @@ class ExposureManager {
         }
     }
 
-    // Includes today's key, requires com.apple.developer.exposure-notification-test entitlement
-    func getTestDiagnosisKeys(completion: @escaping (Result<[ENTemporaryExposureKey], Error>) -> Void) {
-        manager.getTestDiagnosisKeys { temporaryExposureKeys, error in
-            if let error = error {
+    func getKeysForUpload(from startDate: Date, untilIncluding endDate: Date, diagnosisType: DiagnosisType, completion: @escaping Completion<[TemporaryExposureKey]>) {
+        getDiagnosisKeys { result in
+            switch result {
+            case let .success(enTemporaryExposureKeys):
+                do {
+                    let startTime = startDate.startOfDayUTC().timeIntervalSince1970
+                    let endTime = endDate.addDays(1)!.startOfDayUTC().timeIntervalSince1970
+                    let filteredKeys = enTemporaryExposureKeys.filter { key in
+                        let timeStamp = key.rollingStartNumber.timeInterval
+                        return startTime <= timeStamp && timeStamp < endTime
+                    }
+
+                    let timestamps = filteredKeys.map(\.rollingStartNumber)
+                    let passwords = try TracingKeyPassword.getPasswordsFor(timestamps: timestamps)
+
+                    let temporaryExposureKeys = filteredKeys.map { key in
+                        TemporaryExposureKey(temporaryExposureKey: key, password: passwords[key.rollingStartNumber], diagnosisType: diagnosisType)
+                    }
+                    #if DEBUG || STAGE
+                        self.log.debug("Uploading Keys: \(startDate) - \(endDate)")
+                        temporaryExposureKeys.forEach { key in
+                            self.log.debug("Key: \(key.intervalNumber) \(key.intervalNumber.date)")
+                        }
+                    #endif
+
+                    completion(.success(temporaryExposureKeys))
+                } catch {
+                    completion(.failure(error))
+                }
+
+            case let .failure(error):
+                LoggingService.error("Couldn't get diagnosis keys from the exposure manager: \(error)", context: .exposure)
                 completion(.failure(error))
-            } else {
-                self.log.debug("keys: \(temporaryExposureKeys!)")
-                completion(.success(temporaryExposureKeys ?? []))
             }
         }
+    }
+}
+
+#warning("DELETE ME AFTER MERGING OTHER BRANCH INCLUDING THIS")
+extension ENIntervalNumber {
+    var timeInterval: TimeInterval {
+        Double(self) * 60 * 10
+    }
+
+    var date: Date {
+        Date(timeIntervalSince1970: timeInterval)
     }
 }

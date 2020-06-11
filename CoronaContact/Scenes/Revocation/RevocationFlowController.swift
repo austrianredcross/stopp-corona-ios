@@ -5,8 +5,4 @@
 
 import Foundation
 
-class RevocationFlowController: ReportHealthStatusFlowController {
-    init() {
-        super.init(diagnosisType: .green)
-    }
-}
+class RevocationFlowController: ReportHealthStatusFlowController {}
