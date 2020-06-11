@@ -8,9 +8,11 @@ import Resolver
 
 class SelfTestingConfirmationViewModel: ViewModel {
     weak var coordinator: SelfTestingConfirmationCoordinator?
+    let updateKeys: Bool
 
-    init(with coordinator: SelfTestingConfirmationCoordinator) {
+    init(with coordinator: SelfTestingConfirmationCoordinator, updateKeys: Bool) {
         self.coordinator = coordinator
+        self.updateKeys = updateKeys
     }
 
     func showQuarantineGuidelines() {

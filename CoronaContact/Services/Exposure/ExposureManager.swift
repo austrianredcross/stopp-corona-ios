@@ -14,7 +14,7 @@ class ExposureManager {
 
     @Injected private var localStorage: LocalStorage
     @Injected var batchDownloadScheduler: BatchDownloadScheduler
-    private let manager = ENManager()
+    let manager = ENManager()
     private let log = ContextLogger(context: .exposure)
     private var kvoToken: NSKeyValueObservation?
     var exposureNotificationStatus: ENStatus {

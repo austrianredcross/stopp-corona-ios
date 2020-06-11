@@ -42,8 +42,12 @@ class RevocationStatusReportViewModel: ViewModel {
         guard isValid else {
             return
         }
+        guard let isProbablySickAt = localStorage.isProbablySickAt else { fatalError() }
 
-        flowController.submit { [weak self] result in
+        let startDate = isProbablySickAt.addDays(-3)!
+        let endDate = isProbablySickAt
+
+        flowController.submit(from: startDate, untilIncluding: endDate) { [weak self] result in
             completion()
 
             switch result {

@@ -43,7 +43,12 @@ class RevokeSicknessStatusReportViewModel: ViewModel {
             return
         }
 
-        flowController.submit { [weak self] result in
+        guard let attestedSicknessAt = localStorage.attestedSicknessAt else { fatalError() }
+
+        let startDate = attestedSicknessAt.addDays(-3)!
+        let endDate = attestedSicknessAt
+
+        flowController.submit(from: startDate, untilIncluding: endDate) { [weak self] result in
             completion()
 
             switch result {
