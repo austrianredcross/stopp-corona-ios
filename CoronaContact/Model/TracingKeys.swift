@@ -50,9 +50,9 @@ enum DiagnosisType: String, Codable {
         case .red:
             return 2
         case .yellow:
-            return 1
+            return 5
         case .green:
-            return 0
+            return 6
         }
     }
 }
@@ -68,13 +68,11 @@ struct TemporaryExposureKey: Codable {
     let password: String
     let intervalNumber: ENIntervalNumber
     let intervalCount: ENIntervalNumber
-    let transmissionRisk: ENRiskLevel
 
     init(temporaryExposureKey: ENTemporaryExposureKey, password: String?) {
         key = temporaryExposureKey.keyData.base64EncodedString()
         self.password = password ?? UUID().uuidString
         intervalNumber = temporaryExposureKey.rollingStartNumber
         intervalCount = temporaryExposureKey.rollingPeriod
-        transmissionRisk = temporaryExposureKey.transmissionRiskLevel
     }
 }

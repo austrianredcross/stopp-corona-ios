@@ -108,7 +108,10 @@ class ExposureManager {
         }
     }
 
-    func getKeysForUpload(from startDate: Date, untilIncluding endDate: Date, completion: @escaping Completion<[TemporaryExposureKey]>) {
+    func getKeysForUpload(from startDate: Date,
+                          untilIncluding endDate: Date,
+                          diagnosisType: DiagnosisType,
+                          completion: @escaping Completion<[TemporaryExposureKey]>) {
         getDiagnosisKeys { result in
             switch result {
             case let .success(enTemporaryExposureKeys):
@@ -127,7 +130,7 @@ class ExposureManager {
                         TemporaryExposureKey(temporaryExposureKey: key, password: passwords[key.rollingStartNumber])
                     }
                     #if DEBUG || STAGE
-                        self.log.debug("Uploading Keys: \(startDate) - \(endDate)")
+                        self.log.debug("Uploading Keys: \(diagnosisType) \(startDate) - \(endDate)")
                         temporaryExposureKeys.forEach { key in
                             self.log.debug("Key: \(key.intervalNumber) \(key.intervalNumber.date)")
                         }

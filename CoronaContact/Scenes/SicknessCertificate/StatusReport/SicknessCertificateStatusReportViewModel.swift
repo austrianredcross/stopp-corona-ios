@@ -42,7 +42,7 @@ class SicknessCertificateStatusReportViewModel: ViewModel {
             endDate = missingUploadedKeysAt
         }
 
-        flowController.submit(from: startDate, untilIncluding: endDate) { [weak self] result in
+        flowController.submit(from: startDate, untilIncluding: endDate, diagnosisType: .red) { [weak self] result in
             guard let self = self else {
                 return
             }

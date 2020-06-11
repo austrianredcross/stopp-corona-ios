@@ -14,7 +14,6 @@ enum LoggingContext: String {
     case database
     case application
     case bluetooth
-    case nearby
     case exposure
     case storage
     case batchDownload
