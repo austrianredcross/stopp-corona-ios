@@ -11,9 +11,14 @@ enum RiskCalculationError: Error {
     case exposureDetectionFailed(Error)
     case exposureInfoUnavailable(Error)
     case cancelled
+    case noResult
 }
 
+typealias RiskCalculationResult = [Date: DiagnosisType]
+
 final class RiskCalculationController {
+    typealias CompletionHandler = ((Result<RiskCalculationResult, RiskCalculationError>) -> Void)
+
     @Injected private var exposureManager: ExposureManager
 
     private lazy var queue: OperationQueue = {
@@ -23,8 +28,10 @@ final class RiskCalculationController {
     }()
 
     private let log = ContextLogger(context: .riskCalculation)
+    private var completionHandler: CompletionHandler?
+    private var riskCalculationResult = RiskCalculationResult()
 
-    func processBatches(_ batches: [UnzippedBatch]) {
+    func processBatches(_ batches: [UnzippedBatch], completionHandler: CompletionHandler) {
         guard let operation = processFullBatch(batches) else {
             return
         }
@@ -62,10 +69,55 @@ final class RiskCalculationController {
             .filter { $0.type == .daily }
             .filter { $0.interval.date <= normalizedDate }
 
-        let operations = dailyBatches.map { batch in
-            DetectDailyExposuresOperation(diagnosisKeyURLs: batch.urls, exposureManager: exposureManager)
+        let operations: [DetectDailyExposuresOperation] = dailyBatches.map { batch in
+            let operation = DetectDailyExposuresOperation(diagnosisKeyURLs: batch.urls, exposureManager: exposureManager)
+            operation.completionBlock = handleCompletion(of: operation, date: batch.interval.date)
+            return operation
         }
 
-        queue.addOperations(operations, waitUntilFinished: false)
+        zip(operations, operations.dropFirst()).forEach { lhs, rhs in
+            rhs.addDependency(lhs)
+        }
+
+        let completeOperation = completeRiskCalculation(after: operations)
+        let allOperations = operations + [completeOperation]
+
+        queue.addOperations(allOperations, waitUntilFinished: false)
+    }
+
+    private func completeRiskCalculation(after operations: [DetectDailyExposuresOperation]) -> RiskCalculationCompleteOperation {
+        let completeOperation = RiskCalculationCompleteOperation()
+        operations.forEach(completeOperation.addDependency)
+        completeOperation.completionBlock = handleCompletion(of: completeOperation)
+
+        return completeOperation
+    }
+
+    private func handleCompletion(of operation: DetectDailyExposuresOperation, date: Date) -> () -> Void {
+        // swiftformat:disable:next redundantReturn
+        return {
+            guard let result = operation.result else {
+                self.completionHandler?(.failure(.noResult))
+                self.queue.cancelAllOperations()
+                return
+            }
+
+            switch result {
+            case let .success(dailyExposure) where dailyExposure.diagnosisType != nil:
+                self.riskCalculationResult[date] = dailyExposure.diagnosisType!
+            case .success:
+                break
+            case let .failure(error):
+                self.log.error(error)
+                self.completionHandler?(.failure(error))
+            }
+        }
+    }
+
+    private func handleCompletion(of operation: RiskCalculationCompleteOperation) -> () -> Void {
+        // swiftformat:disable:next redundantReturn
+        return {
+            self.completionHandler?(.success(self.riskCalculationResult))
+        }
     }
 }

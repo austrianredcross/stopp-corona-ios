@@ -53,7 +53,9 @@ class DebugViewController: UIViewController, StoryboardBased, ViewModelBased, Re
         _ = batchDownloadService.startBatchDownload(.all) { [weak self] result in
             switch result {
             case let .success(batches):
-                self?.riskCalculationController.processBatches(batches)
+                self?.riskCalculationController.processBatches(batches) { result in
+                    print(result)
+                }
             case let .failure(error):
                 print(error)
             }
@@ -64,7 +66,9 @@ class DebugViewController: UIViewController, StoryboardBased, ViewModelBased, Re
         _ = batchDownloadService.startBatchDownload(.onlyFullBatch) { [weak self] result in
             switch result {
             case let .success(batches):
-                self?.riskCalculationController.processBatches(batches)
+                self?.riskCalculationController.processBatches(batches) { result in
+                    print(result)
+                }
             case let .failure(error):
                 print(error)
             }

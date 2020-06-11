@@ -7,7 +7,7 @@ import ExposureNotification
 import Foundation
 import Resolver
 
-class DetectDailyExposuresOperation: AsyncResultOperation<DiagnosisType, RiskCalculationError> {
+class DetectDailyExposuresOperation: ChainedAsyncResultOperation<DailyExposure, DailyExposure, RiskCalculationError> {
     @Injected private var configurationService: ConfigurationService
 
     private let diagnosisKeyURLs: [URL]
@@ -25,6 +25,11 @@ class DetectDailyExposuresOperation: AsyncResultOperation<DiagnosisType, RiskCal
     }
 
     override func main() {
+        if let previousExposure = input, previousExposure.diagnosisType == .red || previousExposure.isSkipped {
+            finish(with: .success(DailyExposure(isSkipped: true)))
+            return
+        }
+
         progress = exposureManager.detectExposures(diagnosisKeyURLs: diagnosisKeyURLs) { [weak self] summary, error in
             guard let self = self else {
                 return
@@ -45,7 +50,7 @@ class DetectDailyExposuresOperation: AsyncResultOperation<DiagnosisType, RiskCal
                     }
                 }
             } else {
-                self.finish(with: .success(.green))
+                self.finish(with: .success(DailyExposure(diagnosisType: .green)))
             }
         }
     }
@@ -64,9 +69,9 @@ class DetectDailyExposuresOperation: AsyncResultOperation<DiagnosisType, RiskCal
         let redExposures = exposures.filter { $0.transmissionRiskLevel.diagnosisType == .red }
 
         if redExposures.sumTotalRisk > exposureConfiguration.minimumRiskScore {
-            finish(with: .success(.red))
+            finish(with: .success(DailyExposure(diagnosisType: .red)))
         } else {
-            finish(with: .success(.yellow))
+            finish(with: .success(DailyExposure(diagnosisType: .yellow)))
         }
     }
 }
