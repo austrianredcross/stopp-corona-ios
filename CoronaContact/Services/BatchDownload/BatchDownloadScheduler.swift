@@ -42,6 +42,7 @@ final class BatchDownloadScheduler {
     @Injected private var localStorage: LocalStorage
     @Injected private var healthRepository: HealthRepository
     @Injected private var batchDownloadService: BatchDownloadService
+    @Injected private var riskCalculationController: RiskCalculationController
 
     weak var exposureManager: ExposureManager?
 
@@ -56,7 +57,8 @@ final class BatchDownloadScheduler {
 
             let progress = self.batchDownloadService.startBatchDownload(downloadRequirement) { result in
                 switch result {
-                case .success:
+                case let .success(batches):
+                    self.riskCalculationController.processBatches(batches, completionHandler: self.handleRiskCalculationResult)
                     task.setTaskCompleted(success: true)
                     self.localStorage.batchDownloadSchedulerResult = BatchDownloadSchedulerResult(task: task, error: nil).description
                 case let .failure(error):
@@ -85,6 +87,10 @@ final class BatchDownloadScheduler {
         case .hasAttestedSickness, .isProbablySick, .isUnderSelfMonitoring:
             return .onlyFourteenDaysBatch
         }
+    }
+
+    func handleRiskCalculationResult(_ result: Result<RiskCalculationResult, RiskCalculationError>) {
+        #warning("TODO: pass result to quarantine time calculation")
     }
 
     func scheduleBackgroundTaskIfNeeded() {

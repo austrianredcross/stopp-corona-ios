@@ -8,6 +8,6 @@ import Resolver
 
 extension Resolver {
     static func registerRiskCalculationController() {
-        register { RiskCalculationController() }
+        register { RiskCalculationController() }.scope(application)
     }
 }

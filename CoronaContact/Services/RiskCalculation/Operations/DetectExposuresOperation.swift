@@ -9,18 +9,17 @@ import Resolver
 
 class DetectExposuresOperation: AsyncResultOperation<(Date, Bool), RiskCalculationError> {
     @Injected private var configurationService: ConfigurationService
+    @Injected private var exposureManager: ExposureManager
 
     private let diagnosisKeyURLs: [URL]
     private var progress: Progress?
-    private let exposureManager: ExposureManager
 
     private var exposureConfiguration: ExposureConfiguration {
         configurationService.currentConfig.exposureConfiguration
     }
 
-    init(diagnosisKeyURLs: [URL], exposureManager: ExposureManager) {
+    init(diagnosisKeyURLs: [URL]) {
         self.diagnosisKeyURLs = diagnosisKeyURLs
-        self.exposureManager = exposureManager
     }
 
     override func main() {

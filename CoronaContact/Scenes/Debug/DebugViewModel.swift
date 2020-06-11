@@ -24,6 +24,8 @@ class DebugViewModel: ViewModel {
     @Injected private var notificationService: NotificationService
     @Injected private var exposureManager: ExposureManager
     @Injected private var healthRepository: HealthRepository
+    @Injected private var batchDownloadService: BatchDownloadService
+    @Injected private var riskCalculationController: RiskCalculationController
 
     init(coordinator: DebugCoordinator) {
         self.coordinator = coordinator
@@ -95,6 +97,27 @@ class DebugViewModel: ViewModel {
 
     func revokeAttestedSick() {
         healthRepository.revokeProvenSickness()
+    }
+
+    func downloadSevenDaysBatchAndDailyBatches() {
+        _ = batchDownloadService.startBatchDownload(.sevenDaysBatchAndDailyBatches, completionHandler: handleBatchDownloadResult)
+    }
+
+    func downloadFourteenDaysBatch() {
+        _ = batchDownloadService.startBatchDownload(.onlyFourteenDaysBatch, completionHandler: handleBatchDownloadResult)
+    }
+
+    func handleBatchDownloadResult(_ result: Result<[UnzippedBatch], BatchDownloadError>) {
+        switch result {
+        case let .success(batches):
+            riskCalculationController.processBatches(batches, completionHandler: handleRiskCalculationResult)
+        case let .failure(error):
+            print(error)
+        }
+    }
+
+    func handleRiskCalculationResult(_ result: Result<RiskCalculationResult, RiskCalculationError>) {
+        #warning("TODO: pass result to quarantine time calculation")
     }
 
     func exposeDiagnosesKeys() {

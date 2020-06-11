@@ -9,6 +9,7 @@ import Resolver
 
 class DetectDailyExposuresOperation: ChainedAsyncResultOperation<DailyExposure, DailyExposure, RiskCalculationError> {
     @Injected private var configurationService: ConfigurationService
+    @Injected private var exposureManager: ExposureManager
 
     private let diagnosisKeyURLs: [URL]
     private var progress: Progress?
@@ -17,11 +18,8 @@ class DetectDailyExposuresOperation: ChainedAsyncResultOperation<DailyExposure, 
         configurationService.currentConfig.exposureConfiguration
     }
 
-    let exposureManager: ExposureManager
-
-    init(diagnosisKeyURLs: [URL], exposureManager: ExposureManager) {
+    init(diagnosisKeyURLs: [URL]) {
         self.diagnosisKeyURLs = diagnosisKeyURLs
-        self.exposureManager = exposureManager
     }
 
     override func main() {

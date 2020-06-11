@@ -11,8 +11,7 @@ import UIKit
 class DebugViewController: UIViewController, StoryboardBased, ViewModelBased, Reusable {
     @Injected private var localStorage: LocalStorage
     @Injected private var batchDownloadScheduler: BatchDownloadScheduler
-    @Injected private var batchDownloadService: BatchDownloadService
-    @Injected private var riskCalculationController: RiskCalculationController
+
     @IBOutlet var batchDownloadSchedulerResultLabel: UILabel!
     @IBOutlet var currentStateLabel: UILabel!
     @IBOutlet var probablySickButton: SecondaryButton!
@@ -51,29 +50,11 @@ class DebugViewController: UIViewController, StoryboardBased, ViewModelBased, Re
     }
 
     @IBAction func downloadSevenDaysBatchAndDailyBatches(_ sender: Any) {
-        _ = batchDownloadService.startBatchDownload(.sevenDaysBatchAndDailyBatches) { [weak self] result in
-            switch result {
-            case let .success(batches):
-                self?.riskCalculationController.processBatches(batches) { result in
-                    print(result)
-                }
-            case let .failure(error):
-                print(error)
-            }
-        }
+        viewModel?.downloadSevenDaysBatchAndDailyBatches()
     }
 
     @IBAction func downloadFourteenDaysBatch(_ sender: Any) {
-        _ = batchDownloadService.startBatchDownload(.onlyFourteenDaysBatch) { [weak self] result in
-            switch result {
-            case let .success(batches):
-                self?.riskCalculationController.processBatches(batches) { result in
-                    print(result)
-                }
-            case let .failure(error):
-                print(error)
-            }
-        }
+        viewModel?.downloadFourteenDaysBatch()
     }
 
     // MARK: - sickness state

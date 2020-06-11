@@ -19,8 +19,6 @@ typealias RiskCalculationResult = [Date: DiagnosisType]
 final class RiskCalculationController {
     typealias CompletionHandler = ((Result<RiskCalculationResult, RiskCalculationError>) -> Void)
 
-    @Injected private var exposureManager: ExposureManager
-
     private lazy var queue: OperationQueue = {
         let queue = OperationQueue()
         queue.maxConcurrentOperationCount = 1
@@ -37,17 +35,18 @@ final class RiskCalculationController {
         }
 
         operation.completionBlock = { [weak self] in
-            guard let result = operation.result else {
+            guard let self = self, let result = operation.result else {
                 return
             }
 
             switch result {
             case let .success((lastExposureDate, isEnoughRisk)) where isEnoughRisk:
-                self?.processDailyBatches(batches, startingFrom: lastExposureDate)
+                self.processDailyBatches(batches, startingFrom: lastExposureDate)
             case let .success((lastExposureDate, _)):
-                self?.log.debug("Exposure at \(lastExposureDate) was not risky enough.")
+                self.completionHandler?(.success(self.riskCalculationResult))
+                self.log.debug("Exposure at \(lastExposureDate) was not risky enough.")
             case let .failure(error):
-                self?.log.error(error)
+                self.log.error(error)
             }
         }
 
@@ -59,7 +58,7 @@ final class RiskCalculationController {
             return nil
         }
 
-        let operation = DetectExposuresOperation(diagnosisKeyURLs: fullBatch.urls, exposureManager: exposureManager)
+        let operation = DetectExposuresOperation(diagnosisKeyURLs: fullBatch.urls)
         return operation
     }
 
@@ -70,7 +69,7 @@ final class RiskCalculationController {
             .filter { $0.interval.date <= normalizedDate }
 
         let operations: [DetectDailyExposuresOperation] = dailyBatches.map { batch in
-            let operation = DetectDailyExposuresOperation(diagnosisKeyURLs: batch.urls, exposureManager: exposureManager)
+            let operation = DetectDailyExposuresOperation(diagnosisKeyURLs: batch.urls)
             operation.completionBlock = handleCompletion(of: operation, date: batch.interval.date)
             return operation
         }
