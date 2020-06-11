@@ -252,7 +252,7 @@
 "sickness_certificate_attest_description"                                    = "Please remain in quarantine. You have officially declared yourself ill with the coronavirus.";
 "sickness_certificate_attest_button"                                         = "Self-quarantine";
 "sickness_certificate_attest_button_revoke"                                  = "Revoke sick note";
-"self_testing_symptoms_warning_button_update"                                = "Please insert translation here";
+"sickness_certificate_attest_info_update"                                    = "Please insert translation here";
 "sickness_certificate_attest_button_update"                                  = "Please insert translation here";
 "start_menu_headline_1"                                                      = "Info";
 "start_menu_item_1_1_what_does_the_app_do"                                   = "What can this app do?";
@@ -357,6 +357,7 @@
 "self_testing_symptoms_button"                                               = "Next steps";
 "self_testing_symptoms_secondary_button"                                     = "Reassess symptoms";
 "self_testing_symptoms_warning_info_update"                                  = "Please insert translation here";
+"self_testing_symptoms_warning_button_update"                                = "Please insert translation here";
 "suspicion_guidelines_title"                                                 = "Suspected infection ";
 "suspicion_guidelines_headline"                                              = "Suspected corona infection";
 "suspicion_guidelines_description"                                           = "You have completed the questionnaire and <b>a corona infection is suspected.</b>";

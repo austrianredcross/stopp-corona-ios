@@ -252,7 +252,7 @@
 "sickness_certificate_attest_description"                                    = "Bitte bleiben Sie in Quarantäne. Sie haben sich offiziell als am Coronavirus erkrankt gemeldet.";
 "sickness_certificate_attest_button"                                         = "Begeben Sie sich in Quarantäne";
 "sickness_certificate_attest_button_revoke"                                  = "Krankmeldung zurückziehen";
-"self_testing_symptoms_warning_button_update"                                = "Weitere Kontakte benachrichtigen";
+"sickness_certificate_attest_info_update"                                    = "Benachrichtigen Sie Personen, mit denen Sie am Tag Ihrer Meldung einen digitalen Handshake ausgetauscht haben.";
 "sickness_certificate_attest_button_update"                                  = "Weitere Kontakte benachrichtigen";
 "start_menu_headline_1"                                                      = "Info";
 "start_menu_item_1_1_what_does_the_app_do"                                   = "Was kann diese App?";
@@ -357,6 +357,7 @@
 "self_testing_symptoms_button"                                               = "Nächste Schritte";
 "self_testing_symptoms_secondary_button"                                     = "Symptome erneut prüfen";
 "self_testing_symptoms_warning_info_update"                                  = "Benachrichtigen Sie Personen, mit denen Sie am Tag Ihrer Meldung einen digitalen Handshake ausgetauscht haben.";
+"self_testing_symptoms_warning_button_update"                                = "Weitere Kontakte benachrichtigen";
 "suspicion_guidelines_title"                                                 = "Verdacht";
 "suspicion_guidelines_headline"                                              = "Verdacht auf eine Corona-Infektion";
 "suspicion_guidelines_description"                                           = "Sie haben den Fragebogen ausgefüllt und <b>es besteht ein Verdacht auf eine Corona-Infektion.</b>";
