@@ -81,9 +81,9 @@ final class BatchDownloadScheduler {
     func determineDownloadRequirement() -> BatchDownloadService.DownloadRequirement {
         switch healthRepository.userHealthStatus {
         case .isHealthy:
-            return .all
+            return .sevenDaysBatchAndDailyBatches
         case .hasAttestedSickness, .isProbablySick, .isUnderSelfMonitoring:
-            return .onlyFullBatch
+            return .onlyFourteenDaysBatch
         }
     }
 

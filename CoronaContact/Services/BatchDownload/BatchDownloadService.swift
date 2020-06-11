@@ -15,8 +15,8 @@ enum BatchDownloadError: Error {
 
 final class BatchDownloadService {
     enum DownloadRequirement {
-        case all
-        case onlyFullBatch
+        case sevenDaysBatchAndDailyBatches
+        case onlyFourteenDaysBatch
     }
 
     @Injected private var networkService: NetworkService
@@ -73,14 +73,24 @@ final class BatchDownloadService {
     }
 
     private func downloadFiles(in batch: ExposureKeysBatch, downloadRequirement: DownloadRequirement) -> [BatchDownloadOperation] {
-        let fullBatchDownloadOperations = downloadFiles(at: batch.fullBatch.filePaths, batch: batch.fullBatch, batchType: .full)
-
+        let fullBatchDownloadOperations: [BatchDownloadOperation]
         let dailyBatchesDownloadOperations: [BatchDownloadOperation]
-        if downloadRequirement == .all {
+
+        if downloadRequirement == .sevenDaysBatchAndDailyBatches {
+            fullBatchDownloadOperations = downloadFiles(
+                at: batch.fullSevenDaysBatch.filePaths,
+                batch: batch.fullSevenDaysBatch,
+                batchType: .full
+            )
             dailyBatchesDownloadOperations = batch.dailyBatches.flatMap { batch in
                 downloadFiles(at: batch.filePaths, batch: batch, batchType: .daily)
             }
         } else {
+            fullBatchDownloadOperations = downloadFiles(
+                at: batch.fullFourteenDaysBatch.filePaths,
+                batch: batch.fullFourteenDaysBatch,
+                batchType: .full
+            )
             dailyBatchesDownloadOperations = []
         }
 

@@ -128,22 +128,22 @@
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uIX-tZ-IhW" customClass="PrimaryButton" customModule="Stopp_Corona" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="105" width="414" height="34"/>
-                                                        <state key="normal" title="Download all batches (full &amp; all days)"/>
+                                                        <state key="normal" title="Download full 7-day batch and daily batches"/>
                                                         <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="transKeyNormal" value="Download all batches (full &amp; all days)"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="transKeyNormal" value="Download 7-day batch and daily batches"/>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <action selector="downloadAllBatches:" destination="5BI-CH-cv0" eventType="touchUpInside" id="Off-wN-1Y1"/>
+                                                            <action selector="downloadSevenDaysBatchAndDailyBatches:" destination="5BI-CH-cv0" eventType="touchUpInside" id="EX6-Kc-oNN"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ofS-mQ-lTK" customClass="SecondaryButton" customModule="Stopp_Corona" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="139" width="414" height="34"/>
-                                                        <state key="normal" title="Download only full batch"/>
+                                                        <state key="normal" title="Download only full 14-day batch"/>
                                                         <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="transKeyNormal" value="Download only full batch"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="transKeyNormal" value="Download only 14-day batch"/>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <action selector="downloadOnlyFullBatch:" destination="5BI-CH-cv0" eventType="touchUpInside" id="eDK-LY-kX1"/>
+                                                            <action selector="downloadFourteenDaysBatch:" destination="5BI-CH-cv0" eventType="touchUpInside" id="Z4b-S2-Vpj"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>

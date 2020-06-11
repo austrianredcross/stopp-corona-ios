@@ -9,11 +9,13 @@ import Foundation
 struct ExposureKeysBatch: Codable {
     private enum CodingKeys: String, CodingKey {
         case
-            fullBatch = "full_batch",
+            fullFourteenDaysBatch = "full_14_batch",
+            fullSevenDaysBatch = "full_7_batch",
             dailyBatches = "daily_batches"
     }
 
-    let fullBatch: Batch
+    let fullFourteenDaysBatch: Batch
+    let fullSevenDaysBatch: Batch
     let dailyBatches: [Batch]
 }
 

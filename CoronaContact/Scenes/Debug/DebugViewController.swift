@@ -50,8 +50,8 @@ class DebugViewController: UIViewController, StoryboardBased, ViewModelBased, Re
         batchDownloadScheduler.scheduleBackgroundTaskForDebuggingPurposes()
     }
 
-    @IBAction func downloadAllBatches(_ sender: Any) {
-        _ = batchDownloadService.startBatchDownload(.all) { [weak self] result in
+    @IBAction func downloadSevenDaysBatchAndDailyBatches(_ sender: Any) {
+        _ = batchDownloadService.startBatchDownload(.sevenDaysBatchAndDailyBatches) { [weak self] result in
             switch result {
             case let .success(batches):
                 self?.riskCalculationController.processBatches(batches) { result in
@@ -63,8 +63,8 @@ class DebugViewController: UIViewController, StoryboardBased, ViewModelBased, Re
         }
     }
 
-    @IBAction func downloadOnlyFullBatch(_ sender: Any) {
-        _ = batchDownloadService.startBatchDownload(.onlyFullBatch) { [weak self] result in
+    @IBAction func downloadFourteenDaysBatch(_ sender: Any) {
+        _ = batchDownloadService.startBatchDownload(.onlyFourteenDaysBatch) { [weak self] result in
             switch result {
             case let .success(batches):
                 self?.riskCalculationController.processBatches(batches) { result in
