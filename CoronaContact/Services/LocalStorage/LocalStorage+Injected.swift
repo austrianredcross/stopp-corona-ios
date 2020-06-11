@@ -10,6 +10,6 @@ extension Resolver {
     public static func registerLocalStorageServices() {
         register { LocalStorage() }.scope(application)
         register { WhatsNewRepository() }.scope(application)
-        register { MaintenanceTasksRepository() }.scope(application)
+        register { MaintenanceTaskRepository() }.scope(application)
     }
 }

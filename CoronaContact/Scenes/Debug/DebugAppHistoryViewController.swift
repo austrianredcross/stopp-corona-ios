@@ -24,7 +24,7 @@
         }
 
         @Injected private var whatsNewRepository: WhatsNewRepository
-        @Injected private var maintenanceRepository: MaintenanceTasksRepository
+        @Injected private var maintenanceRepository: MaintenanceTaskRepository
 
         private lazy var versions: [VersionPresentation] = {
             var availableVersions = appVersionHistory.versions.union(maintenanceHistory.versions)

@@ -12,7 +12,7 @@ struct RemoveGoogleData: MaintenancePerforming {
         static let firebasePLIST = "com.firebase.FIRInstallations.plist"
     }
 
-    let fileManager: FileManager
+    private let fileManager: FileManager
 
     init(fileManager: FileManager = FileManager()) {
         self.fileManager = fileManager

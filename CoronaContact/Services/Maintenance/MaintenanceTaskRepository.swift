@@ -1,12 +1,12 @@
 //
-//  MaintenanceTasksRepository.swift
+//  MaintenanceTaskRepository.swift
 //  CoronaContact
 //
 
 import Resolver
 import UIKit
 
-class MaintenanceTasksRepository {
+class MaintenanceTaskRepository {
     var appInfo: AppInfo = UIApplication.shared
     var maintenanceTasks = AppVersionHistory.maintenanceTasks
 
@@ -18,10 +18,6 @@ class MaintenanceTasksRepository {
     @Injected
     private var localStorage: LocalStorage
 
-    lazy var currentAppVersion: AppVersion = {
-        appInfo.appVersion
-    }()
-
     var newMaintenanceTasks: [MaintenancePerforming] {
         maintenanceTasks
             .filter { $0.key > lastMaintenancePerformed }
@@ -30,6 +26,6 @@ class MaintenanceTasksRepository {
     }
 
     func currentMaintenancePerformed() {
-        lastMaintenancePerformed = currentAppVersion
+        lastMaintenancePerformed = appInfo.appVersion
     }
 }

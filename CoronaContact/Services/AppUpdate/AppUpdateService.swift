@@ -14,7 +14,7 @@ class AppUpdateService {
     private var isDisplayingUpdateAlert = false
 
     @Injected
-    private var maintenanceTaskRepository: MaintenanceTasksRepository
+    private var maintenanceTaskRepository: MaintenanceTaskRepository
 
     var requiresUpdate = false {
         didSet {
