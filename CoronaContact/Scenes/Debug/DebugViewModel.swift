@@ -23,7 +23,6 @@ class DebugViewModel: ViewModel {
     @Injected private var network: NetworkService
     @Injected private var notificationService: NotificationService
     @Injected private var exposureManager: ExposureManager
-    @Injected private var exposureKeyManager: ExposureKeyManager
     @Injected private var healthRepository: HealthRepository
 
     init(coordinator: DebugCoordinator) {
@@ -98,20 +97,17 @@ class DebugViewModel: ViewModel {
         healthRepository.revokeProvenSickness()
     }
 
-    func exposeDiagnosesKeys(test: Bool = false) {
+    func exposeDiagnosesKeys() {
         let debugFun: (Result<[ENTemporaryExposureKey], Error>) -> Void = { keyResult in
             if case let .success(keys) = keyResult {
-                let ukeys = try? self.exposureKeyManager.getKeysForUpload(keys: keys)
-                ukeys?.forEach { key in
-                    LoggingService.debug("ExposureKey: \(key.intervalNumber) \(key.intervalNumberDate) \(key.password.prefix(10))")
-                }
+                /*                let ukeys = self.exposureKeyManager.getKeysForUpload(from: Date().addDays(-14)!, untilIncluding: Date())
+                                ukeys?.forEach { key in
+                                    LoggingService.debug("ExposureKey: \(key.intervalNumber) \(key.intervalNumberDate) \(key.password.prefix(10))")
+                                }
+                 */
             }
         }
-        if test {
-            exposureManager.getTestDiagnosisKeys(completion: debugFun)
-        } else {
-            exposureManager.getDiagnosisKeys(completion: debugFun)
-        }
+        exposureManager.getDiagnosisKeys(completion: debugFun)
     }
 
     deinit {

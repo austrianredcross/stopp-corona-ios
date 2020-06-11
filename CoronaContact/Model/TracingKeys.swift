@@ -70,10 +70,6 @@ struct TemporaryExposureKey: Codable {
     let intervalCount: ENIntervalNumber
     let transmissionRisk: ENRiskLevel
 
-    var intervalNumberDate: Date {
-        Date(timeIntervalSince1970: Double(intervalNumber) * 600) // as defined in ExposureNotification.ENCommon.swift
-    }
-
     init(temporaryExposureKey: ENTemporaryExposureKey, password: String?) {
         key = temporaryExposureKey.keyData.base64EncodedString()
         self.password = password ?? UUID().uuidString

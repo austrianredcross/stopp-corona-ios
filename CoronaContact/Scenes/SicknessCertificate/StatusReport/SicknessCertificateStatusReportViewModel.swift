@@ -9,6 +9,8 @@ import Resolver
 class SicknessCertificateStatusReportViewModel: ViewModel {
     @Injected private var flowController: SicknessCertificateFlowController
     @Injected private var healthRepository: HealthRepository
+    @Injected private var localStorage: LocalStorage
+    @Injected private var configurationService: ConfigurationService
 
     weak var coordinator: SicknessCertificateStatusReportCoordinator?
     let updateKeys: Bool
@@ -28,26 +30,44 @@ class SicknessCertificateStatusReportViewModel: ViewModel {
         guard isValid else {
             return
         }
+        let uploadDays = configurationService.currentConfig.uploadKeyDays
+        var startDate = Date().addDays(-uploadDays)!
+        if let isProbablySickAt = localStorage.isProbablySickAt {
+            startDate = isProbablySickAt.addDays(-uploadDays)!
+        }
+        var endDate = Date()
 
-        flowController.submit { [weak self] result in
+        if updateKeys, let missingUploadedKeysAt = localStorage.missingUploadedKeysAt {
+            startDate = missingUploadedKeysAt
+            endDate = missingUploadedKeysAt
+        }
+
+        flowController.submit(from: startDate, untilIncluding: endDate) { [weak self] result in
+            guard let self = self else {
+                return
+            }
             completion()
 
             switch result {
             case let .failure(.submission(error)):
-                self?.coordinator?.showErrorAlert(
+                self.coordinator?.showErrorAlert(
                     title: error.displayableError.title,
                     error: error.displayableError.description,
                     closeAction: { _ in
                         if error.personalDataInvalid {
-                            self?.coordinator?.goBackToPersonalData()
+                            self.coordinator?.goBackToPersonalData()
                         } else if error.tanInvalid {
-                            self?.coordinator?.goBackToTanConfirmation()
+                            self.coordinator?.goBackToTanConfirmation()
                         }
                     }
                 )
             case .success:
-                self?.healthRepository.setProvenSick()
-                self?.coordinator?.showConfirmation()
+                if self.updateKeys {
+                    self.localStorage.missingUploadedKeysAt = nil
+                } else {
+                    self.healthRepository.setProvenSick()
+                }
+                self.coordinator?.showConfirmation()
             default:
                 break
             }
