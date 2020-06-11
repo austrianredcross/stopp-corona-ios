@@ -117,20 +117,8 @@ class DebugViewModel: ViewModel {
     }
 
     func handleRiskCalculationResult(_ result: Result<RiskCalculationResult, RiskCalculationError>) {
-        var lastRedContact: Date?
-        var lastYellowContact: Date?
-
         if case let .success(riskResult) = result {
-            for (date, riskType) in riskResult {
-                if riskType == .yellow, lastYellowContact == nil || lastYellowContact! < date {
-                    lastYellowContact = date
-                }
-                if riskType == .red, lastRedContact == nil || lastRedContact! < date {
-                    lastRedContact = date
-                }
-            }
-            localStorage.lastRedContact = lastRedContact
-            localStorage.lastYellowContact = lastYellowContact
+            QuarantineTimeController.quarantineTimeCalculation(riskResult: riskResult)
         }
     }
 

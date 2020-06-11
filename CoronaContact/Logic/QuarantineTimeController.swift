@@ -148,6 +148,23 @@ class QuarantineTimeController {
         refresh()
     }
 
+    static func quarantineTimeCalculation(riskResult: RiskCalculationResult) {
+        var lastRedContact: Date?
+        var lastYellowContact: Date?
+        let localStorage: LocalStorage = Resolver.resolve()
+
+        for (date, riskType) in riskResult {
+            if riskType == .yellow, lastYellowContact == nil || lastYellowContact! < date {
+                lastYellowContact = date
+            }
+            if riskType == .red, lastRedContact == nil || lastRedContact! < date {
+                lastRedContact = date
+            }
+        }
+        localStorage.lastRedContact = lastRedContact
+        localStorage.lastYellowContact = lastYellowContact
+    }
+
     private func registerObservers() {
         observers.append(localStorage.$attestedSicknessAt.addObserver(using: refresh))
         observers.append(localStorage.$isProbablySickAt.addObserver(using: refresh))
@@ -204,7 +221,9 @@ class QuarantineTimeController {
             endOfQuarantines.append(endOfQuarantine)
         }
 
-        let sortedQuarantines = endOfQuarantines.sorted { $0.date.compare($1.date) == .orderedDescending }
+        let sortedQuarantines = endOfQuarantines.sorted {
+            $0.date.compare($1.date) == .orderedDescending
+        }
 
         if let longestQuarantine = sortedQuarantines.first {
             if let daysUntilEnd = longestQuarantine.numberOfDays, daysUntilEnd <= 0 {
