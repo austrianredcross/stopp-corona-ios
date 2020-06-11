@@ -151,6 +151,8 @@ class QuarantineTimeController {
     private func registerObservers() {
         observers.append(localStorage.$attestedSicknessAt.addObserver(using: refresh))
         observers.append(localStorage.$isProbablySickAt.addObserver(using: refresh))
+        observers.append(localStorage.$lastYellowContact.addObserver(using: refresh))
+        observers.append(localStorage.$lastRedContact.addObserver(using: refresh))
     }
 
     public func refreshIfNecessary() {
@@ -178,7 +180,21 @@ class QuarantineTimeController {
 
         var endOfQuarantines = [QuarantineEnd]()
 
-        // TODO: add new calculation
+        if let lastYellowContact = localStorage.lastYellowContact {
+            let endOfQuarantine = QuarantineEnd(
+                type: .yellow,
+                date: addDays(timeConfiguration.yellowWarning, to: lastYellowContact)
+            )
+            endOfQuarantines.append(endOfQuarantine)
+        }
+
+        if let lastRedContact = localStorage.lastRedContact {
+            let endOfQuarantine = QuarantineEnd(
+                type: .red,
+                date: addDays(timeConfiguration.redWarning, to: lastRedContact)
+            )
+            endOfQuarantines.append(endOfQuarantine)
+        }
 
         if let isProbablySickAt = localStorage.isProbablySickAt {
             let endOfQuarantine = QuarantineEnd(

@@ -90,7 +90,21 @@ final class BatchDownloadScheduler {
     }
 
     func handleRiskCalculationResult(_ result: Result<RiskCalculationResult, RiskCalculationError>) {
-        #warning("TODO: pass result to quarantine time calculation")
+        var lastRedContact: Date?
+        var lastYellowContact: Date?
+
+        if case let .success(riskResult) = result {
+            for (date, riskType) in riskResult {
+                if riskType == .yellow, lastYellowContact == nil || lastYellowContact! < date {
+                    lastYellowContact = date
+                }
+                if riskType == .red, lastRedContact == nil || lastRedContact! < date {
+                    lastRedContact = date
+                }
+            }
+        }
+        localStorage.lastRedContact = lastRedContact
+        localStorage.lastYellowContact = lastYellowContact
     }
 
     func scheduleBackgroundTaskIfNeeded() {
