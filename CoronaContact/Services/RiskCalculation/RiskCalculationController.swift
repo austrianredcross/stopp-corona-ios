@@ -29,10 +29,11 @@ final class RiskCalculationController {
     private var completionHandler: CompletionHandler?
     private var riskCalculationResult = RiskCalculationResult()
 
-    func processBatches(_ batches: [UnzippedBatch], completionHandler: CompletionHandler) {
+    func processBatches(_ batches: [UnzippedBatch], completionHandler: @escaping CompletionHandler) {
         guard let operation = processFullBatch(batches) else {
             return
         }
+        self.completionHandler = completionHandler
 
         operation.completionBlock = { [weak self] in
             guard let self = self, let result = operation.result else {
