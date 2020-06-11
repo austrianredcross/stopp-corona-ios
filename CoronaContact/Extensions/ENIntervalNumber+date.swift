@@ -7,7 +7,11 @@ import ExposureNotification
 import Foundation
 
 extension ENIntervalNumber {
+    var timeInterval: TimeInterval {
+        Double(self) * 60 * 10
+    }
+
     var date: Date {
-        Date(timeIntervalSince1970: Double(self) * 60 * 10)
+        Date(timeIntervalSince1970: timeInterval)
     }
 }
