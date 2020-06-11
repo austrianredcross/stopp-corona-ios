@@ -329,6 +329,7 @@
 		92FFC9C72426878600CC541B /* SelfTesting+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FFC9C62426878500CC541B /* SelfTesting+Injection.swift */; };
 		92FFC9CA24275C3A00CC541B /* SelfTestingCheckSymptomsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FFC9C824275C3A00CC541B /* SelfTestingCheckSymptomsView.swift */; };
 		92FFC9CB24275C3A00CC541B /* SelfTestingCheckSymptomsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92FFC9C924275C3A00CC541B /* SelfTestingCheckSymptomsView.xib */; };
+		FB56DEF8C74EB4F69B2A6C25 /* Pods_CoronaContactTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B04EC3616D574147634D80DA /* Pods_CoronaContactTests.framework */; };
 		FE99F17BCFD606C66F1320F6 /* Pods_CoronaContact.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7068854DCB7D47DCD40F96AD /* Pods_CoronaContact.framework */; };
 /* End PBXBuildFile section */
 
@@ -709,6 +710,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB56DEF8C74EB4F69B2A6C25 /* Pods_CoronaContactTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1747,6 +1749,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7885963E248D7E1D00283628 /* Build configuration list for PBXNativeTarget "CoronaContactTests" */;
 			buildPhases = (
+				E2CDD34992125B7C0F806484 /* [CP] Check Pods Manifest.lock */,
 				78859633248D7E1D00283628 /* Sources */,
 				78859634248D7E1D00283628 /* Frameworks */,
 				78859635248D7E1D00283628 /* Resources */,
@@ -1972,6 +1975,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CoronaContact/Pods-CoronaContact-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E2CDD34992125B7C0F806484 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CoronaContactTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E62EED9B3D667B480F11A2F0 /* [Carte] Pre Script */ = {
@@ -2566,6 +2591,7 @@
 		};
 		7885963F248D7E1D00283628 /* Stage */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1FDDA0B8090AAB9A97DCB475 /* Pods-CoronaContactTests.stage.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -2640,6 +2666,7 @@
 		};
 		78859640248D7E1D00283628 /* Production */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5912459E0AF7798015BD7057 /* Pods-CoronaContactTests.production.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -2708,6 +2735,7 @@
 		};
 		78859641248D7E1D00283628 /* Development */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 73658E7C34BA89738AB6F79B /* Pods-CoronaContactTests.development.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUNDLE_LOADER = "$(TEST_HOST)";
