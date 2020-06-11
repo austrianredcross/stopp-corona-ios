@@ -59,7 +59,11 @@ class AppUpdateService {
     }
 
     func performMaintenanceTasks() {
-        for task in maintenanceTaskRepository.newMaintenanceTasks {
+        let tasks = maintenanceTaskRepository.newMaintenanceTasks
+        guard !tasks.isEmpty else {
+            return
+        }
+        for task in tasks {
             task.performMaintenance(completion: { _ in })
         }
         maintenanceTaskRepository.currentMaintenancePerformed()
