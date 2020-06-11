@@ -90,7 +90,9 @@ final class BatchDownloadScheduler {
     }
 
     func handleRiskCalculationResult(_ result: Result<RiskCalculationResult, RiskCalculationError>) {
-        #warning("TODO: pass result to quarantine time calculation")
+        if case let .success(riskResult) = result {
+            QuarantineTimeController.quarantineTimeCalculation(riskResult: riskResult)
+        }
     }
 
     func scheduleBackgroundTaskIfNeeded() {

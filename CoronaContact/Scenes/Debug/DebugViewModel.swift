@@ -117,20 +117,15 @@ class DebugViewModel: ViewModel {
     }
 
     func handleRiskCalculationResult(_ result: Result<RiskCalculationResult, RiskCalculationError>) {
-        #warning("TODO: pass result to quarantine time calculation")
+        if case let .success(riskResult) = result {
+            QuarantineTimeController.quarantineTimeCalculation(riskResult: riskResult)
+        }
     }
 
     func exposeDiagnosesKeys() {
-        let debugFun: (Result<[ENTemporaryExposureKey], Error>) -> Void = { keyResult in
-            if case let .success(keys) = keyResult {
-                /*                let ukeys = self.exposureKeyManager.getKeysForUpload(from: Date().addDays(-14)!, untilIncluding: Date())
-                                ukeys?.forEach { key in
-                                    LoggingService.debug("ExposureKey: \(key.intervalNumber) \(key.intervalNumberDate) \(key.password.prefix(10))")
-                                }
-                 */
-            }
+        exposureManager.getKeysForUpload(from: Date().addDays(-15)!, untilIncluding: Date(), diagnosisType: .red) { result in
+            LoggingService.debug("keys: \(result)")
         }
-        exposureManager.getDiagnosisKeys(completion: debugFun)
     }
 
     deinit {
