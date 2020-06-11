@@ -9,6 +9,7 @@ import Resolver
 class ConfigurationService {
     private(set) var currentConfig: Configuration!
     @Injected private var networkService: NetworkService
+    let log = ContextLogger(context: .application)
 
     private struct ConfigWrapper: Codable {
         var configuration: Configuration
@@ -26,7 +27,7 @@ class ConfigurationService {
             case let .success(data):
                 self?.saveToDisk(data)
             case let .failure(error):
-                print("error updating config: \(error)")
+                self?.log.error("error updating config: \(error)")
                 return
             }
         }
@@ -44,7 +45,7 @@ class ConfigurationService {
         if shipped { fileURL = Bundle.main.url(forResource: "configuration", withExtension: "json")! }
         // print("loading", shipped ? "config from bundle" : "config from cache")
         if !FileManager.default.fileExists(atPath: fileURL.path) {
-            print("file not found")
+            log.error("config file not found")
             return false
         }
         do {
@@ -52,7 +53,7 @@ class ConfigurationService {
             try parseConfig(data: jsonData)
             return true
         } catch {
-            print(error)
+            log.error("\(error)")
         }
         return false
     }
@@ -62,7 +63,7 @@ class ConfigurationService {
             try data.write(to: cacheFileURL(), options: .atomicWrite)
             try parseConfig(data: data)
         } catch {
-            print("error caching config \(error)")
+            log.error("error caching config \(error)")
         }
     }
 
