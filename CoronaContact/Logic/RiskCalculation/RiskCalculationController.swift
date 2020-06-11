@@ -47,7 +47,7 @@ final class RiskCalculationController {
             case let .success((lastExposureDate, _)):
                 self?.log.debug("Exposure at \(lastExposureDate) was not risky enough.")
             case let .failure(error):
-                print(error)
+                self?.log.error(error)
             }
         }
 
