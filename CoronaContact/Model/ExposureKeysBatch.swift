@@ -3,6 +3,7 @@
 //  CoronaContact
 //
 
+import ExposureNotification
 import Foundation
 
 struct ExposureKeysBatch: Codable {
@@ -23,7 +24,7 @@ struct Batch: Codable {
             interval
     }
 
-    let interval: Int
+    let interval: ENIntervalNumber
     let filePaths: [String]
 }
 
@@ -34,12 +35,12 @@ enum BatchType: String {
 
 struct DownloadedBatch {
     let type: BatchType
-    let interval: Int
+    let interval: ENIntervalNumber
     let url: URL
 }
 
 struct UnzippedBatch {
     let type: BatchType
-    let interval: Int
+    let interval: ENIntervalNumber
     let urls: [URL]
 }

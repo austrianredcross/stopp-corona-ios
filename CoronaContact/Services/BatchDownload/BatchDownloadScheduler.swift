@@ -40,6 +40,7 @@ final class BatchDownloadScheduler {
     }
 
     @Injected private var localStorage: LocalStorage
+    @Injected private var healthRepository: HealthRepository
     @Injected private var batchDownloadService: BatchDownloadService
 
     weak var exposureManager: ExposureManager?
@@ -51,7 +52,9 @@ final class BatchDownloadScheduler {
 
     func registerBackgroundTask() {
         backgroundTaskScheduler.register(forTaskWithIdentifier: backgroundTaskIdentifier, using: .main) { task in
-            let progress = self.batchDownloadService.startBatchDownload(.all) { result in
+            let downloadRequirement = self.determineDownloadRequirement()
+
+            let progress = self.batchDownloadService.startBatchDownload(downloadRequirement) { result in
                 switch result {
                 case .success:
                     task.setTaskCompleted(success: true)
@@ -73,6 +76,15 @@ final class BatchDownloadScheduler {
         }
 
         scheduleBackgroundTaskIfNeeded()
+    }
+
+    func determineDownloadRequirement() -> BatchDownloadService.DownloadRequirement {
+        switch healthRepository.userHealthStatus {
+        case .isHealthy:
+            return .all
+        case .hasAttestedSickness, .isProbablySick, .isUnderSelfMonitoring:
+            return .onlyFullBatch
+        }
     }
 
     func scheduleBackgroundTaskIfNeeded() {

@@ -95,7 +95,10 @@
 		611D9EE2248E704B00EBB420 /* CompleteOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611D9EE1248E704B00EBB420 /* CompleteOperation.swift */; };
 		611D9EE5248E713100EBB420 /* FileManager+unzipItemWithOverride.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611D9EE4248E713100EBB420 /* FileManager+unzipItemWithOverride.swift */; };
 		611D9EE7248E7C9500EBB420 /* BatchDownloadConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611D9EE6248E7C9500EBB420 /* BatchDownloadConfiguration.swift */; };
-		61251F2324913A1800CEBCCD /* cdn.der in Resources */ = {isa = PBXBuildFile; fileRef = 61251F2224913A1800CEBCCD /* cdn.der */; };
+		61251F212491259D00CEBCCD /* RiskCalculationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61251F202491259D00CEBCCD /* RiskCalculationController.swift */; };
+		61251F25249143B100CEBCCD /* ExposureConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61251F24249143B100CEBCCD /* ExposureConfiguration.swift */; };
+		61251F272491480400CEBCCD /* Exposure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61251F262491480400CEBCCD /* Exposure.swift */; };
+		6129B57D24923B5300E2D15B /* RiskCalculationController+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6129B57C24923B5300E2D15B /* RiskCalculationController+Injection.swift */; };
 		612C4600246414260072ECF7 /* ConfigurationRetrievable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612C45FF246414260072ECF7 /* ConfigurationRetrievable.swift */; };
 		612C460224641C620072ECF7 /* RequestTan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612C460124641C620072ECF7 /* RequestTan.swift */; };
 		613AF72B24616A8B0089085E /* ShareButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613AF72A24616A8B0089085E /* ShareButton.swift */; };
@@ -221,6 +224,7 @@
 		61653681247D114F0088A9D6 /* TracingKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61653680247D114F0088A9D6 /* TracingKeys.swift */; };
 		616B75AB248E33A60030CD6B /* FileDownloadDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616B75AA248E33A60030CD6B /* FileDownloadDestination.swift */; };
 		616E1DA9243486C700109435 /* ArrowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616E1DA8243486C700109435 /* ArrowButton.swift */; };
+		617A4E79249152AE00F0B877 /* ENExposureDetectionSummary+lastExposureDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617A4E78249152AE00F0B877 /* ENExposureDetectionSummary+lastExposureDate.swift */; };
 		618A6651242B8B84001BDBBF /* Collection+safe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618A6650242B8B84001BDBBF /* Collection+safe.swift */; };
 		61BB41DA243684590083053B /* Revocation+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D0F5702435EF1B0026C91A /* Revocation+Injection.swift */; };
 		61BB41DB2436845F0083053B /* Date+daysUntil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D0F53424352E3D0026C91A /* Date+daysUntil.swift */; };
@@ -256,6 +260,9 @@
 		61D1A3E5242A58CA007F82ED /* MainHelpCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D1A3E1242A58C9007F82ED /* MainHelpCoordinator.swift */; };
 		61D1A3E6242A58CA007F82ED /* MainHelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D1A3E2242A58C9007F82ED /* MainHelpViewController.swift */; };
 		61D1A3E7242A58CA007F82ED /* MainHelpViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61D1A3E3242A58C9007F82ED /* MainHelpViewController.storyboard */; };
+		61DAF6EF2492181100A3B069 /* ENIntervalNumber+date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61DAF6EE2492181100A3B069 /* ENIntervalNumber+date.swift */; };
+		61DAF6F12492276900A3B069 /* DetectExposuresOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61DAF6F02492276900A3B069 /* DetectExposuresOperation.swift */; };
+		61DAF6F324922E6500A3B069 /* DetectDailyExposuresOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61DAF6F224922E6500A3B069 /* DetectDailyExposuresOperation.swift */; };
 		61F50DD72439EC8500798264 /* MissingPermissionsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F50DD32439EC8500798264 /* MissingPermissionsCoordinator.swift */; };
 		61F50DD82439EC8500798264 /* MissingPermissionsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61F50DD42439EC8500798264 /* MissingPermissionsViewController.storyboard */; };
 		61F50DD92439EC8500798264 /* MissingPermissionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F50DD52439EC8500798264 /* MissingPermissionsViewController.swift */; };
@@ -426,7 +433,10 @@
 		611D9EE1248E704B00EBB420 /* CompleteOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteOperation.swift; sourceTree = "<group>"; };
 		611D9EE4248E713100EBB420 /* FileManager+unzipItemWithOverride.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+unzipItemWithOverride.swift"; sourceTree = "<group>"; };
 		611D9EE6248E7C9500EBB420 /* BatchDownloadConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatchDownloadConfiguration.swift; sourceTree = "<group>"; };
-		61251F2224913A1800CEBCCD /* cdn.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = cdn.der; sourceTree = "<group>"; };
+		61251F202491259D00CEBCCD /* RiskCalculationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiskCalculationController.swift; sourceTree = "<group>"; };
+		61251F24249143B100CEBCCD /* ExposureConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExposureConfiguration.swift; sourceTree = "<group>"; };
+		61251F262491480400CEBCCD /* Exposure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exposure.swift; sourceTree = "<group>"; };
+		6129B57C24923B5300E2D15B /* RiskCalculationController+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RiskCalculationController+Injection.swift"; sourceTree = "<group>"; };
 		612C45FF246414260072ECF7 /* ConfigurationRetrievable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationRetrievable.swift; sourceTree = "<group>"; };
 		612C460124641C620072ECF7 /* RequestTan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestTan.swift; sourceTree = "<group>"; };
 		613AF72A24616A8B0089085E /* ShareButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareButton.swift; sourceTree = "<group>"; };
@@ -554,6 +564,7 @@
 		61653680247D114F0088A9D6 /* TracingKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TracingKeys.swift; sourceTree = "<group>"; };
 		616B75AA248E33A60030CD6B /* FileDownloadDestination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDownloadDestination.swift; sourceTree = "<group>"; };
 		616E1DA8243486C700109435 /* ArrowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrowButton.swift; sourceTree = "<group>"; };
+		617A4E78249152AE00F0B877 /* ENExposureDetectionSummary+lastExposureDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ENExposureDetectionSummary+lastExposureDate.swift"; sourceTree = "<group>"; };
 		618A6650242B8B84001BDBBF /* Collection+safe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+safe.swift"; sourceTree = "<group>"; };
 		61AB6EF024573737006B4190 /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
 		61AB6EF124573771006B4190 /* Secrets.template.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.template.xcconfig; sourceTree = "<group>"; };
@@ -593,6 +604,9 @@
 		61D1A3E1242A58C9007F82ED /* MainHelpCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainHelpCoordinator.swift; sourceTree = "<group>"; };
 		61D1A3E2242A58C9007F82ED /* MainHelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainHelpViewController.swift; sourceTree = "<group>"; };
 		61D1A3E3242A58C9007F82ED /* MainHelpViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainHelpViewController.storyboard; sourceTree = "<group>"; };
+		61DAF6EE2492181100A3B069 /* ENIntervalNumber+date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ENIntervalNumber+date.swift"; sourceTree = "<group>"; };
+		61DAF6F02492276900A3B069 /* DetectExposuresOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectExposuresOperation.swift; sourceTree = "<group>"; };
+		61DAF6F224922E6500A3B069 /* DetectDailyExposuresOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectDailyExposuresOperation.swift; sourceTree = "<group>"; };
 		61F50DD32439EC8500798264 /* MissingPermissionsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissingPermissionsCoordinator.swift; sourceTree = "<group>"; };
 		61F50DD42439EC8500798264 /* MissingPermissionsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MissingPermissionsViewController.storyboard; sourceTree = "<group>"; };
 		61F50DD52439EC8500798264 /* MissingPermissionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissingPermissionsViewController.swift; sourceTree = "<group>"; };
@@ -954,7 +968,6 @@
 		611D9EDA248E701300EBB420 /* Operations */ = {
 			isa = PBXGroup;
 			children = (
-				611D9EDB248E702000EBB420 /* AsyncOperation.swift */,
 				611D9EDD248E703000EBB420 /* BatchDownloadOperation.swift */,
 				611D9EDF248E703E00EBB420 /* UnzipBatchOperation.swift */,
 				611D9EE1248E704B00EBB420 /* CompleteOperation.swift */,
@@ -1035,6 +1048,8 @@
 				61653680247D114F0088A9D6 /* TracingKeys.swift */,
 				83974462389F1C6D2A516DF1 /* TracingKeyPasswords.swift */,
 				611D9ED5248E6EEC00EBB420 /* ExposureKeysBatch.swift */,
+				61251F24249143B100CEBCCD /* ExposureConfiguration.swift */,
+				61251F262491480400CEBCCD /* Exposure.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1195,6 +1210,7 @@
 				61032064243E0AE400ED3A20 /* FlashableScrollIndicators.swift */,
 				8922A16D243DF094004E9D42 /* Observable.swift */,
 				612C45FF246414260072ECF7 /* ConfigurationRetrievable.swift */,
+				611D9EDB248E702000EBB420 /* AsyncOperation.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -1282,6 +1298,7 @@
 		61D0F52F24352E240026C91A /* Logic */ = {
 			isa = PBXGroup;
 			children = (
+				61DAF6F42492319B00A3B069 /* RiskCalculation */,
 				61D0F53024352E240026C91A /* QuarantineTimeController.swift */,
 				610571AE247E9EBE009A715E /* ReportHealthStatusFlowController.swift */,
 			);
@@ -1364,6 +1381,17 @@
 			path = Help;
 			sourceTree = "<group>";
 		};
+		61DAF6F42492319B00A3B069 /* RiskCalculation */ = {
+			isa = PBXGroup;
+			children = (
+				61251F202491259D00CEBCCD /* RiskCalculationController.swift */,
+				6129B57C24923B5300E2D15B /* RiskCalculationController+Injection.swift */,
+				61DAF6F02492276900A3B069 /* DetectExposuresOperation.swift */,
+				61DAF6F224922E6500A3B069 /* DetectDailyExposuresOperation.swift */,
+			);
+			path = RiskCalculation;
+			sourceTree = "<group>";
+		};
 		61F50DD22439EC5600798264 /* Permissions */ = {
 			isa = PBXGroup;
 			children = (
@@ -1378,7 +1406,6 @@
 		61FABC9E2431EBDE0085786B /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
-				61251F2224913A1800CEBCCD /* cdn.der */,
 				4E1F2EC224646B550088B8F8 /* sms.der */,
 				4ED175BB245836F100248D3B /* server.der */,
 				61AB6EF024573737006B4190 /* Secrets.xcconfig */,
@@ -1449,6 +1476,8 @@
 				618A6650242B8B84001BDBBF /* Collection+safe.swift */,
 				61D0F55F243534980026C91A /* UIView+roundedCorners.swift */,
 				610571AC247E9131009A715E /* UIWindow+key.swift */,
+				617A4E78249152AE00F0B877 /* ENExposureDetectionSummary+lastExposureDate.swift */,
+				61DAF6EE2492181100A3B069 /* ENIntervalNumber+date.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1769,7 +1798,6 @@
 				4EE28121242BA43900BC4C6E /* OnboardingConsentPageView.xib in Resources */,
 				61D0F54924352E960026C91A /* RevocationStatusReportViewController.storyboard in Resources */,
 				614D722A2429084900CC545D /* SelfTestingStatusReportViewController.storyboard in Resources */,
-				61251F2324913A1800CEBCCD /* cdn.der in Resources */,
 				61D1A3D5242A3C40007F82ED /* InfoPlist.strings in Resources */,
 				92FFC9CB24275C3A00CC541B /* SelfTestingCheckSymptomsView.xib in Resources */,
 				92FFC9C024267D8200CC541B /* SelfTestingCheckSymptomsViewController.storyboard in Resources */,
@@ -1964,6 +1992,7 @@
 				616E1DA9243486C700109435 /* ArrowButton.swift in Sources */,
 				4B7379ED2423DA7A00DF338E /* StartMenuCoordinator.swift in Sources */,
 				7829D824247D507A0015F5A5 /* SavedIDsViewController.swift in Sources */,
+				61251F25249143B100CEBCCD /* ExposureConfiguration.swift in Sources */,
 				4EB52F00243C72FA0004FAA0 /* Benchmark.swift in Sources */,
 				8922A16C243D1DD6004E9D42 /* HealthRepository.swift in Sources */,
 				6153A4D5242598DC006A8570 /* SicknessCertificateConfirmationViewController.swift in Sources */,
@@ -1982,6 +2011,7 @@
 				6153A4D9242598DC006A8570 /* SicknessCertificatePersonalDataCoordinator.swift in Sources */,
 				92FFC9CA24275C3A00CC541B /* SelfTestingCheckSymptomsView.swift in Sources */,
 				61D0F55324352E960026C91A /* RevocationTanConfirmationViewModel.swift in Sources */,
+				6129B57D24923B5300E2D15B /* RiskCalculationController+Injection.swift in Sources */,
 				9215255F2427C7AA0023F469 /* SelfTestingSuspicionViewController.swift in Sources */,
 				614A001F243CB22800ACBD0A /* SelfTestingCoordinator.swift in Sources */,
 				8397474986C333D32BC0DB0F /* Coordinator.swift in Sources */,
@@ -2026,8 +2056,10 @@
 				614BA9F52423C31C006797AA /* JSONDecoder+date.swift in Sources */,
 				83974FEC5D515BECE3D2778D /* ApplicationCoordinator.swift in Sources */,
 				614BA9F32423C31C006797AA /* String+URLEncoding.swift in Sources */,
+				61251F212491259D00CEBCCD /* RiskCalculationController.swift in Sources */,
 				4EDB47F82421F13E000CE24A /* OnboardingPageView.swift in Sources */,
 				6153A4DE242598DC006A8570 /* SicknessCertificateFlowController.swift in Sources */,
+				61DAF6F324922E6500A3B069 /* DetectDailyExposuresOperation.swift in Sources */,
 				61C4A4812427B848004D18BB /* QuarantineNotificationView.swift in Sources */,
 				614BAA0A2423C334006797AA /* ErrorResponse.swift in Sources */,
 				61BB41DB2436845F0083053B /* Date+daysUntil.swift in Sources */,
@@ -2120,6 +2152,7 @@
 				9215254F2427C74A0023F469 /* SelfTestingSelfMonitoringViewController.swift in Sources */,
 				61D0F54A24352E960026C91A /* RevocationStatusReportViewController.swift in Sources */,
 				61546540242CBE7F0003D3D3 /* SelfMonitoringGuidelinesCoordinator.swift in Sources */,
+				61DAF6EF2492181100A3B069 /* ENIntervalNumber+date.swift in Sources */,
 				6153A4DD242598DC006A8570 /* SicknessCertificate+Injection.swift in Sources */,
 				614D720F2428E87000CC545D /* QuarantineGuidelinesCoordinator.swift in Sources */,
 				4E5254D32472B8AF00B6C3A4 /* Exposure+Injection.swift in Sources */,
@@ -2129,6 +2162,7 @@
 				4ED175C724606AFE00248D3B /* RevokeSicknessPersonalDataViewController.swift in Sources */,
 				6153A4ED24259929006A8570 /* UIScrollView+ScrollToVisible.swift in Sources */,
 				61C4A46C24275C38004D18BB /* UIView+Shadow.swift in Sources */,
+				61DAF6F12492276900A3B069 /* DetectExposuresOperation.swift in Sources */,
 				614D72042428E82700CC545D /* ContactSicknessViewController.swift in Sources */,
 				614BA9F72423C31C006797AA /* NetworkError.swift in Sources */,
 				7829D826247D507A0015F5A5 /* SavedIDsViewModel.swift in Sources */,
@@ -2140,6 +2174,7 @@
 				615D36352437417600B608AB /* AttestedSicknessGuidelinesViewModel.swift in Sources */,
 				6153A4D3242598DC006A8570 /* SicknessCertificateStatusReportCoordinator.swift in Sources */,
 				4E1AAEFB2461870700D43E2B /* RevokeSicknessConfirmationCoordinator.swift in Sources */,
+				617A4E79249152AE00F0B877 /* ENExposureDetectionSummary+lastExposureDate.swift in Sources */,
 				61F50DD92439EC8500798264 /* MissingPermissionsViewController.swift in Sources */,
 				4E1AAEFC2461870700D43E2B /* RevokeSicknessConfirmationViewController.swift in Sources */,
 				6153A50024259953006A8570 /* PaddingLabel.swift in Sources */,
@@ -2177,6 +2212,7 @@
 				83974070AAD41799D50EE1F8 /* Contact.swift in Sources */,
 				83974E1C0C969B298357EDD5 /* InfectionWarning.swift in Sources */,
 				4E5254D12472B89200B6C3A4 /* ExposureManager.swift in Sources */,
+				61251F272491480400CEBCCD /* Exposure.swift in Sources */,
 				83974FB0112B30AA0C833CBB /* OnboardingCoordinator.swift in Sources */,
 				17CE9FA0CBB1AA58675A1F5A /* UIApplication+SafariViewController.swift in Sources */,
 				83974901AF9ABB4176C37AD0 /* OnboardingConsentPageView.swift in Sources */,

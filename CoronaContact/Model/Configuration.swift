@@ -13,6 +13,7 @@ struct Configuration: Codable {
         case redWarningQuarantine = "red_warning_quarantine"
         case yellowWarningQuarantine = "yellow_warning_quarantine"
         case selfDiagnosedQuarantine = "self_diagnosed_quarantine"
+        case exposureConfiguration = "exposure_configuration"
         case diagnosticQuestionnaire = "diagnostic_questionnaire"
     }
 
@@ -23,6 +24,7 @@ struct Configuration: Codable {
     let yellowWarningQuarantine: Int
     /// Quarantine duration for possibly infected user (determined by self test) in hours
     let selfDiagnosedQuarantine: Int
+    let exposureConfiguration: ExposureConfiguration
     let diagnosticQuestionnaire: [Language: Questionnaire?]
 }
 
@@ -50,6 +52,7 @@ extension Configuration {
         redWarningQuarantine = try container.decode(Int.self, forKey: .redWarningQuarantine)
         yellowWarningQuarantine = try container.decode(Int.self, forKey: .yellowWarningQuarantine)
         selfDiagnosedQuarantine = try container.decode(Int.self, forKey: .selfDiagnosedQuarantine)
+        exposureConfiguration = try container.decode(ExposureConfiguration.self, forKey: .exposureConfiguration)
     }
 }
 
