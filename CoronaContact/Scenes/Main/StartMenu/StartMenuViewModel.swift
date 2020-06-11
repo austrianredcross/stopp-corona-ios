@@ -17,7 +17,7 @@ class StartMenuViewModel: ViewModel {
         !(repository.isProbablySick || repository.hasAttestedSickness)
     }
 
-    var hasAttestedSickness: Bool { repository.hasAttestedSickness }
+    var canRevokeAttestedSickness: Bool { repository.userHealthStatus.canRevokeProvenSickness() }
 
     init(with coordinator: StartMenuCoordinator) {
         self.coordinator = coordinator

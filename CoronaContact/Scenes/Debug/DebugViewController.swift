@@ -19,11 +19,16 @@ class DebugViewController: UIViewController, StoryboardBased, ViewModelBased, Re
     @IBOutlet var attestedSickButton: SecondaryButton!
     @IBOutlet var revokeProbablySickButton: SecondaryButton!
     @IBOutlet var revokeAttestedSickButton: SecondaryButton!
+    @IBOutlet var moveSickReportButton: SecondaryButton!
 
     var viewModel: DebugViewModel? {
         didSet {
             viewModel?.viewController = self
         }
+    }
+
+    @IBAction func exitToMain(_ sender: UIStoryboardSegue) {
+        close(sender)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -37,10 +42,6 @@ class DebugViewController: UIViewController, StoryboardBased, ViewModelBased, Re
 
     @IBAction func exposeDiagnosesKeysButtonPressed(_ sender: Any) {
         viewModel?.exposeDiagnosesKeys()
-    }
-
-    @IBAction func exposeDiagnosesKeysTestButtonPressed(_ sender: Any) {
-        viewModel?.exposeDiagnosesKeys(test: true)
     }
 
     // MARK: - Batch Download
@@ -91,6 +92,10 @@ class DebugViewController: UIViewController, StoryboardBased, ViewModelBased, Re
 
     @IBAction func revokeAttestedSickButton(_ sender: Any) {
         viewModel?.revokeAttestedSick()
+    }
+
+    @IBAction func moveSickReportBackADay(_ sender: Any) {
+        viewModel?.moveSickReportBackADay()
     }
 
     // MARK: - Mark log settings

@@ -1,5 +1,6 @@
 {
   "configuration": {
+    "upload_keys_days": 2,
     "warn_before_symptoms": 54,
     "red_warning_quarantine": 336,
     "yellow_warning_quarantine": 168,

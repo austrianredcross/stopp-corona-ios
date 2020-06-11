@@ -72,10 +72,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         guard serivcesInitialized == false else {
             return
         }
-
         configService.update()
-
-        application.registerForRemoteNotifications()
         serivcesInitialized = true
     }
 

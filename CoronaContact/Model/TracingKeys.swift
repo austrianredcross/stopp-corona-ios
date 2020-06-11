@@ -9,7 +9,7 @@ import Foundation
 struct TracingKeys: Codable {
     private enum CodingKeys: String, CodingKey {
         case
-            temporaryExposureKeys = "temporaryTracingKeys",
+            temporaryExposureKeys,
             regions, appPackageName, platform, diagnosisStatus,
             diagnosisType, deviceVerificationPayload,
             verificationAuthorityName, verificationPayload
@@ -69,10 +69,6 @@ struct TemporaryExposureKey: Codable {
     let intervalNumber: ENIntervalNumber
     let intervalCount: ENIntervalNumber
     let transmissionRisk: ENRiskLevel
-
-    var intervalNumberDate: Date {
-        Date(timeIntervalSince1970: Double(intervalNumber) * 600) // as defined in ExposureNotification.ENCommon.swift
-    }
 
     init(temporaryExposureKey: ENTemporaryExposureKey, password: String?) {
         key = temporaryExposureKey.keyData.base64EncodedString()

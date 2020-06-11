@@ -11,7 +11,9 @@ final class SelfTestingStatusReportViewController: UIViewController,
     StoryboardBased, ViewModelBased, ActivityModalPresentable, FlashableScrollIndicators {
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var checkbox: M13Checkbox!
-    @IBOutlet var reportButton: UIButton!
+    @IBOutlet var reportButton: PrimaryButton!
+    @IBOutlet var statusHeadline: TransLabel!
+    @IBOutlet var statusDescription: TransLabel!
 
     var viewModel: SelfTestingStatusReportViewModel?
 
@@ -28,7 +30,17 @@ final class SelfTestingStatusReportViewController: UIViewController,
     }
 
     private func setupUI() {
-        title = "self_testing_report_status_title".localized
+        let updateKeys = viewModel?.updateKeys ?? false
+
+        if updateKeys {
+            title = "self_testing_report_status_title_extra".localized
+            statusHeadline.styledText = "self_testing_report_status_headline".localized
+            statusDescription.styledText = "self_testing_report_status_description_extra".localized
+            reportButton.transKeyNormal = "self_testing_report_status_button_extra"
+            reportButton.updateTranslation()
+        } else {
+            title = "self_testing_report_status_title".localized
+        }
         reportButton.isEnabled = false
 
         checkbox.boxType = .square

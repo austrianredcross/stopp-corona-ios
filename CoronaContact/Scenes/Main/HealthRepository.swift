@@ -103,9 +103,7 @@ class HealthRepository {
 
     func setProvenSick() {
         localStorage.attestedSicknessAt = Date()
-        if !localStorage.isProbablySick {
-            localStorage.missingUploadedKeysAt = Date()
-        }
+        localStorage.missingUploadedKeysAt = Date()
     }
 
     func revokeProbablySick() {

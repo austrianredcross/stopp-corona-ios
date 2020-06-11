@@ -15,6 +15,7 @@ struct Configuration: Codable {
         case selfDiagnosedQuarantine = "self_diagnosed_quarantine"
         case exposureConfiguration = "exposure_configuration"
         case diagnosticQuestionnaire = "diagnostic_questionnaire"
+        case uploadKeyDays = "upload_keys_days"
     }
 
     let warnBeforeSymptoms: Int
@@ -26,6 +27,9 @@ struct Configuration: Codable {
     let selfDiagnosedQuarantine: Int
     let exposureConfiguration: ExposureConfiguration
     let diagnosticQuestionnaire: [Language: Questionnaire?]
+
+    /// Days we should upload from the past when uploading keys
+    let uploadKeyDays: Int
 }
 
 // MARK: Decodable
@@ -52,6 +56,7 @@ extension Configuration {
         redWarningQuarantine = try container.decode(Int.self, forKey: .redWarningQuarantine)
         yellowWarningQuarantine = try container.decode(Int.self, forKey: .yellowWarningQuarantine)
         selfDiagnosedQuarantine = try container.decode(Int.self, forKey: .selfDiagnosedQuarantine)
+        uploadKeyDays = try container.decode(Int.self, forKey: .uploadKeyDays)
         exposureConfiguration = try container.decode(ExposureConfiguration.self, forKey: .exposureConfiguration)
     }
 }

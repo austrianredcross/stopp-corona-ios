@@ -11,7 +11,9 @@ final class SicknessCertificateStatusReportViewController: UIViewController,
     StoryboardBased, ViewModelBased, ActivityModalPresentable, FlashableScrollIndicators {
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var checkbox: M13Checkbox!
-    @IBOutlet var reportButton: UIButton!
+    @IBOutlet var reportButton: PrimaryButton!
+    @IBOutlet var reportStatusHeadline: TransLabel!
+    @IBOutlet var reportStatusDescription: TransLabel!
 
     var viewModel: SicknessCertificateStatusReportViewModel?
 
@@ -28,7 +30,18 @@ final class SicknessCertificateStatusReportViewController: UIViewController,
     }
 
     private func setupUI() {
-        title = "sickness_certificate_report_status_title".localized
+        let updateKeys = viewModel?.updateKeys ?? false
+
+        if updateKeys {
+            title = "sickness_certificate_report_status_title_extra".localized
+            reportStatusHeadline.styledText = "sickness_certificate_report_status_headline_extra".localized
+            reportStatusDescription.styledText = "sickness_certificate_report_status_description_extra".localized
+            reportButton.transKeyNormal = "sickness_certificate_report_status_button_extra"
+            reportButton.updateTranslation()
+        } else {
+            title = "sickness_certificate_report_status_title".localized
+        }
+
         reportButton.isEnabled = false
 
         checkbox.boxType = .square

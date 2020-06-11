@@ -9,7 +9,6 @@ import Resolver
 
 class ReportHealthStatusFlowController {
     @Injected private var exposureManager: ExposureManager
-    @Injected private var exposureKeyManager: ExposureKeyManager
     @Injected private var networkService: NetworkService
 
     typealias Completion<Success> = (Result<Success, ReportError>) -> Void
@@ -51,48 +50,26 @@ class ReportHealthStatusFlowController {
         verification = Verification(uuid: tanUUID, authorization: tanNumber)
     }
 
-    func submit(completion: @escaping Completion<Void>) {
-        getDiagnoisKeys { [weak self] result in
-            switch result {
-            case let .success(tracingKeys):
-                self?.sendTracingKeys(tracingKeys, completion: completion)
-            case let .failure(error):
-                completion(.failure(error))
-            }
-        }
-    }
-
-    private func getDiagnoisKeys(completion: @escaping Completion<TracingKeys>) {
+    func submit(from startDate: Date, untilIncluding endDate: Date, completion: @escaping Completion<Void>) {
         guard let verification = verification else {
             failSilently(completion)
             return
         }
 
-        exposureManager.getDiagnosisKeys { [weak self] result in
-            guard let self = self else {
-                return
-            }
-
+        exposureManager.getKeysForUpload(from: startDate, untilIncluding: endDate) { [weak self] result in
+            guard let self = self else { return }
             switch result {
             case let .success(temporaryExposureKeys):
-                let tracingKeys = self.parseTemporaryExposureKeys(temporaryExposureKeys, verification: verification)
-                completion(.success(tracingKeys))
-            case let .failure(error):
-                LoggingService.error("Couldn't get diagnosis keys from the exposure manager: \(error)", context: .exposure)
-                self.failSilently(completion)
+                let tracingKeys = TracingKeys(
+                    temporaryExposureKeys: temporaryExposureKeys,
+                    diagnosisType: self.diagnosisType,
+                    verificationPayload: verification
+                )
+                self.sendTracingKeys(tracingKeys, completion: completion)
+            case .failure:
+                completion(.failure(.unknown))
             }
         }
-    }
-
-    private func parseTemporaryExposureKeys(_ temporaryExposureKeys: [ENTemporaryExposureKey],
-                                            verification: Verification) -> TracingKeys {
-        let temporaryExposureKeys = try? exposureKeyManager.getKeysForUpload(keys: temporaryExposureKeys)
-
-        return TracingKeys(
-            temporaryExposureKeys: temporaryExposureKeys ?? [],
-            diagnosisType: diagnosisType,
-            verificationPayload: verification
-        )
     }
 
     private func sendTracingKeys(_ tracingKeys: TracingKeys, completion: @escaping Completion<Void>) {

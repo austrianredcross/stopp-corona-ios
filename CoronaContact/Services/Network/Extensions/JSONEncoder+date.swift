@@ -58,6 +58,6 @@ extension JSONEncoder {
 public extension Date {
     enum DateFormat: String, Hashable, CaseIterable {
         case api = "dd.MM.yyyy"
-        case iso = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        case iso = "yyyy-MM-dd'T'HH:mm:ss.SSS"
     }
 }

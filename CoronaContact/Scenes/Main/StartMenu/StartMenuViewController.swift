@@ -92,6 +92,6 @@ final class StartMenuViewController: UIViewController, StoryboardBased, Flashabl
 
         hideableFunctionsView.isHidden = viewModel.isFunctionsSectionHidden
         checkSymptomsView.isHidden = !viewModel.isSelfTestFunctionAvailable
-        revokeSicknessView.isHidden = !viewModel.hasAttestedSickness
+        revokeSicknessView.isHidden = !viewModel.canRevokeAttestedSickness
     }
 }

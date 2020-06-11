@@ -9,5 +9,6 @@ import Resolver
 extension Resolver {
     public static func registerLocalStorageServices() {
         register { LocalStorage() }.scope(application)
+        register { WhatsNewRepository() }.scope(application)
     }
 }
