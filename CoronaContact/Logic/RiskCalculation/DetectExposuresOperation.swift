@@ -5,12 +5,18 @@
 
 import ExposureNotification
 import Foundation
+import Resolver
 
 class DetectExposuresOperation: AsyncResultOperation<(Date, Bool), RiskCalculationError> {
+    @Injected private var configurationService: ConfigurationService
+
     private let diagnosisKeyURLs: [URL]
     private var progress: Progress?
+    private let exposureManager: ExposureManager
 
-    let exposureManager: ExposureManager
+    private var exposureConfiguration: ExposureConfiguration {
+        configurationService.currentConfig.exposureConfiguration
+    }
 
     init(diagnosisKeyURLs: [URL], exposureManager: ExposureManager) {
         self.diagnosisKeyURLs = diagnosisKeyURLs
@@ -44,7 +50,6 @@ class DetectExposuresOperation: AsyncResultOperation<(Date, Bool), RiskCalculati
     }
 
     private func isEnoughRisk(for summary: ENExposureDetectionSummary) -> Bool {
-        #warning("TODO: Determine if there is enough risk to warrant the processing")
-        return true
+        summary.maximumRiskScore > exposureConfiguration.dailyRiskThreshold
     }
 }

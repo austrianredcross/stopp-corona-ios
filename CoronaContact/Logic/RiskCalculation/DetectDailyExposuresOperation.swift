@@ -5,10 +5,17 @@
 
 import ExposureNotification
 import Foundation
+import Resolver
 
-class DetectDailyExposuresOperation: AsyncResultOperation<[Exposure], RiskCalculationError> {
+class DetectDailyExposuresOperation: AsyncResultOperation<DiagnosisType, RiskCalculationError> {
+    @Injected private var configurationService: ConfigurationService
+
     private let diagnosisKeyURLs: [URL]
     private var progress: Progress?
+
+    private var exposureConfiguration: ExposureConfiguration {
+        configurationService.currentConfig.exposureConfiguration
+    }
 
     let exposureManager: ExposureManager
 
@@ -28,7 +35,7 @@ class DetectDailyExposuresOperation: AsyncResultOperation<[Exposure], RiskCalcul
                 return
             }
 
-            if let summary = summary {
+            if let summary = summary, self.isEnoughRisk(for: summary) {
                 self.exposureManager.getExposureInfo(summary: summary) { [weak self] result in
                     switch result {
                     case let .success(exposures):
@@ -37,10 +44,9 @@ class DetectDailyExposuresOperation: AsyncResultOperation<[Exposure], RiskCalcul
                         self?.finish(with: .failure(.exposureInfoUnavailable(error)))
                     }
                 }
-                return
+            } else {
+                self.finish(with: .success(.green))
             }
-
-            self.cancel()
         }
     }
 
@@ -51,13 +57,22 @@ class DetectDailyExposuresOperation: AsyncResultOperation<[Exposure], RiskCalcul
     }
 
     private func isEnoughRisk(for summary: ENExposureDetectionSummary) -> Bool {
-        #warning("TODO: Determine if there is enough risk to warrant the processing")
-        return true
+        summary.maximumRiskScore > exposureConfiguration.dailyRiskThreshold
     }
 
     private func handleExposures(_ exposures: [Exposure]) {
-        #warning("TODO: decide based on 'red' and 'yellow' exposures if the day is 'red' or 'yellow'")
+        let redExposures = exposures.filter { $0.transmissionRiskLevel.diagnosisType == .red }
 
-        finish(with: .success(exposures))
+        if redExposures.sumTotalRisk > exposureConfiguration.minimumRiskScore {
+            finish(with: .success(.red))
+        } else {
+            finish(with: .success(.yellow))
+        }
+    }
+}
+
+private extension Array where Element == Exposure {
+    var sumTotalRisk: UInt {
+        reduce(0) { $0 + UInt($1.totalRiskScore) }
     }
 }

@@ -10,6 +10,7 @@ struct ExposureConfiguration: Codable {
     private enum CodingKeys: String, CodingKey {
         case
             minimumRiskScore = "minimum_risk_score",
+            dailyRiskThreshold = "daily_risk_threshold",
             attenuationDurationThresholds = "attenuation_duration_thresholds",
             attenuationLevelValues = "attenuation_level_values",
             daysSinceLastExposureLevelValues = "days_since_last_exposure_level_values",
@@ -18,6 +19,7 @@ struct ExposureConfiguration: Codable {
     }
 
     let minimumRiskScore: ENRiskScore
+    let dailyRiskThreshold: ENRiskScore
     let attenuationDurationThresholds: [Int]
     let attenuationLevelValues: [ENRiskLevelValue]
     let daysSinceLastExposureLevelValues: [ENRiskLevelValue]
