@@ -68,13 +68,11 @@ struct TemporaryExposureKey: Codable {
     let password: String
     let intervalNumber: ENIntervalNumber
     let intervalCount: ENIntervalNumber
-    let transmissionRisk: ENRiskLevel
 
-    init(temporaryExposureKey: ENTemporaryExposureKey, password: String?, diagnosisType: DiagnosisType) {
+    init(temporaryExposureKey: ENTemporaryExposureKey, password: String?) {
         key = temporaryExposureKey.keyData.base64EncodedString()
         self.password = password ?? UUID().uuidString
         intervalNumber = temporaryExposureKey.rollingStartNumber
         intervalCount = temporaryExposureKey.rollingPeriod
-        transmissionRisk = diagnosisType.rawValue
     }
 }
