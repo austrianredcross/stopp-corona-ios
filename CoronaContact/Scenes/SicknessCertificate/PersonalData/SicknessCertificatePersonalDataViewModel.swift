@@ -10,11 +10,13 @@ class SicknessCertificatePersonalDataViewModel: ViewModel {
     @Injected private var flowController: SicknessCertificateFlowController
 
     weak var coordinator: SicknessCertificatePersonalDataCoordinator?
+    let updateKeys: Bool
 
     var composePersonalData: (() -> PersonalData?)?
 
-    init(with coordinator: SicknessCertificatePersonalDataCoordinator) {
+    init(with coordinator: SicknessCertificatePersonalDataCoordinator, updateKeys: Bool) {
         self.coordinator = coordinator
+        self.updateKeys = updateKeys
     }
 
     func goToNext(completion: @escaping () -> Void) {

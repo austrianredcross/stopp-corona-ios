@@ -18,6 +18,7 @@ class DebugViewController: UIViewController, StoryboardBased, ViewModelBased, Re
     @IBOutlet var attestedSickButton: SecondaryButton!
     @IBOutlet var revokeProbablySickButton: SecondaryButton!
     @IBOutlet var revokeAttestedSickButton: SecondaryButton!
+    @IBOutlet var moveSickReportButton: SecondaryButton!
 
     var viewModel: DebugViewModel? {
         didSet {
@@ -76,6 +77,10 @@ class DebugViewController: UIViewController, StoryboardBased, ViewModelBased, Re
 
     @IBAction func revokeAttestedSickButton(_ sender: Any) {
         viewModel?.revokeAttestedSick()
+    }
+
+    @IBAction func moveSickReportBackADay(_ sender: Any) {
+        viewModel?.moveSickReportBackADay()
     }
 
     // MARK: - Mark log settings

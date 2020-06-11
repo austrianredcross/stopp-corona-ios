@@ -11,6 +11,7 @@ class SicknessCertificateStatusReportViewModel: ViewModel {
     @Injected private var healthRepository: HealthRepository
 
     weak var coordinator: SicknessCertificateStatusReportCoordinator?
+    let updateKeys: Bool
 
     var agreesToTerms = false
 
@@ -18,8 +19,9 @@ class SicknessCertificateStatusReportViewModel: ViewModel {
         agreesToTerms
     }
 
-    init(with coordinator: SicknessCertificateStatusReportCoordinator) {
+    init(with coordinator: SicknessCertificateStatusReportCoordinator, updateKeys: Bool) {
         self.coordinator = coordinator
+        self.updateKeys = updateKeys
     }
 
     func goToNext(completion: @escaping () -> Void) {

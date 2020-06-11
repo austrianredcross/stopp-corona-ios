@@ -55,10 +55,10 @@ class MainCoordinator: Coordinator, ShareSheetPresentable {
         child.start()
     }
 
-    func sicknessCertificate() {
+    func sicknessCertificate(updateKeys: Bool) {
         let child = SicknessCertificateCoordinator(navigationController: navigationController)
         addChildCoordinator(child)
-        child.start()
+        child.start(updateKeys: updateKeys)
     }
 
     func attestedSicknessGuidelines() {

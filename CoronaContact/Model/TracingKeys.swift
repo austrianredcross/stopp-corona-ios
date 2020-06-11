@@ -9,7 +9,7 @@ import Foundation
 struct TracingKeys: Codable {
     private enum CodingKeys: String, CodingKey {
         case
-            temporaryExposureKeys = "temporaryTracingKeys",
+            temporaryExposureKeys,
             regions, appPackageName, platform, diagnosisStatus,
             diagnosisType, deviceVerificationPayload,
             verificationAuthorityName, verificationPayload

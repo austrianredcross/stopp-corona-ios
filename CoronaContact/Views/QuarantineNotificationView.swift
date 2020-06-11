@@ -185,6 +185,15 @@ class QuarantineNotificationView: UIView, NibOwnerLoadable {
         handleClose?()
     }
 
+    func addLabel(title: String) {
+        buttonsStackView.isHidden = false
+        let label = TransLabel()
+        label.numberOfLines = 0
+        label.attributedText = title.set(style: StyleNames.body.rawValue)
+        buttonsStackView.addArrangedSubview(label)
+        buttonsStackView.isHidden = false
+    }
+
     func addButton(title: String, handler: @escaping () -> Void) {
         guard buttonAction(withTitle: title) == nil else {
             return
@@ -218,7 +227,9 @@ class QuarantineNotificationView: UIView, NibOwnerLoadable {
 
     func removeButtons() {
         buttonActions.removeAll()
-        buttonsStackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
+        buttonsStackView.arrangedSubviews.forEach {
+            $0.removeFromSuperview()
+        }
         buttonsStackView.isHidden = true
     }
 }

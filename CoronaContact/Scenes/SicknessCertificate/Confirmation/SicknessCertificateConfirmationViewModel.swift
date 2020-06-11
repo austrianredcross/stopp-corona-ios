@@ -8,9 +8,11 @@ import Resolver
 
 class SicknessCertificateConfirmationViewModel: ViewModel {
     weak var coordinator: SicknessCertificateConfirmationCoordinator?
+    let updateKeys: Bool
 
-    init(with coordinator: SicknessCertificateConfirmationCoordinator) {
+    init(with coordinator: SicknessCertificateConfirmationCoordinator, updateKeys: Bool) {
         self.coordinator = coordinator
+        self.updateKeys = updateKeys
     }
 
     func showQuarantineGuidelines() {
