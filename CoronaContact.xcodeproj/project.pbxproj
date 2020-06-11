@@ -49,6 +49,7 @@
 		4EB52F00243C72FA0004FAA0 /* Benchmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB52EFF243C72FA0004FAA0 /* Benchmark.swift */; };
 		4EC81FB52423843300179CE9 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC81FB42423843300179CE9 /* PrimaryButton.swift */; };
 		4EC81FB72423844E00179CE9 /* SecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC81FB62423844E00179CE9 /* SecondaryButton.swift */; };
+		4ED12C7A2492B8A800DDA10C /* MaintenancePerforming.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7828A6A824926B57006AEAAC /* MaintenancePerforming.swift */; };
 		4ED175B42458347400248D3B /* DebugViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4ED175AF2458347400248D3B /* DebugViewController.storyboard */; };
 		4ED175B52458347400248D3B /* DebugNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED175B02458347400248D3B /* DebugNavigationController.swift */; };
 		4ED175B62458347400248D3B /* DebugCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED175B12458347400248D3B /* DebugCoordinator.swift */; };
@@ -272,7 +273,6 @@
 		61F50DE0243A310400798264 /* handshakeActive.json in Resources */ = {isa = PBXBuildFile; fileRef = 61F50DDF243A310400798264 /* handshakeActive.json */; };
 		7828A6A524926859006AEAAC /* MaintenanceTaskRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7828A6A424926859006AEAAC /* MaintenanceTaskRepository.swift */; };
 		7828A6A724926AAD006AEAAC /* RemoveObsoleteUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7828A6A624926AAD006AEAAC /* RemoveObsoleteUserDefaults.swift */; };
-		7828A6A924926B57006AEAAC /* MaintenancePerforming.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7828A6A824926B57006AEAAC /* MaintenancePerforming.swift */; };
 		7828A6AA24926C04006AEAAC /* RemoveGoogleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7828A6A024922DD0006AEAAC /* RemoveGoogleData.swift */; };
 		7829D824247D507A0015F5A5 /* SavedIDsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7829D820247D50790015F5A5 /* SavedIDsViewController.swift */; };
 		7829D825247D507A0015F5A5 /* SavedIDsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7829D821247D507A0015F5A5 /* SavedIDsCoordinator.swift */; };
@@ -2233,6 +2233,7 @@
 				61032065243E0AE400ED3A20 /* FlashableScrollIndicators.swift in Sources */,
 				61D1A3E5242A58CA007F82ED /* MainHelpCoordinator.swift in Sources */,
 				92FFC9BF24267D8200CC541B /* SelfTestingCheckSymptomsViewController.swift in Sources */,
+				4ED12C7A2492B8A800DDA10C /* MaintenancePerforming.swift in Sources */,
 				4ED175D32460705200248D3B /* RevokeSicknessTanConfirmationViewModel.swift in Sources */,
 				61D0F56F2435EB870026C91A /* RevocationPersonalDataViewModel.swift in Sources */,
 				83974B1F6F49E544E670E7E3 /* NSString+localized.swift in Sources */,
