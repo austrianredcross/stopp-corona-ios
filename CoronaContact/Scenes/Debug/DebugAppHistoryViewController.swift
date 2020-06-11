@@ -9,6 +9,7 @@
 
     class DebugAppHistoryViewController: UIViewController {
         var appVersionHistory = AppVersionHistory.whatsNew
+        var maintenanceHistory = AppVersionHistory.maintenanceTasks
 
         struct VersionPresentation {
             let version: AppVersion
@@ -23,10 +24,12 @@
         }
 
         @Injected private var whatsNewRepository: WhatsNewRepository
+        @Injected private var maintenanceRepository: MaintenanceTasksRepository
 
         private lazy var versions: [VersionPresentation] = {
-            var availableVersions = appVersionHistory.versions
+            var availableVersions = appVersionHistory.versions.union(maintenanceHistory.versions)
             availableVersions.insert(whatsNewRepository.lastWhatsNewShown)
+            availableVersions.insert(maintenanceRepository.lastMaintenancePerformed)
             availableVersions.insert(.notPreviouslyInstalled)
             availableVersions.insert("1.2.1")
             return Array(availableVersions)
@@ -66,6 +69,7 @@
         func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             let selected = versions[indexPath.row]
             whatsNewRepository.lastWhatsNewShown = selected.version
+            maintenanceRepository.lastMaintenancePerformed = selected.version
             tableView.reloadData()
         }
     }
