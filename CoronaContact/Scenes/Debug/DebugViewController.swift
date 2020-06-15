@@ -46,7 +46,9 @@ class DebugViewController: UIViewController, StoryboardBased, ViewModelBased, Re
     // MARK: - Batch Download
 
     @IBAction func scheduleBackgroundTask(_ sender: Any) {
-        batchDownloadScheduler.scheduleBackgroundTaskForDebuggingPurposes()
+        #if DEBUG
+            batchDownloadScheduler.scheduleBackgroundTaskForDebuggingPurposes()
+        #endif
     }
 
     @IBAction func downloadSevenDaysBatchAndDailyBatches(_ sender: Any) {
