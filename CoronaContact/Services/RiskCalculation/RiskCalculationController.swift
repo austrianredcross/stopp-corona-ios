@@ -34,6 +34,7 @@ final class RiskCalculationController {
             return
         }
         self.completionHandler = completionHandler
+        log.debug("Start processing full batch.")
 
         operation.completionBlock = { [weak self] in
             guard let self = self, let result = operation.result else {
@@ -42,12 +43,16 @@ final class RiskCalculationController {
 
             switch result {
             case let .success((lastExposureDate, isEnoughRisk)) where isEnoughRisk:
+                self.log.debug("""
+                    Successfully processed the full batch which poses a risk.\
+                    Start processing daily batches going back from the last exposure date: \(lastExposureDate).
+                """)
                 self.processDailyBatches(batches, before: lastExposureDate)
-            case let .success((lastExposureDate, _)):
+            case .success:
                 self.completionHandler?(.success(self.riskCalculationResult))
-                self.log.debug("Exposure at \(lastExposureDate) was not risky enough.")
+                self.log.debug("Successfully processed the full batch which does not pose a risk.")
             case let .failure(error):
-                self.log.error(error)
+                self.log.error("Failed to process full batch due to an error: \(error)")
             }
         }
 
@@ -56,11 +61,11 @@ final class RiskCalculationController {
 
     private func processFullBatch(_ batches: [UnzippedBatch]) -> DetectExposuresOperation? {
         guard let fullBatch = batches.first(where: { $0.type == .full }) else {
+            log.warning("Unexpectedly found no full batch.")
             return nil
         }
 
-        let operation = DetectExposuresOperation(diagnosisKeyURLs: fullBatch.urls)
-        return operation
+        return DetectExposuresOperation(diagnosisKeyURLs: fullBatch.urls)
     }
 
     private func processDailyBatches(_ batches: [UnzippedBatch], before date: Date) {
@@ -70,7 +75,7 @@ final class RiskCalculationController {
             .filter { $0.interval.date <= normalizedDate }
 
         let operations: [DetectDailyExposuresOperation] = dailyBatches.map { batch in
-            let operation = DetectDailyExposuresOperation(diagnosisKeyURLs: batch.urls)
+            let operation = DetectDailyExposuresOperation(diagnosisKeyURLs: batch.urls, date: batch.interval.date)
             operation.completionBlock = handleCompletion(of: operation, date: batch.interval.date)
             return operation
         }
@@ -97,6 +102,7 @@ final class RiskCalculationController {
         // swiftformat:disable:next redundantReturn
         return {
             guard let result = operation.result else {
+                self.log.warning("Unexpectedly found no result for \(operation) for the daily batch at date \(date).")
                 self.completionHandler?(.failure(.noResult))
                 self.queue.cancelAllOperations()
                 return
@@ -104,11 +110,13 @@ final class RiskCalculationController {
 
             switch result {
             case let .success(dailyExposure) where dailyExposure.diagnosisType != nil:
-                self.riskCalculationResult[date] = dailyExposure.diagnosisType!
+                let diagnosisType = dailyExposure.diagnosisType!
+                self.log.debug("Successfully processed daily batch at \(date) with diagnosis type: \(diagnosisType).")
+                self.riskCalculationResult[date] = diagnosisType
             case .success:
-                break
+                self.log.debug("Skipping daily batch at \(date), because it doesn't have a diagnosis type.")
             case let .failure(error):
-                self.log.error(error)
+                self.log.error("Failed to process daily batch at \(date) due to an error: \(error)")
                 self.completionHandler?(.failure(error))
             }
         }
@@ -117,6 +125,7 @@ final class RiskCalculationController {
     private func handleCompletion(of operation: RiskCalculationCompleteOperation) -> () -> Void {
         // swiftformat:disable:next redundantReturn
         return {
+            self.log.debug("Successfully completed the risk calculation with result: \(self.riskCalculationResult)")
             self.completionHandler?(.success(self.riskCalculationResult))
         }
     }
