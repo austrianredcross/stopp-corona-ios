@@ -10,7 +10,7 @@ import Resolver
 extension ENExposureDetectionSummary {
     var totalRiskScore: UInt {
         let configurationService: ConfigurationService = Resolver.resolve()
-        var attenuationLevelValues = Set(configurationService.currentConfig.exposureConfiguration.attenuationLevelValues)
+        let attenuationLevelValues = Set(configurationService.currentConfig.exposureConfiguration.attenuationLevelValues)
 
         guard let attenuationLevels = attenuationLevelValues.unique() else {
             let message = "The `exposure_configuration` object in the configuration.json is misconfigured"
@@ -36,18 +36,19 @@ private struct UniqueAttenuationLevelValues {
 }
 
 private extension Set where Element == ENRiskLevelValue {
-    mutating func unique() -> UniqueAttenuationLevelValues? {
-        remove(0)
+    func unique() -> UniqueAttenuationLevelValues? {
+        var copy = Set(self)
 
-        // swiftformat:disable:next redundantSelf
-        guard let maxValue = self.max(), let minValue = self.min() else {
+        copy.remove(0)
+
+        guard let maxValue = copy.max(), let minValue = copy.min() else {
             return nil
         }
 
-        remove(maxValue)
-        remove(minValue)
+        copy.remove(maxValue)
+        copy.remove(minValue)
 
-        guard let medianValue = first else {
+        guard let medianValue = copy.first else {
             return nil
         }
 
