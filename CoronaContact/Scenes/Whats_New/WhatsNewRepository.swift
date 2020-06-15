@@ -58,7 +58,7 @@ class WhatsNewRepository {
         return appVersionHistory.contains { $0.key > lastWhatsNewShown }
     }
 
-    func currentWhatsNewShown() {
+    func markAsSeen() {
         lastWhatsNewShown = currentAppVersion
     }
 }

@@ -120,14 +120,18 @@ class MainCoordinator: Coordinator, ShareSheetPresentable {
         navigationController.pushViewController(viewController, animated: false)
 
         if !localStorage.hasSeenOnboarding {
-            DispatchQueue.main.async { self.onboarding() }
+            DispatchQueue.main.async {
+                // Don't show "What's New" for new installations:
+                self.whatsNewRepository.markAsSeen()
+                self.onboarding()
+            }
         } else {
             notificationService.dismissAllNotifications()
             DispatchQueue.main.async {
                 if self.whatsNewRepository.isWhatsNewAvailable,
                     let latestHistoryItem = self.whatsNewRepository.newHistoryItems.last {
                     self.show(latestHistoryItem)
-                    self.whatsNewRepository.currentWhatsNewShown()
+                    self.whatsNewRepository.markAsSeen()
                 }
             }
         }
