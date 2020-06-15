@@ -48,6 +48,7 @@
 "main_microphone_explanation_dialog_headline"                                = "Zugriff auf das Mikrofon";
 "main_microphone_explanation_dialog_description"                             = "Für den Digitalen Handshake wird geprüft, ob auch andere Smartphones in der Gegend den Handshake ausgelöst haben. Das funktioniert über Ultraschall. Deshalb kann es sein, dass Ihr Smartphone einen hörbaren Ton von sich gibt. Der Ton wird von anderen Smartphones mit dem Mikrofon aufgezeichnet und andersherum nutzt auch Ihr Smartphone das Mikrofon, um Töne der anderen Geräte wahrzunehmen. Aus diesem Grund wird der Zugriff auf das Mikrofon benötigt.";
 "main_microphone_explanation_dialog_do_not_show_again"                       = "Nicht wieder anzeigen";
+"get_exposure_info_user_explanation"                                         = "Möglicherweise liegt bei einem Ihrer letzten Kontakte eine Infektion oder ein Verdachtsfall vor";
 "mandatory_update_title"                                                     = "Aktuelle Version herunterladen";
 "mandatory_update_message"                                                   = "Die derzeitige Version wird nicht mehr unterstützt. Laden Sie bitte eine neue Version der App herunter, damit Sie wieder auf alle Funktionen zugreifen können.";
 "mandatory_update_button"                                                    = "Zum App Store";
@@ -252,7 +253,7 @@
 "sickness_certificate_attest_description"                                    = "Bitte bleiben Sie in Quarantäne. Sie haben sich offiziell als am Coronavirus erkrankt gemeldet.";
 "sickness_certificate_attest_button"                                         = "Begeben Sie sich in Quarantäne";
 "sickness_certificate_attest_button_revoke"                                  = "Krankmeldung zurückziehen";
-"self_testing_symptoms_warning_button_update"                                = "Weitere Kontakte benachrichtigen";
+"sickness_certificate_attest_info_update"                                    = "Benachrichtigen Sie Personen, mit denen Sie am Tag Ihrer Meldung einen digitalen Handshake ausgetauscht haben.";
 "sickness_certificate_attest_button_update"                                  = "Weitere Kontakte benachrichtigen";
 "start_menu_headline_1"                                                      = "Info";
 "start_menu_item_1_1_what_does_the_app_do"                                   = "Was kann diese App?";
@@ -357,6 +358,7 @@
 "self_testing_symptoms_button"                                               = "Nächste Schritte";
 "self_testing_symptoms_secondary_button"                                     = "Symptome erneut prüfen";
 "self_testing_symptoms_warning_info_update"                                  = "Benachrichtigen Sie Personen, mit denen Sie am Tag Ihrer Meldung einen digitalen Handshake ausgetauscht haben.";
+"self_testing_symptoms_warning_button_update"                                = "Weitere Kontakte benachrichtigen";
 "suspicion_guidelines_title"                                                 = "Verdacht";
 "suspicion_guidelines_headline"                                              = "Verdacht auf eine Corona-Infektion";
 "suspicion_guidelines_description"                                           = "Sie haben den Fragebogen ausgefüllt und <b>es besteht ein Verdacht auf eine Corona-Infektion.</b>";

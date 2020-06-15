@@ -22,6 +22,7 @@ extension Resolver: ResolverRegistering {
         registerLocalStorageServices()
         registerSicknessCertificateDependencies()
         registerBatchDownloadServices()
+        registerRiskCalculationController()
         registerExposureServices()
     }
 }

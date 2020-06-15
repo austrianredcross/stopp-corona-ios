@@ -15,6 +15,7 @@ class ExposureManager {
     static let notificationStatusChangedNotification = Notification.Name("ExposureManagerNotificationStatusChanged")
 
     @Injected private var localStorage: LocalStorage
+    @Injected private var configurationService: ConfigurationService
     @Injected var batchDownloadScheduler: BatchDownloadScheduler
     private let manager = ENManager()
     private let log = ContextLogger(context: .exposure)
@@ -51,10 +52,37 @@ class ExposureManager {
         manager.invalidate()
     }
 
-    func detectExposures(completion: @escaping (Bool) -> Void) -> Progress {
-        let progress = Progress()
-        completion(true)
-        return progress
+    func detectExposures(diagnosisKeyURLs: [URL], completion: @escaping (Result<ENExposureDetectionSummary, Error>) -> Void) -> Progress {
+        let configuration = ENExposureConfiguration(configurationService.currentConfig.exposureConfiguration)
+
+        return manager.detectExposures(configuration: configuration, diagnosisKeyURLs: diagnosisKeyURLs) { summary, error in
+            guard let summary = summary else {
+                completion(.failure(error!))
+                return
+            }
+
+            completion(.success(summary))
+        }
+    }
+
+    func getExposureInfo(summary: ENExposureDetectionSummary, completion: @escaping (Result<[Exposure], Error>) -> Void) {
+        let userExplanation = "get_exposure_info_user_explanation".localized
+        manager.getExposureInfo(summary: summary, userExplanation: userExplanation) { exposures, error in
+            guard let exposures = exposures else {
+                completion(.failure(error!))
+                return
+            }
+
+            let newExposures = exposures.map { exposure in
+                Exposure(date: exposure.date,
+                         duration: exposure.duration,
+                         totalRiskScore: exposure.totalRiskScore,
+                         attenuationValue: exposure.attenuationValue,
+                         transmissionRiskLevel: exposure.transmissionRiskLevel)
+            }
+
+            completion(.success(newExposures))
+        }
     }
 
     func enableExposureNotifications(_ enabled: Bool, completion: ((Error?) -> Void)? = nil) {
@@ -125,16 +153,5 @@ class ExposureManager {
                 completion(.failure(error))
             }
         }
-    }
-}
-
-#warning("DELETE ME AFTER MERGING OTHER BRANCH INCLUDING THIS")
-extension ENIntervalNumber {
-    var timeInterval: TimeInterval {
-        Double(self) * 60 * 10
-    }
-
-    var date: Date {
-        Date(timeIntervalSince1970: timeInterval)
     }
 }

@@ -15,8 +15,8 @@ enum BatchDownloadError: Error {
 
 final class BatchDownloadService {
     enum DownloadRequirement {
-        case all
-        case onlyFullBatch
+        case sevenDaysBatchAndDailyBatches
+        case onlyFourteenDaysBatch
     }
 
     @Injected private var networkService: NetworkService
@@ -29,6 +29,7 @@ final class BatchDownloadService {
 
     private var completionHandler: ((Result<[UnzippedBatch], BatchDownloadError>) -> Void)?
     private var unzippedBatches = [UnzippedBatch]()
+    private let log = ContextLogger(context: LoggingContext.batchDownload)
 
     func startBatchDownload(_ downloadRequirement: DownloadRequirement,
                             completionHandler: @escaping (Result<[UnzippedBatch], BatchDownloadError>) -> Void) -> Progress {
@@ -37,6 +38,8 @@ final class BatchDownloadService {
         unzippedBatches = []
         self.completionHandler = completionHandler
 
+        log.debug("Start downloading the exposure keys batch.")
+
         downloadExposureKeysBatch { [weak self] result in
             guard let self = self else {
                 return
@@ -44,6 +47,8 @@ final class BatchDownloadService {
 
             switch result {
             case let .success(batch):
+                self.log.debug("Successfully downloaded the exposure keys batch.")
+
                 let downloadOperations = self.downloadFiles(in: batch, downloadRequirement: downloadRequirement)
                 let unzipOperations = self.unzipFiles(after: downloadOperations)
                 let completeOperation = self.completeBatchDownload(after: unzipOperations)
@@ -73,14 +78,28 @@ final class BatchDownloadService {
     }
 
     private func downloadFiles(in batch: ExposureKeysBatch, downloadRequirement: DownloadRequirement) -> [BatchDownloadOperation] {
-        let fullBatchDownloadOperations = downloadFiles(at: batch.fullBatch.filePaths, batch: batch.fullBatch, batchType: .full)
-
+        let fullBatchDownloadOperations: [BatchDownloadOperation]
         let dailyBatchesDownloadOperations: [BatchDownloadOperation]
-        if downloadRequirement == .all {
+
+        if downloadRequirement == .sevenDaysBatchAndDailyBatches {
+            log.debug("Start downloading the full 7-days batch and the daily batches.")
+
+            fullBatchDownloadOperations = downloadFiles(
+                at: batch.fullSevenDaysBatch.filePaths,
+                batch: batch.fullSevenDaysBatch,
+                batchType: .full
+            )
             dailyBatchesDownloadOperations = batch.dailyBatches.flatMap { batch in
                 downloadFiles(at: batch.filePaths, batch: batch, batchType: .daily)
             }
         } else {
+            log.debug("Start downloading the full 14-days batch.")
+
+            fullBatchDownloadOperations = downloadFiles(
+                at: batch.fullFourteenDaysBatch.filePaths,
+                batch: batch.fullFourteenDaysBatch,
+                batchType: .full
+            )
             dailyBatchesDownloadOperations = []
         }
 
@@ -117,6 +136,7 @@ final class BatchDownloadService {
         // swiftformat:disable:next redundantReturn
         return {
             guard let result = operation.result else {
+                self.log.warning("Unexpectedly found no result for \(operation).")
                 self.completionHandler?(.failure(.noResult))
                 self.queue.cancelAllOperations()
                 return
@@ -124,6 +144,7 @@ final class BatchDownloadService {
 
             switch result {
             case .success where operation is CompleteOperation:
+                self.log.debug("Successfully completed downloading all batches.")
                 self.completionHandler?(.success(self.unzippedBatches))
             case let .success(response) where operation is UnzipBatchOperation && response is UnzippedBatch:
                 guard let batch = response as? UnzippedBatch else {
