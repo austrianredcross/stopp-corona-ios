@@ -74,5 +74,6 @@ enum RevocationStatus {
         localStorage.completedVoluntaryQuarantine = false
         localStorage.completedRequiredQuarantine = false
         localStorage.allClearQuarantine = false
+        localStorage.wasQuarantined = false
     }
 }

@@ -30,8 +30,8 @@ class HealthRepository {
     var subscriptions = Set<AnySubscription>()
 
     init(timeConfiguration: QuarantineTimeConfiguration) {
-        quarantineTimeController = QuarantineTimeController(timeConfiguration: timeConfiguration) { [weak self] quarantineUpdate in
-            self?.handle(quarantineUpdate)
+        quarantineTimeController = QuarantineTimeController(timeConfiguration: timeConfiguration) { [weak self] quarantineStatus in
+            self?.handle(quarantineStatus)
         }
 
         $userHealthStatus.subscribe { [weak self] healthStatus in

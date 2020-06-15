@@ -55,6 +55,7 @@ class QuarantineTimeController {
 
     enum QuarantineStatus {
         case unknown
+        case none
         case cleared
         case completed(QuarantineEnd)
         case inProgress(QuarantineEnd)
@@ -221,26 +222,22 @@ class QuarantineTimeController {
             endOfQuarantines.append(endOfQuarantine)
         }
 
-        let sortedQuarantines = endOfQuarantines.sorted {
-            $0.date.compare($1.date) == .orderedDescending
-        }
-
-        if let longestQuarantine = sortedQuarantines.first {
-            if let daysUntilEnd = longestQuarantine.numberOfDays, daysUntilEnd <= 0 {
-                completion(.completed(longestQuarantine))
-                return
-            }
-
-            completion(.inProgress(longestQuarantine))
+        guard let quarantineEndingLast = endOfQuarantines
+            .sorted(by: { $0.date < $1.date })
+            .last
+        else {
+            let status: QuarantineStatus = localStorage.wasQuarantined ? .cleared : .none
+            completion(status)
             return
         }
 
-        if endOfQuarantines.count == 0 {
-            completion(.cleared)
+        localStorage.wasQuarantined = true
+        if let daysUntilEnd = quarantineEndingLast.numberOfDays, daysUntilEnd <= 0 {
+            completion(.completed(quarantineEndingLast))
             return
         }
 
-        completion(.unknown)
+        completion(.inProgress(quarantineEndingLast))
     }
 
     private func scheduleNotification(for quarantineStatus: QuarantineStatus) {
