@@ -2526,8 +2526,8 @@
 				CODE_SIGN_ENTITLEMENTS = "CoronaContact/Stopp Corona Test.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 20;
 				DEVELOPMENT_TEAM = "$(DEVELOPMENT_TEAM)";
+				CURRENT_PROJECT_VERSION = 24;
 				ENABLE_TESTABILITY = NO;
 				INFOPLIST_FILE = CoronaContact/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
@@ -2551,7 +2551,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "CoronaContact/Stopp Corona.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20;
+				CURRENT_PROJECT_VERSION = 24;
 				DEVELOPMENT_TEAM = "$(DEVELOPMENT_TEAM)";
 				INFOPLIST_FILE = CoronaContact/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
@@ -2635,7 +2635,7 @@
 				CODE_SIGN_ENTITLEMENTS = "CoronaContact/Stopp Corona Test.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 20;
+				CURRENT_PROJECT_VERSION = 24;
 				DEVELOPMENT_TEAM = 56P9N5C6WJ;
 				ENABLE_TESTABILITY = YES;
 				INFOPLIST_FILE = CoronaContact/Info.plist;
