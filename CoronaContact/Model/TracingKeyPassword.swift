@@ -51,7 +51,7 @@ struct TracingKeyPassword: Codable {
     }
 
     static func periodicCleanup(databaseService: DatabaseService) {
-        // remove intervals that are older then 15 days
+        // remove intervals that are older than 15 days
         let deleteBeforeInterval = Int(Date().addDays(-15)!.timeIntervalSince1970 / 600)
         _ = try? databaseService.dba.run(table.filter(interval < deleteBeforeInterval).delete())
     }
