@@ -9,21 +9,21 @@ import Foundation
 
 struct Configuration: Codable {
     private enum CodingKeys: String, CodingKey {
-        case warnBeforeSymptoms = "warn_before_symptoms"
         case redWarningQuarantine = "red_warning_quarantine"
         case yellowWarningQuarantine = "yellow_warning_quarantine"
         case selfDiagnosedQuarantine = "self_diagnosed_quarantine"
+        case exposureConfiguration = "exposure_configuration"
         case diagnosticQuestionnaire = "diagnostic_questionnaire"
         case uploadKeyDays = "upload_keys_days"
     }
 
-    let warnBeforeSymptoms: Int
     /// Quarantine duration for infected contacts in hours
     let redWarningQuarantine: Int
     /// Quarantine duration for possibly infected contacts in hours
     let yellowWarningQuarantine: Int
     /// Quarantine duration for possibly infected user (determined by self test) in hours
     let selfDiagnosedQuarantine: Int
+    let exposureConfiguration: ExposureConfiguration
     let diagnosticQuestionnaire: [Language: Questionnaire?]
 
     /// Days we should upload from the past when uploading keys
@@ -50,11 +50,11 @@ extension Configuration {
             questionnaires[language] = value
         }
         diagnosticQuestionnaire = questionnaires
-        warnBeforeSymptoms = try container.decode(Int.self, forKey: .warnBeforeSymptoms)
         redWarningQuarantine = try container.decode(Int.self, forKey: .redWarningQuarantine)
         yellowWarningQuarantine = try container.decode(Int.self, forKey: .yellowWarningQuarantine)
         selfDiagnosedQuarantine = try container.decode(Int.self, forKey: .selfDiagnosedQuarantine)
         uploadKeyDays = try container.decode(Int.self, forKey: .uploadKeyDays)
+        exposureConfiguration = try container.decode(ExposureConfiguration.self, forKey: .exposureConfiguration)
     }
 }
 

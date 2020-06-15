@@ -13,6 +13,7 @@ class BatchDownloadOperation: ChainedAsyncResultOperation<Void, DownloadedBatch,
     private let networkService: NetworkService
     private var cancellable: Cancellable?
     private let fileManager = FileManager.default
+    private let log = ContextLogger(context: LoggingContext.batchDownload)
 
     private var destinationFolderURL: URL {
         BatchDownloadConfiguration.DownloadDirectory.zipFolderURL(for: batch.interval, batchType: batchType)
@@ -34,6 +35,8 @@ class BatchDownloadOperation: ChainedAsyncResultOperation<Void, DownloadedBatch,
     }
 
     override func main() {
+        log.debug("Start downloading batch with type \(batchType) and date \(batch.interval.date) to \(destinationFileURL).")
+
         cancellable = networkService.downloadBatch(at: path, to: downloadDestination) { [weak self] result in
             guard let self = self else {
                 return
@@ -47,8 +50,16 @@ class BatchDownloadOperation: ChainedAsyncResultOperation<Void, DownloadedBatch,
                     url: self.destinationFileURL
                 )
                 self.finish(with: .success(downloadedBatch))
+                self.log.debug("""
+                Successfully downloaded batch with type \(self.batchType) \
+                and date \(self.batch.interval.date) to \(self.destinationFileURL).
+                """)
             case let .failure(error):
                 self.finish(with: .failure(.network(error)))
+                self.log.debug("""
+                Failed to download batch with type \(self.batchType) and date \(self.batch.interval.date) \
+                to \(self.destinationFileURL) due to an error: \(error).
+                """)
             }
         }
     }

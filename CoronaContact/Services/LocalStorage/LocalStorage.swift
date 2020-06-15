@@ -53,4 +53,10 @@ class LocalStorage {
     /// next day. we store the date of the missing keys here
     @Persisted(userDefaultsKey: "missing_uploaded_keys", notificationName: .init("missingUploadedKeys"), defaultValue: nil)
     var missingUploadedKeysAt: Date?
+
+    @Persisted(userDefaultsKey: "last_yellow_contact", notificationName: .init("lastYellowContact"), defaultValue: nil)
+    var lastYellowContact: Date?
+
+    @Persisted(userDefaultsKey: "last_red_contact", notificationName: .init("last_red_contact"), defaultValue: nil)
+    var lastRedContact: Date?
 }
