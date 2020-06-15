@@ -85,7 +85,7 @@ final class BatchDownloadScheduler {
         scheduleBackgroundTaskIfNeeded()
     }
 
-    func determineDownloadRequirement() -> BatchDownloadService.DownloadRequirement {
+    private func determineDownloadRequirement() -> BatchDownloadService.DownloadRequirement {
         switch healthRepository.userHealthStatus {
         case .isHealthy:
             return .sevenDaysBatchAndDailyBatches
@@ -94,7 +94,7 @@ final class BatchDownloadScheduler {
         }
     }
 
-    func handleRiskCalculationResult(_ result: Result<RiskCalculationResult, RiskCalculationError>) {
+    private func handleRiskCalculationResult(_ result: Result<RiskCalculationResult, RiskCalculationError>) {
         if case let .success(riskResult) = result {
             log.debug("Passing the risk calculation result to the quarantine time controller.")
             QuarantineTimeController.quarantineTimeCalculation(riskResult: riskResult)
