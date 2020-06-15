@@ -80,7 +80,7 @@ final class RiskCalculationController {
         let operations: [DetectDailyExposuresOperation] = dailyBatches.map { batch in
             let operation = DetectDailyExposuresOperation(diagnosisKeyURLs: batch.urls, date: batch.interval.date)
             operation.completionBlock = handleCompletion(of: operation, date: batch.interval.date)
-            operation.handleDailyExposure = { [weak self] in self?.storeDailyExposure($0, at: $1) }
+            operation.handleDailyExposure = { [weak self] exposure, date in self?.storeDailyExposure(exposure, at: date) }
             return operation
         }
 
