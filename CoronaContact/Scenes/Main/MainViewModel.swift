@@ -121,6 +121,7 @@ class MainViewModel: ViewModel {
 
     func onboardingJustFinished() {
         notificationService.askForPermissions()
+        exposureService.enableExposureNotifications(true)
     }
 
     func removeRevocationStatus() {
