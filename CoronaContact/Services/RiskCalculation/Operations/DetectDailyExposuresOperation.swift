@@ -28,9 +28,9 @@ class DetectDailyExposuresOperation: ChainedAsyncResultOperation<DailyExposure, 
     override func main() {
         if let previousExposure = input, previousExposure.diagnosisType == .red || previousExposure.isSkipped {
             log.debug("""
-                Skipping risk calculation for date \(date),\
-                because the previous date had a diagnosisType of \(String(describing: previousExposure.diagnosisType))\
-                or was skipped as well.
+            Skipping risk calculation for date \(date), \
+            because the previous date had a diagnosisType of \(String(describing: previousExposure.diagnosisType)) \
+            or was skipped as well.
             """)
             finish(with: .success(DailyExposure(isSkipped: true)))
             return

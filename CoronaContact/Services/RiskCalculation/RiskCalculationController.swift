@@ -44,8 +44,8 @@ final class RiskCalculationController {
             switch result {
             case let .success((lastExposureDate, isEnoughRisk)) where isEnoughRisk:
                 self.log.debug("""
-                    Successfully processed the full batch which poses a risk.\
-                    Start processing daily batches going back from the last exposure date: \(lastExposureDate).
+                Successfully processed the full batch which poses a risk. \
+                Start processing daily batches going back from the last exposure date: \(lastExposureDate).
                 """)
                 self.processDailyBatches(batches, before: lastExposureDate)
             case .success:
