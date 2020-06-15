@@ -30,6 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     @Injected private var localStorage: LocalStorage
     @Injected private var exposureManager: ExposureManager
     @Injected private var batchDownloadScheduler: BatchDownloadScheduler
+    @Injected private var appStartBatchController: AppStartBatchController
 
     lazy var screenSize: ScreenSize = {
         let width = UIScreen.main.bounds.size.width
@@ -50,6 +51,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         appUpdateService.performMaintenanceTasks()
         batchDownloadScheduler.registerBackgroundTask()
+        appStartBatchController.startBatchProcessing()
 
         UNUserNotificationCenter.current().delegate = self
 
