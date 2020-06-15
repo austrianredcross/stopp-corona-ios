@@ -62,4 +62,7 @@ class LocalStorage {
 
     @Persisted(userDefaultsKey: "last_red_contact", notificationName: .init("last_red_contact"), defaultValue: nil)
     var lastRedContact: Date?
+
+    @Persisted(userDefaultsKey: "performed_batch_processing_at", notificationName: .init("performedBatchProcessingAt"), defaultValue: nil)
+    var performedBatchProcessingAt: Date?
 }
