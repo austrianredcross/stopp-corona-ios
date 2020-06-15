@@ -66,7 +66,7 @@ class ExposureManager {
     }
 
     func getExposureInfo(summary: ENExposureDetectionSummary, completion: @escaping (Result<[Exposure], Error>) -> Void) {
-        let userExplanation = "{Actual copy to be provided by Public Health Authority}"
+        let userExplanation = "get_exposure_info_user_explanation".localized
         manager.getExposureInfo(summary: summary, userExplanation: userExplanation) { exposures, error in
             guard let exposures = exposures else {
                 completion(.failure(error!))
