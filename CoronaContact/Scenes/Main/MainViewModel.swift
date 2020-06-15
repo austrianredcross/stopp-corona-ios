@@ -18,11 +18,7 @@ class MainViewModel: ViewModel {
     weak var viewController: MainViewController?
 
     var automaticHandshakePaused: Bool {
-        if #available(iOS 13.5, *) {
-            return exposureService.exposureNotificationStatus == .bluetoothOff
-        } else {
-            return false
-        }
+        exposureService.exposureNotificationStatus == .bluetoothOff
     }
 
     var displayNotifications: Bool {
