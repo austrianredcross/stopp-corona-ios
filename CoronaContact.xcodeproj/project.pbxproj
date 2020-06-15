@@ -298,7 +298,7 @@
 		83974960BEEA73146FD4930C /* AutoMarginTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839744713BE877F4659927B5 /* AutoMarginTableViewCell.swift */; };
 		83974A3C096BEC7F5CCBFCC7 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83974ED255ED47321535BA0E /* OnboardingViewController.swift */; };
 		83974B1F6F49E544E670E7E3 /* NSString+localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839747A974BEBD27078B488B /* NSString+localized.swift */; };
-		83974B88D707E8ED8B8BC8AE /* TracingKeyPasswords.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83974462389F1C6D2A516DF1 /* TracingKeyPasswords.swift */; };
+		83974B88D707E8ED8B8BC8AE /* TracingKeyPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83974462389F1C6D2A516DF1 /* TracingKeyPassword.swift */; };
 		83974BFDA169F61FBF77FA24 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83974CDC660156EAFABB1829 /* DatabaseService.swift */; };
 		83974C2CD7A816EE91AA6583 /* OutgoingInfectionMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839743E9E3569B229703A3F8 /* OutgoingInfectionMessage.swift */; };
 		83974E01F55C841BAD9C9D1D /* NetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83974B0D3420CEC1F08FB85D /* NetworkSession.swift */; };
@@ -639,7 +639,7 @@
 		8397422DDB8AFB76E5110DB0 /* configuration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = configuration.json; sourceTree = "<group>"; };
 		83974345BBD0522CFDA25B76 /* ConfigurationService+Injection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ConfigurationService+Injection.swift"; sourceTree = "<group>"; };
 		839743E9E3569B229703A3F8 /* OutgoingInfectionMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutgoingInfectionMessage.swift; sourceTree = "<group>"; };
-		83974462389F1C6D2A516DF1 /* TracingKeyPasswords.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TracingKeyPasswords.swift; sourceTree = "<group>"; };
+		83974462389F1C6D2A516DF1 /* TracingKeyPassword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TracingKeyPassword.swift; sourceTree = "<group>"; };
 		839744713BE877F4659927B5 /* AutoMarginTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoMarginTableViewCell.swift; sourceTree = "<group>"; };
 		83974639DCEE7C5E6BF2008F /* OnboardingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		8397467D70446583EE496204 /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
@@ -1053,7 +1053,7 @@
 				61459A56242AC48800DC88A7 /* Website.swift */,
 				83974BF870B575EAC8607D3D /* P2PKitEvent.swift */,
 				61653680247D114F0088A9D6 /* TracingKeys.swift */,
-				83974462389F1C6D2A516DF1 /* TracingKeyPasswords.swift */,
+				83974462389F1C6D2A516DF1 /* TracingKeyPassword.swift */,
 				611D9ED5248E6EEC00EBB420 /* ExposureKeysBatch.swift */,
 			);
 			path = Model;
@@ -2278,7 +2278,7 @@
 				83974E01F55C841BAD9C9D1D /* NetworkSession.swift in Sources */,
 				4E1AAEF2246186FA00D43E2B /* RevocationConfirmationViewModel.swift in Sources */,
 				839740FB82072673E0314F53 /* M001InitialMigration.swift in Sources */,
-				83974B88D707E8ED8B8BC8AE /* TracingKeyPasswords.swift in Sources */,
+				83974B88D707E8ED8B8BC8AE /* TracingKeyPassword.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -30,7 +30,9 @@ class DatabaseService {
     init(location: DatabaseLocation = .file("db2")) {
         dba = try? Connection(location.location)
         log.debug("Database \(location.location)")
-        dba!.trace { self.log.debug($0) }
+        #if DEBUG || STAGE
+            dba!.trace { self.log.debug($0) }
+        #endif
         if let dba = dba {
             migrate(dba)
         } else {
@@ -58,5 +60,9 @@ class DatabaseService {
         } catch {
             log.error("migration failed: \(error)")
         }
+    }
+
+    func periodicCleanup() {
+        TracingKeyPassword.periodicCleanup(databaseService: self)
     }
 }
