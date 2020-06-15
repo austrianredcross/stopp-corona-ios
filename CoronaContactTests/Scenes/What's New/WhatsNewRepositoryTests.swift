@@ -68,7 +68,7 @@ class WhatsNewRepositoryTests: XCTestCase {
         sut.lastWhatsNewShown = "2.0"
 
         // when
-        sut.currentWhatsNewShown()
+        sut.markAsSeen()
 
         // then
         XCTAssertEqual(sut.lastWhatsNewShown, "3.0")
@@ -80,7 +80,7 @@ class WhatsNewRepositoryTests: XCTestCase {
         injectHistory(["3.0": "There's something new..."])
 
         // when
-        sut.currentWhatsNewShown()
+        sut.markAsSeen()
 
         // then
         XCTAssertFalse(sut.isWhatsNewAvailable)
