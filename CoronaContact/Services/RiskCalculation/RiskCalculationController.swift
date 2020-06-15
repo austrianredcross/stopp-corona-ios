@@ -25,7 +25,7 @@ final class RiskCalculationController {
         return queue
     }()
 
-    private let log = ContextLogger(context: .riskCalculation)
+    private let log = ContextLogger(context: LoggingContext.riskCalculation)
     private var completionHandler: CompletionHandler?
     private var riskCalculationResult = RiskCalculationResult()
 
@@ -42,7 +42,7 @@ final class RiskCalculationController {
 
             switch result {
             case let .success((lastExposureDate, isEnoughRisk)) where isEnoughRisk:
-                self.processDailyBatches(batches, startingFrom: lastExposureDate)
+                self.processDailyBatches(batches, before: lastExposureDate)
             case let .success((lastExposureDate, _)):
                 self.completionHandler?(.success(self.riskCalculationResult))
                 self.log.debug("Exposure at \(lastExposureDate) was not risky enough.")
@@ -63,7 +63,7 @@ final class RiskCalculationController {
         return operation
     }
 
-    private func processDailyBatches(_ batches: [UnzippedBatch], startingFrom date: Date) {
+    private func processDailyBatches(_ batches: [UnzippedBatch], before date: Date) {
         let normalizedDate = Calendar.current.startOfDay(for: date)
         let dailyBatches = batches
             .filter { $0.type == .daily }

@@ -23,22 +23,19 @@ class DetectExposuresOperation: AsyncResultOperation<(Date, Bool), RiskCalculati
     }
 
     override func main() {
-        progress = exposureManager.detectExposures(diagnosisKeyURLs: diagnosisKeyURLs) { [weak self] summary, error in
+        progress = exposureManager.detectExposures(diagnosisKeyURLs: diagnosisKeyURLs) { [weak self] result in
             guard let self = self else {
                 return
             }
 
-            if let error = error {
+            switch result {
+            case let .success(summary) where summary.lastExposureDate != nil:
+                self.finish(with: .success((summary.lastExposureDate!, self.isEnoughRisk(for: summary))))
+            case .success:
+                self.cancel()
+            case let .failure(error):
                 self.finish(with: .failure(.exposureDetectionFailed(error)))
-                return
             }
-
-            if let summary = summary, let lastExposureDate = summary.lastExposureDate {
-                self.finish(with: .success((lastExposureDate, self.isEnoughRisk(for: summary))))
-                return
-            }
-
-            self.cancel()
         }
     }
 

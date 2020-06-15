@@ -28,17 +28,13 @@ class DetectDailyExposuresOperation: ChainedAsyncResultOperation<DailyExposure, 
             return
         }
 
-        progress = exposureManager.detectExposures(diagnosisKeyURLs: diagnosisKeyURLs) { [weak self] summary, error in
+        progress = exposureManager.detectExposures(diagnosisKeyURLs: diagnosisKeyURLs) { [weak self] result in
             guard let self = self else {
                 return
             }
 
-            if let error = error {
-                self.finish(with: .failure(.exposureDetectionFailed(error)))
-                return
-            }
-
-            if let summary = summary, self.isEnoughRisk(for: summary) {
+            switch result {
+            case let .success(summary) where self.isEnoughRisk(for: summary):
                 self.exposureManager.getExposureInfo(summary: summary) { [weak self] result in
                     switch result {
                     case let .success(exposures):
@@ -47,8 +43,10 @@ class DetectDailyExposuresOperation: ChainedAsyncResultOperation<DailyExposure, 
                         self?.finish(with: .failure(.exposureInfoUnavailable(error)))
                     }
                 }
-            } else {
+            case .success:
                 self.finish(with: .success(DailyExposure(diagnosisType: .green)))
+            case let .failure(error):
+                self.finish(with: .failure(.exposureDetectionFailed(error)))
             }
         }
     }

@@ -52,10 +52,17 @@ class ExposureManager {
         manager.invalidate()
     }
 
-    func detectExposures(diagnosisKeyURLs: [URL], completion: @escaping ENDetectExposuresHandler) -> Progress {
-        let configuration = configurationService.currentConfig.exposureConfiguration.makeENExposureConfiguration()
+    func detectExposures(diagnosisKeyURLs: [URL], completion: @escaping (Result<ENExposureDetectionSummary, Error>) -> Void) -> Progress {
+        let configuration = ENExposureConfiguration(configurationService.currentConfig.exposureConfiguration)
 
-        return manager.detectExposures(configuration: configuration, diagnosisKeyURLs: diagnosisKeyURLs, completionHandler: completion)
+        return manager.detectExposures(configuration: configuration, diagnosisKeyURLs: diagnosisKeyURLs) { summary, error in
+            guard let summary = summary else {
+                completion(.failure(error!))
+                return
+            }
+
+            completion(.success(summary))
+        }
     }
 
     func getExposureInfo(summary: ENExposureDetectionSummary, completion: @escaping (Result<[Exposure], Error>) -> Void) {

@@ -83,6 +83,7 @@
 		6103207E243F28A000ED3A20 /* en.privacy.html in Resources */ = {isa = PBXBuildFile; fileRef = 6103207B243F289F00ED3A20 /* en.privacy.html */; };
 		610571AD247E9131009A715E /* UIWindow+key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610571AC247E9131009A715E /* UIWindow+key.swift */; };
 		610571AF247E9EBE009A715E /* ReportHealthStatusFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610571AE247E9EBE009A715E /* ReportHealthStatusFlowController.swift */; };
+		61132CF4249759BE00865663 /* ENExposureConfiguration+init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61132CF3249759BE00865663 /* ENExposureConfiguration+init.swift */; };
 		611B78B9242816950040CCB3 /* UIWindow+topMostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611B78B7242816950040CCB3 /* UIWindow+topMostViewController.swift */; };
 		611B78BA242816950040CCB3 /* UIApplication+AppStoreAppId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611B78B8242816950040CCB3 /* UIApplication+AppStoreAppId.swift */; };
 		611B78BE242816BE0040CCB3 /* AppUpdateService+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611B78BC242816BE0040CCB3 /* AppUpdateService+Injection.swift */; };
@@ -435,6 +436,7 @@
 		6103207B243F289F00ED3A20 /* en.privacy.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = en.privacy.html; sourceTree = "<group>"; };
 		610571AC247E9131009A715E /* UIWindow+key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+key.swift"; sourceTree = "<group>"; };
 		610571AE247E9EBE009A715E /* ReportHealthStatusFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportHealthStatusFlowController.swift; sourceTree = "<group>"; };
+		61132CF3249759BE00865663 /* ENExposureConfiguration+init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ENExposureConfiguration+init.swift"; sourceTree = "<group>"; };
 		611B78B7242816950040CCB3 /* UIWindow+topMostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIWindow+topMostViewController.swift"; sourceTree = "<group>"; };
 		611B78B8242816950040CCB3 /* UIApplication+AppStoreAppId.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+AppStoreAppId.swift"; sourceTree = "<group>"; };
 		611B78BC242816BE0040CCB3 /* AppUpdateService+Injection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppUpdateService+Injection.swift"; sourceTree = "<group>"; };
@@ -1574,6 +1576,7 @@
 				617A4E78249152AE00F0B877 /* ENExposureDetectionSummary+lastExposureDate.swift */,
 				61DAF6EE2492181100A3B069 /* ENIntervalNumber+date.swift */,
 				6129B57E24924B6A00E2D15B /* ENRiskLevel+diagnosisType.swift */,
+				61132CF3249759BE00865663 /* ENExposureConfiguration+init.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -2198,6 +2201,7 @@
 				6153A4F92425993B006A8570 /* RequestTanResponse.swift in Sources */,
 				7828A6AA24926C04006AEAAC /* RemoveGoogleData.swift in Sources */,
 				615D36342437417600B608AB /* AttestedSicknessGuidelinesViewController.swift in Sources */,
+				61132CF4249759BE00865663 /* ENExposureConfiguration+init.swift in Sources */,
 				4EDB47F42421EE02000CE24A /* AppDelegate+FontStyles.swift in Sources */,
 				9215254D2427C74A0023F469 /* SelfTestingSelfMonitoringViewModel.swift in Sources */,
 				612C4600246414260072ECF7 /* ConfigurationRetrievable.swift in Sources */,
