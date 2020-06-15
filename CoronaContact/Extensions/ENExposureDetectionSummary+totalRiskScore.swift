@@ -19,7 +19,8 @@ extension ENExposureDetectionSummary {
             return UInt.min
         }
 
-        let detectionInterval: UInt = 5
+        // 5 minutes in seconds
+        let detectionInterval: UInt = 300
         let maxRiskScore = UInt(truncating: attenuationDurations[0]) / detectionInterval * UInt(attenuationLevels.max)
         let medRiskScore = UInt(truncating: attenuationDurations[1]) / detectionInterval * UInt(attenuationLevels.median)
         let minRiskScore = UInt(truncating: attenuationDurations[2]) / detectionInterval * UInt(attenuationLevels.min)

@@ -72,13 +72,13 @@ class DetectDailyExposuresOperation: ChainedAsyncResultOperation<DailyExposure, 
     }
 
     private func isEnoughRisk(for summary: ENExposureDetectionSummary) -> Bool {
-        summary.maximumRiskScore > exposureConfiguration.dailyRiskThreshold
+        summary.totalRiskScore >= exposureConfiguration.dailyRiskThreshold
     }
 
     private func handleExposures(_ exposures: [Exposure], summary: ENExposureDetectionSummary) {
         let redExposures = exposures.filter { $0.transmissionRiskLevel.diagnosisType == .red }
 
-        if redExposures.sumTotalRisk > summary.totalRiskScore {
+        if redExposures.sumTotalRisk >= exposureConfiguration.dailyRiskThreshold {
             log.info("Found a red exposure for the daily batch at date: \(date).")
             let dailyExposure = DailyExposure(diagnosisType: .red)
             reportDailyExposure(dailyExposure)
