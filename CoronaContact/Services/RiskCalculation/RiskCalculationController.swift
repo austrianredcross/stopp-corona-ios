@@ -44,8 +44,8 @@ final class RiskCalculationController {
             switch result {
             case let .success((lastExposureDate, isEnoughRisk)) where isEnoughRisk:
                 self.log.debug("""
-                    Successfully processed the full batch which poses a risk.\
-                    Start processing daily batches going back from the last exposure date: \(lastExposureDate).
+                Successfully processed the full batch which poses a risk. \
+                Start processing daily batches going back from the last exposure date: \(lastExposureDate).
                 """)
                 self.processDailyBatches(batches, before: lastExposureDate)
             case .success:
@@ -69,14 +69,18 @@ final class RiskCalculationController {
     }
 
     private func processDailyBatches(_ batches: [UnzippedBatch], before date: Date) {
-        let normalizedDate = Calendar.current.startOfDay(for: date)
+        let normalize = { (date: Date) in
+            Calendar.current.startOfDay(for: date)
+        }
         let dailyBatches = batches
             .filter { $0.type == .daily }
-            .filter { $0.interval.date <= normalizedDate }
+            .filter { normalize($0.interval.date) <= normalize(date) }
+            .sorted { $0.interval.date > $1.interval.date }
 
         let operations: [DetectDailyExposuresOperation] = dailyBatches.map { batch in
             let operation = DetectDailyExposuresOperation(diagnosisKeyURLs: batch.urls, date: batch.interval.date)
             operation.completionBlock = handleCompletion(of: operation, date: batch.interval.date)
+            operation.handleDailyExposure = { [weak self] in self?.storeDailyExposure($0, at: $1) }
             return operation
         }
 
@@ -98,6 +102,13 @@ final class RiskCalculationController {
         return completeOperation
     }
 
+    private func storeDailyExposure(_ dailyExposure: DailyExposure, at date: Date) {
+        guard let diagnosisType = dailyExposure.diagnosisType else {
+            return
+        }
+        riskCalculationResult[date] = diagnosisType
+    }
+
     private func handleCompletion(of operation: DetectDailyExposuresOperation, date: Date) -> () -> Void {
         // swiftformat:disable:next redundantReturn
         return {
@@ -112,7 +123,6 @@ final class RiskCalculationController {
             case let .success(dailyExposure) where dailyExposure.diagnosisType != nil:
                 let diagnosisType = dailyExposure.diagnosisType!
                 self.log.debug("Successfully processed daily batch at \(date) with diagnosis type: \(diagnosisType).")
-                self.riskCalculationResult[date] = diagnosisType
             case .success:
                 self.log.debug("Skipping daily batch at \(date), because it doesn't have a diagnosis type.")
             case let .failure(error):

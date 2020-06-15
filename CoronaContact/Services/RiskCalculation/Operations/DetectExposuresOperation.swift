@@ -46,6 +46,6 @@ class DetectExposuresOperation: AsyncResultOperation<(Date, Bool), RiskCalculati
     }
 
     private func isEnoughRisk(for summary: ENExposureDetectionSummary) -> Bool {
-        summary.maximumRiskScore > exposureConfiguration.dailyRiskThreshold
+        summary.totalRiskScore >= exposureConfiguration.dailyRiskThreshold
     }
 }

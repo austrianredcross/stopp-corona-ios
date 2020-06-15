@@ -20,6 +20,8 @@ class DetectDailyExposuresOperation: ChainedAsyncResultOperation<DailyExposure, 
         configurationService.currentConfig.exposureConfiguration
     }
 
+    var handleDailyExposure: ((DailyExposure, Date) -> Void)?
+
     init(diagnosisKeyURLs: [URL], date: Date) {
         self.diagnosisKeyURLs = diagnosisKeyURLs
         self.date = date
@@ -28,9 +30,9 @@ class DetectDailyExposuresOperation: ChainedAsyncResultOperation<DailyExposure, 
     override func main() {
         if let previousExposure = input, previousExposure.diagnosisType == .red || previousExposure.isSkipped {
             log.debug("""
-                Skipping risk calculation for date \(date),\
-                because the previous date had a diagnosisType of \(String(describing: previousExposure.diagnosisType))\
-                or was skipped as well.
+            Skipping risk calculation for date \(date), \
+            because the previous date had a diagnosisType of \(String(describing: previousExposure.diagnosisType)) \
+            or was skipped as well.
             """)
             finish(with: .success(DailyExposure(isSkipped: true)))
             return
@@ -48,13 +50,15 @@ class DetectDailyExposuresOperation: ChainedAsyncResultOperation<DailyExposure, 
                 self.exposureManager.getExposureInfo(summary: summary) { [weak self] result in
                     switch result {
                     case let .success(exposures):
-                        self?.handleExposures(exposures)
+                        self?.handleExposures(exposures, summary: summary)
                     case let .failure(error):
                         self?.finish(with: .failure(.exposureInfoUnavailable(error)))
                     }
                 }
             case .success:
-                self.finish(with: .success(DailyExposure(diagnosisType: .green)))
+                let dailyExposure = DailyExposure(diagnosisType: .green)
+                self.reportDailyExposure(dailyExposure)
+                self.finish(with: .success(dailyExposure))
             case let .failure(error):
                 self.finish(with: .failure(.exposureDetectionFailed(error)))
             }
@@ -68,19 +72,27 @@ class DetectDailyExposuresOperation: ChainedAsyncResultOperation<DailyExposure, 
     }
 
     private func isEnoughRisk(for summary: ENExposureDetectionSummary) -> Bool {
-        summary.maximumRiskScore > exposureConfiguration.dailyRiskThreshold
+        summary.totalRiskScore >= exposureConfiguration.dailyRiskThreshold
     }
 
-    private func handleExposures(_ exposures: [Exposure]) {
+    private func handleExposures(_ exposures: [Exposure], summary: ENExposureDetectionSummary) {
         let redExposures = exposures.filter { $0.transmissionRiskLevel.diagnosisType == .red }
 
-        if redExposures.sumTotalRisk > exposureConfiguration.minimumRiskScore {
-            log.debug("Found a red exposure for the daily batch at date: \(date).")
-            finish(with: .success(DailyExposure(diagnosisType: .red)))
+        if redExposures.sumTotalRisk >= exposureConfiguration.dailyRiskThreshold {
+            log.info("Found a red exposure for the daily batch at date: \(date).")
+            let dailyExposure = DailyExposure(diagnosisType: .red)
+            reportDailyExposure(dailyExposure)
+            finish(with: .success(dailyExposure))
         } else {
-            log.debug("Found a yellow exposure for the daily batch at date: \(date).")
-            finish(with: .success(DailyExposure(diagnosisType: .yellow)))
+            log.info("Found a yellow exposure for the daily batch at date: \(date).")
+            let dailyExposure = DailyExposure(diagnosisType: .yellow)
+            reportDailyExposure(dailyExposure)
+            finish(with: .success(dailyExposure))
         }
+    }
+
+    private func reportDailyExposure(_ dailyExposure: DailyExposure) {
+        handleDailyExposure?(dailyExposure, date)
     }
 }
 

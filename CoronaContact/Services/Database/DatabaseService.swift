@@ -17,20 +17,42 @@ class DatabaseService {
         case inMemory
 
         var location: Connection.Location {
-            switch self {
-            case let .file(databaseName):
-                let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
-                return .uri("\(path)/\(databaseName).sqlite3")
-            case .inMemory:
-                return .inMemory
+            if case .file = self, let filePath = filePath {
+                return .uri(filePath)
             }
+            return .inMemory
+        }
+
+        var filePath: String? {
+            if case let .file(databaseName) = self {
+                let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
+                return "\(path)/\(databaseName).sqlite3"
+            }
+            return nil
         }
     }
 
     init(location: DatabaseLocation = .file("db2")) {
         dba = try? Connection(location.location)
-        log.debug("Database \(location.location)")
-        dba!.trace { self.log.debug($0) }
+
+        #if DEBUG || STAGE
+            dba!.trace { self.log.debug($0) }
+        #endif
+
+        // disable iCloud backup for the file
+        if let filePath = location.filePath {
+            do {
+                var fileUrl = URL(fileURLWithPath: filePath)
+                if FileManager.default.fileExists(atPath: filePath) {
+                    var resourceValues = URLResourceValues()
+                    resourceValues.isExcludedFromBackup = true
+                    try fileUrl.setResourceValues(resourceValues)
+                }
+            } catch {
+                log.error("failed setting isExcludedFromBackup \(error)")
+            }
+        }
+
         if let dba = dba {
             migrate(dba)
         } else {
@@ -58,5 +80,9 @@ class DatabaseService {
         } catch {
             log.error("migration failed: \(error)")
         }
+    }
+
+    func periodicCleanup() {
+        TracingKeyPassword.periodicCleanup(databaseService: self)
     }
 }

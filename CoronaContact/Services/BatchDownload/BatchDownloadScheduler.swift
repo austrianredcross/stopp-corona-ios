@@ -53,16 +53,20 @@ final class BatchDownloadScheduler {
 
     func registerBackgroundTask() {
         backgroundTaskScheduler.register(forTaskWithIdentifier: backgroundTaskIdentifier, using: .main) { task in
+            self.log.debug("Starting background batch download task.")
+
             let downloadRequirement = self.determineDownloadRequirement()
 
             let progress = self.batchDownloadService.startBatchDownload(downloadRequirement) { result in
                 switch result {
                 case let .success(batches):
                     self.riskCalculationController.processBatches(batches, completionHandler: self.handleRiskCalculationResult)
+                    self.log.debug("Successfully completed the background batch download task.")
                     task.setTaskCompleted(success: true)
                     self.localStorage.batchDownloadSchedulerResult = BatchDownloadSchedulerResult(task: task, error: nil).description
                 case let .failure(error):
                     task.setTaskCompleted(success: false)
+                    self.log.error("Failed to complete the background batch download task due to an error: \(error).")
                     self.localStorage.batchDownloadSchedulerResult = BatchDownloadSchedulerResult(task: task, error: .download(error)).description
                 }
             }
@@ -70,6 +74,7 @@ final class BatchDownloadScheduler {
             // Handle running out of time
             task.expirationHandler = {
                 progress.cancel()
+                self.log.error("Failed to complete the background batch download task, because the task ran out of time.")
                 self.localStorage.batchDownloadSchedulerResult = BatchDownloadSchedulerResult(task: task, error: .backgroundTimeout).description
             }
 
@@ -91,6 +96,7 @@ final class BatchDownloadScheduler {
 
     func handleRiskCalculationResult(_ result: Result<RiskCalculationResult, RiskCalculationError>) {
         if case let .success(riskResult) = result {
+            log.debug("Passing the risk calculation result to the quarantine time controller.")
             QuarantineTimeController.quarantineTimeCalculation(riskResult: riskResult)
         }
     }
@@ -118,9 +124,9 @@ final class BatchDownloadScheduler {
 
         do {
             try backgroundTaskScheduler.submit(taskRequest)
-            log.debug("Background task at date \(date) scheduled: \(backgroundTaskIdentifier)")
+            log.debug("Successfully scheduled background batch download task at date \(date): \(backgroundTaskIdentifier)")
         } catch {
-            log.error("Unable to schedule background task: \(error)")
+            log.error("Failed to schedule background batch download task: \(error)")
         }
     }
 
