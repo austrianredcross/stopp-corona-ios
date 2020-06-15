@@ -13,8 +13,8 @@ class AppUpdateService {
 
     private var isDisplayingUpdateAlert = false
 
-    @Injected
-    private var maintenanceTaskRepository: MaintenanceTaskRepository
+    @Injected private var maintenanceTaskRepository: MaintenanceTaskRepository
+    @Injected private var databaseService: DatabaseService
 
     var requiresUpdate = false {
         didSet {
@@ -67,6 +67,9 @@ class AppUpdateService {
             task.performMaintenance(completion: { _ in })
         }
         maintenanceTaskRepository.currentMaintenancePerformed()
+        DispatchQueue.global(qos: .background).async {
+            self.databaseService.periodicCleanup()
+        }
     }
 
     private func openAppStore() {
