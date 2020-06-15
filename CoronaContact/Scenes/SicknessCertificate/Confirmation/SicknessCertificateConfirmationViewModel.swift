@@ -8,14 +8,11 @@ import Resolver
 
 class SicknessCertificateConfirmationViewModel: ViewModel {
     weak var coordinator: SicknessCertificateConfirmationCoordinator?
-    @Injected var databaseService: DatabaseService
+    let updateKeys: Bool
 
-    init(with coordinator: SicknessCertificateConfirmationCoordinator) {
+    init(with coordinator: SicknessCertificateConfirmationCoordinator, updateKeys: Bool) {
         self.coordinator = coordinator
-    }
-
-    func onViewDidLoad() {
-        databaseService.saveSicknessState(true)
+        self.updateKeys = updateKeys
     }
 
     func showQuarantineGuidelines() {

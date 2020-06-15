@@ -20,7 +20,7 @@ extension UIView {
             subview.leadingAnchor.constraint(equalTo: leadingAnchor),
             trailingAnchor.constraint(equalTo: subview.trailingAnchor),
             subview.topAnchor.constraint(equalTo: topAnchor),
-            bottomAnchor.constraint(equalTo: subview.bottomAnchor)
+            bottomAnchor.constraint(equalTo: subview.bottomAnchor),
         ])
     }
 }

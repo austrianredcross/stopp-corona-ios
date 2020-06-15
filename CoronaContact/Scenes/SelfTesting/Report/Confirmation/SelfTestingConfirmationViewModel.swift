@@ -4,18 +4,15 @@
 //
 
 import Foundation
+import Resolver
 
 class SelfTestingConfirmationViewModel: ViewModel {
     weak var coordinator: SelfTestingConfirmationCoordinator?
+    let updateKeys: Bool
 
-    init(with coordinator: SelfTestingConfirmationCoordinator) {
+    init(with coordinator: SelfTestingConfirmationCoordinator, updateKeys: Bool) {
         self.coordinator = coordinator
-    }
-
-    func onViewDidLoad() {
-        UserDefaults.standard.isProbablySick = true
-        UserDefaults.standard.isProbablySickAt = Date()
-        NotificationCenter.default.post(name: .DatabaseSicknessUpdated, object: nil)
+        self.updateKeys = updateKeys
     }
 
     func showQuarantineGuidelines() {

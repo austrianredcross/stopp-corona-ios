@@ -6,13 +6,11 @@
 import UIKit
 
 struct Instruction {
-
     let index: Int
     let text: String
 }
 
 class BubbleView: UIView {
-
     private var innerWrapperView: UIView!
     private var label: UILabel!
 
@@ -21,6 +19,7 @@ class BubbleView: UIView {
             innerWrapperView.backgroundColor = bubbleColor
         }
     }
+
     var bubbleSize: CGFloat = 56
     var insets: UIEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
     var text: String = "" {
@@ -66,7 +65,7 @@ class BubbleView: UIView {
             innerWrapperView.topAnchor.constraint(equalTo: topAnchor, constant: insets.top),
             bottomAnchor.constraint(equalTo: innerWrapperView.bottomAnchor, constant: insets.bottom),
             innerWrapperView.widthAnchor.constraint(equalToConstant: bubbleSize),
-            innerWrapperView.heightAnchor.constraint(equalToConstant: bubbleSize)
+            innerWrapperView.heightAnchor.constraint(equalToConstant: bubbleSize),
         ])
     }
 
@@ -80,13 +79,12 @@ class BubbleView: UIView {
 
         NSLayoutConstraint.activate([
             label.centerXAnchor.constraint(equalTo: centerXAnchor),
-            label.centerYAnchor.constraint(equalTo: centerYAnchor)
+            label.centerYAnchor.constraint(equalTo: centerYAnchor),
         ])
     }
 }
 
 class InstructionsView: UIView {
-
     @IBInspectable private var bubbleColor: UIColor = .white
 
     private var stackView: UIStackView!
@@ -131,7 +129,7 @@ class InstructionsView: UIView {
             stackView.leadingAnchor.constraint(equalTo: leadingAnchor),
             stackView.trailingAnchor.constraint(equalTo: trailingAnchor),
             stackView.topAnchor.constraint(equalTo: topAnchor),
-            stackView.bottomAnchor.constraint(equalTo: bottomAnchor)
+            stackView.bottomAnchor.constraint(equalTo: bottomAnchor),
         ])
     }
 
@@ -161,12 +159,12 @@ class InstructionsView: UIView {
             label.leadingAnchor.constraint(equalTo: paddingView.leadingAnchor),
             label.trailingAnchor.constraint(equalTo: paddingView.trailingAnchor),
             label.topAnchor.constraint(equalTo: paddingView.topAnchor, constant: 16),
-            label.bottomAnchor.constraint(equalTo: paddingView.bottomAnchor)
+            label.bottomAnchor.constraint(equalTo: paddingView.bottomAnchor),
         ])
 
         let instructionStackView = UIStackView(arrangedSubviews: [
             bubbleView,
-            paddingView
+            paddingView,
         ])
         instructionStackView.spacing = 16
         instructionStackView.alignment = .top

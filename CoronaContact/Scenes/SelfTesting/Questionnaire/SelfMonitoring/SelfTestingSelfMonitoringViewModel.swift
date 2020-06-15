@@ -7,8 +7,8 @@ import Foundation
 import Resolver
 
 class SelfTestingSelfMonitoringViewModel: ViewModel {
-
     @Injected private var notificationService: NotificationService
+    @Injected private var localStorage: LocalStorage
 
     weak var coordinator: SelfTestingSelfMonitoringCoordinator?
 
@@ -17,10 +17,9 @@ class SelfTestingSelfMonitoringViewModel: ViewModel {
     }
 
     func onViewDidLoad() {
-        UserDefaults.standard.isUnderSelfMonitoring = true
-        UserDefaults.standard.performedSelfTestAt = Date()
+        localStorage.performedSelfTestAt = Date()
+        localStorage.isUnderSelfMonitoring = true
 
-        NotificationCenter.default.post(name: .DatabaseSicknessUpdated, object: nil)
         notificationService.addSelfTestReminderNotificationIn()
     }
 

@@ -3,11 +3,10 @@
 //  CoronaContact
 //
 
-import UIKit
 import Reusable
+import UIKit
 
 struct ButtonAction {
-
     let title: String
     let handler: () -> Void
 
@@ -51,17 +50,11 @@ enum QuarantineNotificationAppearance {
 
 extension RevocationStatus {
     var notificationAppearance: QuarantineNotificationAppearance {
-        switch self {
-        case .allClear:
-            return .regular
-        default:
-            return .color
-        }
+        .color
     }
 }
 
 class QuarantineNotificationView: UIView, NibOwnerLoadable {
-
     @IBInspectable var indicatorColor: UIColor? {
         didSet {
             if let indicatorColor = indicatorColor {
@@ -69,6 +62,7 @@ class QuarantineNotificationView: UIView, NibOwnerLoadable {
             }
         }
     }
+
     @IBInspectable var icon: UIImage? {
         didSet {
             if let icon = icon {
@@ -80,26 +74,32 @@ class QuarantineNotificationView: UIView, NibOwnerLoadable {
             }
         }
     }
+
     @IBInspectable var headlineText: String = "" {
         didSet {
             headlineLabel.text = headlineText
         }
     }
+
     @IBInspectable var descriptionText: String = "" {
         didSet {
-            descriptionLabel.text = descriptionText
+            descriptionLabel.styledText = descriptionText
+            descriptionLabel.textColor = appearance.textColor
         }
     }
+
     @IBInspectable var buttonText: String = "" {
         didSet {
             primaryButton.styledTextNormal = buttonText
         }
     }
+
     @IBInspectable var isPrimaryButtonEnabed: Bool = true {
         didSet {
             primaryButtonContainerView.isHidden = !isPrimaryButtonEnabed
         }
     }
+
     var quarantineCounter: Int? {
         didSet {
             if let quarantineCounter = quarantineCounter {
@@ -110,29 +110,32 @@ class QuarantineNotificationView: UIView, NibOwnerLoadable {
             }
         }
     }
+
     var appearance: QuarantineNotificationAppearance = .color {
         didSet {
             configureAppearance()
         }
     }
 
-    @IBOutlet weak var iconImageView: UIImageView!
-    @IBOutlet weak var innerView: UIView!
-    @IBOutlet weak var headlineLabel: UILabel!
-    @IBOutlet weak var closeButton: UIButton! {
+    @IBOutlet var iconImageView: UIImageView!
+    @IBOutlet var innerView: UIView!
+    @IBOutlet var headlineLabel: UILabel!
+    @IBOutlet var closeButton: UIButton! {
         didSet {
             closeButton.isHidden = true
         }
     }
-    @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var primaryButtonContainerView: UIView!
-    @IBOutlet weak var quarantineCounterLabel: PaddingLabel! {
+
+    @IBOutlet var descriptionLabel: TransLabel!
+    @IBOutlet var primaryButtonContainerView: UIView!
+    @IBOutlet var quarantineCounterLabel: PaddingLabel! {
         didSet {
             quarantineCounterLabel.isHidden = true
         }
     }
-    @IBOutlet weak var primaryButton: ArrowButton!
-    @IBOutlet weak var buttonsStackView: UIStackView!
+
+    @IBOutlet var primaryButton: ArrowButton!
+    @IBOutlet var buttonsStackView: UIStackView!
 
     var handlePrimaryTap: (() -> Void)?
     var handleClose: (() -> Void)?
@@ -182,6 +185,15 @@ class QuarantineNotificationView: UIView, NibOwnerLoadable {
         handleClose?()
     }
 
+    func addLabel(title: String) {
+        buttonsStackView.isHidden = false
+        let label = TransLabel()
+        label.numberOfLines = 0
+        label.attributedText = title.set(style: StyleNames.body.rawValue)
+        buttonsStackView.addArrangedSubview(label)
+        buttonsStackView.isHidden = false
+    }
+
     func addButton(title: String, handler: @escaping () -> Void) {
         guard buttonAction(withTitle: title) == nil else {
             return
@@ -215,7 +227,9 @@ class QuarantineNotificationView: UIView, NibOwnerLoadable {
 
     func removeButtons() {
         buttonActions.removeAll()
-        buttonsStackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
+        buttonsStackView.arrangedSubviews.forEach {
+            $0.removeFromSuperview()
+        }
         buttonsStackView.isHidden = true
     }
 }

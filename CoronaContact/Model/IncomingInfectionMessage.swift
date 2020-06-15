@@ -1,12 +1,11 @@
 //
-//  InfectionMessage.swift
+//  IncomingInfectionMessage.swift
 //  CoronaContact
 //
 
 import Foundation
 
 struct IncomingInfectionMessage: Codable {
-
     private enum CodingKeys: String, CodingKey {
         case identifier = "id", message
     }
@@ -16,7 +15,6 @@ struct IncomingInfectionMessage: Codable {
 }
 
 struct InfectionMessagesResponse: Codable {
-
     private enum CodingKeys: String, CodingKey {
         case messages = "infection-messages"
     }

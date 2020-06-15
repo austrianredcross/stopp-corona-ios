@@ -86,4 +86,5 @@ public enum HTTPStatusCode: Int, Codable {
         self = statusCode
     }
 }
+
 // swiftlint:enable identifier_name

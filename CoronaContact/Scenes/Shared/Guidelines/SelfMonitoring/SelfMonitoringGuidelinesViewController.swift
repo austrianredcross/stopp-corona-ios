@@ -3,14 +3,13 @@
 //  CoronaContact
 //
 
-import UIKit
 import Reusable
+import UIKit
 
 final class SelfMonitoringGuidelinesViewController: UIViewController, StoryboardBased, ViewModelBased, FlashableScrollIndicators {
-
-    @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var formFilledDateLabel: TransLabel!
-    @IBOutlet weak var instructionsView: InstructionsView!
+    @IBOutlet var scrollView: UIScrollView!
+    @IBOutlet var formFilledDateLabel: TransLabel!
+    @IBOutlet var instructionsView: InstructionsView!
 
     var viewModel: SelfMonitoringGuidelinesViewModel?
 
@@ -39,7 +38,7 @@ final class SelfMonitoringGuidelinesViewController: UIViewController, Storyboard
         instructionsView.instructions = [
             .init(index: 1, text: "self_monitoring_guidelines_next_steps_first".localized),
             .init(index: 2, text: "self_monitoring_guidelines_next_steps_second".localized),
-            .init(index: 3, text: "self_monitoring_guidelines_next_steps_third".localized)
+            .init(index: 3, text: "self_monitoring_guidelines_next_steps_third".localized),
         ]
 
         if let date = viewModel?.dateLabel {

@@ -14,8 +14,10 @@ private let dateString: (Date) -> String = { date in
 }
 
 class RevokeSicknessStatusReportViewModel: ViewModel {
-
+    @Injected private var healthRepository: HealthRepository
     @Injected private var flowController: RevokeSicknessFlowController
+    @Injected private var localStorage: LocalStorage
+    @Injected private var configurationService: ConfigurationService
 
     weak var coordinator: RevokeSicknessStatusReportCoordinator?
 
@@ -26,7 +28,7 @@ class RevokeSicknessStatusReportViewModel: ViewModel {
     }
 
     var dateLabel: String? {
-        guard let date = UserDefaults.standard.attestedSicknessAt else {
+        guard let date = localStorage.attestedSicknessAt else {
             return nil
         }
 
@@ -42,24 +44,39 @@ class RevokeSicknessStatusReportViewModel: ViewModel {
             return
         }
 
-        flowController.submit { [weak self] result in
+        guard let attestedSicknessAt = localStorage.attestedSicknessAt else { fatalError() }
+
+        let uploadDays = configurationService.currentConfig.uploadKeyDays
+        let startDate = attestedSicknessAt.addDays(-uploadDays)!
+        let endDate = attestedSicknessAt
+        var diagnosisType: DiagnosisType
+        if localStorage.isProbablySick {
+            diagnosisType = .yellow
+        } else {
+            diagnosisType = .green
+        }
+
+        flowController.submit(from: startDate, untilIncluding: endDate, diagnosisType: diagnosisType) { [weak self] result in
             completion()
 
             switch result {
-            case .failure(let error):
+            case let .failure(.submission(error)):
                 self?.coordinator?.showErrorAlert(
-                        title: error.displayableError.title,
-                        error: error.displayableError.description,
-                        closeAction: { _ in
-                            if error.personalDataInvalid {
-                                self?.coordinator?.goBackToPersonalData()
-                            } else if error.tanInvalid {
-                                self?.coordinator?.goBackToTanConfirmation()
-                            }
+                    title: error.displayableError.title,
+                    error: error.displayableError.description,
+                    closeAction: { _ in
+                        if error.personalDataInvalid {
+                            self?.coordinator?.goBackToPersonalData()
+                        } else if error.tanInvalid {
+                            self?.coordinator?.goBackToTanConfirmation()
                         }
+                    }
                 )
             case .success:
                 self?.coordinator?.showConfirmation()
+                self?.healthRepository.revokeProvenSickness()
+            default:
+                break
             }
         }
     }

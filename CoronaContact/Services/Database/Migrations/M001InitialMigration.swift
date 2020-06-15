@@ -1,45 +1,36 @@
+//
+//  M001InitialMigration.swift
+//  CoronaContact
+//
+
+import ExposureNotification
 import Foundation
-import SQLiteMigrationManager
 import SQLite
+import SQLiteMigrationManager
 
 struct M001InitialMigration: Migration {
-    var version: Int64 = 2020_04_05__18_00_00__000
+    var version: Int64 = 20_200_608_100_000
 
-    let contacts = Table("handshakes")
-    let outMessages = Table("out_messages")
-    let inMessages = Table("in_messages")
-
-    let contactId = Expression<Int>("cid")
-    let messageId = Expression<Int>("mid")
-    let pubkey = Expression<Data>("pubkey")
-    let timestamp = Expression<Date>("timestamp")
-    let uuid = Expression<String>("uuid")
-    let created = Expression<Date>("created")
-    let messageType = Expression<String>("type")
+    private struct TracingKeyPassword {
+        static let table = Table("key_interval")
+        static let timestamp = Expression<Int>("tstamp")
+        static let password = Expression<String>("pw")
+    }
 
     func migrateDatabase(_ dba: Connection) throws {
+        // delete old tables from version 1.2.x
+        let contacts = Table("handshakes_2")
+        let outMessages = Table("out_messages_2")
+        let inMessages = Table("in_messages")
 
-        try dba.run(contacts.create(ifNotExists: true) { table in
-            table.column(contactId, primaryKey: true)
-            table.column(pubkey)
-            table.column(timestamp)
+        try dba.run(contacts.drop(ifExists: true))
+        try dba.run(outMessages.drop(ifExists: true))
+        try dba.run(inMessages.drop(ifExists: true))
+
+        // create new table for upload passwords
+        try dba.run(TracingKeyPassword.table.create(ifNotExists: true) { table in
+            table.column(TracingKeyPassword.timestamp, primaryKey: true)
+            table.column(TracingKeyPassword.password)
         })
-
-        try dba.run(inMessages.create(ifNotExists: true) { table in
-            table.column(messageId, primaryKey: true)
-            table.column(messageType)
-            table.column(uuid)
-            table.column(timestamp)
-            table.column(created)
-        })
-
-        try dba.run(outMessages.create(ifNotExists: true) { table in
-            table.column(messageId, primaryKey: true)
-            table.column(messageType)
-            table.column(contactId)
-            table.column(uuid)
-            table.column(created)
-        })
-
     }
 }

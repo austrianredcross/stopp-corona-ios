@@ -7,7 +7,6 @@ import Foundation
 import Resolver
 
 class SelfTestingPersonalDataViewModel: ViewModel {
-
     @Injected private var flowController: SelfTestingReportFlowController
 
     weak var coordinator: SelfTestingPersonalDataCoordinator?
@@ -23,16 +22,18 @@ class SelfTestingPersonalDataViewModel: ViewModel {
             return
         }
 
-        personalData.warning = .yellow
+        personalData.diagnosisType = .yellow
 
         flowController.tanConfirmation(personalData: personalData) { [weak self] result in
             completion()
 
             switch result {
-            case .failure(let error):
+            case let .failure(.tanConfirmation(error)):
                 self?.coordinator?.showErrorAlert(title: error.title, error: error.description)
             case .success:
                 self?.coordinator?.tanConfirmation()
+            default:
+                break
             }
         }
     }

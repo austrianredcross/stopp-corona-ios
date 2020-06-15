@@ -6,15 +6,16 @@
 import UIKit
 
 final class SelfTestingTanConfirmationCoordinator: Coordinator, ErrorPresentableCoordinator {
-
     lazy var rootViewController: SelfTestingTanConfirmationViewController = {
         SelfTestingTanConfirmationViewController.instantiate()
     }()
 
     var navigationController: UINavigationController
+    let updateKeys: Bool
 
-    init(navigationController: UINavigationController) {
+    init(navigationController: UINavigationController, updateKeys: Bool) {
         self.navigationController = navigationController
+        self.updateKeys = updateKeys
     }
 
     override func start() {
@@ -27,7 +28,7 @@ final class SelfTestingTanConfirmationCoordinator: Coordinator, ErrorPresentable
     }
 
     func reportStatus() {
-        let child = SelfTestingStatusReportCoordinator(navigationController: navigationController)
+        let child = SelfTestingStatusReportCoordinator(navigationController: navigationController, updateKeys: updateKeys)
         addChildCoordinator(child)
         child.start()
     }

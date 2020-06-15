@@ -3,6 +3,7 @@
 //  CoronaContact
 //
 
+import Resolver
 import UIKit
 
 private let dateFormatter = DateFormatter()
@@ -18,19 +19,36 @@ enum UserHealthStatus {
     case isProbablySick(quarantineDays: Int = 0)
     case hasAttestedSickness
 
-    /// most severy state wins
+    /// most severe state wins
     init(quarantineDays: Int? = nil) {
         let quarantineDays = quarantineDays ?? 0
+        let localStorage: LocalStorage = Resolver.resolve()
 
-        if UserDefaults.standard.hasAttestedSickness {
+        if localStorage.hasAttestedSickness {
             self = .hasAttestedSickness
-        } else if UserDefaults.standard.isProbablySick {
+        } else if localStorage.isProbablySick {
             self = .isProbablySick(quarantineDays: quarantineDays)
-        } else if UserDefaults.standard.isUnderSelfMonitoring {
+        } else if localStorage.isUnderSelfMonitoring {
             self = .isUnderSelfMonitoring
         } else {
             self = .isHealthy
         }
+    }
+
+    var canUploadMissingKeys: Bool {
+        let localStorage: LocalStorage = Resolver.resolve()
+        guard let missingKeysAt = localStorage.missingUploadedKeysAt else {
+            return false
+        }
+        return missingKeysAt.startOfDayUTC() < Date().startOfDayUTC()
+    }
+
+    func canRevokeProvenSickness() -> Bool {
+        let localStorage: LocalStorage = Resolver.resolve()
+        guard let attestedSicknessAt = localStorage.attestedSicknessAt else {
+            return false
+        }
+        return attestedSicknessAt.addDays(2)! > Date()
     }
 
     var icon: UIImage {
@@ -84,12 +102,10 @@ enum UserHealthStatus {
     }
 
     var quarantineDays: Int? {
-        switch self {
-        case .isProbablySick(let quarantineDays):
+        if case let .isProbablySick(quarantineDays) = self {
             return quarantineDays
-        default:
-            return nil
         }
+        return nil
     }
 
     var endOfQuarantine: String? {
@@ -117,7 +133,7 @@ enum UserHealthStatus {
     var secondaryActionText: String? {
         switch self {
         case .hasAttestedSickness:
-            return "sickness_certificate_attest_button_revoke".localized
+            return canRevokeProvenSickness() ? "sickness_certificate_attest_button_revoke".localized : nil
         case .isUnderSelfMonitoring:
             return "self_testing_symptoms_secondary_button".localized
         case .isProbablySick:

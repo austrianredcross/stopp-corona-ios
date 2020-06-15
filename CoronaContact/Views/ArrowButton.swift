@@ -3,11 +3,10 @@
 //  CoronaContact
 //
 
-import UIKit
 import SwiftRichString
+import UIKit
 
 class ArrowButton: TransButton {
-
     @IBInspectable private var arrowImage: UIImage? = UIImage(named: "ArrowRight") {
         didSet {
             configureButton()
@@ -15,6 +14,7 @@ class ArrowButton: TransButton {
             layoutIfNeeded()
         }
     }
+
     @IBInspectable var spacing: CGFloat = 8 {
         didSet {
             setNeedsLayout()

@@ -7,10 +7,13 @@ import Foundation
 import Resolver
 
 class SelfTestingStatusReportViewModel: ViewModel {
-
     @Injected private var flowController: SelfTestingReportFlowController
+    @Injected private var healthRepository: HealthRepository
+    @Injected private var localStorage: LocalStorage
+    @Injected private var configurationService: ConfigurationService
 
     weak var coordinator: SelfTestingStatusReportCoordinator?
+    let updateKeys: Bool
 
     var agreesToTerms = false
 
@@ -18,8 +21,9 @@ class SelfTestingStatusReportViewModel: ViewModel {
         agreesToTerms
     }
 
-    init(with coordinator: SelfTestingStatusReportCoordinator) {
+    init(with coordinator: SelfTestingStatusReportCoordinator, updateKeys: Bool) {
         self.coordinator = coordinator
+        self.updateKeys = updateKeys
     }
 
     func goToNext(completion: @escaping () -> Void) {
@@ -27,24 +31,42 @@ class SelfTestingStatusReportViewModel: ViewModel {
             return
         }
 
-        flowController.submit { [weak self] result in
-            completion()
+        let uploadDays = configurationService.currentConfig.uploadKeyDays
+        var startDate = Date().addDays(-uploadDays)!
+        var endDate = Date()
 
+        if updateKeys, let missingUploadedKeysAt = localStorage.missingUploadedKeysAt {
+            startDate = missingUploadedKeysAt
+            endDate = missingUploadedKeysAt
+        }
+
+        flowController.submit(from: startDate, untilIncluding: endDate, diagnosisType: .yellow) { [weak self] result in
+            completion()
+            guard let self = self else {
+                return
+            }
             switch result {
-            case .failure(let error):
-                self?.coordinator?.showErrorAlert(
+            case let .failure(.submission(error)):
+                self.coordinator?.showErrorAlert(
                     title: error.displayableError.title,
                     error: error.displayableError.description,
                     closeAction: { _ in
                         if error.personalDataInvalid {
-                            self?.coordinator?.goBackToPersonalData()
+                            self.coordinator?.goBackToPersonalData()
                         } else if error.tanInvalid {
-                            self?.coordinator?.goBackToTanConfirmation()
+                            self.coordinator?.goBackToTanConfirmation()
                         }
                     }
                 )
             case .success:
-                self?.coordinator?.showConfirmation()
+                if self.updateKeys {
+                    self.localStorage.missingUploadedKeysAt = nil
+                } else {
+                    self.healthRepository.setProbablySick()
+                }
+                self.coordinator?.showConfirmation()
+            default:
+                break
             }
         }
     }

@@ -3,8 +3,8 @@
 //  CoronaContact
 //
 
-import UIKit
 import Resolver
+import UIKit
 
 class ApplicationCoordinator: Coordinator {
     let window: UIWindow?
@@ -15,12 +15,12 @@ class ApplicationCoordinator: Coordinator {
     }
 
     lazy var rootViewController: UINavigationController = {
-        #if (DEBUG || STAGE)
-        let dvc = DebugNavigationController()
-        dvc.coordinator = self
-        return dvc
+        #if DEBUG || STAGE
+            let dvc = DebugNavigationController()
+            dvc.coordinator = self
+            return dvc
         #else
-        return UINavigationController()
+            return UINavigationController()
         #endif
     }()
 
@@ -57,6 +57,6 @@ class ApplicationCoordinator: Coordinator {
             presented.dismiss(animated: false)
         }
         rootViewController.popToRootViewController(animated: false)
-        mainCoordinator?.selfTesting()
+        mainCoordinator?.selfTesting(updateKeys: false)
     }
 }

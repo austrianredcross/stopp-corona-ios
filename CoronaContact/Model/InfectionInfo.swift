@@ -5,63 +5,20 @@
 
 import Foundation
 
-// MARK: - InfectionInfo
-
-struct InfectionInfo: Codable {
-
-    private enum CodingKeys: String, CodingKey {
-        case
-        uuid,
-        personalData = "personal-data",
-        infectionMessages = "infection-messages",
-        authorization
-    }
-
-    /// An uuid which was requested via the `/request-tan` endpoint
-    let uuid: String
-    let personalData: PersonalData
-    let infectionMessages: [UploadInfectionMessage]
-    let authorization: String
-}
-
-// MARK: - PersonalData
-
-struct UploadInfectionMessage: Codable {
-
-    private enum CodingKeys: String, CodingKey {
-        case
-        message,
-        addressPrefix
-    }
-
-    let message: String
-    let addressPrefix: String
-}
-
 // MARK: - PersonalData
 
 struct PersonalData: Codable {
-
     private enum CodingKeys: String, CodingKey {
         case
-        mobileNumber = "mobile-number",
-        warning = "type"
+            mobileNumber = "mobile-number",
+            diagnosisType = "type"
     }
 
     let mobileNumber: String
-    var warning: Warning
+    var diagnosisType: DiagnosisType
 
-    init(mobileNumber: String, warning: Warning = .red) {
+    init(mobileNumber: String, diagnosisType: DiagnosisType = .red) {
         self.mobileNumber = mobileNumber
-        self.warning = warning
+        self.diagnosisType = diagnosisType
     }
-}
-
-// MARK: - Warning
-
-enum Warning: String, Codable {
-
-    case red = "red-warning"
-    case yellow = "yellow-warning"
-    case green = "green-warning"
 }

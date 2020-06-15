@@ -7,7 +7,6 @@ import Foundation
 import Resolver
 
 class RevocationTanConfirmationViewModel: ViewModel {
-
     @Injected private var flowController: RevocationFlowController
 
     weak var coordinator: RevocationTanConfirmationCoordinator?
@@ -31,9 +30,11 @@ class RevocationTanConfirmationViewModel: ViewModel {
             completion()
 
             switch result {
-            case .failure(let error):
+            case let .failure(.tanConfirmation(error)):
                 self?.coordinator?.showErrorAlert(title: error.title, error: error.description)
             case .success:
+                break
+            default:
                 break
             }
         }

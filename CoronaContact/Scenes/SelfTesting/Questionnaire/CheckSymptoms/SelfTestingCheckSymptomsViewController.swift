@@ -3,14 +3,13 @@
 //  CoronaContact
 //
 
-import UIKit
 import Reusable
+import UIKit
 
 final class SelfTestingCheckSymptomsViewController: UIViewController, StoryboardBased, ViewModelBased {
-
-    @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var stackView: UIStackView!
-    @IBOutlet weak var button: UIButton!
+    @IBOutlet var scrollView: UIScrollView!
+    @IBOutlet var stackView: UIStackView!
+    @IBOutlet var button: UIButton!
 
     var viewModel: SelfTestingCheckSymptomsViewModel?
 

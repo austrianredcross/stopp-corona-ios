@@ -8,29 +8,31 @@ import Foundation
 // MARK: - Configuration
 
 struct Configuration: Codable {
-
     private enum CodingKeys: String, CodingKey {
-        case warnBeforeSymptoms = "warn_before_symptoms"
         case redWarningQuarantine = "red_warning_quarantine"
         case yellowWarningQuarantine = "yellow_warning_quarantine"
         case selfDiagnosedQuarantine = "self_diagnosed_quarantine"
+        case exposureConfiguration = "exposure_configuration"
         case diagnosticQuestionnaire = "diagnostic_questionnaire"
+        case uploadKeyDays = "upload_keys_days"
     }
 
-    let warnBeforeSymptoms: Int
     /// Quarantine duration for infected contacts in hours
     let redWarningQuarantine: Int
     /// Quarantine duration for possibly infected contacts in hours
     let yellowWarningQuarantine: Int
     /// Quarantine duration for possibly infected user (determined by self test) in hours
     let selfDiagnosedQuarantine: Int
+    let exposureConfiguration: ExposureConfiguration
     let diagnosticQuestionnaire: [Language: Questionnaire?]
+
+    /// Days we should upload from the past when uploading keys
+    let uploadKeyDays: Int
 }
 
 // MARK: Decodable
 
 extension Configuration {
-
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         let questionnaireContainer = try container.nestedContainer(keyedBy: Language.CodingKeys.self, forKey: .diagnosticQuestionnaire)
@@ -47,17 +49,17 @@ extension Configuration {
             let value = try questionnaireContainer.decodeIfPresent(Questionnaire.self, forKey: languageKey)
             questionnaires[language] = value
         }
-        self.diagnosticQuestionnaire = questionnaires
-        self.warnBeforeSymptoms = try container.decode(Int.self, forKey: .warnBeforeSymptoms)
-        self.redWarningQuarantine = try container.decode(Int.self, forKey: .redWarningQuarantine)
-        self.yellowWarningQuarantine = try container.decode(Int.self, forKey: .yellowWarningQuarantine)
-        self.selfDiagnosedQuarantine = try container.decode(Int.self, forKey: .selfDiagnosedQuarantine)
+        diagnosticQuestionnaire = questionnaires
+        redWarningQuarantine = try container.decode(Int.self, forKey: .redWarningQuarantine)
+        yellowWarningQuarantine = try container.decode(Int.self, forKey: .yellowWarningQuarantine)
+        selfDiagnosedQuarantine = try container.decode(Int.self, forKey: .selfDiagnosedQuarantine)
+        uploadKeyDays = try container.decode(Int.self, forKey: .uploadKeyDays)
+        exposureConfiguration = try container.decode(ExposureConfiguration.self, forKey: .exposureConfiguration)
     }
 }
 
 // MARK: - ConfigurationRespone
 
 struct ConfigurationResponse: Codable {
-
     let configuration: Configuration
 }

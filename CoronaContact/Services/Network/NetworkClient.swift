@@ -12,7 +12,6 @@ import Moya
  Do not use directly, use `NetworkService` instead.
  */
 final class NetworkClient {
-
     typealias PayloadCompletion<Payload> = (_ result: Result<Payload, NetworkError>) -> Void
 
     var handleStatusCode: ((Int) -> Void)?
@@ -20,10 +19,11 @@ final class NetworkClient {
     private let provider = MoyaProvider<NetworkEndpoint>(session: NetworkSession.session())
     private let log = LoggingService.self
 
-    func requestPlain(_ target: NetworkEndpoint, completion: @escaping (Result<Data, NetworkError>) -> Void) {
+    @discardableResult
+    func requestPlain(_ target: NetworkEndpoint, completion: @escaping (Result<Data, NetworkError>) -> Void) -> Cancellable {
         provider.request(target) { [weak self] result in
             switch result {
-            case .success(let response):
+            case let .success(response):
                 self?.handleStatusCode?(response.statusCode)
 
                 do {
@@ -31,7 +31,7 @@ final class NetworkClient {
                     completion(.success(filteredResponse.data))
                     self?.log.verbose(response.detailedDebugDescription, context: .network)
 
-                } catch let error {
+                } catch {
                     let statusCode = HTTPStatusCode(statusCode: response.statusCode)
                     if statusCode == .notModified {
                         completion(.failure(.notModifiedError))
@@ -44,7 +44,7 @@ final class NetworkClient {
                     self?.log.error(response.detailedDebugDescription, context: .network)
                 }
 
-            case .failure(let error):
+            case let .failure(error):
                 self?.log.error(error.detailedDebugDescription, context: .network)
                 self?.handleStatusCode?(error.errorCode)
 
@@ -56,20 +56,26 @@ final class NetworkClient {
         }
     }
 
-    func request<Payload: Decodable>(_ target: NetworkEndpoint, completion: @escaping (Result<Payload, NetworkError>) -> Void) {
+    @discardableResult
+    func request<Payload: Decodable>(_ target: NetworkEndpoint, completion: @escaping (Result<Payload, NetworkError>) -> Void) -> Cancellable {
         provider.request(target) { [weak self] result in
             switch result {
-            case .success(let response):
+            case let .success(response):
 
                 self?.handleStatusCode?(response.statusCode)
 
                 do {
                     let filteredResponse = try response.filterSuccessfulStatusCodes()
-                    let parsedResponse: Result<Payload, NetworkError> = filteredResponse.parseJSON()
-                    completion(parsedResponse)
+                    completion(.success(try filteredResponse.parseJSON()))
                     self?.log.verbose(response.detailedDebugDescription, context: .network)
 
-                } catch let error {
+                } catch {
+                    if let error = error as? DecodingError {
+                        self?.log.error("\(response.detailedDebugDescription) DecodingError: \(error)", context: .network)
+                        completion(.failure(.parsingError(error)))
+                        return
+                    }
+
                     let statusCode = HTTPStatusCode(statusCode: response.statusCode)
                     if statusCode == .notModified {
                         completion(.failure(.notModifiedError))
@@ -79,10 +85,11 @@ final class NetworkClient {
                     let errorResponse = response.parseError()
 
                     completion(.failure(.unknownError(statusCode, error, errorResponse)))
-                    self?.log.error(response.detailedDebugDescription, context: .network)
-               }
+                    let text = String(data: response.data, encoding: .utf8)
+                    self?.log.error("\(response.detailedDebugDescription) data: \(text ?? "<no response data>")", context: .network)
+                }
 
-            case .failure(let error):
+            case let .failure(error):
                 self?.log.error(error.detailedDebugDescription, context: .network)
                 self?.handleStatusCode?(error.errorCode)
 
@@ -96,7 +103,6 @@ final class NetworkClient {
 }
 
 private extension Response {
-
     var detailedDebugDescription: String {
         var output = [String]()
 
@@ -114,7 +120,6 @@ private extension Response {
 }
 
 private extension MoyaError {
-
     var detailedDebugDescription: String {
         if let moyaResponse = response {
             return moyaResponse.detailedDebugDescription

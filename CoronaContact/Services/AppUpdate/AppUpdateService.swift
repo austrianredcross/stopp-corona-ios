@@ -3,14 +3,18 @@
 //  CoronaContact
 //
 
+import Resolver
 import UIKit
 
 class AppUpdateService {
-
     private var window: UIWindow? {
-        UIApplication.shared.keyWindow
+        UIWindow.key
     }
+
     private var isDisplayingUpdateAlert = false
+
+    @Injected private var maintenanceTaskRepository: MaintenanceTaskRepository
+    @Injected private var databaseService: DatabaseService
 
     var requiresUpdate = false {
         didSet {
@@ -54,11 +58,25 @@ class AppUpdateService {
         }
     }
 
+    func performMaintenanceTasks() {
+        let tasks = maintenanceTaskRepository.newMaintenanceTasks
+        guard !tasks.isEmpty else {
+            return
+        }
+        for task in tasks {
+            task.performMaintenance(completion: { _ in })
+        }
+        maintenanceTaskRepository.currentMaintenancePerformed()
+        DispatchQueue.global(qos: .background).async {
+            self.databaseService.periodicCleanup()
+        }
+    }
+
     private func openAppStore() {
         guard let url = UIApplication.appStoreAppDeepUrl,
             UIApplication.shared.canOpenURL(url) else {
-                print("Can't Open App Store on the simulator")
-                return
+            print("Can't Open App Store on the simulator")
+            return
         }
 
         UIApplication.shared.open(url, options: [:])

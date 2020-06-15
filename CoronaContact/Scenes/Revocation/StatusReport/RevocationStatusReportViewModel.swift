@@ -14,8 +14,10 @@ private let dateString: (Date) -> String = { date in
 }
 
 class RevocationStatusReportViewModel: ViewModel {
-
     @Injected private var flowController: RevocationFlowController
+    @Injected private var localStorage: LocalStorage
+    @Injected private var healthRepository: HealthRepository
+    @Injected private var configurationService: ConfigurationService
 
     weak var coordinator: RevocationStatusReportCoordinator?
 
@@ -26,7 +28,7 @@ class RevocationStatusReportViewModel: ViewModel {
     }
 
     var dateLabel: String? {
-        guard let date = UserDefaults.standard.isProbablySickAt else {
+        guard let date = localStorage.isProbablySickAt else {
             return nil
         }
 
@@ -41,12 +43,17 @@ class RevocationStatusReportViewModel: ViewModel {
         guard isValid else {
             return
         }
+        guard let isProbablySickAt = localStorage.isProbablySickAt else { fatalError() }
 
-        flowController.submit { [weak self] result in
+        let uploadDays = configurationService.currentConfig.uploadKeyDays
+        let startDate = isProbablySickAt.addDays(-uploadDays)!
+        let endDate = Date()
+
+        flowController.submit(from: startDate, untilIncluding: endDate, diagnosisType: .green) { [weak self] result in
             completion()
 
             switch result {
-            case .failure(let error):
+            case let .failure(.submission(error)):
                 self?.coordinator?.showErrorAlert(
                     title: error.displayableError.title,
                     error: error.displayableError.description,
@@ -59,7 +66,12 @@ class RevocationStatusReportViewModel: ViewModel {
                     }
                 )
             case .success:
+                self?.healthRepository.revokeProbablySick()
+                self?.localStorage.isUnderSelfMonitoring = false
+                self?.localStorage.completedVoluntaryQuarantine = true
                 self?.coordinator?.showConfirmation()
+            default:
+                break
             }
         }
     }

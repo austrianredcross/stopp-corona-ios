@@ -1,5 +1,5 @@
 //
-//  Appdelegate+Injection.swift
+//  AppDelegate+Injection.swift
 //  CoronaContact
 //
 
@@ -10,18 +10,19 @@ import Resolver
 extension Resolver: ResolverRegistering {
     public static func registerAllServices() {
         registerLoggingeService()
-        registerMessageUpdateServices()
         registerConfigurationServices()
         registerDatabaseServices()
-        registerCryptoServices()
-        registerNearbyServices()
         registerNetworkServices()
         registerSelfTestingDependencies()
-        registerSicknessCertificateDependencies()
         registerRevocationDependencies()
         registerRevokeSicknessDependencies()
         registerNotificationServices()
         registerAppUpdateServices()
         registerHealthRepository()
+        registerLocalStorageServices()
+        registerSicknessCertificateDependencies()
+        registerBatchDownloadServices()
+        registerRiskCalculationController()
+        registerExposureServices()
     }
 }

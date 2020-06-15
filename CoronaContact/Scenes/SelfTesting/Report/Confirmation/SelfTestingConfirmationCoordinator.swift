@@ -6,19 +6,20 @@
 import UIKit
 
 final class SelfTestingConfirmationCoordinator: Coordinator {
-
     lazy var rootViewController: SelfTestingConfirmationViewController = {
         SelfTestingConfirmationViewController.instantiate()
     }()
 
     var navigationController: UINavigationController
+    let updateKeys: Bool
 
-    init(navigationController: UINavigationController) {
+    init(navigationController: UINavigationController, updateKeys: Bool) {
         self.navigationController = navigationController
+        self.updateKeys = updateKeys
     }
 
     override func start() {
-        rootViewController.viewModel = SelfTestingConfirmationViewModel(with: self)
+        rootViewController.viewModel = SelfTestingConfirmationViewModel(with: self, updateKeys: updateKeys)
         navigationController.pushViewController(rootViewController, animated: true)
     }
 

@@ -6,7 +6,6 @@
 import Foundation
 
 struct Questionnaire: Codable {
-
     let questions: [Question]
 
     public init(from decoder: Decoder) throws {

@@ -3,17 +3,16 @@
 //  CoronaContact
 //
 
-import UIKit
 import Reusable
+import UIKit
 
 final class RevocationPersonalDataViewController: UIViewController,
     StoryboardBased, ViewModelBased, ActivityModalPresentable, FlashableScrollIndicators {
-
     private var keyboardAdjustingBehavior: KeyboardAdjustingBehavior?
     private var elements: [InputElementType] = []
 
-    @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var mobileNumberTextField: StandardTextField!
+    @IBOutlet var scrollView: UIScrollView!
+    @IBOutlet var mobileNumberTextField: StandardTextField!
 
     var viewModel: RevocationPersonalDataViewModel?
 

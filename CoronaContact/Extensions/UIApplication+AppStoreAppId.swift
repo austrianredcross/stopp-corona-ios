@@ -6,7 +6,6 @@
 import UIKit
 
 extension UIApplication {
-
     static var appStoreAppUrl: URL? {
         guard let url = URL(string: "https://apps.apple.com/at/app/apple-store/id\(AppConfiguration.appStoreAppId)") else {
             return nil

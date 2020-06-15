@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Qel-OV-99A">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--What's New-->
+        <scene sceneID="EQu-DB-Xak">
+            <objects>
+                <viewController id="Qel-OV-99A" userLabel="What's New" customClass="WhatsNewViewController" customModule="Stopp_Corona" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="h3w-Vl-fvZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="450"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="rXz-Pg-8Cc">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="450"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oT7-iM-ViQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="453"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="h4X-jZ-WT3">
+                                                <rect key="frame" x="24" y="40" width="366" height="373"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="6Xi-ab-FAc" userLabel="Text Stack">
+                                                        <rect key="frame" x="0.0" y="0.0" width="366" height="303"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_Was ist neu?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G1E-DZ-KIA" userLabel="Title" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="366" height="20.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="h1"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="whats_new_title"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </label>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="new_api" translatesAutoresizingMaskIntoConstraints="NO" id="X4g-QX-2at">
+                                                                <rect key="frame" x="0.0" y="52.5" width="366" height="117"/>
+                                                            </imageView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mSt-B6-qg5" userLabel="Description" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="201.5" width="366" height="101.5"/>
+                                                                <string key="text">_Wir nutzen in dieser Version die Apple und Google COVID-19 API. Die Benachrichtigungen werden weiterhin anonym ausgetauscht und es werden daher an ein paar Stellen die Infos etwas anders dargestellt.</string>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="body"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="whats_new_in_2.0.0"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cSJ-un-Xan" userLabel="OK Button" customClass="PrimaryButton" customModule="Stopp_Corona" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="343" width="366" height="30"/>
+                                                        <state key="normal" title="_Alles klar!">
+                                                            <color key="titleColor" name="ccBlack"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="transKeyNormal" value="whats_new_button_title"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="okButtonTapped:" destination="Qel-OV-99A" eventType="touchUpInside" id="Ebb-dZ-Q8E"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailingMargin" secondItem="h4X-jZ-WT3" secondAttribute="trailing" id="QKn-VS-Xh1"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="h4X-jZ-WT3" secondAttribute="bottom" priority="999" id="RHI-EM-whh"/>
+                                            <constraint firstItem="h4X-jZ-WT3" firstAttribute="leading" secondItem="oT7-iM-ViQ" secondAttribute="leadingMargin" id="Z3D-Yj-p2x"/>
+                                            <constraint firstItem="h4X-jZ-WT3" firstAttribute="top" secondItem="oT7-iM-ViQ" secondAttribute="topMargin" id="azJ-Hq-ccS"/>
+                                        </constraints>
+                                        <directionalEdgeInsets key="directionalLayoutMargins" top="40" leading="24" bottom="40" trailing="24"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="oT7-iM-ViQ" firstAttribute="centerY" secondItem="rXz-Pg-8Cc" secondAttribute="centerY" priority="250" id="DUz-KK-yAx"/>
+                                    <constraint firstItem="oT7-iM-ViQ" firstAttribute="leading" secondItem="rXz-Pg-8Cc" secondAttribute="leading" id="NaP-Ub-ggZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="oT7-iM-ViQ" secondAttribute="bottom" priority="250" id="PRD-QP-7gv"/>
+                                    <constraint firstAttribute="trailing" secondItem="oT7-iM-ViQ" secondAttribute="trailing" id="R5W-aV-OTL"/>
+                                    <constraint firstItem="oT7-iM-ViQ" firstAttribute="centerX" secondItem="rXz-Pg-8Cc" secondAttribute="centerX" id="tos-c6-ItA"/>
+                                    <constraint firstItem="oT7-iM-ViQ" firstAttribute="top" secondItem="rXz-Pg-8Cc" secondAttribute="top" id="vOp-Wi-2z0"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="635-1a-TU0"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="GdE-Fe-JKq"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="rXz-Pg-8Cc" firstAttribute="top" secondItem="h3w-Vl-fvZ" secondAttribute="top" id="6Bq-E7-dwB"/>
+                            <constraint firstAttribute="bottom" secondItem="rXz-Pg-8Cc" secondAttribute="bottom" id="dvp-EM-i53"/>
+                            <constraint firstAttribute="trailing" secondItem="rXz-Pg-8Cc" secondAttribute="trailing" id="jtF-j5-qw2"/>
+                            <constraint firstItem="rXz-Pg-8Cc" firstAttribute="leading" secondItem="h3w-Vl-fvZ" secondAttribute="leading" id="xjk-vl-azQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="SgD-It-4nT"/>
+                    </view>
+                    <size key="freeformSize" width="414" height="450"/>
+                    <connections>
+                        <outlet property="scrollView" destination="rXz-Pg-8Cc" id="zyh-jT-a83"/>
+                        <outlet property="whatsNewLabel" destination="mSt-B6-qg5" id="175-BD-wfq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PIu-9M-65L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-44.799999999999997" y="147.52623688155924"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="new_api" width="217" height="117"/>
+        <namedColor name="ccBlack">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

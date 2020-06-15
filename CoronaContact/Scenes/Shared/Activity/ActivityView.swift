@@ -6,7 +6,6 @@
 import UIKit
 
 class ActivityView: UIView {
-
     let activity = UIActivityIndicatorView(frame: .zero)
     private let label = UILabel(frame: .zero)
     private let configuration: ActivityConfiguration
@@ -32,7 +31,7 @@ class ActivityView: UIView {
             label.textColor = .ccBlack
         }
 
-        activity.style = .whiteLarge
+        activity.style = .large
         activity.color = .ccRouge
         activity.startAnimating()
 
@@ -41,7 +40,7 @@ class ActivityView: UIView {
 
         NSLayoutConstraint.activate([
             activity.centerXAnchor.constraint(equalTo: centerXAnchor),
-            activity.centerYAnchor.constraint(equalTo: centerYAnchor)
+            activity.centerYAnchor.constraint(equalTo: centerYAnchor),
         ])
 
         label.text = configuration.text
@@ -54,7 +53,7 @@ class ActivityView: UIView {
         NSLayoutConstraint.activate([
             label.topAnchor.constraint(equalTo: activity.bottomAnchor, constant: 16),
             label.safeAreaLayoutGuide.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16),
-            safeAreaLayoutGuide.trailingAnchor.constraint(equalTo: label.safeAreaLayoutGuide.trailingAnchor, constant: 16)
+            safeAreaLayoutGuide.trailingAnchor.constraint(equalTo: label.safeAreaLayoutGuide.trailingAnchor, constant: 16),
         ])
     }
 }

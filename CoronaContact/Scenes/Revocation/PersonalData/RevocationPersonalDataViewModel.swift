@@ -7,7 +7,6 @@ import Foundation
 import Resolver
 
 class RevocationPersonalDataViewModel: ViewModel {
-
     @Injected private var flowController: RevocationFlowController
 
     weak var coordinator: RevocationPersonalDataCoordinator?
@@ -23,16 +22,18 @@ class RevocationPersonalDataViewModel: ViewModel {
             return
         }
 
-        personalData.warning = .green
+        personalData.diagnosisType = .green
 
         flowController.tanConfirmation(personalData: personalData) { [weak self] result in
             completion()
 
             switch result {
-            case .failure(let error):
+            case let .failure(.tanConfirmation(error)):
                 self?.coordinator?.showErrorAlert(title: error.title, error: error.description)
             case .success:
                 self?.coordinator?.tanConfirmation()
+            default:
+                break
             }
         }
     }

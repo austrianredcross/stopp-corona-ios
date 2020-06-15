@@ -6,19 +6,20 @@
 import UIKit
 
 final class SicknessCertificateConfirmationCoordinator: Coordinator {
-
     lazy var rootViewController: SicknessCertificateConfirmationViewController = {
         SicknessCertificateConfirmationViewController.instantiate()
     }()
 
     var navigationController: UINavigationController
+    private let updateKeys: Bool
 
-    init(navigationController: UINavigationController) {
+    init(navigationController: UINavigationController, updateKeys: Bool) {
+        self.updateKeys = updateKeys
         self.navigationController = navigationController
     }
 
     override func start() {
-        rootViewController.viewModel = SicknessCertificateConfirmationViewModel(with: self)
+        rootViewController.viewModel = SicknessCertificateConfirmationViewModel(with: self, updateKeys: updateKeys)
         navigationController.pushViewController(rootViewController, animated: true)
     }
 

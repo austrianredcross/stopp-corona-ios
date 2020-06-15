@@ -3,20 +3,18 @@
 //  CoronaContact
 //
 
-import UIKit
 import Reusable
+import UIKit
 
 final class SicknessCertificateConfirmationViewController: UIViewController, StoryboardBased, ViewModelBased, FlashableScrollIndicators {
-
-    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet var scrollView: UIScrollView!
+    @IBOutlet var confirmationHeadline: TransLabel!
+    @IBOutlet var confirmationDescription: TransLabel!
 
     var viewModel: SicknessCertificateConfirmationViewModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        viewModel?.onViewDidLoad()
-
         setupUI()
     }
 
@@ -33,7 +31,15 @@ final class SicknessCertificateConfirmationViewController: UIViewController, Sto
     }
 
     private func setupUI() {
-        title = "sickness_certificate_confirmation_title".localized
+        let updateKeys = viewModel?.updateKeys ?? false
+
+        if updateKeys {
+            title = "sickness_certificate_confirmation_title_extra".localized
+            confirmationHeadline.styledText = "sickness_certificate_confirmation_headline_extra".localized
+            confirmationDescription.styledText = "sickness_certificate_confirmation_description".localized
+        } else {
+            title = "sickness_certificate_confirmation_title".localized
+        }
     }
 
     @IBAction func secondaryButtonTapped(_ sender: UIButton) {

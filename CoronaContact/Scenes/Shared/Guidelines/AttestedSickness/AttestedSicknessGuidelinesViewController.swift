@@ -3,15 +3,15 @@
 //  CoronaContact
 //
 
-import UIKit
 import Reusable
+import UIKit
 
 final class AttestedSicknessGuidelinesViewController: UIViewController, StoryboardBased, ViewModelBased, FlashableScrollIndicators {
     var viewModel: AttestedSicknessGuidelinesViewModel?
 
-    @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var instructionsView: InstructionsView!
-    @IBOutlet weak var attestedSicknessDateLabel: TransLabel!
+    @IBOutlet var scrollView: UIScrollView!
+    @IBOutlet var instructionsView: InstructionsView!
+    @IBOutlet var attestedSicknessDateLabel: TransLabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +36,7 @@ final class AttestedSicknessGuidelinesViewController: UIViewController, Storyboa
             .init(index: 1, text: "sickness_certificate_quarantine_guidelines_steps_first".localized),
             .init(index: 2, text: "sickness_certificate_quarantine_guidelines_steps_second".localized),
             .init(index: 3, text: "sickness_certificate_quarantine_guidelines_steps_third".localized),
-            .init(index: 4, text: "sickness_certificate_quarantine_guidelines_steps_fourth".localized)
+            .init(index: 4, text: "sickness_certificate_quarantine_guidelines_steps_fourth".localized),
         ]
     }
 }

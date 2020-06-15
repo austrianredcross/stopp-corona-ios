@@ -5,11 +5,12 @@
 
 import UIKit
 
-class Coordinator {
+class Coordinator: NSObject {
     private(set) var childCoordinators: [Coordinator] = []
     weak var parentCoordinator: Coordinator?
 
-    init() {
+    override init() {
+        super.init()
         LoggingService.verbose(self, context: .navigation)
     }
 
@@ -45,12 +46,6 @@ class Coordinator {
     }
 }
 
-extension Coordinator: Equatable {
-    static func == (lhs: Coordinator, rhs: Coordinator) -> Bool {
-        lhs === rhs
-    }
-}
-
 // MARK: - Error handling
 
 protocol ErrorPresentableCoordinator {
@@ -60,7 +55,6 @@ protocol ErrorPresentableCoordinator {
 }
 
 extension ErrorPresentableCoordinator where Self: Coordinator {
-
     func showErrorAlert(title: String? = nil, error: String? = nil, closeButtonTitle: String? = nil, closeAction: ((UIAlertAction) -> Void)? = nil) {
         let closeAction = UIAlertAction(title: closeButtonTitle ?? "general_ok".localized, style: .default, handler: closeAction)
         let alertViewController = UIAlertController(title: title, message: error, preferredStyle: .alert)
@@ -77,7 +71,6 @@ extension ErrorPresentableCoordinator where Self: Coordinator {
         } else {
             presentAlert()
         }
-
     }
 
     func showGenericErrorAlert(closeButtonTitle: String? = nil, closeAction: ((UIAlertAction) -> Void)? = nil) {

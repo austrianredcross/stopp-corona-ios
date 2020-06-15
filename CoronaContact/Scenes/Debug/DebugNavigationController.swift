@@ -1,6 +1,6 @@
 //
-// DebugNavigationController.swift
-// CoronaContact
+//  DebugNavigationController.swift
+//  CoronaContact
 //
 
 import UIKit
@@ -12,5 +12,4 @@ class DebugNavigationController: UINavigationController {
         super.motionEnded(motion, with: event)
         coordinator?.debugView()
     }
-
 }

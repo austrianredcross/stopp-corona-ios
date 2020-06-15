@@ -1,12 +1,11 @@
 //
-//  File.swift
+//  PrimaryButton.swift
 //  CoronaContact
 //
 
 import UIKit
 
 class PrimaryButton: TransButton {
-
     override func updateTranslation() {
         if let transKeyNormal = transKeyNormal {
             setAttributedTitle(transKeyNormal.locaStyled(style: .primaryButton), for: .normal)
@@ -30,5 +29,4 @@ class PrimaryButton: TransButton {
         layer.masksToBounds = true
         heightAnchor.constraint(equalToConstant: 56).isActive = true
     }
-
 }

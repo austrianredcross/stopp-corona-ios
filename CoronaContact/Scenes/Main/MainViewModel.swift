@@ -3,37 +3,42 @@
 //  CoronaContact
 //
 
+import ExposureNotification
 import Foundation
 import Resolver
 
 class MainViewModel: ViewModel {
-
     @Injected private var notificationService: NotificationService
-
     @Injected private var repository: HealthRepository
+    @Injected private var localStorage: LocalStorage
+    @Injected private var exposureService: ExposureManager
+    private var observers = [NSObjectProtocol]()
 
     weak var coordinator: MainCoordinator?
     weak var viewController: MainViewController?
 
     var automaticHandshakePaused: Bool {
-        // TODO: new implementation
-        return false
+        exposureService.exposureNotificationStatus == .bluetoothOff
     }
 
     var displayNotifications: Bool {
         displayHealthStatus || repository.revocationStatus != nil
     }
+
     var displayHealthStatus: Bool {
         repository.isProbablySick
             || repository.hasAttestedSickness
             || isUnderSelfMonitoring
             || repository.contactHealthStatus != nil
     }
+
     var backgroundServiceActive: Bool {
-        // TODO: new implementation
-        return false
+        exposureService.exposureNotificationStatus == .active
     }
-    var isBackgroundHandshakeActive: Bool { !UserDefaults.standard.backgroundHandShakeDisabled }
+
+    var isBackgroundHandshakeDisabled: Bool {
+        exposureService.authorizationStatus != .authorized || localStorage.backgroundHandshakeDisabled
+    }
 
     var isUnderSelfMonitoring: Bool {
         if case .isUnderSelfMonitoring = repository.userHealthStatus {
@@ -43,12 +48,25 @@ class MainViewModel: ViewModel {
         return false
     }
 
-    var hasAttestedSickness: Bool { repository.hasAttestedSickness }
-    var isProbablySick: Bool { repository.isProbablySick }
-    var revocationStatus: RevocationStatus? { repository.revocationStatus }
-    var contactHealthStatus: ContactHealthStatus? { repository.contactHealthStatus }
-    var userHealthStatus: UserHealthStatus { repository.userHealthStatus }
-    var numberOfContacts: Int { repository.numberOfContacts }
+    var hasAttestedSickness: Bool {
+        repository.hasAttestedSickness
+    }
+
+    var isProbablySick: Bool {
+        repository.isProbablySick
+    }
+
+    var revocationStatus: RevocationStatus? {
+        repository.revocationStatus
+    }
+
+    var contactHealthStatus: ContactHealthStatus? {
+        repository.contactHealthStatus
+    }
+
+    var userHealthStatus: UserHealthStatus {
+        repository.userHealthStatus
+    }
 
     private var subscriptions: Set<AnySubscription> = []
 
@@ -69,12 +87,6 @@ class MainViewModel: ViewModel {
             }
             .add(to: &subscriptions)
 
-        repository.$numberOfContacts
-            .subscribe { [weak self] _ in
-                self?.updateView()
-            }
-            .add(to: &subscriptions)
-
         repository.$infectionWarnings
             .subscribe { [weak self] _ in
                 self?.updateView()
@@ -83,26 +95,29 @@ class MainViewModel: ViewModel {
     }
 
     deinit {
-        NotificationCenter.default.removeObserver(self)
+        for observer in observers {
+            NotificationCenter.default.removeObserver(observer)
+        }
     }
 
     private func registerObservers() {
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(checkNewContact),
-                                               name: .DatabaseServiceNewContact,
-                                               object: nil)
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(checkNewSickContacts),
-                                               name: .DatabaseServiceNewSickContact,
-                                               object: nil)
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(updateView),
-                                               name: .DatabaseSicknessUpdated,
-                                               object: nil)
+        observers.append(localStorage.$attestedSicknessAt.addObserver(using: updateView))
+        observers.append(localStorage.$isProbablySickAt.addObserver(using: updateView))
+        observers.append(localStorage.$isUnderSelfMonitoring.addObserver(using: updateView))
+        let center = NotificationCenter.default
+        observers.append(center.addObserver(forName: ExposureManager.authorizationStatusChangedNotification,
+                                            object: nil,
+                                            queue: nil,
+                                            using: updateViewByNotification))
+        observers.append(center.addObserver(forName: ExposureManager.notificationStatusChangedNotification,
+                                            object: nil,
+                                            queue: nil,
+                                            using: updateViewByNotification))
     }
 
     func onboardingJustFinished() {
         notificationService.askForPermissions()
+        exposureService.enableExposureNotifications(true)
     }
 
     func removeRevocationStatus() {
@@ -110,22 +125,16 @@ class MainViewModel: ViewModel {
         updateView()
     }
 
-    @objc func viewWillAppear() {
-        checkNewContact()
-        checkNewSickContacts()
+    func viewWillAppear() {
         repository.refresh()
     }
 
-    @objc func updateView() {
+    func updateView() {
         viewController?.updateView()
     }
 
-    @objc func checkNewContact() {
-        repository.checkNewContact()
-    }
-
-    @objc func checkNewSickContacts() {
-        repository.checkNewSickContacts()
+    private func updateViewByNotification(_: Notification) {
+        updateView()
     }
 
     func tappedPrimaryButtonInUserHealthStatus() {
@@ -163,10 +172,6 @@ class MainViewModel: ViewModel {
         }
     }
 
-    func contacts() {
-        coordinator?.contacts()
-    }
-
     func help() {
         coordinator?.help()
     }
@@ -184,11 +189,19 @@ class MainViewModel: ViewModel {
     }
 
     func selfTesting() {
-        coordinator?.selfTesting()
+        coordinator?.selfTesting(updateKeys: false)
+    }
+
+    func uploadMissingPobablySickKeys() {
+        coordinator?.selfTesting(updateKeys: true)
+    }
+
+    func uploadMissingAttestedSickKeys() {
+        coordinator?.sicknessCertificate(updateKeys: true)
     }
 
     func sicknessCertificate() {
-        coordinator?.sicknessCertificate()
+        coordinator?.sicknessCertificate(updateKeys: false)
     }
 
     func attestedSicknessGuidelines() {
@@ -212,6 +225,12 @@ class MainViewModel: ViewModel {
     }
 
     func backgroundDiscovery(enable: Bool) {
-       // TODO: new implementation
+        if #available(iOS 13.5, *) {
+            exposureService.enableExposureNotifications(enable) { [weak self] error in
+                if let error = error as? ENError, error.code == .notAuthorized {
+                    self?.coordinator?.showMissingPermissions(type: .exposureFramework)
+                }
+            }
+        }
     }
 }

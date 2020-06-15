@@ -19,19 +19,19 @@ extension Resolver {
 class HealthRepository {
     private var quarantineTimeController: QuarantineTimeController!
     @Injected private var dba: DatabaseService
+    @Injected private var localStorage: LocalStorage
     @Injected private var configService: ConfigurationService
 
     @Observable var userHealthStatus: UserHealthStatus = .isHealthy
     @Observable var revocationStatus: RevocationStatus?
     @Observable var contactHealthStatus: ContactHealthStatus?
-    @Observable var numberOfContacts = 0
     @Observable var infectionWarnings: [InfectionWarning] = []
 
     var subscriptions = Set<AnySubscription>()
 
     init(timeConfiguration: QuarantineTimeConfiguration) {
-        quarantineTimeController = QuarantineTimeController(timeConfiguration: timeConfiguration) { [weak self] quarantineUpdate in
-            self?.handle(quarantineUpdate)
+        quarantineTimeController = QuarantineTimeController(timeConfiguration: timeConfiguration) { [weak self] quarantineStatus in
+            self?.handle(quarantineStatus)
         }
 
         $userHealthStatus.subscribe { [weak self] healthStatus in
@@ -57,6 +57,7 @@ class HealthRepository {
 
         return false
     }
+
     var hasAttestedSickness: Bool {
         if case .hasAttestedSickness = userHealthStatus {
             return true
@@ -85,66 +86,26 @@ class HealthRepository {
 
         userHealthStatus = UserHealthStatus(quarantineDays: quarantineStatus.numberOfDays)
 
-        dba.getIncomingInfectionWarnings { [weak self] infectionWarnings in
-            self?.contactHealthStatus = ContactHealthStatus(
-                    basedOn: infectionWarnings,
-                    quarantineDays: quarantineStatus.numberOfDays
-            )
-        }
+        contactHealthStatus = ContactHealthStatus(quarantineDays: quarantineStatus.numberOfDays)
     }
 
-    func checkNewContact() {
-        dba.getContactCount { [weak self] count in
-            DispatchQueue.main.async {
-                self?.numberOfContacts = count
-            }
-        }
+    func setProbablySick() {
+        localStorage.isProbablySickAt = Date()
+        localStorage.missingUploadedKeysAt = Date()
     }
 
-    func checkNewSickContacts() {
-        dba.getIncomingInfectionWarnings(completion: { [weak self] infectionWarnings in
-            DispatchQueue.main.async {
-                self?.infectionWarnings = infectionWarnings
-            }
-        })
+    func setProvenSick() {
+        localStorage.attestedSicknessAt = Date()
+        localStorage.missingUploadedKeysAt = Date()
     }
 
-    func cleanupOldHealthReportsAndContacts() {
-        let currentDate = Date()
-        let greenMessageExpireDuration = 72 /// hours
-        guard let selfDiagnosedTime = Calendar.current.date(byAdding: .hour,
-                                                            value: -configService.currentConfig.selfDiagnosedQuarantine,
-                                                            to: currentDate),
-              let redQuarantineTime = Calendar.current.date(byAdding: .hour,
-                                                            value: -configService.currentConfig.redWarningQuarantine,
-                                                            to: currentDate),
-              let yellowQuarantineTime = Calendar.current.date(byAdding: .hour,
-                                                               value: -configService.currentConfig.yellowWarningQuarantine,
-                                                               to: currentDate),
-              let symptomsWarnTime = Calendar.current.date(byAdding: .hour,
-                                                           value: -configService.currentConfig.warnBeforeSymptoms,
-                                                           to: currentDate),
-              let greenExpireTime = Calendar.current.date(byAdding: .hour,
-                                                          value: -greenMessageExpireDuration,
-                                                          to: currentDate)
-                else {
-            return
-        }
+    func revokeProbablySick() {
+        localStorage.isProbablySickAt = nil
+        localStorage.missingUploadedKeysAt = nil
+    }
 
-        // delete old contacts
-        if isProbablySick {
-            dba.deleteContacts(before: selfDiagnosedTime)
-        } else {
-            dba.deleteContacts(before: symptomsWarnTime)
-        }
-
-        // delete old outgoing messages
-        dba.deleteOutgoingMessages(before: redQuarantineTime)
-        dba.deleteOutgoingMessages(before: yellowQuarantineTime, type: .yellow)
-
-        // delete old incoming messages
-        dba.deleteIncomingMessages(before: redQuarantineTime)
-        dba.deleteIncomingMessages(before: yellowQuarantineTime, type: .yellow)
-        dba.deleteIncomingMessages(before: greenExpireTime, type: .green)
+    func revokeProvenSickness() {
+        localStorage.attestedSicknessAt = nil
+        localStorage.missingUploadedKeysAt = nil
     }
 }

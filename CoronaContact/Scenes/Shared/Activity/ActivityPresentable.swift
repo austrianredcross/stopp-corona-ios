@@ -7,17 +7,16 @@ import UIKit
 
 /**
  Show and hide activity overlays as embedded views.
- 
+
  - note: Use `ActivityPresentableFullscreen` if you want the overlay to be full-screen. The overlay
  will be added above navigation and tab bars.
-*/
+ */
 protocol ActivityPresentable: ActivityPresentableType {}
 protocol ActivityPresentableFullscreen: ActivityPresentable, ActivityPresentableFullscreenType {}
 
 extension ActivityPresentable where Self: UIViewController {
-
     private var hostView: UIView? {
-        if activityPresentationStyle == .overFullscreen, let keyWindow = UIApplication.shared.keyWindow {
+        if activityPresentationStyle == .overFullscreen, let keyWindow = UIWindow.key {
             return keyWindow
         } else {
             return view
@@ -26,7 +25,7 @@ extension ActivityPresentable where Self: UIViewController {
 
     private var activityView: UIView {
         guard let view = hostView?.subviews.first(where: { $0 is ActivityView }) else {
-           return ActivityView(configuration: configuration)
+            return ActivityView(configuration: configuration)
         }
 
         return view

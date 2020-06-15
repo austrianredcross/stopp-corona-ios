@@ -3,15 +3,15 @@
 //  CoronaContact
 //
 
-import UIKit
 import Reusable
+import UIKit
 
 final class SuspicionGuidelinesViewController: UIViewController, StoryboardBased, ViewModelBased, FlashableScrollIndicators {
     var viewModel: SuspicionGuidelinesViewModel?
 
-    @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var endOfQuarantineLabel: TransLabel!
-    @IBOutlet weak var instructionsView: InstructionsView!
+    @IBOutlet var scrollView: UIScrollView!
+    @IBOutlet var endOfQuarantineLabel: TransLabel!
+    @IBOutlet var instructionsView: InstructionsView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +40,7 @@ final class SuspicionGuidelinesViewController: UIViewController, StoryboardBased
             .init(index: 1, text: "suspicion_guidelines_precaution_first".localized),
             .init(index: 2, text: "suspicion_guidelines_precaution_second".localized),
             .init(index: 3, text: "suspicion_guidelines_precaution_third".localized),
-            .init(index: 4, text: "suspicion_guidelines_precaution_fourth".localized)
+            .init(index: 4, text: "suspicion_guidelines_precaution_fourth".localized),
         ]
     }
 

@@ -6,7 +6,6 @@
 import UIKit
 
 final class SicknessCertificateCoordinator: Coordinator {
-
     var navigationController: UINavigationController
 
     init(navigationController: UINavigationController) {
@@ -14,7 +13,11 @@ final class SicknessCertificateCoordinator: Coordinator {
     }
 
     override func start() {
-        let child = SicknessCertificatePersonalDataCoordinator(navigationController: navigationController)
+        start(updateKeys: false)
+    }
+
+    func start(updateKeys: Bool) {
+        let child = SicknessCertificatePersonalDataCoordinator(navigationController: navigationController, updateKeys: updateKeys)
         addChildCoordinator(child)
         child.start()
     }

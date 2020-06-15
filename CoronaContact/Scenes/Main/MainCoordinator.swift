@@ -3,31 +3,32 @@
 //  CoronaContact
 //
 
-import UIKit
 import Resolver
+import UIKit
 
 class MainCoordinator: Coordinator, ShareSheetPresentable {
-
     var navigationController: UINavigationController
     var rootViewController: UIViewController {
         navigationController
     }
 
     @Injected private var notificationService: NotificationService
+    @Injected private var localStorage: LocalStorage
+    @Injected private var whatsNewRepository: WhatsNewRepository
     private weak var mainViewModel: MainViewModel?
 
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
 
-    func contacts() {
-        let child = ContactCoordinator(navigationController: navigationController)
+    func help() {
+        let child = MainHelpCoordinator(navigationController: navigationController)
         addChildCoordinator(child)
         child.start()
     }
 
-    func help() {
-        let child = MainHelpCoordinator(navigationController: navigationController)
+    func show(_ historyItem: WhatsNewContent) {
+        let child = WhatsNewCoordinator(presentingController: rootViewController)
         addChildCoordinator(child)
         child.start()
     }
@@ -48,16 +49,16 @@ class MainCoordinator: Coordinator, ShareSheetPresentable {
         presentShareAppActivity()
     }
 
-    func selfTesting() {
+    func selfTesting(updateKeys: Bool) {
         let child = SelfTestingCoordinator(navigationController: navigationController)
         addChildCoordinator(child)
-        child.start()
+        child.start(updateKeys: updateKeys)
     }
 
-    func sicknessCertificate() {
+    func sicknessCertificate(updateKeys: Bool) {
         let child = SicknessCertificateCoordinator(navigationController: navigationController)
         addChildCoordinator(child)
-        child.start()
+        child.start(updateKeys: updateKeys)
     }
 
     func attestedSicknessGuidelines() {
@@ -118,10 +119,17 @@ class MainCoordinator: Coordinator, ShareSheetPresentable {
         mainViewModel = viewModel
         navigationController.pushViewController(viewController, animated: false)
 
-        if !UserDefaults.standard.hasSeenOnboarding {
+        if !localStorage.hasSeenOnboarding {
             DispatchQueue.main.async { self.onboarding() }
         } else {
             notificationService.dismissAllNotifications()
+            DispatchQueue.main.async {
+                if self.whatsNewRepository.isWhatsNewAvailable,
+                    let latestHistoryItem = self.whatsNewRepository.newHistoryItems.last {
+                    self.show(latestHistoryItem)
+                    self.whatsNewRepository.currentWhatsNewShown()
+                }
+            }
         }
     }
 

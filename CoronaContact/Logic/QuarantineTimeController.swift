@@ -34,7 +34,6 @@ struct QuarantineTimeConfiguration {
 }
 
 class QuarantineTimeController {
-
     enum QuarantineType {
         case red
         case yellow
@@ -56,6 +55,7 @@ class QuarantineTimeController {
 
     enum QuarantineStatus {
         case unknown
+        case none
         case cleared
         case completed(QuarantineEnd)
         case inProgress(QuarantineEnd)
@@ -104,7 +104,7 @@ class QuarantineTimeController {
 
         var date: Date? {
             switch self {
-            case .completed(let end), .inProgress(let end):
+            case let .completed(end), let .inProgress(end):
                 return end.date
             default:
                 return nil
@@ -113,7 +113,7 @@ class QuarantineTimeController {
 
         var numberOfDays: Int? {
             switch self {
-            case .completed(let end), .inProgress(let end):
+            case let .completed(end), let .inProgress(end):
                 return end.numberOfDays
             default:
                 return nil
@@ -123,6 +123,9 @@ class QuarantineTimeController {
 
     @Injected private var databaseService: DatabaseService
     @Injected private var notificationService: NotificationService
+    @Injected private var localStorage: LocalStorage
+
+    private var observers = [NSObjectProtocol]()
     private let timeConfiguration: QuarantineTimeConfiguration
     private let calendar = Calendar.current
     private var dateGenerator: () -> Date = {
@@ -131,12 +134,12 @@ class QuarantineTimeController {
 
     private var lastRefreshAt: Date?
 
-    private let subscriber: ((QuarantineStatus) -> Void)
+    private let subscriber: (QuarantineStatus) -> Void
 
     init(timeConfiguration: QuarantineTimeConfiguration = QuarantineTimeConfiguration(),
          databaseService: DatabaseService? = nil,
          dateGenerator: (() -> Date)? = nil,
-         subscriber: @escaping ((QuarantineStatus) -> Void)) {
+         subscriber: @escaping (QuarantineStatus) -> Void) {
         self.timeConfiguration = timeConfiguration
         self.subscriber = subscriber
         self.dateGenerator = dateGenerator ?? self.dateGenerator
@@ -146,19 +149,29 @@ class QuarantineTimeController {
         refresh()
     }
 
+    static func quarantineTimeCalculation(riskResult: RiskCalculationResult) {
+        var lastRedContact: Date?
+        var lastYellowContact: Date?
+        let localStorage: LocalStorage = Resolver.resolve()
+
+        for (date, riskType) in riskResult {
+            if riskType == .yellow, lastYellowContact == nil || lastYellowContact! < date {
+                lastYellowContact = date
+            }
+            if riskType == .red, lastRedContact == nil || lastRedContact! < date {
+                lastRedContact = date
+            }
+        }
+        localStorage.lastRedContact = lastRedContact
+        localStorage.lastYellowContact = lastYellowContact
+    }
+
     private func registerObservers() {
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(refresh),
-                                               name: .DatabaseServiceNewContact,
-                                               object: nil)
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(refresh),
-                                               name: .DatabaseServiceNewSickContact,
-                                               object: nil)
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(refresh),
-                                               name: .DatabaseSicknessUpdated,
-                                               object: nil)
+        observers.append(localStorage.$isUnderSelfMonitoring.addObserver(using: refresh))
+        observers.append(localStorage.$attestedSicknessAt.addObserver(using: refresh))
+        observers.append(localStorage.$isProbablySickAt.addObserver(using: refresh))
+        observers.append(localStorage.$lastYellowContact.addObserver(using: refresh))
+        observers.append(localStorage.$lastRedContact.addObserver(using: refresh))
     }
 
     public func refreshIfNecessary() {
@@ -180,66 +193,52 @@ class QuarantineTimeController {
     }
 
     func quarantineStatus(completion: @escaping (QuarantineStatus) -> Void) {
-        if UserDefaults.standard.hasAttestedSickness {
+        if localStorage.hasAttestedSickness {
             return completion(.inProgressIndefinitely)
         }
 
-        databaseService.getIncomingInfectionWarnings { [weak self] warnings in
-            guard let self = self else {
-                completion(.unknown)
-                return
-            }
+        var endOfQuarantines = [QuarantineEnd]()
 
-            var endOfQuarantines = [QuarantineEnd]()
-
-            let sortedWarnings = warnings.sorted { $0.timeStamp.compare($1.timeStamp) == .orderedAscending }
-            let redWarning = sortedWarnings.first { $0.type == .red }
-            let yellowWarning = sortedWarnings.first { $0.type == .yellow }
-            let greenWarning = sortedWarnings.first { $0.type == .green }
-
-            if let latestRedWarning = redWarning {
-                let endOfQuarantine = QuarantineEnd(
-                    type: .red,
-                    date: self.addDays(self.timeConfiguration.redWarning, to: latestRedWarning.timeStamp)
-                )
-                endOfQuarantines.append(endOfQuarantine)
-            }
-
-            if let latestYellowWarning = yellowWarning {
-                let endOfQuarantine = QuarantineEnd(
-                    type: .yellow,
-                    date: self.addDays(self.timeConfiguration.yellowWarning, to: latestYellowWarning.timeStamp)
-                )
-                endOfQuarantines.append(endOfQuarantine)
-            }
-
-            if let isProbablySickAt = UserDefaults.standard.isProbablySickAt {
-                let endOfQuarantine = QuarantineEnd(
-                    type: .selfDiagnosed,
-                    date: self.addDays(self.timeConfiguration.probablySick, to: isProbablySickAt)
-                )
-                endOfQuarantines.append(endOfQuarantine)
-            }
-
-            if greenWarning != nil, endOfQuarantines.count == 0 {
-                completion(.cleared)
-                return
-            }
-
-            let sortedQuarantines = endOfQuarantines.sorted { $0.date.compare($1.date) == .orderedDescending }
-
-            if let longestQuarantine = sortedQuarantines.first {
-                if let daysUntilEnd = longestQuarantine.numberOfDays, daysUntilEnd <= 0 {
-                    completion(.completed(longestQuarantine))
-                    return
-                }
-
-                completion(.inProgress(longestQuarantine))
-                return
-            }
-
-            completion(.unknown)
+        if let lastYellowContact = localStorage.lastYellowContact {
+            let endOfQuarantine = QuarantineEnd(
+                type: .yellow,
+                date: addDays(timeConfiguration.yellowWarning, to: lastYellowContact)
+            )
+            endOfQuarantines.append(endOfQuarantine)
         }
+
+        if let lastRedContact = localStorage.lastRedContact {
+            let endOfQuarantine = QuarantineEnd(
+                type: .red,
+                date: addDays(timeConfiguration.redWarning, to: lastRedContact)
+            )
+            endOfQuarantines.append(endOfQuarantine)
+        }
+
+        if let isProbablySickAt = localStorage.isProbablySickAt {
+            let endOfQuarantine = QuarantineEnd(
+                type: .selfDiagnosed,
+                date: addDays(timeConfiguration.probablySick, to: isProbablySickAt)
+            )
+            endOfQuarantines.append(endOfQuarantine)
+        }
+
+        guard let quarantineEndingLast = endOfQuarantines
+            .sorted(by: { $0.date < $1.date })
+            .last
+        else {
+            let status: QuarantineStatus = localStorage.wasQuarantined ? .cleared : .none
+            completion(status)
+            return
+        }
+
+        localStorage.wasQuarantined = true
+        if let daysUntilEnd = quarantineEndingLast.numberOfDays, daysUntilEnd <= 0 {
+            completion(.completed(quarantineEndingLast))
+            return
+        }
+
+        completion(.inProgress(quarantineEndingLast))
     }
 
     private func scheduleNotification(for quarantineStatus: QuarantineStatus) {
@@ -252,14 +251,13 @@ class QuarantineTimeController {
 
     private func setupRevocation(for quarantineStatus: QuarantineStatus) {
         switch quarantineStatus {
-        case .completed(let end) where end.type == .selfDiagnosed:
-            UserDefaults.standard.completedVoluntaryQuarantine = true
-            UserDefaults.standard.isProbablySick = false
-            UserDefaults.standard.isProbablySickAt = nil
+        case let .completed(end) where end.type == .selfDiagnosed:
+            localStorage.completedVoluntaryQuarantine = true
+            localStorage.isProbablySickAt = nil
         case .completed:
-            UserDefaults.standard.completedRequiredQuarantine = true
+            localStorage.completedRequiredQuarantine = true
         case .cleared:
-            UserDefaults.standard.allClearQuarantine = true
+            localStorage.allClearQuarantine = true
         default:
             break
         }
@@ -267,5 +265,11 @@ class QuarantineTimeController {
 
     private func addDays(_ days: Int, to date: Date) -> Date {
         calendar.date(byAdding: .day, value: days, to: date)!
+    }
+
+    deinit {
+        for observer in observers {
+            NotificationCenter.default.removeObserver(observer)
+        }
     }
 }

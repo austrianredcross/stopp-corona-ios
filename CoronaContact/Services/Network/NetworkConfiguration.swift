@@ -6,13 +6,22 @@
 import Foundation
 
 enum NetworkConfiguration: ConfigurationRetrievable {
-
     static var baseURL: URL = {
         AppConfiguration.value(for: "API_BASE_URL") { URL(string: $0)! }
     }()
+
     static var smsBaseURL: URL = {
         AppConfiguration.value(for: "API_SMS_BASE_URL") { URL(string: $0)! }
     }()
+
+    static var cdnBaseURL: URL = {
+        AppConfiguration.value(for: "API_CDN_BASE_URL") { URL(string: $0)! }
+    }()
+
+    static var cdnHostURL: URL = {
+        AppConfiguration.value(for: "API_CDN_HOST_URL") { URL(string: $0)! }
+    }()
+
     static let authorizationKey: String = {
         let authorizationKey: String = AppConfiguration.value(for: "API_AUTHORIZATION_KEY")
         guard !authorizationKey.isEmpty else {
@@ -21,6 +30,7 @@ enum NetworkConfiguration: ConfigurationRetrievable {
 
         return authorizationKey
     }()
+
     static let smsAuthorizationKey: String = {
         let authorizationKey: String = AppConfiguration.value(for: "API_SMS_AUTHORIZATION_KEY")
         guard !authorizationKey.isEmpty else {
@@ -29,6 +39,7 @@ enum NetworkConfiguration: ConfigurationRetrievable {
 
         return authorizationKey
     }()
+
     static let appId: String = {
         guard let appId = Bundle.main.bundleIdentifier, !appId.isEmpty else {
             fatalError("The `Bundle identifier` key in the Info.plist does not exist or isn't valid.")
@@ -38,12 +49,12 @@ enum NetworkConfiguration: ConfigurationRetrievable {
     }()
 
     enum HeaderKeys {
-        static let contentType      = "Content-Type"
+        static let contentType = "Content-Type"
         static let authorizationKey = "AuthorizationKey"
-        static let appId            = "X-AppId"
+        static let appId = "X-AppId"
     }
 
     enum HeaderValues {
-        static let contentType      = "application/json"
+        static let contentType = "application/json"
     }
 }

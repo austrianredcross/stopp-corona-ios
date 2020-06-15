@@ -1,45 +1,29 @@
 //
-//  HealthStatus.swift
+//  ContactHealthStatus.swift
 //  CoronaContact
 //
 
+import Resolver
 import UIKit
 
-enum PointsOfContact {
-
-    case single
-    case multiple(Int)
-}
-
 enum ContactHealthStatus {
+    case mixed(quarantineDays: Int? = 0)
+    case red(quarantineDays: Int? = 0)
+    case yellow(quarantineDays: Int? = 0)
 
-    case mixed(red: PointsOfContact, yellow: PointsOfContact?, quarantineDays: Int? = 0)
-    case yellow(PointsOfContact, quarantineDays: Int? = 0)
+    init?(quarantineDays: Int?) {
+        let localStorage: LocalStorage = Resolver.resolve()
 
-    init?(basedOn warnings: [InfectionWarning], quarantineDays: Int?) {
-        if warnings.count == 0 {
-            return nil
-        }
-        let redCount = warnings.filter { $0.type == .red }.count
-        let yellowCount = warnings.filter { $0.type == .yellow }.count
+        let hadYellowContact = localStorage.lastYellowContact != nil
+        let hadRedContact = localStorage.lastRedContact != nil
 
-        switch (redCount, yellowCount) {
-        case (1, 1):
-            self = .mixed(red: .single, yellow: .single, quarantineDays: quarantineDays)
-        case (1, 2...):
-            self = .mixed(red: .single, yellow: .multiple(yellowCount), quarantineDays: quarantineDays)
-        case (2..., 1):
-            self = .mixed(red: .multiple(redCount), yellow: .single, quarantineDays: quarantineDays)
-        case (2..., 2...):
-            self = .mixed(red: .multiple(redCount), yellow: .multiple(yellowCount), quarantineDays: quarantineDays)
-        case (2..., 0):
-            self = .mixed(red: .multiple(redCount), yellow: nil, quarantineDays: quarantineDays)
-        case (1, 0):
-            self = .mixed(red: .single, yellow: nil, quarantineDays: quarantineDays)
-        case (0, 1):
-            self = .yellow(.single, quarantineDays: quarantineDays)
-        case (0, 2...):
-            self = .yellow(.multiple(yellowCount), quarantineDays: quarantineDays)
+        switch (hadYellowContact, hadRedContact) {
+        case (true, true):
+            self = .mixed(quarantineDays: quarantineDays)
+        case (false, true):
+            self = .red(quarantineDays: quarantineDays)
+        case (true, false):
+            self = .yellow(quarantineDays: quarantineDays)
         default:
             return nil
         }
@@ -49,98 +33,45 @@ enum ContactHealthStatus {
 // MARK: - Notification in the Dashboard
 
 extension ContactHealthStatus {
-
     var headlineNotification: String {
-        switch self {
-        case .mixed(.single, _, _):
-            return "health_status_red_warning_single_contact_headline".localized
-        case .mixed(.multiple, _, _):
-            return "health_status_red_warning_multiple_contacts_headline".localized
-        case .yellow(.single, _):
-            return "health_status_yellow_warning_single_contact_headline".localized
-        case .yellow(.multiple, _):
-            return "health_status_yellow_warning_multiple_contact_headline".localized
-        }
+        "contact_health_status_headline".localized
     }
 
     var descriptionNotification: String {
         switch self {
-        case .mixed(.single, .single, _):
+        case .mixed:
             return """
-            \("health_status_red_warning_single_contact_description".localized)
+            \("contact_health_status_red_warning_description".localized)
 
-            \("health_status_yellow_warning_single_contact_description".localized)
+            \("contact_health_status_yellow_warning_description".localized)
             """
-        case .mixed(.single, .multiple(let yellowCount), _):
-            return """
-            \("health_status_red_warning_single_contact_description".localized)
-
-            \(String(format: "health_status_yellow_warning_multiple_contact_description".localized, yellowCount))
-            """
-        case .mixed(.multiple(let redCount), .single, _):
-            return """
-            \(String(format: "health_status_red_warning_multiple_contacts_description".localized, redCount))
-
-            \("health_status_yellow_warning_single_contact_description".localized)
-            """
-        case .mixed(.multiple(let redCount), .multiple(let yellowCount), _):
-            return """
-            \(String(format: "health_status_red_warning_multiple_contacts_description".localized, redCount))
-
-            \(String(format: "health_status_yellow_warning_multiple_contact_description".localized, yellowCount))
-            """
-        case .mixed(.single, _, _):
-            return "health_status_red_warning_single_contact_description".localized
-        case .mixed(.multiple(let redCount), _, _):
-            return String(format: "health_status_red_warning_multiple_contacts_description".localized, redCount)
-        case .yellow(.single, _):
-            return "health_status_yellow_warning_single_contact_description".localized
-        case .yellow(.multiple(let count), _):
-            return String(format: "health_status_yellow_warning_multiple_contact_description".localized, count)
+        case .red:
+            return "contact_health_status_red_warning_description".localized
+        case .yellow:
+            return "contact_health_status_yellow_warning_description".localized
         }
     }
 
     var quarantineDays: Int? {
         switch self {
-        case .mixed(_, _, let quarantineDays):
-            return quarantineDays
-        case .yellow(_, let quarantineDays):
+        case let .mixed(quarantineDays),
+             let .red(quarantineDays),
+             let .yellow(quarantineDays):
             return quarantineDays
         }
     }
 
     var buttonNotification: String {
-        switch self {
-        case .mixed(.single, _, let quarantineDays):
-            if quarantineDays == nil {
-                return "general_additional_info".localized
-            } else {
-                return "health_status_red_warning_single_contact_button".localized
-            }
-        case .mixed(.multiple, _, let quarantineDays):
-            if quarantineDays == nil {
-                return "general_additional_info".localized
-            } else {
-                return "health_status_red_warning_multiple_contacts_button".localized
-            }
-        case .yellow(.single, let quarantineDays):
-            if quarantineDays == nil {
-                return "general_additional_info".localized
-            } else {
-                return "health_status_yellow_warning_single_contact_button".localized
-            }
-        case .yellow(.multiple, let quarantineDays):
-            if quarantineDays == nil {
-                return "general_additional_info".localized
-            } else {
-                return "health_status_yellow_warning_multiple_contact_button".localized
-            }
+        if quarantineDays == nil {
+            return "general_additional_info".localized
         }
+
+        return "contact_health_status_quarantine_days_button".localized
     }
 
     var color: UIColor {
         switch self {
-        case .mixed:
+        case .mixed, .red:
             return .ccRed
         case .yellow:
             return .ccYellow
@@ -154,7 +85,6 @@ extension ContactHealthStatus {
     private var icon: String {
         "WarningIconWhite"
     }
-
 }
 
 // MARK: - Contact Sickness Screen
@@ -167,10 +97,11 @@ private let dateString: (Date) -> String = { date in
 }
 
 extension ContactHealthStatus {
-
     var title: String {
         switch self {
         case .mixed:
+            return "contact_sickness_mixed_title".localized
+        case .red:
             return "contact_sickness_proven_title".localized
         case .yellow:
             return "contact_sickness_warning_title".localized
@@ -179,14 +110,12 @@ extension ContactHealthStatus {
 
     var headline: String {
         switch self {
-        case .mixed(.single, _, _):
-            return "contact_sickness_proven_headline_single".localized
-        case .mixed(.multiple(let count), _, _):
-            return String(format: "contact_sickness_proven_headline_multiple".localized, count)
-        case .yellow(.single, _):
-            return "contact_sickness_warning_headline_single".localized
-        case .yellow(.multiple(let count), _):
-            return String(format: "contact_sickness_warning_headline_multiple".localized, count)
+        case .mixed:
+            return "contact_sickness_mixed_headline".localized
+        case .red:
+            return "contact_sickness_proven_headline".localized
+        case .yellow:
+            return "contact_sickness_warning_headline".localized
         }
     }
 
@@ -218,37 +147,7 @@ extension ContactHealthStatus {
             return nil
         }
 
-        var descriptionText = ""
-        var handshakeText = ""
-
-        switch infections.count {
-        case 1:
-            descriptionText = String(
-                format: "contact_sickness_proven_description_single".localized,
-                "contact_sickness_proven_description_attested".localized
-            )
-            handshakeText = "contact_sickness_handshake_single".localized
-        default:
-            descriptionText = String(
-                format: "contact_sickness_proven_description_multiple".localized,
-                infections.count,
-                "contact_sickness_proven_description_attested".localized
-            )
-            handshakeText = "contact_sickness_handshake_multiple".localized
-        }
-
-        let handshakes = descriptionForHandshakes(infections: infections).joined(separator: "\n")
-
-        let handshakesText = """
-        \(handshakeText)
-        \(handshakes)
-        """
-
-        return """
-        \(descriptionText)
-
-        \(handshakesText)
-        """
+        return "contact_sickness_proven_description".localized
     }
 
     private func descriptionForYellowWarnings(infections: [InfectionWarning]) -> String? {
@@ -256,97 +155,34 @@ extension ContactHealthStatus {
             return nil
         }
 
-        var descriptionText = ""
-        var handshakeText = ""
-
-        switch infections.count {
-        case 1:
-            descriptionText = String(
-                format: "contact_sickness_warning_description_single".localized,
-                "contact_sickness_warning_explanation".localized
-            )
-            handshakeText = "contact_sickness_handshake_single".localized
-        default:
-            descriptionText = String(
-                format: "contact_sickness_warning_description_multiple".localized,
-                infections.count,
-                "contact_sickness_warning_explanation".localized
-            )
-            handshakeText = "contact_sickness_handshake_multiple".localized
-        }
-
-        let handshakes = descriptionForHandshakes(infections: infections).joined(separator: "\n")
-
-        let handshakesText = """
-        \(handshakeText)
-        \(handshakes)
-        """
-
-        return """
-        \(descriptionText)
-
-        \(handshakesText)
-        """
-    }
-
-    private func descriptionForHandshakes(infections: [InfectionWarning]) -> [String] {
-        infections.map { $0.handshakeDescription }
+        return "contact_sickness_warning_description".localized
     }
 
     // MARK: Guidelines
 
     var headlineGuidelines: String {
-        switch self {
-        case .mixed:
-            return "contact_sickness_proven_guidelines_headline".localized
-        case .yellow:
-            return "contact_sickness_warning_guidelines_headline".localized
-        }
+        "contact_sickness_guidelines_headline".localized
     }
 
     var endOfQuarantine: String? {
-        var days: Int?
-
-        switch self {
-        case .mixed(_, _, quarantineDays: let quarantineDays):
-            days = quarantineDays
-        case .yellow(_, quarantineDays: let quarantineDays):
-            days = quarantineDays
-        }
-
-        guard let quarantineDays = days, let date = Date().addDays(quarantineDays) else {
+        guard let quarantineDays = quarantineDays, let date = Date().addDays(quarantineDays) else {
             return nil
         }
 
         let endOfQuarantine = dateString(date)
-        return String(format: "contact_sickness_proven_guidelines_quarantine_end".localized, endOfQuarantine)
+        return String(format: "contact_sickness_guidelines_quarantine_end".localized, endOfQuarantine)
     }
 
     var descriptionGuidelines: String {
-        switch self {
-        case .mixed:
-            return "contact_sickness_proven_guidelines_no_public_transport".localized
-        case .yellow:
-            return "contact_sickness_warning_guidelines_no_public_transport".localized
-        }
+        "contact_sickness_guidelines_no_public_transport".localized
     }
 
     var guidelines: [Instruction] {
-        switch self {
-        case .mixed:
-            return [
-                .init(index: 1, text: "contact_sickness_proven_guidelines_first".localized),
-                .init(index: 2, text: "contact_sickness_proven_guidelines_second".localized),
-                .init(index: 3, text: "contact_sickness_proven_guidelines_third".localized),
-                .init(index: 4, text: "contact_sickness_proven_guidelines_fourth".localized)
-            ]
-        case .yellow:
-            return [
-                .init(index: 1, text: "contact_sickness_warning_guidelines_first".localized),
-                .init(index: 2, text: "contact_sickness_warning_guidelines_second".localized),
-                .init(index: 3, text: "contact_sickness_warning_guidelines_third".localized),
-                .init(index: 4, text: "contact_sickness_warning_guidelines_fourth".localized)
-            ]
-        }
+        [
+            .init(index: 1, text: "contact_sickness_guidelines_first".localized),
+            .init(index: 2, text: "contact_sickness_guidelines_second".localized),
+            .init(index: 3, text: "contact_sickness_guidelines_third".localized),
+            .init(index: 4, text: "contact_sickness_guidelines_fourth".localized),
+        ]
     }
 }

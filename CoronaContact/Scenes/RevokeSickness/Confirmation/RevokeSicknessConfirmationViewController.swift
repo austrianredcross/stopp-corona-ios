@@ -3,19 +3,16 @@
 //  CoronaContact
 //
 
-import UIKit
 import Reusable
+import UIKit
 
 final class RevokeSicknessConfirmationViewController: UIViewController, StoryboardBased, ViewModelBased, FlashableScrollIndicators {
-
-    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet var scrollView: UIScrollView!
 
     var viewModel: RevokeSicknessConfirmationViewModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        viewModel?.onViewDidLoad()
         setupUI()
     }
 

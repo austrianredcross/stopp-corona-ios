@@ -6,19 +6,20 @@
 import UIKit
 
 final class SicknessCertificatePersonalDataCoordinator: Coordinator, ErrorPresentableCoordinator {
-
     lazy var rootViewController: SicknessCertificatePersonalDataViewController = {
         SicknessCertificatePersonalDataViewController.instantiate()
     }()
 
+    let updateKeys: Bool
     var navigationController: UINavigationController
 
-    init(navigationController: UINavigationController) {
+    init(navigationController: UINavigationController, updateKeys: Bool) {
+        self.updateKeys = updateKeys
         self.navigationController = navigationController
     }
 
     override func start() {
-        rootViewController.viewModel = SicknessCertificatePersonalDataViewModel(with: self)
+        rootViewController.viewModel = SicknessCertificatePersonalDataViewModel(with: self, updateKeys: updateKeys)
         navigationController.pushViewController(rootViewController, animated: true)
     }
 
@@ -31,7 +32,7 @@ final class SicknessCertificatePersonalDataCoordinator: Coordinator, ErrorPresen
     }
 
     func tanConfirmation() {
-        let child = SicknessCertificateTanConfirmationCoordinator(navigationController: navigationController)
+        let child = SicknessCertificateTanConfirmationCoordinator(navigationController: navigationController, updateKeys: updateKeys)
         addChildCoordinator(child)
         child.start()
     }

@@ -4,6 +4,7 @@
 //
 
 import Foundation
+import Resolver
 
 private let dateFormatter = DateFormatter()
 
@@ -14,9 +15,10 @@ private let dateString: (Date) -> String = { date in
 
 class AttestedSicknessGuidelinesViewModel: ViewModel {
     weak var coordinator: AttestedSicknessGuidelinesCoordinator?
+    @Injected private var localStorage: LocalStorage
 
     var attestedSicknessAt: String {
-        guard let date = UserDefaults.standard.attestedSicknessAt else {
+        guard let date = localStorage.attestedSicknessAt else {
             return ""
         }
 

@@ -6,6 +6,12 @@
 import Foundation
 
 extension Date {
+    func startOfDayUTC() -> Date {
+        var calendar = Calendar(identifier: .gregorian)
+        calendar.timeZone = TimeZone(secondsFromGMT: 0)!
+        return calendar.startOfDay(for: self)
+    }
+
     func lastFullHour() -> Date {
         var components = NSCalendar.current.dateComponents([.minute, .second, .nanosecond], from: self)
         components.minute = -(components.minute ?? 0)

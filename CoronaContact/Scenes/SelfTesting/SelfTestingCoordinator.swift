@@ -6,7 +6,6 @@
 import UIKit
 
 class SelfTestingCoordinator: Coordinator {
-
     var navigationController: UINavigationController
 
     init(navigationController: UINavigationController) {
@@ -14,9 +13,20 @@ class SelfTestingCoordinator: Coordinator {
     }
 
     override func start() {
-        let child = SelfTestingCheckSymptomsCoordinator(navigationController: navigationController)
-        addChildCoordinator(child)
-        child.start(with: 0)
+        start(updateKeys: false)
+    }
+
+    func start(updateKeys: Bool) {
+        if updateKeys {
+            let child = SelfTestingPersonalDataCoordinator(navigationController: navigationController)
+            child.updateKeys = true
+            addChildCoordinator(child)
+            child.start()
+        } else {
+            let child = SelfTestingCheckSymptomsCoordinator(navigationController: navigationController)
+            addChildCoordinator(child)
+            child.start(with: 0)
+        }
     }
 
     override func finish(animated: Bool = false) {

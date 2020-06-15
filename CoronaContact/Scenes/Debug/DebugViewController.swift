@@ -1,15 +1,24 @@
 //
-// DebugViewController.swift
-// CoronaContact
+//  DebugViewController.swift
+//  CoronaContact
 //
 
-import UIKit
+import Resolver
 import Reusable
 import SwiftRichString
-import Resolver
+import UIKit
 
 class DebugViewController: UIViewController, StoryboardBased, ViewModelBased, Reusable {
-    @Injected private var crypto: CryptoService
+    @Injected private var localStorage: LocalStorage
+    @Injected private var batchDownloadScheduler: BatchDownloadScheduler
+
+    @IBOutlet var batchDownloadSchedulerResultLabel: UILabel!
+    @IBOutlet var currentStateLabel: UILabel!
+    @IBOutlet var probablySickButton: SecondaryButton!
+    @IBOutlet var attestedSickButton: SecondaryButton!
+    @IBOutlet var revokeProbablySickButton: SecondaryButton!
+    @IBOutlet var revokeAttestedSickButton: SecondaryButton!
+    @IBOutlet var moveSickReportButton: SecondaryButton!
 
     var viewModel: DebugViewModel? {
         didSet {
@@ -17,9 +26,62 @@ class DebugViewController: UIViewController, StoryboardBased, ViewModelBased, Re
         }
     }
 
+    @IBAction func exitToMain(_ sender: UIStoryboardSegue) {
+        close(sender)
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel?.updateView()
+    }
+
     @IBAction func close(_ sender: Any) {
         viewModel?.close()
     }
+
+    @IBAction func exposeDiagnosesKeysButtonPressed(_ sender: Any) {
+        viewModel?.exposeDiagnosesKeys()
+    }
+
+    // MARK: - Batch Download
+
+    @IBAction func scheduleBackgroundTask(_ sender: Any) {
+        #if DEBUG
+            batchDownloadScheduler.scheduleBackgroundTaskForDebuggingPurposes()
+        #endif
+    }
+
+    @IBAction func downloadSevenDaysBatchAndDailyBatches(_ sender: Any) {
+        viewModel?.downloadSevenDaysBatchAndDailyBatches()
+    }
+
+    @IBAction func downloadFourteenDaysBatch(_ sender: Any) {
+        viewModel?.downloadFourteenDaysBatch()
+    }
+
+    // MARK: - sickness state
+
+    @IBAction func setSelftestedSick(_ sender: Any) {
+        viewModel?.probablySickness()
+    }
+
+    @IBAction func setAttestedSick(_ sender: Any) {
+        viewModel?.attestSickness()
+    }
+
+    @IBAction func revokeProbablySickButtonPressed(_ sender: Any) {
+        viewModel?.revokeProbablySick()
+    }
+
+    @IBAction func revokeAttestedSickButton(_ sender: Any) {
+        viewModel?.revokeAttestedSick()
+    }
+
+    @IBAction func moveSickReportBackADay(_ sender: Any) {
+        viewModel?.moveSickReportBackADay()
+    }
+
+    // MARK: - Mark log settings
 
     @IBAction func shareLogButtonTapped(_ sender: Any) {
         viewModel?.shareLog()
@@ -27,37 +89,5 @@ class DebugViewController: UIViewController, StoryboardBased, ViewModelBased, Re
 
     @IBAction func resetLogButtonTapped(_ sender: Any) {
         viewModel?.resetLog()
-    }
-
-    @IBAction func addHandshakeAction(_ sender: Any) {
-        viewModel?.addHandShakes()
-    }
-
-    @IBAction func addRedInfectionMessage(_ sender: Any) {
-        viewModel?.addRedInfectionMessage()
-    }
-
-    @IBAction func addYellowInfectionMessage(_ sender: Any) {
-        viewModel?.addYellowInfectionMessage()
-    }
-
-    @IBAction func scheduleTestNotifications(_ sender: Any) {
-        viewModel?.scheduleTestNotifications()
-    }
-
-    @IBAction func attestSickness(_ sender: Any) {
-        viewModel?.attestSickness()
-    }
-
-    @IBAction func isUnderSelfMonitoringTapped(_ sender: Any) {
-        UserDefaults.standard.isUnderSelfMonitoring = true
-        UserDefaults.standard.performedSelfTestAt = Date()
-        NotificationCenter.default.post(name: .DatabaseSicknessUpdated, object: nil)
-    }
-
-    @IBAction func isProbablySickTapped(_ sender: Any) {
-        UserDefaults.standard.isProbablySick = true
-        UserDefaults.standard.isProbablySickAt = Date()
-        NotificationCenter.default.post(name: .DatabaseSicknessUpdated, object: nil)
     }
 }

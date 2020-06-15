@@ -9,16 +9,23 @@ import Moya
 enum NetworkEndpoint: TargetType {
     case configuration
     case infectionMessages(fromId: String?, addressPrefix: String)
-    case infectionInfo(InfectionInfo)
     case requestTan(RequestTan)
+    case publish(TracingKeys)
+    case downloadKeys
+    case downloadBatch(String, DownloadDestination)
 }
 
 // MARK: - TargetType Protocol Implementation
+
 extension NetworkEndpoint {
     var baseURL: URL {
         switch self {
         case .requestTan:
             return NetworkConfiguration.smsBaseURL
+        case .downloadKeys:
+            return NetworkConfiguration.cdnBaseURL
+        case .downloadBatch:
+            return NetworkConfiguration.cdnHostURL
         default:
             return NetworkConfiguration.baseURL
         }
@@ -30,27 +37,29 @@ extension NetworkEndpoint {
             return "/configuration"
         case .infectionMessages:
             return "/infection-messages"
-        case .infectionInfo:
-            return "/infection-info"
         case .requestTan:
             return "/request-tan"
+        case .publish:
+            return "/publish"
+        case .downloadKeys:
+            return "/index.json"
+        case let .downloadBatch(path, _):
+            return path
         }
     }
 
     var method: Moya.Method {
         switch self {
-        case .configuration, .infectionMessages:
+        case .configuration, .infectionMessages, .downloadKeys, .downloadBatch:
             return .get
-        case .requestTan:
+        case .requestTan, .publish:
             return .post
-        case .infectionInfo:
-            return .put
         }
     }
 
     var task: Task {
         switch self {
-        case .configuration:
+        case .configuration, .downloadKeys:
             return .requestPlain
         case let .infectionMessages(fromId, addressPrefix):
             var parameters = ["addressPrefix": addressPrefix]
@@ -59,10 +68,12 @@ extension NetworkEndpoint {
             }
 
             return .requestParameters(parameters: parameters, encoding: URLEncoding.queryString)
-        case let .infectionInfo(infectionInfo):
-            return .requestCustomJSONEncodable(infectionInfo, encoder: JSONEncoder.withApiDateFormat)
         case let .requestTan(requestTan):
             return .requestJSONEncodable(requestTan)
+        case let .publish(tracingKeys):
+            return .requestJSONEncodable(tracingKeys)
+        case let .downloadBatch(_, downloadDestination):
+            return .downloadDestination(downloadDestination)
         }
     }
 
@@ -82,7 +93,7 @@ extension NetworkEndpoint {
         return [
             NetworkConfiguration.HeaderKeys.authorizationKey: authorizationKey,
             NetworkConfiguration.HeaderKeys.appId: NetworkConfiguration.appId,
-            NetworkConfiguration.HeaderKeys.contentType: NetworkConfiguration.HeaderValues.contentType
+            NetworkConfiguration.HeaderKeys.contentType: NetworkConfiguration.HeaderValues.contentType,
         ]
     }
 }
