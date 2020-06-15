@@ -29,10 +29,8 @@ class WhatsNewRepositoryTests: XCTestCase {
 
     // MARK: - Helpers
 
-    private func injectHistory(_ historyEntries: AppVersionHistory.AppVersionHistoryDictionary) {
-        var history = AppVersionHistory()
-        history.history = historyEntries
-        sut.appVersionHistory = history
+    private func injectHistory(_ historyEntries: [AppVersion: WhatsNewContent]) {
+        sut.appVersionHistory = HistoryItems<WhatsNewContent>(historyEntries)
     }
 
     // MARK: - Tests

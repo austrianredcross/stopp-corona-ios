@@ -100,7 +100,7 @@ class ExposureManager {
     }
 
     func getDiagnosisKeys(completion: @escaping (Result<[ENTemporaryExposureKey], Error>) -> Void) {
-        #if DEBUG || STAGE
+        #if DEBUG
             let keyFunction = manager.getTestDiagnosisKeys
         #else
             let keyFunction = manager.getDiagnosisKeys
@@ -130,8 +130,8 @@ class ExposureManager {
                         return startTime <= timeStamp && timeStamp < endTime
                     }
 
-                    let timestamps = filteredKeys.map(\.rollingStartNumber)
-                    let passwords = try TracingKeyPassword.getPasswordsFor(timestamps: timestamps)
+                    let intervals = filteredKeys.map(\.rollingStartNumber)
+                    let passwords = try TracingKeyPassword.getPasswordsFor(intervals: intervals)
 
                     let temporaryExposureKeys = filteredKeys.map { key in
                         TemporaryExposureKey(temporaryExposureKey: key, password: passwords[key.rollingStartNumber])
