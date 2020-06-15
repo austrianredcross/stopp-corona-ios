@@ -37,7 +37,8 @@ private extension Set where Element == ENRiskLevelValue {
     mutating func unique() -> UniqueAttenuationLevelValues? {
         remove(0)
 
-        guard let maxValue = max(), let minValue = min() else {
+        // swiftformat:disable:next redundantSelf
+        guard let maxValue = self.max(), let minValue = self.min() else {
             return nil
         }
 
