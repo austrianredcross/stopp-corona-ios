@@ -99,6 +99,7 @@
 		61251F212491259D00CEBCCD /* RiskCalculationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61251F202491259D00CEBCCD /* RiskCalculationController.swift */; };
 		61251F25249143B100CEBCCD /* ExposureConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61251F24249143B100CEBCCD /* ExposureConfiguration.swift */; };
 		61251F272491480400CEBCCD /* Exposure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61251F262491480400CEBCCD /* Exposure.swift */; };
+		61273E9224979B3D001B86E6 /* ENExposureDetectionSummary+totalRiskScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61273E9124979B3D001B86E6 /* ENExposureDetectionSummary+totalRiskScore.swift */; };
 		6129B57D24923B5300E2D15B /* RiskCalculationController+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6129B57C24923B5300E2D15B /* RiskCalculationController+Injection.swift */; };
 		6129B57F24924B6A00E2D15B /* ENRiskLevel+diagnosisType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6129B57E24924B6A00E2D15B /* ENRiskLevel+diagnosisType.swift */; };
 		612C4600246414260072ECF7 /* ConfigurationRetrievable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612C45FF246414260072ECF7 /* ConfigurationRetrievable.swift */; };
@@ -452,6 +453,7 @@
 		61251F202491259D00CEBCCD /* RiskCalculationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiskCalculationController.swift; sourceTree = "<group>"; };
 		61251F24249143B100CEBCCD /* ExposureConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExposureConfiguration.swift; sourceTree = "<group>"; };
 		61251F262491480400CEBCCD /* Exposure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exposure.swift; sourceTree = "<group>"; };
+		61273E9124979B3D001B86E6 /* ENExposureDetectionSummary+totalRiskScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ENExposureDetectionSummary+totalRiskScore.swift"; sourceTree = "<group>"; };
 		6129B57C24923B5300E2D15B /* RiskCalculationController+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RiskCalculationController+Injection.swift"; sourceTree = "<group>"; };
 		6129B57E24924B6A00E2D15B /* ENRiskLevel+diagnosisType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ENRiskLevel+diagnosisType.swift"; sourceTree = "<group>"; };
 		612C45FF246414260072ECF7 /* ConfigurationRetrievable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationRetrievable.swift; sourceTree = "<group>"; };
@@ -1577,6 +1579,7 @@
 				61DAF6EE2492181100A3B069 /* ENIntervalNumber+date.swift */,
 				6129B57E24924B6A00E2D15B /* ENRiskLevel+diagnosisType.swift */,
 				61132CF3249759BE00865663 /* ENExposureConfiguration+init.swift */,
+				61273E9124979B3D001B86E6 /* ENExposureDetectionSummary+totalRiskScore.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -2129,6 +2132,7 @@
 				6153A52624264A2D006A8570 /* ActivityPresentationStyle.swift in Sources */,
 				614BAA0C2423C334006797AA /* InfectionInfo.swift in Sources */,
 				614BA9F02423C31C006797AA /* NetworkEndpoint.swift in Sources */,
+				61273E9224979B3D001B86E6 /* ENExposureDetectionSummary+totalRiskScore.swift in Sources */,
 				6153A50124259953006A8570 /* ProgressView.swift in Sources */,
 				611D9EE5248E713100EBB420 /* FileManager+unzipItemWithOverride.swift in Sources */,
 				6153A4E6242598DC006A8570 /* SicknessCertificateTanConfirmationCoordinator.swift in Sources */,
