@@ -83,6 +83,7 @@
 		6103207E243F28A000ED3A20 /* en.privacy.html in Resources */ = {isa = PBXBuildFile; fileRef = 6103207B243F289F00ED3A20 /* en.privacy.html */; };
 		610571AD247E9131009A715E /* UIWindow+key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610571AC247E9131009A715E /* UIWindow+key.swift */; };
 		610571AF247E9EBE009A715E /* ReportHealthStatusFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610571AE247E9EBE009A715E /* ReportHealthStatusFlowController.swift */; };
+		610CC2DF2497E0B5000CE97F /* AppStartBatchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610CC2DE2497E0B5000CE97F /* AppStartBatchController.swift */; };
 		61132CF4249759BE00865663 /* ENExposureConfiguration+init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61132CF3249759BE00865663 /* ENExposureConfiguration+init.swift */; };
 		611B78B9242816950040CCB3 /* UIWindow+topMostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611B78B7242816950040CCB3 /* UIWindow+topMostViewController.swift */; };
 		611B78BA242816950040CCB3 /* UIApplication+AppStoreAppId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611B78B8242816950040CCB3 /* UIApplication+AppStoreAppId.swift */; };
@@ -437,6 +438,7 @@
 		6103207B243F289F00ED3A20 /* en.privacy.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = en.privacy.html; sourceTree = "<group>"; };
 		610571AC247E9131009A715E /* UIWindow+key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+key.swift"; sourceTree = "<group>"; };
 		610571AE247E9EBE009A715E /* ReportHealthStatusFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportHealthStatusFlowController.swift; sourceTree = "<group>"; };
+		610CC2DE2497E0B5000CE97F /* AppStartBatchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStartBatchController.swift; sourceTree = "<group>"; };
 		61132CF3249759BE00865663 /* ENExposureConfiguration+init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ENExposureConfiguration+init.swift"; sourceTree = "<group>"; };
 		611B78B7242816950040CCB3 /* UIWindow+topMostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIWindow+topMostViewController.swift"; sourceTree = "<group>"; };
 		611B78B8242816950040CCB3 /* UIApplication+AppStoreAppId.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+AppStoreAppId.swift"; sourceTree = "<group>"; };
@@ -991,6 +993,7 @@
 				6155C700248FC5CD009BDE6B /* BatchDownloadSchedulerResult.swift */,
 				611D9EE6248E7C9500EBB420 /* BatchDownloadConfiguration.swift */,
 				616B75AA248E33A60030CD6B /* FileDownloadDestination.swift */,
+				610CC2DE2497E0B5000CE97F /* AppStartBatchController.swift */,
 			);
 			path = BatchDownload;
 			sourceTree = "<group>";
@@ -2096,6 +2099,7 @@
 				614BA9F12423C31C006797AA /* NetworkService+Injection.swift in Sources */,
 				618A6651242B8B84001BDBBF /* Collection+safe.swift in Sources */,
 				614D722E2429084B00CC545D /* SelfTestingTanConfirmationViewModel.swift in Sources */,
+				610CC2DF2497E0B5000CE97F /* AppStartBatchController.swift in Sources */,
 				616E1DA9243486C700109435 /* ArrowButton.swift in Sources */,
 				4B7379ED2423DA7A00DF338E /* StartMenuCoordinator.swift in Sources */,
 				7829D824247D507A0015F5A5 /* SavedIDsViewController.swift in Sources */,

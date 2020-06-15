@@ -97,6 +97,7 @@ final class BatchDownloadScheduler {
     private func handleRiskCalculationResult(_ result: Result<RiskCalculationResult, RiskCalculationError>) {
         if case let .success(riskResult) = result {
             log.debug("Passing the risk calculation result to the quarantine time controller.")
+            localStorage.performedBatchProcessingAt = Date()
             QuarantineTimeController.quarantineTimeCalculation(riskResult: riskResult)
         }
     }
