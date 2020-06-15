@@ -166,6 +166,7 @@ class QuarantineTimeController {
     }
 
     private func registerObservers() {
+        observers.append(localStorage.$isUnderSelfMonitoring.addObserver(using: refresh))
         observers.append(localStorage.$attestedSicknessAt.addObserver(using: refresh))
         observers.append(localStorage.$isProbablySickAt.addObserver(using: refresh))
         observers.append(localStorage.$lastYellowContact.addObserver(using: refresh))
