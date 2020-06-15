@@ -16,18 +16,18 @@ extension BatchDownloadConfiguration {
             return directory.appendingPathComponent("batches")
         }()
 
-        static func zipFileURL(for batchInterval: Int, batchType: BatchType) -> URL {
+        static func zipFileURL(for batchInterval: UInt32, batchType: BatchType) -> URL {
             zipFolderURL(for: batchInterval, batchType: batchType)
                 .appendingPathComponent("\(batchInterval)-\(batchType).zip")
         }
 
-        static func zipFolderURL(for batchInterval: Int, batchType: BatchType) -> URL {
+        static func zipFolderURL(for batchInterval: UInt32, batchType: BatchType) -> URL {
             batchesURL
                 .appendingPathComponent("\(batchInterval)-\(batchType)")
                 .appendingPathComponent("zipped")
         }
 
-        static func unzippedFolderURL(for batchInterval: Int, batchType: BatchType) -> URL {
+        static func unzippedFolderURL(for batchInterval: UInt32, batchType: BatchType) -> URL {
             batchesURL
                 .appendingPathComponent("\(batchInterval)-\(batchType)")
                 .appendingPathComponent("unzipped")

@@ -148,9 +148,28 @@ class QuarantineTimeController {
         refresh()
     }
 
+    static func quarantineTimeCalculation(riskResult: RiskCalculationResult) {
+        var lastRedContact: Date?
+        var lastYellowContact: Date?
+        let localStorage: LocalStorage = Resolver.resolve()
+
+        for (date, riskType) in riskResult {
+            if riskType == .yellow, lastYellowContact == nil || lastYellowContact! < date {
+                lastYellowContact = date
+            }
+            if riskType == .red, lastRedContact == nil || lastRedContact! < date {
+                lastRedContact = date
+            }
+        }
+        localStorage.lastRedContact = lastRedContact
+        localStorage.lastYellowContact = lastYellowContact
+    }
+
     private func registerObservers() {
         observers.append(localStorage.$attestedSicknessAt.addObserver(using: refresh))
         observers.append(localStorage.$isProbablySickAt.addObserver(using: refresh))
+        observers.append(localStorage.$lastYellowContact.addObserver(using: refresh))
+        observers.append(localStorage.$lastRedContact.addObserver(using: refresh))
     }
 
     public func refreshIfNecessary() {
@@ -178,7 +197,21 @@ class QuarantineTimeController {
 
         var endOfQuarantines = [QuarantineEnd]()
 
-        // TODO: add new calculation
+        if let lastYellowContact = localStorage.lastYellowContact {
+            let endOfQuarantine = QuarantineEnd(
+                type: .yellow,
+                date: addDays(timeConfiguration.yellowWarning, to: lastYellowContact)
+            )
+            endOfQuarantines.append(endOfQuarantine)
+        }
+
+        if let lastRedContact = localStorage.lastRedContact {
+            let endOfQuarantine = QuarantineEnd(
+                type: .red,
+                date: addDays(timeConfiguration.redWarning, to: lastRedContact)
+            )
+            endOfQuarantines.append(endOfQuarantine)
+        }
 
         if let isProbablySickAt = localStorage.isProbablySickAt {
             let endOfQuarantine = QuarantineEnd(
@@ -188,7 +221,9 @@ class QuarantineTimeController {
             endOfQuarantines.append(endOfQuarantine)
         }
 
-        let sortedQuarantines = endOfQuarantines.sorted { $0.date.compare($1.date) == .orderedDescending }
+        let sortedQuarantines = endOfQuarantines.sorted {
+            $0.date.compare($1.date) == .orderedDescending
+        }
 
         if let longestQuarantine = sortedQuarantines.first {
             if let daysUntilEnd = longestQuarantine.numberOfDays, daysUntilEnd <= 0 {

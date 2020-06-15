@@ -40,7 +40,9 @@ final class BatchDownloadScheduler {
     }
 
     @Injected private var localStorage: LocalStorage
+    @Injected private var healthRepository: HealthRepository
     @Injected private var batchDownloadService: BatchDownloadService
+    @Injected private var riskCalculationController: RiskCalculationController
 
     weak var exposureManager: ExposureManager?
 
@@ -51,9 +53,12 @@ final class BatchDownloadScheduler {
 
     func registerBackgroundTask() {
         backgroundTaskScheduler.register(forTaskWithIdentifier: backgroundTaskIdentifier, using: .main) { task in
-            let progress = self.batchDownloadService.startBatchDownload(.all) { result in
+            let downloadRequirement = self.determineDownloadRequirement()
+
+            let progress = self.batchDownloadService.startBatchDownload(downloadRequirement) { result in
                 switch result {
-                case .success:
+                case let .success(batches):
+                    self.riskCalculationController.processBatches(batches, completionHandler: self.handleRiskCalculationResult)
                     task.setTaskCompleted(success: true)
                     self.localStorage.batchDownloadSchedulerResult = BatchDownloadSchedulerResult(task: task, error: nil).description
                 case let .failure(error):
@@ -73,6 +78,21 @@ final class BatchDownloadScheduler {
         }
 
         scheduleBackgroundTaskIfNeeded()
+    }
+
+    func determineDownloadRequirement() -> BatchDownloadService.DownloadRequirement {
+        switch healthRepository.userHealthStatus {
+        case .isHealthy:
+            return .sevenDaysBatchAndDailyBatches
+        case .hasAttestedSickness, .isProbablySick, .isUnderSelfMonitoring:
+            return .onlyFourteenDaysBatch
+        }
+    }
+
+    func handleRiskCalculationResult(_ result: Result<RiskCalculationResult, RiskCalculationError>) {
+        if case let .success(riskResult) = result {
+            QuarantineTimeController.quarantineTimeCalculation(riskResult: riskResult)
+        }
     }
 
     func scheduleBackgroundTaskIfNeeded() {

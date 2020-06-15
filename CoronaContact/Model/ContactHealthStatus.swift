@@ -3,6 +3,7 @@
 //  CoronaContact
 //
 
+import Resolver
 import UIKit
 
 enum ContactHealthStatus {
@@ -10,19 +11,18 @@ enum ContactHealthStatus {
     case red(quarantineDays: Int? = 0)
     case yellow(quarantineDays: Int? = 0)
 
-    init?(basedOn warnings: [InfectionWarning], quarantineDays: Int?) {
-        if warnings.count == 0 {
-            return nil
-        }
-        let redCount = warnings.filter { $0.type == .red }.count
-        let yellowCount = warnings.filter { $0.type == .yellow }.count
+    init?(quarantineDays: Int?) {
+        let localStorage: LocalStorage = Resolver.resolve()
 
-        switch (redCount, yellowCount) {
-        case (1..., 1...):
+        let hadYellowContact = localStorage.lastYellowContact != nil
+        let hadRedContact = localStorage.lastRedContact != nil
+
+        switch (hadYellowContact, hadRedContact) {
+        case (true, true):
             self = .mixed(quarantineDays: quarantineDays)
-        case (1..., 0):
+        case (false, true):
             self = .red(quarantineDays: quarantineDays)
-        case (0, 1...):
+        case (true, false):
             self = .yellow(quarantineDays: quarantineDays)
         default:
             return nil

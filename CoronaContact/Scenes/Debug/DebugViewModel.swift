@@ -24,6 +24,8 @@ class DebugViewModel: ViewModel {
     @Injected private var notificationService: NotificationService
     @Injected private var exposureManager: ExposureManager
     @Injected private var healthRepository: HealthRepository
+    @Injected private var batchDownloadService: BatchDownloadService
+    @Injected private var riskCalculationController: RiskCalculationController
 
     init(coordinator: DebugCoordinator) {
         self.coordinator = coordinator
@@ -97,17 +99,33 @@ class DebugViewModel: ViewModel {
         healthRepository.revokeProvenSickness()
     }
 
-    func exposeDiagnosesKeys() {
-        let debugFun: (Result<[ENTemporaryExposureKey], Error>) -> Void = { keyResult in
-            if case let .success(keys) = keyResult {
-                /*                let ukeys = self.exposureKeyManager.getKeysForUpload(from: Date().addDays(-14)!, untilIncluding: Date())
-                                ukeys?.forEach { key in
-                                    LoggingService.debug("ExposureKey: \(key.intervalNumber) \(key.intervalNumberDate) \(key.password.prefix(10))")
-                                }
-                 */
-            }
+    func downloadSevenDaysBatchAndDailyBatches() {
+        _ = batchDownloadService.startBatchDownload(.sevenDaysBatchAndDailyBatches, completionHandler: handleBatchDownloadResult)
+    }
+
+    func downloadFourteenDaysBatch() {
+        _ = batchDownloadService.startBatchDownload(.onlyFourteenDaysBatch, completionHandler: handleBatchDownloadResult)
+    }
+
+    func handleBatchDownloadResult(_ result: Result<[UnzippedBatch], BatchDownloadError>) {
+        switch result {
+        case let .success(batches):
+            riskCalculationController.processBatches(batches, completionHandler: handleRiskCalculationResult)
+        case let .failure(error):
+            print(error)
         }
-        exposureManager.getDiagnosisKeys(completion: debugFun)
+    }
+
+    func handleRiskCalculationResult(_ result: Result<RiskCalculationResult, RiskCalculationError>) {
+        if case let .success(riskResult) = result {
+            QuarantineTimeController.quarantineTimeCalculation(riskResult: riskResult)
+        }
+    }
+
+    func exposeDiagnosesKeys() {
+        exposureManager.getKeysForUpload(from: Date().addDays(-15)!, untilIncluding: Date(), diagnosisType: .red) { result in
+            LoggingService.debug("keys: \(result)")
+        }
     }
 
     deinit {
