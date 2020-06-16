@@ -82,7 +82,7 @@
 "contact_sickness_handshake_format"                                          = "%@, %@ und %@ Uhr";
 "contact_sickness_guidelines_headline"                                       = "Begeben Sie sich möglichst direkt in Quarantäne";
 "contact_sickness_guidelines_quarantine_end"                                 = "Bleiben Sie dort bitte bis %@";
-"contact_sickness_guidelines_quarantine_rule"                                = "Bei Vorliegen eines offiziellen Quarantänebescheides berücksichtigen Sie den Quarantänezeitraum, der dort angegeben \nist.";
+"contact_sickness_guidelines_quarantine_rule"                                = "Bei Vorliegen eines offiziellen Quarantänebescheides berücksichtigen Sie den Quarantänezeitraum, der dort angegeben ist.";
 "contact_sickness_guidelines_no_public_transport"                            = "Nutzen Sie auf dem Weg möglichst keine öffentlichen Verkehrsmittel und meiden Sie Kontakt mit Mitmenschen.";
 "contact_sickness_guidelines_first"                                          = "Halten Sie räumlich Abstand von gesunden Mitbewohnern.";
 "contact_sickness_guidelines_second"                                         = "Überwachen Sie Ihren Gesundheitszustand: Messen Sie 2x täglich Fieber und führen ein Tagebuch über Symptome.";
