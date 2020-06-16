@@ -35,7 +35,8 @@ class ExposureManager {
                 NotificationCenter.default.post(name: ExposureManager.notificationStatusChangedNotification, object: nil)
             }
 
-            if ENManager.authorizationStatus == .authorized,
+            if self.localStorage.agreedToDataPrivacyAt != nil,
+                ENManager.authorizationStatus == .authorized,
                 !self.manager.exposureNotificationEnabled,
                 !self.localStorage.backgroundHandshakeDisabled {
                 self.manager.setExposureNotificationEnabled(true) { error in

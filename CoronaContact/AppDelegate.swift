@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let log = ContextLogger(context: .application)
     private var observers = [NSObjectProtocol]()
 
-    private var serivcesInitialized: Bool = false
+    private var servicesInitialized: Bool = false
 
     @Injected private var configService: ConfigurationService
     @Injected private var appUpdateService: AppUpdateService
@@ -51,7 +51,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         appUpdateService.performMaintenanceTasks()
         batchDownloadScheduler.registerBackgroundTask()
-        appStartBatchController.startBatchProcessing()
 
         UNUserNotificationCenter.current().delegate = self
 
@@ -71,11 +70,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func initializeExternalServices(_ application: UIApplication) {
-        guard serivcesInitialized == false else {
+        guard servicesInitialized == false else {
             return
         }
         configService.update()
-        serivcesInitialized = true
+        appStartBatchController.startBatchProcessing()
+        servicesInitialized = true
     }
 
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
