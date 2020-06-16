@@ -242,11 +242,11 @@ class QuarantineTimeController {
     }
 
     private func scheduleNotification(for quarantineStatus: QuarantineStatus) {
-        guard let date = quarantineStatus.date else {
-            return
+        if quarantineStatus.isCleared {
+            notificationService.showQuarantineCompletedNotification(endOfQuarantine: nil)
+        } else if let date = quarantineStatus.date {
+            notificationService.showQuarantineCompletedNotification(endOfQuarantine: date)
         }
-
-        notificationService.showQuarantineCompletedNotification(endOfQuarantine: date)
     }
 
     private func setupRevocation(for quarantineStatus: QuarantineStatus) {
