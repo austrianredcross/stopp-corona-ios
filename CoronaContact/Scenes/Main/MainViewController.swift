@@ -4,6 +4,7 @@
 //
 
 import Lottie
+import Resolver
 import Reusable
 import UIKit
 
@@ -145,6 +146,30 @@ final class MainViewController: UIViewController, StoryboardBased, ViewModelBase
                 }
             }
         }
+
+        #if DEBUG && true
+            let localStorage: LocalStorage = Resolver.resolve()
+            if localStorage.attestedSicknessAt != nil {
+                userHealthStatusView.addButton(title: "DEBUG: move back a day") {
+                    localStorage.attestedSicknessAt = localStorage.attestedSicknessAt?.addDays(-1)
+                }
+            }
+            if localStorage.isProbablySickAt != nil {
+                userHealthStatusView.addButton(title: "DEBUG: move back a day") {
+                    localStorage.isProbablySickAt = localStorage.isProbablySickAt?.addDays(-1)
+                }
+            }
+            if localStorage.lastYellowContact != nil {
+                contactHealthStatusView.addButton(title: "DEBUG: yellow back a day") {
+                    localStorage.lastYellowContact = localStorage.lastYellowContact?.addDays(-1)
+                }
+            }
+            if localStorage.lastRedContact != nil {
+                contactHealthStatusView.addButton(title: "DEBUG: red back a day") {
+                    localStorage.lastRedContact = localStorage.lastRedContact?.addDays(-1)
+                }
+            }
+        #endif
     }
 
     private func configureContactHealthStatusView() {

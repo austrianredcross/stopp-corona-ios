@@ -31,6 +31,8 @@ class DebugViewModel: ViewModel {
         self.coordinator = coordinator
         observers.append(localStorage.$isProbablySickAt.addObserver(using: updateView))
         observers.append(localStorage.$attestedSicknessAt.addObserver(using: updateView))
+        observers.append(localStorage.$lastYellowContact.addObserver(using: updateView))
+        observers.append(localStorage.$lastRedContact.addObserver(using: updateView))
     }
 
     func updateView() {
@@ -57,6 +59,18 @@ class DebugViewModel: ViewModel {
             viewController?.attestedSickButton.isHidden = true
             viewController?.moveSickReportButton.isHidden = false
         }
+        if localStorage.lastYellowContact != nil {
+            viewController?.yellowButton.transKeyNormal = "- Yellow"
+        } else {
+            viewController?.yellowButton.transKeyNormal = "+ Yellow"
+        }
+        viewController?.yellowButton.updateTranslation()
+        if localStorage.lastRedContact != nil {
+            viewController?.redButton.transKeyNormal = "- Red"
+        } else {
+            viewController?.redButton.transKeyNormal = "+ Red"
+        }
+        viewController?.redButton.updateTranslation()
         viewController?.currentStateLabel.text = text
         viewController?.batchDownloadSchedulerResultLabel.text = localStorage.batchDownloadSchedulerResult
     }
@@ -89,6 +103,22 @@ class DebugViewModel: ViewModel {
         localStorage.isProbablySickAt = localStorage.isProbablySickAt?.addDays(-1)
         localStorage.attestedSicknessAt = localStorage.attestedSicknessAt?.addDays(-1)
         localStorage.missingUploadedKeysAt = localStorage.missingUploadedKeysAt?.addDays(-1)
+    }
+
+    func yellowExposureButtonToggle() {
+        if localStorage.lastYellowContact == nil {
+            localStorage.lastYellowContact = Date().addDays(-1)
+        } else {
+            localStorage.lastYellowContact = nil
+        }
+    }
+
+    func redExposureButtonToggle() {
+        if localStorage.lastRedContact == nil {
+            localStorage.lastRedContact = Date().addDays(-1)
+        } else {
+            localStorage.lastRedContact = nil
+        }
     }
 
     func revokeProbablySick() {
