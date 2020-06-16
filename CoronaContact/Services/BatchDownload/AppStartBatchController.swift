@@ -62,5 +62,7 @@ final class AppStartBatchController {
             localStorage.performedBatchProcessingAt = Date()
             QuarantineTimeController.quarantineTimeCalculation(riskResult: riskResult)
         }
+
+        batchDownloadService.removeBatches()
     }
 }

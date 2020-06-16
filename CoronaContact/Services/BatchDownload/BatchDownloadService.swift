@@ -157,12 +157,17 @@ final class BatchDownloadService {
             case let .failure(error):
                 self.queue.cancelAllOperations()
                 self.completionHandler?(.failure(error))
-                self.removeBatches()
             }
         }
     }
 
-    private func removeBatches() {
-        try? FileManager.default.removeItem(at: BatchDownloadConfiguration.DownloadDirectory.batchesURL)
+    func removeBatches() {
+        let batchesURL = BatchDownloadConfiguration.DownloadDirectory.batchesURL
+        do {
+            try FileManager.default.removeItem(at: batchesURL)
+            log.debug("Successfully deleted batches at \(batchesURL)")
+        } catch {
+            log.error("Failed to delete batches at \(batchesURL) due to an error: \(error)")
+        }
     }
 }

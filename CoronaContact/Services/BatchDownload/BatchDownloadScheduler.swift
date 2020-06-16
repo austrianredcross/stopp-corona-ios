@@ -57,7 +57,11 @@ final class BatchDownloadScheduler {
 
             let downloadRequirement = self.determineDownloadRequirement()
 
-            let progress = self.batchDownloadService.startBatchDownload(downloadRequirement) { result in
+            let progress = self.batchDownloadService.startBatchDownload(downloadRequirement) { [weak self] result in
+                guard let self = self else {
+                    return
+                }
+
                 switch result {
                 case let .success(batches):
                     self.riskCalculationController.processBatches(batches, completionHandler: self.handleRiskCalculationResult)
@@ -100,6 +104,8 @@ final class BatchDownloadScheduler {
             localStorage.performedBatchProcessingAt = Date()
             QuarantineTimeController.quarantineTimeCalculation(riskResult: riskResult)
         }
+
+        batchDownloadService.removeBatches()
     }
 
     func scheduleBackgroundTaskIfNeeded() {
