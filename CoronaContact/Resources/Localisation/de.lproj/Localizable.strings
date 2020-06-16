@@ -94,7 +94,6 @@
 "contact_sickness_guidelines_consulting_second"                              = "Rat auf Draht\n<bred>147</bred>";
 "contact_sickness_guidelines_consulting_third"                               = "Telefonseelsorge\n<bred>142</bred>";
 "contact_sickness_handshake_date"                                            = "%1$@, zwischen %2$@ bis %3$@ Uhr";
-"contact_sickness_date_format"                                               = "dd. MMMM";
 "contact_sickness_time_format"                                               = "H";
 "contact_sickness_warning_title"                                             = "Achtung";
 "contact_sickness_warning_headline"                                          = "Coronavirus Verdacht";

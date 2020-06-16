@@ -92,7 +92,8 @@ extension ContactHealthStatus {
 private let dateFormatter = DateFormatter()
 
 private let dateString: (Date) -> String = { date in
-    dateFormatter.dateFormat = "contact_sickness_date_format".localized
+    let format = DateFormatter.dateFormat(fromTemplate: "dd.MMMM", options: 0, locale: Locale.current)
+    dateFormatter.dateFormat = format
     return dateFormatter.string(from: date)
 }
 
