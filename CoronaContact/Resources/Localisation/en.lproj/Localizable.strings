@@ -365,7 +365,6 @@
 "suspicion_guidelines_inform_doctor_headline"                                = "Talk to your doctor, if you have not done this yet";
 "suspicion_guidelines_inform_doctor_description"                             = "If you are older than 65 years and / or suffer from at least one of the following illnesses, then please call <bred>1450</bred> or your attending physician to discuss the further procedure:\n\n • Badly adjusted high blood pressure \n • Insulin-dependent diabetes and poor general condition \n • Pronounced obesity \n • Circulatory disorders of the heart, cardiac insufficiency requiring therapy \n • COPD in advanced stages \n • Kidney disease (subject to dialysis) \n • severe immunosuppression\n\nPlease inform your doctor, or the hospital by phone, so that you can\n\n• Can be medically treated\n• Can be tested for the coronavirus\n\nIf this is not possible, call this number: <bred>1450</bred>";
 "suspicion_guidelines_quarantine_end"                                        = "Please stay quarantined until %@";
-"suspicion_guidelines_date_format"                                           = "dd. MMMM";
 "suspicion_guidelines_precaution_headline"                                   = "Self-quarantine as a precaution.";
 "suspicion_guidelines_precaution_first"                                      = "Keep physical distance from healthy roommates.";
 "suspicion_guidelines_precaution_second"                                     = "Monitor your state of health: Measure fever twice a day and keep a diary of your symptoms.";
