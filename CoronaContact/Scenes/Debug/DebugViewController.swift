@@ -19,6 +19,8 @@ class DebugViewController: UIViewController, StoryboardBased, ViewModelBased, Re
     @IBOutlet var revokeProbablySickButton: SecondaryButton!
     @IBOutlet var revokeAttestedSickButton: SecondaryButton!
     @IBOutlet var moveSickReportButton: SecondaryButton!
+    @IBOutlet var yellowButton: SecondaryButton!
+    @IBOutlet var redButton: SecondaryButton!
 
     var viewModel: DebugViewModel? {
         didSet {
@@ -58,6 +60,18 @@ class DebugViewController: UIViewController, StoryboardBased, ViewModelBased, Re
     @IBAction func downloadFourteenDaysBatch(_ sender: Any) {
         viewModel?.downloadFourteenDaysBatch()
     }
+
+    // MARK: - exposure
+
+    #if DEBUG
+        @IBAction func exposureButtonAction(_ sender: UIButton) {
+            if sender == redButton {
+                viewModel?.redExposureButtonToggle()
+            } else {
+                viewModel?.yellowExposureButtonToggle()
+            }
+        }
+    #endif
 
     // MARK: - sickness state
 
