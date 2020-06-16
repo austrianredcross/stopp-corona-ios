@@ -13,6 +13,9 @@ PODS:
     - Reusable/View (= 4.1.1)
   - Reusable/Storyboard (4.1.1)
   - Reusable/View (4.1.1)
+  - Sentry (5.1.4):
+    - Sentry/Core (= 5.1.4)
+  - Sentry/Core (5.1.4)
   - SQLite.swift (0.12.2):
     - SQLite.swift/standard (= 0.12.2)
   - SQLite.swift/standard (0.12.2)
@@ -30,6 +33,7 @@ DEPENDENCIES:
   - Moya
   - Resolver
   - Reusable
+  - Sentry (~> 5.1)
   - SQLite.swift
   - SQLiteMigrationManager.swift
   - SwiftLint
@@ -46,6 +50,7 @@ SPEC REPOS:
     - Moya
     - Resolver
     - Reusable
+    - Sentry
     - SQLite.swift
     - SQLiteMigrationManager.swift
     - SwiftLint
@@ -61,6 +66,7 @@ SPEC CHECKSUMS:
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
   Resolver: e04ca5a9a19906f2e5cdceb2b90edd3b5daed049
   Reusable: 53a9acf5c536f229b31b5865782414b508252ddb
+  Sentry: 74f2ad93a20a5567a1badaedf5b3f60b142ad082
   SQLite.swift: d2b4642190917051ce6bd1d49aab565fe794eea3
   SQLiteMigrationManager.swift: 2dd6f760d6e53f666176346436c689e55a608f7a
   SwiftLint: 22ccbbe3b8008684be5955693bab135e0ed6a447
@@ -68,6 +74,6 @@ SPEC CHECKSUMS:
   SwiftyBeaver: d39e7c376bf15e9fffca8263b8fd1f42ea56aa2d
   ZIPFoundation: b1f0de4eed33e74a676f76e12559ab6b75990197
 
-PODFILE CHECKSUM: 4dfc7799add80bff9e9a2136c41be174b3b8fbd8
+PODFILE CHECKSUM: b87922d103ff048ead58f32f3b16c5b174afcaab
 
 COCOAPODS: 1.9.1

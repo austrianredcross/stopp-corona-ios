@@ -18,6 +18,7 @@ target 'CoronaContact' do
   pod 'SQLite.swift'
   pod 'SQLiteMigrationManager.swift'
   pod 'ZIPFoundation', '~> 0.9'
+  pod 'Sentry', '~> 5.1', configuration: ['Development', 'Stage']
 
   target 'CoronaContactTests' do
     inherit! :search_paths
