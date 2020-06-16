@@ -31,7 +31,6 @@ final class AppStartBatchController {
             switch result {
             case let .success(batches):
                 self.riskCalculationController.processBatches(batches, completionHandler: self.handleRiskCalculationResult)
-                self.log.debug("Successfully processed batches after app start.")
             case let .failure(error):
                 self.log.error("Failed to process batches after app start due to an error: \(error).")
             }
@@ -58,6 +57,7 @@ final class AppStartBatchController {
 
     private func handleRiskCalculationResult(_ result: Result<RiskCalculationResult, RiskCalculationError>) {
         if case let .success(riskResult) = result {
+            log.debug("Successfully processed batches after app start.")
             log.debug("Passing the risk calculation result to the quarantine time controller.")
             localStorage.performedBatchProcessingAt = Date()
             QuarantineTimeController.quarantineTimeCalculation(riskResult: riskResult)

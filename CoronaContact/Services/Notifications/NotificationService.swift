@@ -45,16 +45,28 @@ class NotificationService: NSObject {
         showNotification(title: title, body: body)
     }
 
-    func showQuarantineCompletedNotification(endOfQuarantine: Date) {
-        let title = "local_notification_sick_contact_headline".localized
-        let body = "local_notification_sick_contact_message".localized
+    func showQuarantineCompletedNotification(endOfQuarantine: Date? = nil) {
+        let title = "local_notification_quarantine_end_headline".localized
+        let body = "local_notification_quarantine_end_message".localized
 
-        showNotification(
-            identifier: NotificationServiceKeys.quarantineCompleted,
-            title: title,
-            body: body,
-            at: endOfQuarantine
-        )
+        notificationCenter.getPendingNotificationRequests { [weak self] requests in
+            let isAlreadyScheduled = requests.contains { $0.identifier == NotificationServiceKeys.quarantineCompleted }
+
+            if let endOfQuarantine = endOfQuarantine, !endOfQuarantine.isToday {
+                self?.showNotification(
+                    identifier: NotificationServiceKeys.quarantineCompleted,
+                    title: title,
+                    body: body,
+                    at: endOfQuarantine
+                )
+            } else if isAlreadyScheduled {
+                self?.showNotification(
+                    identifier: NotificationServiceKeys.quarantineCompleted,
+                    title: title,
+                    body: body
+                )
+            }
+        }
     }
 
     func showTestNotifications() {
@@ -69,7 +81,7 @@ class NotificationService: NSObject {
         showNotification(title: titleYellow, body: bodyYellow, delay: 5)
     }
 
-    func showNotification(title: String, body: String, delay: Int = 0) {
+    func showNotification(identifier: String = UUID().uuidString, title: String, body: String, delay: Int = 0) {
         let content = UNMutableNotificationContent()
 
         content.title = title
@@ -81,7 +93,7 @@ class NotificationService: NSObject {
 
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
 
-        let request = UNNotificationRequest(identifier: UUID().uuidString,
+        let request = UNNotificationRequest(identifier: identifier,
                                             content: content,
                                             trigger: trigger)
 
@@ -138,5 +150,11 @@ class NotificationService: NSObject {
         case .green:
             break
         }
+    }
+}
+
+private extension Date {
+    var isToday: Bool {
+        Calendar.current.isDateInToday(self)
     }
 }
