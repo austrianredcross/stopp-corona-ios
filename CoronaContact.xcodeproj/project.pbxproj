@@ -302,7 +302,6 @@
 		839742C47A14834F1B2C24F6 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83974BF5DD12A8B96C4A52A8 /* MainViewModel.swift */; };
 		839743F271E19BEF66B89E3A /* OnboardingViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 839746C7B319EBECC38557CB /* OnboardingViewController.storyboard */; };
 		8397446DA0EAC8E79B9445BA /* TransButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8397498ADF6B7522C4D9AC93 /* TransButton.swift */; };
-		8397463D0CC798F8B4976AB8 /* P2PKitEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83974BF870B575EAC8607D3D /* P2PKitEvent.swift */; };
 		8397468B2A696988BB980A18 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83974639DCEE7C5E6BF2008F /* OnboardingViewModel.swift */; };
 		839748117E82124039816540 /* AppDelegate+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839749AD5CC31574CCB7808B /* AppDelegate+Injection.swift */; };
 		8397485AF4D5FC35155ED797 /* ConfigurationService+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83974345BBD0522CFDA25B76 /* ConfigurationService+Injection.swift */; };
@@ -578,7 +577,6 @@
 		615D362F2437417600B608AB /* AttestedSicknessGuidelinesViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AttestedSicknessGuidelinesViewController.storyboard; sourceTree = "<group>"; };
 		615D36302437417600B608AB /* AttestedSicknessGuidelinesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttestedSicknessGuidelinesViewController.swift; sourceTree = "<group>"; };
 		615D36312437417600B608AB /* AttestedSicknessGuidelinesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttestedSicknessGuidelinesViewModel.swift; sourceTree = "<group>"; };
-		615D365F2438B26400B608AB /* mtc-suppressions.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "mtc-suppressions.txt"; sourceTree = "<group>"; };
 		615D36632438C25400B608AB /* LoggingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggingService.swift; sourceTree = "<group>"; };
 		616518E42460777C001219A7 /* ShareAppCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareAppCardView.swift; sourceTree = "<group>"; };
 		616518E62460778C001219A7 /* ShareAppCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShareAppCardView.xib; sourceTree = "<group>"; };
@@ -682,7 +680,6 @@
 		83974B392C3F97B048440E20 /* InfectionWarning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfectionWarning.swift; sourceTree = "<group>"; };
 		83974B4E7DDB0AFD2F931B97 /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
 		83974BF5DD12A8B96C4A52A8 /* MainViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
-		83974BF870B575EAC8607D3D /* P2PKitEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = P2PKitEvent.swift; sourceTree = "<group>"; };
 		83974CDB8D1D885F0FB88CC1 /* OnboardingCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinator.swift; sourceTree = "<group>"; };
 		83974CDC660156EAFABB1829 /* DatabaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
 		83974D3FCE9D7093717ED324 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
@@ -800,7 +797,6 @@
 				39679189ECB3019DFC294995 /* Pods */,
 				D8CCFEB4C0D0BFC0B807E51D /* Frameworks */,
 				614FE8C12451C6A10056803D /* README.md */,
-				615D365F2438B26400B608AB /* mtc-suppressions.txt */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1077,7 +1073,6 @@
 				614BAA032423C334006797AA /* SuccessResponse.swift */,
 				4B25BA9C2429592A00CDD1CF /* UserHealthStatus.swift */,
 				61459A56242AC48800DC88A7 /* Website.swift */,
-				83974BF870B575EAC8607D3D /* P2PKitEvent.swift */,
 				61653680247D114F0088A9D6 /* TracingKeys.swift */,
 				83974462389F1C6D2A516DF1 /* TracingKeyPassword.swift */,
 				611D9ED5248E6EEC00EBB420 /* ExposureKeysBatch.swift */,
@@ -2342,7 +2337,6 @@
 				83974FB0112B30AA0C833CBB /* OnboardingCoordinator.swift in Sources */,
 				17CE9FA0CBB1AA58675A1F5A /* UIApplication+SafariViewController.swift in Sources */,
 				83974901AF9ABB4176C37AD0 /* OnboardingConsentPageView.swift in Sources */,
-				8397463D0CC798F8B4976AB8 /* P2PKitEvent.swift in Sources */,
 				83974E01F55C841BAD9C9D1D /* NetworkSession.swift in Sources */,
 				4E1AAEF2246186FA00D43E2B /* RevocationConfirmationViewModel.swift in Sources */,
 				839740FB82072673E0314F53 /* M001InitialMigration.swift in Sources */,

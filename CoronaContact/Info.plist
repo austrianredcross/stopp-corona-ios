@@ -48,8 +48,6 @@
 	<false/>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>P2P_KIT_API</key>
-	<string>${P2P_KIT_API}</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>fetch</string>

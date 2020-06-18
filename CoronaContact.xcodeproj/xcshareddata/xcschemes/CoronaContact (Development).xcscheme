@@ -60,13 +60,6 @@
             ReferencedContainer = "container:CoronaContact.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <EnvironmentVariables>
-         <EnvironmentVariable
-            key = "MTC_SUPPRESSION_FILE"
-            value = "$(PROJECT_DIR)/mtc-suppressions.txt"
-            isEnabled = "YES">
-         </EnvironmentVariable>
-      </EnvironmentVariables>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Development"

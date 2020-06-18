@@ -13,10 +13,6 @@ enum AppConfiguration: ConfigurationRetrievable {
         AppConfiguration.value(for: "APP_STORE_APP_ID")
     }
 
-    static var p2pKitApiKey: String {
-        AppConfiguration.value(for: "P2P_KIT_API")
-    }
-
     static var apiHostName: String {
         AppConfiguration.value(for: "API_HOST")
     }
