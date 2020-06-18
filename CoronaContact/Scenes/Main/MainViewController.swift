@@ -259,8 +259,6 @@ final class MainViewController: UIViewController, StoryboardBased, ViewModelBase
         if viewModel.hasAttestedSickness {
             backgroundHandshakeDescriptionLabel.styledText = "automatic_handshake_description_disabled".localized
         }
-
-        backgroundHandshakeSwitch.isEnabled = !viewModel.hasAttestedSickness
     }
 
     private func configureShareAppCardView() {
