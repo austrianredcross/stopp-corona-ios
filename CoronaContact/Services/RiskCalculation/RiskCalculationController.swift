@@ -48,13 +48,14 @@ final class RiskCalculationController {
                 Start processing daily batches going back from the last exposure date: \(lastExposureDate).
                 """)
                 self.processDailyBatches(batches, before: lastExposureDate)
-            case .success(.fourteenDays):
-                self.log.debug("""
-                Successfully processed the full fourteen days batch and detected an exposure.
-                """)
+            case .success(.sevenDays):
+                self.log.debug("Successfully processed the full seven days batch which does not pose a risk.")
                 self.completionHandler?(.success(self.riskCalculationResult))
-            case .success:
-                self.log.debug("Successfully processed the full batch which does not pose a risk.")
+            case let .success(.fourteenDays(dailyExposure)) where dailyExposure != nil:
+                self.log.debug("Successfully processed the full fourteen days batch and detected an exposure.")
+                self.completionHandler?(.success(self.riskCalculationResult))
+            case .success(.fourteenDays):
+                self.log.debug("Successfully processed the full fourteen days batch which does not pose a risk.")
                 self.completionHandler?(.success(self.riskCalculationResult))
             case let .failure(error):
                 self.log.error("Failed to process full batch due to an error: \(error)")
