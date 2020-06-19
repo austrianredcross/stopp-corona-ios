@@ -95,9 +95,3 @@ class DetectDailyExposuresOperation: ChainedAsyncResultOperation<DailyExposure, 
         handleDailyExposure?(dailyExposure, date)
     }
 }
-
-private extension Array where Element == Exposure {
-    var sumTotalRisk: UInt {
-        reduce(0) { $0 + UInt($1.totalRiskScore) }
-    }
-}

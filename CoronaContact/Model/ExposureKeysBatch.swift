@@ -31,7 +31,8 @@ struct Batch: Codable {
 }
 
 enum BatchType: String {
-    case full
+    case fullSevenDays
+    case fullFourteenDays
     case daily
 }
 

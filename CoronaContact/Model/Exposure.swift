@@ -13,3 +13,9 @@ struct Exposure: Codable {
     let attenuationValue: ENAttenuation
     let transmissionRiskLevel: ENRiskLevel
 }
+
+extension Array where Element == Exposure {
+    var sumTotalRisk: UInt {
+        reduce(0) { $0 + UInt($1.totalRiskScore) }
+    }
+}

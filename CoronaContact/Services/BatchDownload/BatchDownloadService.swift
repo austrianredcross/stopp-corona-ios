@@ -87,7 +87,7 @@ final class BatchDownloadService {
             fullBatchDownloadOperations = downloadFiles(
                 at: batch.fullSevenDaysBatch.filePaths,
                 batch: batch.fullSevenDaysBatch,
-                batchType: .full
+                batchType: .fullSevenDays
             )
             dailyBatchesDownloadOperations = batch.dailyBatches.flatMap { batch in
                 downloadFiles(at: batch.filePaths, batch: batch, batchType: .daily)
@@ -98,7 +98,7 @@ final class BatchDownloadService {
             fullBatchDownloadOperations = downloadFiles(
                 at: batch.fullFourteenDaysBatch.filePaths,
                 batch: batch.fullFourteenDaysBatch,
-                batchType: .full
+                batchType: .fullFourteenDays
             )
             dailyBatchesDownloadOperations = []
         }

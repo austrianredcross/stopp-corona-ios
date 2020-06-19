@@ -105,6 +105,7 @@
 		6129B57F24924B6A00E2D15B /* ENRiskLevel+diagnosisType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6129B57E24924B6A00E2D15B /* ENRiskLevel+diagnosisType.swift */; };
 		612C4600246414260072ECF7 /* ConfigurationRetrievable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612C45FF246414260072ECF7 /* ConfigurationRetrievable.swift */; };
 		612C460224641C620072ECF7 /* RequestTan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612C460124641C620072ECF7 /* RequestTan.swift */; };
+		612E52B2249D0E8A0096DB9F /* FullExposure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612E52B1249D0E8A0096DB9F /* FullExposure.swift */; };
 		613AF72B24616A8B0089085E /* ShareButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613AF72A24616A8B0089085E /* ShareButton.swift */; };
 		613AF72D24618DE80089085E /* Coordinator+ShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613AF72C24618DE80089085E /* Coordinator+ShareSheet.swift */; };
 		613E35F5242E3F65009421A8 /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613E35F1242E3F64009421A8 /* LaunchScreenViewController.swift */; };
@@ -459,6 +460,7 @@
 		6129B57E24924B6A00E2D15B /* ENRiskLevel+diagnosisType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ENRiskLevel+diagnosisType.swift"; sourceTree = "<group>"; };
 		612C45FF246414260072ECF7 /* ConfigurationRetrievable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationRetrievable.swift; sourceTree = "<group>"; };
 		612C460124641C620072ECF7 /* RequestTan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestTan.swift; sourceTree = "<group>"; };
+		612E52B1249D0E8A0096DB9F /* FullExposure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullExposure.swift; sourceTree = "<group>"; };
 		613AF72A24616A8B0089085E /* ShareButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareButton.swift; sourceTree = "<group>"; };
 		613AF72C24618DE80089085E /* Coordinator+ShareSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Coordinator+ShareSheet.swift"; sourceTree = "<group>"; };
 		613E35F1242E3F64009421A8 /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
@@ -1079,6 +1081,7 @@
 				61251F24249143B100CEBCCD /* ExposureConfiguration.swift */,
 				61251F262491480400CEBCCD /* Exposure.swift */,
 				6186C6F924926E240070B616 /* DailyExposure.swift */,
+				612E52B1249D0E8A0096DB9F /* FullExposure.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2277,6 +2280,7 @@
 				6186C6FA24926E240070B616 /* DailyExposure.swift in Sources */,
 				4E5254D32472B8AF00B6C3A4 /* Exposure+Injection.swift in Sources */,
 				8397409A6F3CF92410AAEE06 /* TransLabel.swift in Sources */,
+				612E52B2249D0E8A0096DB9F /* FullExposure.swift in Sources */,
 				4ED175D024606F6D00248D3B /* RevokeSicknessTanConfirmationCoordinator.swift in Sources */,
 				614D72222429083F00CC545D /* SelfTestingPersonalDataCoordinator.swift in Sources */,
 				4ED175C724606AFE00248D3B /* RevokeSicknessPersonalDataViewController.swift in Sources */,
