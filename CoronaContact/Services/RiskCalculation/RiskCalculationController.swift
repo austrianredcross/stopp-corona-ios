@@ -42,15 +42,20 @@ final class RiskCalculationController {
             }
 
             switch result {
-            case let .success((lastExposureDate, isEnoughRisk)) where isEnoughRisk:
+            case let .success(.sevenDays(lastExposureDate, isEnoughRisk)) where isEnoughRisk:
                 self.log.debug("""
-                Successfully processed the full batch which poses a risk. \
+                Successfully processed the full seven days batch which poses a risk. \
                 Start processing daily batches going back from the last exposure date: \(lastExposureDate).
                 """)
                 self.processDailyBatches(batches, before: lastExposureDate)
-            case .success:
+            case .success(.fourteenDays):
+                self.log.debug("""
+                Successfully processed the full fourteen days batch and detected an exposure.
+                """)
                 self.completionHandler?(.success(self.riskCalculationResult))
+            case .success:
                 self.log.debug("Successfully processed the full batch which does not pose a risk.")
+                self.completionHandler?(.success(self.riskCalculationResult))
             case let .failure(error):
                 self.log.error("Failed to process full batch due to an error: \(error)")
             }
@@ -60,12 +65,15 @@ final class RiskCalculationController {
     }
 
     private func processFullBatch(_ batches: [UnzippedBatch]) -> DetectExposuresOperation? {
-        guard let fullBatch = batches.first(where: { $0.type == .full }) else {
+        guard let fullBatch = batches.full else {
             log.warning("Unexpectedly found no full batch.")
             return nil
         }
 
-        return DetectExposuresOperation(diagnosisKeyURLs: fullBatch.urls)
+        let operation = DetectExposuresOperation(diagnosisKeyURLs: fullBatch.urls, batchType: fullBatch.type)
+        operation.handleDailyExposure = { [weak self] exposure, date in self?.storeDailyExposure(exposure, at: date) }
+
+        return operation
     }
 
     private func processDailyBatches(_ batches: [UnzippedBatch], before date: Date) {
@@ -137,6 +145,14 @@ final class RiskCalculationController {
         return {
             self.log.debug("Successfully completed the risk calculation with result: \(self.riskCalculationResult)")
             self.completionHandler?(.success(self.riskCalculationResult))
+        }
+    }
+}
+
+private extension Array where Element == UnzippedBatch {
+    var full: UnzippedBatch? {
+        first {
+            $0.type == .fullSevenDays || $0.type == .fullFourteenDays
         }
     }
 }
