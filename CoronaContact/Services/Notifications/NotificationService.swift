@@ -54,7 +54,7 @@ class NotificationService: NSObject {
         let center = UNUserNotificationCenter.current()
         center.requestAuthorization(options: [.alert, .sound, .badge]) { [weak self] granted, error in
             if error != nil {
-                self?.log.error("there was an \(error.debugDescription) when registering notifications, it was granted:\(granted)")
+                self?.log.error("there was an \(error.debugDescription) when registering notifications, it was granted: \(granted)")
             }
         }
     }
