@@ -82,7 +82,7 @@
 "contact_sickness_handshake_format"                                          = "@s, between %@ and %@ o`clock";
 "contact_sickness_guidelines_headline"                                       = "Self-quarantine immediately";
 "contact_sickness_guidelines_quarantine_end"                                 = "Please stay quarantined until %@";
-"contact_sickness_guidelines_quarantine_rule"                                = "\"If you have an official quarantine notification, please take into account the quarantine period specified in the official quarantine notification is.\"";
+"contact_sickness_guidelines_quarantine_rule"                                = "If you have an official quarantine notification, please take into account the quarantine period specified in the official quarantine notification.";
 "contact_sickness_guidelines_no_public_transport"                            = "Do not use public transport on your way and avoid contact with other people if possible.";
 "contact_sickness_guidelines_first"                                          = "Keep physical distance from healthy roommates.";
 "contact_sickness_guidelines_second"                                         = "Monitor your state of health: take your temperature twice a day and keep a diary of symptoms.";
@@ -112,7 +112,7 @@
 "contact_sickness_warning_guidelines_third"                                  = "Neighbours or relatives will take over the care.";
 "contact_sickness_warning_guidelines_fourth"                                 = "If this is not possible, the <b>Team Austria</b> will be happy to help you: <bred>800 600 600</bred>.";
 "contact_sickness_mixed_title"                                               = "Attention";
-"contact_sickness_mixed_headline"                                            = "Coronavirus Disease and suspicion";
+"contact_sickness_mixed_headline"                                            = "Coronavirus disease and suspicion";
 "contact_title"                                                              = "Digital handshake";
 "contact_headline"                                                           = "Select & save encounter";
 "contact_help_button"                                                        = "How does it work?";
@@ -400,7 +400,9 @@
 "local_notification_suspected_sick_contact_message"                          = "Self-quarantine as a precaution. Keep a safe distance from your healthy environment.";
 "local_notification_quarantine_end_headline"                                 = "You may terminate the quarantine!";
 "local_notification_quarantine_end_message"                                  = "Thank you for quarantining yourself. You may terminate the quarantine.";
-"upload_missing_keys"                                                        = "Notify new contacts";
+"upload_missing_keys"                                                        = "Notify other contacts";
+"upload_missing_keys_notification_title"                                     = "Notify other contacts";
+"upload_missing_keys_notification_message"                                   = "Notify people with whom you exchanged a digital handshake on the day you reported sick.";
 "revocation_personal_data_title"                                             = "Report status";
 "revocation_personal_data_headline"                                          = "Please enter your data";
 "revocation_personal_data_description"                                       = "In the next step, we will anonymously inform your direct contacts of the last 2 days.\nWith the mobile number, we ensure that the app is not misused and that infection reports contribute to the common good.";

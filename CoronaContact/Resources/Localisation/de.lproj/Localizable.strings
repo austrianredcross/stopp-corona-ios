@@ -400,7 +400,9 @@
 "local_notification_suspected_sick_contact_message"                          = "Begeben Sie sich als Vorsichtsmaßnahme in Quarantäne. Halten Sie räumlich Abstand von Ihrem gesunden Umfeld.";
 "local_notification_quarantine_end_headline"                                 = "Sie können die Quarantäne beenden!";
 "local_notification_quarantine_end_message"                                  = "Vielen Dank, dass Sie sich in Quarantäne begeben haben. Sie können die Quarantäne beenden.";
-"upload_missing_keys"                                                        = "Neue Kontakte benachrichtigen";
+"upload_missing_keys"                                                        = "Weitere Kontakte benachrichtigen";
+"upload_missing_keys_notification_title"                                     = "Weitere Kontakte benachrichtigen";
+"upload_missing_keys_notification_message"                                   = "Benachrichtigen Sie Personen, mit denen Sie am Tag Ihrer Meldung einen digitalen Handshake ausgetauscht haben.";
 "revocation_personal_data_title"                                             = "Status melden";
 "revocation_personal_data_headline"                                          = "Bitte geben Sie Ihre Daten ein";
 "revocation_personal_data_description"                                       = "Wir werden nach dem nächsten Schritt Ihre engen Kontakte der letzten beiden Tage anonym informieren. Wir validieren Ihre Mobilnummer, damit wir einen Missbrauch dieser Funktion vermeiden können.";

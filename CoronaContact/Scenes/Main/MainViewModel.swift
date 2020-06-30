@@ -225,11 +225,9 @@ class MainViewModel: ViewModel {
     }
 
     func backgroundDiscovery(enable: Bool) {
-        if #available(iOS 13.5, *) {
-            exposureService.enableExposureNotifications(enable) { [weak self] error in
-                if let error = error as? ENError, error.code == .notAuthorized {
-                    self?.coordinator?.showMissingPermissions(type: .exposureFramework)
-                }
+        exposureService.enableExposureNotifications(enable) { [weak self] error in
+            if let error = error as? ENError, error.code == .notAuthorized {
+                self?.coordinator?.showMissingPermissions(type: .exposureFramework)
             }
         }
     }
