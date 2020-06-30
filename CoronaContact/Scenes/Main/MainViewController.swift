@@ -157,11 +157,13 @@ final class MainViewController: UIViewController, StoryboardBased, ViewModelBase
                 if localStorage.attestedSicknessAt != nil {
                     userHealthStatusView.addButton(title: "DEBUG: move back a day") {
                         localStorage.attestedSicknessAt = localStorage.attestedSicknessAt?.addDays(-1)
+                        localStorage.missingUploadedKeysAt = localStorage.missingUploadedKeysAt?.addDays(-1)
                     }
                 }
                 if localStorage.isProbablySickAt != nil {
                     userHealthStatusView.addButton(title: "DEBUG: move back a day") {
                         localStorage.isProbablySickAt = localStorage.isProbablySickAt?.addDays(-1)
+                        localStorage.missingUploadedKeysAt = localStorage.missingUploadedKeysAt?.addDays(-1)
                     }
                 }
                 if localStorage.lastYellowContact != nil {

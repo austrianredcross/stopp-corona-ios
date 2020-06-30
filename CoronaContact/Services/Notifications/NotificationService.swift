@@ -10,13 +10,22 @@ import UserNotifications
 struct NotificationServiceKeys {
     static let selfTestPush = "selfTestPush"
     static let quarantineCompleted = "quarantineCompleted"
+    static let uploadMissingDay = "uploadMissingDay"
 }
 
 class NotificationService: NSObject {
-    let notificationCenter: UNUserNotificationCenter = UNUserNotificationCenter.current()
+    @Injected private var localStorage: LocalStorage
+    private let notificationCenter: UNUserNotificationCenter = UNUserNotificationCenter.current()
+    private let log = ContextLogger(context: .notifications)
+    private var observers = [NSObjectProtocol]()
 
     private lazy var dateComponents: (_ date: Date) -> DateComponents = { date in
         Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: date)
+    }
+
+    override init() {
+        super.init()
+        observers.append(localStorage.$missingUploadedKeysAt.addObserver(using: registerMissingKeysReminder))
     }
 
     func dismissAllNotifications() {
@@ -24,11 +33,28 @@ class NotificationService: NSObject {
         notificationCenter.removeAllPendingNotificationRequests()
     }
 
+    func registerMissingKeysReminder() {
+        let notificationTime = localStorage.missingUploadedKeysAt?.startOfDayUTC().addDays(1)
+
+        if let notificationTime = notificationTime, notificationTime > Date() {
+            showNotification(
+                identifier: NotificationServiceKeys.uploadMissingDay,
+                title: "upload_missing_keys_notification_title".localized,
+                body: "upload_missing_keys_notification_message".localized,
+                at: notificationTime
+            )
+            log.info("scheduling reminder to upload keys from report day at \(notificationTime)")
+        } else {
+            notificationCenter.removePendingNotificationRequests(withIdentifiers: [NotificationServiceKeys.uploadMissingDay])
+            log.debug("removing possible reminder to upload keys from report day")
+        }
+    }
+
     func askForPermissions() {
         let center = UNUserNotificationCenter.current()
-        center.requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
+        center.requestAuthorization(options: [.alert, .sound, .badge]) { [weak self] granted, error in
             if error != nil {
-                print("there was an \(error.debugDescription) when registering notifications, it was granted:\(granted)")
+                self?.log.error("there was an \(error.debugDescription) when registering notifications, it was granted:\(granted)")
             }
         }
     }
