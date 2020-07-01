@@ -76,6 +76,8 @@
 		4EDB47F82421F13E000CE24A /* OnboardingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDB47F72421F13E000CE24A /* OnboardingPageView.swift */; };
 		4EDB47FA2422086B000CE24A /* UIView+ShadowBorders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDB47F92422086B000CE24A /* UIView+ShadowBorders.swift */; };
 		4EE28121242BA43900BC4C6E /* OnboardingConsentPageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EE28120242BA43900BC4C6E /* OnboardingConsentPageView.xib */; };
+		4EE81CCF24AC8F140047CE6A /* cdn.der in Resources */ = {isa = PBXBuildFile; fileRef = 4EE81CCE24AC8F130047CE6A /* cdn.der */; };
+		4EE81CD024AC8F140047CE6A /* cdn.der in Resources */ = {isa = PBXBuildFile; fileRef = 4EE81CCE24AC8F130047CE6A /* cdn.der */; };
 		61032065243E0AE400ED3A20 /* FlashableScrollIndicators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61032064243E0AE400ED3A20 /* FlashableScrollIndicators.swift */; };
 		61032078243F279400ED3A20 /* en.imprint.html in Resources */ = {isa = PBXBuildFile; fileRef = 61032077243F279300ED3A20 /* en.imprint.html */; };
 		6103207C243F28A000ED3A20 /* en.privacy-and-terms-of-use.html in Resources */ = {isa = PBXBuildFile; fileRef = 61032079243F289F00ED3A20 /* en.privacy-and-terms-of-use.html */; };
@@ -430,6 +432,7 @@
 		4EDB47F72421F13E000CE24A /* OnboardingPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageView.swift; sourceTree = "<group>"; };
 		4EDB47F92422086B000CE24A /* UIView+ShadowBorders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ShadowBorders.swift"; sourceTree = "<group>"; };
 		4EE28120242BA43900BC4C6E /* OnboardingConsentPageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingConsentPageView.xib; sourceTree = "<group>"; };
+		4EE81CCE24AC8F130047CE6A /* cdn.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = cdn.der; sourceTree = "<group>"; };
 		5912459E0AF7798015BD7057 /* Pods-CoronaContactTests.production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoronaContactTests.production.xcconfig"; path = "Target Support Files/Pods-CoronaContactTests/Pods-CoronaContactTests.production.xcconfig"; sourceTree = "<group>"; };
 		61032064243E0AE400ED3A20 /* FlashableScrollIndicators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashableScrollIndicators.swift; sourceTree = "<group>"; };
 		61032077243F279300ED3A20 /* en.imprint.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = en.imprint.html; sourceTree = "<group>"; };
@@ -1446,6 +1449,7 @@
 		61FABC9E2431EBDE0085786B /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
+				4EE81CCE24AC8F130047CE6A /* cdn.der */,
 				4E1F2EC224646B550088B8F8 /* sms.der */,
 				4ED175BB245836F100248D3B /* server.der */,
 				61AB6EF024573737006B4190 /* Secrets.xcconfig */,
@@ -1910,6 +1914,7 @@
 				92FFC9C024267D8200CC541B /* SelfTestingCheckSymptomsViewController.storyboard in Resources */,
 				61D0F56D2435EB870026C91A /* RevocationPersonalDataViewController.storyboard in Resources */,
 				6153A4D7242598DC006A8570 /* SicknessCertificateConfirmationViewController.storyboard in Resources */,
+				4EE81CCF24AC8F140047CE6A /* cdn.der in Resources */,
 				6153A4E5242598DC006A8570 /* SicknessCertificateTanConfirmationViewController.storyboard in Resources */,
 				8397407B842054D9947D6AB7 /* configuration.json in Resources */,
 				614D72102428E87000CC545D /* QuarantineGuidelinesViewController.storyboard in Resources */,
@@ -1926,6 +1931,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4EE81CD024AC8F140047CE6A /* cdn.der in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
