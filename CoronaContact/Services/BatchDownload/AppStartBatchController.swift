@@ -15,9 +15,7 @@ final class AppStartBatchController {
     private let log = ContextLogger(context: .batchDownload)
 
     func startBatchProcessing() {
-        let minutes55: TimeInterval = 3300
-
-        if let lastTime = timeSinceLastBatchProcessing(), lastTime < minutes55 {
+        if let lastTime = timeSinceLastBatchProcessing(), lastTime < BatchDownloadConfiguration.taskCooldownTime {
             log.debug("Cancelling batch processing on app start, because it already happened \(Int(lastTime / 60)) minutes ago.")
             return
         }

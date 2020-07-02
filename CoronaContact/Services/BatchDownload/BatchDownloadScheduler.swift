@@ -53,11 +53,9 @@ final class BatchDownloadScheduler {
 
     func registerBackgroundTask() {
         backgroundTaskScheduler.register(forTaskWithIdentifier: backgroundTaskIdentifier, using: .main) { task in
-            let minutes55: TimeInterval = 3300
-
             self.log.debug("Starting background batch download task.")
 
-            if let lastTime = self.timeSinceLastBatchProcessing(), lastTime < minutes55 {
+            if let lastTime = self.timeSinceLastBatchProcessing(), lastTime < BatchDownloadConfiguration.taskCooldownTime {
                 self.log.debug("Cancelling batch processing background task, because it already happened \(Int(lastTime / 60)) minutes ago.")
                 self.localStorage.batchDownloadSchedulerResult = "\(Date()): Cancelled because done \(Int(lastTime / 60)) minutes ago."
                 task.setTaskCompleted(success: true)
@@ -136,7 +134,7 @@ final class BatchDownloadScheduler {
         }
         #if LOGGING
             backgroundTaskScheduler.getPendingTaskRequests { pendingRequests in
-                self.log.debug("Pending Taskrequests: \(pendingRequests)")
+                self.log.debug("Pending task requests: \(pendingRequests)")
             }
         #endif
     }
