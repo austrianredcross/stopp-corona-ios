@@ -15,8 +15,10 @@ final class AppStartBatchController {
     private let log = ContextLogger(context: .batchDownload)
 
     func startBatchProcessing() {
-        guard shouldStartBatchProcessing() else {
-            log.debug("Cancelling batch processing on app start, because it already happened within the last hour.")
+        let minutes55: TimeInterval = 3300
+
+        if let lastTime = timeSinceLastBatchProcessing(), lastTime < minutes55 {
+            log.debug("Cancelling batch processing on app start, because it already happened \(Int(lastTime / 60)) minutes ago.")
             return
         }
 
@@ -37,13 +39,12 @@ final class AppStartBatchController {
         }
     }
 
-    private func shouldStartBatchProcessing() -> Bool {
-        guard let performedBatchProcessingAt = localStorage.performedBatchProcessingAt,
-            let oneHourAgo = Calendar.current.date(byAdding: .hour, value: -1, to: Date()) else {
-            return true
+    private func timeSinceLastBatchProcessing() -> TimeInterval? {
+        guard let performedBatchProcessingAt = localStorage.performedBatchProcessingAt else {
+            return nil
         }
 
-        return performedBatchProcessingAt < oneHourAgo
+        return Date().timeIntervalSince1970 - performedBatchProcessingAt.timeIntervalSince1970
     }
 
     private func determineDownloadRequirement() -> BatchDownloadService.DownloadRequirement {
