@@ -26,11 +26,15 @@ class NotificationService: NSObject {
     override init() {
         super.init()
         observers.append(localStorage.$missingUploadedKeysAt.addObserver(using: registerMissingKeysReminder))
+        #if LOGGING
+            notificationCenter.getPendingNotificationRequests { requests in
+                self.log.debug("scheduled notifications: \(requests)")
+            }
+        #endif
     }
 
     func dismissAllNotifications() {
         notificationCenter.removeAllDeliveredNotifications()
-        notificationCenter.removeAllPendingNotificationRequests()
     }
 
     func registerMissingKeysReminder() {
