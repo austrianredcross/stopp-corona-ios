@@ -74,7 +74,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return
         }
         configService.update()
-        appStartBatchController.startBatchProcessing()
         servicesInitialized = true
     }
 
@@ -85,6 +84,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         appUpdateService.showUpdateAlertIfNecessary()
+        if localStorage.hasSeenOnboarding {
+            appStartBatchController.startBatchProcessing()
+        }
     }
 
     deinit {
