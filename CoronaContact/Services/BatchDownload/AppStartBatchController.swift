@@ -7,6 +7,7 @@ import Foundation
 import Resolver
 
 final class AppStartBatchController {
+    @Injected private var exposureManager: ExposureManager
     @Injected private var localStorage: LocalStorage
     @Injected private var healthRepository: HealthRepository
     @Injected private var batchDownloadService: BatchDownloadService
@@ -15,8 +16,12 @@ final class AppStartBatchController {
     private let log = ContextLogger(context: .batchDownload)
 
     func startBatchProcessing() {
+        guard exposureManager.authorizationStatus == .authorized else {
+            return
+        }
+
         if let lastTime = timeSinceLastBatchProcessing(), lastTime < BatchDownloadConfiguration.taskCooldownTime {
-            log.debug("Cancelling batch processing on app start, because it already happened \(Int(lastTime / 60)) minutes ago.")
+            log.debug("Skipping batch processing on app start, because it already happened \(Int(lastTime / 60)) minutes ago.")
             return
         }
 

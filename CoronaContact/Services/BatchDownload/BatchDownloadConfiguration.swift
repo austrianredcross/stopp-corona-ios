@@ -39,7 +39,7 @@ extension BatchDownloadConfiguration {
 extension BatchDownloadConfiguration {
     enum Scheduler {
         static let startTime: (hour: Int, minute: Int) = (7, 30)
-        static let endTime: (hour: Int, minute: Int) = (21, 30)
+        static let lastRunHour = 21
         static let intervalInHours = 1
     }
 }

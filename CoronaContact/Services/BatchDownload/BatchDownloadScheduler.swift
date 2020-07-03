@@ -8,37 +8,6 @@ import Foundation
 import Resolver
 
 final class BatchDownloadScheduler {
-    struct Timing {
-        private let startDate: Date
-        private let endDate: Date
-        private let dateInterval: DateInterval
-        private let datesToSchedule: [Date]
-
-        var nextDateToSchedule: Date? {
-            datesToSchedule.first { $0 > Date() }
-        }
-
-        init() {
-            startDate = Calendar.current.date(
-                bySettingHour: BatchDownloadConfiguration.Scheduler.startTime.hour,
-                minute: BatchDownloadConfiguration.Scheduler.startTime.minute,
-                second: 0,
-                of: Date()
-            )!
-            endDate = Calendar.current.date(
-                bySettingHour: BatchDownloadConfiguration.Scheduler.endTime.hour,
-                minute: BatchDownloadConfiguration.Scheduler.endTime.minute,
-                second: 0,
-                of: Date()
-            )!
-            dateInterval = DateInterval(start: startDate, end: endDate)
-            datesToSchedule = dateInterval.divide(
-                by: .hour,
-                value: BatchDownloadConfiguration.Scheduler.intervalInHours
-            )
-        }
-    }
-
     @Injected private var localStorage: LocalStorage
     @Injected private var healthRepository: HealthRepository
     @Injected private var batchDownloadService: BatchDownloadService
@@ -49,14 +18,13 @@ final class BatchDownloadScheduler {
     private let log = ContextLogger(context: .batchDownload)
     private let backgroundTaskIdentifier = Bundle.main.bundleIdentifier! + ".exposure-notification"
     private let backgroundTaskScheduler = BGTaskScheduler.shared
-    private let timing = Timing()
 
     func registerBackgroundTask() {
         backgroundTaskScheduler.register(forTaskWithIdentifier: backgroundTaskIdentifier, using: .main) { task in
             self.log.debug("Starting background batch download task.")
 
             if let lastTime = self.timeSinceLastBatchProcessing(), lastTime < BatchDownloadConfiguration.taskCooldownTime {
-                self.log.debug("Cancelling batch processing background task, because it already happened \(Int(lastTime / 60)) minutes ago.")
+                self.log.debug("Skipping batch processing background task, because it already happened \(Int(lastTime / 60)) minutes ago.")
                 self.localStorage.batchDownloadSchedulerResult = "\(Date()): Cancelled because done \(Int(lastTime / 60)) minutes ago."
                 task.setTaskCompleted(success: true)
                 self.scheduleBackgroundTaskIfNeeded()
@@ -129,14 +97,29 @@ final class BatchDownloadScheduler {
             return
         }
 
-        if let nextScheduledDate = timing.nextDateToSchedule {
-            scheduleBackgroundTask(at: nextScheduledDate)
-        }
-        #if LOGGING
-            backgroundTaskScheduler.getPendingTaskRequests { pendingRequests in
-                self.log.debug("Pending task requests: \(pendingRequests)")
+        backgroundTaskScheduler.getPendingTaskRequests { pendingRequests in
+            self.log.debug("Pending task requests: \(pendingRequests)")
+            if pendingRequests.isEmpty {
+                self.scheduleBackgroundTask(at: self.nextDateToSchedule())
             }
-        #endif
+        }
+    }
+
+    private func nextDateToSchedule() -> Date {
+        let config = BatchDownloadConfiguration.Scheduler.self
+        var dateComponents = Calendar.current.dateComponents(in: TimeZone.current, from: Date())
+        dateComponents.minute = config.startTime.minute
+        var nextRunDate = dateComponents.date!
+        while true {
+            let hour = Calendar.current.component(.hour, from: nextRunDate)
+            if hour >= config.startTime.hour,
+                hour <= config.lastRunHour,
+                nextRunDate > Date() {
+                break
+            }
+            nextRunDate = Calendar.current.date(byAdding: .hour, value: config.intervalInHours, to: nextRunDate)!
+        }
+        return nextRunDate
     }
 
     private func scheduleBackgroundTask(at date: Date) {
@@ -159,19 +142,4 @@ final class BatchDownloadScheduler {
             scheduleBackgroundTask(at: oneMinuteFromNow)
         }
     #endif
-}
-
-private extension DateInterval {
-    func divide(by component: Calendar.Component, value divisor: Int) -> [Date] {
-        var dates: [Date] = [start]
-
-        var previousDate = start
-        while let nextDate = Calendar.current.date(byAdding: component, value: divisor, to: previousDate),
-            contains(nextDate) {
-            dates.append(nextDate)
-            previousDate = nextDate
-        }
-
-        return dates
-    }
 }
