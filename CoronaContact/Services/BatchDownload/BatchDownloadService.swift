@@ -119,6 +119,9 @@ final class BatchDownloadService {
             let operation = UnzipBatchOperation()
             operation.addDependency(downloadOperation)
             operation.completionBlock = handleCompletion(of: operation)
+            operation.handleUnzippedBatch = { [weak self] batch in
+                self?.storeUnzippedBatch(batch)
+            }
 
             return operation
         }
@@ -130,6 +133,10 @@ final class BatchDownloadService {
         completeOperation.completionBlock = handleCompletion(of: completeOperation)
 
         return completeOperation
+    }
+
+    private func storeUnzippedBatch(_ batch: UnzippedBatch) {
+        unzippedBatches.append(batch)
     }
 
     private func handleCompletion<Success>(of operation: AsyncResultOperation<Success, BatchDownloadError>) -> () -> Void {
@@ -146,12 +153,6 @@ final class BatchDownloadService {
             case .success where operation is CompleteOperation:
                 self.log.debug("Successfully completed downloading all batches.")
                 self.completionHandler?(.success(self.unzippedBatches))
-            case let .success(response) where operation is UnzipBatchOperation && response is UnzippedBatch:
-                guard let batch = response as? UnzippedBatch else {
-                    assertionFailure()
-                    return
-                }
-                self.unzippedBatches.append(batch)
             case .success:
                 break
             case let .failure(error):

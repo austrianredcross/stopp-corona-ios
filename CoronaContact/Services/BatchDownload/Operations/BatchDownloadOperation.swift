@@ -49,17 +49,17 @@ class BatchDownloadOperation: ChainedAsyncResultOperation<Void, DownloadedBatch,
                     interval: self.batch.interval,
                     url: self.destinationFileURL
                 )
-                self.finish(with: .success(downloadedBatch))
                 self.log.verbose("""
                 Successfully downloaded batch with type \(self.batchType) \
                 and date \(self.batch.interval.date) to \(self.destinationFileURL).
                 """)
+                self.finish(with: .success(downloadedBatch))
             case let .failure(error):
-                self.finish(with: .failure(.network(error)))
                 self.log.warning("""
                 Failed to download batch with type \(self.batchType) and date \(self.batch.interval.date) \
                 to \(self.destinationFileURL) due to an error: \(error).
                 """)
+                self.finish(with: .failure(.network(error)))
             }
         }
     }

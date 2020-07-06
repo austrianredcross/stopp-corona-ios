@@ -10,6 +10,8 @@ class UnzipBatchOperation: ChainedAsyncResultOperation<DownloadedBatch, Unzipped
     private let fileManager = FileManager.default
     private let log = ContextLogger(context: LoggingContext.batchDownload)
 
+    var handleUnzippedBatch: ((UnzippedBatch) -> Void)?
+
     override func main() {
         guard let batch = input else {
             log.warning("Cannot start unzipping the batch, because the batch was not provided as a dependency.")
@@ -27,10 +29,11 @@ class UnzipBatchOperation: ChainedAsyncResultOperation<DownloadedBatch, Unzipped
             try fileManager.unzipItem(at: url, to: destinationFolderURL, shouldOverride: true)
 
             let unzippedBatch = UnzippedBatch(type: batch.type, interval: batch.interval, urls: fileURLsAtDestination)
-            finish(with: .success(unzippedBatch))
             log.debug("""
             Successfully unzipped the contents of batch with type \(batch.type) and date \(batch.interval.date) to: \(fileURLsAtDestination).
             """)
+            handleUnzippedBatch?(unzippedBatch)
+            finish(with: .success(unzippedBatch))
         } catch {
             log.error("Failed to extract ZIP archive due to an error: \(error)")
             finish(with: .failure(.unzip(error)))
