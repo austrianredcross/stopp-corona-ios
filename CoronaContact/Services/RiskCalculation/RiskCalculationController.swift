@@ -33,6 +33,7 @@ final class RiskCalculationController {
         guard let operation = processFullBatch(batches) else {
             return
         }
+        riskCalculationResult = RiskCalculationResult()
         self.completionHandler = completionHandler
         log.debug("Start processing full batch.")
 
