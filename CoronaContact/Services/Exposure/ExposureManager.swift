@@ -101,12 +101,7 @@ class ExposureManager {
     }
 
     func getDiagnosisKeys(completion: @escaping (Result<[ENTemporaryExposureKey], Error>) -> Void) {
-        #if DEBUG
-            let keyFunction = manager.getTestDiagnosisKeys
-        #else
-            let keyFunction = manager.getDiagnosisKeys
-        #endif
-        keyFunction { temporaryExposureKeys, error in
+        manager.getDiagnosisKeys { temporaryExposureKeys, error in
             if let error = error {
                 completion(.failure(error))
             } else {
@@ -140,7 +135,7 @@ class ExposureManager {
                     #if DEBUG || STAGE
                         self.log.debug("Uploading Keys: \(diagnosisType) \(startDate) - \(endDate)")
                         temporaryExposureKeys.forEach { key in
-                            self.log.debug("Key: \(key.intervalNumber) \(key.intervalNumber.date)")
+                            self.log.debug("Key: \(key.key) IntervalNumber: \(key.intervalNumber) \(key.intervalNumber.date)")
                         }
                     #endif
 

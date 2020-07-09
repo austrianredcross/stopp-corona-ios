@@ -17,11 +17,6 @@ class NetworkSession {
         let trustManager = ServerTrustManager(evaluators: evaluators)
         let configuration = URLSessionConfiguration.af.default
 
-        #if DEBUG
-            LoggingService.debug("SSL Pinning is disabled during development", context: .network)
-            return Alamofire.Session.default
-        #else
-            return Alamofire.Session(configuration: configuration, serverTrustManager: trustManager)
-        #endif
+        return Alamofire.Session(configuration: configuration, serverTrustManager: trustManager)
     }
 }

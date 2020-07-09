@@ -15,8 +15,19 @@ final class NetworkClient {
     typealias PayloadCompletion<Payload> = (_ result: Result<Payload, NetworkError>) -> Void
 
     var handleStatusCode: ((Int) -> Void)?
-
-    private let provider = MoyaProvider<NetworkEndpoint>(session: NetworkSession.session())
+    private let provider = MoyaProvider<NetworkEndpoint>(
+        session: NetworkSession.session(),
+        plugins: [
+            NetworkLoggerPlugin(
+                configuration: NetworkLoggerPlugin.Configuration(
+                    output: { target, items in
+                        LoggingService.debug("Network request '\(target)':\n    \(items.joined(separator: "\n    "))")
+                    },
+                    logOptions: .verbose
+                )
+            ),
+        ]
+    )
     private let log = LoggingService.self
 
     @discardableResult
