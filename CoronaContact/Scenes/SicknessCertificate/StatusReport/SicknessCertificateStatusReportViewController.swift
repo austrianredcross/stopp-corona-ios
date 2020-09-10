@@ -8,7 +8,8 @@ import Reusable
 import UIKit
 
 final class SicknessCertificateStatusReportViewController: UIViewController,
-    StoryboardBased, ViewModelBased, ActivityModalPresentable, FlashableScrollIndicators {
+    StoryboardBased, ViewModelBased, ActivityModalPresentable, FlashableScrollIndicators
+{
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var checkbox: M13Checkbox!
     @IBOutlet var reportButton: PrimaryButton!

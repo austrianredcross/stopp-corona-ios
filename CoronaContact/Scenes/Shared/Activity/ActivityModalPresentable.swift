@@ -61,7 +61,8 @@ extension ActivityModalPresentable where Self: UIViewController {
  */
 private class ActivityModalStateMachine {
     init(viewController: UIViewController,
-         configuration: ActivityConfiguration) {
+         configuration: ActivityConfiguration)
+    {
         self.viewController = viewController
         self.configuration = configuration
     }

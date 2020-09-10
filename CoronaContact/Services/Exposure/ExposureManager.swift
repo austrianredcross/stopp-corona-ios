@@ -38,7 +38,8 @@ class ExposureManager {
             if self.localStorage.agreedToDataPrivacyAt != nil,
                 ENManager.authorizationStatus == .authorized,
                 !self.manager.exposureNotificationEnabled,
-                !self.localStorage.backgroundHandshakeDisabled {
+                !self.localStorage.backgroundHandshakeDisabled
+            {
                 self.manager.setExposureNotificationEnabled(true) { error in
                     NotificationCenter.default.post(name: ExposureManager.authorizationStatusChangedNotification, object: nil)
                     self.log.info("exposure notification enabled error:\(String(describing: error))")
@@ -119,7 +120,8 @@ class ExposureManager {
     func getKeysForUpload(from startDate: Date,
                           untilIncluding endDate: Date,
                           diagnosisType: DiagnosisType,
-                          completion: @escaping Completion<[TemporaryExposureKey]>) {
+                          completion: @escaping Completion<[TemporaryExposureKey]>)
+    {
         getDiagnosisKeys { result in
             switch result {
             case let .success(enTemporaryExposureKeys):

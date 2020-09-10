@@ -7,7 +7,8 @@ import Reusable
 import UIKit
 
 final class RevokeSicknessStatusReportViewController: UIViewController,
-    StoryboardBased, ViewModelBased, ActivityModalPresentable, FlashableScrollIndicators {
+    StoryboardBased, ViewModelBased, ActivityModalPresentable, FlashableScrollIndicators
+{
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var descriptionLabel: TransLabel!
     @IBOutlet var checkboxLabelView: CheckboxLabelView!

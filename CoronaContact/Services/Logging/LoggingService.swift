@@ -60,27 +60,32 @@ class LoggingService {
     }
 
     class func verbose(_ message: Any, _ file: String = #file, _ function: String = #function,
-                       line: Int = #line, context: LoggingContext = .default) {
+                       line: Int = #line, context: LoggingContext = .default)
+    {
         SwiftyBeaver.verbose(message, file, function, line: line, context: context.description)
     }
 
     class func debug(_ message: Any, _ file: String = #file, _ function: String = #function,
-                     line: Int = #line, context: LoggingContext = .default) {
+                     line: Int = #line, context: LoggingContext = .default)
+    {
         SwiftyBeaver.debug(message, file, function, line: line, context: context.description)
     }
 
     class func info(_ message: Any, _ file: String = #file, _ function: String = #function,
-                    line: Int = #line, context: LoggingContext = .default) {
+                    line: Int = #line, context: LoggingContext = .default)
+    {
         SwiftyBeaver.info(message, file, function, line: line, context: context.description)
     }
 
     class func warning(_ message: Any, _ file: String = #file, _ function: String = #function,
-                       line: Int = #line, context: LoggingContext = .default) {
+                       line: Int = #line, context: LoggingContext = .default)
+    {
         SwiftyBeaver.warning(message, file, function, line: line, context: context.description)
     }
 
     class func error(_ message: Any, _ file: String = #file, _ function: String = #function,
-                     line: Int = #line, context: LoggingContext = .default) {
+                     line: Int = #line, context: LoggingContext = .default)
+    {
         SwiftyBeaver.error(message, file, function, line: line, context: context.description)
     }
 }

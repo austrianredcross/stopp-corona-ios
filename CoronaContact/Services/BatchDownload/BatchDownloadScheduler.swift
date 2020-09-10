@@ -19,47 +19,48 @@ final class BatchDownloadScheduler {
     private let backgroundTaskIdentifier = Bundle.main.bundleIdentifier! + ".exposure-notification"
     private let backgroundTaskScheduler = BGTaskScheduler.shared
 
+    private func startBatchDownload(_ task: BGTask) -> Progress {
+        let downloadRequirement = determineDownloadRequirement()
+        let progress = batchDownloadService.startBatchDownload(downloadRequirement) { result in
+            switch result {
+            case let .success(batches):
+                self.riskCalculationController.processBatches(batches, completionHandler: self.handleRiskCalculationResult)
+                self.log.debug("Successfully completed the background batch download task.")
+                task.setTaskCompleted(success: true)
+                self.localStorage.batchDownloadSchedulerResult = BatchDownloadSchedulerResult(task: task, error: nil).description
+            case let .failure(error):
+                task.setTaskCompleted(success: false)
+                self.log.error("Failed to complete the background batch download task due to an error: \(error).")
+                self.localStorage.batchDownloadSchedulerResult = BatchDownloadSchedulerResult(task: task, error: .download(error)).description
+            }
+        }
+        return progress
+    }
+
     func registerBackgroundTask() {
         backgroundTaskScheduler.register(forTaskWithIdentifier: backgroundTaskIdentifier, using: .main) { task in
+
             self.log.debug("Starting background batch download task.")
+
+            // Schedule the next background task
+            self.scheduleBackgroundTaskIfNeeded()
 
             if let lastTime = self.timeSinceLastBatchProcessing(), lastTime < BatchDownloadConfiguration.taskCooldownTime {
                 self.log.debug("Skipping batch processing background task, because it already happened \(Int(lastTime / 60)) minutes ago.")
                 self.localStorage.batchDownloadSchedulerResult = "\(Date()): Cancelled because done \(Int(lastTime / 60)) minutes ago."
                 task.setTaskCompleted(success: true)
-                self.scheduleBackgroundTaskIfNeeded()
                 return
             }
 
-            let downloadRequirement = self.determineDownloadRequirement()
-
-            let progress = self.batchDownloadService.startBatchDownload(downloadRequirement) { [weak self] result in
-                guard let self = self else {
-                    return
-                }
-
-                switch result {
-                case let .success(batches):
-                    self.riskCalculationController.processBatches(batches, completionHandler: self.handleRiskCalculationResult)
-                    self.log.debug("Successfully completed the background batch download task.")
-                    task.setTaskCompleted(success: true)
-                    self.localStorage.batchDownloadSchedulerResult = BatchDownloadSchedulerResult(task: task, error: nil).description
-                case let .failure(error):
-                    task.setTaskCompleted(success: false)
-                    self.log.error("Failed to complete the background batch download task due to an error: \(error).")
-                    self.localStorage.batchDownloadSchedulerResult = BatchDownloadSchedulerResult(task: task, error: .download(error)).description
-                }
-            }
+            let progress = self.startBatchDownload(task)
 
             // Handle running out of time
             task.expirationHandler = {
                 progress.cancel()
                 self.log.error("Failed to complete the background batch download task, because the task ran out of time.")
                 self.localStorage.batchDownloadSchedulerResult = BatchDownloadSchedulerResult(task: task, error: .backgroundTimeout).description
+                task.setTaskCompleted(success: false)
             }
-
-            // Schedule the next background task
-            self.scheduleBackgroundTaskIfNeeded()
         }
 
         scheduleBackgroundTaskIfNeeded()
@@ -114,7 +115,8 @@ final class BatchDownloadScheduler {
             let hour = Calendar.current.component(.hour, from: nextRunDate)
             if hour >= config.startTime.hour,
                 hour <= config.lastRunHour,
-                nextRunDate > Date() {
+                nextRunDate > Date()
+            {
                 break
             }
             nextRunDate = Calendar.current.date(byAdding: .hour, value: config.intervalInHours, to: nextRunDate)!

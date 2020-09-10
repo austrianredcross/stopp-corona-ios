@@ -23,14 +23,14 @@ class WhatsNewRepository {
     var allHistoryItems: [WhatsNewContent] {
         appVersionHistory
             .sorted(by: ascendingKeys)
-            .map { $0.value }
+            .map(\.value)
     }
 
     var newHistoryItems: [WhatsNewContent] {
         appVersionHistory
             .filter { $0.key > lastWhatsNewShown }
             .sorted(by: ascendingKeys)
-            .map { $0.value }
+            .map(\.value)
     }
 
     var isWhatsNewAvailable: Bool {
@@ -42,7 +42,8 @@ class WhatsNewRepository {
         #warning("Remove this check for the first update after 2.0")
         if lastWhatsNewShown == .notPreviouslyInstalled,
             currentAppVersion == appVersionHistory.firstVersion,
-            localStorage.hasSeenOnboarding {
+            localStorage.hasSeenOnboarding
+        {
             // using a very old version number in order to show what's new for 2.0:
             lastWhatsNewShown = "0.0.1"
             // Note: This will be set to the real current version after What's New has been shown.
@@ -64,6 +65,7 @@ class WhatsNewRepository {
 }
 
 func ascendingKeys<K, V>(_ lhs: (key: K, value: V), _ rhs: (key: K, value: V)) -> Bool
-    where K: Comparable {
+    where K: Comparable
+{
     lhs.key < rhs.key
 }

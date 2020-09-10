@@ -33,7 +33,8 @@ final class NetworkService {
 
     func fetchInfectionMessages(fromId: String? = nil,
                                 addressPrefix: String,
-                                completion: @escaping (Result<InfectionMessagesResponse, NetworkError>) -> Void) {
+                                completion: @escaping (Result<InfectionMessagesResponse, NetworkError>) -> Void)
+    {
         client.request(.infectionMessages(fromId: fromId, addressPrefix: addressPrefix), completion: completion)
     }
 
@@ -69,7 +70,8 @@ final class NetworkService {
     }
 
     func downloadBatch(at filePath: String, to destination: @escaping DownloadDestination,
-                       completion: @escaping (Result<Void, NetworkError>) -> Void) -> Cancellable {
+                       completion: @escaping (Result<Void, NetworkError>) -> Void) -> Cancellable
+    {
         client.requestPlain(.downloadBatch(filePath, destination)) { result in
             switch result {
             case .success:

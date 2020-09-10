@@ -110,7 +110,8 @@ final class PhoneNumberRule: ValidationRuleType {
         let set = CharacterSet.decimalDigits.union(.whitespaces).union(CharacterSet(charactersIn: "+"))
 
         guard set.isSuperset(of: CharacterSet(charactersIn: value)),
-            value.first == "+" else {
+            value.first == "+"
+        else {
             return ValidationError.invalid(reason: ruleMessage)
         }
 

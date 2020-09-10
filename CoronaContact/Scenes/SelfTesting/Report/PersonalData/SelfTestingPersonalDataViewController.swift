@@ -7,7 +7,8 @@ import Reusable
 import UIKit
 
 final class SelfTestingPersonalDataViewController: UIViewController,
-    StoryboardBased, ViewModelBased, ActivityModalPresentable, FlashableScrollIndicators {
+    StoryboardBased, ViewModelBased, ActivityModalPresentable, FlashableScrollIndicators
+{
     private var keyboardAdjustingBehavior: KeyboardAdjustingBehavior?
     private var elements: [InputElementType] = []
 
@@ -58,7 +59,7 @@ final class SelfTestingPersonalDataViewController: UIViewController,
     @IBAction func nextButtonTapped(_ sender: Any) {
         elements.forEach { $0.forceValidation() }
 
-        let isValid = !elements.map { $0.isValid }.contains(false)
+        let isValid = !elements.map(\.isValid).contains(false)
 
         guard isValid else {
             return

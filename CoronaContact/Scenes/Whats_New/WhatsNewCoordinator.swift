@@ -53,7 +53,8 @@ final class WhatsNewCoordinator: Coordinator {
 extension WhatsNewCoordinator: UIViewControllerTransitioningDelegate {
     func animationController(forPresented presented: UIViewController,
                              presenting: UIViewController,
-                             source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+                             source: UIViewController) -> UIViewControllerAnimatedTransitioning?
+    {
         sheetTransition.presenting = true
         return sheetTransition
     }

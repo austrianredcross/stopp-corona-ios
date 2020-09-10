@@ -139,7 +139,8 @@ class QuarantineTimeController {
     init(timeConfiguration: QuarantineTimeConfiguration = QuarantineTimeConfiguration(),
          databaseService: DatabaseService? = nil,
          dateGenerator: (() -> Date)? = nil,
-         subscriber: @escaping (QuarantineStatus) -> Void) {
+         subscriber: @escaping (QuarantineStatus) -> Void)
+    {
         self.timeConfiguration = timeConfiguration
         self.subscriber = subscriber
         self.dateGenerator = dateGenerator ?? self.dateGenerator
