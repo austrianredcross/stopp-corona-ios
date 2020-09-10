@@ -15,7 +15,7 @@ struct NotificationServiceKeys {
 
 class NotificationService: NSObject {
     @Injected private var localStorage: LocalStorage
-    private let notificationCenter: UNUserNotificationCenter = UNUserNotificationCenter.current()
+    private let notificationCenter = UNUserNotificationCenter.current()
     private let log = ContextLogger(context: .notifications)
     private var observers = [NSObjectProtocol]()
 

@@ -8,8 +8,8 @@ import Foundation
 class Benchmark {
     let name: String
     let thread = Thread.self
-    var started: Date = Date()
-    var lastCheckPoint: Date = Date()
+    var started = Date()
+    var lastCheckPoint = Date()
 
     init(name: String) {
         self.name = name

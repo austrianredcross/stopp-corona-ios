@@ -74,7 +74,8 @@ class AppUpdateService {
 
     private func openAppStore() {
         guard let url = UIApplication.appStoreAppDeepUrl,
-            UIApplication.shared.canOpenURL(url) else {
+            UIApplication.shared.canOpenURL(url)
+        else {
             print("Can't Open App Store on the simulator")
             return
         }

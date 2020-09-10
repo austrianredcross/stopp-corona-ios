@@ -22,7 +22,7 @@ class MaintenanceTaskRepository {
         maintenanceTasks
             .filter { $0.key > lastMaintenancePerformed }
             .sorted(by: ascendingKeys)
-            .flatMap { $0.value }
+            .flatMap(\.value)
     }
 
     func currentMaintenancePerformed() {

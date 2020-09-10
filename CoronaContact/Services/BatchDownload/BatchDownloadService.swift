@@ -32,7 +32,8 @@ final class BatchDownloadService {
     private let log = ContextLogger(context: LoggingContext.batchDownload)
 
     func startBatchDownload(_ downloadRequirement: DownloadRequirement,
-                            completionHandler: @escaping (Result<[UnzippedBatch], BatchDownloadError>) -> Void) -> Progress {
+                            completionHandler: @escaping (Result<[UnzippedBatch], BatchDownloadError>) -> Void) -> Progress
+    {
         let progress = Progress()
 
         unzippedBatches = []

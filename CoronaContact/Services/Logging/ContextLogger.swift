@@ -22,35 +22,40 @@ class ContextLogger {
     }
 
     func verbose(_ message: Any, _ file: String = #file, _ function: String = #function,
-                 line: Int = #line) {
+                 line: Int = #line)
+    {
         if minLevel.rawValue <= SwiftyBeaver.Level.debug.rawValue {
             SwiftyBeaver.verbose(message, file, function, line: line, context: context.description)
         }
     }
 
     func debug(_ message: Any, _ file: String = #file, _ function: String = #function,
-               line: Int = #line) {
+               line: Int = #line)
+    {
         if minLevel.rawValue <= SwiftyBeaver.Level.debug.rawValue {
             SwiftyBeaver.debug(message, file, function, line: line, context: context.description)
         }
     }
 
     func info(_ message: Any, _ file: String = #file, _ function: String = #function,
-              line: Int = #line) {
+              line: Int = #line)
+    {
         if minLevel.rawValue <= SwiftyBeaver.Level.info.rawValue {
             SwiftyBeaver.info(message, file, function, line: line, context: context.description)
         }
     }
 
     func warning(_ message: Any, _ file: String = #file, _ function: String = #function,
-                 line: Int = #line) {
+                 line: Int = #line)
+    {
         if minLevel.rawValue <= SwiftyBeaver.Level.warning.rawValue {
             SwiftyBeaver.warning(message, file, function, line: line, context: context.description)
         }
     }
 
     func error(_ message: Any, _ file: String = #file, _ function: String = #function,
-               line: Int = #line) {
+               line: Int = #line)
+    {
         SwiftyBeaver.error(message, file, function, line: line, context: context.description)
     }
 }

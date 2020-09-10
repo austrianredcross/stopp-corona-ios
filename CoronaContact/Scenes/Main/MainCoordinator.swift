@@ -129,7 +129,8 @@ class MainCoordinator: Coordinator, ShareSheetPresentable {
             notificationService.dismissAllNotifications()
             DispatchQueue.main.async {
                 if self.whatsNewRepository.isWhatsNewAvailable,
-                    let latestHistoryItem = self.whatsNewRepository.newHistoryItems.last {
+                    let latestHistoryItem = self.whatsNewRepository.newHistoryItems.last
+                {
                     self.show(latestHistoryItem)
                     self.whatsNewRepository.markAsSeen()
                 }

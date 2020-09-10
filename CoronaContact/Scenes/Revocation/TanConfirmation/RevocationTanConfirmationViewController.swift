@@ -7,7 +7,8 @@ import Reusable
 import UIKit
 
 final class RevocationTanConfirmationViewController: UIViewController,
-    StoryboardBased, ViewModelBased, ActivityModalPresentable, FlashableScrollIndicators {
+    StoryboardBased, ViewModelBased, ActivityModalPresentable, FlashableScrollIndicators
+{
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var descriptionLabel: UILabel!
     @IBOutlet var tanTextField: StandardTextField!

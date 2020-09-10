@@ -20,8 +20,8 @@ final class BatchDownloadScheduler {
     private let backgroundTaskScheduler = BGTaskScheduler.shared
 
     private func startBatchDownload(_ task: BGTask) -> Progress {
-        let downloadRequirement = self.determineDownloadRequirement()
-        let progress = self.batchDownloadService.startBatchDownload(downloadRequirement) { result in
+        let downloadRequirement = determineDownloadRequirement()
+        let progress = batchDownloadService.startBatchDownload(downloadRequirement) { result in
             switch result {
             case let .success(batches):
                 self.riskCalculationController.processBatches(batches, completionHandler: self.handleRiskCalculationResult)
@@ -115,7 +115,8 @@ final class BatchDownloadScheduler {
             let hour = Calendar.current.component(.hour, from: nextRunDate)
             if hour >= config.startTime.hour,
                 hour <= config.lastRunHour,
-                nextRunDate > Date() {
+                nextRunDate > Date()
+            {
                 break
             }
             nextRunDate = Calendar.current.date(byAdding: .hour, value: config.intervalInHours, to: nextRunDate)!

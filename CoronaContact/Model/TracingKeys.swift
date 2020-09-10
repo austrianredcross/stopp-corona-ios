@@ -27,7 +27,8 @@ struct TracingKeys: Codable {
 
     init(temporaryExposureKeys: [TemporaryExposureKey],
          diagnosisType: DiagnosisType,
-         verificationPayload: Verification) {
+         verificationPayload: Verification)
+    {
         self.temporaryExposureKeys = temporaryExposureKeys
         regions = ["AT"]
         appPackageName = NetworkConfiguration.appId

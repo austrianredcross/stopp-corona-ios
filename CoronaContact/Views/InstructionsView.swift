@@ -21,7 +21,7 @@ class BubbleView: UIView {
     }
 
     var bubbleSize: CGFloat = 56
-    var insets: UIEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+    var insets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
     var text: String = "" {
         didSet {
             label.text = text
@@ -205,7 +205,8 @@ class InstructionsView: UIView {
 
         guard let centerX = centerXOfBubble,
             let minY: CGFloat = centerYCoordinatesOfBubbles.min(),
-            let maxY: CGFloat = centerYCoordinatesOfBubbles.max() else {
+            let maxY: CGFloat = centerYCoordinatesOfBubbles.max()
+        else {
             return
         }
 
