@@ -147,8 +147,12 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="button" destination="qOa-JD-a77" id="J9g-Kk-LkP"/>
                 <outlet property="checkbox" destination="hnJ-Tk-6xv" id="3m0-2q-xnL"/>
                 <outlet property="consentLabel" destination="mda-MZ-DdK" id="2Vs-0t-qa8"/>
+                <outlet property="headingLabel" destination="wNh-mu-8Fa" id="Fwb-pt-KgT"/>
+                <outlet property="textLabel" destination="ncN-bk-EfV" id="vZe-1D-YXh"/>
+                <outlet property="textLabel2" destination="hET-gE-Azu" id="9EI-D2-KN4"/>
             </connections>
             <point key="canvasLocation" x="200.00000000000003" y="12.723214285714285"/>
         </view>

@@ -8,8 +8,14 @@ import Reusable
 import UIKit
 
 final class OnboardingConsentPageView: UIView, NibLoadable {
+
+
+    @IBOutlet var headingLabel: UILabel!
+    @IBOutlet var textLabel: UILabel!
     @IBOutlet var checkbox: M13Checkbox!
     @IBOutlet var consentLabel: TransLabel!
+    @IBOutlet var textLabel2: UILabel!
+    @IBOutlet var button: TransButton!
 
     weak var viewModel: OnboardingViewModel?
 
