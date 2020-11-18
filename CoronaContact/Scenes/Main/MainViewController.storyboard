@@ -400,8 +400,11 @@
                         <viewLayoutGuide key="safeArea" id="Nio-nJ-uXl"/>
                     </view>
                     <navigationItem key="navigationItem" id="ldj-UW-yx7">
-                        <barButtonItem key="rightBarButtonItem" image="burgerMenu" springLoaded="YES" id="vEg-OQ-nQ0">
+                        <barButtonItem key="rightBarButtonItem" title="Menu" image="burgerMenu" springLoaded="YES" id="vEg-OQ-nQ0" customClass="TransBarButton" customModule="Stopp_Corona" customModuleProvider="target">
                             <color key="tintColor" name="ccBlack"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="transKeyNormal" value="start_menu"/>
+                            </userDefinedRuntimeAttributes>
                             <connections>
                                 <action selector="startMenuTapped:" destination="cMg-fw-Upr" id="WcD-XK-IOp"/>
                             </connections>

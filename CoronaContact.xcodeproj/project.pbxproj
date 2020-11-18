@@ -17,6 +17,7 @@
 		4B82571E24266A32007E25C6 /* StartMenuSimpleWebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B82571A24266A32007E25C6 /* StartMenuSimpleWebViewViewController.swift */; };
 		4B82571F24266A32007E25C6 /* StartMenuSimpleWebViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B82571B24266A32007E25C6 /* StartMenuSimpleWebViewViewModel.swift */; };
 		4B82572124266B9E007E25C6 /* de.imprint.html in Resources */ = {isa = PBXBuildFile; fileRef = 4B82572024266B9E007E25C6 /* de.imprint.html */; };
+		4BCEB4B525657EE800D53E12 /* TransBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCEB4B425657EE800D53E12 /* TransBarButton.swift */; };
 		4BD0B8DC2427AF6400BFA123 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD0B8DB2427AF6400BFA123 /* NotificationService.swift */; };
 		4BD0B8DF2427AF9800BFA123 /* NotificationService+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD0B8DE2427AF9800BFA123 /* NotificationService+Injection.swift */; };
 		4E019BD8242604D6004FF670 /* SelectedRoundCornersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E019BD7242604D6004FF670 /* SelectedRoundCornersView.swift */; };
@@ -371,6 +372,7 @@
 		4B82571A24266A32007E25C6 /* StartMenuSimpleWebViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartMenuSimpleWebViewViewController.swift; sourceTree = "<group>"; };
 		4B82571B24266A32007E25C6 /* StartMenuSimpleWebViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartMenuSimpleWebViewViewModel.swift; sourceTree = "<group>"; };
 		4B82572024266B9E007E25C6 /* de.imprint.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = de.imprint.html; sourceTree = "<group>"; };
+		4BCEB4B425657EE800D53E12 /* TransBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransBarButton.swift; sourceTree = "<group>"; };
 		4BD0B8DB2427AF6400BFA123 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		4BD0B8DE2427AF9800BFA123 /* NotificationService+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationService+Injection.swift"; sourceTree = "<group>"; };
 		4E019BD7242604D6004FF670 /* SelectedRoundCornersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedRoundCornersView.swift; sourceTree = "<group>"; };
@@ -1638,6 +1640,7 @@
 				616518E42460777C001219A7 /* ShareAppCardView.swift */,
 				616518E62460778C001219A7 /* ShareAppCardView.xib */,
 				613AF72A24616A8B0089085E /* ShareButton.swift */,
+				4BCEB4B425657EE800D53E12 /* TransBarButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -2328,6 +2331,7 @@
 				6153A4F624259932006A8570 /* InputValidation.swift in Sources */,
 				61546543242CBE7F0003D3D3 /* SelfMonitoringGuidelinesViewModel.swift in Sources */,
 				4ED175DA2460731200248D3B /* RevokeSicknessStatusReportViewController.swift in Sources */,
+				4BCEB4B525657EE800D53E12 /* TransBarButton.swift in Sources */,
 				4B25BA9D2429592A00CDD1CF /* UserHealthStatus.swift in Sources */,
 				8397409E6D4A0FD3F83CE213 /* ConfigurationService.swift in Sources */,
 				8397485AF4D5FC35155ED797 /* ConfigurationService+Injection.swift in Sources */,
