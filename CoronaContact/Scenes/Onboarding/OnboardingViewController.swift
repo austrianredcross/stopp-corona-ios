@@ -28,6 +28,7 @@ final class OnboardingViewController: UIViewController, StoryboardBased, ViewMod
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel?.setupViewController(self)
+        setAccessibilityOrder()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -76,6 +77,57 @@ final class OnboardingViewController: UIViewController, StoryboardBased, ViewMod
 
     @IBAction func buttonPressed(_ sender: Any) {
         viewModel?.buttonPressed()
+    }
+    
+    private func setAccessibilityOrder() {
+        pageControl.isAccessibilityElement = false
+
+        var accessViews = [UIView]()
+        
+        stackView.subviews.forEach({
+            if let view = $0 as? OnboardingPageView {
+                if let text = view.headingLabel.text, !text.isEmpty {
+                    accessViews.append(view.headingLabel)
+                }
+
+                if let text = view.textLabel.text, !text.isEmpty {
+                    accessViews.append(view.textLabel)
+                }
+
+                if let text = view.textLabel2.text, !text.isEmpty {
+                    accessViews.append(view.textLabel2)
+                }
+
+                if let text = view.button.titleLabel?.text, !text.isEmpty {
+                    accessViews.append(view.button)
+                }
+                
+            } else if let view = $0 as? OnboardingConsentPageView {
+                if let text = view.headingLabel.text, !text.isEmpty {
+                    accessViews.append(view.headingLabel)
+                }
+
+                if let text = view.textLabel.text, !text.isEmpty {
+                    accessViews.append(view.textLabel)
+                }
+
+                if let text = view.consentLabel.text, !text.isEmpty {
+                    accessViews.append(view.consentLabel)
+                }
+
+                if let text = view.textLabel2.text, !text.isEmpty {
+                    accessViews.append(view.textLabel2)
+                }
+
+                if let text = view.button.titleLabel?.text, !text.isEmpty {
+                    accessViews.append(view.button)
+                }
+            }
+        })
+        
+        accessViews.append(button)
+
+        stackView.accessibilityElements = accessViews
     }
 }
 
