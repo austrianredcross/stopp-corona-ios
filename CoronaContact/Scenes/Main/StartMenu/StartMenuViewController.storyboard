@@ -492,8 +492,11 @@
                         <viewLayoutGuide key="safeArea" id="kne-Da-p86"/>
                     </view>
                     <navigationItem key="navigationItem" id="qq8-T6-gVE">
-                        <barButtonItem key="rightBarButtonItem" title="Menu" image="startMenuClose" id="ioc-ud-tAC" userLabel="Close">
+                        <barButtonItem key="rightBarButtonItem" title="Close Menu" image="startMenuClose" id="ioc-ud-tAC" customClass="TransBarButton" customModule="Stopp_Corona" customModuleProvider="target">
                             <color key="tintColor" name="ccBlack"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="transKeyNormal" value="start_menu_close"/>
+                            </userDefinedRuntimeAttributes>
                             <connections>
                                 <action selector="closeMenuTapped:" destination="0DV-8a-Pct" id="ynA-zB-Zqb"/>
                             </connections>
