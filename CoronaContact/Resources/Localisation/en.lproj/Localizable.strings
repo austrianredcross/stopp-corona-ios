@@ -135,7 +135,7 @@
 "contact_help_instruction_third"                                             = "Select the number of your counterpart below and save.";
 "contact_help_disclaimer"                                                    = "If you have further questions about the manual handshake, you can find more information in the FAQs.";
 "contact_help_faq_button"                                                    = "Go to the FAQs";
-"contact_help_faq_link"                                                      = "https://www.roteskreuz.at/site/faq-app-stopp-corona/";
+"contact_help_faq_link"                                                      = "https://www.stopp-corona.at/faq_stopp_corona_app/";
 "contact_help_medical_disclaimer"                                            = "For medical reasons: This app also works remotely. Please keep at least 1 meter distance.";
 "automatic_handshake_help_title"                                             = "Here’s how it works";
 "automatic_handshake_help_instruction_first"                                 = "Activate the automatic handshake in the app and enable Bluetooth.";
@@ -145,7 +145,7 @@
 "automatic_handshake_help_disclaimer"                                        = "Please make sure that Bluetooth is activated.";
 "automatic_handshake_help_medical_disclaimer"                                = "For medical reasons: This app also works remotely. Please keep at least 1 meter distance.";
 "automatic_handshake_help_faq_button"                                        = "To the FAQs";
-"automatic_handshake_help_faq_link"                                          = "https://www.roteskreuz.at/site/faq-app-stopp-corona/";
+"automatic_handshake_help_faq_link"                                          = "https://www.stopp-corona.at/faq_stopp_corona_app/";
 "automatic_handshake_paused"                                                 = "Bluetooth is deactivated.";
 "automatic_handshake_paused_description"                                     = "As a result, the function of the automatic handshake is impaired.";
 "automatic_handshake_information_hint"                                       = "How does it work?";
@@ -258,10 +258,10 @@
 "start_menu_close"                                                           = "Close menu";
 "start_menu_headline_1"                                                      = "Info";
 "start_menu_item_1_1_what_does_the_app_do"                                   = "What can this app do?";
-"start_menu_item_1_2_faq_link"                                               = "FAQ at roteskreuz.at";
-"start_menu_item_1_2_faq_link_link_target"                                   = "https://www.roteskreuz.at/site/faq-app-stopp-corona/";
+"start_menu_item_1_2_faq_link"                                               = "FAQ at www.stopp-corona.at";
+"start_menu_item_1_2_faq_link_link_target"                                   = "https://www.stopp-corona.at/faq_stopp_corona_app/";
 "start_menu_item_1_3_red_cross_link"                                         = "More about coronavirus at roteskreuz.at";
-"start_menu_item_1_3_red_cross_link_link_target"                             = "https://www.roteskreuz.at/site/coronavirus-sind-wir-bereit/";
+"start_menu_item_1_3_red_cross_link_link_target"                             = "https://www.roteskreuz.at/ich-will-mehr-wissen/coronavirus";
 "start_menu_headline_2"                                                      = "Legal";
 "start_menu_item_2_1_open_source_licenses"                                   = "Open Source Licenses";
 "start_menu_item_2_2_data_privacy"                                           = "Data privacy";
