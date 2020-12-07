@@ -102,6 +102,10 @@ final class OnboardingViewController: UIViewController, StoryboardBased, ViewMod
                     accessViews.append(view.button)
                 }
                 
+                if view.imageView.image != nil {
+                    accessViews.append(view.imageView)
+                }
+                
             } else if let view = $0 as? OnboardingConsentPageView {
                 if let text = view.headingLabel.text, !text.isEmpty {
                     accessViews.append(view.headingLabel)

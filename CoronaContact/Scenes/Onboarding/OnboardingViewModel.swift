@@ -11,14 +11,16 @@ struct OnboardingPage {
     let text: String
     let text2: String?
     let image: String?
+    let imageAccessibiltyText: String?
     let buttonText: String?
     let buttonHandler: (() -> Void)?
 
-    init(headline: String, text: String, text2: String?, image: String? = nil, buttonText: String? = nil, buttonHandler: (() -> Void)? = nil) {
+    init(headline: String, text: String, text2: String?, image: String? = nil, imageAccessibiltyText: String? = nil, buttonText: String? = nil, buttonHandler: (() -> Void)? = nil) {
         self.headline = headline
         self.text = text
         self.text2 = text2
         self.image = image
+        self.imageAccessibiltyText = imageAccessibiltyText
         self.buttonText = buttonText
         self.buttonHandler = buttonHandler
     }
@@ -72,7 +74,8 @@ class OnboardingViewModel: ViewModel {
                 headline: "onboarding_headline_1".localized,
                 text: "onboarding_copy_1".localized,
                 text2: nil,
-                image: "OnboardingPage1"
+                image: "OnboardingPage1",
+                imageAccessibiltyText: "onboarding_copy_1_img".localized
             ),
             OnboardingPage(
                 headline: "onboarding_headline_2".localized,
@@ -84,13 +87,15 @@ class OnboardingViewModel: ViewModel {
                 headline: "onboarding_headline_3".localized,
                 text: "onboarding_copy_3".localized,
                 text2: nil,
-                image: "OnboardingPage3"
+                image: "OnboardingPage3",
+                imageAccessibiltyText: "onboarding_copy_3_img".localized
             ),
             OnboardingPage(
                 headline: "onboarding_headline_4".localized,
                 text: "onboarding_copy_4".localized,
                 text2: nil,
-                image: "OnboardingPage4"
+                image: "OnboardingPage4",
+                imageAccessibiltyText: "onboarding_copy_4_img".localized
             ),
             OnboardingPage(
                 headline: "onboarding_headline_5".localized,
