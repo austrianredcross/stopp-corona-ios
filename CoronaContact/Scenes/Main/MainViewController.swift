@@ -46,6 +46,7 @@ final class MainViewController: UIViewController, StoryboardBased, ViewModelBase
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupAccessibility()
         setupLaunchScreen()
         setupAutomatedHandshakeAnimation()
         registerNotificationObserver()
@@ -65,6 +66,13 @@ final class MainViewController: UIViewController, StoryboardBased, ViewModelBase
 
     deinit {
         removeNotificationObserver()
+    }
+    
+    private func setupAccessibility() {
+        
+        automaticHandshakeAnimationView.isAccessibilityElement = true
+        automaticHandshakeAnimationView.accessibilityTraits = .image
+        automaticHandshakeAnimationView.accessibilityLabel = "automatic_handshake_img_active".localized
     }
 
     private func setupLaunchScreen() {
