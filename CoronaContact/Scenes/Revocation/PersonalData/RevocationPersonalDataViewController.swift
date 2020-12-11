@@ -40,6 +40,7 @@ final class RevocationPersonalDataViewController: UIViewController,
         mobileNumberTextField.labelText = "revocation_personal_data_mobile_number_label".localized
         mobileNumberTextField.inputType = .phone(errorMessage: "revocation_personal_data_phone_field_invalid".localized)
         mobileNumberTextField.placeholder = "revocation_personal_data_mobile_number_placeholder".localized
+        mobileNumberTextField.accessibilityValue = "revocation_personal_data_mobile_number_label".localized
 
         elements.append(mobileNumberTextField)
     }

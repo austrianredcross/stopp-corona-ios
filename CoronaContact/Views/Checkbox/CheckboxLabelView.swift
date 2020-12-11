@@ -35,6 +35,7 @@ class CheckboxLabelView: UIView, NibOwnerLoadable {
 
         loadNibContent()
         configureView()
+        configureAccessibility()
     }
 
     private func configureView() {
@@ -59,10 +60,35 @@ class CheckboxLabelView: UIView, NibOwnerLoadable {
         isUserInteractionEnabled = true
         addGestureRecognizer(tap)
     }
+    
+    private func configureAccessibility() {
+        isAccessibilityElement = true
+        accessibilityElements = [label, checkbox]
+        
+        if let labelText = labelTransKey {
+            accessibilityLabel = labelText.localized + " " + (checkbox.checkState == .checked ? "accessibility_activated".localized : "accessibility_deactivated".localized)
+        }
+        
+        accessibilityHint = (checkbox.checkState == .checked ? "accessibility_double_tap_to_deactivate".localized : "accessibility_double_tap_to_activate".localized)
+    }
 
     @objc
     private func tappedView(sender: Any) {
         checkbox.toggleCheckState(true)
         handleTap?(checkbox.checkState == .checked)
+    }
+    
+    override func accessibilityActivate() -> Bool {
+        
+        let checkbox = accessibilityElement(at: 1) as? CheckboxView
+        checkbox?.toggleCheckState()
+        handleTap?(checkbox?.checkState == .checked)
+        
+        if let labelText = labelTransKey {
+            accessibilityLabel = labelText.localized + " " + (checkbox!.checkState == .checked ? "accessibility_activated".localized : "accessibility_deactivated".localized)
+            accessibilityHint = (checkbox!.checkState == .checked ? "accessibility_double_tap_to_deactivate".localized : "accessibility_double_tap_to_activate".localized)
+        }
+        
+        return true
     }
 }

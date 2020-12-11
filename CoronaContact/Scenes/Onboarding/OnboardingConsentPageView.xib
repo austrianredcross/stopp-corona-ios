@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -30,45 +31,13 @@
                                         <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="onboarding_consent_body_1"/>
                                     </userDefinedRuntimeAttributes>
                                 </label>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bhc-WQ-vwn">
+                                <view contentMode="scaleToFill" placeholderIntrinsicWidth="444" placeholderIntrinsicHeight="20.5" translatesAutoresizingMaskIntoConstraints="NO" id="Bhc-WQ-vwn" customClass="CheckboxLabelView" customModule="Stopp_Corona" customModuleProvider="target">
                                     <rect key="frame" x="32" y="113" width="444" height="20.5"/>
-                                    <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hnJ-Tk-6xv" customClass="M13Checkbox" customModule="M13Checkbox">
-                                            <rect key="frame" x="0.0" y="5" width="24" height="24"/>
-                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="24" id="5Ed-jz-bi7"/>
-                                                <constraint firstAttribute="width" constant="24" id="crB-ak-leT"/>
-                                            </constraints>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                    <real key="value" value="4"/>
-                                                </userDefinedRuntimeAttribute>
-                                            </userDefinedRuntimeAttributes>
-                                            <connections>
-                                                <action selector="agreementChanged:" destination="iN0-l3-epB" eventType="valueChanged" id="JOh-sl-zcd"/>
-                                            </connections>
-                                        </view>
-                                        <label opaque="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="onboarding_consent_checkbox_label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mda-MZ-DdK" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
-                                            <rect key="frame" x="40" y="0.0" width="404" height="20.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="bold"/>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="onboarding_consent_checkbox_label"/>
-                                            </userDefinedRuntimeAttributes>
-                                        </label>
-                                    </subviews>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                    <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="mda-MZ-DdK" secondAttribute="bottom" id="IfM-Yn-Y84"/>
-                                        <constraint firstAttribute="trailing" secondItem="mda-MZ-DdK" secondAttribute="trailing" id="LJx-oo-ZQY"/>
-                                        <constraint firstItem="mda-MZ-DdK" firstAttribute="leading" secondItem="hnJ-Tk-6xv" secondAttribute="trailing" constant="16" id="l8M-ry-4Aj"/>
-                                        <constraint firstItem="hnJ-Tk-6xv" firstAttribute="firstBaseline" secondItem="mda-MZ-DdK" secondAttribute="top" constant="5" id="pHh-rr-ysS"/>
-                                        <constraint firstItem="mda-MZ-DdK" firstAttribute="top" secondItem="Bhc-WQ-vwn" secondAttribute="top" id="vhY-nJ-DNu"/>
-                                        <constraint firstItem="hnJ-Tk-6xv" firstAttribute="leading" secondItem="Bhc-WQ-vwn" secondAttribute="leading" id="zbo-pN-rY1"/>
-                                    </constraints>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="labelTransKey" value="onboarding_consent_checkbox_label"/>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="labelStyleName" value="bold"/>
+                                    </userDefinedRuntimeAttributes>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="onboarding_consent_body_2" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hET-gE-Azu" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
                                     <rect key="frame" x="24" y="157.5" width="460" height="20.5"/>
@@ -105,7 +74,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </label>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
                                 <constraint firstItem="hET-gE-Azu" firstAttribute="top" secondItem="Bhc-WQ-vwn" secondAttribute="bottom" constant="24" id="2zZ-Ac-fcT"/>
                                 <constraint firstItem="wNh-mu-8Fa" firstAttribute="top" secondItem="Eer-KZ-zxH" secondAttribute="top" constant="32" id="6RI-Us-Hrk"/>
@@ -148,8 +117,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="button" destination="qOa-JD-a77" id="J9g-Kk-LkP"/>
-                <outlet property="checkbox" destination="hnJ-Tk-6xv" id="3m0-2q-xnL"/>
-                <outlet property="consentLabel" destination="mda-MZ-DdK" id="2Vs-0t-qa8"/>
+                <outlet property="checkboxLabelView" destination="Bhc-WQ-vwn" id="iEY-Jr-uHM"/>
                 <outlet property="headingLabel" destination="wNh-mu-8Fa" id="Fwb-pt-KgT"/>
                 <outlet property="textLabel" destination="ncN-bk-EfV" id="vZe-1D-YXh"/>
                 <outlet property="textLabel2" destination="hET-gE-Azu" id="9EI-D2-KN4"/>
@@ -161,5 +129,8 @@
         <namedColor name="ccBlack">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

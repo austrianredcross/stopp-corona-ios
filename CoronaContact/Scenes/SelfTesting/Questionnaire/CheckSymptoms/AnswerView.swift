@@ -43,9 +43,18 @@ class AnswerView: UIView, NibLoadable {
         isUserInteractionEnabled = true
         addGestureRecognizer(tap)
     }
+    
+    private func configureAccessibility() {
+        
+        accessibilityElements = [checkbox, answerLabel]
+        isAccessibilityElement = true
+        accessibilityLabel = text + " " + "accessibility_deactivated".localized
+        accessibilityHint = "accessibility_double_tap_to_activate".localized
+    }
 
     func configure(with answer: Answer) {
         text = answer.text
+        configureAccessibility()
     }
 
     @objc
@@ -55,9 +64,18 @@ class AnswerView: UIView, NibLoadable {
 
     func setSelectedState(_ value: Bool, animated: Bool = true) {
         if value {
+            accessibilityLabel = text + " " + "accessibility_activated".localized
+            accessibilityHint = nil
             checkbox.setCheckState(.checked, animated: animated)
         } else {
+            accessibilityLabel = text + " " + "accessibility_deactivated".localized
+            accessibilityHint = "accessibility_double_tap_to_activate".localized
             checkbox.setCheckState(.unchecked, animated: animated)
         }
+    }
+    
+    override func accessibilityActivate() -> Bool {
+        handleTap?()
+        return true
     }
 }

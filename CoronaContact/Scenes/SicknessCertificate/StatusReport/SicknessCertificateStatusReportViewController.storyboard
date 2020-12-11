@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,7 +20,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CyI-yx-cRF" customClass="ProgressView" customModule="Stopp_Corona" customModuleProvider="target">
                                 <rect key="frame" x="24" y="60" width="366" height="385"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="currentStep">
                                         <integer key="value" value="2"/>
@@ -59,7 +61,7 @@
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="515-yE-eOa">
                                                         <rect key="frame" x="24" y="113" width="366" height="1"/>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="sW2-UP-92P"/>
                                                         </constraints>
@@ -74,47 +76,15 @@
                                                             <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="sickness_certificate_report_status_agreement_description"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dkb-3y-e7K">
+                                                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="366" placeholderIntrinsicHeight="128" translatesAutoresizingMaskIntoConstraints="NO" id="dkb-3y-e7K" customClass="CheckboxLabelView" customModule="Stopp_Corona" customModuleProvider="target">
                                                         <rect key="frame" x="24" y="203" width="366" height="128"/>
-                                                        <subviews>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HTZ-ux-9TW" customClass="M13Checkbox" customModule="M13Checkbox">
-                                                                <rect key="frame" x="0.0" y="5" width="24" height="24"/>
-                                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="24" id="ilD-Dv-x2Z"/>
-                                                                    <constraint firstAttribute="width" constant="24" id="z7e-5N-oiG"/>
-                                                                </constraints>
-                                                                <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                        <real key="value" value="4"/>
-                                                                    </userDefinedRuntimeAttribute>
-                                                                </userDefinedRuntimeAttributes>
-                                                                <connections>
-                                                                    <action selector="agreementChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="hTm-cJ-aJO"/>
-                                                                </connections>
-                                                            </view>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sickness_certificate_report_status_agreement_label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cOu-9g-Zje" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
-                                                                <rect key="frame" x="40" y="0.0" width="326" height="128"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <nil key="textColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                                <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="body"/>
-                                                                    <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="sickness_certificate_report_status_agreement_label"/>
-                                                                </userDefinedRuntimeAttributes>
-                                                            </label>
-                                                        </subviews>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                                        <constraints>
-                                                            <constraint firstItem="cOu-9g-Zje" firstAttribute="top" secondItem="dkb-3y-e7K" secondAttribute="top" id="6rE-NS-ClL"/>
-                                                            <constraint firstItem="HTZ-ux-9TW" firstAttribute="firstBaseline" secondItem="cOu-9g-Zje" secondAttribute="top" constant="5" id="NEj-y3-J5m"/>
-                                                            <constraint firstAttribute="trailing" secondItem="cOu-9g-Zje" secondAttribute="trailing" id="gqs-b9-9uA"/>
-                                                            <constraint firstItem="cOu-9g-Zje" firstAttribute="leading" secondItem="HTZ-ux-9TW" secondAttribute="trailing" constant="16" id="hiU-iR-DkR"/>
-                                                            <constraint firstAttribute="bottom" secondItem="cOu-9g-Zje" secondAttribute="bottom" id="kPf-CV-vVM"/>
-                                                            <constraint firstItem="HTZ-ux-9TW" firstAttribute="leading" secondItem="dkb-3y-e7K" secondAttribute="leading" id="yhQ-xf-lhq"/>
-                                                        </constraints>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="labelTransKey" value="sickness_certificate_report_status_agreement_label"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="labelStyleName" value="body"/>
+                                                        </userDefinedRuntimeAttributes>
                                                     </view>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jcs-uF-joo" customClass="PrimaryButton" customModule="Stopp_Corona" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jcs-uF-joo" customClass="PrimaryButton" customModule="Stopp_Corona" customModuleProvider="target">
                                                         <rect key="frame" x="24" y="355" width="366" height="30"/>
                                                         <state key="normal" title="sickness_certificate_report_status_button">
                                                             <color key="titleColor" name="ccBlack"/>
@@ -141,7 +111,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="7vZ-ge-6xs" firstAttribute="leading" secondItem="uY5-Va-ilv" secondAttribute="leading" id="2j1-Jb-aGp"/>
                                             <constraint firstItem="7vZ-ge-6xs" firstAttribute="top" secondItem="uY5-Va-ilv" secondAttribute="top" id="cX0-O7-5If"/>
@@ -163,7 +133,8 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="KEE-Bt-yBE"/>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rAo-n0-2kw" secondAttribute="trailing" id="CMU-ep-uAA"/>
                             <constraint firstItem="rAo-n0-2kw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="DsO-Me-n8q"/>
@@ -173,10 +144,9 @@
                             <constraint firstItem="CyI-yx-cRF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="k3c-7K-ZN2"/>
                             <constraint firstItem="rAo-n0-2kw" firstAttribute="top" secondItem="CyI-yx-cRF" secondAttribute="bottom" constant="8" id="wrY-n5-bAj"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="checkbox" destination="HTZ-ux-9TW" id="fk5-Yd-Mo6"/>
+                        <outlet property="checkboxLabelView" destination="dkb-3y-e7K" id="Ubf-Pw-ZD5"/>
                         <outlet property="reportButton" destination="Jcs-uF-joo" id="jgg-nk-aUd"/>
                         <outlet property="reportStatusDescription" destination="Q01-FA-vmg" id="N5y-UM-Vdx"/>
                         <outlet property="reportStatusHeadline" destination="3Gk-26-xE7" id="KNf-sJ-TEF"/>
@@ -192,5 +162,8 @@
         <namedColor name="ccBlack">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

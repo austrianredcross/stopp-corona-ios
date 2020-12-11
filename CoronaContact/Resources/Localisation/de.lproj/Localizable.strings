@@ -473,6 +473,14 @@
 "whats_new_img"                                                              = "Bild: Gemeinsame Schnittstelle der Anbieter";
 "whats_new_button_title"                                                     = "Alles klar!";
 "whats_new_in_2.0.0"                                                         = "Wir nutzen in dieser Version die <bred>Apple und Google COVID-19 Schnittstelle</bred>. Die Benachrichtigungen werden weiterhin anonym ausgetauscht und es werden daher an ein paar Stellen die Informationen anders dargestellt.\n\nBegegnungen, die Sie vor dem Update auf diese Version als Handshake gespeichert haben, sind aus technischen Gründen nicht mehr gespeichert und können leider nicht mehr benachrichtigt werden.";
+"accessibility_active"                                                       = "aktiv";
+"accessibility_inactive"                                                     = "inaktiv";
+"accessibility_activated"                                                    = "aktiviert";
+"accessibility_deactivated"                                                  = "deaktiviert";
+"accessibility_double_tap_to_switch"                                         = "Zum Umschalten doppel tippen";
+"accessibility_double_tap_to_activate"                                       = "Zum Aktivieren doppel tippen";
+"accessibility_double_tap_to_deactivate"                                     = "Zum Deaktivieren doppel tippen";
+"accessibility_keyboard_confirm_title"                                       = "Bestätigen";
 "handshake_code_00"                                                          = "Meise";
 "handshake_code_01"                                                          = "Tukan";
 "handshake_code_02"                                                          = "Gämse";

@@ -473,6 +473,14 @@
 "whats_new_img"                                                              = "Image: Common API between providers";
 "whats_new_button_title"                                                     = "All right!";
 "whats_new_in_2.0.0"                                                         = "In this version we use the <bred>Apple and Google COVID-19 interface</bred>. The notifications will continue to be exchanged anonymously and therefore in some places the information will be displayed differently.\n\nEncounters that you saved as handshake before updating to this version are no longer saved for technical reasons and can unfortunately no longer be notified.";
+"accessibility_active"                                                       = "active";
+"accessibility_inactive"                                                     = "inactive";
+"accessibility_activated"                                                    = "activated";
+"accessibility_deactivated"                                                  = "deactivated";
+"accessibility_double_tap_to_switch"                                         = "Douple tap to toggle";
+"accessibility_double_tap_to_activate"                                       = "Douple tap to activate";
+"accessibility_double_tap_to_deactivate"                                     = "Douple tap to deactivate";
+"accessibility_keyboard_confirm_title"                                       = "Confirm";
 "handshake_code_00"                                                          = "Meise";
 "handshake_code_01"                                                          = "Tukan";
 "handshake_code_02"                                                          = "Gämse";
