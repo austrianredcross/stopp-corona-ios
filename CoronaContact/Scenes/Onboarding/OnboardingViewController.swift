@@ -114,9 +114,9 @@ final class OnboardingViewController: UIViewController, StoryboardBased, ViewMod
                 if let text = view.textLabel.text, !text.isEmpty {
                     accessViews.append(view.textLabel)
                 }
-
-                if let text = view.consentLabel.text, !text.isEmpty {
-                    accessViews.append(view.consentLabel)
+                
+                if let text = view.checkboxLabelView.label.text, !text.isEmpty {
+                    accessViews.append(view.checkboxLabelView)
                 }
 
                 if let text = view.textLabel2.text, !text.isEmpty {

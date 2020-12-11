@@ -150,9 +150,11 @@ class FloatingTextField: UITextField, ValidateableInputType {
 
             case .numbers:
                 keyboardType = .numberPad
+                configureToolBar()
 
             case .phone:
                 keyboardType = .phonePad
+                configureToolBar()
 
             default:
                 keyboardType = .asciiCapable
@@ -268,6 +270,16 @@ class FloatingTextField: UITextField, ValidateableInputType {
         borderView.layer.borderWidth = calculatedBorderWidth
     }
 
+    private func configureToolBar() {
+        let toolbar: UIToolbar = UIToolbar()
+        toolbar.items = [UIBarButtonItem(title: "accessibility_keyboard_confirm_title".localized, style: .done, target: self, action: #selector(hideKeyboard)) ]
+        toolbar.sizeToFit()
+        self.inputAccessoryView = toolbar
+    }
+    
+    @objc func hideKeyboard() {
+        shouldResignFirstResponder()
+    }
     // MARK: - Actions
 
     @objc private func textFieldDidChange() {
@@ -340,14 +352,19 @@ extension FloatingTextField {
             errorMessage = {
                 switch validationError {
                 case .empty:
+                    accessibilityLabel = "general_validation_required".localized
+                    UIAccessibility.post(notification: UIAccessibility.Notification.layoutChanged, argument: self)
                     return "general_validation_required".localized
                 case let .invalid(reason):
+                    accessibilityLabel = reason
+                    UIAccessibility.post(notification: UIAccessibility.Notification.layoutChanged, argument: self)
                     return reason
                 }
             }()
             isValid = false
         } else {
             isValid = true
+            accessibilityLabel = labelText
             errorMessage = nil
         }
 

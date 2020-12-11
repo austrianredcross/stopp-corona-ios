@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -20,8 +21,8 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yDD-Di-SRr" customClass="CheckboxView" customModule="Stopp_Corona" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="7" width="24" height="24"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <rect key="frame" x="0.0" y="96.5" width="24" height="24"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="24" id="8cw-L1-YCB"/>
                         <constraint firstAttribute="width" constant="24" id="lUk-ar-Cx3"/>
@@ -42,18 +43,23 @@
                     </userDefinedRuntimeAttributes>
                 </label>
             </subviews>
-            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="yDD-Di-SRr" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="FHl-l8-Ql5"/>
                 <constraint firstAttribute="trailing" secondItem="bOK-56-nSm" secondAttribute="trailing" id="Z4v-l9-Pdf"/>
                 <constraint firstAttribute="bottom" secondItem="bOK-56-nSm" secondAttribute="bottom" id="d9W-js-FnK"/>
-                <constraint firstItem="yDD-Di-SRr" firstAttribute="top" secondItem="bOK-56-nSm" secondAttribute="top" constant="7" id="fvu-F3-rwR"/>
                 <constraint firstItem="bOK-56-nSm" firstAttribute="leading" secondItem="yDD-Di-SRr" secondAttribute="trailing" constant="16" id="hqX-ER-sFk"/>
                 <constraint firstItem="bOK-56-nSm" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="lfg-bL-1dc"/>
+                <constraint firstItem="yDD-Di-SRr" firstAttribute="centerY" secondItem="bOK-56-nSm" secondAttribute="centerY" id="xsB-Bw-d47"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="-12" y="-8"/>
         </view>
     </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

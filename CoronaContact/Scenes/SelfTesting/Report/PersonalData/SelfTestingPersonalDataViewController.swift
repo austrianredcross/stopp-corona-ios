@@ -40,6 +40,7 @@ final class SelfTestingPersonalDataViewController: UIViewController,
         mobileNumberTextField.labelText = "self_testing_personal_data_mobile_number_label".localized
         mobileNumberTextField.inputType = .phone(errorMessage: "sickness_certificate_personal_data_phone_field_invalid".localized)
         mobileNumberTextField.placeholder = "self_testing_personal_data_mobile_number_placeholder".localized
+        mobileNumberTextField.accessibilityLabel = "self_testing_personal_data_mobile_number_label".localized
 
         elements.append(mobileNumberTextField)
     }

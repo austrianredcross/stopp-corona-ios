@@ -12,8 +12,7 @@ final class OnboardingConsentPageView: UIView, NibLoadable {
 
     @IBOutlet var headingLabel: UILabel!
     @IBOutlet var textLabel: UILabel!
-    @IBOutlet var checkbox: M13Checkbox!
-    @IBOutlet var consentLabel: TransLabel!
+    @IBOutlet var checkboxLabelView: CheckboxLabelView!
     @IBOutlet var textLabel2: UILabel!
     @IBOutlet var button: TransButton!
 
@@ -25,26 +24,31 @@ final class OnboardingConsentPageView: UIView, NibLoadable {
     }
 
     private func setupUI() {
-        checkbox.boxType = .square
-        checkbox.markType = .checkmark
-        checkbox.stateChangeAnimation = .bounce(.fill)
-        checkbox.tintColor = .ccRouge
-        checkbox.checkmarkLineWidth = 2
-        checkbox.boxLineWidth = 2
-        checkbox.secondaryTintColor = .black
+        
+        checkboxLabelView.awakeFromNib()
+        checkboxLabelView.checkbox.boxType = .square
+        checkboxLabelView.checkbox.markType = .checkmark
+        checkboxLabelView.checkbox.stateChangeAnimation = .bounce(.fill)
+        checkboxLabelView.checkbox.tintColor = .ccRouge
+        checkboxLabelView.checkbox.checkmarkLineWidth = 2
+        checkboxLabelView.checkbox.boxLineWidth = 2
+        checkboxLabelView.checkbox.secondaryTintColor = .black
 
         let tap = UITapGestureRecognizer(target: self, action: #selector(toogleAgreement(_:)))
-        consentLabel.addGestureRecognizer(tap)
+        checkboxLabelView.label.addGestureRecognizer(tap)
+        
+        checkboxLabelView.handleTap = { [weak self] (value) in
+            self?.viewModel?.agreementToDataPrivacy = value
+        }
     }
 
     @objc func toogleAgreement(_ sender: UITapGestureRecognizer) {
-        checkbox.toggleCheckState()
-        agreementChanged(checkbox)
+        checkboxLabelView.checkbox.toggleCheckState()
+        agreementChanged(value: checkboxLabelView.checkbox.checkState == .checked)
     }
-
-    @IBAction func agreementChanged(_ sender: M13Checkbox) {
-        let isChecked = sender.checkState == .checked
-        viewModel?.agreementToDataPrivacy = isChecked
+    
+    private func agreementChanged(value: Bool) {
+        viewModel?.agreementToDataPrivacy = value
     }
 
     @IBAction func dataPrivacyButtonTapped(_ sender: Any) {

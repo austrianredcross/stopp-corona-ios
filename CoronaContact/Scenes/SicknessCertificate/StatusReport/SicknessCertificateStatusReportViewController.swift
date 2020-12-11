@@ -11,7 +11,7 @@ final class SicknessCertificateStatusReportViewController: UIViewController,
     StoryboardBased, ViewModelBased, ActivityModalPresentable, FlashableScrollIndicators
 {
     @IBOutlet var scrollView: UIScrollView!
-    @IBOutlet var checkbox: M13Checkbox!
+    @IBOutlet var checkboxLabelView: CheckboxLabelView!
     @IBOutlet var reportButton: PrimaryButton!
     @IBOutlet var reportStatusHeadline: TransLabel!
     @IBOutlet var reportStatusDescription: TransLabel!
@@ -45,19 +45,18 @@ final class SicknessCertificateStatusReportViewController: UIViewController,
 
         reportButton.isEnabled = false
 
-        checkbox.boxType = .square
-        checkbox.markType = .checkmark
-        checkbox.stateChangeAnimation = .bounce(.fill)
-        checkbox.tintColor = .ccRouge
-        checkbox.checkmarkLineWidth = 2
-        checkbox.boxLineWidth = 2
-        checkbox.secondaryTintColor = .black
-    }
-
-    @IBAction func agreementChanged(_ sender: M13Checkbox) {
-        let isChecked = sender.checkState == .checked
-        viewModel?.agreesToTerms = isChecked
-        reportButton.isEnabled = isChecked
+        checkboxLabelView.checkbox.boxType = .square
+        checkboxLabelView.checkbox.markType = .checkmark
+        checkboxLabelView.checkbox.stateChangeAnimation = .bounce(.fill)
+        checkboxLabelView.checkbox.tintColor = .ccRouge
+        checkboxLabelView.checkbox.checkmarkLineWidth = 2
+        checkboxLabelView.checkbox.boxLineWidth = 2
+        checkboxLabelView.checkbox.secondaryTintColor = .black
+        
+        checkboxLabelView.handleTap = { [weak self] (value) in
+            self?.viewModel?.agreesToTerms = value
+            self?.reportButton.isEnabled = value
+        }
     }
 
     @IBAction func reportButtonTapped(_ sender: UIButton) {

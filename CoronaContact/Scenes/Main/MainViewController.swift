@@ -35,12 +35,10 @@ final class MainViewController: UIViewController, StoryboardBased, ViewModelBase
     @IBOutlet var automaticHandshakeInactiveView: UIView!
     @IBOutlet var automaticHandshakeActiveView: UIView!
     @IBOutlet var automaticHandshakeAnimationView: AnimationView!
-    @IBOutlet var backgroundHandshakeSwitch: UISwitch!
-    @IBOutlet var backgroundHandshakeSwitchLabel: TransLabel!
     @IBOutlet var backgroundHandshakeActiveStateLabel: TransLabel!
     @IBOutlet var backgroundHandshakeDescriptionLabel: TransLabel!
     @IBOutlet var handshakePausedInformation: UIView!
-
+    @IBOutlet var backgroundHandshakeStackView: LabelSwitchStackView!
     private weak var launchScreenView: LaunchScreenView!
 
     override func viewDidLoad() {
@@ -106,6 +104,7 @@ final class MainViewController: UIViewController, StoryboardBased, ViewModelBase
         configureSelfTestingView()
         configureSicknessCertificateView()
         configureAutomationHandshakeView()
+        configureBackgroundHandshakeStackView()
     }
 
     private func configureUserHealthstatusView() {
@@ -242,25 +241,25 @@ final class MainViewController: UIViewController, StoryboardBased, ViewModelBase
             automaticHandshakeInactiveView.isHidden = true
             automaticHandshakeActiveView.isHidden = false
             automaticHandshakeAnimationView.play()
-            backgroundHandshakeSwitch.isOn = true
+            backgroundHandshakeStackView.stackViewSwitch.isOn = true
             backgroundHandshakeDescriptionLabel.styledText = "automatic_handshake_description_on".localized
             if viewModel.automaticHandshakePaused {
                 handshakePausedInformation.isHidden = false
                 backgroundHandshakeActiveStateLabel.styleName = StyleNames.boldYellow.rawValue
                 backgroundHandshakeActiveStateLabel.styledText = "automatic_handshake_switch_paused".localized
-                backgroundHandshakeSwitch.onTintColor = .ccYellow
+                backgroundHandshakeStackView.stackViewSwitch.onTintColor = .ccYellow
             } else {
                 handshakePausedInformation.isHidden = true
                 backgroundHandshakeActiveStateLabel.styleName = StyleNames.boldBlue.rawValue
                 backgroundHandshakeActiveStateLabel.styledText = "automatic_handshake_switch_on".localized
-                backgroundHandshakeSwitch.onTintColor = .ccBlue
+                backgroundHandshakeStackView.stackViewSwitch.onTintColor = .ccBlue
             }
         } else {
             handshakePausedInformation.isHidden = true
             automaticHandshakeInactiveView.isHidden = false
             automaticHandshakeActiveView.isHidden = true
             automaticHandshakeAnimationView.pause()
-            backgroundHandshakeSwitch.isOn = false
+            backgroundHandshakeStackView.stackViewSwitch.isOn = false
             backgroundHandshakeActiveStateLabel.styleName = StyleNames.boldRed.rawValue
             backgroundHandshakeActiveStateLabel.styledText = "automatic_handshake_switch_off".localized
             backgroundHandshakeDescriptionLabel.styledText = "automatic_handshake_description_off".localized
@@ -268,6 +267,13 @@ final class MainViewController: UIViewController, StoryboardBased, ViewModelBase
 
         if viewModel.hasAttestedSickness {
             backgroundHandshakeDescriptionLabel.styledText = "automatic_handshake_description_disabled".localized
+        }
+    }
+    
+    private func configureBackgroundHandshakeStackView() {
+        
+        backgroundHandshakeStackView.switchValueChanged = { [weak self] (value) in
+            self?.viewModel?.backgroundDiscovery(enable: value)
         }
     }
 

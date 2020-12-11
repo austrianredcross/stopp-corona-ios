@@ -170,6 +170,10 @@ class InstructionsView: UIView {
         instructionStackView.alignment = .top
         instructionStackView.axis = .horizontal
 
+        instructionStackView.isAccessibilityElement = true
+        instructionStackView.accessibilityLabel = String(instruction.index) + "instruction_step".localized
+        instructionStackView.accessibilityValue = instruction.text
+
         stackView.addArrangedSubview(instructionStackView)
     }
 

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		17CE9FA0CBB1AA58675A1F5A /* UIApplication+SafariViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CE98EF2576F57F776FBC3D /* UIApplication+SafariViewController.swift */; };
+		1C5E3C25258287200037017D /* LabelSwitchStackView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C5E3C23258287200037017D /* LabelSwitchStackView.xib */; };
+		1C5E3C26258287200037017D /* LabelSwitchStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5E3C24258287200037017D /* LabelSwitchStackView.swift */; };
 		1C783BEF257940C90011EC62 /* TransImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C783BEE257940C90011EC62 /* TransImageView.swift */; };
 		4B25BA9D2429592A00CDD1CF /* UserHealthStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B25BA9C2429592A00CDD1CF /* UserHealthStatus.swift */; };
 		4B7379E92423D9E600DF338E /* StartMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7379E82423D9E600DF338E /* StartMenuViewController.swift */; };
@@ -362,6 +364,8 @@
 /* Begin PBXFileReference section */
 		16F5D7F6D6B4A765EC82601F /* Pods-CoronaContactTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoronaContactTests.release.xcconfig"; path = "Target Support Files/Pods-CoronaContactTests/Pods-CoronaContactTests.release.xcconfig"; sourceTree = "<group>"; };
 		17CE98EF2576F57F776FBC3D /* UIApplication+SafariViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+SafariViewController.swift"; sourceTree = "<group>"; };
+		1C5E3C23258287200037017D /* LabelSwitchStackView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LabelSwitchStackView.xib; sourceTree = "<group>"; };
+		1C5E3C24258287200037017D /* LabelSwitchStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelSwitchStackView.swift; sourceTree = "<group>"; };
 		1C783BEE257940C90011EC62 /* TransImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransImageView.swift; sourceTree = "<group>"; };
 		1FDDA0B8090AAB9A97DCB475 /* Pods-CoronaContactTests.stage.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoronaContactTests.stage.xcconfig"; path = "Target Support Files/Pods-CoronaContactTests/Pods-CoronaContactTests.stage.xcconfig"; sourceTree = "<group>"; };
 		4B1F6118242A60AD00E82D4C /* Stopp Corona.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Stopp Corona.entitlements"; sourceTree = "<group>"; };
@@ -1622,6 +1626,8 @@
 		8397454646FF8D8C78AEC848 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1C5E3C24258287200037017D /* LabelSwitchStackView.swift */,
+				1C5E3C23258287200037017D /* LabelSwitchStackView.xib */,
 				1C783BEE257940C90011EC62 /* TransImageView.swift */,
 				61D0F55424352EA90026C91A /* Checkbox */,
 				839744713BE877F4659927B5 /* AutoMarginTableViewCell.swift */,
@@ -1881,6 +1887,7 @@
 				6103207E243F28A000ED3A20 /* en.privacy.html in Resources */,
 				61F50DE0243A310400798264 /* handshakeActive.json in Resources */,
 				9215253D2427C5E00023F469 /* SelfTestingHintViewController.storyboard in Resources */,
+				1C5E3C25258287200037017D /* LabelSwitchStackView.xib in Resources */,
 				4EDB47F12421E92E000CE24A /* OnboardingPageView.xib in Resources */,
 				614D72062428E82700CC545D /* ContactSicknessViewController.storyboard in Resources */,
 				61D1A3D4242A3C40007F82ED /* Localizable.strings in Resources */,
@@ -2322,6 +2329,7 @@
 				6153A52724264A2D006A8570 /* ActivityModalViewController.swift in Sources */,
 				83974960BEEA73146FD4930C /* AutoMarginTableViewCell.swift in Sources */,
 				4ED175D224606F9600248D3B /* RevokeSicknessTanConfirmationViewController.swift in Sources */,
+				1C5E3C26258287200037017D /* LabelSwitchStackView.swift in Sources */,
 				6155C6FB248F8195009BDE6B /* BatchDownload+Injection.swift in Sources */,
 				83974BFDA169F61FBF77FA24 /* DatabaseService.swift in Sources */,
 				613E35F5242E3F65009421A8 /* LaunchScreenViewController.swift in Sources */,
