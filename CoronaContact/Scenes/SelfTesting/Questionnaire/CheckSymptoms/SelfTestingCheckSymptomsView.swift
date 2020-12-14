@@ -10,8 +10,8 @@ import SwiftRichString
 import UIKit
 
 final class SelfTestingCheckSymptomsView: UIView, NibLoadable {
-    @IBOutlet var questionTitle: UILabel!
-    @IBOutlet var questionText: UILabel!
+    @IBOutlet var questionTitle: TransHeadingLabel!
+    @IBOutlet var questionText: TransSubHeadingLabel!
     @IBOutlet var answersStackView: UIStackView!
 
     var handleAnswer: ((Answer) -> Void)?

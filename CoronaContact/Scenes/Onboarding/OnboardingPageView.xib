@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina3_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -20,7 +21,7 @@
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="ilZ-Y2-hNQ" customClass="BackgroundStackView" customModule="Stopp_Corona" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="345" height="492"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="headLine" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="bof-dt-8vb" userLabel="headingLabel">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="headLine" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="bof-dt-8vb" userLabel="headingLabel" customClass="TransHeadingLabel" customModule="Stopp_Corona" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="345" height="20.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
@@ -30,10 +31,10 @@
                                     </userDefinedRuntimeAttributes>
                                 </label>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="NlN-bN-DCe">
-                                    <rect key="frame" x="0.0" y="44.5" width="345" height="20.5"/>
+                                    <rect key="frame" x="0.0" y="44.5" width="345" height="0.0"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U1b-31-foO" userLabel="textLabel" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="345" height="20.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="345" height="0.0"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -53,7 +54,7 @@
                                     </subviews>
                                 </stackView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="VSE-uv-Wbi" customClass="TransButton" customModule="Stopp_Corona" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="89" width="345" height="34"/>
+                                    <rect key="frame" x="0.0" y="68.5" width="345" height="54.5"/>
                                     <state key="normal" title="Button">
                                         <color key="titleColor" name="ccBlack"/>
                                     </state>
@@ -72,7 +73,7 @@
                                             <rect key="frame" x="20" y="92.5" width="305" height="160"/>
                                         </imageView>
                                     </subviews>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="IQn-bd-iWo" secondAttribute="trailing" constant="20" symbolic="YES" id="AdO-IQ-vc7"/>
                                         <constraint firstItem="IQn-bd-iWo" firstAttribute="centerY" secondItem="Tmi-PI-HfO" secondAttribute="centerY" id="B4h-oe-a8y"/>
@@ -93,7 +94,7 @@
                             </userDefinedRuntimeAttributes>
                         </stackView>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="ilZ-Y2-hNQ" secondAttribute="trailing" id="3bj-zM-KcO"/>
                         <constraint firstItem="ilZ-Y2-hNQ" firstAttribute="top" secondItem="HS0-Ui-L3Q" secondAttribute="top" id="CiA-py-YHJ"/>
@@ -156,5 +157,8 @@
         <namedColor name="ccShadow">
             <color red="0.0" green="0.0" blue="0.0" alpha="0.23000000417232513" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
