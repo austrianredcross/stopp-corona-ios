@@ -9,7 +9,7 @@ import SwiftRichString
 import UIKit
 
 final class OnboardingPageView: UIView, NibLoadable {
-    @IBOutlet var headingLabel: UILabel!
+    @IBOutlet var headingLabel: TransHeadingLabel!
     @IBOutlet var textLabel: UILabel!
     @IBOutlet var textLabel2: UILabel!
     @IBOutlet var button: TransButton!

@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -66,7 +67,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="677.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="self_monitoring_guidelines_next_steps_headline" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uPo-nC-WpL" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
-                                                                <rect key="frame" x="24" y="32" width="366" height="20.5"/>
+                                                                <rect key="frame" x="24" y="32" width="366" height="41"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -76,7 +77,7 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </label>
                                                             <view contentMode="scaleToFill" placeholderIntrinsicWidth="374" placeholderIntrinsicHeight="500" translatesAutoresizingMaskIntoConstraints="NO" id="k8n-5U-Ofr" customClass="InstructionsView" customModule="Stopp_Corona" customModuleProvider="target">
-                                                                <rect key="frame" x="8" y="68.5" width="374" height="585"/>
+                                                                <rect key="frame" x="8" y="89" width="374" height="564.5"/>
                                                                 <color key="backgroundColor" name="ccWhite"/>
                                                             </view>
                                                         </subviews>
@@ -172,14 +173,14 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="Uds-Z4-nW4"/>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Pks-ZP-t8C" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="fy0-hG-sik"/>
                             <constraint firstItem="Pks-ZP-t8C" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="v3D-DS-TLJ"/>
                             <constraint firstItem="Pks-ZP-t8C" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="yKV-Nd-kpe"/>
                             <constraint firstItem="Pks-ZP-t8C" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="zox-rn-WEq"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="formFilledDateLabel" destination="DE3-3y-SGx" id="GEN-2Z-y0n"/>
@@ -199,5 +200,8 @@
         <namedColor name="ccWhite">
             <color red="0.95686274509803926" green="0.95686274509803926" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

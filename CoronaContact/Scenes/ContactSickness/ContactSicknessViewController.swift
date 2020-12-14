@@ -8,9 +8,9 @@ import UIKit
 
 final class ContactSicknessViewController: UIViewController, StoryboardBased, ViewModelBased, FlashableScrollIndicators {
     @IBOutlet var scrollView: UIScrollView!
-    @IBOutlet var headlineLabel: UILabel!
+    @IBOutlet var headlineLabel: TransHeadingLabel!
     @IBOutlet var descriptionLabel: TransLabel!
-    @IBOutlet var guidelinesHeadlineLabel: UILabel!
+    @IBOutlet var guidelinesHeadlineLabel: TransSubHeadingLabel!
     @IBOutlet var guidelinesEndOfQuarantineLabel: TransLabel!
     @IBOutlet var guidelinesDescriptionLabel: UILabel!
     @IBOutlet var guidelinesInstructionsView: InstructionsView!

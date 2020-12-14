@@ -63,7 +63,7 @@
                                         <action selector="dataPrivacyButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="ehe-Px-Q6K"/>
                                     </connections>
                                 </button>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="onboarding_consent_headline" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wNh-mu-8Fa" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="onboarding_consent_headline" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wNh-mu-8Fa" customClass="TransHeadingLabel" customModule="Stopp_Corona" customModuleProvider="target">
                                     <rect key="frame" x="24" y="32" width="460" height="20.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>

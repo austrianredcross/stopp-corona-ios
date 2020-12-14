@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,12 +22,12 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Tza-6D-XAq">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1100"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1120.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="C0d-GQ-Nnt" customClass="BackgroundStackView" customModule="Stopp_Corona" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="41"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="main_headline" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iVN-GC-bj3" userLabel="Headline">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="main_headline" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iVN-GC-bj3" userLabel="Headline" customClass="TransHeadingLabel" customModule="Stopp_Corona" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
@@ -59,12 +60,12 @@
                                                 </userDefinedRuntimeAttributes>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="KiL-HQ-Gda">
-                                                <rect key="frame" x="0.0" y="41" width="414" height="1059"/>
+                                                <rect key="frame" x="0.0" y="41" width="414" height="1079.5"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iaN-XW-okT">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="724.5"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="contact_sickness_proven_guidelines_headline" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jHS-sM-VOl" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="contact_sickness_proven_guidelines_headline" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jHS-sM-VOl" customClass="TransSubHeadingLabel" customModule="Stopp_Corona" customModuleProvider="target">
                                                                 <rect key="frame" x="24" y="32" width="370" height="20.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
@@ -117,7 +118,7 @@
                                                         </constraints>
                                                     </view>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Pv8-OX-avK">
-                                                        <rect key="frame" x="0.0" y="724.5" width="414" height="334.5"/>
+                                                        <rect key="frame" x="0.0" y="724.5" width="414" height="355"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aZn-Tq-hlf">
                                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="87"/>
@@ -186,10 +187,10 @@
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zza-sI-68j">
-                                                                <rect key="frame" x="0.0" y="225" width="414" height="52.5"/>
+                                                                <rect key="frame" x="0.0" y="225" width="414" height="73"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" text="contact_sickness_guidelines_consulting_second" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Fb-nl-baA" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
-                                                                        <rect key="frame" x="24" y="16" width="366" height="20.5"/>
+                                                                        <rect key="frame" x="24" y="16" width="366" height="41"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -208,7 +209,7 @@
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" verticalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="83f-qf-mvM">
-                                                                <rect key="frame" x="0.0" y="277.5" width="414" height="57"/>
+                                                                <rect key="frame" x="0.0" y="298" width="414" height="57"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="contact_sickness_guidelines_consulting_third" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ft-IT-41O" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
                                                                         <rect key="frame" x="24" y="16" width="366" height="25"/>
@@ -247,14 +248,14 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="JBn-0A-QPA"/>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="T1S-un-bAo" secondAttribute="bottom" id="4uy-2I-6Dl"/>
                             <constraint firstItem="T1S-un-bAo" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="5Kv-QK-TPT"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="T1S-un-bAo" secondAttribute="top" id="Q15-v3-cHI"/>
                             <constraint firstItem="T1S-un-bAo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ZIN-v4-pMj"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="descriptionLabel" destination="xRU-wv-bh7" id="cS4-gl-UCx"/>
@@ -275,5 +276,8 @@
         <namedColor name="ccWhite">
             <color red="0.95686274509803926" green="0.95686274509803926" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

@@ -10,7 +10,7 @@ import UIKit
 final class OnboardingConsentPageView: UIView, NibLoadable {
 
 
-    @IBOutlet var headingLabel: UILabel!
+    @IBOutlet var headingLabel: TransHeadingLabel!
     @IBOutlet var textLabel: UILabel!
     @IBOutlet var checkboxLabelView: CheckboxLabelView!
     @IBOutlet var textLabel2: UILabel!
