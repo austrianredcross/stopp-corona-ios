@@ -11,18 +11,16 @@ struct OnboardingPage {
     let text: String
     let text2: String?
     let image: String?
+    let textViewText: String?
     let imageAccessibiltyText: String?
-    let buttonText: String?
-    let buttonHandler: (() -> Void)?
 
-    init(headline: String, text: String, text2: String?, image: String? = nil, imageAccessibiltyText: String? = nil, buttonText: String? = nil, buttonHandler: (() -> Void)? = nil) {
+    init(headline: String, text: String, text2: String?, image: String? = nil, imageAccessibiltyText: String? = nil, textViewText: String? = nil) {
         self.headline = headline
         self.text = text
         self.text2 = text2
         self.image = image
         self.imageAccessibiltyText = imageAccessibiltyText
-        self.buttonText = buttonText
-        self.buttonHandler = buttonHandler
+        self.textViewText = textViewText
     }
 }
 
@@ -101,10 +99,7 @@ class OnboardingViewModel: ViewModel {
                 headline: "onboarding_headline_5".localized,
                 text: "onboarding_copy_5_1".localized,
                 text2: nil,
-                buttonText: "onboarding_copy_5_2".localized,
-                buttonHandler: { [weak self] in
-                    self?.termsOfUse()
-                }
+                textViewText: "onboarding_copy_5_2".localized
             ),
         ]
     }

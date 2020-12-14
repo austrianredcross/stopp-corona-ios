@@ -59,4 +59,14 @@ class ApplicationCoordinator: Coordinator {
         rootViewController.popToRootViewController(animated: false)
         mainCoordinator?.selfTesting(updateKeys: false)
     }
+    
+    func openWebView(websiteType: Website) {
+        
+        guard let presented = rootViewController.presentedViewController as? UINavigationController else { return }
+        
+        let child = StartMenuSimpleWebViewCoordinator(navigationController: presented)
+        addChildCoordinator(child)
+        child.start(present: true)
+        child.rootViewController.viewModel?.website = websiteType
+    }
 }

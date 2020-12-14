@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0DV-8a-Pct">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0DV-8a-Pct">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="1818"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="BFS-xQ-SD9">
-                                        <rect key="frame" x="0.0" y="24" width="414" height="1197.5"/>
+                                        <rect key="frame" x="0.0" y="24" width="414" height="1270.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="upv-SN-VCw" userLabel="All Functions Stack View">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="484"/>
@@ -37,7 +39,7 @@
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V9v-On-NAq">
                                                         <rect key="frame" x="24" y="91" width="366" height="7"/>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="7" id="XWt-fw-F20"/>
                                                         </constraints>
@@ -174,6 +176,9 @@
                                                             </view>
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <accessibility key="accessibilityConfiguration">
+                                                            <accessibilityTraits key="traits" button="YES"/>
+                                                        </accessibility>
                                                         <constraints>
                                                             <constraint firstItem="rlD-Mb-ilV" firstAttribute="leading" secondItem="t8L-RM-QnI" secondAttribute="leading" id="Bd7-bE-qL2"/>
                                                             <constraint firstAttribute="trailing" secondItem="rlD-Mb-ilV" secondAttribute="trailing" id="JsF-jV-iQU"/>
@@ -240,6 +245,9 @@
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jTE-VY-uUU" customClass="ArrowButton" customModule="Stopp_Corona" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="366" height="34"/>
+                                                                <accessibility key="accessibilityConfiguration">
+                                                                    <accessibilityTraits key="traits" link="YES"/>
+                                                                </accessibility>
                                                                 <state key="normal" title="start_menu_item_1_2_faq_link">
                                                                     <color key="titleColor" name="ccBlack"/>
                                                                 </state>
@@ -275,6 +283,9 @@
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ecm-1h-vag" customClass="ArrowButton" customModule="Stopp_Corona" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="366" height="34"/>
+                                                                <accessibility key="accessibilityConfiguration">
+                                                                    <accessibilityTraits key="traits" link="YES"/>
+                                                                </accessibility>
                                                                 <state key="normal" title="start_menu_item_1_3_red_cross_link">
                                                                     <color key="titleColor" name="ccBlack"/>
                                                                 </state>
@@ -310,7 +321,7 @@
                                                 <edgeInsets key="layoutMargins" top="42" left="24" bottom="24" right="24"/>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="KNG-Fl-JE4" userLabel="Legal Stack View" customClass="BackgroundStackView" customModule="Stopp_Corona" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="858" width="414" height="339.5"/>
+                                                <rect key="frame" x="0.0" y="858" width="414" height="412.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="start_menu_headline_2" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R6j-a8-gdW" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
                                                         <rect key="frame" x="24" y="16" width="366" height="24"/>
@@ -482,14 +493,14 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="6Mz-7g-CxI"/>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="kne-Da-p86"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="YNt-f0-gDi" firstAttribute="top" secondItem="kne-Da-p86" secondAttribute="top" id="9ev-M8-TvU"/>
                             <constraint firstItem="YNt-f0-gDi" firstAttribute="leading" secondItem="kne-Da-p86" secondAttribute="leading" id="WT0-3n-pB0"/>
                             <constraint firstItem="kne-Da-p86" firstAttribute="bottom" secondItem="YNt-f0-gDi" secondAttribute="bottom" id="cdv-8I-GkY"/>
                             <constraint firstItem="kne-Da-p86" firstAttribute="trailing" secondItem="YNt-f0-gDi" secondAttribute="trailing" id="ovK-yB-2we"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="kne-Da-p86"/>
                     </view>
                     <navigationItem key="navigationItem" id="qq8-T6-gVE">
                         <barButtonItem key="rightBarButtonItem" title="Close Menu" image="startMenuClose" id="ioc-ud-tAC" customClass="TransBarButton" customModule="Stopp_Corona" customModuleProvider="target">
@@ -529,5 +540,8 @@
         <namedColor name="ccWhite">
             <color red="0.95686274509803926" green="0.95686274509803926" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

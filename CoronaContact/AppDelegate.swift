@@ -97,6 +97,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 }
 
+// MARK: Deep Link
+
+extension AppDelegate {
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        
+        if url.scheme == DeepLinkConstants.deepLinkScheme && url.host == DeepLinkConstants.deepLinkHost {
+            
+            let path = url.path
+            let correctPath = String(path.dropFirst())
+            
+            switch correctPath {
+            case Website.termsOfUse.rawValue:
+                appCoordinator.openWebView(websiteType: .termsOfUse)
+            case Website.privacy.rawValue:
+                appCoordinator.openWebView(websiteType: .privacy)
+            default:
+                log.error("Error while trying to open a webview with path: \(correctPath)")
+            }
+        }
+        
+        return true
+    }
+}
+
 // MARK: Styling
 
 extension AppDelegate {
