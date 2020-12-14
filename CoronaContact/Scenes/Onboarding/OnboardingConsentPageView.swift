@@ -14,8 +14,7 @@ final class OnboardingConsentPageView: UIView, NibLoadable {
     @IBOutlet var textLabel: UILabel!
     @IBOutlet var checkboxLabelView: CheckboxLabelView!
     @IBOutlet var textLabel2: UILabel!
-    @IBOutlet var button: TransButton!
-
+    @IBOutlet var textView: LinkTextView!
     weak var viewModel: OnboardingViewModel?
 
     override func awakeFromNib() {
@@ -40,6 +39,8 @@ final class OnboardingConsentPageView: UIView, NibLoadable {
         checkboxLabelView.handleTap = { [weak self] (value) in
             self?.viewModel?.agreementToDataPrivacy = value
         }
+        
+        textView.textViewAttribute = TextViewAttribute(fullText: "onboarding_consent_body_3".localized, links: [DeepLinkConstants.deepLinkPrivacyUrl], linkColor: UIColor.ccBlack)
     }
 
     @objc func toogleAgreement(_ sender: UITapGestureRecognizer) {
@@ -49,9 +50,5 @@ final class OnboardingConsentPageView: UIView, NibLoadable {
     
     private func agreementChanged(value: Bool) {
         viewModel?.agreementToDataPrivacy = value
-    }
-
-    @IBAction func dataPrivacyButtonTapped(_ sender: Any) {
-        viewModel?.dataPrivacy()
     }
 }

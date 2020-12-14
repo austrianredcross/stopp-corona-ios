@@ -4,7 +4,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,7 +18,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="508" height="600"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eer-KZ-zxH">
-                            <rect key="frame" x="0.0" y="0.0" width="508" height="261"/>
+                            <rect key="frame" x="0.0" y="0.0" width="508" height="259"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="onboarding_consent_body_1" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ncN-bk-EfV" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
                                     <rect key="frame" x="24" y="68.5" width="460" height="20.5"/>
@@ -49,20 +48,13 @@
                                         <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="onboarding_consent_body_2"/>
                                     </userDefinedRuntimeAttributes>
                                 </label>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="qOa-JD-a77" customClass="TransButton" customModule="Stopp_Corona" customModuleProvider="target">
-                                    <rect key="frame" x="24" y="202" width="460" height="34"/>
-                                    <state key="normal" title="onboarding_consent_body_3">
-                                        <color key="titleColor" name="ccBlack"/>
-                                    </state>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="string" keyPath="normalStyle" value="body"/>
-                                        <userDefinedRuntimeAttribute type="string" keyPath="transKeyNormal" value="onboarding_consent_body_3"/>
-                                        <userDefinedRuntimeAttribute type="boolean" keyPath="multiline" value="YES"/>
-                                    </userDefinedRuntimeAttributes>
-                                    <connections>
-                                        <action selector="dataPrivacyButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="ehe-Px-Q6K"/>
-                                    </connections>
-                                </button>
+                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" bouncesZoom="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="NZh-xz-rQB" customClass="LinkTextView" customModule="Stopp_Corona" customModuleProvider="target">
+                                    <rect key="frame" x="24" y="202" width="460" height="33"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <color key="textColor" systemColor="labelColor"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                </textView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="onboarding_consent_headline" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wNh-mu-8Fa" customClass="TransHeadingLabel" customModule="Stopp_Corona" customModuleProvider="target">
                                     <rect key="frame" x="24" y="32" width="460" height="20.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -78,21 +70,21 @@
                             <constraints>
                                 <constraint firstItem="hET-gE-Azu" firstAttribute="top" secondItem="Bhc-WQ-vwn" secondAttribute="bottom" constant="24" id="2zZ-Ac-fcT"/>
                                 <constraint firstItem="wNh-mu-8Fa" firstAttribute="top" secondItem="Eer-KZ-zxH" secondAttribute="top" constant="32" id="6RI-Us-Hrk"/>
-                                <constraint firstItem="qOa-JD-a77" firstAttribute="leading" secondItem="Eer-KZ-zxH" secondAttribute="leading" constant="24" id="AUt-qb-IbX"/>
-                                <constraint firstItem="qOa-JD-a77" firstAttribute="top" secondItem="hET-gE-Azu" secondAttribute="bottom" constant="24" id="DVE-3p-Iiq"/>
                                 <constraint firstItem="Bhc-WQ-vwn" firstAttribute="leading" secondItem="Eer-KZ-zxH" secondAttribute="leading" constant="32" id="EAp-xa-Sif"/>
                                 <constraint firstItem="Bhc-WQ-vwn" firstAttribute="leading" secondItem="Eer-KZ-zxH" secondAttribute="leading" constant="32" id="Edg-nj-fbO"/>
+                                <constraint firstItem="hET-gE-Azu" firstAttribute="bottom" secondItem="NZh-xz-rQB" secondAttribute="top" constant="-24" id="Fff-3H-PNi"/>
                                 <constraint firstItem="ncN-bk-EfV" firstAttribute="top" secondItem="wNh-mu-8Fa" secondAttribute="bottom" constant="16" id="HBA-TM-g3u"/>
-                                <constraint firstAttribute="trailing" secondItem="qOa-JD-a77" secondAttribute="trailing" constant="24" id="Hcx-xS-Lpr"/>
                                 <constraint firstItem="wNh-mu-8Fa" firstAttribute="leading" secondItem="Eer-KZ-zxH" secondAttribute="leading" constant="24" id="LOA-cb-huK"/>
                                 <constraint firstAttribute="trailing" secondItem="wNh-mu-8Fa" secondAttribute="trailing" constant="24" id="Lse-sl-6cp"/>
                                 <constraint firstItem="ncN-bk-EfV" firstAttribute="leading" secondItem="Eer-KZ-zxH" secondAttribute="leading" constant="24" id="PeF-v4-g8D"/>
                                 <constraint firstAttribute="trailing" secondItem="ncN-bk-EfV" secondAttribute="trailing" constant="24" id="YqX-bT-qT9"/>
-                                <constraint firstAttribute="bottom" secondItem="qOa-JD-a77" secondAttribute="bottom" constant="25" id="ZPV-Zy-WEf"/>
                                 <constraint firstItem="hET-gE-Azu" firstAttribute="leading" secondItem="Eer-KZ-zxH" secondAttribute="leading" constant="24" id="aol-tT-qEd"/>
                                 <constraint firstAttribute="trailing" secondItem="hET-gE-Azu" secondAttribute="trailing" constant="24" id="bjW-SC-qnQ"/>
                                 <constraint firstItem="Bhc-WQ-vwn" firstAttribute="top" secondItem="ncN-bk-EfV" secondAttribute="bottom" constant="24" id="cRf-WQ-0RZ"/>
+                                <constraint firstAttribute="trailing" secondItem="NZh-xz-rQB" secondAttribute="trailing" constant="24" id="fGG-0S-ymH"/>
                                 <constraint firstAttribute="trailing" secondItem="Bhc-WQ-vwn" secondAttribute="trailing" constant="32" id="gTa-jG-oAr"/>
+                                <constraint firstAttribute="bottom" secondItem="NZh-xz-rQB" secondAttribute="bottom" constant="24" id="lH5-Wt-tVF"/>
+                                <constraint firstItem="NZh-xz-rQB" firstAttribute="leading" secondItem="Eer-KZ-zxH" secondAttribute="leading" constant="24" id="wB4-Ov-1bA"/>
                             </constraints>
                         </view>
                     </subviews>
@@ -116,19 +108,19 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="button" destination="qOa-JD-a77" id="J9g-Kk-LkP"/>
                 <outlet property="checkboxLabelView" destination="Bhc-WQ-vwn" id="iEY-Jr-uHM"/>
                 <outlet property="headingLabel" destination="wNh-mu-8Fa" id="Fwb-pt-KgT"/>
                 <outlet property="textLabel" destination="ncN-bk-EfV" id="vZe-1D-YXh"/>
                 <outlet property="textLabel2" destination="hET-gE-Azu" id="9EI-D2-KN4"/>
+                <outlet property="textView" destination="NZh-xz-rQB" id="p6H-P9-vha"/>
             </connections>
             <point key="canvasLocation" x="200.00000000000003" y="12.723214285714285"/>
         </view>
     </objects>
     <resources>
-        <namedColor name="ccBlack">
-            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

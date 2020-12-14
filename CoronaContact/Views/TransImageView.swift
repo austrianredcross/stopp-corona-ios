@@ -7,18 +7,14 @@ import UIKit
 
 
 class TransImageView: UIImageView {
-    @IBInspectable var transKey: String?
+    @IBInspectable var transKey: String? { didSet { updateAccessibility() } }
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        if let transKey = transKey {
-            self.isAccessibilityElement = true
-            self.accessibilityLabel = transKey.localized
-        }
+        updateAccessibility()
     }
-
-    override func prepareForInterfaceBuilder() {
-        super.prepareForInterfaceBuilder()
+    
+    private func updateAccessibility() {
         if let transKey = transKey {
             self.isAccessibilityElement = true
             self.accessibilityLabel = transKey.localized
