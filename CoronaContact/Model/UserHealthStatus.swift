@@ -18,7 +18,7 @@ enum UserHealthStatus {
     case isHealthy
     case isUnderSelfMonitoring
     case isProbablySick(quarantineDays: Int = 0)
-    case hasAttestedSickness
+    case hasAttestedSickness(quarantineDays: Int = 0)
 
     /// most severe state wins
     init(quarantineDays: Int? = nil) {
@@ -26,7 +26,7 @@ enum UserHealthStatus {
         let localStorage: LocalStorage = Resolver.resolve()
 
         if localStorage.hasAttestedSickness {
-            self = .hasAttestedSickness
+            self = .hasAttestedSickness(quarantineDays: quarantineDays)
         } else if localStorage.isProbablySick {
             self = .isProbablySick(quarantineDays: quarantineDays)
         } else if localStorage.isUnderSelfMonitoring {
@@ -98,12 +98,19 @@ enum UserHealthStatus {
         case .isProbablySick:
             return "self_testing_suspicion_description".localized
         case .hasAttestedSickness:
-            return "sickness_certificate_attest_description".localized
+            guard let quarantineDays = quarantineDays, let date = Date().addDays(quarantineDays) else {
+                return ""
+            }
+            
+            return String(format: "sickness_certificate_attest_description".localized, dateString(date))
         }
     }
 
     var quarantineDays: Int? {
         if case let .isProbablySick(quarantineDays) = self {
+            return quarantineDays
+        }
+        if case let .hasAttestedSickness(quarantineDays) = self {
             return quarantineDays
         }
         return nil
@@ -127,7 +134,7 @@ enum UserHealthStatus {
         case .isProbablySick:
             return "self_testing_suspicion_button".localized
         case .hasAttestedSickness:
-            return "general_additional_info".localized
+            return "sickness_certificate_attest_button".localized
         }
     }
 

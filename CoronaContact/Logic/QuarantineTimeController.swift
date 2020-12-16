@@ -195,6 +195,14 @@ class QuarantineTimeController {
 
     func quarantineStatus(completion: @escaping (QuarantineStatus) -> Void) {
         if localStorage.hasAttestedSickness {
+            if let attestedSicknessAt = localStorage.attestedSicknessAt {
+                let endOfQuarantine = QuarantineEnd(
+                    type: .selfDiagnosed,
+                    date: addDays(timeConfiguration.redWarning, to: attestedSicknessAt))
+                
+                return completion(.inProgress(endOfQuarantine))
+            }
+            
             return completion(.inProgressIndefinitely)
         }
 

@@ -224,7 +224,7 @@ final class MainViewController: UIViewController, StoryboardBased, ViewModelBase
         if let primaryActionText = revocationStatus.primaryActionText {
             revocationStatusView.buttonText = primaryActionText
         } else {
-            revocationStatusView.isPrimaryButtonEnabed = false
+            revocationStatusView.isPrimaryButtonEnabled = false
         }
 
         revocationStatusView.closeButton.isHidden = false

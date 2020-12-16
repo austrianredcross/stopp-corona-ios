@@ -16,21 +16,17 @@ class ContactSicknessViewModel: ViewModel {
     var headline: String? {
         contactHealthStatus?.headline
     }
-
+    
     var description: String? {
-        contactHealthStatus?.descriptionOfEncounters(infectionWarnings)
+        contactHealthStatus?.description
     }
 
-    var headlineGuidelines: String? {
-        contactHealthStatus?.headlineGuidelines
+    var descriptionOfEncounters: String? {
+        contactHealthStatus?.descriptionOfEncounters(infectionWarnings)
     }
 
     var endOfQuarantine: String? {
         contactHealthStatus?.endOfQuarantine
-    }
-
-    var descriptionGuidelines: String? {
-        contactHealthStatus?.descriptionGuidelines
     }
 
     var guidelines: [Instruction] {
