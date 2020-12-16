@@ -119,6 +119,17 @@ extension ContactHealthStatus {
             return "contact_sickness_warning_headline".localized
         }
     }
+    
+    var description: String {
+        switch self {
+        case .mixed:
+            return "contact_sickness_proven_description".localized + "\n\n" + "contact_sickness_warning_description".localized
+        case .red:
+            return "contact_sickness_proven_description".localized
+        case .yellow:
+            return "contact_sickness_warning_description".localized
+        }
+    }
 
     func descriptionOfEncounters(_ warnings: [InfectionWarning]) -> String {
         let red = warnings.filter { $0.type == .red }
@@ -161,29 +172,53 @@ extension ContactHealthStatus {
 
     // MARK: Guidelines
 
-    var headlineGuidelines: String {
-        "contact_sickness_guidelines_headline".localized
-    }
-
     var endOfQuarantine: String? {
         guard let quarantineDays = quarantineDays, let date = Date().addDays(quarantineDays) else {
             return nil
         }
 
         let endOfQuarantine = dateString(date)
-        return String(format: "contact_sickness_guidelines_quarantine_end".localized, endOfQuarantine)
+        return endOfQuarantine
     }
-
-    var descriptionGuidelines: String {
-        "contact_sickness_guidelines_no_public_transport".localized
+    
+    var infectedDateString: String? {
+        
+        let localStorage: LocalStorage = Resolver.resolve()
+        
+        guard let lastRedContact = localStorage.lastRedContact else { return nil }
+        
+        return dateString(lastRedContact)
     }
 
     var guidelines: [Instruction] {
+        
+        switch self {
+        case .red:
+            return redGuidelines
+        case .yellow:
+            return yellowGuidelines
+        case .mixed:
+            return redGuidelines
+        }
+    }
+    
+    var redGuidelines: [Instruction] {
         [
-            .init(index: 1, text: "contact_sickness_guidelines_first".localized),
-            .init(index: 2, text: "contact_sickness_guidelines_second".localized),
+            .init(index: 1, text: String(format: "contact_sickness_guidelines_first".localized, endOfQuarantine!)),
+            .init(index: 2, text: String(format: "contact_sickness_guidelines_second".localized, infectedDateString!)),
             .init(index: 3, text: "contact_sickness_guidelines_third".localized),
             .init(index: 4, text: "contact_sickness_guidelines_fourth".localized),
+            .init(index: 5, text: "contact_sickness_guidelines_fifth".localized),
+            .init(index: 6, text: "contact_sickness_guidelines_sixth".localized),
+        ]
+    }
+    
+    var yellowGuidelines: [Instruction] {
+        [
+            .init(index: 1, text: String(format: "contact_sickness_warning_guidelines_first".localized, endOfQuarantine!)),
+            .init(index: 2, text: "contact_sickness_warning_guidelines_second".localized),
+            .init(index: 3, text: "contact_sickness_warning_guidelines_third".localized),
+            .init(index: 4, text: "contact_sickness_warning_guidelines_fourth".localized),
         ]
     }
 }

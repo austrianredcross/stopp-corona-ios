@@ -94,9 +94,10 @@ class QuarantineNotificationView: UIView, NibOwnerLoadable {
         }
     }
 
-    @IBInspectable var isPrimaryButtonEnabed: Bool = true {
+    @IBInspectable var isPrimaryButtonEnabled: Bool = true {
         didSet {
-            primaryButtonContainerView.isHidden = !isPrimaryButtonEnabed
+            primaryButtonContainerView.isHidden = !isPrimaryButtonEnabled
+            primaryButton.isHidden = !isPrimaryButtonEnabled
         }
     }
 
@@ -156,7 +157,7 @@ class QuarantineNotificationView: UIView, NibOwnerLoadable {
         innerView.isUserInteractionEnabled = true
         innerView.addGestureRecognizer(tap)
 
-        primaryButtonContainerView.isHidden = !isPrimaryButtonEnabed
+        primaryButtonContainerView.isHidden = !isPrimaryButtonEnabled
         quarantineCounterLabel.insets = UIEdgeInsets(top: 10, left: 12, bottom: 10, right: 12)
         quarantineCounterLabel.layer.cornerRadius = 8
         quarantineCounterLabel.layer.masksToBounds = true

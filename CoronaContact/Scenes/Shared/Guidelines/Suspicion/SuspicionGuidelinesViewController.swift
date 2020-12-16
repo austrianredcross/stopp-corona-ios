@@ -10,7 +10,6 @@ final class SuspicionGuidelinesViewController: UIViewController, StoryboardBased
     var viewModel: SuspicionGuidelinesViewModel?
 
     @IBOutlet var scrollView: UIScrollView!
-    @IBOutlet var endOfQuarantineLabel: TransLabel!
     @IBOutlet var instructionsView: InstructionsView!
 
     override func viewDidLoad() {
@@ -35,12 +34,13 @@ final class SuspicionGuidelinesViewController: UIViewController, StoryboardBased
     private func setupUI() {
         title = "suspicion_guidelines_title".localized
 
-        endOfQuarantineLabel.styledText = viewModel?.endOfQuarantine
         instructionsView.instructions = [
             .init(index: 1, text: "suspicion_guidelines_precaution_first".localized),
             .init(index: 2, text: "suspicion_guidelines_precaution_second".localized),
             .init(index: 3, text: "suspicion_guidelines_precaution_third".localized),
             .init(index: 4, text: "suspicion_guidelines_precaution_fourth".localized),
+            .init(index: 5, text: "suspicion_guidelines_precaution_fifth".localized),
+            .init(index: 6, text: "suspicion_guidelines_precaution_sixth".localized),
         ]
     }
 

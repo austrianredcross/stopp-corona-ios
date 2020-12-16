@@ -8,11 +8,8 @@ import UIKit
 
 final class ContactSicknessViewController: UIViewController, StoryboardBased, ViewModelBased, FlashableScrollIndicators {
     @IBOutlet var scrollView: UIScrollView!
-    @IBOutlet var headlineLabel: TransHeadingLabel!
+    @IBOutlet var headlineLabel: UILabel!
     @IBOutlet var descriptionLabel: TransLabel!
-    @IBOutlet var guidelinesHeadlineLabel: TransSubHeadingLabel!
-    @IBOutlet var guidelinesEndOfQuarantineLabel: TransLabel!
-    @IBOutlet var guidelinesDescriptionLabel: UILabel!
     @IBOutlet var guidelinesInstructionsView: InstructionsView!
 
     var viewModel: ContactSicknessViewModel?
@@ -40,9 +37,6 @@ final class ContactSicknessViewController: UIViewController, StoryboardBased, Vi
         title = viewModel?.title
         headlineLabel.text = viewModel?.headline
         descriptionLabel.styledText = viewModel?.description
-        guidelinesHeadlineLabel.text = viewModel?.headlineGuidelines
-        guidelinesEndOfQuarantineLabel.styledText = viewModel?.endOfQuarantine
-        guidelinesDescriptionLabel.text = viewModel?.descriptionGuidelines
 
         if let instructions = viewModel?.guidelines {
             guidelinesInstructionsView.instructions = instructions

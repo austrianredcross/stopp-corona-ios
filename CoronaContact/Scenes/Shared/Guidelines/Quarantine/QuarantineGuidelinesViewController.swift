@@ -24,15 +24,14 @@ final class QuarantineGuidelinesViewController: UIViewController, StoryboardBase
 
         flashScrollIndicators()
     }
-
+    
     private func setupUI() {
         title = "quarantine_guidelines_title".localized
 
-        instructionsView.instructions = [
-            .init(index: 1, text: "quarantine_guidelines_first".localized),
-            .init(index: 2, text: "quarantine_guidelines_second".localized),
-            .init(index: 3, text: "quarantine_guidelines_third".localized),
-            .init(index: 4, text: "quarantine_guidelines_fourth".localized),
-        ]
+        if let guidelines = viewModel?.guidelines {
+            instructionsView.instructions = guidelines
+        } else {
+            instructionsView.isHidden = true
+        }
     }
 }
