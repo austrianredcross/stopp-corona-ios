@@ -262,7 +262,7 @@
 "sickness_certificate_attest_button_revoke"                                  = "Revoke sick note";
 "sickness_certificate_attest_info_update"                                    = "Notify people with whom you exchanged a digital handshake on the day you reported sick.";
 "sickness_certificate_attest_button_update"                                  = "Notify other contacts";
-"start_menu"                                                                 = "Menu";
+"start_menu"                                                                 = "Open menu";
 "start_menu_close"                                                           = "Close menu";
 "start_menu_headline_1"                                                      = "Info";
 "start_menu_item_external_link"                                              = "External link";
