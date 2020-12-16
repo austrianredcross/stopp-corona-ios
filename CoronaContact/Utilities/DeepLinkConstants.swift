@@ -11,4 +11,6 @@ class DeepLinkConstants {
     static let deepLinkHost = "webview"
     static let deepLinkTermsOfUseUrl = "stoppCorona://webview/terms-of-use"
     static let deepLinkPrivacyUrl = "stoppCorona://webview/privacy"
+    static let deepLinkFAQUrl = "stoppCorona://webview/faq"
+    static let deepLinkFAQCorrectPath = "faq"
 }

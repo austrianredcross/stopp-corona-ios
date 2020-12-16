@@ -13,13 +13,19 @@ struct OnboardingPage {
     let image: String?
     let textViewText: String?
     let imageAccessibiltyText: String?
-
-    init(headline: String, text: String, text2: String?, image: String? = nil, imageAccessibiltyText: String? = nil, textViewText: String? = nil) {
+    let buttonText: String?
+    let buttonIcon: String?
+    let buttonHandler: (() -> Void)?
+    
+    init(headline: String, text: String, text2: String?, image: String? = nil, imageAccessibiltyText: String? = nil, textViewText: String? = nil, buttonText: String? = nil, buttonIcon: String? = nil, buttonHandler: (() -> Void)? = nil) {
         self.headline = headline
         self.text = text
         self.text2 = text2
         self.image = image
         self.imageAccessibiltyText = imageAccessibiltyText
+        self.buttonText = buttonText
+        self.buttonIcon = buttonIcon
+        self.buttonHandler = buttonHandler
         self.textViewText = textViewText
     }
 }
@@ -78,8 +84,14 @@ class OnboardingViewModel: ViewModel {
             OnboardingPage(
                 headline: "onboarding_headline_2".localized,
                 text: "onboarding_copy_2".localized,
-                text2: "main_body_contact_disclaimer".localized,
-                image: nil
+                text2: nil,
+                image: "OnboardingPage2",
+                imageAccessibiltyText: "onboarding_copy_2_img".localized,
+                buttonText: "automatic_handshake_information_hint".localized,
+                buttonIcon: "exclamationMark",
+                buttonHandler: { [weak self] in
+                    self?.howDoesItWork()
+                }
             ),
             OnboardingPage(
                 headline: "onboarding_headline_3".localized,
@@ -147,6 +159,10 @@ class OnboardingViewModel: ViewModel {
 
     private func consent() {
         coordinator?.consent()
+    }
+    
+    private func howDoesItWork() {
+        coordinator?.howDoesItWork()
     }
 
     private func termsOfUse() {

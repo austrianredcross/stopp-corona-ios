@@ -69,4 +69,9 @@ class ApplicationCoordinator: Coordinator {
         child.start(present: true)
         child.rootViewController.viewModel?.website = websiteType
     }
+    
+    func openFAQ() {
+        guard let presented = rootViewController.presentedViewController as? UINavigationController else { return }
+        ExternalWebsite.faq.openInSafariVC(from: presented)
+    }
 }

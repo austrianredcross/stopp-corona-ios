@@ -26,7 +26,7 @@
 "onboarding_copy_4"                                                          = "Sollten Sie selbst an COVID-19 erkranken oder den Verdacht auf eine Erkrankung haben, können Sie Ihre Kontakte <b>anonym über die App warnen</b>, um die weitere Ausbreitung zu stoppen.";
 "onboarding_headline_5"                                                      = "Danke, dass Sie die App nutzen!";
 "onboarding_copy_5_1"                                                        = "Sie schützen aktiv Ihre Gesundheit und die Gesundheit anderer.";
-"onboarding_copy_5_2"                                                        = "Mit der Installation der App stimmen Sie den <bred>Nutzungs-\n bedingungen</bred> zu.";
+"onboarding_copy_5_2"                                                        = "Mit der Installation der App stimmen Sie den <bred>Nutzungsbedingungen</bred> zu.\n\nSie haben noch Fragen? Lesen Sie mehr in den <bred>FAQs</bred>";
 "onboarding_next_button"                                                     = "Weiter";
 "onboarding_finish_buton"                                                    = "Fertig";
 "onboarding_consent_headline"                                                = "Einwilligungserklärung ";

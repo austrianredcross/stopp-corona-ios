@@ -97,6 +97,10 @@ final class OnboardingViewController: UIViewController, StoryboardBased, ViewMod
                 if let text = view.textLabel2.text, !text.isEmpty {
                     accessViews.append(view.textLabel2)
                 }
+
+                if let text = view.button.titleLabel?.text, !text.isEmpty {
+                    accessViews.append(view.button)
+                }
                 
                 if let text = view.textView.text, !text.isEmpty {
                     accessViews.append(view.textView)
