@@ -53,18 +53,31 @@
                                         </label>
                                     </subviews>
                                 </stackView>
+                                <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="VSE-uv-Wbi" customClass="TransButton" customModule="Stopp_Corona" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="68.5" width="345" height="34"/>
+                                    <inset key="imageEdgeInsets" minX="6" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <state key="normal" title="Button">
+                                        <color key="titleColor" name="ccBlack"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="normalStyle" value="body"/>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="buttonTapped" destination="iN0-l3-epB" eventType="touchUpInside" id="dyl-8o-hGT"/>
+                                    </connections>
+                                </button>
                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" bouncesZoom="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="EIb-Ss-0aT" customClass="LinkTextView" customModule="Stopp_Corona" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="68.5" width="345" height="33"/>
+                                    <rect key="frame" x="0.0" y="126.5" width="345" height="33"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <color key="textColor" systemColor="labelColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 </textView>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tmi-PI-HfO">
-                                    <rect key="frame" x="0.0" y="125.5" width="345" height="366.5"/>
+                                    <rect key="frame" x="0.0" y="183.5" width="345" height="308.5"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="740" verticalCompressionResistancePriority="740" image="OnboardingPage1" translatesAutoresizingMaskIntoConstraints="NO" id="IQn-bd-iWo" customClass="TransImageView" customModule="Stopp_Corona" customModuleProvider="target">
-                                            <rect key="frame" x="20" y="103.5" width="305" height="160"/>
+                                            <rect key="frame" x="20" y="88.5" width="305" height="132"/>
                                         </imageView>
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -131,6 +144,7 @@
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="button" destination="VSE-uv-Wbi" id="sf4-S0-3YQ"/>
                 <outlet property="headingLabel" destination="bof-dt-8vb" id="h22-tc-4G2"/>
                 <outlet property="imageView" destination="IQn-bd-iWo" id="cxp-37-X6k"/>
                 <outlet property="textLabel" destination="U1b-31-foO" id="EVZ-hV-Nln"/>
@@ -141,7 +155,10 @@
         </view>
     </objects>
     <resources>
-        <image name="OnboardingPage1" width="316" height="160"/>
+        <image name="OnboardingPage1" width="222" height="132"/>
+        <namedColor name="ccBlack">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="ccBorder">
             <color red="0.89800000190734863" green="0.89800000190734863" blue="0.89800000190734863" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

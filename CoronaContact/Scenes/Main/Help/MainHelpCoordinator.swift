@@ -20,6 +20,11 @@ final class MainHelpCoordinator: Coordinator {
         rootViewController.viewModel = MainHelpViewModel(with: self)
         rootViewController.modalPresentationStyle = .overFullScreen
         rootViewController.modalTransitionStyle = .crossDissolve
+        
+        if navigationController.isNavigationBarHidden {
+            navigationController.setNavigationBarHidden(false, animated: false)
+        }
+                
         navigationController.pushViewController(rootViewController, animated: true)
     }
 

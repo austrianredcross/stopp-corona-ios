@@ -1,8 +1,8 @@
 {
   "images" : [
     {
+      "filename" : "onboarding_warning.svg",
       "idiom" : "universal",
-      "filename" : "Onboarding4-update.pdf",
       "scale" : "1x"
     },
     {
@@ -15,7 +15,7 @@
     }
   ],
   "info" : {
-    "version" : 1,
-    "author" : "xcode"
+    "author" : "xcode",
+    "version" : 1
   }
 }

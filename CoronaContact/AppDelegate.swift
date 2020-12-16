@@ -113,6 +113,8 @@ extension AppDelegate {
                 appCoordinator.openWebView(websiteType: .termsOfUse)
             case Website.privacy.rawValue:
                 appCoordinator.openWebView(websiteType: .privacy)
+            case DeepLinkConstants.deepLinkFAQCorrectPath:
+                appCoordinator.openFAQ()
             default:
                 log.error("Error while trying to open a webview with path: \(correctPath)")
             }

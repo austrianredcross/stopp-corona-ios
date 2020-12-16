@@ -14,6 +14,7 @@ final class OnboardingPageView: UIView, NibLoadable {
     @IBOutlet var textLabel2: UILabel!
     @IBOutlet var textView: LinkTextView!
     @IBOutlet var imageView: TransImageView!
+    @IBOutlet var button: TransButton!
 
     var page: OnboardingPage? {
         didSet {
@@ -30,9 +31,19 @@ final class OnboardingPageView: UIView, NibLoadable {
             }
             
             if let textViewText = page.textViewText {
-                textView.textViewAttribute = TextViewAttribute(fullText: textViewText, links: [DeepLinkConstants.deepLinkTermsOfUseUrl], linkColor: UIColor.ccRouge)
+                textView.textViewAttribute = TextViewAttribute(fullText: textViewText, links: [DeepLinkConstants.deepLinkTermsOfUseUrl, DeepLinkConstants.deepLinkFAQUrl], linkColor: UIColor.ccRouge)
             } else {
                 textView.isHidden = true
+            }
+            
+            if let buttonText = page.buttonText {
+                button.styledTextNormal = buttonText
+            } else {
+                button.isHidden = true
+            }
+            
+            if let buttonIcon = page.buttonIcon, let image = UIImage(named: buttonIcon) {
+                button.setImage(image, for: .normal)
             }
 
             if let pageImage = page.image, let image = UIImage(named: pageImage) {
@@ -42,5 +53,9 @@ final class OnboardingPageView: UIView, NibLoadable {
                 imageView.isHidden = true
             }
         }
+    }
+
+    @IBAction func buttonTapped() {
+        page?.buttonHandler?()
     }
 }

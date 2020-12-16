@@ -46,6 +46,12 @@ class OnboardingCoordinator: Coordinator {
         // addChildCoordinator(child)
         // child.start()
     }
+    
+    func howDoesItWork() {
+        let child = MainHelpCoordinator(navigationController: rootViewController)
+        addChildCoordinator(child)
+        child.start()
+    }
 
     func termsOfUse() {
         let child = StartMenuSimpleWebViewCoordinator(navigationController: rootViewController)
