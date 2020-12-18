@@ -117,7 +117,7 @@
 "contact_sickness_warning_guidelines_quarantine_end"                         = "Please stay quarantined until %@";
 "contact_sickness__warning_guidelines_quarantine_rule"                       = "If you have an official quarantine certificate, take into account the quarantine period specified in it.";
 "contact_sickness_warning_guidelines_no_public_transport"                    = "Do not use public transport on your way and avoid contact with other people if possible.";
-"contact_sickness_warning_guidelines_first"                                  = "Please monitor your health within the next days <b>untel the %@</b> particularly thorough and <b>check your body temperature daily</b>.";
+"contact_sickness_warning_guidelines_first"                                  = "Please monitor your health within the next days <b>until the %@</b> particularly thorough and <b>check your body temperature daily</b>.";
 "contact_sickness_warning_guidelines_second"                                 = "<b>Reduce personal contacts</b> in your private environment to a minimum and keep a contact diary.";
 "contact_sickness_warning_guidelines_third"                                  = "Please keep a <b>sufficient distance from other people</b> and wear a face mask, especially indoors.";
 "contact_sickness_warning_guidelines_fourth"                                 = "If you develop a fever, cough or have difficulty breathing, please call the <b>Corona hotline</b> at <bred>1450</bred> or your general practitioner immediately.";
@@ -247,7 +247,7 @@
 "sickness_certificate_quarantine_guidelines_consulting_third"                = "Pastoral advice servcie<bred>142</bred>";
 "quarantine_guidelines_title"                                                = "Attention";
 "quarantine_guidelines_headline"                                             = "Self-quarantine";
-"quarantine_guidelines_first"                                                = "Please monitor your health within the next days <b>untel the %s</b> particularly thorough and <b>check your body temperature daily</b>.";
+"quarantine_guidelines_first"                                                = "Please monitor your health within the next days <b>until the %s</b> particularly thorough and <b>check your body temperature daily</b>.";
 "quarantine_guidelines_second"                                               = "<b>Reduce personal contacts</b> in your private environment to a minimum and keep a contact diary.";
 "quarantine_guidelines_third"                                                = "Please keep a <b>sufficient distance from other people</b> and wear a face mask, especially indoors.";
 "quarantine_guidelines_fourth"                                               = "If you develop a fever, cough or have difficulty breathing, please call the <b>Corona hotline</b> at <bred>1450</bred> or your general practitioner immediately.";
