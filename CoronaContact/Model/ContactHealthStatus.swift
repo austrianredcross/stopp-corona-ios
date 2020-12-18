@@ -46,7 +46,11 @@ extension ContactHealthStatus {
             \("contact_health_status_yellow_warning_description".localized)
             """
         case .red:
-            return "contact_health_status_red_warning_description".localized
+            return """
+            \("contact_health_status_red_warning_description".localized)
+                
+            \(String(format: "health_status_red_warning_single_contact_quarantine_date".localized, endOfQuarantine!))
+            """
         case .yellow:
             return "contact_health_status_yellow_warning_description".localized
         }
