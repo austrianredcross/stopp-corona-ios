@@ -28,6 +28,9 @@
                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="GWh-d9-C7g">
                     <rect key="frame" x="658" y="22" width="51" height="31"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <connections>
+                        <action selector="backgroundHandshakeSwitchValueChanged:" destination="-1" eventType="valueChanged" id="Eyn-oV-N3g"/>
+                    </connections>
                 </switch>
             </subviews>
             <viewLayoutGuide key="safeArea" id="B9G-m9-xL2"/>

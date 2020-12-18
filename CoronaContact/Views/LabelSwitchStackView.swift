@@ -67,6 +67,10 @@ class LabelSwitchStackView: UIStackView, NibOwnerLoadable {
         accessibilityHint = "accessibility_double_tap_to_switch".localized
     }
     
+    @IBAction func backgroundHandshakeSwitchValueChanged(_ sender: UISwitch) {
+        switchValueChanged?(sender.isOn)
+    }
+    
     override func accessibilityActivate() -> Bool {
         
         guard let aSwitch = accessibilityElement(at: switchIndex) as? UISwitch else { return true }
