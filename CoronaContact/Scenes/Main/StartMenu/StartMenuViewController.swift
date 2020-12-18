@@ -11,7 +11,6 @@ final class StartMenuViewController: UIViewController, StoryboardBased, Flashabl
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var versionLabel: UILabel!
     @IBOutlet var hideableFunctionsView: UIStackView!
-    @IBOutlet var handshakeView: UIView!
     @IBOutlet var checkSymptomsView: UIView!
     @IBOutlet var revokeSicknessView: UIView!
     @IBOutlet var reportPositiveDoctorsDiagnosisView: UIView!
