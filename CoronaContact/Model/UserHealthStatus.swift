@@ -69,9 +69,9 @@ enum UserHealthStatus {
 
     private var iconFileName: String {
         switch self {
-        case .isHealthy, .hasAttestedSickness:
+        case .isHealthy:
             return "checkmarkWhite"
-        case .isProbablySick, .isUnderSelfMonitoring:
+        case .isProbablySick, .isUnderSelfMonitoring, .hasAttestedSickness:
             return "WarningIconWhite"
         }
     }
