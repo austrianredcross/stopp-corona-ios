@@ -332,8 +332,4 @@ final class MainViewController: UIViewController, StoryboardBased, ViewModelBase
             viewModel?.viewWillAppear()
         }
     }
-
-    @IBAction func backgroundHandshakeSwitchValueChanged(_ sender: UISwitch) {
-        viewModel?.backgroundDiscovery(enable: sender.isOn)
-    }
 }
