@@ -11,8 +11,8 @@ final class SelfTestingStatusReportViewController: UIViewController,
     StoryboardBased, ViewModelBased, ActivityModalPresentable, FlashableScrollIndicators
 {
     @IBOutlet var scrollView: UIScrollView!
-    @IBOutlet var checkbox: M13Checkbox!
     @IBOutlet var reportButton: PrimaryButton!
+    @IBOutlet var checkboxLabelView: CheckboxLabelView!
     @IBOutlet var statusHeadline: TransLabel!
     @IBOutlet var statusDescription: TransLabel!
 
@@ -43,20 +43,13 @@ final class SelfTestingStatusReportViewController: UIViewController,
             title = "self_testing_report_status_title".localized
         }
         reportButton.isEnabled = false
-
-        checkbox.boxType = .square
-        checkbox.markType = .checkmark
-        checkbox.stateChangeAnimation = .bounce(.fill)
-        checkbox.tintColor = .ccRouge
-        checkbox.checkmarkLineWidth = 2
-        checkbox.boxLineWidth = 2
-        checkbox.secondaryTintColor = .black
-    }
-
-    @IBAction func agreementChanged(_ sender: M13Checkbox) {
-        let isChecked = sender.checkState == .checked
-        viewModel?.agreesToTerms = isChecked
-        reportButton.isEnabled = isChecked
+        reportButton.accessibilityHint = "accessibility_self_testing_report_status_button_disabled_description".localized
+        
+        checkboxLabelView.handleTap = { [weak self] (value) in
+            self?.viewModel?.agreesToTerms = value
+            self?.reportButton.isEnabled = value
+            self?.reportButton.accessibilityHint = value ? nil : "accessibility_self_testing_report_status_button_disabled_description".localized
+        }
     }
 
     @IBAction func reportButtonTapped(_ sender: UIButton) {

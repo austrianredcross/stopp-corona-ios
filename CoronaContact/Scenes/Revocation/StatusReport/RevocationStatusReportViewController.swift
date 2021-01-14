@@ -40,11 +40,13 @@ final class RevocationStatusReportViewController: UIViewController,
         }
 
         reportStatusButton.isEnabled = false
+        reportStatusButton.accessibilityHint = "accessibility_revokation_report_status_button_disabled_description".localized
     }
 
     private func agreementChanged(_ isChecked: Bool) {
         viewModel?.agreesToTerms = isChecked
         reportStatusButton.isEnabled = isChecked
+        reportStatusButton.accessibilityHint = isChecked ? nil : "accessibility_revokation_report_status_button_disabled_description".localized
     }
 
     @IBAction private func reportButtonTapped(_ sender: Any) {

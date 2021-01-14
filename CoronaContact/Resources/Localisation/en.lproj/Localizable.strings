@@ -12,6 +12,11 @@
 "general_additional_info"                                                    = "Further information";
 "accessibility_heading_1"                                                    = "Heading 1";
 "accessibility_heading_2"                                                    = "Heading 2";
+"accessibility_self_testing_next_button_disabled_description"                = "Question not answered";
+"accessibility_certificate_report_status_button_disabled_description"        = "Please confirm that you have provided all information truthfully";
+"accessibility_revoke_sickness_button_disabled_description"                  = "Please confirm your revocation of your sick note";
+"accessibility_self_testing_report_status_button_disabled_description"       = "Please confirm that you have provided all information truthfully";
+"accessibility_revokation_report_status_button_disabled_description"         = "Please confirm that you have provided all information truthfully";
 "onboarding_headline_1"                                                      = "Welcome";
 "onboarding_copy_1_img"                                                      = "Image: Falling numbers of Corona cases";
 "onboarding_copy_1"                                                          = "By using the Stop Corona app, you are helping to <b>slow down the spread of the virus</b> and save lives.";

@@ -24,18 +24,6 @@ final class OnboardingConsentPageView: UIView, NibLoadable {
 
     private func setupUI() {
         
-        checkboxLabelView.awakeFromNib()
-        checkboxLabelView.checkbox.boxType = .square
-        checkboxLabelView.checkbox.markType = .checkmark
-        checkboxLabelView.checkbox.stateChangeAnimation = .bounce(.fill)
-        checkboxLabelView.checkbox.tintColor = .ccRouge
-        checkboxLabelView.checkbox.checkmarkLineWidth = 2
-        checkboxLabelView.checkbox.boxLineWidth = 2
-        checkboxLabelView.checkbox.secondaryTintColor = .black
-
-        let tap = UITapGestureRecognizer(target: self, action: #selector(toogleAgreement(_:)))
-        checkboxLabelView.label.addGestureRecognizer(tap)
-        
         checkboxLabelView.handleTap = { [weak self] (value) in
             self?.viewModel?.agreementToDataPrivacy = value
         }

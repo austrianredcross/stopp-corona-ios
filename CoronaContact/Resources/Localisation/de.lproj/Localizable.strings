@@ -12,6 +12,11 @@
 "general_additional_info"                                                    = "Weitere Informationen";
 "accessibility_heading_1"                                                    = "Überschrift 1";
 "accessibility_heading_2"                                                    = "Überschrift 2";
+"accessibility_self_testing_next_button_disabled_description"                = "Frage nicht beantwortet";
+"accessibility_certificate_report_status_button_disabled_description"        = "Bitte bestätigen Sie, dass Sie die Angaben wahrheitsgemäß getätigt haben";
+"accessibility_revoke_sickness_button_disabled_description"                  = "Bitte bestätigen Sie Ihren Widerruf Ihrer Krankmeldung";
+"accessibility_self_testing_report_status_button_disabled_description"       = "Bitte bestätigen Sie, dass Sie die Angaben wahrheitsgemäß getätigt haben";
+"accessibility_revokation_report_status_button_disabled_description"         = "Bitte bestätigen Sie, dass Sie die Angaben wahrheitsgemäß getätigt haben";
 "onboarding_headline_1"                                                      = "Willkommen";
 "onboarding_copy_1_img"                                                      = "Bild: Sinkende Corona-Fallzahlen";
 "onboarding_copy_1"                                                          = "Mit der Nutzung der Stopp Corona App helfen Sie dabei, die <b>Ausbreitung des Virus</b> zu <b>verlangsamen</b> und Leben zu retten.";
