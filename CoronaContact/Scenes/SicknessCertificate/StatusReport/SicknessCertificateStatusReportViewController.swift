@@ -44,18 +44,12 @@ final class SicknessCertificateStatusReportViewController: UIViewController,
         }
 
         reportButton.isEnabled = false
-
-        checkboxLabelView.checkbox.boxType = .square
-        checkboxLabelView.checkbox.markType = .checkmark
-        checkboxLabelView.checkbox.stateChangeAnimation = .bounce(.fill)
-        checkboxLabelView.checkbox.tintColor = .ccRouge
-        checkboxLabelView.checkbox.checkmarkLineWidth = 2
-        checkboxLabelView.checkbox.boxLineWidth = 2
-        checkboxLabelView.checkbox.secondaryTintColor = .black
+        reportButton.accessibilityHint = "accessibility_certificate_report_status_button_disabled_description".localized
         
         checkboxLabelView.handleTap = { [weak self] (value) in
             self?.viewModel?.agreesToTerms = value
             self?.reportButton.isEnabled = value
+            self?.reportButton.accessibilityHint = value ? nil : "accessibility_certificate_report_status_button_disabled_description".localized
         }
     }
 

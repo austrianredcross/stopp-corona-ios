@@ -30,6 +30,7 @@ final class RevokeSicknessStatusReportViewController: UIViewController,
 
     private func setupUI() {
         title = "revoke_sickness_title".localized
+        reportStatusButton.accessibilityHint = "accessibility_revoke_sickness_button_disabled_description".localized
 
         if let dateLabel = viewModel?.dateLabel, let transKey = descriptionLabel.transKey {
             descriptionLabel.styledText = String(format: transKey.localized, dateLabel)
@@ -45,6 +46,7 @@ final class RevokeSicknessStatusReportViewController: UIViewController,
     private func agreementChanged(_ isChecked: Bool) {
         viewModel?.agreesToTerms = isChecked
         reportStatusButton.isEnabled = isChecked
+        reportStatusButton.accessibilityHint = isChecked ? nil : "accessibility_revoke_sickness_button_disabled_description".localized
     }
 
     @IBAction private func reportButtonTapped(_ sender: Any) {

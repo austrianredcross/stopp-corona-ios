@@ -30,6 +30,7 @@ final class SelfTestingCheckSymptomsViewController: UIViewController, Storyboard
         view.clipsToBounds = true
         title = "self_testing_check_symptoms_title".localized
         button.isEnabled = false
+        button.accessibilityHint = "accessibility_self_testing_next_button_disabled_description".localized
 
         setupQuestion()
     }
@@ -53,6 +54,7 @@ final class SelfTestingCheckSymptomsViewController: UIViewController, Storyboard
 
         viewModel.selectAnswer(answer)
         button.isEnabled = viewModel.isButtonEnabled
+        button.accessibilityHint = nil
     }
 
     @IBAction func nextButtonTapped(_ sender: Any) {
