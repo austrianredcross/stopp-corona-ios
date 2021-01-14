@@ -22,7 +22,10 @@ final class OnboardingViewController: UIViewController, StoryboardBased, ViewMod
 
     public var isButtonEnabled: Bool {
         get { button.isEnabled }
-        set { button.isEnabled = newValue }
+        set {
+            button.isEnabled = newValue
+            button.accessibilityHint = newValue ? nil : "accessibility_onboarding_finish_button_disabled_description".localized
+        }
     }
 
     override func viewDidLoad() {
