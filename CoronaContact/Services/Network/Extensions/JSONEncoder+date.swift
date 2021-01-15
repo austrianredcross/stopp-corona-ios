@@ -35,6 +35,7 @@ struct DateFormatters {
 var dateFormatters = DateFormatters { formatter, format in
     formatter.dateStyle = .short
     formatter.dateFormat = format.rawValue
+    formatter.locale = Locale(identifier: "en_US_POSIX")
 }
 
 extension JSONEncoder.DateEncodingStrategy {
