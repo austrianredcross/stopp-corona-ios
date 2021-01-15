@@ -180,6 +180,11 @@ class QuarantineNotificationView: UIView, NibOwnerLoadable {
     private func tappedView() {
         handlePrimaryTap?()
     }
+    
+    @IBAction
+    private func arrowButtonPressed(_ sender: UIButton) {
+        handlePrimaryTap?()
+    }
 
     @IBAction
     private func tappedCloseButton(_ sender: Any) {

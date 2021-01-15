@@ -85,7 +85,7 @@
                                                 </label>
                                             </subviews>
                                         </stackView>
-                                        <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TYK-Ch-3Ey" customClass="ArrowButton" customModule="Stopp_Corona" customModuleProvider="target">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TYK-Ch-3Ey" customClass="ArrowButton" customModule="Stopp_Corona" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="109" width="350" height="113"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <state key="normal" title="Button">
@@ -94,6 +94,9 @@
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="string" keyPath="normalStyle" value="body"/>
                                             </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="arrowButtonPressed:" destination="-1" eventType="touchUpInside" id="nPG-JO-w9f"/>
+                                            </connections>
                                         </button>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cB6-ec-vSm">
                                             <rect key="frame" x="0.0" y="198" width="350" height="24"/>
