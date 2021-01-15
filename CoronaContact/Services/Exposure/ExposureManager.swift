@@ -46,6 +46,8 @@ class ExposureManager {
                     // No error handling for attempts to enable on launch
                 }
             }
+            
+            NotificationCenter.default.post(name: ExposureManager.notificationStatusChangedNotification, object: nil)
         }
     }
 
