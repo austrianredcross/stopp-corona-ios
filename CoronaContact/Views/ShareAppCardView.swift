@@ -39,4 +39,9 @@ class ShareAppCardView: UIView, NibOwnerLoadable {
     private func tappedView() {
         handlePrimaryTap?()
     }
+    
+    @IBAction
+    private func arrowButtonPressed(_ sender: UIButton) {
+        handlePrimaryTap?()
+    }
 }

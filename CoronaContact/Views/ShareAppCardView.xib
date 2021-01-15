@@ -67,7 +67,7 @@
                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="fJz-si-ilt">
                                     <rect key="frame" x="0.0" y="132" width="461" height="85"/>
                                     <subviews>
-                                        <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JJ3-2L-SKx" customClass="ArrowButton" customModule="Stopp_Corona" customModuleProvider="target">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JJ3-2L-SKx" customClass="ArrowButton" customModule="Stopp_Corona" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="461" height="85"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <state key="normal" title="share_app_card_button">
@@ -77,6 +77,9 @@
                                                 <userDefinedRuntimeAttribute type="string" keyPath="normalStyle" value="body"/>
                                                 <userDefinedRuntimeAttribute type="string" keyPath="transKeyNormal" value="share_app_card_button"/>
                                             </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="arrowButtonPressed:" destination="-1" eventType="touchUpInside" id="ueu-43-xZ3"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                 </stackView>
