@@ -59,6 +59,7 @@
 "main_button_list_meet"                                                      = "Saved Encounters (%d)";
 "main_body_feel_today"                                                       = "<b>How do you feel today?</b>\nGet an assessment of your health.";
 "main_button_feel_today"                                                     = "Check symptoms";
+"main_button_suspicion_button"                                               = "Report suspected corona";
 "main_body_covid_alert"                                                      = "<b>Report corona infection</b>\nReport a medically confirmed infection to protect your contacts.";
 "main_button_covid_alert"                                                    = "Report medical confirmation";
 "main_handshake_information_hint"                                            = "When should I use this feature?";
@@ -378,8 +379,16 @@
 "self_testing_confirmation_phone_ambulance_number"                           = "<bred>144</bred>";
 "self_testing_confirmation_health_wish"                                      = "We wish you a speedy recovery!";
 "self_testing_confirmation_primary_button"                                   = "Back to the home page";
-"self_testing_suspicion_description"                                         = "Based on your information, you are suspected of having a corona infection.
-\nPlease go into quarantine <b>until clarification</b>.";
+"self_testing_corona_suspicion_title"                                        = "Report suspected corona";
+"self_testing_corona_suspicion_headline"                                     = "Report your status to protect others";
+"self_testing_corona_suspicion_description"                                  = "Your anonymous report helps to break the chain of infection. Your contacts may have been infected unnoticed and have already passed the virus on. Warn these people as soon as possible so that you stay away from other people.";
+"self_testing_corona_suspicion_date_headline"                                = "How long have you had symptoms or a positive test result?";
+"self_testing_corona_suspicion_contacts_headline"                            = "Warn your contacts";
+"self_testing_corona_suspicion_contacts_confirmed"                           = "Do you already have a positive test result?";
+"self_testing_corona_suspicion_contacts_confirmed_button"                    = "Report medical confirmation";
+"self_testing_corona_suspicion_contacts_not_confirmed"                       = "You haven't taken a test yet or are you still waiting for your test result?";
+"self_testing_corona_suspicion_contacts_not_confirmed_button"                = "Report suspicion";
+"self_testing_suspicion_description"                                         = "Based on your information, you are suspected of having a corona infection.\nPlease go into quarantine <b>until clarification</b>.";
 "self_testing_suspicion_button"                                              = "What should I do?";
 "self_testing_suspicion_recovery_button"                                     = "Give the all clear";
 "self_testing_suspicion_report_sickness_button"                              = "Report medical confirmation";

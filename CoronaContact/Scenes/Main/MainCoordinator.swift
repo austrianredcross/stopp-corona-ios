@@ -54,8 +54,14 @@ class MainCoordinator: Coordinator, ShareSheetPresentable {
         addChildCoordinator(child)
         child.start(updateKeys: updateKeys)
     }
+    
+    func openCoronaSuspicionController() {
+        let child = SelfTestingCoronaSuspicionCoordinator(navigationController: navigationController)
+        addChildCoordinator(child)
+        child.start()
+    }
 
-    func sicknessCertificate(updateKeys: Bool) {
+    func openSicknessCertificateController(updateKeys: Bool) {
         let child = SicknessCertificateCoordinator(navigationController: navigationController)
         addChildCoordinator(child)
         child.start(updateKeys: updateKeys)

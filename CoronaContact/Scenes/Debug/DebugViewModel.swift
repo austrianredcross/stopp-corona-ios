@@ -92,11 +92,11 @@ class DebugViewModel: ViewModel {
     }
 
     func probablySickness() {
-        healthRepository.setProbablySick()
+        healthRepository.setProbablySick(from: Date())
     }
 
     func attestSickness() {
-        healthRepository.setProvenSick()
+        healthRepository.setProvenSick(from: Date())
     }
 
     func moveSickReportBackADay() {

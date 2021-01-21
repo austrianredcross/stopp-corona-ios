@@ -306,9 +306,13 @@ final class MainViewController: UIViewController, StoryboardBased, ViewModelBase
     @IBAction func selfTestingTapped(_ sender: Any) {
         viewModel?.selfTesting()
     }
-
+    
+    @IBAction func coronaSuspicionTapped(_ sender: Any) {
+        viewModel?.coronaSuspicionButtonTapped()
+    }
+    
     @IBAction func sicknessCertificateTapped(_ sender: Any) {
-        viewModel?.sicknessCertificate()
+        viewModel?.sicknessCertificateTapped()
     }
 
     // MARK: - Event Handling
