@@ -55,7 +55,6 @@
                                                         <nil key="highlightedColor"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="body"/>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="revocation_personal_data_description"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="revocation_personal_data_form_headline" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EuH-3L-HZs" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
@@ -138,6 +137,7 @@
                     </view>
                     <connections>
                         <outlet property="mobileNumberTextField" destination="rDp-u4-kuq" id="Tu6-6T-huv"/>
+                        <outlet property="personalDataDescriptionLabel" destination="oFz-0E-zq3" id="bLo-Mp-vJc"/>
                         <outlet property="scrollView" destination="9tI-MO-Aul" id="BnD-NI-xmL"/>
                     </connections>
                 </viewController>

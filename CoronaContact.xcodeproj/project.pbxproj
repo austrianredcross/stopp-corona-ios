@@ -11,6 +11,7 @@
 		1C35920E25B7135F00EC93DB /* Date+ShortMonthName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C35920D25B7135F00EC93DB /* Date+ShortMonthName.swift */; };
 		1C3841BE258774E3002B80BD /* DeepLinkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3841BD258774E3002B80BD /* DeepLinkConstants.swift */; };
 		1C3841C2258774F9002B80BD /* LinkTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3841C1258774F9002B80BD /* LinkTextView.swift */; };
+		1C417F1D25B9D96600BD45CF /* server.der in Resources */ = {isa = PBXBuildFile; fileRef = 1C417F1C25B9D96600BD45CF /* server.der */; };
 		1C5E3C25258287200037017D /* LabelSwitchStackView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C5E3C23258287200037017D /* LabelSwitchStackView.xib */; };
 		1C5E3C26258287200037017D /* LabelSwitchStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5E3C24258287200037017D /* LabelSwitchStackView.swift */; };
 		1C783BEF257940C90011EC62 /* TransImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C783BEE257940C90011EC62 /* TransImageView.swift */; };
@@ -70,7 +71,6 @@
 		4ED175B62458347400248D3B /* DebugCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED175B12458347400248D3B /* DebugCoordinator.swift */; };
 		4ED175B72458347400248D3B /* DebugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED175B22458347400248D3B /* DebugViewController.swift */; };
 		4ED175B82458347400248D3B /* DebugViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED175B32458347400248D3B /* DebugViewModel.swift */; };
-		4ED175BC245836F100248D3B /* server.der in Resources */ = {isa = PBXBuildFile; fileRef = 4ED175BB245836F100248D3B /* server.der */; };
 		4ED175C524606AF400248D3B /* RevokeSicknessPersonalDataCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED175C22460663200248D3B /* RevokeSicknessPersonalDataCoordinator.swift */; };
 		4ED175C624606AFA00248D3B /* RevokeSicknessPersonalDataViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4ED175C12460663200248D3B /* RevokeSicknessPersonalDataViewController.storyboard */; };
 		4ED175C724606AFE00248D3B /* RevokeSicknessPersonalDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED175C32460663200248D3B /* RevokeSicknessPersonalDataViewController.swift */; };
@@ -378,6 +378,7 @@
 		1C35920D25B7135F00EC93DB /* Date+ShortMonthName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+ShortMonthName.swift"; sourceTree = "<group>"; };
 		1C3841BD258774E3002B80BD /* DeepLinkConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeepLinkConstants.swift; sourceTree = "<group>"; };
 		1C3841C1258774F9002B80BD /* LinkTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkTextView.swift; sourceTree = "<group>"; };
+		1C417F1C25B9D96600BD45CF /* server.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = server.der; sourceTree = "<group>"; };
 		1C5E3C23258287200037017D /* LabelSwitchStackView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LabelSwitchStackView.xib; sourceTree = "<group>"; };
 		1C5E3C24258287200037017D /* LabelSwitchStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelSwitchStackView.swift; sourceTree = "<group>"; };
 		1C783BEE257940C90011EC62 /* TransImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransImageView.swift; sourceTree = "<group>"; };
@@ -441,7 +442,6 @@
 		4ED175B12458347400248D3B /* DebugCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugCoordinator.swift; sourceTree = "<group>"; };
 		4ED175B22458347400248D3B /* DebugViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugViewController.swift; sourceTree = "<group>"; };
 		4ED175B32458347400248D3B /* DebugViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugViewModel.swift; sourceTree = "<group>"; };
-		4ED175BB245836F100248D3B /* server.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = server.der; sourceTree = "<group>"; };
 		4ED175BE24605DAC00248D3B /* RevokeSicknessFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevokeSicknessFlowController.swift; sourceTree = "<group>"; };
 		4ED175BF24605DC600248D3B /* RevokeSickness+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RevokeSickness+Injection.swift"; sourceTree = "<group>"; };
 		4ED175C12460663200248D3B /* RevokeSicknessPersonalDataViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RevokeSicknessPersonalDataViewController.storyboard; sourceTree = "<group>"; };
@@ -1491,9 +1491,9 @@
 		61FABC9E2431EBDE0085786B /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
+				1C417F1C25B9D96600BD45CF /* server.der */,
 				4EE81CCE24AC8F130047CE6A /* cdn.der */,
 				4E1F2EC224646B550088B8F8 /* sms.der */,
-				4ED175BB245836F100248D3B /* server.der */,
 				61AB6EF024573737006B4190 /* Secrets.xcconfig */,
 				61AB6EF124573771006B4190 /* Secrets.template.xcconfig */,
 				61FABCB02432368E0085786B /* Base.xcconfig */,
@@ -1977,8 +1977,8 @@
 				4B82571D24266A32007E25C6 /* StartMenuSimpleWebViewViewController.storyboard in Resources */,
 				61546549242CBEA60003D3D3 /* SuspicionGuidelinesViewController.storyboard in Resources */,
 				1C9E770625A761B300C6ADB7 /* SelfTestingCoronaSuspicionViewController.storyboard in Resources */,
+				1C417F1D25B9D96600BD45CF /* server.der in Resources */,
 				61459A53242ABFE200DC88A7 /* de.terms-of-use.html in Resources */,
-				4ED175BC245836F100248D3B /* server.der in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

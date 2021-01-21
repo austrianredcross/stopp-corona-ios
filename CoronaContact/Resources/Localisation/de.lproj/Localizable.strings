@@ -199,7 +199,7 @@
 "missing_permissions_exposure_framework_icon_caption"                        = "COVID-19 Kontaktmitteilungen";
 "sickness_certificate_personal_data_headline"                                = "Bitte geben Sie Ihre Daten ein";
 "sickness_certificate_personal_data_title"                                   = "Status melden";
-"sickness_certificate_personal_data_description"                             = "Wir werden nach dem nächsten Schritt Ihre engen Kontakte der letzten beiden Tage anonym informieren. Wir validieren Ihre Mobilnummer, damit wir einen Missbrauch dieser Funktion vermeiden können.";
+"sickness_certificate_personal_data_description"                             = "Wir werden nach dem nächsten Schritt Ihre engen Kontakte der letzten %s Tage anonym informieren. Wir validieren Ihre Mobilnummer, damit wir einen Missbrauch dieser Funktion vermeiden können.";
 "sickness_certificate_personal_data_form_headline"                           = "Persönliche Daten";
 "sickness_certificate_personal_data_firstname_label"                         = "Vorname";
 "sickness_certificate_personal_data_name_label"                              = "Nachname";
@@ -332,7 +332,7 @@
 "self_testing_done"                                                          = "Fertig";
 "self_testing_personal_data_title"                                           = "Status melden";
 "self_testing_personal_data_headline"                                        = "Bitte nennen Sie Ihre Daten";
-"self_testing_personal_data_description"                                     = "Wir werden nach dem nächsten Schritt Ihre engen Kontakte der letzten beiden Tage anonym informieren. Wir validieren Ihre Mobilnummer, damit wir einen Missbrauch dieser Funktion vermeiden können.";
+"self_testing_personal_data_description"                                     = "Wir werden nach dem nächsten Schritt Ihre engen Kontakte der letzten %s Tage anonym informieren. Wir validieren Ihre Mobilnummer, damit wir einen Missbrauch dieser Funktion vermeiden können.";
 "self_testing_personal_data_form_headline"                                   = "Persönliche Daten";
 "self_testing_personal_data_firstname_label"                                 = "Vorname";
 "self_testing_personal_data_name_label"                                      = "Nachname";
@@ -447,7 +447,7 @@
 "upload_missing_keys_notification_message"                                   = "Benachrichtigen Sie Personen, mit denen Sie am Tag Ihrer Meldung einen digitalen Handshake ausgetauscht haben.";
 "revocation_personal_data_title"                                             = "Status melden";
 "revocation_personal_data_headline"                                          = "Bitte geben Sie Ihre Daten ein";
-"revocation_personal_data_description"                                       = "Wir werden nach dem nächsten Schritt Ihre engen Kontakte der letzten beiden Tage anonym informieren. Wir validieren Ihre Mobilnummer, damit wir einen Missbrauch dieser Funktion vermeiden können.";
+"revocation_personal_data_description"                                       = "Wir werden nach dem nächsten Schritt Ihre engen Kontakte der letzten %s Tage anonym informieren. Wir validieren Ihre Mobilnummer, damit wir einen Missbrauch dieser Funktion vermeiden können.";
 "revocation_personal_data_form_headline"                                     = "Persönliche Daten";
 "revocation_personal_data_mobile_number_label"                               = "Mobilfunknummer (+43...)";
 "revocation_personal_data_mobile_number_placeholder"                         = "+43";

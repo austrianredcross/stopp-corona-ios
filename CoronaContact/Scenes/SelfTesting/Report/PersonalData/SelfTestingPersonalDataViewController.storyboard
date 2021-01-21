@@ -54,7 +54,6 @@
                                                         <nil key="highlightedColor"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="body"/>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="self_testing_personal_data_description"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="self_testing_personal_data_form_headline" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nkk-Hn-Ei8" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
@@ -133,11 +132,11 @@
                             <constraint firstItem="yNl-sL-dRw" firstAttribute="trailing" secondItem="oLN-P1-aS5" secondAttribute="trailing" id="ino-H2-eSX"/>
                             <constraint firstItem="Vc6-oN-Sd7" firstAttribute="leading" secondItem="oLN-P1-aS5" secondAttribute="leading" constant="24" id="mHC-ku-GEu"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="oLN-P1-aS5"/>
                     </view>
                     <navigationItem key="navigationItem" id="ZXq-Y9-yyt"/>
                     <connections>
                         <outlet property="mobileNumberTextField" destination="5JV-ks-CTo" id="EXF-UF-hQw"/>
+                        <outlet property="personalDataDescriptionLabel" destination="kKu-T7-iOY" id="Ioz-Du-IW7"/>
                         <outlet property="scrollView" destination="yNl-sL-dRw" id="3qw-KL-Pxh"/>
                     </connections>
                 </viewController>

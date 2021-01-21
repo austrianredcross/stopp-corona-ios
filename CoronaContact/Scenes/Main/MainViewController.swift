@@ -304,7 +304,7 @@ final class MainViewController: UIViewController, StoryboardBased, ViewModelBase
     }
 
     @IBAction func selfTestingTapped(_ sender: Any) {
-        viewModel?.selfTesting()
+        viewModel?.selfTestingTapped()
     }
     
     @IBAction func coronaSuspicionTapped(_ sender: Any) {

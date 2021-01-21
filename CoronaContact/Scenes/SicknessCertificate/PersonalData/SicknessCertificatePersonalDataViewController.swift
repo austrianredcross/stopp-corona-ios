@@ -14,7 +14,8 @@ final class SicknessCertificatePersonalDataViewController: UIViewController,
 
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var mobileNumberTextField: StandardTextField!
-
+    @IBOutlet var personalDataDescriptionLabel: TransLabel!
+    
     var viewModel: SicknessCertificatePersonalDataViewModel?
 
     override func viewDidLoad() {
@@ -36,6 +37,8 @@ final class SicknessCertificatePersonalDataViewController: UIViewController,
         keyboardAdjustingBehavior = behavior
 
         title = "sickness_certificate_personal_data_title".localized
+        
+        personalDataDescriptionLabel.styledText = viewModel?.personalDataDescription
 
         mobileNumberTextField.labelText = "sickness_certificate_personal_data_mobile_number_label".localized
         mobileNumberTextField.inputType = .phone(errorMessage: "sickness_certificate_personal_data_phone_field_invalid".localized)
