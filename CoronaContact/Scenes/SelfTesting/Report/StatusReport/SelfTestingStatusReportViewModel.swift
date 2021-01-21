@@ -31,10 +31,12 @@ class SelfTestingStatusReportViewModel: ViewModel {
             return
         }
 
-        let uploadDays = configurationService.currentConfig.uploadKeyDays
-        var startDate = Date().addDays(-uploadDays)!
-        var endDate = Date()
+        let startDayOfSymptomsOrAttest = localStorage.hasSymptomsOrPositiveAttestAt ?? Date()
 
+        let uploadDays = configurationService.currentConfig.uploadKeyDays
+        var startDate = startDayOfSymptomsOrAttest.addDays(-uploadDays)!
+        var endDate = Date()
+        
         if updateKeys, let missingUploadedKeysAt = localStorage.missingUploadedKeysAt {
             startDate = missingUploadedKeysAt
             endDate = missingUploadedKeysAt
@@ -62,7 +64,7 @@ class SelfTestingStatusReportViewModel: ViewModel {
                 if self.updateKeys {
                     self.localStorage.missingUploadedKeysAt = nil
                 } else {
-                    self.healthRepository.setProbablySick()
+                    self.healthRepository.setProbablySick(from: startDayOfSymptomsOrAttest)
                 }
                 self.coordinator?.showConfirmation()
             default:

@@ -8,11 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		17CE9FA0CBB1AA58675A1F5A /* UIApplication+SafariViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CE98EF2576F57F776FBC3D /* UIApplication+SafariViewController.swift */; };
+		1C35920E25B7135F00EC93DB /* Date+ShortMonthName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C35920D25B7135F00EC93DB /* Date+ShortMonthName.swift */; };
 		1C3841BE258774E3002B80BD /* DeepLinkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3841BD258774E3002B80BD /* DeepLinkConstants.swift */; };
 		1C3841C2258774F9002B80BD /* LinkTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3841C1258774F9002B80BD /* LinkTextView.swift */; };
 		1C5E3C25258287200037017D /* LabelSwitchStackView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C5E3C23258287200037017D /* LabelSwitchStackView.xib */; };
 		1C5E3C26258287200037017D /* LabelSwitchStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5E3C24258287200037017D /* LabelSwitchStackView.swift */; };
 		1C783BEF257940C90011EC62 /* TransImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C783BEE257940C90011EC62 /* TransImageView.swift */; };
+		1C9E770625A761B300C6ADB7 /* SelfTestingCoronaSuspicionViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C9E770525A761B300C6ADB7 /* SelfTestingCoronaSuspicionViewController.storyboard */; };
+		1CF3B34D25A8443500AC94C2 /* SelfTestingCoronaSuspicionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF3B34C25A8443500AC94C2 /* SelfTestingCoronaSuspicionViewController.swift */; };
+		1CF3B35125A844EB00AC94C2 /* SelfTestingCoronaSuspicionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF3B35025A844EB00AC94C2 /* SelfTestingCoronaSuspicionViewModel.swift */; };
+		1CF3B35525A8451600AC94C2 /* SelfTestingCoronaSuspicionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF3B35425A8451600AC94C2 /* SelfTestingCoronaSuspicionCoordinator.swift */; };
+		1CF3B35925A8594600AC94C2 /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF3B35825A8594600AC94C2 /* DatePickerView.swift */; };
+		1CF3B35D25A85B8B00AC94C2 /* Date+getDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF3B35C25A85B8B00AC94C2 /* Date+getDates.swift */; };
 		4B21DB6C25827CE5001274DD /* TransHeadingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B21DB6B25827CE5001274DD /* TransHeadingLabel.swift */; };
 		4B21DB7025827D10001274DD /* TransSubHeadingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B21DB6F25827D10001274DD /* TransSubHeadingLabel.swift */; };
 		4B25BA9D2429592A00CDD1CF /* UserHealthStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B25BA9C2429592A00CDD1CF /* UserHealthStatus.swift */; };
@@ -368,11 +375,18 @@
 /* Begin PBXFileReference section */
 		16F5D7F6D6B4A765EC82601F /* Pods-CoronaContactTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoronaContactTests.release.xcconfig"; path = "Target Support Files/Pods-CoronaContactTests/Pods-CoronaContactTests.release.xcconfig"; sourceTree = "<group>"; };
 		17CE98EF2576F57F776FBC3D /* UIApplication+SafariViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+SafariViewController.swift"; sourceTree = "<group>"; };
+		1C35920D25B7135F00EC93DB /* Date+ShortMonthName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+ShortMonthName.swift"; sourceTree = "<group>"; };
 		1C3841BD258774E3002B80BD /* DeepLinkConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeepLinkConstants.swift; sourceTree = "<group>"; };
 		1C3841C1258774F9002B80BD /* LinkTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkTextView.swift; sourceTree = "<group>"; };
 		1C5E3C23258287200037017D /* LabelSwitchStackView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LabelSwitchStackView.xib; sourceTree = "<group>"; };
 		1C5E3C24258287200037017D /* LabelSwitchStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelSwitchStackView.swift; sourceTree = "<group>"; };
 		1C783BEE257940C90011EC62 /* TransImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransImageView.swift; sourceTree = "<group>"; };
+		1C9E770525A761B300C6ADB7 /* SelfTestingCoronaSuspicionViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelfTestingCoronaSuspicionViewController.storyboard; sourceTree = "<group>"; };
+		1CF3B34C25A8443500AC94C2 /* SelfTestingCoronaSuspicionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfTestingCoronaSuspicionViewController.swift; sourceTree = "<group>"; };
+		1CF3B35025A844EB00AC94C2 /* SelfTestingCoronaSuspicionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfTestingCoronaSuspicionViewModel.swift; sourceTree = "<group>"; };
+		1CF3B35425A8451600AC94C2 /* SelfTestingCoronaSuspicionCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfTestingCoronaSuspicionCoordinator.swift; sourceTree = "<group>"; };
+		1CF3B35825A8594600AC94C2 /* DatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
+		1CF3B35C25A85B8B00AC94C2 /* Date+getDates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+getDates.swift"; sourceTree = "<group>"; };
 		1FDDA0B8090AAB9A97DCB475 /* Pods-CoronaContactTests.stage.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoronaContactTests.stage.xcconfig"; path = "Target Support Files/Pods-CoronaContactTests/Pods-CoronaContactTests.stage.xcconfig"; sourceTree = "<group>"; };
 		4B1F6118242A60AD00E82D4C /* Stopp Corona.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Stopp Corona.entitlements"; sourceTree = "<group>"; };
 		4B21DB6B25827CE5001274DD /* TransHeadingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransHeadingLabel.swift; sourceTree = "<group>"; };
@@ -759,6 +773,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C9E770425A7615800C6ADB7 /* Corona Suspicion */ = {
+			isa = PBXGroup;
+			children = (
+				1C9E770525A761B300C6ADB7 /* SelfTestingCoronaSuspicionViewController.storyboard */,
+				1CF3B34C25A8443500AC94C2 /* SelfTestingCoronaSuspicionViewController.swift */,
+				1CF3B35025A844EB00AC94C2 /* SelfTestingCoronaSuspicionViewModel.swift */,
+				1CF3B35425A8451600AC94C2 /* SelfTestingCoronaSuspicionCoordinator.swift */,
+			);
+			path = "Corona Suspicion";
+			sourceTree = "<group>";
+		};
 		39679189ECB3019DFC294995 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1578,6 +1603,7 @@
 			children = (
 				614A0024243CF8DD00ACBD0A /* Date+addDays.swift */,
 				61D0F53424352E3D0026C91A /* Date+daysUntil.swift */,
+				1CF3B35C25A85B8B00AC94C2 /* Date+getDates.swift */,
 				4E019BD924265DF7004FF670 /* Data+uuid.swift */,
 				4E019BE22427D287004FF670 /* Date+round.swift */,
 				6153A4EB24259929006A8570 /* NotificationCenter+observe.swift */,
@@ -1602,6 +1628,7 @@
 				6129B57E24924B6A00E2D15B /* ENRiskLevel+diagnosisType.swift */,
 				61132CF3249759BE00865663 /* ENExposureConfiguration+init.swift */,
 				61273E9124979B3D001B86E6 /* ENExposureDetectionSummary+totalRiskScore.swift */,
+				1C35920D25B7135F00EC93DB /* Date+ShortMonthName.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1662,6 +1689,7 @@
 				4BCEB4B425657EE800D53E12 /* TransBarButton.swift */,
 				4B21DB6B25827CE5001274DD /* TransHeadingLabel.swift */,
 				4B21DB6F25827D10001274DD /* TransSubHeadingLabel.swift */,
+				1CF3B35825A8594600AC94C2 /* DatePickerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1763,6 +1791,7 @@
 		92FFC9B024267C5F00CC541B /* SelfTesting */ = {
 			isa = PBXGroup;
 			children = (
+				1C9E770425A7615800C6ADB7 /* Corona Suspicion */,
 				614D72112429057E00CC545D /* Questionnaire */,
 				614D7212242905A400CC545D /* Report */,
 				614A001E243CB22800ACBD0A /* SelfTestingCoordinator.swift */,
@@ -1947,6 +1976,7 @@
 				61032078243F279400ED3A20 /* en.imprint.html in Resources */,
 				4B82571D24266A32007E25C6 /* StartMenuSimpleWebViewViewController.storyboard in Resources */,
 				61546549242CBEA60003D3D3 /* SuspicionGuidelinesViewController.storyboard in Resources */,
+				1C9E770625A761B300C6ADB7 /* SelfTestingCoronaSuspicionViewController.storyboard in Resources */,
 				61459A53242ABFE200DC88A7 /* de.terms-of-use.html in Resources */,
 				4ED175BC245836F100248D3B /* server.der in Resources */,
 			);
@@ -2158,6 +2188,7 @@
 				614A001F243CB22800ACBD0A /* SelfTestingCoordinator.swift in Sources */,
 				839742C47A14834F1B2C24F6 /* MainViewModel.swift in Sources */,
 				9215253E2427C5E00023F469 /* SelfTestingHintViewModel.swift in Sources */,
+				1CF3B35D25A85B8B00AC94C2 /* Date+getDates.swift in Sources */,
 				61F50DD72439EC8500798264 /* MissingPermissionsCoordinator.swift in Sources */,
 				4ED175B62458347400248D3B /* DebugCoordinator.swift in Sources */,
 				614D72252429084300CC545D /* SelfTestingPersonalDataViewModel.swift in Sources */,
@@ -2186,6 +2217,7 @@
 				611D9EE2248E704B00EBB420 /* CompleteOperation.swift in Sources */,
 				4E8984282473F07600499820 /* LocalStorage+Injected.swift in Sources */,
 				4B21DB6C25827CE5001274DD /* TransHeadingLabel.swift in Sources */,
+				1CF3B35525A8451600AC94C2 /* SelfTestingCoronaSuspicionCoordinator.swift in Sources */,
 				614BAA0B2423C334006797AA /* Answer.swift in Sources */,
 				6153A4EF24259929006A8570 /* NotificationCenter+observe.swift in Sources */,
 				4E8984232473EFB500499820 /* PersistedWrapper.swift in Sources */,
@@ -2248,6 +2280,7 @@
 				4EC81FB72423844E00179CE9 /* SecondaryButton.swift in Sources */,
 				6154654A242CBEA60003D3D3 /* SuspicionGuidelinesViewController.swift in Sources */,
 				611D9EDE248E703000EBB420 /* BatchDownloadOperation.swift in Sources */,
+				1CF3B35125A844EB00AC94C2 /* SelfTestingCoronaSuspicionViewModel.swift in Sources */,
 				6186C6FE2492716F0070B616 /* RiskCalculationCompleteOperation.swift in Sources */,
 				6153A4D6242598DC006A8570 /* SicknessCertificateConfirmationViewModel.swift in Sources */,
 				61D0F55224352E960026C91A /* RevocationTanConfirmationCoordinator.swift in Sources */,
@@ -2306,6 +2339,7 @@
 				9215254F2427C74A0023F469 /* SelfTestingSelfMonitoringViewController.swift in Sources */,
 				61D0F54A24352E960026C91A /* RevocationStatusReportViewController.swift in Sources */,
 				61546540242CBE7F0003D3D3 /* SelfMonitoringGuidelinesCoordinator.swift in Sources */,
+				1C35920E25B7135F00EC93DB /* Date+ShortMonthName.swift in Sources */,
 				61DAF6EF2492181100A3B069 /* ENIntervalNumber+date.swift in Sources */,
 				6186C702249277A80070B616 /* DetectExposuresOperation.swift in Sources */,
 				6153A4DD242598DC006A8570 /* SicknessCertificate+Injection.swift in Sources */,
@@ -2367,6 +2401,7 @@
 				61546553242D1A6D0003D3D3 /* AnswerView.swift in Sources */,
 				4BD0B8DF2427AF9800BFA123 /* NotificationService+Injection.swift in Sources */,
 				839741974FFF610B5F936C7D /* History.swift in Sources */,
+				1CF3B35925A8594600AC94C2 /* DatePickerView.swift in Sources */,
 				616B75AB248E33A60030CD6B /* FileDownloadDestination.swift in Sources */,
 				611B78BE242816BE0040CCB3 /* AppUpdateService+Injection.swift in Sources */,
 				83974E39C51DA3FCCB202E62 /* MainCoordinator.swift in Sources */,
@@ -2383,6 +2418,7 @@
 				4E1AAEF2246186FA00D43E2B /* RevocationConfirmationViewModel.swift in Sources */,
 				839740FB82072673E0314F53 /* M001InitialMigration.swift in Sources */,
 				83974B88D707E8ED8B8BC8AE /* TracingKeyPassword.swift in Sources */,
+				1CF3B34D25A8443500AC94C2 /* SelfTestingCoronaSuspicionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

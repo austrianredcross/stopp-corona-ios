@@ -89,14 +89,14 @@ class HealthRepository {
         contactHealthStatus = ContactHealthStatus(quarantineDays: quarantineStatus.numberOfDays)
     }
 
-    func setProbablySick() {
-        localStorage.isProbablySickAt = Date()
-        localStorage.missingUploadedKeysAt = Date()
+    func setProbablySick(from date: Date) {
+        localStorage.isProbablySickAt = date
+        localStorage.missingUploadedKeysAt = date
     }
 
-    func setProvenSick() {
-        localStorage.attestedSicknessAt = Date()
-        localStorage.missingUploadedKeysAt = Date()
+    func setProvenSick(from date: Date) {
+        localStorage.attestedSicknessAt = date
+        localStorage.missingUploadedKeysAt = date
     }
 
     func revokeProbablySick() {

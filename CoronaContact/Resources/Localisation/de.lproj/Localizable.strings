@@ -59,6 +59,7 @@
 "main_button_list_meet"                                                      = "Gespeicherte Begegnungen (%d)";
 "main_body_feel_today"                                                       = "<b>Wie fühlen Sie sich heute?</b>\nErhalten Sie eine Einschätzung zu Ihrem Gesundheitszustand.";
 "main_button_feel_today"                                                     = "Symptome abprüfen";
+"main_button_suspicion_button"                                               = "Corona-Verdacht melden";
 "main_body_covid_alert"                                                      = "<b>Corona-Infektion melden</b>\nMelden Sie eine ärztlich bestätigte Infektion, um Ihre Kontakte zu schützen.";
 "main_button_covid_alert"                                                    = "Ärztliche Bestätigung melden";
 "main_handshake_information_hint"                                            = "Wann soll ich die Funktion nutzen?";
@@ -378,6 +379,15 @@
 "self_testing_confirmation_phone_ambulance_number"                           = "<bred>144</bred>";
 "self_testing_confirmation_health_wish"                                      = "<b>Wir wünschen Ihnen eine gute Besserung!</b>";
 "self_testing_confirmation_primary_button"                                   = "Zurück zur Startseite";
+"self_testing_corona_suspicion_title"                                        = "Corona-Verdacht melden";
+"self_testing_corona_suspicion_headline"                                     = "Melden Sie Ihren Status, um andere zu schützen";
+"self_testing_corona_suspicion_description"                                  = "Ihre anonyme Meldung hilft, die Infektionskette zu unterbrechen. Ihre Kontakte können sich unbemerkt angesteckt haben und das Virus bereits weitergeben. Warnen Sie diese Menschen schnellstmöglich, damit Sie sich von anderen Menschen fernhalten.";
+"self_testing_corona_suspicion_date_headline"                                = "Seit wann haben Sie Symptome oder ein positives Testergebnis?";
+"self_testing_corona_suspicion_contacts_headline"                            = "Warnen Sie Ihre Kontakte";
+"self_testing_corona_suspicion_contacts_confirmed"                           = "Sie haben bereits ein positives Testergebnis?";
+"self_testing_corona_suspicion_contacts_confirmed_button"                    = "Ärztliche Bestätigung melden";
+"self_testing_corona_suspicion_contacts_not_confirmed"                       = "Sie haben noch keinen Test gemacht oder warten noch auf ihr Testergebnis?";
+"self_testing_corona_suspicion_contacts_not_confirmed_button"                = "Verdacht melden";
 "self_testing_suspicion_description"                                         = "Aufgrund Ihrer Angaben besteht bei Ihnen der Verdacht einer Corona-Infektion.\nBitte begeben Sie sich <b>bis zur Abklärung</b> in Quarantäne.";
 "self_testing_suspicion_button"                                              = "Was soll ich tun?";
 "self_testing_suspicion_recovery_button"                                     = "Entwarnung geben";

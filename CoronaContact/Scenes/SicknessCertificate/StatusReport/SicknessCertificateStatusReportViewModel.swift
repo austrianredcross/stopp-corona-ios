@@ -31,7 +31,10 @@ class SicknessCertificateStatusReportViewModel: ViewModel {
             return
         }
         let uploadDays = configurationService.currentConfig.uploadKeyDays
-        var startDate = Date().addDays(-uploadDays)!
+        
+        let startDayOfSymptomsOrAttest = localStorage.hasSymptomsOrPositiveAttestAt ?? Date()
+        var startDate = startDayOfSymptomsOrAttest.addDays(-uploadDays)!
+        
         if let isProbablySickAt = localStorage.isProbablySickAt {
             startDate = isProbablySickAt.addDays(-uploadDays)!
         }
@@ -65,7 +68,7 @@ class SicknessCertificateStatusReportViewModel: ViewModel {
                 if self.updateKeys {
                     self.localStorage.missingUploadedKeysAt = nil
                 } else {
-                    self.healthRepository.setProvenSick()
+                    self.healthRepository.setProvenSick(from: startDayOfSymptomsOrAttest)
                 }
                 self.coordinator?.showConfirmation()
             default:

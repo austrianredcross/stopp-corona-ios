@@ -301,8 +301,8 @@
                                                                     <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="main_body_feel_today"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </label>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="bju-hb-nlO">
-                                                                <rect key="frame" x="8" y="68.5" width="398" height="50"/>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="bju-hb-nlO">
+                                                                <rect key="frame" x="8" y="68.5" width="398" height="100"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pcP-BU-ZFz" customClass="SecondaryButton" customModule="Stopp_Corona" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="16" width="398" height="34"/>
@@ -312,6 +312,16 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                         <connections>
                                                                             <action selector="selfTestingTapped:" destination="cMg-fw-Upr" eventType="touchUpInside" id="SLJ-hK-Jgu"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TKd-WT-nSj" userLabel="main_button_suspicion_button" customClass="SecondaryButton" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="70" width="398" height="30"/>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="transKeyNormal" value="main_button_suspicion_button"/>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                        <connections>
+                                                                            <action selector="coronaSuspicionTapped:" destination="cMg-fw-Upr" eventType="touchUpInside" id="TPj-n6-BOx"/>
                                                                         </connections>
                                                                     </button>
                                                                 </subviews>

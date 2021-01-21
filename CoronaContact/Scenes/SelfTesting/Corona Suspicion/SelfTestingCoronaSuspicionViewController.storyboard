@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TZy-H9-dtO">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Self Testing Corona Suspicion View Controller-->
+        <scene sceneID="Mro-Au-Wue">
+            <objects>
+                <viewController id="TZy-H9-dtO" customClass="SelfTestingCoronaSuspicionViewController" customModule="Stopp_Corona" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wTl-ok-6yx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qeu-mB-Clx">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fne-s6-Lfu">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="606.5"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="aEh-Es-0N5" customClass="BackgroundStackView" customModule="Stopp_Corona" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="606.5"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="fs4-ew-OXC">
+                                                        <rect key="frame" x="0.0" y="24" width="414" height="558.5"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="self_testing_corona_suspicion_headline" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4sJ-hE-n1y" customClass="TransSubHeadingLabel" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                <rect key="frame" x="24" y="0.0" width="366" height="20.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="h2"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="self_testing_corona_suspicion_headline"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="self_testing_corona_suspicion_description" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7AV-9Q-xHK" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                <rect key="frame" x="24" y="52.5" width="366" height="20.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="body"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="self_testing_corona_suspicion_description"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="self_testing_corona_suspicion_date_headline" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xSi-5d-cnt" customClass="TransSubHeadingLabel" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                <rect key="frame" x="24" y="105" width="366" height="20.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="h2"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="self_testing_corona_suspicion_date_headline"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </label>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SbU-5E-eZl">
+                                                                <rect key="frame" x="24" y="157.5" width="366" height="58"/>
+                                                                <subviews>
+                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iqf-zu-SfO">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="366" height="58"/>
+                                                                        <color key="textColor" name="ccRouge"/>
+                                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                                        <textInputTraits key="textInputTraits"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="body"/>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                    </textField>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pickerIcon" translatesAutoresizingMaskIntoConstraints="NO" id="0DB-Lu-zCS">
+                                                                        <rect key="frame" x="338.5" y="23" width="11.5" height="12"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" secondItem="0DB-Lu-zCS" secondAttribute="height" multiplier="1:1" id="aRQ-Oh-dcw"/>
+                                                                        </constraints>
+                                                                    </imageView>
+                                                                </subviews>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="trailing" secondItem="iqf-zu-SfO" secondAttribute="trailing" id="Fdm-J4-VDg"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="iqf-zu-SfO" secondAttribute="bottom" id="I1F-ug-0Ra"/>
+                                                                    <constraint firstItem="0DB-Lu-zCS" firstAttribute="centerY" secondItem="SbU-5E-eZl" secondAttribute="centerY" id="N1p-5I-qJQ"/>
+                                                                    <constraint firstItem="iqf-zu-SfO" firstAttribute="top" secondItem="SbU-5E-eZl" secondAttribute="top" id="ULe-cH-Uya"/>
+                                                                    <constraint firstItem="0DB-Lu-zCS" firstAttribute="height" secondItem="SbU-5E-eZl" secondAttribute="height" multiplier="0.2" id="WQw-I1-s6v"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="0DB-Lu-zCS" secondAttribute="trailing" constant="16" id="dpE-24-VKJ"/>
+                                                                    <constraint firstAttribute="height" constant="58" id="ew7-YB-Nqi"/>
+                                                                    <constraint firstItem="iqf-zu-SfO" firstAttribute="leading" secondItem="SbU-5E-eZl" secondAttribute="leading" id="qKx-51-VU2"/>
+                                                                </constraints>
+                                                            </view>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="self_testing_corona_suspicion_contacts_headline" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DSd-O0-Lyi" customClass="TransSubHeadingLabel" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                <rect key="frame" x="24" y="247.5" width="366" height="41"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="h2"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="self_testing_corona_suspicion_contacts_headline"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="self_testing_corona_suspicion_contacts_confirmed" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Oh-7U-OrP" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                <rect key="frame" x="24" y="320.5" width="366" height="41"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="body"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="self_testing_corona_suspicion_contacts_confirmed"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </label>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lzt-Ci-o9q" customClass="PrimaryButton" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                <rect key="frame" x="24" y="393.5" width="366" height="30"/>
+                                                                <state key="normal" title="self_testing_corona_suspicion_contacts_confirmed_button"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="transKeyNormal" value="self_testing_corona_suspicion_contacts_confirmed_button"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="contactsConfirmedButtonPressed:" destination="TZy-H9-dtO" eventType="touchUpInside" id="KBU-YI-CtP"/>
+                                                                </connections>
+                                                            </button>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="self_testing_corona_suspicion_contacts_not_confirmed" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GNK-7K-dKP" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                <rect key="frame" x="24" y="455.5" width="366" height="41"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="body"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="self_testing_corona_suspicion_contacts_not_confirmed"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </label>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bwz-r2-pB6" customClass="PrimaryButton" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                <rect key="frame" x="24" y="528.5" width="366" height="30"/>
+                                                                <state key="normal" title="self_testing_corona_suspicion_contacts_not_confirmed_button"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="transKeyNormal" value="self_testing_corona_suspicion_contacts_not_confirmed_button"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="contactsNotConfirmedButtonPressed:" destination="TZy-H9-dtO" eventType="touchUpInside" id="d1R-1F-t2h"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                        <directionalEdgeInsets key="directionalLayoutMargins" top="0.0" leading="24" bottom="0.0" trailing="24"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="overrideVertMarginMulti">
+                                                                <real key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="overrideSpacingMulti">
+                                                                <real key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </stackView>
+                                                </subviews>
+                                                <directionalEdgeInsets key="directionalLayoutMargins" top="24" leading="0.0" bottom="24" trailing="0.0"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="overrideVertMarginMulti">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="overrideSpacingMulti">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="aEh-Es-0N5" firstAttribute="leading" secondItem="Fne-s6-Lfu" secondAttribute="leading" id="cKI-1y-1Jt"/>
+                                            <constraint firstItem="aEh-Es-0N5" firstAttribute="top" secondItem="Fne-s6-Lfu" secondAttribute="top" id="mZd-C2-URc"/>
+                                            <constraint firstAttribute="trailing" secondItem="aEh-Es-0N5" secondAttribute="trailing" id="uFK-Fb-m0T"/>
+                                            <constraint firstAttribute="bottom" secondItem="aEh-Es-0N5" secondAttribute="bottom" id="yaI-NH-qJe"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Fne-s6-Lfu" firstAttribute="leading" secondItem="Qeu-mB-Clx" secondAttribute="leading" id="3PA-03-F0m"/>
+                                    <constraint firstItem="Fne-s6-Lfu" firstAttribute="top" secondItem="Qeu-mB-Clx" secondAttribute="top" id="6Qx-VV-l2E"/>
+                                    <constraint firstAttribute="bottom" secondItem="Fne-s6-Lfu" secondAttribute="bottom" priority="250" id="Lde-ry-pJn"/>
+                                    <constraint firstAttribute="trailing" secondItem="Fne-s6-Lfu" secondAttribute="trailing" id="Q85-0n-6xu"/>
+                                    <constraint firstItem="Fne-s6-Lfu" firstAttribute="centerY" secondItem="Qeu-mB-Clx" secondAttribute="centerY" priority="250" id="l56-ep-Avt"/>
+                                    <constraint firstItem="Fne-s6-Lfu" firstAttribute="centerX" secondItem="Qeu-mB-Clx" secondAttribute="centerX" id="wDC-xX-Q4A"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="FhQ-aJ-PYL"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="aeh-RU-9kp"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="dnR-By-j45"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Qeu-mB-Clx" firstAttribute="leading" secondItem="dnR-By-j45" secondAttribute="leading" id="FoA-G7-ePV"/>
+                            <constraint firstItem="dnR-By-j45" firstAttribute="trailing" secondItem="Qeu-mB-Clx" secondAttribute="trailing" id="Nqm-hc-UPx"/>
+                            <constraint firstItem="Qeu-mB-Clx" firstAttribute="top" secondItem="dnR-By-j45" secondAttribute="top" id="flX-Uk-4ng"/>
+                            <constraint firstItem="dnR-By-j45" firstAttribute="bottom" secondItem="Qeu-mB-Clx" secondAttribute="bottom" id="gsa-bL-M9E"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="scrollView" destination="Qeu-mB-Clx" id="yxw-vN-ObM"/>
+                        <outlet property="textfield" destination="iqf-zu-SfO" id="tAb-aM-UQg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kb2-MR-ADu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="225" y="173"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="pickerIcon" width="9" height="12"/>
+        <namedColor name="ccRouge">
+            <color red="0.72549019607843135" green="0.074509803921568626" blue="0.10588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

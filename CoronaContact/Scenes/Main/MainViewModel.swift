@@ -166,7 +166,7 @@ class MainViewModel: ViewModel {
     func tappedTertiaryButtonInUserHealthStatus() {
         switch repository.userHealthStatus {
         case .isProbablySick:
-            sicknessCertificate()
+            sicknessCertificateTapped()
         default:
             break
         }
@@ -191,17 +191,21 @@ class MainViewModel: ViewModel {
     func selfTesting() {
         coordinator?.selfTesting(updateKeys: false)
     }
+    
+    func coronaSuspicionButtonTapped() {
+        coordinator?.openCoronaSuspicionController()
+    }
 
     func uploadMissingPobablySickKeys() {
         coordinator?.selfTesting(updateKeys: true)
     }
 
     func uploadMissingAttestedSickKeys() {
-        coordinator?.sicknessCertificate(updateKeys: true)
+        coordinator?.openSicknessCertificateController(updateKeys: true)
     }
 
-    func sicknessCertificate() {
-        coordinator?.sicknessCertificate(updateKeys: false)
+    func sicknessCertificateTapped() {
+        coordinator?.openSicknessCertificateController(updateKeys: false)
     }
 
     func attestedSicknessGuidelines() {
