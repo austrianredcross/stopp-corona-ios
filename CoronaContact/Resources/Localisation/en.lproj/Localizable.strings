@@ -199,7 +199,7 @@
 "missing_permissions_exposure_framework_icon_caption"                        = "COVID-19 Exposure Notifications";
 "sickness_certificate_personal_data_headline"                                = "Please enter your data";
 "sickness_certificate_personal_data_title"                                   = "Report status";
-"sickness_certificate_personal_data_description"                             = "In the next step, we will anonymously inform your direct contacts of the last 2 days.\nWith the mobile number, we ensure that the app is not misused and that infection reports contribute to the common good.";
+"sickness_certificate_personal_data_description"                             = "In the next step, we will anonymously inform your direct contacts of the last %s days.\nWith the mobile number, we ensure that the app is not misused and that infection reports contribute to the common good.";
 "sickness_certificate_personal_data_form_headline"                           = "Personal data";
 "sickness_certificate_personal_data_firstname_label"                         = "First name";
 "sickness_certificate_personal_data_name_label"                              = "Last name";
@@ -332,7 +332,7 @@
 "self_testing_done"                                                          = "Ready";
 "self_testing_personal_data_title"                                           = "Report status";
 "self_testing_personal_data_headline"                                        = "Please provide your data";
-"self_testing_personal_data_description"                                     = "In the next step, we will anonymously inform your direct contacts of the last 2 days.\nWith the mobile number, we ensure that the app is not misused and that infection reports contribute to the common good.";
+"self_testing_personal_data_description"                                     = "In the next step, we will anonymously inform your direct contacts of the last %s days.\nWith the mobile number, we ensure that the app is not misused and that infection reports contribute to the common good.";
 "self_testing_personal_data_form_headline"                                   = "Personal data";
 "self_testing_personal_data_firstname_label"                                 = "First name";
 "self_testing_personal_data_name_label"                                      = "Last name";
@@ -448,7 +448,7 @@
 "upload_missing_keys_notification_message"                                   = "Notify people with whom you exchanged a digital handshake on the day you reported sick.";
 "revocation_personal_data_title"                                             = "Report status";
 "revocation_personal_data_headline"                                          = "Please enter your data";
-"revocation_personal_data_description"                                       = "In the next step, we will anonymously inform your direct contacts of the last 2 days.\nWith the mobile number, we ensure that the app is not misused and that infection reports contribute to the common good.";
+"revocation_personal_data_description"                                       = "In the next step, we will anonymously inform your direct contacts of the last %s days.\nWith the mobile number, we ensure that the app is not misused and that infection reports contribute to the common good.";
 "revocation_personal_data_form_headline"                                     = "Personal data";
 "revocation_personal_data_mobile_number_label"                               = "Mobile number (+43...)";
 "revocation_personal_data_mobile_number_placeholder"                         = "+43";

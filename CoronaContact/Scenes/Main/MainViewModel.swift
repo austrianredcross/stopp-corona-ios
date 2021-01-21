@@ -157,7 +157,7 @@ class MainViewModel: ViewModel {
         case .isProbablySick:
             revocation()
         case .isUnderSelfMonitoring:
-            selfTesting()
+            selfTestingTapped()
         default:
             break
         }
@@ -188,7 +188,8 @@ class MainViewModel: ViewModel {
         coordinator?.shareApp()
     }
 
-    func selfTesting() {
+    func selfTestingTapped() {
+        localStorage.hasSymptomsOrPositiveAttestAt = nil
         coordinator?.selfTesting(updateKeys: false)
     }
     
@@ -205,6 +206,7 @@ class MainViewModel: ViewModel {
     }
 
     func sicknessCertificateTapped() {
+        localStorage.hasSymptomsOrPositiveAttestAt = nil
         coordinator?.openSicknessCertificateController(updateKeys: false)
     }
 
