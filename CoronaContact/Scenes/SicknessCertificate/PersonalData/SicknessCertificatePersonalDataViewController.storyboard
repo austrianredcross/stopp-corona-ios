@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="K2O-MJ-5hK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="K2O-MJ-5hK">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,9 +17,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vc6-oN-Sd7" customClass="ProgressView" customModule="Stopp_Corona" customModuleProvider="target">
-                                <rect key="frame" x="24" y="44" width="366" height="67"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="366" placeholderIntrinsicHeight="85" translatesAutoresizingMaskIntoConstraints="NO" id="Vc6-oN-Sd7" customClass="ProgressView" customModule="Stopp_Corona" customModuleProvider="target">
+                                <rect key="frame" x="24" y="60" width="366" height="85"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="currentStep">
                                         <integer key="value" value="0"/>
@@ -29,7 +30,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="vTG-ew-OfK">
-                                <rect key="frame" x="0.0" y="201" width="414" height="661"/>
+                                <rect key="frame" x="0.0" y="153" width="414" height="709"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1vr-i3-iJP">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="482"/>
@@ -73,9 +74,9 @@
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wNd-57-ULi">
                                                         <rect key="frame" x="24" y="268" width="366" height="128"/>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     </view>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sqC-rG-Njf" customClass="PrimaryButton" customModule="Stopp_Corona" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sqC-rG-Njf" customClass="PrimaryButton" customModule="Stopp_Corona" customModuleProvider="target">
                                                         <rect key="frame" x="24" y="428" width="366" height="30"/>
                                                         <state key="normal" title="sickness_certificate_personal_data_next_button"/>
                                                         <userDefinedRuntimeAttributes>
@@ -100,7 +101,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="CV6-Bf-5I7" secondAttribute="bottom" id="GuY-c6-Gon"/>
                                             <constraint firstItem="CV6-Bf-5I7" firstAttribute="top" secondItem="1vr-i3-iJP" secondAttribute="top" id="WaS-KF-g24"/>
@@ -122,15 +123,16 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="zgG-NE-27P"/>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="ycX-hb-VKm"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="vTG-ew-OfK" firstAttribute="trailing" secondItem="oLN-P1-aS5" secondAttribute="trailing" id="DHY-cQ-OTO"/>
-                            <constraint firstItem="oLN-P1-aS5" firstAttribute="bottom" secondItem="vTG-ew-OfK" secondAttribute="bottom" id="O3j-LM-QSx"/>
+                            <constraint firstItem="Vc6-oN-Sd7" firstAttribute="leading" secondItem="ycX-hb-VKm" secondAttribute="leading" constant="24" id="QH2-yp-MeY"/>
                             <constraint firstItem="vTG-ew-OfK" firstAttribute="top" secondItem="Vc6-oN-Sd7" secondAttribute="bottom" constant="8" id="QVb-bu-0wh"/>
-                            <constraint firstItem="Vc6-oN-Sd7" firstAttribute="top" secondItem="oLN-P1-aS5" secondAttribute="top" constant="16" id="Qxa-JA-2f4"/>
-                            <constraint firstItem="oLN-P1-aS5" firstAttribute="trailing" secondItem="Vc6-oN-Sd7" secondAttribute="trailing" constant="24" id="WyF-si-0Ua"/>
-                            <constraint firstItem="vTG-ew-OfK" firstAttribute="leading" secondItem="oLN-P1-aS5" secondAttribute="leading" id="iqh-si-ljT"/>
-                            <constraint firstItem="Vc6-oN-Sd7" firstAttribute="leading" secondItem="oLN-P1-aS5" secondAttribute="leading" constant="24" id="mHC-ku-GEu"/>
+                            <constraint firstItem="Vc6-oN-Sd7" firstAttribute="top" secondItem="ycX-hb-VKm" secondAttribute="top" constant="16" id="VMK-N5-FnK"/>
+                            <constraint firstItem="ycX-hb-VKm" firstAttribute="trailing" secondItem="Vc6-oN-Sd7" secondAttribute="trailing" constant="24" id="cDC-pV-QVB"/>
+                            <constraint firstItem="ycX-hb-VKm" firstAttribute="trailing" secondItem="vTG-ew-OfK" secondAttribute="trailing" id="u6D-hF-ija"/>
+                            <constraint firstItem="ycX-hb-VKm" firstAttribute="bottom" secondItem="vTG-ew-OfK" secondAttribute="bottom" id="w27-qx-uEX"/>
+                            <constraint firstItem="ycX-hb-VKm" firstAttribute="leading" secondItem="vTG-ew-OfK" secondAttribute="leading" id="ztn-Qo-A7A"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ZXq-Y9-yyt"/>
@@ -145,4 +147,14 @@
             <point key="canvasLocation" x="-355.07246376811599" y="146.65178571428569"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="Vc6-oN-Sd7">
+            <size key="intrinsicContentSize" width="366" height="85"/>
+        </designable>
+    </designables>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
