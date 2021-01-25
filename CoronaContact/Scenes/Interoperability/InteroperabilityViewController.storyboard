@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3dA-Dj-Ns1">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Interoperability View Controller-->
+        <scene sceneID="hNa-rm-ibx">
+            <objects>
+                <viewController id="3dA-Dj-Ns1" customClass="InteroperabilityViewController" customModule="Stopp_Corona" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="f5Q-dR-laE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YRX-P0-dXu">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hac-56-KAR">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dng-hZ-n1j" customClass="SelectedRoundCornersView" customModule="Stopp_Corona" customModuleProvider="target">
+                                                <rect key="frame" x="24" y="30" width="366" height="138"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="t7r-c4-EqT" customClass="BackgroundStackView" customModule="Stopp_Corona" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="366" height="138"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="interoperability_title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t9T-uU-7lO" customClass="TransHeadingLabel" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="366" height="20.5"/>
+                                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="h1"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="interoperability_title"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="interoperability_info_content" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Fq-VO-W5p" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="52.5" width="366" height="20.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="interoperability_info_content"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="body"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </label>
+                                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="interoperability_info_content" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="WQO-TF-JnN" customClass="LinkTextView" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="105" width="366" height="33"/>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <color key="textColor" systemColor="labelColor"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="body"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </textView>
+                                                        </subviews>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="overrideVertMarginMulti">
+                                                                <real key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="overrideHorztMarginMulti">
+                                                                <real key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="overrideSpacingMulti">
+                                                                <real key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </stackView>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="t7r-c4-EqT" firstAttribute="leading" secondItem="Dng-hZ-n1j" secondAttribute="leading" id="Q02-0J-rX0"/>
+                                                    <constraint firstItem="t7r-c4-EqT" firstAttribute="top" secondItem="Dng-hZ-n1j" secondAttribute="top" id="U7s-A2-qwk"/>
+                                                    <constraint firstAttribute="bottom" secondItem="t7r-c4-EqT" secondAttribute="bottom" id="dt8-li-vy7"/>
+                                                    <constraint firstAttribute="trailing" secondItem="t7r-c4-EqT" secondAttribute="trailing" id="rMH-Bc-9ue"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" name="ccBorder"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                        <color key="value" name="ccShadow"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="setShadowOpacity">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="setShadowRadius">
+                                                        <real key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="size" keyPath="setShadowOffset">
+                                                        <size key="value" width="2" height="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nuE-Z0-pUx" customClass="PrimaryButton" customModule="Stopp_Corona" customModuleProvider="target">
+                                                <rect key="frame" x="24" y="758" width="366" height="30"/>
+                                                <color key="backgroundColor" name="ccRouge"/>
+                                                <state key="normal" title="interoperability_button_title">
+                                                    <color key="titleColor" name="ccWhite"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="transKeyNormal" value="interoperability_button_title"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="acceptButtonPressed:" destination="3dA-Dj-Ns1" eventType="touchUpInside" id="R3g-Ut-9Ju"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="Dng-hZ-n1j" firstAttribute="top" secondItem="hac-56-KAR" secondAttribute="top" constant="30" id="0TK-KK-zvM"/>
+                                            <constraint firstAttribute="trailing" secondItem="nuE-Z0-pUx" secondAttribute="trailing" constant="24" id="Fgg-IV-PxV"/>
+                                            <constraint firstAttribute="trailing" secondItem="Dng-hZ-n1j" secondAttribute="trailing" constant="24" id="Iom-Dz-3dB"/>
+                                            <constraint firstItem="nuE-Z0-pUx" firstAttribute="leading" secondItem="hac-56-KAR" secondAttribute="leading" constant="24" id="hKM-n3-67K"/>
+                                            <constraint firstItem="Dng-hZ-n1j" firstAttribute="leading" secondItem="hac-56-KAR" secondAttribute="leading" constant="24" id="i0C-TM-Age"/>
+                                            <constraint firstAttribute="bottom" secondItem="nuE-Z0-pUx" secondAttribute="bottom" constant="30" id="ng3-HC-NeU"/>
+                                            <constraint firstItem="nuE-Z0-pUx" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Dng-hZ-n1j" secondAttribute="bottom" constant="30" id="obr-UX-vcU"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="hac-56-KAR" secondAttribute="bottom" priority="250" id="Flf-Vo-5dV"/>
+                                    <constraint firstItem="hac-56-KAR" firstAttribute="centerX" secondItem="YRX-P0-dXu" secondAttribute="centerX" id="IbJ-UK-S03"/>
+                                    <constraint firstAttribute="trailing" secondItem="hac-56-KAR" secondAttribute="trailing" id="LBE-ea-672"/>
+                                    <constraint firstItem="hac-56-KAR" firstAttribute="leading" secondItem="YRX-P0-dXu" secondAttribute="leading" id="YYB-3H-vMN"/>
+                                    <constraint firstItem="hac-56-KAR" firstAttribute="centerY" secondItem="YRX-P0-dXu" secondAttribute="centerY" priority="250" id="Ygq-9r-fZq"/>
+                                    <constraint firstItem="hac-56-KAR" firstAttribute="top" secondItem="YRX-P0-dXu" secondAttribute="top" id="lyF-7n-OmI"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="gCx-df-66U"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="xYu-2I-zQS"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="CKO-wq-4FD"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="YRX-P0-dXu" firstAttribute="top" secondItem="CKO-wq-4FD" secondAttribute="top" id="Ozo-gi-N5h"/>
+                            <constraint firstItem="CKO-wq-4FD" firstAttribute="bottom" secondItem="YRX-P0-dXu" secondAttribute="bottom" id="ScI-7L-TYJ"/>
+                            <constraint firstItem="YRX-P0-dXu" firstAttribute="leading" secondItem="CKO-wq-4FD" secondAttribute="leading" id="g1r-9g-w72"/>
+                            <constraint firstItem="CKO-wq-4FD" firstAttribute="trailing" secondItem="YRX-P0-dXu" secondAttribute="trailing" id="sNA-ZW-pPg"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="linkTextView" destination="WQO-TF-JnN" id="7CI-yF-h1q"/>
+                        <outlet property="scrollView" destination="YRX-P0-dXu" id="HDM-Qt-Hdn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eKc-PY-o4m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-297.10144927536237" y="105.80357142857143"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="ccBorder">
+            <color red="0.89800000190734863" green="0.89800000190734863" blue="0.89800000190734863" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ccRouge">
+            <color red="0.72549019607843135" green="0.074509803921568626" blue="0.10588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ccShadow">
+            <color red="0.0" green="0.0" blue="0.0" alpha="0.23000000417232513" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ccWhite">
+            <color red="0.95686274509803926" green="0.95686274509803926" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

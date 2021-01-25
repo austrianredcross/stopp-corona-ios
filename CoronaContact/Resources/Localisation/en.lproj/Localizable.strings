@@ -505,6 +505,10 @@
 "whats_new_img"                                                              = "Image: Common API between providers";
 "whats_new_button_title"                                                     = "All right!";
 "whats_new_in_2.0.0"                                                         = "In this version we use the <bred>Apple and Google COVID-19 interface</bred>. The notifications will continue to be exchanged anonymously and therefore in some places the information will be displayed differently.\n\nEncounters that you saved as handshake before updating to this version are no longer saved for technical reasons and can unfortunately no longer be notified.";
+"interoperability_title"                                                     = "Cross-border use";
+"interoperability_info_content"                                              = "The Stopp Corona App can also be used across the EU in the future. This enables an infection warning across borders.\nThe data protection information has been adapted accordingly.";
+"interoperability_terms_of_use_faq_content"                                  = "If you click on button \"I agree\" you agree to the new <bred>data protection information</bred>.\nDo you have any questions? Read more in the <bred>FAQs</bred>";
+"interoperability_button_title"                                              = "I agree";
 "handshake_code_00"                                                          = "Meise";
 "handshake_code_01"                                                          = "Tukan";
 "handshake_code_02"                                                          = "Gämse";
