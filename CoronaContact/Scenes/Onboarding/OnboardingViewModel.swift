@@ -52,9 +52,9 @@ class OnboardingViewModel: ViewModel {
         var pageCount: Int {
             switch self {
             case .regular:
-                return 5
-            case .legal:
                 return 6
+            case .legal:
+                return 7
             }
         }
     }
@@ -108,6 +108,13 @@ class OnboardingViewModel: ViewModel {
                 imageAccessibiltyText: "onboarding_copy_4_img".localized
             ),
             OnboardingPage(
+                headline: "onboarding_headline_6".localized,
+                text: "onboarding_copy_6_1".localized,
+                text2: nil,
+                image: "OnboardingPage6",
+                imageAccessibiltyText: ""
+            ),
+            OnboardingPage(
                 headline: "onboarding_headline_5".localized,
                 text: "onboarding_copy_5_1".localized,
                 text2: nil,
@@ -154,6 +161,7 @@ class OnboardingViewModel: ViewModel {
 
     func completedLegalOnboarding() {
         localStorage.hasSeenOnboarding = true
+        localStorage.hasBeenAgreedInteroperability = true
         coordinator?.finish(animated: true)
     }
 
