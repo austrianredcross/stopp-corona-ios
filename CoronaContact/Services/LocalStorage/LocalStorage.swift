@@ -68,5 +68,7 @@ class LocalStorage {
     
     @Persisted(userDefaultsKey: "has_symptoms_or_positive_attest_at", notificationName: .init("hasSymptomsOrPositiveAttestAt"), defaultValue: nil)
     var hasSymptomsOrPositiveAttestAt: Date?
-
+    
+    @Persisted(userDefaultsKey: "has_been_agreed_interoperability", notificationName: .init("hasBeenAgreedInteroperability"), defaultValue: false)
+    var hasBeenAgreedInteroperability: Bool
 }

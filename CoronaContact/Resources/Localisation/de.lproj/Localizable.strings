@@ -504,6 +504,10 @@
 "whats_new_img"                                                              = "Bild: Gemeinsame Schnittstelle der Anbieter";
 "whats_new_button_title"                                                     = "Alles klar!";
 "whats_new_in_2.0.0"                                                         = "Wir nutzen in dieser Version die <bred>Apple und Google COVID-19 Schnittstelle</bred>. Die Benachrichtigungen werden weiterhin anonym ausgetauscht und es werden daher an ein paar Stellen die Informationen anders dargestellt.\n\nBegegnungen, die Sie vor dem Update auf diese Version als Handshake gespeichert haben, sind aus technischen Gründen nicht mehr gespeichert und können leider nicht mehr benachrichtigt werden.";
+"interoperability_title"                                                     = "Grenzüberschreitende Nutzung";
+"interoperability_info_content"                                              = "Die Stopp Corona App kann künftig auch EU-weit genutzt werden. Damit ist eine Infektionswarnung über Grenzen hinweg möglich.\nDie Datenschutzinformationen wurden dementsprechend angepasst.";
+"interoperability_terms_of_use_faq_content"                                  = "Mit einem Klick auf dem Button \"Ich bin einverstanden\" stimmen Sie den neuen <bred>Datenschutzinformationen</bred> zu.\nSie haben noch Fragen? Lesen Sie mehr in <bred>FAQs</bred>";
+"interoperability_button_title"                                              = "Ich bin einverstanden";
 "handshake_code_00"                                                          = "Meise";
 "handshake_code_01"                                                          = "Tukan";
 "handshake_code_02"                                                          = "Gämse";

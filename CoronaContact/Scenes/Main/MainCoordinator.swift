@@ -117,6 +117,12 @@ class MainCoordinator: Coordinator, ShareSheetPresentable {
         viewModel?.contactHealthStatus = healthStatus
         viewModel?.infectionWarnings = infectionWarnings
     }
+    
+    func showInteroperabilityController() {
+        let child = InteroperabilityCoordinator(navigationController: navigationController)
+        addChildCoordinator(child)
+        child.start()
+    }
 
     override func start() {
         let viewModel = MainViewModel(with: self)
@@ -124,12 +130,16 @@ class MainCoordinator: Coordinator, ShareSheetPresentable {
 
         mainViewModel = viewModel
         navigationController.pushViewController(viewController, animated: false)
-
+                        
         if !localStorage.hasSeenOnboarding {
             DispatchQueue.main.async {
                 // Don't show "What's New" for new installations:
                 self.whatsNewRepository.markAsSeen()
                 self.onboarding()
+            }
+        } else if !localStorage.hasBeenAgreedInteroperability {
+            DispatchQueue.main.async {
+                self.showInteroperabilityController()
             }
         } else {
             notificationService.dismissAllNotifications()
