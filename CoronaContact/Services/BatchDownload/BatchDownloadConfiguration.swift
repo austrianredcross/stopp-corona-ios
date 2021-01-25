@@ -7,7 +7,7 @@ import Foundation
 
 enum BatchDownloadConfiguration {
     static let maxConcurrentOperationCount = 5
-    static let taskCooldownTime: TimeInterval = 3200
+    static let taskCooldownTime: TimeInterval = 10800 //every 3 hours
 }
 
 extension BatchDownloadConfiguration {
@@ -38,8 +38,8 @@ extension BatchDownloadConfiguration {
 
 extension BatchDownloadConfiguration {
     enum Scheduler {
-        static let startTime: (hour: Int, minute: Int) = (7, 30)
-        static let lastRunHour = 21
-        static let intervalInHours = 1
+        static let startTime: (hour: Int, minute: Int) = (6, 30)
+        static let lastRunHour = 22
+        static let intervalInHours = 3
     }
 }
