@@ -41,6 +41,8 @@
 "onboarding_headline_5"                                                      = "Danke, dass Sie die App nutzen!";
 "onboarding_copy_5_1"                                                        = "Sie schützen aktiv Ihre Gesundheit und die Gesundheit anderer.";
 "onboarding_copy_5_2"                                                        = "Mit der Installation der App stimmen Sie den <bred>Nutzungsbedingungen</bred> zu.\n\nSie haben noch Fragen? Lesen Sie mehr in den <bred>FAQs</bred>";
+"onboarding_headline_6"                                                      = "Grenzüberschreitende Nutzung";
+"onboarding_copy_6_1"                                                        = "Im Fall einer bestätigten Infektion ist die <b>Warnung über Grenzen hinweg</b> möglich.\nKontakte aus anderen EU-Ländern können anonym über die App gewarnt werden beziehungsweise Sie im Infetionsfall warnen.";
 "onboarding_next_button"                                                     = "Weiter";
 "onboarding_finish_buton"                                                    = "Fertig";
 "onboarding_consent_headline"                                                = "Einwilligungserklärung ";

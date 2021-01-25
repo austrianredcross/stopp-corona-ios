@@ -41,6 +41,8 @@
 "onboarding_headline_5"                                                      = "Thank you for using the app!";
 "onboarding_copy_5_1"                                                        = "You're actively helping to protect your health and the health of others.";
 "onboarding_copy_5_2"                                                        = "By installing the app you agree to the <bred>terms of use</bred>.\n\nDo you have any questions? Read more in the <bred>FAQs</bred>";
+"onboarding_headline_6"                                                      = "Cross-border use";
+"onboarding_copy_6_1"                                                        = "In case of a confirmed infection, <b>warning across borders</b> is possible.\nContacts from other EU countries can be warned or warn you anonymously in the event of an infection using the app.";
 "onboarding_next_button"                                                     = "Continue";
 "onboarding_finish_buton"                                                    = "Finished";
 "onboarding_consent_headline"                                                = "Declaration of consent";
