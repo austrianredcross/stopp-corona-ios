@@ -49,7 +49,7 @@
 "onboarding_consent_body_1"                                                  = "I agree that the Austrian Red Cross (ÖRK) may process my personal data (random figures [“random-IDs], my telephone number, and any suspicion and reporting of my COVID-19 condition [= health data]) for the purpose of rapid interruption of the corona infection chain. ";
 "onboarding_consent_checkbox_label"                                          = "I consent";
 "onboarding_consent_body_2"                                                  = "I may revoke my consent at any time, whereby revocation does not affect the lawfulness of processing up until the time that consent is revoked.";
-"onboarding_consent_body_3"                                                  = "Further information can be found in our <u>privacy policy</u>.";
+"onboarding_consent_body_3"                                                  = "Further information can be found in our <bred>privacy policy</bred>.";
 "onboarding_consent_data_privacy"                                            = "privacy policy.";
 "onboarding_terms_of_use_headline"                                           = "Terms of use";
 "onboarding_data_privacy_headline"                                           = "Privacy policy";

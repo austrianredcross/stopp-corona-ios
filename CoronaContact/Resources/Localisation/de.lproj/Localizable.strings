@@ -49,7 +49,7 @@
 "onboarding_consent_body_1"                                                  = "Ich willige ein, dass das Österreichische Rote Kreuz (ÖRK) meine personenbezogenen Daten (zufällige Kennzahlen [=“zufalls-IDs“], Telefonnummer, Verdachtserhebung und Meldung meiner COVID-19 Erkrankung [=Gesundheitsdaten]) zum Zweck der schnellen Unterbrechung der Corona-Infektionskette verarbeitet.";
 "onboarding_consent_checkbox_label"                                          = "Ich stimme zu";
 "onboarding_consent_body_2"                                                  = "Meine Einwilligung kann ich jederzeit widerrufen, die automatische Kontaktaufnahme kann ich in der App ausschalten. Ein Widerruf lässt die Rechtmäßigkeit der Verarbeitung bis zum Widerruf unberührt. ";
-"onboarding_consent_body_3"                                                  = "Weitere Informationen finden Sie in unserer <u>Datenschutzinformation</u>.";
+"onboarding_consent_body_3"                                                  = "Weitere Informationen finden Sie in unserer <bred>Datenschutzinformation</bred>.";
 "onboarding_consent_data_privacy"                                            = "Datenschutzinformation.";
 "onboarding_terms_of_use_headline"                                           = "Nutzungsbedingungen";
 "onboarding_data_privacy_headline"                                           = "Datenschutzinformation";

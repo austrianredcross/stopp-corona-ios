@@ -28,7 +28,7 @@ final class OnboardingConsentPageView: UIView, NibLoadable {
             self?.viewModel?.agreementToDataPrivacy = value
         }
         
-        textView.textViewAttribute = TextViewAttribute(fullText: "onboarding_consent_body_3".localized, links: [DeepLinkConstants.deepLinkPrivacyUrl], linkColor: UIColor.ccBlack)
+        textView.textViewAttribute = TextViewAttribute(fullText: "onboarding_consent_body_3".localized, links: [DeepLinkConstants.deepLinkPrivacyUrl], linkColor: .ccRouge)
     }
 
     @objc func toogleAgreement(_ sender: UITapGestureRecognizer) {
