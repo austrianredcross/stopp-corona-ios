@@ -6,7 +6,7 @@
 import Resolver
 import UIKit
 
-enum ContactHealthStatus {
+enum ContactHealthStatus: Equatable {
     case mixed(quarantineDays: Int? = 0)
     case red(quarantineDays: Int? = 0)
     case yellow(quarantineDays: Int? = 0)
@@ -28,34 +28,59 @@ enum ContactHealthStatus {
             return nil
         }
     }
+    
+    static func ==(lhs: ContactHealthStatus, rhs: ContactHealthStatus) -> Bool {
+        switch (lhs, rhs) {
+        case (.red, .red):
+            return true
+        case (.yellow, .yellow):
+            return true
+        case (.mixed, .mixed):
+            return true
+        default:
+            return false
+        }
+    }
 }
 
 // MARK: - Notification in the Dashboard
 
 extension ContactHealthStatus {
-    var headlineNotification: String {
+    
+    var primaryHeadlineNotification: String {
         "contact_health_status_headline".localized
     }
-
-    var descriptionNotification: String {
+    
+    var primaryDescriptionNotification: String {
         switch self {
-        case .mixed:
-            return """
-            \("contact_health_status_red_warning_description".localized)
-
-            \("contact_health_status_yellow_warning_description".localized)
-            """
-        case .red:
-            return """
-            \("contact_health_status_red_warning_description".localized)
-                
-            \(String(format: "health_status_red_warning_single_contact_quarantine_date".localized, endOfQuarantine!))
-            """
+        case .mixed, .red:
+            return String(format: "contact_health_status_red_warning_description".localized, endOfQuarantine!)
         case .yellow:
             return "contact_health_status_yellow_warning_description".localized
         }
     }
-
+    
+    var primaryColorNotification: UIColor {
+        switch self {
+        case .mixed, .red:
+            return .ccRed
+        case .yellow:
+            return .ccYellow
+        }
+    }
+    
+    var secondaryHeadlineNotification: String {
+        "contact_health_status_headline".localized
+    }
+    
+    var secondaryDescriptionNotification: String {
+        "contact_health_status_yellow_warning_description".localized
+    }
+    
+    var secondaryColorNotification: UIColor {
+        .ccYellow
+    }
+    
     var quarantineDays: Int? {
         switch self {
         case let .mixed(quarantineDays),
@@ -71,15 +96,6 @@ extension ContactHealthStatus {
         }
 
         return "contact_health_status_quarantine_days_button".localized
-    }
-
-    var color: UIColor {
-        switch self {
-        case .mixed, .red:
-            return .ccRed
-        case .yellow:
-            return .ccYellow
-        }
     }
 
     var iconImageNotification: UIImage {

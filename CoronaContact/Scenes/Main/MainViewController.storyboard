@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cMg-fw-Upr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cMg-fw-Upr">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -44,11 +44,16 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Fou-Vk-7Vd" customClass="BackgroundStackView" customModule="Stopp_Corona" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="11966.5" width="414" height="64"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Fou-Vk-7Vd" customClass="BackgroundStackView" customModule="Stopp_Corona" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="14442.5" width="414" height="84"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" id="HaI-te-2jm" customClass="QuarantineNotificationView" customModule="Stopp_Corona" customModuleProvider="target">
                                                                 <rect key="frame" x="24" y="32" width="366" height="0.0"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" id="nZf-oN-Icb" customClass="QuarantineNotificationView" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                <rect key="frame" x="24" y="52" width="366" height="0.0"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </view>
@@ -421,13 +426,14 @@
                         <outlet property="backgroundHandshakeActiveStateLabel" destination="ri9-Jh-Fen" id="5g7-rQ-uUn"/>
                         <outlet property="backgroundHandshakeDescriptionLabel" destination="Cfj-2h-wvg" id="SCv-Kj-35y"/>
                         <outlet property="backgroundHandshakeStackView" destination="KA4-ss-oYB" id="jaN-8r-V5b"/>
-                        <outlet property="contactHealthStatusView" destination="HaI-te-2jm" id="d4c-LP-JRa"/>
                         <outlet property="contactHealthWrapperView" destination="Fou-Vk-7Vd" id="W1S-dt-BlM"/>
                         <outlet property="handshakePausedInformation" destination="XGd-27-msX" id="WbK-Hl-2gy"/>
                         <outlet property="notificationStackView" destination="lCg-hq-PQX" id="m25-7Z-4cA"/>
+                        <outlet property="primaryContactHealthStatusView" destination="HaI-te-2jm" id="WN6-rq-4E7"/>
                         <outlet property="revocationStatusView" destination="OE9-hK-5KZ" id="ubq-IC-5iS"/>
                         <outlet property="revocationWrapperView" destination="uRh-NA-Ut9" id="pgO-ro-7S6"/>
                         <outlet property="scrollView" destination="a38-gg-nus" id="waw-LS-sHX"/>
+                        <outlet property="secondaryContactHealthStatusView" destination="nZf-oN-Icb" id="m34-Ex-s8p"/>
                         <outlet property="selfTestingStackView" destination="GTB-hm-U6b" id="Vq7-Ha-tVa"/>
                         <outlet property="shareAppCardView" destination="AGc-IG-ele" id="qfB-rq-zWe"/>
                         <outlet property="sicknessCertificateStackView" destination="xbI-dq-Sh6" id="WDz-cR-OwM"/>

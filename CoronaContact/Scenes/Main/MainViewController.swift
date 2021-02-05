@@ -25,7 +25,8 @@ final class MainViewController: UIViewController, StoryboardBased, ViewModelBase
     @IBOutlet var userHealthWrapperView: UIView!
     @IBOutlet var userHealthStatusView: QuarantineNotificationView!
     @IBOutlet var contactHealthWrapperView: UIView!
-    @IBOutlet var contactHealthStatusView: QuarantineNotificationView!
+    @IBOutlet var primaryContactHealthStatusView: QuarantineNotificationView!
+    @IBOutlet var secondaryContactHealthStatusView: QuarantineNotificationView!
     @IBOutlet var revocationWrapperView: UIView!
     @IBOutlet var revocationStatusView: QuarantineNotificationView!
     @IBOutlet var notificationStackView: UIStackView!
@@ -174,12 +175,12 @@ final class MainViewController: UIViewController, StoryboardBased, ViewModelBase
                     }
                 }
                 if localStorage.lastYellowContact != nil {
-                    contactHealthStatusView.addButton(title: "DEBUG: yellow back a day") {
+                    primaryContactHealthStatusView.addButton(title: "DEBUG: yellow back a day") {
                         localStorage.lastYellowContact = localStorage.lastYellowContact?.addDays(-1)
                     }
                 }
                 if localStorage.lastRedContact != nil {
-                    contactHealthStatusView.addButton(title: "DEBUG: red back a day") {
+                    primaryContactHealthStatusView.addButton(title: "DEBUG: red back a day") {
                         localStorage.lastRedContact = localStorage.lastRedContact?.addDays(-1)
                     }
                 }
@@ -188,22 +189,35 @@ final class MainViewController: UIViewController, StoryboardBased, ViewModelBase
     }
 
     private func configureContactHealthStatusView() {
-        if let contactHealthStatus = viewModel?.contactHealthStatus {
-            contactHealthWrapperView.isHidden = false
-            contactHealthStatusView.isHidden = false
-            contactHealthStatusView.indicatorColor = contactHealthStatus.color
-            contactHealthStatusView.icon = contactHealthStatus.iconImageNotification
-            contactHealthStatusView.headlineText = contactHealthStatus.headlineNotification
-            contactHealthStatusView.quarantineCounter = contactHealthStatus.quarantineDays
-            contactHealthStatusView.descriptionText = contactHealthStatus.descriptionNotification
-            contactHealthStatusView.buttonText = contactHealthStatus.buttonNotification
-            contactHealthStatusView.handlePrimaryTap = { [weak self] in
-                self?.viewModel?.contactSickness(with: contactHealthStatus)
-            }
-        } else {
+        
+        guard let contactHealthStatus = viewModel?.contactHealthStatus else {
             contactHealthWrapperView.isHidden = true
-            contactHealthStatusView.isHidden = true
+            primaryContactHealthStatusView.isHidden = true
+            secondaryContactHealthStatusView.isHidden = true
+            return
         }
+        
+        contactHealthWrapperView.isHidden = false
+        primaryContactHealthStatusView.isHidden = false
+        
+        primaryContactHealthStatusView.indicatorColor = contactHealthStatus.primaryColorNotification
+        primaryContactHealthStatusView.icon = contactHealthStatus.iconImageNotification
+        primaryContactHealthStatusView.headlineText = contactHealthStatus.primaryHeadlineNotification
+        primaryContactHealthStatusView.quarantineCounter = contactHealthStatus.quarantineDays
+        primaryContactHealthStatusView.descriptionText = contactHealthStatus.primaryDescriptionNotification
+        primaryContactHealthStatusView.buttonText = contactHealthStatus.buttonNotification
+        primaryContactHealthStatusView.handlePrimaryTap = { [weak self] in
+            self?.viewModel?.contactSickness(with: contactHealthStatus)
+        }
+        
+        secondaryContactHealthStatusView.indicatorColor = contactHealthStatus.secondaryColorNotification
+        secondaryContactHealthStatusView.icon = contactHealthStatus.iconImageNotification
+        secondaryContactHealthStatusView.headlineText = contactHealthStatus.secondaryHeadlineNotification
+        secondaryContactHealthStatusView.quarantineCounter = contactHealthStatus.quarantineDays
+        secondaryContactHealthStatusView.descriptionText = contactHealthStatus.secondaryDescriptionNotification
+        secondaryContactHealthStatusView.isPrimaryButtonEnabled = false
+        
+        secondaryContactHealthStatusView.isHidden = !(contactHealthStatus == .mixed())
     }
 
     private func configureRevocationStatusView() {
