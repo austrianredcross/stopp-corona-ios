@@ -56,7 +56,7 @@ extension ContactHealthStatus {
         case .mixed, .red:
             return String(format: "contact_health_status_red_warning_description".localized, endOfQuarantine!)
         case .yellow:
-            return "contact_health_status_yellow_warning_description".localized
+            return String(format: "contact_health_status_yellow_warning_description".localized, endOfQuarantine!)   
         }
     }
     
