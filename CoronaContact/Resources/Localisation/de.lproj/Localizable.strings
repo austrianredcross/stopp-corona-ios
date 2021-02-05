@@ -77,8 +77,9 @@
 "mandatory_update_button"                                                    = "Zum App Store";
 "Start Screen Notification (Contact status)"                                 = "";
 "contact_health_status_headline"                                             = "Achtung";
-"contact_health_status_red_warning_description"                              = "Bei einem oder mehrerer Ihrer Kontakte wurde eine <b>Corona-Infektion</b> festgestellt.";
+"contact_health_status_red_warning_description"                              = "Bei einem oder mehrerer Ihrer Kontakte wurde eine <b>Corona Infektion</b> festgestellt.\nBitte begeben Sie sich <b>bis zum %@</b> in Quarantäne.";
 "contact_health_status_yellow_warning_description"                           = "Bei einem oder mehrerer Ihrer Kontakte wurde der <b>Verdacht auf eine Corona-Infektion</b> festgestellt.";
+"contact_health_status_mixed_warning_description"                            = "Bei einem oder mehrerer Ihrer Kontakte wurde eine <b>Corona Infektion</b> festgestellt.\nBitte begeben Sie sich <b>bis zum %@</b> in Quarantäne.\n\nBei einem oder mehrerer Ihrer Kontakte wurde der <b>Verdacht auf eine Corona Infektion</b> festgestellt.";
 "contact_health_status_quarantine_days_button"                               = "Was soll ich tun?";
 "health_status_red_warning_single_contact_headline"                          = "Achtung";
 "health_status_red_warning_single_contact_description"                       = "Bei einem oder mehrerer Ihrer Kontakte wurde eine <b>Corona-Infektion</b> festgestellt.";
