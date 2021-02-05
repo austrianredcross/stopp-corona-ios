@@ -77,9 +77,8 @@
 "mandatory_update_button"                                                    = "Go to App Store";
 "Start Screen Notification (Contact status)"                                 = "";
 "contact_health_status_headline"                                             = "Attention";
-"contact_health_status_red_warning_description"                              = "A <b>corona infection</b> has been detected in one or more of your contacts.\nPlease go into quarantine <b>until %@</b>.";
-"contact_health_status_yellow_warning_description"                           = "One or more of your contacts were found to have a <b>suspected corona infection</b>.";
-"contact_health_status_mixed_warning_description"                            = "A <b>corona infection</b> has been detected in one or more of your contacts.\nPlease go into quarantine <b>until %@</b>.\n\nOne or more of your contacts were found to have a <b>suspected corona infection</b>.";
+"contact_health_status_red_warning_description"                              = "A <b>corona infection</b> has been detected in one or more of your contacts.";
+"contact_health_status_yellow_warning_description"                           = "One or more of your contacts were found to have a <b>suspected corona infection</b>.\nPlease go into quarantine <b>until %@</b>.";
 "contact_health_status_quarantine_days_button"                               = "What should I do?";
 "health_status_red_warning_single_contact_headline"                          = "Attention";
 "health_status_red_warning_single_contact_description"                       = "A <b>corona infection</b> has been detected in one or more of your contacts.";
@@ -135,7 +134,7 @@
 "contact_sickness_warning_guidelines_quarantine_end"                         = "Please stay quarantined until %@";
 "contact_sickness__warning_guidelines_quarantine_rule"                       = "If you have an official quarantine certificate, take into account the quarantine period specified in it.";
 "contact_sickness_warning_guidelines_no_public_transport"                    = "Do not use public transport on your way and avoid contact with other people if possible.";
-"contact_sickness_warning_guidelines_first"                                  = "Please monitor your health within the next days <b>until the %@</b> particularly thorough and <b>check your body temperature daily</b>.";
+"contact_sickness_warning_guidelines_first"                                  = "Please go into quarantine and monitor your health within the next days <b>until the %@</b> particularly thorough and <b>check your body temperature daily</b>.";
 "contact_sickness_warning_guidelines_second"                                 = "<b>Reduce personal contacts</b> in your private environment to a minimum and keep a contact diary.";
 "contact_sickness_warning_guidelines_third"                                  = "Please keep a <b>sufficient distance from other people</b> and wear a face mask, especially indoors.";
 "contact_sickness_warning_guidelines_fourth"                                 = "If you develop a fever, cough or have difficulty breathing, please call the <b>Corona hotline</b> at <bred>1450</bred> or your general practitioner immediately.";

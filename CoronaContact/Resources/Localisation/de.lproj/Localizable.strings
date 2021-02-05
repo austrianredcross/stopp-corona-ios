@@ -77,9 +77,8 @@
 "mandatory_update_button"                                                    = "Zum App Store";
 "Start Screen Notification (Contact status)"                                 = "";
 "contact_health_status_headline"                                             = "Achtung";
-"contact_health_status_red_warning_description"                              = "Bei einem oder mehrerer Ihrer Kontakte wurde eine <b>Corona Infektion</b> festgestellt.\nBitte begeben Sie sich <b>bis zum %@</b> in Quarantäne.";
-"contact_health_status_yellow_warning_description"                           = "Bei einem oder mehrerer Ihrer Kontakte wurde der <b>Verdacht auf eine Corona-Infektion</b> festgestellt.";
-"contact_health_status_mixed_warning_description"                            = "Bei einem oder mehrerer Ihrer Kontakte wurde eine <b>Corona Infektion</b> festgestellt.\nBitte begeben Sie sich <b>bis zum %@</b> in Quarantäne.\n\nBei einem oder mehrerer Ihrer Kontakte wurde der <b>Verdacht auf eine Corona Infektion</b> festgestellt.";
+"contact_health_status_red_warning_description"                              = "Bei einem oder mehrerer Ihrer Kontakte wurde eine <b>Corona-Infektion</b> festgestellt.";
+"contact_health_status_yellow_warning_description"                           = "Bei einem oder mehrerer Ihrer Kontakte wurde der <b>Verdacht auf eine Corona-Infektion</b> festgestellt.\nBitte begeben Sie sich <b>bis zum %@</b> in Quarantäne.";
 "contact_health_status_quarantine_days_button"                               = "Was soll ich tun?";
 "health_status_red_warning_single_contact_headline"                          = "Achtung";
 "health_status_red_warning_single_contact_description"                       = "Bei einem oder mehrerer Ihrer Kontakte wurde eine <b>Corona-Infektion</b> festgestellt.";
@@ -135,7 +134,7 @@
 "contact_sickness_warning_guidelines_quarantine_end"                         = "Bleiben Sie dort bitte bis %@";
 "contact_sickness__warning_guidelines_quarantine_rule"                       = "Bei Vorliegen eines offiziellen Quarantänebescheides berücksichtigen Sie den Quarantänezeitraum, der dort angegeben \n ist.";
 "contact_sickness_warning_guidelines_no_public_transport"                    = "Nutzen Sie auf dem Weg möglichst keine öffentlichen Verkehrsmittel und meiden Sie Kontakt mit Mitmenschen.";
-"contact_sickness_warning_guidelines_first"                                  = "Bitte beobachten Sie Ihren Gesundheitszustand in den nächsten Tagen <b>bis zum %@</b> besonders gründlich und <b>kontrollieren Sie täglich Ihre Körpertemperatur</b>.";
+"contact_sickness_warning_guidelines_first"                                  = "Bitte begeben Sie sich in Quarantäne und beobachten Sie Ihren Gesundheitszustand in den nächsten Tagen <b>bis zum %@</b> besonders gründlich und <b>kontrollieren Sie täglich Ihre Körpertemperatur</b>.";
 "contact_sickness_warning_guidelines_second"                                 = "<b>Reduzieren Sie persönliche Kontakte</b> in Ihrem privaten Umfeld auf ein Minimum und führen Sie ein Kontakttagebuch.";
 "contact_sickness_warning_guidelines_third"                                  = "Halten Sie <b>ausreichend Abstand zu anderen Personen</b> und tragen Sie einen Mund-Nasen-Schutz, besonders in Innenräumen.";
 "contact_sickness_warning_guidelines_fourth"                                 = "Wenn Sie Fieber, Husten oder Atembeschwerden bekommen, rufen Sie bitte umgehend die <b>Corona Hotline</b> unter <bred>1450</bred> oder Ihre/n Hausarzt/Hausärztin an.";
