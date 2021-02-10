@@ -28,19 +28,6 @@ enum ContactHealthStatus: Equatable {
             return nil
         }
     }
-    
-    static func ==(lhs: ContactHealthStatus, rhs: ContactHealthStatus) -> Bool {
-        switch (lhs, rhs) {
-        case (.red, .red):
-            return true
-        case (.yellow, .yellow):
-            return true
-        case (.mixed, .mixed):
-            return true
-        default:
-            return false
-        }
-    }
 }
 
 // MARK: - Notification in the Dashboard
@@ -54,12 +41,19 @@ extension ContactHealthStatus {
     var primaryDescriptionNotification: String {
         switch self {
         case .mixed, .red:
-            return String(format: "contact_health_status_red_warning_description".localized, endOfQuarantine!)
+            return "contact_health_status_red_warning_description".localized
         case .yellow:
-            return String(format: "contact_health_status_yellow_warning_description".localized, endOfQuarantine!)   
+            return "contact_health_status_yellow_warning_description".localized
         }
     }
-    
+        var primaryDateNotification: String {
+        switch self {
+        case .mixed, .red:
+            return String(format: "contact_health_status_red_warning_date_text".localized, endOfQuarantine!)
+        case .yellow:
+            return String(format: "contact_health_status_yellow_warning_date_text".localized, endOfQuarantine!)
+        }
+    }
     var primaryColorNotification: UIColor {
         switch self {
         case .mixed, .red:
@@ -98,6 +92,15 @@ extension ContactHealthStatus {
         return "contact_health_status_quarantine_days_button".localized
     }
 
+    var color: UIColor {
+        switch self {
+        case .mixed, .red:
+            return .ccRouge
+        case .yellow:
+            return .ccYellow
+        }
+    }
+
     var iconImageNotification: UIImage {
         UIImage(named: icon) ?? UIImage()
     }
@@ -115,6 +118,25 @@ private let dateString: (Date) -> String = { date in
     let format = DateFormatter.dateFormat(fromTemplate: "dd.MMMM", options: 0, locale: Locale.current)
     dateFormatter.dateFormat = format
     return dateFormatter.string(from: date)
+}
+
+extension ContactHealthStatus {
+    
+    var daysSinceLastConact: Int {
+        
+        let localStorage: LocalStorage = Resolver.resolve()
+        let lastRedContact = localStorage.lastRedContact
+        let lastYellowContact = localStorage.lastYellowContact
+        
+        switch self {
+        case .red:
+            return lastRedContact?.days(until: Date()) ?? 0
+        case .yellow:
+            return lastYellowContact?.days(until: Date()) ?? 0
+        case .mixed:
+            return lastRedContact! < lastYellowContact! ? lastRedContact!.days(until: Date()) ?? 0 : lastYellowContact!.days(until: Date()) ?? 0
+        }
+    }
 }
 
 extension ContactHealthStatus {
@@ -213,12 +235,10 @@ extension ContactHealthStatus {
     var guidelines: [Instruction] {
         
         switch self {
-        case .red:
+        case .red, .mixed:
             return redGuidelines
         case .yellow:
             return yellowGuidelines
-        case .mixed:
-            return redGuidelines
         }
     }
     

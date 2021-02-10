@@ -64,6 +64,7 @@ final class AppStartBatchController {
             log.debug("Successfully processed batches after app start.")
             log.debug("Passing the risk calculation result to the quarantine time controller.")
             localStorage.performedBatchProcessingAt = Date()
+            localStorage.performedBatchProcessingDates.managingBatchProcessingDates(insert: Date())
             QuarantineTimeController.quarantineTimeCalculation(riskResult: riskResult)
         }
 
