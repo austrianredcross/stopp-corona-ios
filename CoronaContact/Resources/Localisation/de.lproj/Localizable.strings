@@ -316,6 +316,7 @@
 "start_menu_item_3_1_trigger_manual_handshake"                               = "Handshake manuell starten";
 "start_menu_item_3_2_check_symptoms"                                         = "Symptome abprüfen";
 "start_menu_item_3_3_report_positive_doctors_diagnosis"                      = "Ärztliche Bestätigung melden";
+"start_menu_item_3_4_report_suspected"                                       = "Corona-Verdacht melden";
 "start_menu_item_revoke_sickness"                                            = "Krankmeldung zurückziehen";
 "history_title"                                                              = "Gespeicherte Begegnungen";
 "history_intro"                                                              = "<b>Die Begegnungen werden anonym gespeichert.</b> In Ihrem Krankheitsfall werden Ihre Kontakte automatisch anonym benachrichtigt. ";
