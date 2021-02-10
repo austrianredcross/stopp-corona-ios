@@ -5,17 +5,22 @@
 
 import Reusable
 import UIKit
+import Resolver
 
 final class SicknessCertificatePersonalDataViewController: UIViewController,
     StoryboardBased, ViewModelBased, ActivityModalPresentable, FlashableScrollIndicators
 {
+    @Injected private var localStorage: LocalStorage
     private var keyboardAdjustingBehavior: KeyboardAdjustingBehavior?
     private var elements: [InputElementType] = []
 
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var mobileNumberTextField: StandardTextField!
     @IBOutlet var personalDataDescriptionLabel: TransLabel!
-    
+    @IBOutlet weak var textfield: UITextField!
+
+    let datePicker = DatePickerView()
+
     var viewModel: SicknessCertificatePersonalDataViewModel?
 
     override func viewDidLoad() {
@@ -46,6 +51,7 @@ final class SicknessCertificatePersonalDataViewController: UIViewController,
         mobileNumberTextField.accessibilityLabel = "sickness_certificate_personal_data_mobile_number_label".localized
 
         elements.append(mobileNumberTextField)
+        showDatePicker()
     }
 
     override func didMove(toParent parent: UIViewController?) {
@@ -65,6 +71,37 @@ final class SicknessCertificatePersonalDataViewController: UIViewController,
 
             return PersonalData(mobileNumber: mobileNumber)
         }
+    }
+    
+    func showDatePicker() {
+        
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        let doneButton = UIBarButtonItem(title: "accessibility_keyboard_confirm_title".localized, style: .plain, target: self, action: #selector(confirmButtonTapped))
+        
+        toolbar.setItems([doneButton], animated: false)
+        
+        textfield.inputAccessoryView = toolbar
+        textfield.inputView = datePicker
+        confirmButtonTapped()
+
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidShow(notification:)), name: UIResponder.keyboardDidShowNotification, object: nil)
+    }
+    
+    @objc func keyboardDidShow(notification: NSNotification) {
+        UIAccessibility.post(notification: UIAccessibility.Notification.layoutChanged, argument: datePicker)
+    }
+    
+    @objc func confirmButtonTapped() {
+        let date = datePicker.getSelectedDate ?? Date()
+        
+        localStorage.hasSymptomsOrPositiveAttestAt = date
+        
+        personalDataDescriptionLabel.styledText = viewModel?.personalDataDescription
+
+        textfield.text = Calendar.current.isDateInToday(date) ? "general_today".localized : date.shortMonthNameString
+        
+        self.view.endEditing(true)
     }
 
     @IBAction func nextButtonTapped(_ sender: Any) {

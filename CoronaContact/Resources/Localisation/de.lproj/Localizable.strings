@@ -215,6 +215,7 @@
 "sickness_certificate_personal_data_headline"                                = "Bitte geben Sie Ihre Daten ein";
 "sickness_certificate_personal_data_title"                                   = "Status melden";
 "sickness_certificate_personal_data_description"                             = "Wir werden nach dem nächsten Schritt Ihre engen Kontakte der letzten %s Tage anonym informieren. Wir validieren Ihre Mobilnummer, damit wir einen Missbrauch dieser Funktion vermeiden können.";
+"sickness_certificate_personal_data_date_headline"                           = "Seit wann haben Sie ein positives Testergebnis?";
 "sickness_certificate_personal_data_form_headline"                           = "Persönliche Daten";
 "sickness_certificate_personal_data_firstname_label"                         = "Vorname";
 "sickness_certificate_personal_data_name_label"                              = "Nachname";
