@@ -13,6 +13,7 @@ final class StartMenuViewController: UIViewController, StoryboardBased, Flashabl
     @IBOutlet var hideableFunctionsView: UIStackView!
     @IBOutlet var checkSymptomsView: UIView!
     @IBOutlet var revokeSicknessView: UIView!
+    @IBOutlet var reportCoronaSuspiciousView: UIView!
     @IBOutlet var reportPositiveDoctorsDiagnosisView: UIView!
 
     @Injected private var notificationService: NotificationService
@@ -44,6 +45,10 @@ final class StartMenuViewController: UIViewController, StoryboardBased, Flashabl
 
     @IBAction func checkSymptomsButtonTapped(_ sender: Any) {
         viewModel?.checkSymptoms()
+    }
+    
+    @IBAction func coronaSuspicionTapped(_ sender: Any) {
+        viewModel?.coronaSuspicionButtonTapped()
     }
 
     @IBAction func reportPositiveDoctorsDiagnosisTapped(_ sender: Any) {
@@ -92,5 +97,6 @@ final class StartMenuViewController: UIViewController, StoryboardBased, Flashabl
         hideableFunctionsView.isHidden = viewModel.isFunctionsSectionHidden
         checkSymptomsView.isHidden = !viewModel.isSelfTestFunctionAvailable
         revokeSicknessView.isHidden = !viewModel.canRevokeAttestedSickness
+        reportCoronaSuspiciousView.isHidden = !viewModel.isSelfTestFunctionAvailable
     }
 }

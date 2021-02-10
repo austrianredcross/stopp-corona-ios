@@ -61,6 +61,8 @@
 "main_button_list_meet"                                                      = "Saved Encounters (%d)";
 "main_body_feel_today"                                                       = "<b>Are you not feeling well?</b>\nCheck your symptoms for a possible corona infection.";
 "main_button_feel_today"                                                     = "Check symptoms";
+"main_button_suspicion_button"                                               = "Report corona suspicion";
+"main_body_covid_alert"                                                      = "<b>Report corona infection</b>\nReport a medically confirmed infection to protect your contacts.";
 "main_button_suspicion_button"                                               = "Report suspected corona";
 "main_body_covid_alert"                                                      = "<b>Are you infected with COVID-19 yourself?</b>\nReport a medically confirmed infection to protect your contacts. Your contacts will be notified about an anonymous risk contact.";
 "main_button_covid_alert"                                                    = "Report medical confirmation";
@@ -316,6 +318,7 @@
 "start_menu_item_3_1_trigger_manual_handshake"                               = "Start handshake manually";
 "start_menu_item_3_2_check_symptoms"                                         = "Examine symptoms";
 "start_menu_item_3_3_report_positive_doctors_diagnosis"                      = "Report medical confirmation";
+"start_menu_item_3_4_report_suspected"                                       = "Report corona suspicion";
 "start_menu_item_revoke_sickness"                                            = "Revoke sick note";
 "history_title"                                                              = "Saved encounters";
 "history_intro"                                                              = "<b>The encounters are stored anonymously.</b> In case of infection your contacts are automatically notified anonymously. ";
@@ -396,7 +399,7 @@
 "self_testing_confirmation_phone_ambulance_number"                           = "<bred>144</bred>";
 "self_testing_confirmation_health_wish"                                      = "We wish you a speedy recovery!";
 "self_testing_confirmation_primary_button"                                   = "Back to the home page";
-"self_testing_corona_suspicion_title"                                        = "Report suspected corona";
+"self_testing_corona_suspicion_title"                                        = "Report corona suspicion";
 "self_testing_corona_suspicion_headline"                                     = "Report your status to protect others";
 "self_testing_corona_suspicion_description"                                  = "Your anonymous report helps to break the chain of infection. Your contacts may have been infected unnoticed and have already passed the virus on. Warn these people as soon as possible so that you stay away from other people.";
 "self_testing_corona_suspicion_date_headline"                                = "How long have you had symptoms or a positive test result?";

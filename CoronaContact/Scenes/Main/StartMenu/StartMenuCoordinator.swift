@@ -28,6 +28,12 @@ class StartMenuCoordinator: Coordinator, ShareSheetPresentable {
         child.start()
     }
 
+    func openCoronaSuspicionController() {
+        let child = SelfTestingCoronaSuspicionCoordinator(navigationController: navigationController)
+        addChildCoordinator(child)
+        child.start()
+    }
+    
     func sicknessCertificate() {
         let child = SicknessCertificateCoordinator(navigationController: navigationController)
         addChildCoordinator(child)

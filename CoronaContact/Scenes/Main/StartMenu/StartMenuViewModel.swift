@@ -37,6 +37,10 @@ class StartMenuViewModel: ViewModel {
         coordinator?.selfTesting()
     }
 
+    func coronaSuspicionButtonTapped() {
+        coordinator?.openCoronaSuspicionController()
+    }
+    
     func reportPositiveDoctorsDiagnosis() {
         coordinator?.sicknessCertificate()
     }

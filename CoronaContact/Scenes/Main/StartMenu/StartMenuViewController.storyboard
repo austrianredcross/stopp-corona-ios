@@ -22,12 +22,12 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="1818"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="BFS-xQ-SD9">
-                                        <rect key="frame" x="0.0" y="24" width="414" height="1238.5"/>
+                                        <rect key="frame" x="0.0" y="24" width="414" height="1336.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="upv-SN-VCw" userLabel="All Functions Stack View">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="452"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="550"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="start_menu_headline_3" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mdc-Aj-Ss6" customClass="TransHeadingLabel" customModule="Stopp_Corona" customModuleProvider="target">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="start_menu_headline_3" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mdc-Aj-Ss6" customClass="TransSubHeadingLabel" customModule="Stopp_Corona" customModuleProvider="target">
                                                         <rect key="frame" x="24" y="42" width="366" height="24"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                         <nil key="textColor"/>
@@ -38,7 +38,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="oBT-aE-osq">
-                                                        <rect key="frame" x="24" y="91" width="366" height="161"/>
+                                                        <rect key="frame" x="24" y="91" width="366" height="259"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="esV-bG-xqR" userLabel="Check Symptoms">
                                                                 <rect key="frame" x="0.0" y="0.0" width="366" height="63"/>
@@ -74,8 +74,42 @@
                                                                     <constraint firstAttribute="trailing" secondItem="vYc-iK-0fG" secondAttribute="trailing" id="yz6-Wm-i4H"/>
                                                                 </constraints>
                                                             </view>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hTa-7l-QkP" userLabel="Report Positive Diagnosis">
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dSD-Nk-4Hh" userLabel="Report Corona Suspicious">
                                                                 <rect key="frame" x="0.0" y="98" width="366" height="63"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gfX-Yb-tsp" customClass="ArrowButton" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="366" height="34"/>
+                                                                        <state key="normal" title="start_menu_item_3_4_report_suspected">
+                                                                            <color key="titleColor" name="ccBlack"/>
+                                                                        </state>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="transKeyNormal" value="start_menu_item_3_4_report_suspected"/>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                        <connections>
+                                                                            <action selector="coronaSuspicionTapped:" destination="0DV-8a-Pct" eventType="touchUpInside" id="xnV-Ap-Sj7"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SIQ-Yn-WAp" userLabel="DividerView">
+                                                                        <rect key="frame" x="0.0" y="52" width="366" height="1"/>
+                                                                        <color key="backgroundColor" red="0.79607843140000001" green="0.79607843140000001" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="1" id="ptC-ue-Rcw"/>
+                                                                        </constraints>
+                                                                    </view>
+                                                                </subviews>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstItem="SIQ-Yn-WAp" firstAttribute="top" secondItem="gfX-Yb-tsp" secondAttribute="bottom" constant="18" id="98l-ap-NBJ"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="SIQ-Yn-WAp" secondAttribute="trailing" id="9bf-95-zzi"/>
+                                                                    <constraint firstItem="gfX-Yb-tsp" firstAttribute="leading" secondItem="dSD-Nk-4Hh" secondAttribute="leading" id="X2O-jo-Mov"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="gfX-Yb-tsp" secondAttribute="trailing" id="e9J-Mc-wIq"/>
+                                                                    <constraint firstItem="SIQ-Yn-WAp" firstAttribute="leading" secondItem="dSD-Nk-4Hh" secondAttribute="leading" id="gXK-5S-JVT"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="SIQ-Yn-WAp" secondAttribute="bottom" constant="10" id="gbg-Na-TNM"/>
+                                                                    <constraint firstItem="gfX-Yb-tsp" firstAttribute="top" secondItem="dSD-Nk-4Hh" secondAttribute="top" id="rlL-B1-ZX6"/>
+                                                                </constraints>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hTa-7l-QkP" userLabel="Report Positive Diagnosis">
+                                                                <rect key="frame" x="0.0" y="196" width="366" height="63"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xYY-i6-672" customClass="ArrowButton" customModule="Stopp_Corona" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="0.0" width="366" height="34"/>
@@ -111,7 +145,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n1g-tx-bI8" userLabel="Revoke Sickreport">
-                                                        <rect key="frame" x="24" y="277" width="366" height="63"/>
+                                                        <rect key="frame" x="24" y="375" width="366" height="63"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V2s-rI-a7M" customClass="ArrowButton" customModule="Stopp_Corona" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="366" height="34"/>
@@ -145,7 +179,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t8L-RM-QnI" userLabel="Share App">
-                                                        <rect key="frame" x="24" y="365" width="366" height="63"/>
+                                                        <rect key="frame" x="24" y="463" width="366" height="63"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rlD-Mb-ilV" customClass="ArrowButton" customModule="Stopp_Corona" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="366" height="34"/>
@@ -186,9 +220,9 @@
                                                 <edgeInsets key="layoutMargins" top="42" left="24" bottom="24" right="24"/>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="Gdq-pf-F76" userLabel="Info Stack View">
-                                                <rect key="frame" x="0.0" y="452" width="414" height="374"/>
+                                                <rect key="frame" x="0.0" y="550" width="414" height="374"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="start_menu_headline_1" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZTy-Jg-Tvq" customClass="TransHeadingLabel" customModule="Stopp_Corona" customModuleProvider="target">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="start_menu_headline_1" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZTy-Jg-Tvq" customClass="TransSubHeadingLabel" customModule="Stopp_Corona" customModuleProvider="target">
                                                         <rect key="frame" x="24" y="42" width="366" height="24"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                         <nil key="textColor"/>
@@ -312,9 +346,9 @@
                                                 <edgeInsets key="layoutMargins" top="42" left="24" bottom="24" right="24"/>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="KNG-Fl-JE4" userLabel="Legal Stack View" customClass="BackgroundStackView" customModule="Stopp_Corona" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="826" width="414" height="412.5"/>
+                                                <rect key="frame" x="0.0" y="924" width="414" height="412.5"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="start_menu_headline_2" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R6j-a8-gdW" customClass="TransHeadingLabel" customModule="Stopp_Corona" customModuleProvider="target">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="start_menu_headline_2" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R6j-a8-gdW" customClass="TransSubHeadingLabel" customModule="Stopp_Corona" customModuleProvider="target">
                                                         <rect key="frame" x="24" y="16" width="366" height="24"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                         <nil key="textColor"/>
@@ -508,6 +542,7 @@
                     <connections>
                         <outlet property="checkSymptomsView" destination="esV-bG-xqR" id="6bQ-0g-kd7"/>
                         <outlet property="hideableFunctionsView" destination="oBT-aE-osq" id="7Bi-GM-BoZ"/>
+                        <outlet property="reportCoronaSuspiciousView" destination="dSD-Nk-4Hh" id="48x-bD-8nq"/>
                         <outlet property="reportPositiveDoctorsDiagnosisView" destination="hTa-7l-QkP" id="R0G-qk-8Lf"/>
                         <outlet property="revokeSicknessView" destination="n1g-tx-bI8" id="BsM-7G-hBv"/>
                         <outlet property="scrollView" destination="YNt-f0-gDi" id="1jh-rl-90u"/>
