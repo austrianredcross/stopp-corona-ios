@@ -122,9 +122,9 @@
 "contact_sickness_guidelines_sixth"                                          = "Ask your neighbors or relatives to take care of you. If that is not possible, the <b>Team Austria</b> will be happy to help you on <bred>0800 600 600</bred>.";
 "contact_sickness_guidelines_consulting_headline"                            = "<b>Do you need psychological support?</b>";
 "contact_sickness_guidelines_consulting_description"                         = "Contact your general practitioner or one of the following numbers:";
-"contact_sickness_guidelines_consulting_first"                               = "Ö3 Kummernummer<bred>116123</bred>";
-"contact_sickness_guidelines_consulting_second"                              = "Rat auf Draht<bred>147</bred>";
-"contact_sickness_guidelines_consulting_third"                               = "Pastoral advice servcie<bred>142</bred>";
+"contact_sickness_guidelines_consulting_first"                               = "Ö3 Kummernummer <bred>116123</bred>";
+"contact_sickness_guidelines_consulting_second"                              = "Rat auf Draht <bred>147</bred>";
+"contact_sickness_guidelines_consulting_third"                               = "Pastoral advice servcie <bred>142</bred>";
 "contact_sickness_handshake_date"                                            = "%1$@, between %2$@ and %3$@ o`clock";
 "contact_sickness_time_format"                                               = "H";
 "contact_sickness_warning_title"                                             = "What should I do?";
@@ -275,9 +275,9 @@
 "sickness_certificate_quarantine_guidelines_steps_third"                     = "Monitor your health and <b>check your body temperature twice a day</b>.";
 "sickness_certificate_quarantine_guidelines_steps_fourth"                    = "Ask your neighbors or relatives to take care of you. If that is not possible, the <b>Team Österreich</b> will be happy to help you on <bred>0800 600 600</bred>.";
 "sickness_certificate_quarantine_guidelines_consulting_description"          = "<b>Do you need psychological support?</b>\n\nPlease contact your attending physician or one of the following numbers:";
-"sickness_certificate_quarantine_guidelines_consulting_first"                = "Ö3 Kummernummer<bred>116123</bred>";
-"sickness_certificate_quarantine_guidelines_consulting_second"               = "Rat auf Draht<bred>147</bred>";
-"sickness_certificate_quarantine_guidelines_consulting_third"                = "Pastoral advice servcie<bred>142</bred>";
+"sickness_certificate_quarantine_guidelines_consulting_first"                = "Ö3 Kummernummer <bred>116123</bred>";
+"sickness_certificate_quarantine_guidelines_consulting_second"               = "Rat auf Draht <bred>147</bred>";
+"sickness_certificate_quarantine_guidelines_consulting_third"                = "Pastoral advice servcie <bred>142</bred>";
 "quarantine_guidelines_title"                                                = "Attention";
 "quarantine_guidelines_headline"                                             = "Self-quarantine";
 "quarantine_guidelines_first"                                                = "Please monitor your health within the next days <b>until the %s</b> particularly thorough and <b>check your body temperature daily</b>.";
@@ -293,7 +293,7 @@
 "quarantine_guidelines_consulting_description"                               = "<b>Do you need psychological support?</b>\n\nPlease contact your attending physician or one of the following numbers:";
 "quarantine_guidelines_consulting_first"                                     = "Ö3 Kummernummer <bred>116123</bred>";
 "quarantine_guidelines_consulting_second"                                    = "Rat auf Draht <bred>147</bred>";
-"quarantine_guidelines_consulting_third"                                     = "Pastoral advice service<bred>142</bred>";
+"quarantine_guidelines_consulting_third"                                     = "Pastoral advice service <bred>142</bred>";
 "sickness_certificate_attest_headline"                                       = "Attention";
 "sickness_certificate_attest_description"                                    = "You have reported your medically confirmed corona infection.";
 "sickness_certificate_attest_date_text"                                      = "Please go into quarantine <b>until you are healthy</b>.";
@@ -434,7 +434,7 @@
 "suspicion_guidelines_precaution_third"                                      = "Follow the <b>doctor's instructions</b>.";
 "suspicion_guidelines_precaution_fourth"                                     = "<b>Keep a physical distance</b> from healthy roommates.";
 "suspicion_guidelines_precaution_fifth"                                      = "Monitor your health and <b>check your body temperature twice a day</b>.";
-"suspicion_guidelines_precaution_sixth"                                      = "Ask neighbors or relatives to take care of you. If this is not possible, the <b>Team Austria</b> will be happy to help you at:<bred>0800 600 600</bred>";
+"suspicion_guidelines_precaution_sixth"                                      = "Ask neighbors or relatives to take care of you. If this is not possible, the <b>Team Austria</b> will be happy to help you at: <bred>0800 600 600</bred>";
 "suspicion_guidelines_consulting_headline"                                   = "You need help urgently?";
 "suspicion_guidelines_consulting_description"                                = "If you feel that you cannot manage at home, you cannot breathe or you are seriously ill, please contact the following numbers::";
 "suspicion_guidelines_phone_emergency_label"                                 = "Medical emergency service";

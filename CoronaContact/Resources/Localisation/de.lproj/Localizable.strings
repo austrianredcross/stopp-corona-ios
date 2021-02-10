@@ -120,9 +120,9 @@
 "contact_sickness_guidelines_sixth"                                          = "Bitten Sie Nachbarn oder Angehörige Ihre Versorgung zu übernehmen. Wenn das nicht möglich ist, hilft Ihnen gerne das <b>Team Österreich</b> unter <bred>0800 600 600</bred>.";
 "contact_sickness_guidelines_consulting_headline"                            = "<b>Sie benötigen psychische Unterstützung?</b>";
 "contact_sickness_guidelines_consulting_description"                         = "Kontaktieren Sie bitte Ihre/n behandelnde/n ÄrztIn oder eine der folgenden Nummern:";
-"contact_sickness_guidelines_consulting_first"                               = "Ö3 Kummernummer<bred>116123</bred>";
-"contact_sickness_guidelines_consulting_second"                              = "Rat auf Draht<bred>147</bred>";
-"contact_sickness_guidelines_consulting_third"                               = "Telefonseelsorge<bred>142</bred>";
+"contact_sickness_guidelines_consulting_first"                               = "Ö3 Kummernummer <bred>116123</bred>";
+"contact_sickness_guidelines_consulting_second"                              = "Rat auf Draht <bred>147</bred>";
+"contact_sickness_guidelines_consulting_third"                               = "Telefonseelsorge <bred>142</bred>";
 "contact_sickness_handshake_date"                                            = "%1$@, zwischen %2$@ bis %3$@ Uhr";
 "contact_sickness_time_format"                                               = "H";
 "contact_sickness_warning_title"                                             = "Was soll ich tun?";
@@ -273,9 +273,9 @@
 "sickness_certificate_quarantine_guidelines_steps_third"                     = "Überwachen Sie Ihren Gesundheitszustand und <b>kontrollieren Sie täglich 2x Ihre Körpertemperatur</b>.";
 "sickness_certificate_quarantine_guidelines_steps_fourth"                    = "Bitten Sie Ihre Nachbarn oder Angehörige Ihre Versorgung zu übernehmen. Wenn das nicht möglich ist, hilft Ihnen gerne das <b>Team Österreich</b> unter <bred>0800 600 600</bred>.";
 "sickness_certificate_quarantine_guidelines_consulting_description"          = "<b>Sie benötigen psychische Unterstützung?</b>\n\nKontaktieren Sie bitte Ihre/n behandelnde/n ÄrztIn oder eine der folgenden Nummern:";
-"sickness_certificate_quarantine_guidelines_consulting_first"                = "Ö3 Kummernummer<bred>116123</bred>";
-"sickness_certificate_quarantine_guidelines_consulting_second"               = "Rat auf Draht<bred>147</bred>";
-"sickness_certificate_quarantine_guidelines_consulting_third"                = "Telefonseelsorge<bred>142</bred>";
+"sickness_certificate_quarantine_guidelines_consulting_first"                = "Ö3 Kummernummer <bred>116123</bred>";
+"sickness_certificate_quarantine_guidelines_consulting_second"               = "Rat auf Draht <bred>147</bred>";
+"sickness_certificate_quarantine_guidelines_consulting_third"                = "Telefonseelsorge <bred>142</bred>";
 "quarantine_guidelines_title"                                                = "Achtung";
 "quarantine_guidelines_headline"                                             = "Begeben Sie sich in Quarantäne";
 "quarantine_guidelines_first"                                                = "Bitte beobachten Sie Ihren Gesundheitszustand in den nächsten Tagen <b>bis zum %s</b> besonders gründlich und <b>kontrollieren Sie täglich Ihre Körpertemperatur</b>.";
@@ -431,7 +431,7 @@
 "suspicion_guidelines_precaution_third"                                      = "Folgen Sie den <b>ärztlichen Anweisungen</b>.";
 "suspicion_guidelines_precaution_fourth"                                     = "<b>Halten Sie räumlich Abstand</b> von gesunden MitbewohnerInnen.";
 "suspicion_guidelines_precaution_fifth"                                      = "Überwachen Sie Ihren Gesundheitszustand und <b>kontrollieren Sie täglich 2x Ihre Körpertemperatur</b>.";
-"suspicion_guidelines_precaution_sixth"                                      = "Bitten Sie Nachbarn oder Angehörige Ihre Versorgung zu übernehmen. Wenn das nicht möglich ist, hilft Ihnen gerne das <b>Team Österreich</b> unter:\n<bred>0800 600 600</bred>";
+"suspicion_guidelines_precaution_sixth"                                      = "Bitten Sie Nachbarn oder Angehörige Ihre Versorgung zu übernehmen. Wenn das nicht möglich ist, hilft Ihnen gerne das <b>Team Österreich</b> unter: <bred>0800 600 600</bred>";
 "suspicion_guidelines_consulting_headline"                                   = "Sie benötigen dringend Hilfe?";
 "suspicion_guidelines_consulting_description"                                = "Wenn Sie das Gefühl haben, dass Sie zuhause nicht zurecht kommen, Sie keine Luft mehr bekommen oder schwer krank sind, kontaktieren Sie bitte folgende Nummern:";
 "suspicion_guidelines_phone_emergency_label"                                 = "Ärztenotdienst";
