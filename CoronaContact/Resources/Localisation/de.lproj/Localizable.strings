@@ -56,7 +56,7 @@
 "main_headline"                                                              = "Gemeinsam gegen das Coronavirus";
 "main_body_contact_headline"                                                 = "Digitaler Handshake";
 "main_body_contact_description"                                              = "Starten Sie den digitalen Handshake um eine Begegnung zu speichern. Die Kontakte werden im Krankheitsfall anonym benachrichtigt.";
-"main_body_contact_disclaimer"                                               = "Aus medizinischen Gründen: Diese App funktioniert auch auf Distanz. Bitte halten Sie mindestens 1 Meter Abstand.";
+"main_body_contact_disclaimer"                                               = "Aus medizinischen Gründen: Diese App funktioniert auch auf Distanz. Bitte halten Sie mindestens 2 Meter Abstand.";
 "main_button_start_handshake"                                                = "Manuellen Handshake starten";
 "main_button_list_meet"                                                      = "Gespeicherte Begegnungen (%d)";
 "main_body_feel_today"                                                       = "<b>Sie fühlen sich nicht gesund?</b>\nÜberprüfen Sie Ihre Symptome auf eine mögliche Corona-Infektion.";
@@ -166,14 +166,14 @@
 "contact_help_disclaimer"                                                    = "Haben Sie noch weitere Fragen zum manuellen Handshake haben, finden Sie in den FAQs weitere Informationen.";
 "contact_help_faq_button"                                                    = "Zu den FAQs";
 "contact_help_faq_link"                                                      = "https://www.stopp-corona.at/faq_stopp_corona_app/";
-"contact_help_medical_disclaimer"                                            = "Aus medizinischen Gründen: Diese App funktioniert auch auf Distanz. Bitte halten Sie mindestens 1 Meter Abstand.";
+"contact_help_medical_disclaimer"                                            = "Aus medizinischen Gründen: Diese App funktioniert auch auf Distanz. Bitte halten Sie mindestens 2 Meter Abstand.";
 "automatic_handshake_help_title"                                             = "So funktioniert es";
 "automatic_handshake_help_instruction_first"                                 = "Aktivieren Sie den automatischen Handshake in der App und aktivieren Sie Bluetooth.";
 "automatic_handshake_help_instruction_second"                                = "Ihr Gerät kann über Bluetooth Zufalls-IDs mit anderen App-Nutzern austauschen.";
 "automatic_handshake_help_instruction_third"                                 = "Die Zufalls-IDs werden im COVID-19 Kontaktprotokoll Ihres Geräts gespeichert.";
 "automatic_handshake_help_instruction_fourth"                                = "<b>Kontakte sind erkrankt</b> \nMithilfe des Kontaktprotokolls können Sie benachrichtig werden, wenn Sie einen möglichen Kontakt mit dem Coronavirus hatten. Es wird eine Empfehlung in einem Algorithmus kalkuliert, wie lange Sie als Vorsichtsmaßnahme in Quarantäne bleiben sollten.\n<b>Sie sind erkrankt</b> \nEbenso können die Zufalls-IDs genutzt werden, um andere Nutzer zu benachrichtigen, sollten Sie eine mögliche Infektion melden.";
 "automatic_handshake_help_disclaimer"                                        = "Bitte stellen Sie sicher, dass Bluetooth aktiviert ist.";
-"automatic_handshake_help_medical_disclaimer"                                = "Aus medizinischen Gründen: Diese App funktioniert auch auf Distanz. Bitte halten Sie mindestens 1 Meter Abstand.";
+"automatic_handshake_help_medical_disclaimer"                                = "Aus medizinischen Gründen: Diese App funktioniert auch auf Distanz. Bitte halten Sie mindestens 2 Meter Abstand.";
 "automatic_handshake_help_faq_button"                                        = "Zu den FAQs";
 "automatic_handshake_help_faq_link"                                          = "https://www.stopp-corona.at/faq_stopp_corona_app/";
 "automatic_handshake_paused"                                                 = "Bluetooth ist deaktiviert.";
@@ -332,7 +332,7 @@
 "self_testing_hint_description_1"                                            = "In der aktuellen Situation ist es wichtig, einige Grundregeln zu befolgen.";
 "self_testing_hint_description_2"                                            = "Schau auf dich, schau auf mich.";
 "self_testing_hint_recommendation_1"                                         = "Regelmäßig Hände waschen: mit Seife, lauwarmem Wasser und mindestens 20 Sekunden lang.";
-"self_testing_hint_recommendation_2"                                         = "Halten Sie mindestens 1-2 Meter Abstand zu anderen Menschen.";
+"self_testing_hint_recommendation_2"                                         = "Halten Sie mindestens 2 Meter Abstand zu anderen Menschen.";
 "self_testing_hint_recommendation_3"                                         = "Halten Sie Kontakt über elektronische Medien.";
 "self_testing_hint_recommendation_4"                                         = "Wenn Sie sich krank fühlen, bleiben Sie bitte zuhause.";
 "self_testing_suspicion_headline"                                            = "Achtung";

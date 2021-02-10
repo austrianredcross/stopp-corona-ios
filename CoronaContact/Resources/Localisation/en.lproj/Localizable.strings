@@ -56,7 +56,7 @@
 "main_headline"                                                              = "Together against the corona virus";
 "main_body_contact_headline"                                                 = "Digital Handshake";
 "main_body_contact_description"                                              = "Start the digital handshake to save an encounter. Contacts will be notified anonymously should you fall ill.";
-"main_body_contact_disclaimer"                                               = "For medical reasons: The app works on further distance, please avoid to get closer than 1 meter.";
+"main_body_contact_disclaimer"                                               = "For medical reasons: This app also works remotely. Please keep at least 2 meters distance.";
 "main_button_start_handshake"                                                = "Start manual handshake";
 "main_button_list_meet"                                                      = "Saved Encounters (%d)";
 "main_body_feel_today"                                                       = "<b>Are you not feeling well?</b>\nCheck your symptoms for a possible corona infection.";
@@ -166,14 +166,14 @@
 "contact_help_disclaimer"                                                    = "If you have further questions about the manual handshake, you can find more information in the FAQs.";
 "contact_help_faq_button"                                                    = "Go to the FAQs";
 "contact_help_faq_link"                                                      = "https://www.stopp-corona.at/faq_stopp_corona_app/";
-"contact_help_medical_disclaimer"                                            = "For medical reasons: This app also works remotely. Please keep at least 1 meter distance.";
+"contact_help_medical_disclaimer"                                            = "For medical reasons: This app also works remotely. Please keep at least 2 meters distance.";
 "automatic_handshake_help_title"                                             = "Here’s how it works";
 "automatic_handshake_help_instruction_first"                                 = "Activate the automatic handshake in the app and enable Bluetooth.";
 "automatic_handshake_help_instruction_second"                                = "Your device can exchange random IDs with other app users via Bluetooth.";
 "automatic_handshake_help_instruction_third"                                 = "The random IDs are stored in the COVID-19 contact log of your device.";
 "automatic_handshake_help_instruction_fourth"                                = "<b>Contacts are sick</b> \nThe contact log can be used to notify you if you have had any contact with the coronavirus. A recommendation is calculated in an algorithm, how long you should stay in quarantine as a precautionary measure.\n<b> You are ill</b> \nThe random IDs can also be used to notify other users should you report a possible infection.";
 "automatic_handshake_help_disclaimer"                                        = "Please make sure that Bluetooth is activated.";
-"automatic_handshake_help_medical_disclaimer"                                = "For medical reasons: This app also works remotely. Please keep at least 1 meter distance.";
+"automatic_handshake_help_medical_disclaimer"                                = "For medical reasons: This app also works remotely. Please keep at least 2 meters distance.";
 "automatic_handshake_help_faq_button"                                        = "To the FAQs";
 "automatic_handshake_help_faq_link"                                          = "https://www.stopp-corona.at/faq_stopp_corona_app/";
 "automatic_handshake_paused"                                                 = "Bluetooth is deactivated.";
@@ -332,7 +332,7 @@
 "self_testing_hint_description_1"                                            = "In the current situation it is important to follow a few basic rules.";
 "self_testing_hint_description_2"                                            = "Care for you, care for me.";
 "self_testing_hint_recommendation_1"                                         = "Wash your hands regularly: with soap, warm water and for at least 20 seconds.";
-"self_testing_hint_recommendation_2"                                         = "Keep at least 1-2 meters distance to other people.";
+"self_testing_hint_recommendation_2"                                         = "Keep at least 2 meters distance to other people.";
 "self_testing_hint_recommendation_3"                                         = "Keep in touch via electronic media.";
 "self_testing_hint_recommendation_4"                                         = "If you feel ill, please stay home.";
 "self_testing_suspicion_headline"                                            = "Attention";
