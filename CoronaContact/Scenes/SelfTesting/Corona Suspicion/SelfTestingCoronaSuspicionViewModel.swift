@@ -4,8 +4,11 @@
 //
 
 import Foundation
+import Resolver
 
 class SelfTestingCoronaSuspicionViewModel: ViewModel {
+    @Injected private var localStorage: LocalStorage
+    
     weak var coordinator: SelfTestingCoronaSuspicionCoordinator?
     
     init(with coordinator: SelfTestingCoronaSuspicionCoordinator) {
@@ -28,5 +31,13 @@ class SelfTestingCoronaSuspicionViewModel: ViewModel {
         let child = SelfTestingSuspicionCoordinator(navigationController: coordinator.navigationController)
         coordinator.addChildCoordinator(child)
         child.start()
+    }
+    
+    func saveSelectedReportDate(reportDate: Date) {
+        localStorage.hasSymptomsOrPositiveAttestAt = reportDate
+    }
+    
+    func viewClosed() {
+        localStorage.hasSymptomsOrPositiveAttestAt = nil
     }
 }

@@ -303,7 +303,6 @@ class MainViewModel: ViewModel {
     }
 
     func selfTestingTapped() {
-        localStorage.hasSymptomsOrPositiveAttestAt = nil
         coordinator?.selfTesting(updateKeys: false)
     }
     
@@ -320,7 +319,6 @@ class MainViewModel: ViewModel {
     }
 
     func sicknessCertificateTapped() {
-        localStorage.hasSymptomsOrPositiveAttestAt = nil
         coordinator?.openSicknessCertificateController(updateKeys: false)
     }
 
