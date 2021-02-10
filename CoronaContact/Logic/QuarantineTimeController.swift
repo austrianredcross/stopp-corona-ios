@@ -16,7 +16,7 @@ struct QuarantineTimeConfiguration {
     /// number of quarantine days for users with positive diagnosis
     let attestedSick: Int
 
-    init(redWarning: Int = 14, yellowWarning: Int = 7, probablySick: Int = 7, attestedSick: Int = Int.max) {
+    init(redWarning: Int = 10, yellowWarning: Int = 7, probablySick: Int = 7, attestedSick: Int = Int.max) {
         self.redWarning = redWarning
         self.yellowWarning = yellowWarning
         self.probablySick = probablySick
