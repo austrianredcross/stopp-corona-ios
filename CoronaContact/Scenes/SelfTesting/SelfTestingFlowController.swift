@@ -26,4 +26,8 @@ class SelfTestingFlowController {
     func selectAnswer(_ answer: Answer, forQuestionAt index: Int) {
         answers[index] = answer
     }
+    
+    func sourcButtonPressed() {
+        ExternalWebsite.symptomsSource.openInSafariVC()
+    }
 }

@@ -11,12 +11,15 @@ import UIKit
 
 final class SelfTestingCheckSymptomsView: UIView, NibLoadable {
     @IBOutlet var questionTitle: TransHeadingLabel!
+    @IBOutlet var sourceButton: TransButton!
     @IBOutlet var questionText: TransHeadingLabel!
     @IBOutlet var answersStackView: UIStackView!
     @IBOutlet weak var questionTitleView: UIView!
     var handleAnswer: ((Answer) -> Void)?
-
-    var question: Question? {
+    var sourceButtonPressed: (() -> Void)?
+    var question: Question?
+    
+    var shouldShowSourceButton: Bool? {
         didSet {
             configureView()
         }
@@ -25,12 +28,14 @@ final class SelfTestingCheckSymptomsView: UIView, NibLoadable {
     private var answerViews = [AnswerView]()
 
     private func configureView() {
-        guard let question = question else {
+        guard let question = question, let shouldShowSourceButton = shouldShowSourceButton else {
             return
         }
 
         questionTitle.styledText = question.title
         questionText.styledText = question.questionText
+        
+        sourceButton.isHidden = !shouldShowSourceButton
 
         addAnswers(question.answers)
                 
@@ -66,5 +71,9 @@ final class SelfTestingCheckSymptomsView: UIView, NibLoadable {
 
     private func deselectAllAnswers() {
         answerViews.forEach { $0.setSelectedState(false, animated: false) }
+    }
+    
+    @IBAction func sourceButtonPressed(_ sender: Any) {
+        self.sourceButtonPressed?()
     }
 }

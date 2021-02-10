@@ -327,6 +327,8 @@
 "history_mode_automatic"                                                     = "autom.";
 "history_time_format"                                                        = "HH:mm";
 "history_date_format"                                                        = "dd.MM.yy";
+"self_testing_symptoms_source_text"                                          = "Quelle";
+"self_testing_symptoms_source_link"                                          = "https://www.sozialministerium.at/Themen/Gesundheit/Uebertragbare-Krankheiten/Infektionskrankheiten-A-Z/Neuartiges-Coronavirus.html";
 "self_test_push_reminder"                                                    = "Wie fühlen Sie sich heute?";
 "self_testing_check_symptoms_title"                                          = "Symptome prüfen";
 "self_testing_result"                                                        = "Ergebnis";
@@ -631,3 +633,4 @@
 "handshake_code_97"                                                          = "Koi";
 "handshake_code_98"                                                          = "Nerz";
 "handshake_code_99"                                                          = "Ochse";
+"symptoms_link"                                                              = "https://www.sozialministerium.at/Themen/Gesundheit/Uebertragbare-Krankheiten/Infektionskrankheiten-A-Z/Neuartiges-Coronavirus.html";

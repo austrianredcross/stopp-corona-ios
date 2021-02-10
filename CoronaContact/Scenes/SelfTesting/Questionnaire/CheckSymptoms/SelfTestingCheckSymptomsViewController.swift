@@ -44,7 +44,11 @@ final class SelfTestingCheckSymptomsViewController: UIViewController, Storyboard
         questionView.handleAnswer = { [weak self] answer in
             self?.selectedAnswer(answer)
         }
+        questionView.sourceButtonPressed = { [weak self] in
+            self?.sourceButtonPressed()
+        }
         questionView.question = viewModel?.question
+        questionView.shouldShowSourceButton = viewModel?.questionIndex == 1
     }
 
     private func selectedAnswer(_ answer: Answer) {
@@ -56,7 +60,15 @@ final class SelfTestingCheckSymptomsViewController: UIViewController, Storyboard
         button.isEnabled = viewModel.isButtonEnabled
         button.accessibilityHint = nil
     }
-
+    
+    private func sourceButtonPressed() {
+        guard let viewModel = viewModel else {
+            return
+        }
+        
+        viewModel.sourceButtonPressed()
+    }
+        
     @IBAction func nextButtonTapped(_ sender: Any) {
         viewModel?.goToNext()
     }
