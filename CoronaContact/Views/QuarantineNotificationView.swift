@@ -135,7 +135,7 @@ class QuarantineNotificationView: UIView, NibOwnerLoadable {
 
     @IBOutlet var iconImageView: UIImageView!
     @IBOutlet var innerView: UIView!
-    @IBOutlet var headlineLabel: TransSubHeadingLabel!
+    @IBOutlet var headlineLabel: TransHeadingLabel!
     @IBOutlet var closeButton: UIButton! {
         didSet {
             closeButton.isHidden = true
