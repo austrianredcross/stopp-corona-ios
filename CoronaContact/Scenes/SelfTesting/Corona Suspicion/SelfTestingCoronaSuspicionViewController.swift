@@ -5,11 +5,8 @@
 
 import Reusable
 import UIKit
-import Resolver
 
 final class SelfTestingCoronaSuspicionViewController: UIViewController, StoryboardBased, ViewModelBased, FlashableScrollIndicators {
-    @Injected private var localStorage: LocalStorage
-
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet weak var textfield: UITextField!
     
@@ -66,10 +63,16 @@ final class SelfTestingCoronaSuspicionViewController: UIViewController, Storyboa
     
     @objc func confirmButtonTapped() {
         let date = datePicker.getSelectedDate ?? Date()
-        
-        localStorage.hasSymptomsOrPositiveAttestAt = date
+        viewModel?.saveSelectedReportDate(reportDate: date)
         textfield.text = Calendar.current.isDateInToday(date) ? "general_today".localized : date.shortMonthNameString
         
         self.view.endEditing(true)
+    }
+    
+    override func didMove(toParent parent: UIViewController?) {
+        super.didMove(toParent: parent)
+        if parent == nil {
+            viewModel?.viewClosed()
+        }
     }
 }

@@ -49,7 +49,7 @@ enum UserHealthStatus: Equatable {
         guard let attestedSicknessAt = localStorage.attestedSicknessAt else {
             return false
         }
-        return attestedSicknessAt.addDays(2)! > Date()
+        return attestedSicknessAt.addDays(2)! >= Date().startOfDayUTC()
     }
 
     var icon: UIImage {
