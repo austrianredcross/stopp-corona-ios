@@ -267,7 +267,7 @@
 "sickness_certificate_quarantine_guidelines_steps_headline"                  = "Please stay in quarantine!";
 "sickness_certificate_quarantine_guidelines_steps_quarantine_end"            = "Your doctor will decide when you can end the quarantine.";
 "sickness_certificate_quarantine_guidelines_steps_no_public_transport"       = "Please do not use public transport on the way and avoid contact with other people.";
-"sickness_certificate_quarantine_guidelines_steps_first"                     = "<b>Please go to quarantine immediately and until %@.</b> Avoid public transport and contact with other people on the way home.";
+"sickness_certificate_quarantine_guidelines_steps_first"                     = "<b>Please go to quarantine immediately until you are healthy again.</b> Avoid public transport and contact with other people on the way home.";
 "sickness_certificate_quarantine_guidelines_steps_second"                    = "<b>Keep a physical distance</b> from healthy roommates.";
 "sickness_certificate_quarantine_guidelines_steps_third"                     = "Monitor your health and <b>check your body temperature twice a day</b>.";
 "sickness_certificate_quarantine_guidelines_steps_fourth"                    = "Ask your neighbors or relatives to take care of you. If that is not possible, the <b>Team Österreich</b> will be happy to help you on <bred>0800 600 600</bred>.";

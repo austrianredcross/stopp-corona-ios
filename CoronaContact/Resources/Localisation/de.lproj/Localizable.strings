@@ -267,7 +267,7 @@
 "sickness_certificate_quarantine_guidelines_steps_headline"                  = "Bitte bleiben Sie in Quarantäne!";
 "sickness_certificate_quarantine_guidelines_steps_quarantine_end"            = "Ihr Arzt entscheidet, wann Sie die Quarantäne beenden können.";
 "sickness_certificate_quarantine_guidelines_steps_no_public_transport"       = "Nutzen Sie keine öffentlichen Verkehrsmittel und meiden Sie Kontakt mit Mitmenschen.";
-"sickness_certificate_quarantine_guidelines_steps_first"                     = "<b>Bitte begeben Sie sich umgehend und bis zum %@ in Quarantäne.</b> Meiden Sie auf dem Weg nach Hause möglichst öffentliche Verkehrsmittel und den Kontakt zu anderen Menschen.";
+"sickness_certificate_quarantine_guidelines_steps_first"                     = "<b>Bitte begeben Sie sich umgehend in Quarantäne bis Sie wieder gesund sind.</b> Meiden Sie auf dem Weg nach Hause möglichst öffentliche Verkehrsmittel und den Kontakt zu anderen Menschen.";
 "sickness_certificate_quarantine_guidelines_steps_second"                    = "<b>Halten Sie räumlichen Abstand</b> von gesunden MitbewohnerInnen.";
 "sickness_certificate_quarantine_guidelines_steps_third"                     = "Überwachen Sie Ihren Gesundheitszustand und <b>kontrollieren Sie täglich 2x Ihre Körpertemperatur</b>.";
 "sickness_certificate_quarantine_guidelines_steps_fourth"                    = "Bitten Sie Ihre Nachbarn oder Angehörige Ihre Versorgung zu übernehmen. Wenn das nicht möglich ist, hilft Ihnen gerne das <b>Team Österreich</b> unter <bred>0800 600 600</bred>.";
