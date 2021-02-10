@@ -36,6 +36,7 @@ enum Website: String {
 enum ExternalWebsite: String {
     case faq = "start_menu_item_1_2_faq_link_link_target"
     case homepage = "start_menu_item_1_3_red_cross_link_link_target"
+    case symptomsSource = "self_testing_symptoms_source_link"
 
     var url: URL? {
         URL(string: rawValue.localized) ?? URL(string: "https://roteskreuz.at")

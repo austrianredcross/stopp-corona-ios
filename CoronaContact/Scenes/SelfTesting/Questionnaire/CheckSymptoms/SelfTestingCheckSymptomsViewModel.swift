@@ -11,7 +11,7 @@ class SelfTestingCheckSymptomsViewModel: ViewModel {
 
     weak var coordinator: SelfTestingCheckSymptomsCoordinator?
 
-    private let questionIndex: Int
+    let questionIndex: Int
     var question: Question? {
         flowController.question(at: questionIndex)
     }
@@ -35,6 +35,10 @@ class SelfTestingCheckSymptomsViewModel: ViewModel {
 
     func selectAnswer(_ answer: Answer) {
         flowController.selectAnswer(answer, forQuestionAt: questionIndex)
+    }
+    
+    func sourceButtonPressed() {
+        flowController.sourcButtonPressed()
     }
 
     func viewClosed() {
