@@ -238,6 +238,10 @@ class QuarantineTimeController {
             completion(.completed(quarantineEndingLast))
             return
         }
+        
+        if quarantineEndingLast.type == .selfDiagnosed && localStorage.completedVoluntaryQuarantine {
+            return completion(.completed(quarantineEndingLast))
+        }
 
         completion(.inProgress(quarantineEndingLast))
     }
@@ -253,8 +257,8 @@ class QuarantineTimeController {
     private func setupRevocation(for quarantineStatus: QuarantineStatus) {
         switch quarantineStatus {
         case let .completed(end) where end.type == .selfDiagnosed:
-            localStorage.completedVoluntaryQuarantine = true
             localStorage.isProbablySickAt = nil
+            localStorage.missingUploadedKeysAt = nil
         case .completed:
             localStorage.completedRequiredQuarantine = true
         case .cleared:
