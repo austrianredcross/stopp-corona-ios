@@ -9,7 +9,9 @@ import UIKit
 final class SelfTestingSelfMonitoringViewController: UIViewController, StoryboardBased, ViewModelBased, FlashableScrollIndicators {
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var instructionsView: InstructionsView!
-
+    @IBOutlet weak var selfTestingSelfMonitoringHeadlineLabel: TransHeadingLabel!
+    @IBOutlet weak var selfTestingResultLabel: TransHeadingLabel!
+    @IBOutlet weak var selfTestingView: UIStackView!
     var viewModel: SelfTestingSelfMonitoringViewModel?
 
     override func viewDidLoad() {
@@ -39,6 +41,12 @@ final class SelfTestingSelfMonitoringViewController: UIViewController, Storyboar
             .init(index: 2, text: "self_testing_self_monitoring_recommendation_2".localized),
             .init(index: 3, text: "self_testing_self_monitoring_recommendation_3".localized),
         ]
+        
+        selfTestingView.accessibilityElements = [selfTestingResultLabel, selfTestingSelfMonitoringHeadlineLabel]
+        selfTestingView.isAccessibilityElement = true
+        selfTestingView.accessibilityLabel = selfTestingResultLabel.text! + " "
+            + selfTestingSelfMonitoringHeadlineLabel.text!
+        selfTestingView.accessibilityTraits = .header
     }
 
     @IBAction func doneTapped(_ sender: UIButton) {

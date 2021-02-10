@@ -11,9 +11,9 @@ import UIKit
 
 final class SelfTestingCheckSymptomsView: UIView, NibLoadable {
     @IBOutlet var questionTitle: TransHeadingLabel!
-    @IBOutlet var questionText: TransSubHeadingLabel!
+    @IBOutlet var questionText: TransHeadingLabel!
     @IBOutlet var answersStackView: UIStackView!
-
+    @IBOutlet weak var questionTitleView: UIView!
     var handleAnswer: ((Answer) -> Void)?
 
     var question: Question? {
@@ -33,6 +33,11 @@ final class SelfTestingCheckSymptomsView: UIView, NibLoadable {
         questionText.styledText = question.questionText
 
         addAnswers(question.answers)
+                
+        questionTitleView.accessibilityElements = [questionTitle, questionText]
+        questionTitleView.accessibilityLabel = questionTitle.text! + " " + questionText.text!
+        questionTitleView.isAccessibilityElement = true
+        questionTitleView.accessibilityTraits = .header
     }
 
     private func addAnswers(_ answers: [Answer]) {

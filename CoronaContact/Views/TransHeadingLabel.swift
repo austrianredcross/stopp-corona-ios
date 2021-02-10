@@ -15,8 +15,7 @@ class TransHeadingLabel: UILabel {
         if let transKey = transKey {
             styledText = transKey.localized
         }
-        
-        accessibilityHint = "accessibility_heading_1".localized
+        accessibilityTraits = .header
     }
 
     override func prepareForInterfaceBuilder() {
