@@ -6,30 +6,31 @@
 import Reusable
 import UIKit
 
-class LabelSwitchStackView: UIStackView, NibOwnerLoadable {
+class RiskAssessmentView: UIStackView, NibOwnerLoadable {
     
-    @IBOutlet var stackViewLabel: TransLabel!
+    @IBOutlet var riskAssessmentTitleLabel: TransLabel!
+    @IBOutlet var riskAssessmentCurrentStatusLabel: TransLabel!
     @IBOutlet var stackViewSwitch: UISwitch!
     
-    @IBInspectable private var labelStyleName: String? {
+    @IBInspectable private var titleStyleName: String? {
         didSet {
-            stackViewLabel?.styleName = labelStyleName
+            riskAssessmentTitleLabel?.styleName = titleStyleName
         }
     }
 
-    @IBInspectable private var labelTransKey: String? {
+    @IBInspectable private var titleTransKey: String? {
         didSet {
-            stackViewLabel?.text = labelTransKey?.localized
+            riskAssessmentTitleLabel?.text = titleTransKey?.localized
         }
     }
 
-    @IBInspectable private var labelText: String? {
+    @IBInspectable private var titleText: String? {
         didSet {
-            stackViewLabel?.text = labelText
+            riskAssessmentTitleLabel?.text = titleText
         }
     }
     
-    private let labelIndex = 0
+    private let titleIndex = 0
     private let switchIndex = 1
     
     var switchValueChanged: ((Bool) -> Void)?
@@ -43,25 +44,25 @@ class LabelSwitchStackView: UIStackView, NibOwnerLoadable {
         
     private func configureStackView() {
         
-        if let labelStyleName = labelStyleName {
-            stackViewLabel.styleName = labelStyleName
+        if let titleStyleName = titleStyleName {
+            riskAssessmentTitleLabel.styleName = titleStyleName
         }
 
-        if let labelTransKey = labelTransKey {
-            stackViewLabel.text = labelTransKey.localized
+        if let titleTransKey = titleTransKey {
+            riskAssessmentTitleLabel.text = titleTransKey.localized
         }
 
-        if let labelText = labelText {
-            stackViewLabel.text = labelText
+        if let titleText = titleText {
+            riskAssessmentTitleLabel.text = titleText
         }
         
         isAccessibilityElement = true
-        accessibilityElements = [stackViewLabel, stackViewSwitch]
+        accessibilityElements = [riskAssessmentTitleLabel, stackViewSwitch]
         
         let switchValue = stackViewSwitch.isOn ? "accessibility_active".localized : "accessibility_inactive".localized
         
-        if let labelText = labelTransKey {
-            accessibilityLabel = labelText.localized + " " + switchValue.description
+        if let titleTransKey = titleTransKey {
+            accessibilityLabel = titleTransKey.localized + " " + switchValue.description
         }
         
         accessibilityHint = "accessibility_double_tap_to_switch".localized
@@ -79,8 +80,8 @@ class LabelSwitchStackView: UIStackView, NibOwnerLoadable {
         
         let switchValue = aSwitch.isOn ? "accessibility_active".localized : "accessibility_inactive".localized
         
-        if let labelText = labelTransKey {
-            accessibilityLabel = labelText.localized + " " + switchValue
+        if let titleTransKey = titleTransKey {
+            accessibilityLabel = titleTransKey.localized + " " + switchValue
         }
         
         return true

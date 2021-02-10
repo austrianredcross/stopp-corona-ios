@@ -33,7 +33,7 @@ enum RevocationStatus {
     }
 
     private var iconFileName: String? {
-        "checkmarkWhite"
+        "heartIcon"
     }
 
     var color: UIColor? {
@@ -59,6 +59,17 @@ enum RevocationStatus {
             return "revocation_voluntary_quarantine_completed_description".localized
         case .allClear:
             return "revocation_all_clear_description".localized
+        }
+    }
+    
+    var finishText: String {
+        switch self {
+        case .completedRequiredQuarantine:
+            return "revocation_required_quarantine_completed_finish".localized
+        case .completedVoluntaryQuarantine:
+            return "revocation_voluntary_quarantine_completed_finish".localized
+        case .allClear:
+            return "revocation_all_clear_finish".localized
         }
     }
 

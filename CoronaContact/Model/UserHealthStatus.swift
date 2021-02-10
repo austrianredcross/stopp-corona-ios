@@ -14,7 +14,7 @@ private let dateString: (Date) -> String = { date in
     return dateFormatter.string(from: date)
 }
 
-enum UserHealthStatus {
+enum UserHealthStatus: Equatable {
     case isHealthy
     case isUnderSelfMonitoring
     case isProbablySick(quarantineDays: Int = 0)
@@ -61,7 +61,7 @@ enum UserHealthStatus {
         case .isProbablySick, .isUnderSelfMonitoring:
             return .ccYellow
         case .hasAttestedSickness:
-            return .ccRed
+            return .ccRouge
         default:
             return nil
         }
@@ -98,11 +98,20 @@ enum UserHealthStatus {
         case .isProbablySick:
             return "self_testing_suspicion_description".localized
         case .hasAttestedSickness:
-            guard let quarantineDays = quarantineDays, let date = Date().addDays(quarantineDays) else {
-                return ""
-            }
-            
-            return String(format: "sickness_certificate_attest_description".localized, dateString(date))
+            return "sickness_certificate_attest_description".localized
+        }
+    }
+    
+    var dateText: String {
+        switch self {
+        case .isHealthy:
+            return ""
+        case  .isUnderSelfMonitoring:
+            return ""
+        case .isProbablySick:
+            return "self_testing_suspicion_date_date".localized
+        case .hasAttestedSickness:
+            return "sickness_certificate_attest_date_text".localized
         }
     }
 

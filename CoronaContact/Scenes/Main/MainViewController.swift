@@ -22,24 +22,31 @@ final class MainViewController: UIViewController, StoryboardBased, ViewModelBase
     var flashScrollIndicatorsAfter: DispatchTimeInterval { .seconds(1) }
 
     @IBOutlet var scrollView: UIScrollView!
-    @IBOutlet var userHealthWrapperView: UIView!
+    
+    @IBOutlet var notificationStackView: UIStackView!
+    
     @IBOutlet var userHealthStatusView: QuarantineNotificationView!
-    @IBOutlet var contactHealthWrapperView: UIView!
+    @IBOutlet var contactHealthStatusView: QuarantineNotificationView!
     @IBOutlet var primaryContactHealthStatusView: QuarantineNotificationView!
     @IBOutlet var secondaryContactHealthStatusView: QuarantineNotificationView!
-    @IBOutlet var revocationWrapperView: UIView!
     @IBOutlet var revocationStatusView: QuarantineNotificationView!
-    @IBOutlet var notificationStackView: UIStackView!
-    @IBOutlet var shareAppCardView: ShareAppCardView!
-    @IBOutlet var selfTestingStackView: UIStackView!
-    @IBOutlet var sicknessCertificateStackView: UIStackView!
+
+    @IBOutlet var userHealthWrapperView: UIView!
+    @IBOutlet var contactHealthWrapperView: UIView!
+    @IBOutlet var revocationWrapperView: UIView!
+    
+    @IBOutlet var backgroundHandshakeStackView: RiskAssessmentView!
     @IBOutlet var automaticHandshakeInactiveView: UIView!
     @IBOutlet var automaticHandshakeActiveView: UIView!
     @IBOutlet var automaticHandshakeAnimationView: AnimationView!
-    @IBOutlet var backgroundHandshakeActiveStateLabel: TransLabel!
-    @IBOutlet var backgroundHandshakeDescriptionLabel: TransLabel!
-    @IBOutlet var handshakePausedInformation: UIView!
-    @IBOutlet var backgroundHandshakeStackView: LabelSwitchStackView!
+    @IBOutlet var automaticHandshakeHeadline: TransHeadingLabel!
+    @IBOutlet var automaticHandShakeInfoStackView: UIStackView!
+    
+    @IBOutlet var shareAppCardView: ShareAppCardView!
+    
+    @IBOutlet var selfTestingStackView: UIStackView!
+    @IBOutlet var sicknessCertificateStackView: UIStackView!
+    
     private weak var launchScreenView: LaunchScreenView!
 
     override func viewDidLoad() {
@@ -88,14 +95,11 @@ final class MainViewController: UIViewController, StoryboardBased, ViewModelBase
 
     private func setupAutomatedHandshakeAnimation() {
         automaticHandshakeAnimationView.loopMode = .loop
-        if let path = Bundle.main.path(forResource: "handshakeActive", ofType: "json") {
-            automaticHandshakeAnimationView.animation = Animation.filepath(path, animationCache: nil)
-        }
     }
 
     func updateView() {
         guard let viewModel = viewModel, isViewLoaded else { return }
-
+        
         notificationStackView.isHidden = !viewModel.displayNotifications
 
         configureUserHealthstatusView()
@@ -123,6 +127,7 @@ final class MainViewController: UIViewController, StoryboardBased, ViewModelBase
         userHealthStatusView.icon = viewModel.userHealthStatus.icon
         userHealthStatusView.headlineText = viewModel.userHealthStatus.headline
         userHealthStatusView.descriptionText = viewModel.userHealthStatus.description
+        userHealthStatusView.dateText = viewModel.userHealthStatus.dateText
         userHealthStatusView.quarantineCounter = viewModel.userHealthStatus.quarantineDays
 
         userHealthStatusView.buttonText = viewModel.userHealthStatus.primaryActionText
@@ -205,6 +210,7 @@ final class MainViewController: UIViewController, StoryboardBased, ViewModelBase
         primaryContactHealthStatusView.headlineText = contactHealthStatus.primaryHeadlineNotification
         primaryContactHealthStatusView.quarantineCounter = contactHealthStatus.quarantineDays
         primaryContactHealthStatusView.descriptionText = contactHealthStatus.primaryDescriptionNotification
+        primaryContactHealthStatusView.dateText = contactHealthStatus.primaryDateNotification
         primaryContactHealthStatusView.buttonText = contactHealthStatus.buttonNotification
         primaryContactHealthStatusView.handlePrimaryTap = { [weak self] in
             self?.viewModel?.contactSickness(with: contactHealthStatus)
@@ -215,6 +221,7 @@ final class MainViewController: UIViewController, StoryboardBased, ViewModelBase
         secondaryContactHealthStatusView.headlineText = contactHealthStatus.secondaryHeadlineNotification
         secondaryContactHealthStatusView.quarantineCounter = contactHealthStatus.quarantineDays
         secondaryContactHealthStatusView.descriptionText = contactHealthStatus.secondaryDescriptionNotification
+        secondaryContactHealthStatusView.isDateLabelEnabled = false
         secondaryContactHealthStatusView.isPrimaryButtonEnabled = false
         
         secondaryContactHealthStatusView.isHidden = !(contactHealthStatus == .mixed())
@@ -233,6 +240,7 @@ final class MainViewController: UIViewController, StoryboardBased, ViewModelBase
         revocationStatusView.icon = revocationStatus.icon
         revocationStatusView.headlineText = revocationStatus.headline
         revocationStatusView.descriptionText = revocationStatus.description
+        revocationStatusView.dateText = revocationStatus.finishText
         revocationStatusView.appearance = revocationStatus.notificationAppearance
 
         if let primaryActionText = revocationStatus.primaryActionText {
@@ -252,35 +260,40 @@ final class MainViewController: UIViewController, StoryboardBased, ViewModelBase
         guard let viewModel = viewModel else { return }
 
         if viewModel.isBackgroundHandshakeDisabled == false {
+            
+            automaticHandShakeInfoStackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
+            viewModel.automaticHandshakeInfoViews.forEach { automaticHandShakeInfoStackView.addArrangedSubview($0) }
+            
+            if let path = viewModel.handShakeAnimationPath {
+                automaticHandshakeAnimationView.animation = Animation.filepath(path, animationCache: nil)
+            }
+            
+            automaticHandshakeHeadline.styleName = viewModel.automaticHandshakeHeadlineStyle
+            automaticHandshakeHeadline.text = viewModel.automaticHandshakeHeadlineText
+            
             automaticHandshakeInactiveView.isHidden = true
             automaticHandshakeActiveView.isHidden = false
             automaticHandshakeAnimationView.play()
             backgroundHandshakeStackView.stackViewSwitch.isOn = true
-            backgroundHandshakeDescriptionLabel.styledText = "automatic_handshake_description_on".localized
             if viewModel.automaticHandshakePaused {
-                handshakePausedInformation.isHidden = false
-                backgroundHandshakeActiveStateLabel.styleName = StyleNames.boldYellow.rawValue
-                backgroundHandshakeActiveStateLabel.styledText = "automatic_handshake_switch_paused".localized
                 backgroundHandshakeStackView.stackViewSwitch.onTintColor = .ccYellow
+                backgroundHandshakeStackView.riskAssessmentCurrentStatusLabel.styleName = StyleNames.boldYellow.rawValue
+                backgroundHandshakeStackView.riskAssessmentCurrentStatusLabel.styledText = "automatic_handshake_switch_paused".localized
             } else {
-                handshakePausedInformation.isHidden = true
-                backgroundHandshakeActiveStateLabel.styleName = StyleNames.boldBlue.rawValue
-                backgroundHandshakeActiveStateLabel.styledText = "automatic_handshake_switch_on".localized
                 backgroundHandshakeStackView.stackViewSwitch.onTintColor = .ccBlue
+                backgroundHandshakeStackView.riskAssessmentCurrentStatusLabel.styleName = StyleNames.boldBlue.rawValue
+                backgroundHandshakeStackView.riskAssessmentCurrentStatusLabel.styledText = "automatic_handshake_switch_on".localized
             }
         } else {
-            handshakePausedInformation.isHidden = true
+            backgroundHandshakeStackView.stackViewSwitch.isOn = false
             automaticHandshakeInactiveView.isHidden = false
             automaticHandshakeActiveView.isHidden = true
             automaticHandshakeAnimationView.pause()
-            backgroundHandshakeStackView.stackViewSwitch.isOn = false
-            backgroundHandshakeActiveStateLabel.styleName = StyleNames.boldRed.rawValue
-            backgroundHandshakeActiveStateLabel.styledText = "automatic_handshake_switch_off".localized
-            backgroundHandshakeDescriptionLabel.styledText = "automatic_handshake_description_off".localized
-        }
-
-        if viewModel.hasAttestedSickness {
-            backgroundHandshakeDescriptionLabel.styledText = "automatic_handshake_description_disabled".localized
+            
+            automaticHandshakeHeadline.styleName = StyleNames.automaticHandshakeHeadlineDisable.rawValue
+            automaticHandshakeHeadline.text = "automatic_handshake_disabled_info".localized
+            backgroundHandshakeStackView.riskAssessmentCurrentStatusLabel.styleName = StyleNames.boldRed.rawValue
+            backgroundHandshakeStackView.riskAssessmentCurrentStatusLabel.styledText = "automatic_handshake_switch_off".localized
         }
     }
     

@@ -87,6 +87,13 @@ class QuarantineNotificationView: UIView, NibOwnerLoadable {
             descriptionLabel.textColor = appearance.textColor
         }
     }
+    
+    @IBInspectable var dateText: String = "" {
+        didSet {
+            dateLabel.styledText = dateText
+            dateLabel.textColor = appearance.textColor
+        }
+    }
 
     @IBInspectable var buttonText: String = "" {
         didSet {
@@ -98,6 +105,14 @@ class QuarantineNotificationView: UIView, NibOwnerLoadable {
         didSet {
             primaryButtonContainerView.isHidden = !isPrimaryButtonEnabled
             primaryButton.isHidden = !isPrimaryButtonEnabled
+            seperatorViewDateLabelAndPrimaryButton.isHidden = !isPrimaryButtonEnabled
+        }
+    }
+    
+    @IBInspectable var isDateLabelEnabled: Bool = true {
+        didSet {
+            dateLabel.isHidden = !isDateLabelEnabled
+            seperatorViewDescriptionAndDate.isHidden = !isDateLabelEnabled
         }
     }
 
@@ -128,6 +143,9 @@ class QuarantineNotificationView: UIView, NibOwnerLoadable {
     }
 
     @IBOutlet var descriptionLabel: TransLabel!
+    @IBOutlet var dateLabel: TransLabel!
+    @IBOutlet var seperatorViewDescriptionAndDate: UIView!
+    @IBOutlet var seperatorViewDateLabelAndPrimaryButton: UIView!
     @IBOutlet var primaryButtonContainerView: UIView!
     @IBOutlet var quarantineCounterLabel: PaddingLabel! {
         didSet {

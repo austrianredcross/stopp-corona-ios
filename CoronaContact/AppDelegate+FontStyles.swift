@@ -30,6 +30,10 @@ enum StyleNames: String {
     case tableDataGreen
     case primaryButton
     case secondaryButton
+    case automaticHandshakeHeadlineYellow
+    case automaticHandshakeHeadlineRed
+    case automaticHandshakeHeadlineBlue
+    case automaticHandshakeHeadlineDisable
 }
 
 enum ModifierNames: String {
@@ -81,6 +85,15 @@ private struct FontSettings {
             $0.font = UIFont.systemFont(ofSize: self.size.h2, weight: weight)
             $0.minimumLineHeight = self.height.h2
             $0.maximumLineHeight = self.height.h2
+        }
+    }
+    
+    func automaticHandshakeHeadlineActive() -> Style {
+        Style {
+            $0.alignment = .center
+            $0.font = UIFont.systemFont(ofSize: 30, weight: .bold)
+            $0.minimumLineHeight = 35.0
+            $0.maximumLineHeight = 35.0
         }
     }
 }
@@ -190,6 +203,31 @@ extension AppDelegate {
         }
         Styles.register(StyleNames.h2Center.rawValue, style: h2CenterStyle)
     }
+    
+    private func registerAutomaticHandshakeHeadlineSytles(settings: FontSettings) {
+     
+        let activeYellowStyle = settings.automaticHandshakeHeadlineActive().byAdding {
+            $0.color = UIColor.ccYellow
+        }
+        Styles.register(StyleNames.automaticHandshakeHeadlineYellow.rawValue, style: activeYellowStyle)
+        
+        let activeRedStyle = settings.automaticHandshakeHeadlineActive().byAdding {
+            $0.color = UIColor.ccRouge
+        }
+        Styles.register(StyleNames.automaticHandshakeHeadlineRed.rawValue, style: activeRedStyle)
+        
+        let activeBlueStyle = settings.automaticHandshakeHeadlineActive().byAdding {
+            $0.color = UIColor.ccBlue
+        }
+        Styles.register(StyleNames.automaticHandshakeHeadlineBlue.rawValue, style: activeBlueStyle)
+        
+        let disableStyle = settings.bodyFontStyle(weight: .regular).byAdding {
+            $0.color = UIColor.ccBrownGrey
+            $0.alignment = .center
+        }
+        Styles.register(StyleNames.automaticHandshakeHeadlineDisable.rawValue, style: disableStyle)
+    }
+    
 
     private func registerModifiers() {
         let truncatingMiddleModifier = Style {
@@ -272,6 +310,7 @@ extension AppDelegate {
         registerBodyLargeStyles(settings: settings)
         registerBodySmallStyles(settings: settings)
         registerHeadlineStyles(settings: settings)
+        registerAutomaticHandshakeHeadlineSytles(settings: settings)
         registerModifiers()
 
         let primaryButtonStyle = Style {

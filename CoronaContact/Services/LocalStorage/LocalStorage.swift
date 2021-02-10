@@ -66,6 +66,9 @@ class LocalStorage {
     @Persisted(userDefaultsKey: "performed_batch_processing_at", notificationName: .init("performedBatchProcessingAt"), defaultValue: nil)
     var performedBatchProcessingAt: Date?
     
+    @Persisted(userDefaultsKey: "performed_batch_processing_dates", notificationName: .init("performBatchProcessingDates"), defaultValue: [])
+    var performedBatchProcessingDates: [Date]
+    
     @Persisted(userDefaultsKey: "has_symptoms_or_positive_attest_at", notificationName: .init("hasSymptomsOrPositiveAttestAt"), defaultValue: nil)
     var hasSymptomsOrPositiveAttestAt: Date?
     

@@ -7,6 +7,14 @@ import ExposureNotification
 import Foundation
 import Resolver
 
+enum AutomaticHandshakePriority {
+    case redOutgoing
+    case redIncoming
+    case yellowOutgoing
+    case yellowIncoming
+    case none
+}
+
 class MainViewModel: ViewModel {
     @Injected private var notificationService: NotificationService
     @Injected private var repository: HealthRepository
@@ -66,6 +74,112 @@ class MainViewModel: ViewModel {
 
     var userHealthStatus: UserHealthStatus {
         repository.userHealthStatus
+    }
+    
+    private var automaticHandshakePriority: AutomaticHandshakePriority {
+        
+        if userHealthStatus == .hasAttestedSickness() {
+            return .redOutgoing
+        } else if contactHealthStatus != nil && (contactHealthStatus! == .red() || contactHealthStatus! == .mixed()) {
+            return .redIncoming
+        } else if userHealthStatus == .isProbablySick() {
+            return .yellowOutgoing
+        } else if contactHealthStatus != nil && contactHealthStatus! == .yellow() {
+            return .yellowIncoming
+        } else {
+            return .none
+        }
+    }
+    
+    var handShakeAnimationPath: String? {
+        
+        switch automaticHandshakePriority {
+        case .redOutgoing:
+            return Bundle.main.path(forResource: "handshake_user_health_red_animation", ofType: "json")
+        case .redIncoming:
+            return Bundle.main.path(forResource: "handshake_contact_red_animation", ofType: "json")
+        case .yellowOutgoing:
+            return Bundle.main.path(forResource: "handshake_user_health_yellow_animation", ofType: "json")
+        case .yellowIncoming:
+            return Bundle.main.path(forResource: "handshake_contact_yellow_animation", ofType: "json")
+        case .none:
+            return Bundle.main.path(forResource: "handshake_active_animation", ofType: "json")
+        }
+    }
+    
+    var automaticHandshakeHeadlineStyle: String {
+        
+        switch automaticHandshakePriority {
+        case .redOutgoing, .redIncoming:
+            return StyleNames.automaticHandshakeHeadlineRed.rawValue
+        case .yellowOutgoing, .yellowIncoming:
+            return StyleNames.automaticHandshakeHeadlineYellow.rawValue
+        case .none:
+            return StyleNames.automaticHandshakeHeadlineBlue.rawValue
+        }
+    }
+    
+    var automaticHandshakeHeadlineText: String {
+        
+        switch automaticHandshakePriority {
+        case .redOutgoing:
+            return "automatic_handshake_self_infection_headline".localized
+        case .redIncoming:
+            return "automatic_handshake_contact_risk_headline".localized
+        case .yellowOutgoing:
+            return "automatic_handshake_self_suspicion_headline".localized
+        case .yellowIncoming:
+            return "automatic_handshake_suspicion_risk_headline".localized
+        case .none:
+            return "automatic_handshake_no_risk_headline".localized
+        }
+    }
+    
+    var automaticHandshakeInfoViews: [IconLabelView] {
+        
+        var infoViews: [IconLabelView] = []
+        
+        if contactHealthStatus != nil {
+            let lastRiskContactInfoView = IconLabelView.loadFromNib()
+            lastRiskContactInfoView.configureView(icon: "lastRiskContact",
+                                                  text: String(format: "automatic_handshake_last_contact_days".localized, "\(contactHealthStatus!.daysSinceLastConact)"))
+            infoViews.append(lastRiskContactInfoView)
+        }
+        
+        let contactChecksInfoView = IconLabelView.loadFromNib()
+        var contactCheckInfoText = String(format: "automatic_handshake_contact_checks".localized, "\(localStorage.performedBatchProcessingDates.count)")
+        
+        switch userHealthStatus {
+        case .hasAttestedSickness, .isProbablySick:
+            contactCheckInfoText = "automatic_handshake_self_reported_info".localized
+        default:
+            break
+        }
+        
+        contactChecksInfoView.configureView(icon: "contactChecks", text: contactCheckInfoText)
+        infoViews.append(contactChecksInfoView)
+        
+        if let performedBatchProcessingAt = localStorage.performedBatchProcessingAt {
+            
+            let dateFormatter = DateFormatter()
+            var dateString = ""
+            
+            if Calendar.current.isDateInToday(performedBatchProcessingAt) {
+                dateFormatter.dateFormat = "HH:mm"
+                let formattedDateString = dateFormatter.string(from: performedBatchProcessingAt)
+                dateString = "general_today".localized + ", " + formattedDateString
+            } else {
+                dateFormatter.dateFormat = "dd. MMM, HH:mm"
+                dateString = dateFormatter.string(from: performedBatchProcessingAt)
+            }
+
+            let lastServerUpdateInfoView = IconLabelView.loadFromNib()
+            lastServerUpdateInfoView.configureView(icon: "lastServerUpdate",
+                                                   text: String(format: "automatic_handshake_last_update".localized, dateString))
+            infoViews.append(lastServerUpdateInfoView)
+        }
+        
+        return infoViews
     }
 
     private var subscriptions: Set<AnySubscription> = []
