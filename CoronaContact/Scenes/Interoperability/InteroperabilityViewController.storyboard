@@ -50,7 +50,7 @@
                                                                     <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="body"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </label>
-                                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="interoperability_info_content" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="WQO-TF-JnN" customClass="LinkTextView" customModule="Stopp_Corona" customModuleProvider="target">
+                                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="interoperability_info_content" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="WQO-TF-JnN" customClass="LinkTextView" customModule="Stopp_Corona" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="105" width="366" height="33"/>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                 <color key="textColor" systemColor="labelColor"/>
