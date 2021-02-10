@@ -215,6 +215,7 @@
 "sickness_certificate_personal_data_headline"                                = "Please enter your data";
 "sickness_certificate_personal_data_title"                                   = "Report status";
 "sickness_certificate_personal_data_description"                             = "In the next step, we will anonymously inform your direct contacts of the last %s days.\nWith the mobile number, we ensure that the app is not misused and that infection reports contribute to the common good.";
+"sickness_certificate_personal_data_date_headline"                           = "How long have you had a positive test result?";
 "sickness_certificate_personal_data_form_headline"                           = "Personal data";
 "sickness_certificate_personal_data_firstname_label"                         = "First name";
 "sickness_certificate_personal_data_name_label"                              = "Last name";
