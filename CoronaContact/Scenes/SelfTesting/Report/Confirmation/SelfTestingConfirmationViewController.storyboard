@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,10 +22,10 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xS3-Cs-QOZ">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1032.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1176.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="Nt4-tt-Pdd" customClass="BackgroundStackView" customModule="Stopp_Corona" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="1032.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="1176.5"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="SDk-R7-hkN" customClass="BackgroundStackView" customModule="Stopp_Corona" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="24" width="414" height="185"/>
@@ -58,10 +60,10 @@
                                                         <directionalEdgeInsets key="directionalLayoutMargins" top="0.0" leading="24" bottom="0.0" trailing="24"/>
                                                     </stackView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9PC-Hg-JO3">
-                                                        <rect key="frame" x="0.0" y="241" width="414" height="201.5"/>
+                                                        <rect key="frame" x="0.0" y="241" width="414" height="345.5"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="6jj-eq-zwp">
-                                                                <rect key="frame" x="24" y="28" width="366" height="123.5"/>
+                                                                <rect key="frame" x="24" y="28" width="366" height="267.5"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="self_testing_confirmation_next_steps_headline" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uFB-69-uyN" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="0.0" width="366" height="20.5"/>
@@ -73,18 +75,19 @@
                                                                             <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="self_testing_confirmation_next_steps_headline"/>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="self_testing_confirmation_next_steps_description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l0t-GU-r7c" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="36.5" width="366" height="41"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                        <nil key="textColor"/>
-                                                                        <nil key="highlightedColor"/>
+                                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="self_testing_confirmation_next_steps_description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="YFB-53-KzD" customClass="PhoneNumberTextView" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="36.5" width="366" height="128"/>
+                                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                        <color key="textColor" systemColor="labelColor"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                                         <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="body"/>
                                                                             <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="self_testing_confirmation_next_steps_description"/>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="body"/>
                                                                         </userDefinedRuntimeAttributes>
-                                                                    </label>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WvH-XR-eLS" customClass="SecondaryButton" customModule="Stopp_Corona" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="93.5" width="366" height="30"/>
+                                                                    </textView>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WvH-XR-eLS" customClass="SecondaryButton" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="180.5" width="366" height="87"/>
                                                                         <state key="normal" title="self_testing_confirmation_next_steps_button">
                                                                             <color key="titleColor" name="ccBlack"/>
                                                                         </state>
@@ -107,7 +110,7 @@
                                                         </constraints>
                                                     </view>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="hat-YX-52B">
-                                                        <rect key="frame" x="0.0" y="474.5" width="414" height="472"/>
+                                                        <rect key="frame" x="0.0" y="618.5" width="414" height="472"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KkC-4I-o25">
                                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="106"/>
@@ -157,26 +160,27 @@
                                                                             <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="self_testing_confirmation_phone_emergency_label"/>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="self_testing_confirmation_phone_emergency_number" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pyn-C2-qRs" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="self_testing_confirmation_phone_emergency_number" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="0k7-Hg-Q0d" customClass="PhoneNumberTextView" customModule="Stopp_Corona" customModuleProvider="target">
                                                                         <rect key="frame" x="24" y="65" width="366" height="41"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                        <nil key="textColor"/>
-                                                                        <nil key="highlightedColor"/>
+                                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                        <color key="textColor" systemColor="labelColor"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="body"/>
                                                                             <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="self_testing_confirmation_phone_emergency_number"/>
                                                                         </userDefinedRuntimeAttributes>
-                                                                    </label>
+                                                                    </textView>
                                                                 </subviews>
                                                                 <color key="backgroundColor" name="ccWhite"/>
                                                                 <constraints>
                                                                     <constraint firstItem="WGa-aP-V2L" firstAttribute="top" secondItem="8wD-g6-12U" secondAttribute="top" constant="16" id="01g-D9-sWJ"/>
-                                                                    <constraint firstItem="Pyn-C2-qRs" firstAttribute="leading" secondItem="8wD-g6-12U" secondAttribute="leading" constant="24" id="Bfi-HO-NNU"/>
+                                                                    <constraint firstItem="0k7-Hg-Q0d" firstAttribute="top" secondItem="WGa-aP-V2L" secondAttribute="bottom" constant="8" id="BLf-yw-ulp"/>
                                                                     <constraint firstAttribute="trailing" secondItem="WGa-aP-V2L" secondAttribute="trailing" constant="24" id="PFE-tr-KkJ"/>
-                                                                    <constraint firstAttribute="bottom" secondItem="Pyn-C2-qRs" secondAttribute="bottom" constant="16" id="RCB-Fm-LDJ"/>
-                                                                    <constraint firstItem="Pyn-C2-qRs" firstAttribute="top" secondItem="WGa-aP-V2L" secondAttribute="bottom" constant="8" id="Wwm-sH-NVq"/>
+                                                                    <constraint firstItem="0k7-Hg-Q0d" firstAttribute="leading" secondItem="8wD-g6-12U" secondAttribute="leading" constant="24" id="Qwo-6c-WsT"/>
                                                                     <constraint firstItem="WGa-aP-V2L" firstAttribute="leading" secondItem="8wD-g6-12U" secondAttribute="leading" constant="24" id="XNp-YQ-Ybe"/>
-                                                                    <constraint firstAttribute="trailing" secondItem="Pyn-C2-qRs" secondAttribute="trailing" constant="24" id="rFN-IZ-b2L"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="0k7-Hg-Q0d" secondAttribute="trailing" constant="24" id="pw3-wL-2C7"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="0k7-Hg-Q0d" secondAttribute="bottom" constant="16" id="yHi-ac-rmy"/>
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iGr-pe-Vn4">
@@ -192,26 +196,27 @@
                                                                             <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="self_testing_confirmation_phone_ambulance_label"/>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="self_testing_confirmation_phone_ambulance_number" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tEo-wH-xMg" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="self_testing_confirmation_phone_ambulance_number" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="rXk-2n-5JN" customClass="PhoneNumberTextView" customModule="Stopp_Corona" customModuleProvider="target">
                                                                         <rect key="frame" x="24" y="65" width="366" height="41"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                        <nil key="textColor"/>
-                                                                        <nil key="highlightedColor"/>
+                                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                        <color key="textColor" systemColor="labelColor"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="body"/>
                                                                             <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="self_testing_confirmation_phone_ambulance_number"/>
                                                                         </userDefinedRuntimeAttributes>
-                                                                    </label>
+                                                                    </textView>
                                                                 </subviews>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstItem="eFn-nf-9tB" firstAttribute="top" secondItem="iGr-pe-Vn4" secondAttribute="top" constant="16" id="6mM-ph-uA2"/>
-                                                                    <constraint firstAttribute="bottom" secondItem="tEo-wH-xMg" secondAttribute="bottom" constant="16" id="FDe-a0-X37"/>
+                                                                    <constraint firstItem="rXk-2n-5JN" firstAttribute="leading" secondItem="iGr-pe-Vn4" secondAttribute="leading" constant="24" id="BxW-Gc-F2t"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="rXk-2n-5JN" secondAttribute="bottom" constant="16" id="Hcm-L2-1c2"/>
                                                                     <constraint firstItem="eFn-nf-9tB" firstAttribute="leading" secondItem="iGr-pe-Vn4" secondAttribute="leading" constant="24" id="Jd2-AK-u6T"/>
-                                                                    <constraint firstItem="tEo-wH-xMg" firstAttribute="leading" secondItem="iGr-pe-Vn4" secondAttribute="leading" constant="24" id="Lum-1J-N86"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="rXk-2n-5JN" secondAttribute="trailing" constant="24" id="OK3-9R-YCk"/>
                                                                     <constraint firstAttribute="trailing" secondItem="eFn-nf-9tB" secondAttribute="trailing" constant="24" id="TTO-1Y-IRd"/>
-                                                                    <constraint firstItem="tEo-wH-xMg" firstAttribute="top" secondItem="eFn-nf-9tB" secondAttribute="bottom" constant="8" id="Xuf-Jg-jIx"/>
-                                                                    <constraint firstAttribute="trailing" secondItem="tEo-wH-xMg" secondAttribute="trailing" constant="24" id="pwG-0G-kZd"/>
+                                                                    <constraint firstItem="rXk-2n-5JN" firstAttribute="top" secondItem="eFn-nf-9tB" secondAttribute="bottom" constant="8" id="llg-JL-rkX"/>
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C5v-1f-lOM">
@@ -239,9 +244,9 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="qoX-9N-96z">
-                                                        <rect key="frame" x="0.0" y="978.5" width="414" height="30"/>
+                                                        <rect key="frame" x="0.0" y="1122.5" width="414" height="30"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yby-CW-vY8" customClass="PrimaryButton" customModule="Stopp_Corona" customModuleProvider="target">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yby-CW-vY8" customClass="PrimaryButton" customModule="Stopp_Corona" customModuleProvider="target">
                                                                 <rect key="frame" x="24" y="0.0" width="366" height="30"/>
                                                                 <state key="normal" title="self_testing_confirmation_primary_button">
                                                                     <color key="titleColor" name="ccBlack"/>
@@ -268,7 +273,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="Nt4-tt-Pdd" firstAttribute="top" secondItem="xS3-Cs-QOZ" secondAttribute="top" id="Hd4-8T-0gi"/>
                                             <constraint firstAttribute="bottom" secondItem="Nt4-tt-Pdd" secondAttribute="bottom" id="R0x-Zd-yWz"/>
@@ -290,14 +295,14 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="CJA-Rl-p3O"/>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="WmM-br-PP5" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="4N1-ah-U8M"/>
                             <constraint firstItem="WmM-br-PP5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="8G1-lM-ySh"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="WmM-br-PP5" secondAttribute="top" id="9Ve-09-vhy"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WmM-br-PP5" secondAttribute="trailing" id="OBX-DS-tYu"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="confirmationDescription" destination="gGf-4H-EZD" id="zwF-HS-7WJ"/>
@@ -318,5 +323,11 @@
         <namedColor name="ccWhite">
             <color red="0.95686274509803926" green="0.95686274509803926" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

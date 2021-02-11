@@ -35,6 +35,7 @@
 		1CFBB26625C984B000F40248 /* Array+ManagingBatchProcessingDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFBB26525C984B000F40248 /* Array+ManagingBatchProcessingDates.swift */; };
 		4B21DB6C25827CE5001274DD /* TransHeadingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B21DB6B25827CE5001274DD /* TransHeadingLabel.swift */; };
 		4B25BA9D2429592A00CDD1CF /* UserHealthStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B25BA9C2429592A00CDD1CF /* UserHealthStatus.swift */; };
+		4B686A5A25CC4040000BE02B /* PhoneNumberTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B686A5925CC4040000BE02B /* PhoneNumberTextView.swift */; };
 		4B7379E92423D9E600DF338E /* StartMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7379E82423D9E600DF338E /* StartMenuViewController.swift */; };
 		4B7379ED2423DA7A00DF338E /* StartMenuCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7379EC2423DA7A00DF338E /* StartMenuCoordinator.swift */; };
 		4B7379F12423E88700DF338E /* StartMenuViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B7379F02423E88700DF338E /* StartMenuViewController.storyboard */; };
@@ -413,6 +414,7 @@
 		4B1F6118242A60AD00E82D4C /* Stopp Corona.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Stopp Corona.entitlements"; sourceTree = "<group>"; };
 		4B21DB6B25827CE5001274DD /* TransHeadingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransHeadingLabel.swift; sourceTree = "<group>"; };
 		4B25BA9C2429592A00CDD1CF /* UserHealthStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHealthStatus.swift; sourceTree = "<group>"; };
+		4B686A5925CC4040000BE02B /* PhoneNumberTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberTextView.swift; sourceTree = "<group>"; };
 		4B7379E82423D9E600DF338E /* StartMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartMenuViewController.swift; sourceTree = "<group>"; };
 		4B7379EC2423DA7A00DF338E /* StartMenuCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartMenuCoordinator.swift; sourceTree = "<group>"; };
 		4B7379F02423E88700DF338E /* StartMenuViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = StartMenuViewController.storyboard; sourceTree = "<group>"; };
@@ -1741,6 +1743,7 @@
 				4BCEB4B425657EE800D53E12 /* TransBarButton.swift */,
 				4B21DB6B25827CE5001274DD /* TransHeadingLabel.swift */,
 				1CF3B35825A8594600AC94C2 /* DatePickerView.swift */,
+				4B686A5925CC4040000BE02B /* PhoneNumberTextView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -2376,6 +2379,7 @@
 				6153A4E3242598DC006A8570 /* SicknessCertificateTanConfirmationViewModel.swift in Sources */,
 				4E1AAEFD2461870700D43E2B /* RevokeSicknessConfirmationViewModel.swift in Sources */,
 				611D9EE7248E7C9500EBB420 /* BatchDownloadConfiguration.swift in Sources */,
+				4B686A5A25CC4040000BE02B /* PhoneNumberTextView.swift in Sources */,
 				92FFC9C124267D8200CC541B /* SelfTestingCheckSymptomsViewModel.swift in Sources */,
 				92FFC9C52426806300CC541B /* SelfTestingFlowController.swift in Sources */,
 				4EC81FB52423843300179CE9 /* PrimaryButton.swift in Sources */,

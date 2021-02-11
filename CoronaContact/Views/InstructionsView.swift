@@ -146,21 +146,49 @@ class InstructionsView: UIView {
         bubbleView.bubbleColor = bubbleColor
 
         let paddingView = UIView()
-        let label = TransLabel()
-        label.text = instruction.text
-        label.styleName = "body"
-        label.numberOfLines = 0
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.setContentCompressionResistancePriority(.defaultHigh, for: .vertical)
 
-        paddingView.addSubview(label)
-
-        NSLayoutConstraint.activate([
-            label.leadingAnchor.constraint(equalTo: paddingView.leadingAnchor),
-            label.trailingAnchor.constraint(equalTo: paddingView.trailingAnchor),
-            label.topAnchor.constraint(equalTo: paddingView.topAnchor, constant: 16),
-            label.bottomAnchor.constraint(equalTo: paddingView.bottomAnchor),
-        ])
+        if instruction.text.contains("<tel>") {
+            let linkTextView = LinkTextView(frame: .zero)
+            linkTextView.styleName = "body"
+            
+            let ranges = instruction.text.ranges(regex: "</?[a-z]+>")
+            var links = [String]()
+                                    
+            for index in 0..<ranges.count / 2 {
+                if instruction.text[ranges[(index * 2)]].contains("<tel>") {
+                    links.append(DeepLinkConstants.deepLinkPhoneNumber)
+                } else {
+                    links.append(DeepLinkConstants.emptyLink)
+                }
+            }
+            
+            linkTextView.textViewAttribute = TextViewAttribute(fullText: instruction.text, links: links, linkColor: .ccRouge)
+            linkTextView.translatesAutoresizingMaskIntoConstraints = false
+            linkTextView.setContentCompressionResistancePriority(.defaultHigh, for: .vertical)
+            paddingView.addSubview(linkTextView)
+            
+            NSLayoutConstraint.activate([
+                linkTextView.leadingAnchor.constraint(equalTo: paddingView.leadingAnchor),
+                linkTextView.trailingAnchor.constraint(equalTo: paddingView.trailingAnchor),
+                linkTextView.topAnchor.constraint(equalTo: paddingView.topAnchor, constant: 16),
+                linkTextView.bottomAnchor.constraint(equalTo: paddingView.bottomAnchor),
+            ])
+        } else {
+            let label = TransLabel()
+            label.text = instruction.text
+            label.styleName = "body"
+            label.numberOfLines = 0
+            label.translatesAutoresizingMaskIntoConstraints = false
+            label.setContentCompressionResistancePriority(.defaultHigh, for: .vertical)
+            paddingView.addSubview(label)
+            
+            NSLayoutConstraint.activate([
+                label.leadingAnchor.constraint(equalTo: paddingView.leadingAnchor),
+                label.trailingAnchor.constraint(equalTo: paddingView.trailingAnchor),
+                label.topAnchor.constraint(equalTo: paddingView.topAnchor, constant: 16),
+                label.bottomAnchor.constraint(equalTo: paddingView.bottomAnchor),
+            ])
+        }
 
         let instructionStackView = UIStackView(arrangedSubviews: [
             bubbleView,
