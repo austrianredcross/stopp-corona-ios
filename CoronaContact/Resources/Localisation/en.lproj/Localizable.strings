@@ -62,8 +62,6 @@
 "main_body_feel_today"                                                       = "<b>Are you not feeling well?</b>\nCheck your symptoms for a possible corona infection.";
 "main_button_feel_today"                                                     = "Check symptoms";
 "main_button_suspicion_button"                                               = "Report corona suspicion";
-"main_body_covid_alert"                                                      = "<b>Report corona infection</b>\nReport a medically confirmed infection to protect your contacts.";
-"main_button_suspicion_button"                                               = "Report suspected corona";
 "main_body_covid_alert"                                                      = "<b>Are you infected with COVID-19 yourself?</b>\nReport a medically confirmed infection to protect your contacts. Your contacts will be notified about an anonymous risk contact.";
 "main_button_covid_alert"                                                    = "Report medical confirmation";
 "main_handshake_information_hint"                                            = "When should I use this feature?";
@@ -191,16 +189,16 @@
 "main_button_start_manual_handshake"                                         = "Start manual handshake";
 "automatic_handshake_img_active"                                             = "Image: automatic handshake active";
 "automatic_handshake_img_inactive"                                           = "Image: automatic handshake inactive";
-"automatic_handshake_no_risk_headline"                                       = "No risk contact found";
+"automatic_handshake_no_risk_headline"                                       = "No risky contact found";
 "automatic_handshake_suspicion_risk_headline"                                = "Suspicion risk found";
-"automatic_handshake_contact_risk_headline"                                  = "Risk contact found";
+"automatic_handshake_contact_risk_headline"                                  = "Risky contact found";
 "automatic_handshake_self_suspicion_headline"                                = "Suspicion reported";
 "automatic_handshake_self_infection_headline"                                = "Infection reported";
-"automatic_handshake_disabled_info"                                          = "Please activate the digital handshake to identify risk contacts";
-"automatic_handshake_contact_checks"                                         = "%s compares in the last 7 days";
-"automatic_handshake_last_update"                                            = "Last update: %s";
-"automatic_handshake_last_contact_days"                                      = "%s days since your last risk contact";
-"automatic_handshake_self_reported_info"                                     = "Your contacts have been informed anonymously about the risk of infection.";
+"automatic_handshake_disabled_info"                                          = "Please activate the digital handshake to identify risky contacts";
+"automatic_handshake_contact_checks"                                         = "%s comparisons in the past 7 days";
+"automatic_handshake_last_update"                                            = "Latest update: %s";
+"automatic_handshake_last_contact_days"                                      = "%s days have passed since your latest risk contact";
+"automatic_handshake_self_reported_info"                                     = "Your contacts have been anonymously notified regarding the risk of an infection.";
 "missing_permissions_bluetooth_title"                                        = "Automatic handshake";
 "missing_permissions_bluetooth_headline"                                     = "Authorizations are missing";
 "missing_permissions_bluetooth_description"                                  = "For the precision of your automatic handshake the following additional authorizations are required:";
@@ -217,7 +215,7 @@
 "sickness_certificate_personal_data_headline"                                = "Please enter your data";
 "sickness_certificate_personal_data_title"                                   = "Report status";
 "sickness_certificate_personal_data_description"                             = "In the next step, we will anonymously inform your direct contacts of the last %s days.\nWith the mobile number, we ensure that the app is not misused and that infection reports contribute to the common good.";
-"sickness_certificate_personal_data_date_headline"                           = "How long have you had a positive test result?";
+"sickness_certificate_personal_data_date_headline"                           = "When did you receive your positive test result?";
 "sickness_certificate_personal_data_form_headline"                           = "Personal data";
 "sickness_certificate_personal_data_firstname_label"                         = "First name";
 "sickness_certificate_personal_data_name_label"                              = "Last name";
@@ -270,7 +268,7 @@
 "sickness_certificate_quarantine_guidelines_steps_headline"                  = "Please stay in quarantine!";
 "sickness_certificate_quarantine_guidelines_steps_quarantine_end"            = "Your doctor will decide when you can end the quarantine.";
 "sickness_certificate_quarantine_guidelines_steps_no_public_transport"       = "Please do not use public transport on the way and avoid contact with other people.";
-"sickness_certificate_quarantine_guidelines_steps_first"                     = "<b>Please go to quarantine immediately until you are healthy again.</b> Avoid public transport and contact with other people on the way home.";
+"sickness_certificate_quarantine_guidelines_steps_first"                     = "<b>Please quarantine yourself immediately until you are healthy again.</b> Avoid public transport and contact with other people on the way home.";
 "sickness_certificate_quarantine_guidelines_steps_second"                    = "<b>Keep a physical distance</b> from healthy roommates.";
 "sickness_certificate_quarantine_guidelines_steps_third"                     = "Monitor your health and <b>check your body temperature twice a day</b>.";
 "sickness_certificate_quarantine_guidelines_steps_fourth"                    = "Ask your neighbors or relatives to take care of you. If that is not possible, the <b>Team Österreich</b> will be happy to help you on <tel>0800 600 600</tel>.";
@@ -308,7 +306,7 @@
 "start_menu"                                                                 = "Open menu";
 "start_menu_close"                                                           = "Close menu";
 "start_menu_headline_1"                                                      = "Info";
-"start_menu_item_external_link"                                              = "External link";
+"start_menu_item_external_link"                                              = "Link to a website";
 "start_menu_item_1_1_what_does_the_app_do"                                   = "What can this app do?";
 "start_menu_item_1_2_faq_link"                                               = "FAQ at www.stopp-corona.at";
 "start_menu_item_1_2_faq_link_link_target"                                   = "https://www.stopp-corona.at/faq_stopp_corona_app/";
@@ -337,8 +335,7 @@
 "self_testing_symptoms_source_link"                                          = "https://www.sozialministerium.at/Themen/Gesundheit/Uebertragbare-Krankheiten/Infektionskrankheiten-A-Z/Neuartiges-Coronavirus.html";
 "self_test_push_reminder"                                                    = "How are you feeling today?";
 "self_testing_check_symptoms_title"                                          = "Check symptoms";
-"self_testing_result"                                                        = "Result";
-"self_testing_hint_headline"                                                 = "Stay healthy and help to protect others.";
+"self_testing_hint_headline"                                                 = "Result";
 "self_testing_hint_description_1"                                            = "In the current situation it is important to follow a few basic rules.";
 "self_testing_hint_description_2"                                            = "Care for you, care for me.";
 "self_testing_hint_recommendation_1"                                         = "Wash your hands regularly: with soap, warm water and for at least 20 seconds.";
@@ -504,7 +501,7 @@
 "revocation_voluntary_quarantine_completed_finish"                           = "<b>You can now end the quarantine.</b>";
 "revocation_all_clear_headline"                                              = "Thanks for your help!";
 "revocation_all_clear_description"                                           = "Infection or the suspected case in one or more of your contacts <b>has not been confirmed.</b>";
-"revocation_all_clear_finish"                                                = "<b>You can end the quarantine.</b>";
+"revocation_all_clear_finish"                                                = "<b>You can now end the quarantine.</b>";
 "share_app_card_headline"                                                    = "Share the app!";
 "share_app_card_img"                                                         = "Image: Share App";
 "share_app_card_description"                                                 = "Share the app and protect yourself and your environment.";
@@ -640,4 +637,3 @@
 "handshake_code_97"                                                          = "Koi";
 "handshake_code_98"                                                          = "Nerz";
 "handshake_code_99"                                                          = "Ochse";
-"symptoms_link"                                                              = "https://www.sozialministerium.at/Themen/Gesundheit/Uebertragbare-Krankheiten/Infektionskrankheiten-A-Z/Neuartiges-Coronavirus.html";

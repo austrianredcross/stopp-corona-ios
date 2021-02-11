@@ -46,6 +46,7 @@ class SicknessCertificatePersonalDataViewModel: ViewModel {
     }
 
     func viewClosed() {
+        localStorage.hasSymptomsOrPositiveAttestAt = nil
         coordinator?.finish()
     }
 }

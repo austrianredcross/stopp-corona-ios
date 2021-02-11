@@ -273,7 +273,7 @@
 "sickness_certificate_quarantine_guidelines_steps_third"                     = "Überwachen Sie Ihren Gesundheitszustand und <b>kontrollieren Sie täglich 2x Ihre Körpertemperatur</b>.";
 "sickness_certificate_quarantine_guidelines_steps_fourth"                    = "Bitten Sie Ihre Nachbarn oder Angehörige Ihre Versorgung zu übernehmen. Wenn das nicht möglich ist, hilft Ihnen gerne das <b>Team Österreich</b> unter <tel>0800 600 600</tel>.";
 "sickness_certificate_quarantine_guidelines_consulting_description"          = "<b>Sie benötigen psychische Unterstützung?</b>\n\nKontaktieren Sie bitte Ihre/n behandelnde/n ÄrztIn oder eine der folgenden Nummern:";
-"sickness_certificate_quarantine_guidelines_consulting_first"                = "Ö3 Kummernummer<tel>116123</tel>";
+"sickness_certificate_quarantine_guidelines_consulting_first"                = "Ö3 Kummernummer <tel>116123</tel>";
 "sickness_certificate_quarantine_guidelines_consulting_second"               = "Rat auf Draht <tel>147</tel>";
 "sickness_certificate_quarantine_guidelines_consulting_third"                = "Telefonseelsorge <tel>142</tel>";
 "quarantine_guidelines_title"                                                = "Achtung";
@@ -306,7 +306,7 @@
 "start_menu"                                                                 = "Menü öffnen";
 "start_menu_close"                                                           = "Menü schließen";
 "start_menu_headline_1"                                                      = "Info";
-"start_menu_item_external_link"                                              = "Externer Link";
+"start_menu_item_external_link"                                              = "Link auf eine Website";
 "start_menu_item_1_1_what_does_the_app_do"                                   = "Was kann diese App?";
 "start_menu_item_1_2_faq_link"                                               = "FAQ auf www.stopp-corona.at";
 "start_menu_item_1_2_faq_link_link_target"                                   = "https://www.stopp-corona.at/faq_stopp_corona_app/";
@@ -335,8 +335,7 @@
 "self_testing_symptoms_source_link"                                          = "https://www.sozialministerium.at/Themen/Gesundheit/Uebertragbare-Krankheiten/Infektionskrankheiten-A-Z/Neuartiges-Coronavirus.html";
 "self_test_push_reminder"                                                    = "Wie fühlen Sie sich heute?";
 "self_testing_check_symptoms_title"                                          = "Symptome prüfen";
-"self_testing_result"                                                        = "Ergebnis";
-"self_testing_hint_headline"                                                 = "Bleiben Sie gesund und helfen Sie, andere zu schützen.";
+"self_testing_hint_headline"                                                 = "Ergebnis";
 "self_testing_hint_description_1"                                            = "In der aktuellen Situation ist es wichtig, einige Grundregeln zu befolgen.";
 "self_testing_hint_description_2"                                            = "Schau auf dich, schau auf mich.";
 "self_testing_hint_recommendation_1"                                         = "Regelmäßig Hände waschen: mit Seife, lauwarmem Wasser und mindestens 20 Sekunden lang.";
@@ -495,13 +494,13 @@
 "revocation_confirmation_button"                                             = "Fertig";
 "revocation_required_quarantine_completed_headline"                          = "Danke für Ihre Hilfe!";
 "revocation_required_quarantine_completed_description"                       = "Vielen Dank, dass Sie sich in Quarantäne begeben haben, um die Ausbreitung des Virus zu stoppen.";
-"revocation_required_quarantine_completed_finsih"                            = "<b>Sie können die Quarantäne nun beenden.</b>";
+"revocation_required_quarantine_completed_finish"                            = "<b>Sie können die Quarantäne nun beenden.</b>";
 "revocation_voluntary_quarantine_completed_headline"                         = "Danke für Ihre Hilfe!";
 "revocation_voluntary_quarantine_completed_description"                      = "Vielen Dank, dass Sie sich in Quarantäne begeben haben, um die Ausbreitung des Virus zu stoppen.";
 "revocation_voluntary_quarantine_completed_finish"                           = "<b>Sie können die Quarantäne nun beenden.</b>";
 "revocation_all_clear_headline"                                              = "Danke für Ihre Hilfe!";
 "revocation_all_clear_description"                                           = "Infektion oder der Verdachtsfall haben sich bei einem oder mehrerer Ihrer Kontakte <b>nicht bestätigt</b>.";
-"revocation_all_clear_finish"                                                = "<b>Sie können die Quarantäne beenden</b>";
+"revocation_all_clear_finish"                                                = "Sie können die <b>Quarantäne beenden</b>.";
 "share_app_card_headline"                                                    = "Teilen Sie die App!";
 "share_app_card_img"                                                         = "Bild: App teilen";
 "share_app_card_description"                                                 = "Empfehlen Sie die App und schützen Sie so sich und Ihr Umfeld.";
@@ -637,4 +636,3 @@
 "handshake_code_97"                                                          = "Koi";
 "handshake_code_98"                                                          = "Nerz";
 "handshake_code_99"                                                          = "Ochse";
-"symptoms_link"                                                              = "https://www.sozialministerium.at/Themen/Gesundheit/Uebertragbare-Krankheiten/Infektionskrankheiten-A-Z/Neuartiges-Coronavirus.html";

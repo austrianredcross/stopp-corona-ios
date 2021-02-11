@@ -28,6 +28,19 @@ enum ContactHealthStatus: Equatable {
             return nil
         }
     }
+    
+    static func == (lhs: ContactHealthStatus, rhs: ContactHealthStatus) -> Bool {
+        switch (lhs, rhs) {
+        case (.red, .red):
+            return true
+        case (.yellow, .yellow):
+            return true
+        case (.mixed, .mixed):
+            return true
+        default:
+            return false
+        }
+    }
 }
 
 // MARK: - Notification in the Dashboard
