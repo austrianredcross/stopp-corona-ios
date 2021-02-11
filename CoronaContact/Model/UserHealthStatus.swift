@@ -150,7 +150,7 @@ enum UserHealthStatus: Equatable {
     var secondaryActionText: String? {
         switch self {
         case .hasAttestedSickness:
-            return canRevokeProvenSickness() ? "sickness_certificate_attest_button_revoke".localized : nil
+            return canRevokeProvenSickness() ? "sickness_certificate_attest_button_revoke".localized : "sickness_certificate_attest_button_report_healthy".localized
         case .isUnderSelfMonitoring:
             return "self_testing_symptoms_secondary_button".localized
         case .isProbablySick:

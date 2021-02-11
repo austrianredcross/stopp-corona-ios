@@ -296,9 +296,13 @@
 "sickness_certificate_attest_description"                                    = "Sie haben Ihre ärztliche bestätigte Corona-Infektion gemeldet.";
 "sickness_certificate_attest_date_text"                                      = "Bitte begeben Sie sich, <b>bis Sie gesund sind</b>, in Quarantäne.";
 "sickness_certificate_attest_button"                                         = "Was soll ich tun?";
-"sickness_certificate_attest_button_revoke"                                  = "Gesund melden";
+"sickness_certificate_attest_button_revoke"                                  = "Krankmeldung zurückziehen";
 "sickness_certificate_attest_info_update"                                    = "Benachrichtigen Sie Personen, mit denen Sie am Tag Ihrer Meldung einen digitalen Handshake ausgetauscht haben.";
 "sickness_certificate_attest_button_update"                                  = "Weitere Kontakte benachrichtigen";
+"sickness_certificate_attest_button_report_healthy"                          = "Gesund melden";
+"sickness_certificate_attest_report_healthy_dialog_headline"                 = "Quarantäne beenden";
+"sickness_certificate_attest_report_healthy_dialog_description"              = "Wenn Sie gesund sind und Ihr Quarantäne-Bescheid abgelaufen ist, können Sie die Quarantäne in der App über den Button unten beenden.";
+"sickness_certificate_attest_report_healthy_dialog_button"                   = "Quarantäne beenden";
 "start_menu"                                                                 = "Menü öffnen";
 "start_menu_close"                                                           = "Menü schließen";
 "start_menu_headline_1"                                                      = "Info";
