@@ -13,37 +13,35 @@ class SicknessCertificateStatusReportViewModel: ViewModel {
     @Injected private var configurationService: ConfigurationService
 
     weak var coordinator: SicknessCertificateStatusReportCoordinator?
-    let updateKeys: Bool
 
     var agreesToTerms = false
 
     var isValid: Bool {
         agreesToTerms
     }
-
-    init(with coordinator: SicknessCertificateStatusReportCoordinator, updateKeys: Bool) {
-        self.coordinator = coordinator
-        self.updateKeys = updateKeys
+    
+    var updateKeys: Bool {
+        localStorage.missingUploadedKeysAt != nil
     }
 
+    init(with coordinator: SicknessCertificateStatusReportCoordinator) {
+        self.coordinator = coordinator
+    }
+    
     func goToNext(completion: @escaping () -> Void) {
         guard isValid else {
             return
         }
-        let uploadDays = configurationService.currentConfig.uploadKeyDays
         
+        let uploadDays = configurationService.currentConfig.uploadKeyDays
         let startDayOfSymptomsOrAttest = localStorage.hasSymptomsOrPositiveAttestAt ?? Date()
         var startDate = startDayOfSymptomsOrAttest.addDays(-uploadDays)!
         
         if let isProbablySickAt = localStorage.isProbablySickAt {
             startDate = isProbablySickAt.addDays(-uploadDays)!
         }
-        var endDate = Date()
-
-        if updateKeys, let missingUploadedKeysAt = localStorage.missingUploadedKeysAt {
-            startDate = missingUploadedKeysAt
-            endDate = missingUploadedKeysAt
-        }
+        
+        let endDate = Date()
 
         flowController.submit(from: startDate, untilIncluding: endDate, diagnosisType: .red) { [weak self] result in
             guard let self = self else {
@@ -65,11 +63,7 @@ class SicknessCertificateStatusReportViewModel: ViewModel {
                     }
                 )
             case .success:
-                if self.updateKeys {
-                    self.localStorage.missingUploadedKeysAt = nil
-                } else {
-                    self.healthRepository.setProvenSick(from: startDayOfSymptomsOrAttest)
-                }
+                self.healthRepository.setProvenSick(from: self.localStorage.isProbablySick ? startDate : startDayOfSymptomsOrAttest)
                 self.coordinator?.showConfirmation()
             default:
                 break

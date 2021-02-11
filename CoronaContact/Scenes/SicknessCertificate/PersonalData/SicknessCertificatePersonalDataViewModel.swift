@@ -11,7 +11,6 @@ class SicknessCertificatePersonalDataViewModel: ViewModel {
     @Injected private var localStorage: LocalStorage
 
     weak var coordinator: SicknessCertificatePersonalDataCoordinator?
-    let updateKeys: Bool
 
     var composePersonalData: (() -> PersonalData?)?
     
@@ -21,9 +20,8 @@ class SicknessCertificatePersonalDataViewModel: ViewModel {
         return String(format: "sickness_certificate_personal_data_description".localized, "\(dayDifference ?? 2)")
     }
 
-    init(with coordinator: SicknessCertificatePersonalDataCoordinator, updateKeys: Bool) {
+    init(with coordinator: SicknessCertificatePersonalDataCoordinator) {
         self.coordinator = coordinator
-        self.updateKeys = updateKeys
     }
 
     func goToNext(completion: @escaping () -> Void) {

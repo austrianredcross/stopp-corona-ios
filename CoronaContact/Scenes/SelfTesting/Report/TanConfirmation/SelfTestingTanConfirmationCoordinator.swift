@@ -11,11 +11,9 @@ final class SelfTestingTanConfirmationCoordinator: Coordinator, ErrorPresentable
     }()
 
     var navigationController: UINavigationController
-    let updateKeys: Bool
 
-    init(navigationController: UINavigationController, updateKeys: Bool) {
+    init(navigationController: UINavigationController) {
         self.navigationController = navigationController
-        self.updateKeys = updateKeys
     }
 
     override func start() {
@@ -28,7 +26,7 @@ final class SelfTestingTanConfirmationCoordinator: Coordinator, ErrorPresentable
     }
 
     func reportStatus() {
-        let child = SelfTestingStatusReportCoordinator(navigationController: navigationController, updateKeys: updateKeys)
+        let child = SelfTestingStatusReportCoordinator(navigationController: navigationController)
         addChildCoordinator(child)
         child.start()
     }

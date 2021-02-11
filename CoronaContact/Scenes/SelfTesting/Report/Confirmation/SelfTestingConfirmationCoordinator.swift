@@ -11,15 +11,13 @@ final class SelfTestingConfirmationCoordinator: Coordinator {
     }()
 
     var navigationController: UINavigationController
-    let updateKeys: Bool
 
-    init(navigationController: UINavigationController, updateKeys: Bool) {
+    init(navigationController: UINavigationController) {
         self.navigationController = navigationController
-        self.updateKeys = updateKeys
     }
 
     override func start() {
-        rootViewController.viewModel = SelfTestingConfirmationViewModel(with: self, updateKeys: updateKeys)
+        rootViewController.viewModel = SelfTestingConfirmationViewModel(with: self)
         navigationController.pushViewController(rootViewController, animated: true)
     }
 

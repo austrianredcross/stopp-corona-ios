@@ -13,11 +13,7 @@ final class SicknessCertificateCoordinator: Coordinator {
     }
 
     override func start() {
-        start(updateKeys: false)
-    }
-
-    func start(updateKeys: Bool) {
-        let child = SicknessCertificatePersonalDataCoordinator(navigationController: navigationController, updateKeys: updateKeys)
+        let child = SicknessCertificatePersonalDataCoordinator(navigationController: navigationController)
         addChildCoordinator(child)
         child.start()
     }

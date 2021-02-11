@@ -25,6 +25,7 @@
 		1C88C4EA25BABDE700BB6D8B /* InteroperabilityViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C88C4E625BABDE700BB6D8B /* InteroperabilityViewController.storyboard */; };
 		1C88C4EB25BABDE700BB6D8B /* InteroperabilityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C88C4E725BABDE700BB6D8B /* InteroperabilityViewModel.swift */; };
 		1C9E770625A761B300C6ADB7 /* SelfTestingCoronaSuspicionViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C9E770525A761B300C6ADB7 /* SelfTestingCoronaSuspicionViewController.storyboard */; };
+		1CCE52E825D5278400345671 /* Date+toIntervalNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCE52E725D5278400345671 /* Date+toIntervalNumber.swift */; };
 		1CF3B34D25A8443500AC94C2 /* SelfTestingCoronaSuspicionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF3B34C25A8443500AC94C2 /* SelfTestingCoronaSuspicionViewController.swift */; };
 		1CF3B35125A844EB00AC94C2 /* SelfTestingCoronaSuspicionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF3B35025A844EB00AC94C2 /* SelfTestingCoronaSuspicionViewModel.swift */; };
 		1CF3B35525A8451600AC94C2 /* SelfTestingCoronaSuspicionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF3B35425A8451600AC94C2 /* SelfTestingCoronaSuspicionCoordinator.swift */; };
@@ -402,6 +403,7 @@
 		1C88C4E625BABDE700BB6D8B /* InteroperabilityViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = InteroperabilityViewController.storyboard; sourceTree = "<group>"; };
 		1C88C4E725BABDE700BB6D8B /* InteroperabilityViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteroperabilityViewModel.swift; sourceTree = "<group>"; };
 		1C9E770525A761B300C6ADB7 /* SelfTestingCoronaSuspicionViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelfTestingCoronaSuspicionViewController.storyboard; sourceTree = "<group>"; };
+		1CCE52E725D5278400345671 /* Date+toIntervalNumber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+toIntervalNumber.swift"; sourceTree = "<group>"; };
 		1CF3B34C25A8443500AC94C2 /* SelfTestingCoronaSuspicionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfTestingCoronaSuspicionViewController.swift; sourceTree = "<group>"; };
 		1CF3B35025A844EB00AC94C2 /* SelfTestingCoronaSuspicionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfTestingCoronaSuspicionViewModel.swift; sourceTree = "<group>"; };
 		1CF3B35425A8451600AC94C2 /* SelfTestingCoronaSuspicionCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfTestingCoronaSuspicionCoordinator.swift; sourceTree = "<group>"; };
@@ -1653,6 +1655,7 @@
 		839741865A3ACD223DF71E46 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				1CCE52E725D5278400345671 /* Date+toIntervalNumber.swift */,
 				614A0024243CF8DD00ACBD0A /* Date+addDays.swift */,
 				61D0F53424352E3D0026C91A /* Date+daysUntil.swift */,
 				1CF3B35C25A85B8B00AC94C2 /* Date+getDates.swift */,
@@ -2274,6 +2277,7 @@
 				7828A6A524926859006AEAAC /* MaintenanceTaskRepository.swift in Sources */,
 				6155C6F9248F7437009BDE6B /* BatchDownloadScheduler.swift in Sources */,
 				611D9EE2248E704B00EBB420 /* CompleteOperation.swift in Sources */,
+				1CCE52E825D5278400345671 /* Date+toIntervalNumber.swift in Sources */,
 				4E8984282473F07600499820 /* LocalStorage+Injected.swift in Sources */,
 				4B21DB6C25827CE5001274DD /* TransHeadingLabel.swift in Sources */,
 				1CF3B35525A8451600AC94C2 /* SelfTestingCoronaSuspicionCoordinator.swift in Sources */,
