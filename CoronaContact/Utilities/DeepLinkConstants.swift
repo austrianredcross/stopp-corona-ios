@@ -13,4 +13,7 @@ class DeepLinkConstants {
     static let deepLinkPrivacyUrl = "stoppCorona://webview/privacy"
     static let deepLinkFAQUrl = "stoppCorona://webview/faq"
     static let deepLinkFAQCorrectPath = "faq"
+    static let deepLinkPhoneNumber = "tel://"
+    static let emptyLink = ""
+
 }

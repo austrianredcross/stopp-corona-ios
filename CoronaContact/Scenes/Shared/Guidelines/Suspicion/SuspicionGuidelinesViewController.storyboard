@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -239,67 +239,70 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Eg-Zd-oDj">
                                                                 <rect key="frame" x="0.0" y="152" width="414" height="73"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="suspicion_guidelines_advice_phone_first" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L8g-cQ-4eB" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="366" placeholderIntrinsicHeight="41" text="suspicion_guidelines_advice_phone_first" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="aHA-6a-X3W" customClass="PhoneNumberTextView" customModule="Stopp_Corona" customModuleProvider="target">
                                                                         <rect key="frame" x="24" y="16" width="366" height="41"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                        <nil key="textColor"/>
-                                                                        <nil key="highlightedColor"/>
+                                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                        <color key="textColor" systemColor="labelColor"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="body"/>
                                                                             <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="suspicion_guidelines_advice_phone_first"/>
                                                                         </userDefinedRuntimeAttributes>
-                                                                    </label>
+                                                                    </textView>
                                                                 </subviews>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="bottom" secondItem="L8g-cQ-4eB" secondAttribute="bottom" constant="16" id="6Lg-MS-ibT"/>
-                                                                    <constraint firstAttribute="trailing" secondItem="L8g-cQ-4eB" secondAttribute="trailing" constant="24" id="fKT-nT-nZV"/>
-                                                                    <constraint firstItem="L8g-cQ-4eB" firstAttribute="top" secondItem="3Eg-Zd-oDj" secondAttribute="top" constant="16" id="m7s-sm-htw"/>
-                                                                    <constraint firstItem="L8g-cQ-4eB" firstAttribute="leading" secondItem="3Eg-Zd-oDj" secondAttribute="leading" constant="24" id="r09-i3-vK1"/>
+                                                                    <constraint firstItem="aHA-6a-X3W" firstAttribute="top" secondItem="3Eg-Zd-oDj" secondAttribute="top" constant="16" id="09U-81-xi8"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="aHA-6a-X3W" secondAttribute="bottom" constant="16" id="ZsQ-97-PGe"/>
+                                                                    <constraint firstItem="aHA-6a-X3W" firstAttribute="leading" secondItem="3Eg-Zd-oDj" secondAttribute="leading" constant="24" id="xjg-eN-3vk"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="aHA-6a-X3W" secondAttribute="trailing" constant="24" id="yhe-Bd-vP4"/>
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qKg-d8-9ml">
                                                                 <rect key="frame" x="0.0" y="225" width="414" height="52.5"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" text="suspicion_guidelines_advice_phone_second" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bFE-Xf-hAQ" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="366" placeholderIntrinsicHeight="20.5" text="suspicion_guidelines_advice_phone_second" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="lSj-tg-QM1" customClass="PhoneNumberTextView" customModule="Stopp_Corona" customModuleProvider="target">
                                                                         <rect key="frame" x="24" y="16" width="366" height="20.5"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                        <nil key="textColor"/>
-                                                                        <nil key="highlightedColor"/>
+                                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                        <color key="textColor" systemColor="labelColor"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="body"/>
                                                                             <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="suspicion_guidelines_advice_phone_second"/>
                                                                         </userDefinedRuntimeAttributes>
-                                                                    </label>
+                                                                    </textView>
                                                                 </subviews>
                                                                 <color key="backgroundColor" name="ccWhite"/>
                                                                 <constraints>
-                                                                    <constraint firstItem="bFE-Xf-hAQ" firstAttribute="leading" secondItem="qKg-d8-9ml" secondAttribute="leading" constant="24" id="9rm-cY-pIO"/>
-                                                                    <constraint firstItem="bFE-Xf-hAQ" firstAttribute="top" secondItem="qKg-d8-9ml" secondAttribute="top" constant="16" id="IGx-Eb-3L1"/>
-                                                                    <constraint firstAttribute="trailing" secondItem="bFE-Xf-hAQ" secondAttribute="trailing" constant="24" id="via-QC-oJk"/>
-                                                                    <constraint firstAttribute="bottom" secondItem="bFE-Xf-hAQ" secondAttribute="bottom" constant="16" id="w8E-b9-kNY"/>
+                                                                    <constraint firstItem="lSj-tg-QM1" firstAttribute="top" secondItem="qKg-d8-9ml" secondAttribute="top" constant="16" id="Urt-Ep-6E9"/>
+                                                                    <constraint firstItem="lSj-tg-QM1" firstAttribute="leading" secondItem="qKg-d8-9ml" secondAttribute="leading" constant="24" id="agE-ji-HGj"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="lSj-tg-QM1" secondAttribute="trailing" constant="24" id="uRH-Ga-WLx"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="lSj-tg-QM1" secondAttribute="bottom" constant="16" id="zdI-Ns-Vxt"/>
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" verticalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="8xb-JO-6Dz">
                                                                 <rect key="frame" x="0.0" y="277.5" width="414" height="57"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="suspicion_guidelines_advice_phone_third" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KdT-lf-nD6" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
-                                                                        <rect key="frame" x="24" y="16" width="366" height="9"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                        <nil key="textColor"/>
-                                                                        <nil key="highlightedColor"/>
+                                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="366" placeholderIntrinsicHeight="25" text="suspicion_guidelines_advice_phone_third" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="QTS-Kt-zGW" customClass="PhoneNumberTextView" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                        <rect key="frame" x="24" y="16" width="366" height="25"/>
+                                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                        <color key="textColor" systemColor="labelColor"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="body"/>
                                                                             <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="suspicion_guidelines_advice_phone_third"/>
                                                                         </userDefinedRuntimeAttributes>
-                                                                    </label>
+                                                                    </textView>
                                                                 </subviews>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="trailing" secondItem="KdT-lf-nD6" secondAttribute="trailing" constant="24" id="TFL-cF-NQo"/>
-                                                                    <constraint firstItem="KdT-lf-nD6" firstAttribute="top" secondItem="8xb-JO-6Dz" secondAttribute="top" constant="16" id="hq1-BV-6QJ"/>
-                                                                    <constraint firstAttribute="bottom" secondItem="KdT-lf-nD6" secondAttribute="bottom" constant="32" id="kWy-u3-drI"/>
-                                                                    <constraint firstItem="KdT-lf-nD6" firstAttribute="leading" secondItem="8xb-JO-6Dz" secondAttribute="leading" constant="24" id="y1x-bM-AMx"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="QTS-Kt-zGW" secondAttribute="trailing" constant="24" id="79B-eZ-TlM"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="QTS-Kt-zGW" secondAttribute="bottom" constant="16" id="jUN-ph-5fD"/>
+                                                                    <constraint firstItem="QTS-Kt-zGW" firstAttribute="leading" secondItem="8xb-JO-6Dz" secondAttribute="leading" constant="24" id="mYt-z8-pYZ"/>
+                                                                    <constraint firstItem="QTS-Kt-zGW" firstAttribute="top" secondItem="8xb-JO-6Dz" secondAttribute="top" constant="16" id="pi4-zn-f0U"/>
                                                                 </constraints>
                                                             </view>
                                                         </subviews>
@@ -420,6 +423,9 @@
         <namedColor name="ccWhite">
             <color red="0.95686274509803926" green="0.95686274509803926" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

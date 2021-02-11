@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,10 +22,10 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dVb-Tt-9Ja">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="2833"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="2836"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="nJZ-jc-VgZ">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="2833"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="2836"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eZl-1g-BgO">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="2176"/>
@@ -56,7 +57,7 @@
                                                         </constraints>
                                                     </view>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="eEH-Kq-TLG">
-                                                        <rect key="frame" x="0.0" y="2208" width="414" height="350"/>
+                                                        <rect key="frame" x="0.0" y="2208" width="414" height="353"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Td9-Lc-xYh">
                                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="106"/>
@@ -97,7 +98,7 @@
                                                                 <rect key="frame" x="0.0" y="106" width="414" height="122"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="quarantine_guidelines_phone_emergency_label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WNY-mm-0kp" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
-                                                                        <rect key="frame" x="24" y="16" width="366" height="41"/>
+                                                                        <rect key="frame" x="24" y="16" width="366" height="20.5"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -106,30 +107,31 @@
                                                                             <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="quarantine_guidelines_phone_emergency_label"/>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="quarantine_guidelines_phone_emergency_number" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FnU-Zs-Cqb" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
-                                                                        <rect key="frame" x="24" y="65" width="366" height="41"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                        <nil key="textColor"/>
-                                                                        <nil key="highlightedColor"/>
+                                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="quarantine_guidelines_phone_emergency_number" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="lCZ-4Q-pTc" customClass="PhoneNumberTextView" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                        <rect key="frame" x="24" y="44.5" width="366" height="61.5"/>
+                                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                        <color key="textColor" systemColor="labelColor"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                                         <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="body"/>
                                                                             <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="quarantine_guidelines_phone_emergency_number"/>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="body"/>
                                                                         </userDefinedRuntimeAttributes>
-                                                                    </label>
+                                                                    </textView>
                                                                 </subviews>
                                                                 <color key="backgroundColor" name="ccWhite"/>
                                                                 <constraints>
                                                                     <constraint firstItem="WNY-mm-0kp" firstAttribute="leading" secondItem="g9l-3Q-Als" secondAttribute="leading" constant="24" id="89P-Nn-h6V"/>
-                                                                    <constraint firstItem="FnU-Zs-Cqb" firstAttribute="leading" secondItem="g9l-3Q-Als" secondAttribute="leading" constant="24" id="Bw8-Kg-Kpg"/>
-                                                                    <constraint firstItem="FnU-Zs-Cqb" firstAttribute="top" secondItem="WNY-mm-0kp" secondAttribute="bottom" constant="8" id="Jnn-MQ-JiU"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="lCZ-4Q-pTc" secondAttribute="bottom" constant="16" id="8VF-2y-je2"/>
+                                                                    <constraint firstItem="lCZ-4Q-pTc" firstAttribute="top" secondItem="WNY-mm-0kp" secondAttribute="bottom" constant="8" id="Cr5-kc-mg6"/>
+                                                                    <constraint firstItem="lCZ-4Q-pTc" firstAttribute="leading" secondItem="g9l-3Q-Als" secondAttribute="leading" constant="24" id="JFg-WS-Qdc"/>
                                                                     <constraint firstItem="WNY-mm-0kp" firstAttribute="top" secondItem="g9l-3Q-Als" secondAttribute="top" constant="16" id="csb-4r-tKN"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="lCZ-4Q-pTc" secondAttribute="trailing" constant="24" id="l20-16-Fai"/>
                                                                     <constraint firstAttribute="trailing" secondItem="WNY-mm-0kp" secondAttribute="trailing" constant="24" id="oLw-GK-vmj"/>
-                                                                    <constraint firstAttribute="trailing" secondItem="FnU-Zs-Cqb" secondAttribute="trailing" constant="24" id="rUc-dj-mhM"/>
-                                                                    <constraint firstAttribute="bottom" secondItem="FnU-Zs-Cqb" secondAttribute="bottom" constant="16" id="uSJ-2N-Qz3"/>
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6ob-CU-fzb">
-                                                                <rect key="frame" x="0.0" y="228" width="414" height="122"/>
+                                                                <rect key="frame" x="0.0" y="228" width="414" height="125"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="quarantine_guidelines_phone_ambulance_label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8bM-aS-Oe3" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
                                                                         <rect key="frame" x="24" y="16" width="366" height="20.5"/>
@@ -141,32 +143,33 @@
                                                                             <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="quarantine_guidelines_phone_ambulance_label"/>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="quarantine_guidelines_phone_ambulance_number" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nuT-PJ-aLN" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
-                                                                        <rect key="frame" x="24" y="44.5" width="366" height="77.5"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                        <nil key="textColor"/>
-                                                                        <nil key="highlightedColor"/>
+                                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="quarantine_guidelines_phone_ambulance_number" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="7up-mS-Ng0" customClass="PhoneNumberTextView" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                        <rect key="frame" x="24" y="44.5" width="366" height="80.5"/>
+                                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                        <color key="textColor" systemColor="labelColor"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                                         <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="body"/>
                                                                             <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="quarantine_guidelines_phone_ambulance_number"/>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="body"/>
                                                                         </userDefinedRuntimeAttributes>
-                                                                    </label>
+                                                                    </textView>
                                                                 </subviews>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="bottom" secondItem="nuT-PJ-aLN" secondAttribute="bottom" id="0qo-j4-PGd"/>
-                                                                    <constraint firstAttribute="trailing" secondItem="nuT-PJ-aLN" secondAttribute="trailing" constant="24" id="7f4-iF-Maf"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="7up-mS-Ng0" secondAttribute="trailing" constant="24" id="C6r-EK-zjX"/>
                                                                     <constraint firstAttribute="trailing" secondItem="8bM-aS-Oe3" secondAttribute="trailing" constant="24" id="KUN-4g-ITw"/>
-                                                                    <constraint firstItem="nuT-PJ-aLN" firstAttribute="leading" secondItem="6ob-CU-fzb" secondAttribute="leading" constant="24" id="LNG-5H-UOW"/>
                                                                     <constraint firstItem="8bM-aS-Oe3" firstAttribute="top" secondItem="6ob-CU-fzb" secondAttribute="top" constant="16" id="cdZ-p8-F5A"/>
-                                                                    <constraint firstItem="nuT-PJ-aLN" firstAttribute="top" secondItem="8bM-aS-Oe3" secondAttribute="bottom" constant="8" id="jDF-yr-ps7"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="7up-mS-Ng0" secondAttribute="bottom" id="i6f-Fj-vqf"/>
+                                                                    <constraint firstItem="7up-mS-Ng0" firstAttribute="leading" secondItem="6ob-CU-fzb" secondAttribute="leading" constant="24" id="oB6-I3-Q3T"/>
+                                                                    <constraint firstItem="7up-mS-Ng0" firstAttribute="top" secondItem="8bM-aS-Oe3" secondAttribute="bottom" constant="8" id="us0-mZ-gbg"/>
                                                                     <constraint firstItem="8bM-aS-Oe3" firstAttribute="leading" secondItem="6ob-CU-fzb" secondAttribute="leading" constant="24" id="wq4-hX-dIq"/>
                                                                 </constraints>
                                                             </view>
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="XfU-qv-6ie">
-                                                        <rect key="frame" x="0.0" y="2590" width="414" height="243"/>
+                                                        <rect key="frame" x="0.0" y="2593" width="414" height="243"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fZ4-3U-uzK">
                                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="81"/>
@@ -193,67 +196,70 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8eA-Te-HaI">
                                                                 <rect key="frame" x="0.0" y="81" width="414" height="52.5"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="quarantine_guidelines_consulting_first" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m5X-y3-OY9" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="quarantine_guidelines_consulting_first" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="AnZ-VJ-fE3" customClass="PhoneNumberTextView" customModule="Stopp_Corona" customModuleProvider="target">
                                                                         <rect key="frame" x="24" y="16" width="366" height="20.5"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                        <nil key="textColor"/>
-                                                                        <nil key="highlightedColor"/>
+                                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                        <color key="textColor" systemColor="labelColor"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                                         <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="body"/>
                                                                             <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="quarantine_guidelines_consulting_first"/>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="body"/>
                                                                         </userDefinedRuntimeAttributes>
-                                                                    </label>
+                                                                    </textView>
                                                                 </subviews>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="bottom" secondItem="m5X-y3-OY9" secondAttribute="bottom" constant="16" id="5DT-5T-nkl"/>
-                                                                    <constraint firstAttribute="trailing" secondItem="m5X-y3-OY9" secondAttribute="trailing" constant="24" id="EjV-Rk-CaN"/>
-                                                                    <constraint firstItem="m5X-y3-OY9" firstAttribute="top" secondItem="8eA-Te-HaI" secondAttribute="top" constant="16" id="PCt-bD-wrl"/>
-                                                                    <constraint firstItem="m5X-y3-OY9" firstAttribute="leading" secondItem="8eA-Te-HaI" secondAttribute="leading" constant="24" id="kJR-p8-QD0"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="AnZ-VJ-fE3" secondAttribute="trailing" constant="24" id="6MV-mG-LZx"/>
+                                                                    <constraint firstItem="AnZ-VJ-fE3" firstAttribute="top" secondItem="8eA-Te-HaI" secondAttribute="top" constant="16" id="bWn-bU-7f5"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="AnZ-VJ-fE3" secondAttribute="bottom" constant="16" id="iZf-75-Is7"/>
+                                                                    <constraint firstItem="AnZ-VJ-fE3" firstAttribute="leading" secondItem="8eA-Te-HaI" secondAttribute="leading" constant="24" id="t0z-pW-66A"/>
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" verticalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="NY6-8u-gML">
                                                                 <rect key="frame" x="0.0" y="133.5" width="414" height="57"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="quarantine_guidelines_consulting_second" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XPy-d0-wFE" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="quarantine_guidelines_consulting_second" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="550-vP-4Dx" customClass="PhoneNumberTextView" customModule="Stopp_Corona" customModuleProvider="target">
                                                                         <rect key="frame" x="24" y="16" width="366" height="25"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                        <nil key="textColor"/>
-                                                                        <nil key="highlightedColor"/>
+                                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                        <color key="textColor" systemColor="labelColor"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                                         <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="body"/>
                                                                             <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="quarantine_guidelines_consulting_second"/>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="body"/>
                                                                         </userDefinedRuntimeAttributes>
-                                                                    </label>
+                                                                    </textView>
                                                                 </subviews>
                                                                 <color key="backgroundColor" name="ccWhite"/>
                                                                 <constraints>
-                                                                    <constraint firstItem="XPy-d0-wFE" firstAttribute="leading" secondItem="NY6-8u-gML" secondAttribute="leading" constant="24" id="QgY-zw-6a2"/>
-                                                                    <constraint firstItem="XPy-d0-wFE" firstAttribute="top" secondItem="NY6-8u-gML" secondAttribute="top" constant="16" id="Ue6-Fz-TVQ"/>
-                                                                    <constraint firstAttribute="trailing" secondItem="XPy-d0-wFE" secondAttribute="trailing" constant="24" id="jnM-bx-0Bj"/>
-                                                                    <constraint firstAttribute="bottom" secondItem="XPy-d0-wFE" secondAttribute="bottom" constant="16" id="vC5-gJ-glQ"/>
+                                                                    <constraint firstItem="550-vP-4Dx" firstAttribute="top" secondItem="NY6-8u-gML" secondAttribute="top" constant="16" id="9fz-6o-LYZ"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="550-vP-4Dx" secondAttribute="bottom" constant="16" id="dDd-TM-N6f"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="550-vP-4Dx" secondAttribute="trailing" constant="24" id="gxe-wY-FaV"/>
+                                                                    <constraint firstItem="550-vP-4Dx" firstAttribute="leading" secondItem="NY6-8u-gML" secondAttribute="leading" constant="24" id="wUE-Ui-tAx"/>
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DCu-W6-qOq">
                                                                 <rect key="frame" x="0.0" y="190.5" width="414" height="52.5"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="quarantine_guidelines_consulting_third" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BTl-jv-lPX" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="quarantine_guidelines_consulting_third" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="rfQ-2I-82y" customClass="PhoneNumberTextView" customModule="Stopp_Corona" customModuleProvider="target">
                                                                         <rect key="frame" x="24" y="16" width="366" height="20.5"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                        <nil key="textColor"/>
-                                                                        <nil key="highlightedColor"/>
+                                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                        <color key="textColor" systemColor="labelColor"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                                         <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="body"/>
                                                                             <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="quarantine_guidelines_consulting_third"/>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="body"/>
                                                                         </userDefinedRuntimeAttributes>
-                                                                    </label>
+                                                                    </textView>
                                                                 </subviews>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="trailing" secondItem="BTl-jv-lPX" secondAttribute="trailing" constant="24" id="CHE-eo-t6L"/>
-                                                                    <constraint firstItem="BTl-jv-lPX" firstAttribute="leading" secondItem="DCu-W6-qOq" secondAttribute="leading" constant="24" id="EuZ-yt-WpJ"/>
-                                                                    <constraint firstItem="BTl-jv-lPX" firstAttribute="top" secondItem="DCu-W6-qOq" secondAttribute="top" constant="16" id="SIp-5z-vwQ"/>
-                                                                    <constraint firstAttribute="bottom" secondItem="BTl-jv-lPX" secondAttribute="bottom" constant="16" id="zWk-6Z-OtS"/>
+                                                                    <constraint firstItem="rfQ-2I-82y" firstAttribute="top" secondItem="DCu-W6-qOq" secondAttribute="top" constant="16" id="Gpg-U0-3V6"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="rfQ-2I-82y" secondAttribute="bottom" constant="16" id="YlF-11-1XV"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="rfQ-2I-82y" secondAttribute="trailing" constant="24" id="cP6-Vx-Klr"/>
+                                                                    <constraint firstItem="rfQ-2I-82y" firstAttribute="leading" secondItem="DCu-W6-qOq" secondAttribute="leading" constant="24" id="wTz-fp-PmH"/>
                                                                 </constraints>
                                                             </view>
                                                         </subviews>
@@ -262,7 +268,7 @@
                                                 <directionalEdgeInsets key="directionalLayoutMargins" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="nJZ-jc-VgZ" firstAttribute="top" secondItem="dVb-Tt-9Ja" secondAttribute="top" id="GTb-gt-fxD"/>
                                             <constraint firstAttribute="bottom" secondItem="nJZ-jc-VgZ" secondAttribute="bottom" id="KqC-1d-B3x"/>
@@ -284,14 +290,14 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="ZuY-vg-JYI"/>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="yKW-Ai-YbD" secondAttribute="bottom" id="Lub-nT-0gW"/>
                             <constraint firstItem="yKW-Ai-YbD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Nco-Gt-BRe"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yKW-Ai-YbD" secondAttribute="trailing" id="aWc-8L-Lho"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="yKW-Ai-YbD" secondAttribute="top" id="gKa-dR-Tdj"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="contactHealthDescriptionLabel" destination="fUg-7Q-bdh" id="TTq-P3-sgO"/>
@@ -308,5 +314,11 @@
         <namedColor name="ccWhite">
             <color red="0.95686274509803926" green="0.95686274509803926" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
