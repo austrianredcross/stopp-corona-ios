@@ -35,6 +35,21 @@ enum UserHealthStatus: Equatable {
             self = .isHealthy
         }
     }
+    
+    static func == (lhs: UserHealthStatus, rhs: UserHealthStatus) -> Bool {
+        switch (lhs, rhs) {
+        case (.isHealthy, .isHealthy):
+            return true
+        case (.isUnderSelfMonitoring, .isUnderSelfMonitoring):
+            return true
+        case (.isProbablySick, .isProbablySick):
+            return true
+        case (.hasAttestedSickness, .hasAttestedSickness):
+            return true
+        default:
+            return false
+        }
+    }
 
     var canUploadMissingKeys: Bool {
         let localStorage: LocalStorage = Resolver.resolve()

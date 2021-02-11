@@ -91,13 +91,11 @@ class HealthRepository {
 
     func setProbablySick(from date: Date) {
         localStorage.isProbablySickAt = date
-        localStorage.missingUploadedKeysAt = date
         localStorage.hasSymptomsOrPositiveAttestAt = nil
     }
 
     func setProvenSick(from date: Date) {
         localStorage.attestedSicknessAt = date
-        localStorage.missingUploadedKeysAt = date
         localStorage.hasSymptomsOrPositiveAttestAt = nil
     }
 

@@ -83,8 +83,15 @@ final class SicknessCertificatePersonalDataViewController: UIViewController,
         
         textfield.inputAccessoryView = toolbar
         textfield.inputView = datePicker
-        confirmButtonTapped()
-
+        
+        if localStorage.hasSymptomsOrPositiveAttestAt != nil {
+            let date = localStorage.hasSymptomsOrPositiveAttestAt!
+            personalDataDescriptionLabel.styledText = viewModel?.personalDataDescription
+            textfield.text = Calendar.current.isDateInToday(date) ? "general_today".localized : date.shortMonthNameString
+        } else {
+            confirmButtonTapped()
+        }
+        
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidShow(notification:)), name: UIResponder.keyboardDidShowNotification, object: nil)
     }
     
