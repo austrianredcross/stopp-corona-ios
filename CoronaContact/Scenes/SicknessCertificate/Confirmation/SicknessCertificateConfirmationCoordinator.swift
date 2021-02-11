@@ -11,15 +11,13 @@ final class SicknessCertificateConfirmationCoordinator: Coordinator {
     }()
 
     var navigationController: UINavigationController
-    private let updateKeys: Bool
 
-    init(navigationController: UINavigationController, updateKeys: Bool) {
-        self.updateKeys = updateKeys
+    init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
 
     override func start() {
-        rootViewController.viewModel = SicknessCertificateConfirmationViewModel(with: self, updateKeys: updateKeys)
+        rootViewController.viewModel = SicknessCertificateConfirmationViewModel(with: self)
         navigationController.pushViewController(rootViewController, animated: true)
     }
 

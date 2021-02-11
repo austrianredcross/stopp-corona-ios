@@ -10,6 +10,7 @@ import Resolver
 class ReportHealthStatusFlowController {
     @Injected private var exposureManager: ExposureManager
     @Injected private var networkService: NetworkService
+    @Injected private var localStorage: LocalStorage
 
     typealias Completion<Success> = (Result<Success, ReportError>) -> Void
 
@@ -45,13 +46,21 @@ class ReportHealthStatusFlowController {
         verification = Verification(uuid: tanUUID, authorization: tanNumber)
     }
 
-    func submit(from startDate: Date, untilIncluding endDate: Date, diagnosisType: DiagnosisType, completion: @escaping Completion<Void>) {
+    func submit(from startDate: Date, untilIncluding endDate: Date, diagnosisType: DiagnosisType, isRevoken: Bool = false, completion: @escaping Completion<Void>) {
         guard let verification = verification else {
             failSilently(completion)
             return
         }
+        
+        var keysFromDate = startDate
+        var keysUntilDate = endDate
+        
+        if !isRevoken, let missingUploadedKeysAt = localStorage.missingUploadedKeysAt {
+            keysFromDate = missingUploadedKeysAt
+            keysUntilDate = missingUploadedKeysAt
+        }
 
-        exposureManager.getKeysForUpload(from: startDate, untilIncluding: endDate, diagnosisType: diagnosisType) { [weak self] result in
+        exposureManager.getKeysForUpload(from: keysFromDate, untilIncluding: keysUntilDate, diagnosisType: diagnosisType) { [weak self] result in
             guard let self = self else { return }
             switch result {
             case let .success(temporaryExposureKeys):
@@ -60,6 +69,11 @@ class ReportHealthStatusFlowController {
                     diagnosisType: diagnosisType,
                     verificationPayload: verification
                 )
+                
+                if !isRevoken {
+                    self.localStorage.missingUploadedKeysAt = temporaryExposureKeys.contains(where: { $0.intervalNumber == Date().intervalNumber }) ? nil : Date()
+                }
+                
                 LoggingService.debug("uploading \(diagnosisType)", context: .exposure)
                 self.sendTracingKeys(tracingKeys, completion: completion)
             case .failure:

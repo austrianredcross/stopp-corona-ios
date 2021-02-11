@@ -7,12 +7,16 @@ import Foundation
 import Resolver
 
 class SicknessCertificateConfirmationViewModel: ViewModel {
+    @Injected private var localStorage: LocalStorage
+    
     weak var coordinator: SicknessCertificateConfirmationCoordinator?
-    let updateKeys: Bool
+    
+    var updateKeys: Bool {
+        localStorage.missingUploadedKeysAt != nil
+    }
 
-    init(with coordinator: SicknessCertificateConfirmationCoordinator, updateKeys: Bool) {
+    init(with coordinator: SicknessCertificateConfirmationCoordinator) {
         self.coordinator = coordinator
-        self.updateKeys = updateKeys
     }
 
     func showQuarantineGuidelines() {

@@ -11,15 +11,13 @@ final class SelfTestingStatusReportCoordinator: Coordinator, ErrorPresentableCoo
     }()
 
     var navigationController: UINavigationController
-    let updateKeys: Bool
 
-    init(navigationController: UINavigationController, updateKeys: Bool) {
+    init(navigationController: UINavigationController) {
         self.navigationController = navigationController
-        self.updateKeys = updateKeys
     }
 
     override func start() {
-        rootViewController.viewModel = SelfTestingStatusReportViewModel(with: self, updateKeys: updateKeys)
+        rootViewController.viewModel = SelfTestingStatusReportViewModel(with: self)
         navigationController.pushViewController(rootViewController, animated: true)
     }
 
@@ -40,7 +38,7 @@ final class SelfTestingStatusReportCoordinator: Coordinator, ErrorPresentableCoo
     }
 
     func showConfirmation() {
-        let child = SelfTestingConfirmationCoordinator(navigationController: navigationController, updateKeys: updateKeys)
+        let child = SelfTestingConfirmationCoordinator(navigationController: navigationController)
         addChildCoordinator(child)
         child.start()
     }

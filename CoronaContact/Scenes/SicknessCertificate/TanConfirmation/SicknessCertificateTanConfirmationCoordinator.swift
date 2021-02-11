@@ -11,11 +11,9 @@ final class SicknessCertificateTanConfirmationCoordinator: Coordinator, ErrorPre
     }()
 
     var navigationController: UINavigationController
-    private let updateKeys: Bool
 
-    init(navigationController: UINavigationController, updateKeys: Bool) {
+    init(navigationController: UINavigationController) {
         self.navigationController = navigationController
-        self.updateKeys = updateKeys
     }
 
     override func start() {
@@ -26,7 +24,7 @@ final class SicknessCertificateTanConfirmationCoordinator: Coordinator, ErrorPre
     override func finish(animated: Bool = false) {}
 
     func reportStatus() {
-        let child = SicknessCertificateStatusReportCoordinator(navigationController: navigationController, updateKeys: updateKeys)
+        let child = SicknessCertificateStatusReportCoordinator(navigationController: navigationController)
         addChildCoordinator(child)
         child.start()
     }

@@ -4,8 +4,12 @@
 //
 
 import UIKit
+import Resolver
 
 class SelfTestingCoordinator: Coordinator {
+    
+    @Injected private var localStorage: LocalStorage
+    
     var navigationController: UINavigationController
 
     init(navigationController: UINavigationController) {
@@ -13,13 +17,8 @@ class SelfTestingCoordinator: Coordinator {
     }
 
     override func start() {
-        start(updateKeys: false)
-    }
-
-    func start(updateKeys: Bool) {
-        if updateKeys {
+        if localStorage.missingUploadedKeysAt != nil {
             let child = SelfTestingPersonalDataCoordinator(navigationController: navigationController)
-            child.updateKeys = true
             addChildCoordinator(child)
             child.start()
         } else {

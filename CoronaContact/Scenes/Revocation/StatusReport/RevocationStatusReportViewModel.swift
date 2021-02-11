@@ -49,7 +49,7 @@ class RevocationStatusReportViewModel: ViewModel {
         let startDate = isProbablySickAt.addDays(-uploadDays)!
         let endDate = Date()
 
-        flowController.submit(from: startDate, untilIncluding: endDate, diagnosisType: .green) { [weak self] result in
+        flowController.submit(from: startDate, untilIncluding: endDate, diagnosisType: .green, isRevoken: true) { [weak self] result in
             completion()
 
             switch result {

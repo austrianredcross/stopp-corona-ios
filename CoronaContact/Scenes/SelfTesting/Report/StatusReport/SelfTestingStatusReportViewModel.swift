@@ -13,17 +13,19 @@ class SelfTestingStatusReportViewModel: ViewModel {
     @Injected private var configurationService: ConfigurationService
 
     weak var coordinator: SelfTestingStatusReportCoordinator?
-    let updateKeys: Bool
 
     var agreesToTerms = false
 
     var isValid: Bool {
         agreesToTerms
     }
+    
+    var updateKeys: Bool {
+        localStorage.missingUploadedKeysAt != nil
+    }
 
-    init(with coordinator: SelfTestingStatusReportCoordinator, updateKeys: Bool) {
+    init(with coordinator: SelfTestingStatusReportCoordinator) {
         self.coordinator = coordinator
-        self.updateKeys = updateKeys
     }
 
     func goToNext(completion: @escaping () -> Void) {
@@ -34,13 +36,8 @@ class SelfTestingStatusReportViewModel: ViewModel {
         let startDayOfSymptomsOrAttest = localStorage.hasSymptomsOrPositiveAttestAt ?? Date()
 
         let uploadDays = configurationService.currentConfig.uploadKeyDays
-        var startDate = startDayOfSymptomsOrAttest.addDays(-uploadDays)!
-        var endDate = Date()
-        
-        if updateKeys, let missingUploadedKeysAt = localStorage.missingUploadedKeysAt {
-            startDate = missingUploadedKeysAt
-            endDate = missingUploadedKeysAt
-        }
+        let startDate = startDayOfSymptomsOrAttest.addDays(-uploadDays)!
+        let endDate = Date()
 
         flowController.submit(from: startDate, untilIncluding: endDate, diagnosisType: .yellow) { [weak self] result in
             completion()
@@ -61,11 +58,7 @@ class SelfTestingStatusReportViewModel: ViewModel {
                     }
                 )
             case .success:
-                if self.updateKeys {
-                    self.localStorage.missingUploadedKeysAt = nil
-                } else {
-                    self.healthRepository.setProbablySick(from: startDayOfSymptomsOrAttest)
-                }
+                self.healthRepository.setProbablySick(from: startDayOfSymptomsOrAttest)
                 self.coordinator?.showConfirmation()
             default:
                 break

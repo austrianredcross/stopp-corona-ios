@@ -10,16 +10,14 @@ final class SicknessCertificatePersonalDataCoordinator: Coordinator, ErrorPresen
         SicknessCertificatePersonalDataViewController.instantiate()
     }()
 
-    let updateKeys: Bool
     var navigationController: UINavigationController
 
-    init(navigationController: UINavigationController, updateKeys: Bool) {
-        self.updateKeys = updateKeys
+    init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
 
     override func start() {
-        rootViewController.viewModel = SicknessCertificatePersonalDataViewModel(with: self, updateKeys: updateKeys)
+        rootViewController.viewModel = SicknessCertificatePersonalDataViewModel(with: self)
         navigationController.pushViewController(rootViewController, animated: true)
     }
 
@@ -32,7 +30,7 @@ final class SicknessCertificatePersonalDataCoordinator: Coordinator, ErrorPresen
     }
 
     func tanConfirmation() {
-        let child = SicknessCertificateTanConfirmationCoordinator(navigationController: navigationController, updateKeys: updateKeys)
+        let child = SicknessCertificateTanConfirmationCoordinator(navigationController: navigationController)
         addChildCoordinator(child)
         child.start()
     }

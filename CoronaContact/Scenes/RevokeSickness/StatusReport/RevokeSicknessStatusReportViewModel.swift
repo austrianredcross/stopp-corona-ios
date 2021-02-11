@@ -56,7 +56,7 @@ class RevokeSicknessStatusReportViewModel: ViewModel {
             diagnosisType = .green
         }
 
-        flowController.submit(from: startDate, untilIncluding: endDate, diagnosisType: diagnosisType) { [weak self] result in
+        flowController.submit(from: startDate, untilIncluding: endDate, diagnosisType: diagnosisType, isRevoken: true) { [weak self] result in
             completion()
 
             switch result {

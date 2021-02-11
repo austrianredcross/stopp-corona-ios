@@ -7,12 +7,16 @@ import Foundation
 import Resolver
 
 class SelfTestingConfirmationViewModel: ViewModel {
+    @Injected private var localStorage: LocalStorage
+    
     weak var coordinator: SelfTestingConfirmationCoordinator?
-    let updateKeys: Bool
+    
+    var updateKeys: Bool {
+        localStorage.missingUploadedKeysAt != nil
+    }
 
-    init(with coordinator: SelfTestingConfirmationCoordinator, updateKeys: Bool) {
+    init(with coordinator: SelfTestingConfirmationCoordinator) {
         self.coordinator = coordinator
-        self.updateKeys = updateKeys
     }
 
     func showQuarantineGuidelines() {

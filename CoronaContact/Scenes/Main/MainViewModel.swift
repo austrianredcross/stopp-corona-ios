@@ -303,7 +303,8 @@ class MainViewModel: ViewModel {
     }
 
     func selfTestingTapped() {
-        coordinator?.selfTesting(updateKeys: false)
+        localStorage.hasSymptomsOrPositiveAttestAt = nil
+        coordinator?.selfTesting()
     }
     
     func coronaSuspicionButtonTapped() {
@@ -311,15 +312,16 @@ class MainViewModel: ViewModel {
     }
 
     func uploadMissingPobablySickKeys() {
-        coordinator?.selfTesting(updateKeys: true)
+        coordinator?.selfTesting()
     }
 
     func uploadMissingAttestedSickKeys() {
-        coordinator?.openSicknessCertificateController(updateKeys: true)
+        coordinator?.openSicknessCertificateController()
     }
 
     func sicknessCertificateTapped() {
-        coordinator?.openSicknessCertificateController(updateKeys: false)
+        localStorage.hasSymptomsOrPositiveAttestAt = nil
+        coordinator?.openSicknessCertificateController()
     }
 
     func attestedSicknessGuidelines() {
