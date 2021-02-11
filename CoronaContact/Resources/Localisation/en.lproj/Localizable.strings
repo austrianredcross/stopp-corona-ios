@@ -298,9 +298,13 @@
 "sickness_certificate_attest_description"                                    = "You have reported your medically confirmed corona infection.";
 "sickness_certificate_attest_date_text"                                      = "Please go into quarantine <b>until you are healthy</b>.";
 "sickness_certificate_attest_button"                                         = "What should I do?";
-"sickness_certificate_attest_button_revoke"                                  = "Report healthy";
+"sickness_certificate_attest_button_revoke"                                  = "Revoke sick note";
 "sickness_certificate_attest_info_update"                                    = "Notify people with whom you exchanged a digital handshake on the day you reported sick.";
 "sickness_certificate_attest_button_update"                                  = "Notify other contacts";
+"sickness_certificate_attest_button_report_healthy"                          = "Report healthy";
+"sickness_certificate_attest_report_healthy_dialog_headline"                 = "End quarantine";
+"sickness_certificate_attest_report_healthy_dialog_description"              = "If you are healthy and your quarantine notice has expired, you can end the quarantine in the app using the button below.";
+"sickness_certificate_attest_report_healthy_dialog_button"                   = "End quarantine";
 "start_menu"                                                                 = "Open menu";
 "start_menu_close"                                                           = "Close menu";
 "start_menu_headline_1"                                                      = "Info";

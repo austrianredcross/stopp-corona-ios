@@ -100,6 +100,12 @@ class MainCoordinator: Coordinator, ShareSheetPresentable {
         addChildCoordinator(child)
         child.start()
     }
+    
+    func reportHealthyButtonPressed() {
+        let child = ReportHealthyCoordinator(presentingViewController: rootViewController)
+        addChildCoordinator(child)
+        child.start()
+    }
 
     func revocation() {
         let child = RevocationPersonalDataCoordinator(navigationController: navigationController)

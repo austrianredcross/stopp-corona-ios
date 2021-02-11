@@ -45,4 +45,8 @@ extension UIColor {
     @nonobjc class var ccCheckboxInactive: UIColor {
         UIColor(named: "ccCheckboxInactive")!
     }
+    
+    @nonobjc class var ccPopUpBackground: UIColor {
+        UIColor(white: 0.4, alpha: 0.8)
+    }
 }
