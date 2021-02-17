@@ -70,7 +70,7 @@ extension ContactHealthStatus {
     var primaryColorNotification: UIColor {
         switch self {
         case .mixed, .red:
-            return .ccRed
+            return .ccRouge
         case .yellow:
             return .ccYellow
         }
