@@ -12,6 +12,7 @@ class ReportHealthyViewModel: ViewModel {
     weak var coordinator: ReportHealthyCoordinator?
     
     func quitQuarantineButtonPressed() {
+        localStorage.finishProvenSicknessQuarantine = true
         localStorage.attestedSicknessAt = nil
         localStorage.missingUploadedKeysAt = nil
         coordinator?.dismiss()

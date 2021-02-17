@@ -66,8 +66,7 @@ class RevocationStatusReportViewModel: ViewModel {
                     }
                 )
             case .success:
-                self?.localStorage.completedVoluntaryQuarantine = true
-                self?.localStorage.isUnderSelfMonitoring = false
+                self?.healthRepository.revokeProbablySick()
                 self?.coordinator?.showConfirmation()
             default:
                 break

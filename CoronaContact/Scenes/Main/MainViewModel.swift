@@ -78,7 +78,7 @@ class MainViewModel: ViewModel {
     
     private var automaticHandshakePriority: AutomaticHandshakePriority {
         
-        if userHealthStatus == .hasAttestedSickness() {
+        if userHealthStatus == .hasAttestedSickness {
             return .redOutgoing
         } else if contactHealthStatus != nil && (contactHealthStatus! == .red() || contactHealthStatus! == .mixed()) {
             return .redIncoming

@@ -73,8 +73,8 @@ class RevokeSicknessStatusReportViewModel: ViewModel {
                     }
                 )
             case .success:
-                self?.coordinator?.showConfirmation()
                 self?.healthRepository.revokeProvenSickness()
+                self?.coordinator?.showConfirmation()
             default:
                 break
             }

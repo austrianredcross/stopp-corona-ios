@@ -16,6 +16,12 @@ class LocalStorage {
     var hasAttestedSickness: Bool {
         attestedSicknessAt != nil
     }
+    
+    @Persisted(userDefaultsKey: "finish_proven_sickness_quarantine", notificationName: .init("finishProvenSicknessQuarantine"), defaultValue: false)
+    var finishProvenSicknessQuarantine: Bool
+    
+    @Persisted(userDefaultsKey: "revoke_probably_sickness", notificationName: .init("revokeProbablySickness"), defaultValue: false)
+    var revokeProbablySickness: Bool
 
     /// has the user seen the onboarding
     @Persisted(userDefaultsKey: "has_seen_onboarding_2", notificationName: .init("hasSeenOnboarding"), defaultValue: false)
