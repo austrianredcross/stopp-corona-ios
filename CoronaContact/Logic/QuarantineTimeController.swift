@@ -38,6 +38,7 @@ class QuarantineTimeController {
         case red
         case yellow
         case selfDiagnosed
+        case provenSickness
     }
 
     struct QuarantineEnd {
@@ -223,6 +224,16 @@ class QuarantineTimeController {
             )
             endOfQuarantines.append(endOfQuarantine)
         }
+        
+        if localStorage.revokeProbablySickness {
+            let endOfQuarantine = QuarantineEnd(type: .selfDiagnosed, date: Date())
+            endOfQuarantines.append(endOfQuarantine)
+        }
+        
+        if localStorage.finishProvenSicknessQuarantine {
+            let endOfQuarantine = QuarantineEnd(type: .provenSickness, date: Date())
+            endOfQuarantines.append(endOfQuarantine)
+        }
 
         guard let quarantineEndingLast = endOfQuarantines
             .sorted(by: { $0.date < $1.date })
@@ -239,10 +250,6 @@ class QuarantineTimeController {
             return
         }
         
-        if quarantineEndingLast.type == .selfDiagnosed && localStorage.completedVoluntaryQuarantine {
-            return completion(.completed(quarantineEndingLast))
-        }
-
         completion(.inProgress(quarantineEndingLast))
     }
 
@@ -257,8 +264,7 @@ class QuarantineTimeController {
     private func setupRevocation(for quarantineStatus: QuarantineStatus) {
         switch quarantineStatus {
         case let .completed(end) where end.type == .selfDiagnosed:
-            localStorage.isProbablySickAt = nil
-            localStorage.missingUploadedKeysAt = nil
+            localStorage.completedVoluntaryQuarantine = true
         case .completed:
             localStorage.completedRequiredQuarantine = true
         case .cleared:

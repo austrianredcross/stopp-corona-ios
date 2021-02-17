@@ -100,11 +100,13 @@ class HealthRepository {
     }
 
     func revokeProbablySick() {
+        localStorage.revokeProbablySickness = true
         localStorage.isProbablySickAt = nil
         localStorage.missingUploadedKeysAt = nil
     }
 
     func revokeProvenSickness() {
+        localStorage.finishProvenSicknessQuarantine = true
         localStorage.attestedSicknessAt = nil
         localStorage.missingUploadedKeysAt = nil
     }

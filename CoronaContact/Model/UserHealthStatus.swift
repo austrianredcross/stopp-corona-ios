@@ -18,7 +18,7 @@ enum UserHealthStatus: Equatable {
     case isHealthy
     case isUnderSelfMonitoring
     case isProbablySick(quarantineDays: Int = 0)
-    case hasAttestedSickness(quarantineDays: Int = 0)
+    case hasAttestedSickness
 
     /// most severe state wins
     init(quarantineDays: Int? = nil) {
@@ -26,7 +26,7 @@ enum UserHealthStatus: Equatable {
         let localStorage: LocalStorage = Resolver.resolve()
 
         if localStorage.hasAttestedSickness {
-            self = .hasAttestedSickness(quarantineDays: quarantineDays)
+            self = .hasAttestedSickness
         } else if localStorage.isProbablySick {
             self = .isProbablySick(quarantineDays: quarantineDays)
         } else if localStorage.isUnderSelfMonitoring {
@@ -134,9 +134,7 @@ enum UserHealthStatus: Equatable {
         if case let .isProbablySick(quarantineDays) = self {
             return quarantineDays
         }
-        if case let .hasAttestedSickness(quarantineDays) = self {
-            return quarantineDays
-        }
+        
         return nil
     }
 

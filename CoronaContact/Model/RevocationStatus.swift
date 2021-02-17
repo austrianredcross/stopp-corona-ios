@@ -33,7 +33,7 @@ enum RevocationStatus {
     }
 
     private var iconFileName: String? {
-        "heartIcon"
+        "HeartIcon"
     }
 
     var color: UIColor? {
@@ -86,5 +86,7 @@ enum RevocationStatus {
         localStorage.completedRequiredQuarantine = false
         localStorage.allClearQuarantine = false
         localStorage.wasQuarantined = false
+        localStorage.finishProvenSicknessQuarantine = false
+        localStorage.revokeProbablySickness = false
     }
 }
