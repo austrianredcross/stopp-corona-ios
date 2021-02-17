@@ -148,6 +148,8 @@ class DebugViewModel: ViewModel {
 
     func handleRiskCalculationResult(_ result: Result<RiskCalculationResult, RiskCalculationError>) {
         if case let .success(riskResult) = result {
+            localStorage.performedBatchProcessingAt = Date()
+            localStorage.performedBatchProcessingDates.managingBatchProcessingDates(insert: Date())
             QuarantineTimeController.quarantineTimeCalculation(riskResult: riskResult)
         }
     }
