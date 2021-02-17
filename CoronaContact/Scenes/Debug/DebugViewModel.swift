@@ -37,11 +37,18 @@ class DebugViewModel: ViewModel {
 
     func updateView() {
         var text = "User is healthy"
-        viewController?.revokeAttestedSickButton.isHidden = true
-        viewController?.revokeProbablySickButton.isHidden = true
-        viewController?.probablySickButton.isHidden = false
-        viewController?.attestedSickButton.isHidden = false
-        viewController?.moveSickReportButton.isHidden = true
+        
+        DispatchQueue.main.async { [weak self] in
+            
+            guard let viewController = self?.viewController else { return }
+            
+            viewController.revokeAttestedSickButton.isHidden = true
+            viewController.revokeProbablySickButton.isHidden = true
+            viewController.probablySickButton.isHidden = false
+            viewController.attestedSickButton.isHidden = false
+            viewController.moveSickReportButton.isHidden = true
+        }
+        
         switch healthRepository.userHealthStatus {
         case .isHealthy:
             break
@@ -49,30 +56,40 @@ class DebugViewModel: ViewModel {
             text = "User is self monitoring"
         case .isProbablySick:
             text = "User is probably sick"
-            viewController?.revokeProbablySickButton.isHidden = false
-            viewController?.probablySickButton.isHidden = true
-            viewController?.moveSickReportButton.isHidden = false
+            
+            DispatchQueue.main.async { [weak self] in
+                
+                guard let viewController = self?.viewController else { return }
+                
+                viewController.revokeProbablySickButton.isHidden = false
+                viewController.probablySickButton.isHidden = true
+                viewController.moveSickReportButton.isHidden = false
+            }
+            
         case .hasAttestedSickness:
             text = "User is attested sick"
-            viewController?.revokeAttestedSickButton.isHidden = false
-            viewController?.probablySickButton.isHidden = true
-            viewController?.attestedSickButton.isHidden = true
-            viewController?.moveSickReportButton.isHidden = false
+            
+            DispatchQueue.main.async { [weak self] in
+                
+                guard let viewController = self?.viewController else { return }
+                
+                viewController.revokeAttestedSickButton.isHidden = false
+                viewController.probablySickButton.isHidden = true
+                viewController.attestedSickButton.isHidden = true
+                viewController.moveSickReportButton.isHidden = false
+            }
         }
-        if localStorage.lastYellowContact != nil {
-            viewController?.yellowButton.transKeyNormal = "- Yellow"
-        } else {
-            viewController?.yellowButton.transKeyNormal = "+ Yellow"
+        
+        viewController?.yellowButton.transKeyNormal = localStorage.lastYellowContact != nil ? "- Yellow" : "+ Yellow"
+        viewController?.redButton.transKeyNormal = localStorage.lastRedContact != nil ? "- Red" : "+ Red"
+
+        DispatchQueue.main.async { [weak self] in
+            
+            guard let viewController = self?.viewController else { return }
+            
+            viewController.currentStateLabel.text = text
+            viewController.batchDownloadSchedulerResultLabel.text = self?.localStorage.batchDownloadSchedulerResult
         }
-        viewController?.yellowButton.updateTranslation()
-        if localStorage.lastRedContact != nil {
-            viewController?.redButton.transKeyNormal = "- Red"
-        } else {
-            viewController?.redButton.transKeyNormal = "+ Red"
-        }
-        viewController?.redButton.updateTranslation()
-        viewController?.currentStateLabel.text = text
-        viewController?.batchDownloadSchedulerResultLabel.text = localStorage.batchDownloadSchedulerResult
     }
 
     func close() {
