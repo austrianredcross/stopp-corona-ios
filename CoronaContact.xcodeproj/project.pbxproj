@@ -30,6 +30,8 @@
 		1CAFD93625D5388900866AA3 /* ReportHealthyViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CAFD93225D5388900866AA3 /* ReportHealthyViewController.storyboard */; };
 		1CAFD93725D5388900866AA3 /* ReportHealthyCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAFD93325D5388900866AA3 /* ReportHealthyCoordinator.swift */; };
 		1CCE52E825D5278400345671 /* Date+toIntervalNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCE52E725D5278400345671 /* Date+toIntervalNumber.swift */; };
+		1CE08CAE25DFC69300A12547 /* ExposureNotificationErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CE08CAD25DFC69300A12547 /* ExposureNotificationErrorView.xib */; };
+		1CE08CB225DFCA2600A12547 /* ExposureNotificationErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE08CB125DFCA2600A12547 /* ExposureNotificationErrorView.swift */; };
 		1CF3B34D25A8443500AC94C2 /* SelfTestingCoronaSuspicionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF3B34C25A8443500AC94C2 /* SelfTestingCoronaSuspicionViewController.swift */; };
 		1CF3B35125A844EB00AC94C2 /* SelfTestingCoronaSuspicionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF3B35025A844EB00AC94C2 /* SelfTestingCoronaSuspicionViewModel.swift */; };
 		1CF3B35525A8451600AC94C2 /* SelfTestingCoronaSuspicionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF3B35425A8451600AC94C2 /* SelfTestingCoronaSuspicionCoordinator.swift */; };
@@ -412,6 +414,8 @@
 		1CAFD93225D5388900866AA3 /* ReportHealthyViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ReportHealthyViewController.storyboard; sourceTree = "<group>"; };
 		1CAFD93325D5388900866AA3 /* ReportHealthyCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportHealthyCoordinator.swift; sourceTree = "<group>"; };
 		1CCE52E725D5278400345671 /* Date+toIntervalNumber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+toIntervalNumber.swift"; sourceTree = "<group>"; };
+		1CE08CAD25DFC69300A12547 /* ExposureNotificationErrorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExposureNotificationErrorView.xib; sourceTree = "<group>"; };
+		1CE08CB125DFCA2600A12547 /* ExposureNotificationErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExposureNotificationErrorView.swift; sourceTree = "<group>"; };
 		1CF3B34C25A8443500AC94C2 /* SelfTestingCoronaSuspicionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfTestingCoronaSuspicionViewController.swift; sourceTree = "<group>"; };
 		1CF3B35025A844EB00AC94C2 /* SelfTestingCoronaSuspicionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfTestingCoronaSuspicionViewModel.swift; sourceTree = "<group>"; };
 		1CF3B35425A8451600AC94C2 /* SelfTestingCoronaSuspicionCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfTestingCoronaSuspicionCoordinator.swift; sourceTree = "<group>"; };
@@ -1767,6 +1771,8 @@
 				4B21DB6B25827CE5001274DD /* TransHeadingLabel.swift */,
 				1CF3B35825A8594600AC94C2 /* DatePickerView.swift */,
 				4B686A5925CC4040000BE02B /* PhoneNumberTextView.swift */,
+				1CE08CAD25DFC69300A12547 /* ExposureNotificationErrorView.xib */,
+				1CE08CB125DFCA2600A12547 /* ExposureNotificationErrorView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -2042,6 +2048,7 @@
 				4E0D6D6824225FA30076CBD6 /* Assets.xcassets in Resources */,
 				4B82572124266B9E007E25C6 /* de.imprint.html in Resources */,
 				4EE28121242BA43900BC4C6E /* OnboardingConsentPageView.xib in Resources */,
+				1CE08CAE25DFC69300A12547 /* ExposureNotificationErrorView.xib in Resources */,
 				61D0F54924352E960026C91A /* RevocationStatusReportViewController.storyboard in Resources */,
 				614D722A2429084900CC545D /* SelfTestingStatusReportViewController.storyboard in Resources */,
 				61D1A3D5242A3C40007F82ED /* InfoPlist.strings in Resources */,
@@ -2431,6 +2438,7 @@
 				61C4A47924279433004D18BB /* UIActivityIndicatorView+scale.swift in Sources */,
 				9215254F2427C74A0023F469 /* SelfTestingSelfMonitoringViewController.swift in Sources */,
 				61D0F54A24352E960026C91A /* RevocationStatusReportViewController.swift in Sources */,
+				1CE08CB225DFCA2600A12547 /* ExposureNotificationErrorView.swift in Sources */,
 				61546540242CBE7F0003D3D3 /* SelfMonitoringGuidelinesCoordinator.swift in Sources */,
 				1C35920E25B7135F00EC93DB /* Date+ShortMonthName.swift in Sources */,
 				61DAF6EF2492181100A3B069 /* ENIntervalNumber+date.swift in Sources */,

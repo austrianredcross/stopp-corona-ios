@@ -36,6 +36,7 @@ final class MainViewController: UIViewController, StoryboardBased, ViewModelBase
     @IBOutlet var revocationWrapperView: UIView!
     
     @IBOutlet var backgroundHandshakeStackView: RiskAssessmentView!
+    @IBOutlet var exposureNotificationErrorView: ExposureNotificationErrorView!
     @IBOutlet var automaticHandshakeInactiveView: UIView!
     @IBOutlet var automaticHandshakeActiveView: UIView!
     @IBOutlet var automaticHandshakeAnimationView: AnimationView!
@@ -281,10 +282,12 @@ final class MainViewController: UIViewController, StoryboardBased, ViewModelBase
             automaticHandshakeAnimationView.play()
             backgroundHandshakeStackView.stackViewSwitch.isOn = true
             if viewModel.automaticHandshakePaused {
+                exposureNotificationErrorView.isHidden = false
                 backgroundHandshakeStackView.stackViewSwitch.onTintColor = .ccYellow
                 backgroundHandshakeStackView.riskAssessmentCurrentStatusLabel.styleName = StyleNames.boldYellow.rawValue
                 backgroundHandshakeStackView.riskAssessmentCurrentStatusLabel.styledText = "automatic_handshake_switch_paused".localized
             } else {
+                exposureNotificationErrorView.isHidden = true
                 backgroundHandshakeStackView.stackViewSwitch.onTintColor = .ccBlue
                 backgroundHandshakeStackView.riskAssessmentCurrentStatusLabel.styleName = StyleNames.boldBlue.rawValue
                 backgroundHandshakeStackView.riskAssessmentCurrentStatusLabel.styledText = "automatic_handshake_switch_on".localized

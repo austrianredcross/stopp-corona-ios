@@ -71,6 +71,8 @@
 "main_microphone_explanation_dialog_headline"                                = "Access to the microphone";
 "main_microphone_explanation_dialog_description"                             = "For the digital handshake, it is checked whether other smartphones in the area have also triggered the handshake. This works via ultrasound. Therefore it is possible that your smartphone emits an audible sound. The sound is recorded by other smartphones with the microphone, and vice versa, your smartphone also uses the microphone to pick up sounds from other devices. For this reason, access to the microphone is required.";
 "main_microphone_explanation_dialog_do_not_show_again"                       = "Don't show again";
+"main_exposure_error_title"                                                  = "Error with COVID-19 Exposure Notifications framework";
+"main_exposure_error_bluetooth_off_message"                                  = "Bluetooth is switched off. For COVID-19 contact notifications to work properly, you must enable Bluetooth.";
 "get_exposure_info_user_explanation"                                         = "One of your recent contacts may have been infected or suspected of being infected";
 "mandatory_update_title"                                                     = "Download the current version";
 "mandatory_update_message"                                                   = "This version is no longer supported. Download the current version to continue using the app. ";
