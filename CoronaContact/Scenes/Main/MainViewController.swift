@@ -195,6 +195,11 @@ final class MainViewController: UIViewController, StoryboardBased, ViewModelBase
 
     private func configureContactHealthStatusView() {
         
+        guard let hasAttestedSickness = viewModel?.hasAttestedSickness, !hasAttestedSickness else {
+            contactHealthWrapperView.isHidden = true
+            return
+        }
+        
         guard let contactHealthStatus = viewModel?.contactHealthStatus else {
             contactHealthWrapperView.isHidden = true
             primaryContactHealthStatusView.isHidden = true
