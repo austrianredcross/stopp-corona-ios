@@ -71,6 +71,8 @@
 "main_microphone_explanation_dialog_headline"                                = "Zugriff auf das Mikrofon";
 "main_microphone_explanation_dialog_description"                             = "Für den Digitalen Handshake wird geprüft, ob auch andere Smartphones in der Gegend den Handshake ausgelöst haben. Das funktioniert über Ultraschall. Deshalb kann es sein, dass Ihr Smartphone einen hörbaren Ton von sich gibt. Der Ton wird von anderen Smartphones mit dem Mikrofon aufgezeichnet und andersherum nutzt auch Ihr Smartphone das Mikrofon, um Töne der anderen Geräte wahrzunehmen. Aus diesem Grund wird der Zugriff auf das Mikrofon benötigt.";
 "main_microphone_explanation_dialog_do_not_show_again"                       = "Nicht wieder anzeigen";
+"main_exposure_error_title"                                                  = "Fehler mit dem COVID-19-Framework für Expositionsbenachrichtigungen";
+"main_exposure_error_bluetooth_off_message"                                  = "Bluetooth ist ausgeschaltet. Damit die COVID-19-Kontaktbenachrichtigungen ordnungsgemäß funktionieren, müssen Sie Bluetooth aktivieren.";
 "get_exposure_info_user_explanation"                                         = "Möglicherweise liegt bei einem Ihrer letzten Kontakte eine Infektion oder ein Verdachtsfall vor";
 "mandatory_update_title"                                                     = "Aktuelle Version herunterladen";
 "mandatory_update_message"                                                   = "Die derzeitige Version wird nicht mehr unterstützt. Laden Sie bitte eine neue Version der App herunter, damit Sie wieder auf alle Funktionen zugreifen können.";
