@@ -130,7 +130,8 @@ final class MainViewController: UIViewController, StoryboardBased, ViewModelBase
         userHealthStatusView.descriptionText = viewModel.userHealthStatus.description
         userHealthStatusView.dateText = viewModel.userHealthStatus.dateText
         userHealthStatusView.quarantineCounter = viewModel.userHealthStatus.quarantineDays
-
+        userHealthStatusView.isDateLabelEnabled = !userHealthStatusView.dateText.isEmpty
+        
         userHealthStatusView.buttonText = viewModel.userHealthStatus.primaryActionText
         userHealthStatusView.handlePrimaryTap = { [weak self] in
             self?.viewModel?.tappedPrimaryButtonInUserHealthStatus()
