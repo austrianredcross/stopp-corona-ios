@@ -18,6 +18,7 @@ extension Resolver {
 
 class HealthRepository {
     private var quarantineTimeController: QuarantineTimeController!
+    @Injected private var notificationService: NotificationService
     @Injected private var dba: DatabaseService
     @Injected private var localStorage: LocalStorage
     @Injected private var configService: ConfigurationService
@@ -46,6 +47,9 @@ class HealthRepository {
         $contactHealthStatus.subscribe { [weak self] healthStatus in
             if healthStatus != nil {
                 self?.removeRevocationStatus()
+                self?.notificationService.addSelfTestReminderNotificationIn()
+            } else {
+                self?.notificationService.removeSelfTestReminderNotification()
             }
         }.add(to: &subscriptions)
     }
