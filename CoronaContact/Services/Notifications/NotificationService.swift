@@ -100,7 +100,7 @@ class NotificationService: NSObject {
     }
 
     func showTestNotifications() {
-        addSelfTestReminderNotificationIn(seconds: 10)
+        createUNNotificationRequest(forSeconds: 10)
 
         let titleRed = "TEST: \("local_notification_sick_contact_headline".localized))"
         let bodyRed = "local_notification_sick_contact_message".localized
@@ -148,25 +148,48 @@ class NotificationService: NSObject {
         notificationCenter.add(request)
     }
 
-    func addSelfTestReminderNotificationIn(seconds: TimeInterval = 60 * 60 * 6) {
+    func addSelfTestReminderNotificationIn() {
         removeSelfTestReminderNotification()
 
+        // Create AM Time
+        createUNNotificationRequest(forHour: 10)
+        // Create PM Time
+        createUNNotificationRequest(forHour: 16)
+    }
+    
+    private func createUNNotificationRequest(forHour hour: Int? = nil, forSeconds seconds: Int = 10) {
+        
         let content = UNMutableNotificationContent()
         content.title = "self_test_push_reminder".localized
 
         content.categoryIdentifier = "alarm"
         content.sound = UNNotificationSound.default
         content.userInfo = ["type": NotificationServiceKeys.selfTestPush]
+        
+        var request: UNNotificationRequest
+        
+        if let hour = hour {
+            var datComp = DateComponents()
 
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: seconds, repeats: false)
+            datComp.hour = hour
+            datComp.minute = 0
+            let trigger = UNCalendarNotificationTrigger(dateMatching: datComp, repeats: true)
 
-        let request = UNNotificationRequest(identifier: NotificationServiceKeys.selfTestPush,
-                                            content: content,
-                                            trigger: trigger)
+            request = UNNotificationRequest(identifier: NotificationServiceKeys.selfTestPush,
+                                                        content: content,
+                                                        trigger: trigger)
+        } else {
 
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(seconds), repeats: false)
+
+            request = UNNotificationRequest(identifier: NotificationServiceKeys.selfTestPush,
+                                                        content: content,
+                                                        trigger: trigger)
+        }
+        
         notificationCenter.add(request)
     }
-
+    
     func removeSelfTestReminderNotification() {
         notificationCenter.removePendingNotificationRequests(withIdentifiers: [NotificationServiceKeys.selfTestPush])
     }

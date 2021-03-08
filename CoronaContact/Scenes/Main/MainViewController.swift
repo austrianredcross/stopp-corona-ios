@@ -249,7 +249,7 @@ final class MainViewController: UIViewController, StoryboardBased, ViewModelBase
         revocationStatusView.descriptionText = revocationStatus.description
         revocationStatusView.dateText = revocationStatus.finishText
         revocationStatusView.appearance = revocationStatus.notificationAppearance
-
+        
         if let primaryActionText = revocationStatus.primaryActionText {
             revocationStatusView.buttonText = primaryActionText
         } else {
