@@ -147,7 +147,8 @@ extension ContactHealthStatus {
         case .yellow:
             return lastYellowContact?.days(until: Date()) ?? 0
         case .mixed:
-            return lastRedContact! < lastYellowContact! ? lastRedContact!.days(until: Date()) ?? 0 : lastYellowContact!.days(until: Date()) ?? 0
+            guard let lastRedContact = lastRedContact, let lastYellowContact = lastYellowContact else { return 0 }
+            return lastRedContact < lastYellowContact ? lastRedContact.days(until: Date()) ?? 0 : lastYellowContact.days(until: Date()) ?? 0
         }
     }
 }
