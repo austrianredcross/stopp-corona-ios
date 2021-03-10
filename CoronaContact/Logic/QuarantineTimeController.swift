@@ -172,8 +172,8 @@ class QuarantineTimeController {
         observers.append(localStorage.$isUnderSelfMonitoring.addObserver(using: refresh))
         observers.append(localStorage.$attestedSicknessAt.addObserver(using: refresh))
         observers.append(localStorage.$isProbablySickAt.addObserver(using: refresh))
-        observers.append(localStorage.$lastYellowContact.addObserver(using: refresh))
         observers.append(localStorage.$lastRedContact.addObserver(using: refresh))
+        observers.append(localStorage.$lastYellowContact.addObserver(using: refresh))
     }
 
     public func refreshIfNecessary() {
@@ -265,6 +265,10 @@ class QuarantineTimeController {
         switch quarantineStatus {
         case let .completed(end) where end.type == .selfDiagnosed:
             localStorage.completedVoluntaryQuarantine = true
+            localStorage.revokeProbablySickness = false
+        case let .completed(end) where end.type == .provenSickness:
+            localStorage.completedRequiredQuarantine = true
+            localStorage.finishProvenSicknessQuarantine = false
         case .completed:
             localStorage.completedRequiredQuarantine = true
         case .cleared:

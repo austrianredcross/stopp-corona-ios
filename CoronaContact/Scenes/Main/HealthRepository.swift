@@ -45,7 +45,7 @@ class HealthRepository {
         }.add(to: &subscriptions)
 
         $contactHealthStatus.subscribe { [weak self] healthStatus in
-            if healthStatus != nil {
+            if healthStatus != nil && !(self?.localStorage.allClearQuarantine ?? false) {
                 self?.removeRevocationStatus()
                 self?.notificationService.addSelfTestReminderNotificationIn()
             } else {
