@@ -63,7 +63,7 @@ class SicknessCertificateStatusReportViewModel: ViewModel {
                     }
                 )
             case .success:
-                self.healthRepository.setProvenSick(from: self.localStorage.isProbablySick ? startDate : startDayOfSymptomsOrAttest)
+                self.healthRepository.setProvenSick(from: self.localStorage.isProbablySick ? self.localStorage.isProbablySickAt! : startDayOfSymptomsOrAttest)
                 self.coordinator?.showConfirmation()
             default:
                 break
