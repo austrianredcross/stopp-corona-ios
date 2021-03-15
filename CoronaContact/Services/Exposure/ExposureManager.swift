@@ -104,16 +104,16 @@ class ExposureManager {
     }
 
     func getDiagnosisKeys(completion: @escaping (Result<[ENTemporaryExposureKey], Error>) -> Void) {
-        #if DEBUG
-            let keyFunction = manager.getTestDiagnosisKeys
-        #else
+        #if RELEASE
             let keyFunction = manager.getDiagnosisKeys
+        #else
+            let keyFunction = manager.getTestDiagnosisKeys
         #endif
         keyFunction { temporaryExposureKeys, error in
             if let error = error {
                 completion(.failure(error))
             } else {
-                self.log.debug("keys: \(temporaryExposureKeys!)")
+                self.log.debug("keys: \(temporaryExposureKeys ?? [])")
                 completion(.success(temporaryExposureKeys ?? []))
             }
         }
