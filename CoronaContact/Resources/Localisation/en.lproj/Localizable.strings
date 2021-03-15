@@ -124,7 +124,7 @@
 "contact_sickness_guidelines_consulting_description"                         = "Contact your general practitioner or one of the following numbers:";
 "contact_sickness_guidelines_consulting_first"                               = "Ö3 Kummernummer <tel>116123</tel>";
 "contact_sickness_guidelines_consulting_second"                              = "Rat auf Draht <tel>147</tel>";
-"contact_sickness_guidelines_consulting_third"                               = "Pastoral advice servcie<tel>142</tel>";
+"contact_sickness_guidelines_consulting_third"                               = "Pastoral advice service <tel>142</tel>";
 "contact_sickness_handshake_date"                                            = "%1$@, between %2$@ and %3$@ o`clock";
 "contact_sickness_time_format"                                               = "H";
 "contact_sickness_warning_title"                                             = "What should I do?";
@@ -277,7 +277,7 @@
 "sickness_certificate_quarantine_guidelines_consulting_description"          = "<b>Do you need psychological support?</b>\n\nPlease contact your attending physician or one of the following numbers:";
 "sickness_certificate_quarantine_guidelines_consulting_first"                = "Ö3 Kummernummer <tel>116123</tel>";
 "sickness_certificate_quarantine_guidelines_consulting_second"               = "Rat auf Draht <tel>147</tel>";
-"sickness_certificate_quarantine_guidelines_consulting_third"                = "Pastoral advice servcie<tel>142</tel>";
+"sickness_certificate_quarantine_guidelines_consulting_third"                = "Pastoral advice service <tel>142</tel>";
 "quarantine_guidelines_title"                                                = "Attention";
 "quarantine_guidelines_headline"                                             = "Self-quarantine";
 "quarantine_guidelines_first"                                                = "Please monitor your health within the next days <b>until the %s</b> particularly thorough and <b>check your body temperature daily</b>.";
@@ -293,7 +293,7 @@
 "quarantine_guidelines_consulting_description"                               = "<b>Do you need psychological support?</b>\n\nPlease contact your attending physician or one of the following numbers:";
 "quarantine_guidelines_consulting_first"                                     = "Ö3 Kummernummer <tel>116123</tel>";
 "quarantine_guidelines_consulting_second"                                    = "Rat auf Draht <tel>147</tel>";
-"quarantine_guidelines_consulting_third"                                     = "Pastoral advice servcie<tel>142</tel>";
+"quarantine_guidelines_consulting_third"                                     = "Pastoral advice service <tel>142</tel>";
 "sickness_certificate_attest_headline"                                       = "Attention";
 "sickness_certificate_attest_description"                                    = "You have reported your medically confirmed corona infection.";
 "sickness_certificate_attest_date_text"                                      = "Please go into quarantine <b>until you are healthy</b>.";
@@ -448,7 +448,7 @@
 "suspicion_guidelines_advice_description"                                    = "Please contact your attending physician or one of the following numbers:";
 "suspicion_guidelines_advice_phone_first"                                    = "Ö3 Kummernummer <tel>116123</tel>";
 "suspicion_guidelines_advice_phone_second"                                   = "Rat auf Draht <tel>147</tel>";
-"suspicion_guidelines_advice_phone_third"                                    = "Pastoral advice servcie<tel>142</tel>";
+"suspicion_guidelines_advice_phone_third"                                    = "Pastoral advice service <tel>142</tel>";
 "suspicion_guidelines_report_sick_headline"                                  = "Report COVID-19";
 "suspicion_guidelines_report_sick_description"                               = "Report a medically confirmed infection to protect your contacts.";
 "suspicion_guidelines_report_sick_button"                                    = "Report medical confirmation";
