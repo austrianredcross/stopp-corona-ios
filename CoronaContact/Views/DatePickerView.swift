@@ -56,7 +56,7 @@ class DatePickerView: UIPickerView, UIPickerViewDelegate, UIPickerViewDataSource
         // Hiding the iOS 14* gray background view
         pickerView.subviews[safe:1]?.backgroundColor = UIColor.clear
         
-        let dateString = Calendar.current.isDateInToday(data[row]) ? "general_today".localized : data[row].shortMonthNameString
+        let dateString = Calendar.current.isDateInToday(data[row]) ? "general_today".localized : data[row].longDayShortMonthLongYear
         
         let attributedString = NSMutableAttributedString(string: dateString)
         

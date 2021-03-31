@@ -161,16 +161,12 @@ class MainViewModel: ViewModel {
         
         if let performedBatchProcessingAt = localStorage.performedBatchProcessingAt {
             
-            let dateFormatter = DateFormatter()
             var dateString = ""
             
             if Calendar.current.isDateInToday(performedBatchProcessingAt) {
-                dateFormatter.dateFormat = "HH:mm"
-                let formattedDateString = dateFormatter.string(from: performedBatchProcessingAt)
-                dateString = "general_today".localized + ", " + formattedDateString
+                dateString = "general_today".localized + ", " + performedBatchProcessingAt.dayTime
             } else {
-                dateFormatter.dateFormat = "dd. MMM, HH:mm"
-                dateString = dateFormatter.string(from: performedBatchProcessingAt)
+                dateString = performedBatchProcessingAt.shortMonthWithTime
             }
 
             let lastServerUpdateInfoView = IconLabelView.loadFromNib()

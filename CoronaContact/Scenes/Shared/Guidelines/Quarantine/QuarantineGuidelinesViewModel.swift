@@ -6,14 +6,6 @@
 import Foundation
 import Resolver
 
-private let dateFormatter = DateFormatter()
-
-private let dateString: (Date) -> String = { date in
-    let format = DateFormatter.dateFormat(fromTemplate: "dd.MMMM", options: 0, locale: Locale.current)
-    dateFormatter.dateFormat = format
-    return dateFormatter.string(from: date)
-}
-
 class QuarantineGuidelinesViewModel: ViewModel {
     weak var coordinator: QuarantineGuidelinesCoordinator?
 
@@ -27,7 +19,7 @@ class QuarantineGuidelinesViewModel: ViewModel {
             
         guard let monitoringDays = healtRepository.userHealthStatus.quarantineDays, let date = Date().addDays(monitoringDays) else { return nil }
         
-        return dateString(date)
+        return date.longMonth
     }
     
     var guidelines: [Instruction] {

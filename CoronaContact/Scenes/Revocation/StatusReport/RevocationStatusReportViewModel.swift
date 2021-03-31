@@ -6,13 +6,6 @@
 import Foundation
 import Resolver
 
-private let dateFormatter = DateFormatter()
-
-private let dateString: (Date) -> String = { date in
-    dateFormatter.dateFormat = "revocation_report_status_date_format".localized
-    return dateFormatter.string(from: date)
-}
-
 class RevocationStatusReportViewModel: ViewModel {
     @Injected private var flowController: RevocationFlowController
     @Injected private var localStorage: LocalStorage
@@ -28,11 +21,7 @@ class RevocationStatusReportViewModel: ViewModel {
     }
 
     var dateLabel: String? {
-        guard let date = localStorage.isProbablySickAt else {
-            return nil
-        }
-
-        return dateString(date)
+        return localStorage.isProbablySickAt?.shortDate ?? ""
     }
 
     init(with coordinator: RevocationStatusReportCoordinator) {

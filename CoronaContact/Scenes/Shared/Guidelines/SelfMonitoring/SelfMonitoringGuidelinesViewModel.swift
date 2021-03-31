@@ -6,13 +6,6 @@
 import Foundation
 import Resolver
 
-private let dateFormatter = DateFormatter()
-
-private let dateString: (Date) -> String = { date in
-    dateFormatter.dateFormat = "self_monitoring_guidelines_date_format".localized
-    return dateFormatter.string(from: date)
-}
-
 class SelfMonitoringGuidelinesViewModel: ViewModel {
     @Injected private var localStorage: LocalStorage
     weak var coordinator: SelfMonitoringGuidelinesCoordinator?
@@ -22,11 +15,7 @@ class SelfMonitoringGuidelinesViewModel: ViewModel {
     }
 
     var dateLabel: String {
-        guard let date = localStorage.performedSelfTestAt else {
-            return ""
-        }
-
-        return dateString(date)
+        return localStorage.performedSelfTestAt?.shortDateWithTime ?? ""
     }
 
     func buttonTapped() {

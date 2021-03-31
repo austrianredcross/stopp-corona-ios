@@ -125,14 +125,6 @@ extension ContactHealthStatus {
 
 // MARK: - Contact Sickness Screen
 
-private let dateFormatter = DateFormatter()
-
-private let dateString: (Date) -> String = { date in
-    let format = DateFormatter.dateFormat(fromTemplate: "dd.MMMM", options: 0, locale: Locale.current)
-    dateFormatter.dateFormat = format
-    return dateFormatter.string(from: date)
-}
-
 extension ContactHealthStatus {
     
     var daysSinceLastConact: Int {
@@ -233,8 +225,7 @@ extension ContactHealthStatus {
             return nil
         }
 
-        let endOfQuarantine = dateString(date)
-        return endOfQuarantine
+        return date.longMonth
     }
     
     var infectedDateString: String? {
@@ -243,7 +234,7 @@ extension ContactHealthStatus {
         
         guard let lastRedContact = localStorage.lastRedContact else { return nil }
         
-        return dateString(lastRedContact)
+        return lastRedContact.longMonth
     }
 
     var guidelines: [Instruction] {
