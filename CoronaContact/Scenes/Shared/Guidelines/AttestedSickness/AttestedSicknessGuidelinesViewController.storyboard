@@ -97,7 +97,7 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </label>
                                                                 </subviews>
-                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstItem="KUS-f0-ryv" firstAttribute="top" secondItem="92V-DG-jGH" secondAttribute="top" constant="24" id="4da-UK-Erv"/>
                                                                     <constraint firstAttribute="bottom" secondItem="KUS-f0-ryv" secondAttribute="bottom" constant="16" id="Fg3-RY-h2z"/>
@@ -143,7 +143,7 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </textView>
                                                                 </subviews>
-                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstItem="Dy2-Ud-SEA" firstAttribute="top" secondItem="2GI-wZ-lsX" secondAttribute="top" constant="16" id="6tR-Fu-WE9"/>
                                                                     <constraint firstAttribute="trailing" secondItem="Dy2-Ud-SEA" secondAttribute="trailing" constant="24" id="AHp-dy-RgR"/>
@@ -189,7 +189,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="3RN-Qn-fLm" secondAttribute="trailing" id="DWM-fx-1V0"/>
                                     <constraint firstItem="3RN-Qn-fLm" firstAttribute="centerX" secondItem="2PQ-3r-8Cn" secondAttribute="centerX" id="Jsa-Ke-L7P"/>

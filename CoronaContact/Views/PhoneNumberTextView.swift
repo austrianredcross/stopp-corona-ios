@@ -11,7 +11,7 @@ class PhoneNumberTextView: LinkTextView {
     override func awakeFromNib() {
         super.awakeFromNib()
         if let transKey = transKey {
-            self.textViewAttribute = TextViewAttribute(fullText: transKey.localized, links: [ DeepLinkConstants.deepLinkPhoneNumber], linkColor: .ccRouge)
+            self.textViewAttribute = TextViewAttribute(fullText: transKey.localized, links: [ DeepLinkConstants.deepLinkPhoneNumber], linkColor: .ccLink)
         }
     }
 }

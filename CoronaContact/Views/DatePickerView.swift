@@ -61,7 +61,7 @@ class DatePickerView: UIPickerView, UIPickerViewDelegate, UIPickerViewDataSource
         let attributedString = NSMutableAttributedString(string: dateString)
         
         let range = NSRange(location: 0, length: dateString.count)
-        attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.ccRouge, range: range)
+        attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.ccRedText, range: range)
         
         attributedString.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: 20, weight: .bold), range: range)
 

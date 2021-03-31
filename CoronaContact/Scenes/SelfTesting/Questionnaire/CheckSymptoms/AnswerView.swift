@@ -29,7 +29,7 @@ class AnswerView: UIView, NibLoadable {
         checkbox.boxType = .circle
         checkbox.markType = .radio
         checkbox.stateChangeAnimation = .bounce(.fill)
-        checkbox.tintColor = .ccRouge
+        checkbox.tintColor = .ccRedText
         checkbox.checkmarkLineWidth = 3
         checkbox.boxLineWidth = 1
         checkbox.secondaryTintColor = .ccBlack

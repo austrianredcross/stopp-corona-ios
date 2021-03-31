@@ -95,7 +95,7 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </label>
                                                                 </subviews>
-                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="trailing" secondItem="yvC-87-HgH" secondAttribute="trailing" constant="24" id="F16-7g-mPi"/>
                                                                     <constraint firstAttribute="bottom" secondItem="yvC-87-HgH" secondAttribute="bottom" constant="16" id="GSl-9b-H1K"/>
@@ -117,7 +117,7 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </label>
                                                                 </subviews>
-                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstItem="hrY-XE-FU2" firstAttribute="leading" secondItem="AOZ-nb-faj" secondAttribute="leading" constant="24" id="0Ju-GY-9G0"/>
                                                                     <constraint firstItem="hrY-XE-FU2" firstAttribute="top" secondItem="AOZ-nb-faj" secondAttribute="top" id="1If-PP-P3n"/>
@@ -163,7 +163,7 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </textView>
                                                                 </subviews>
-                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="trailing" secondItem="Y6c-R5-rYS" secondAttribute="trailing" constant="24" id="C2T-2B-KY5"/>
                                                                     <constraint firstItem="Y6c-R5-rYS" firstAttribute="top" secondItem="zza-sI-68j" secondAttribute="top" constant="16" id="g35-6I-L4e"/>

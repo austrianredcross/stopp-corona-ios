@@ -25,7 +25,7 @@ class CheckboxView: M13Checkbox {
         stateChangeAnimation = .bounce(.fill)
         checkmarkLineWidth = 2
         boxLineWidth = 2
-        secondaryTintColor = .black
+        secondaryTintColor = UIColor.ccBlack
 
         configureCurrentState()
     }
@@ -39,7 +39,7 @@ class CheckboxView: M13Checkbox {
     }
 
     private func configureEnabledState() {
-        tintColor = .ccRouge
+        tintColor = .ccRedText
     }
 
     private func configureDisabledState() {

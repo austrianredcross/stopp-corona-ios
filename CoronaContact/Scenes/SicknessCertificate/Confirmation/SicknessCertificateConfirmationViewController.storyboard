@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -53,12 +55,12 @@
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dy6-MZ-VTe">
                                                         <rect key="frame" x="24" y="241" width="366" height="50"/>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     </view>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="qoX-9N-96z">
                                                         <rect key="frame" x="24" y="323" width="366" height="72"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mNR-uZ-Urp" customClass="SecondaryButton" customModule="Stopp_Corona" customModuleProvider="target">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mNR-uZ-Urp" customClass="SecondaryButton" customModule="Stopp_Corona" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="366" height="30"/>
                                                                 <state key="normal" title="sickness_certificate_confirmation_secondary_button">
                                                                     <color key="titleColor" name="ccBlack"/>
@@ -70,7 +72,7 @@
                                                                     <action selector="secondaryButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sPu-RR-sI9"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yby-CW-vY8" customClass="PrimaryButton" customModule="Stopp_Corona" customModuleProvider="target">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yby-CW-vY8" customClass="PrimaryButton" customModule="Stopp_Corona" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="42" width="366" height="30"/>
                                                                 <state key="normal" title="sickness_certificate_confirmation_primary_button">
                                                                     <color key="titleColor" name="ccBlack"/>
@@ -99,7 +101,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="Nt4-tt-Pdd" firstAttribute="top" secondItem="xS3-Cs-QOZ" secondAttribute="top" id="Hd4-8T-0gi"/>
                                             <constraint firstAttribute="bottom" secondItem="Nt4-tt-Pdd" secondAttribute="bottom" id="R0x-Zd-yWz"/>
@@ -108,7 +110,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" name="ccWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="xS3-Cs-QOZ" secondAttribute="bottom" priority="250" id="17J-9N-UnI"/>
                                     <constraint firstItem="xS3-Cs-QOZ" firstAttribute="top" secondItem="WmM-br-PP5" secondAttribute="top" id="KTP-Ep-rlr"/>
@@ -121,14 +123,14 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="CJA-Rl-p3O"/>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="WmM-br-PP5" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="4N1-ah-U8M"/>
                             <constraint firstItem="WmM-br-PP5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="8G1-lM-ySh"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="WmM-br-PP5" secondAttribute="top" id="9Ve-09-vhy"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WmM-br-PP5" secondAttribute="trailing" id="OBX-DS-tYu"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="confirmationDescription" destination="gGf-4H-EZD" id="9De-Av-y2R"/>
@@ -146,5 +148,11 @@
         <namedColor name="ccBlack">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <namedColor name="ccWhite">
+            <color red="0.95686274509803926" green="0.95686274509803926" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

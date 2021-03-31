@@ -110,7 +110,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="OR2-Dw-H7d" firstAttribute="leading" secondItem="yNl-sL-dRw" secondAttribute="leading" id="5vT-BW-sSs"/>
                                     <constraint firstItem="OR2-Dw-H7d" firstAttribute="centerY" secondItem="yNl-sL-dRw" secondAttribute="centerY" priority="250" id="Fwr-Gf-Wvn"/>

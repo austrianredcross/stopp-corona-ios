@@ -10,6 +10,26 @@ extension UIColor {
         UIColor(named: "ccRouge")!
     }
 
+    @nonobjc class var ccRedText: UIColor {
+        UIColor(named: "ccRedText")!
+    }
+    
+    @nonobjc class var ccRedButton: UIColor {
+        UIColor(named: "ccRedButton")!
+    }
+    
+    @nonobjc class var ccRedBackground: UIColor {
+        UIColor(named: "ccRedBackground")!
+    }
+    
+    @nonobjc class var ccWhiteText: UIColor {
+        UIColor(named: "ccWhiteText")!
+    }
+    
+    @nonobjc class var ccLink: UIColor {
+        UIColor(named: "ccLink")!
+    }
+    
     @nonobjc class var ccRed: UIColor {
         UIColor(named: "ccRed")!
     }

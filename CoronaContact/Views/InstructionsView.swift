@@ -20,7 +20,7 @@ class BubbleView: UIView {
         }
     }
     
-    var textColour: UIColor = .ccRouge {
+    var textColour: UIColor = .ccRedText {
         didSet {
             configureLabel()
         }
@@ -79,6 +79,7 @@ class BubbleView: UIView {
         label = UILabel()
         label.text = text
         label.textColor = textColour
+
         label.font = .systemFont(ofSize: 20, weight: .bold)
         label.translatesAutoresizingMaskIntoConstraints = false
         addSubview(label)
@@ -168,7 +169,7 @@ class InstructionsView: UIView {
                 }
             }
             
-            linkTextView.textViewAttribute = TextViewAttribute(fullText: instruction.text, links: links, linkColor: .ccRouge)
+            linkTextView.textViewAttribute = TextViewAttribute(fullText: instruction.text, links: links, linkColor: .ccLink)
             linkTextView.translatesAutoresizingMaskIntoConstraints = false
             linkTextView.setContentCompressionResistancePriority(.defaultHigh, for: .vertical)
             paddingView.addSubview(linkTextView)

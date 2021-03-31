@@ -106,7 +106,7 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </label>
                                                                 </subviews>
-                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="trailing" secondItem="T0W-3t-Ovk" secondAttribute="trailing" constant="24" id="0eL-Af-b3y"/>
                                                                     <constraint firstItem="T0W-3t-Ovk" firstAttribute="leading" secondItem="Tsl-3c-agO" secondAttribute="leading" constant="24" id="FMw-jn-tqY"/>
@@ -137,7 +137,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="suspicion_guidelines_phone_emergency_number"/>
-                                                                            <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="boldRed"/>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="link"/>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </label>
                                                                 </subviews>
@@ -172,11 +172,11 @@
                                                                         <nil key="highlightedColor"/>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="suspicion_guidelines_phone_ambulance_number"/>
-                                                                            <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="boldRed"/>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="link"/>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </label>
                                                                 </subviews>
-                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="bottom" secondItem="g0D-fy-ckA" secondAttribute="bottom" constant="32" id="1cs-VB-Zpx"/>
                                                                     <constraint firstAttribute="trailing" secondItem="xPW-JZ-5kA" secondAttribute="trailing" constant="24" id="543-gY-Ojp"/>
@@ -251,7 +251,7 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </textView>
                                                                 </subviews>
-                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstItem="aHA-6a-X3W" firstAttribute="top" secondItem="3Eg-Zd-oDj" secondAttribute="top" constant="16" id="09U-81-xi8"/>
                                                                     <constraint firstAttribute="bottom" secondItem="aHA-6a-X3W" secondAttribute="bottom" constant="16" id="ZsQ-97-PGe"/>
@@ -297,7 +297,7 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </textView>
                                                                 </subviews>
-                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="trailing" secondItem="QTS-Kt-zGW" secondAttribute="trailing" constant="24" id="79B-eZ-TlM"/>
                                                                     <constraint firstAttribute="bottom" secondItem="QTS-Kt-zGW" secondAttribute="bottom" constant="16" id="jUN-ph-5fD"/>

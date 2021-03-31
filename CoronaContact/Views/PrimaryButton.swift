@@ -15,7 +15,7 @@ class PrimaryButton: TransButton {
     override public var isEnabled: Bool {
         didSet {
             if self.isEnabled {
-                backgroundColor = .ccRouge
+                backgroundColor = .ccRedButton
             } else {
                 backgroundColor = .ccBrownGrey
             }
@@ -24,7 +24,7 @@ class PrimaryButton: TransButton {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        if isEnabled { backgroundColor = .ccRouge } else { backgroundColor = .ccBrownGrey }
+        if isEnabled { backgroundColor = .ccRedButton } else { backgroundColor = .ccBrownGrey }
         layer.cornerRadius = 8
         layer.masksToBounds = true
         heightAnchor.constraint(equalToConstant: 56).isActive = true

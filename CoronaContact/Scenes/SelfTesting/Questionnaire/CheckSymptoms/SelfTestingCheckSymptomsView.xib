@@ -117,7 +117,7 @@
                     </userDefinedRuntimeAttributes>
                 </view>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" name="ccWhite"/>
             <constraints>
                 <constraint firstItem="HS0-Ui-L3Q" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="ANK-OV-EGc"/>
                 <constraint firstAttribute="trailing" secondItem="HS0-Ui-L3Q" secondAttribute="trailing" constant="20" id="LTG-TM-gKd"/>
@@ -147,6 +147,9 @@
         </namedColor>
         <namedColor name="ccShadow">
             <color red="0.0" green="0.0" blue="0.0" alpha="0.23000000417232513" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ccWhite">
+            <color red="0.95686274509803926" green="0.95686274509803926" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

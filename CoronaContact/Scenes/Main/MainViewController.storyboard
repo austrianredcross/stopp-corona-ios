@@ -22,10 +22,10 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lpd-HQ-Qp5">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="2270.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="2272.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="fdk-l7-Mva">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="2270.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="2272.5"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="jkK-gs-8va" userLabel="Notification Stack View" customClass="BackgroundStackView" customModule="Stopp_Corona" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1040"/>
@@ -80,17 +80,18 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </stackView>
                                                         </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="stackBackgroundColor">
-                                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="HvU-Mi-vYS" userLabel="Content">
-                                                        <rect key="frame" x="0.0" y="1040" width="414" height="1230.5"/>
+                                                        <rect key="frame" x="0.0" y="1040" width="414" height="1232.5"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="aM4-Bj-TGf" userLabel="Main Information Stack View" customClass="BackgroundStackView" customModule="Stopp_Corona" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="414" height="599.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="414" height="568.5"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lwW-nB-zfn" customClass="SelectedRoundCornersView" customModule="Stopp_Corona" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="128"/>
@@ -99,7 +100,7 @@
                                                                                 <rect key="frame" x="18" y="18" width="378" height="92"/>
                                                                             </stackView>
                                                                         </subviews>
-                                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
                                                                             <constraint firstItem="MIx-K4-Jlz" firstAttribute="top" secondItem="lwW-nB-zfn" secondAttribute="top" constant="18" id="7XV-eS-FwZ"/>
                                                                             <constraint firstAttribute="trailing" secondItem="MIx-K4-Jlz" secondAttribute="trailing" constant="18" id="SKE-0e-OID"/>
@@ -214,21 +215,6 @@
                                                                             <constraint firstAttribute="height" constant="1" id="ceI-Qz-JwX"/>
                                                                         </constraints>
                                                                     </view>
-                                                                    <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y3K-0d-XED" customClass="TransButton" customModule="Stopp_Corona" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="568.5" width="414" height="31"/>
-                                                                        <inset key="contentEdgeInsets" minX="0.0" minY="5" maxX="0.0" maxY="4"/>
-                                                                        <inset key="imageEdgeInsets" minX="6" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                                        <state key="normal" title="automatic_handshake_information_hint" image="exclamationMark">
-                                                                            <color key="titleColor" name="ccBrownGrey"/>
-                                                                        </state>
-                                                                        <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="string" keyPath="normalStyle" value="bodySmall"/>
-                                                                            <userDefinedRuntimeAttribute type="string" keyPath="transKeyNormal" value="automatic_handshake_information_hint"/>
-                                                                        </userDefinedRuntimeAttributes>
-                                                                        <connections>
-                                                                            <action selector="helpTapped:" destination="YPc-ty-Btr" eventType="touchUpInside" id="mys-Yu-LgT"/>
-                                                                        </connections>
-                                                                    </button>
                                                                 </subviews>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="number" keyPath="overrideVertMarginMulti">
@@ -243,10 +229,25 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="J34-4X-N4a" userLabel="Share App Stack View" customClass="BackgroundStackView" customModule="Stopp_Corona" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="599.5" width="414" height="264"/>
+                                                                <rect key="frame" x="0.0" y="568.5" width="414" height="295"/>
                                                                 <subviews>
+                                                                    <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y3K-0d-XED" customClass="TransButton" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                        <rect key="frame" x="24" y="32" width="366" height="31"/>
+                                                                        <inset key="contentEdgeInsets" minX="0.0" minY="5" maxX="0.0" maxY="4"/>
+                                                                        <inset key="imageEdgeInsets" minX="6" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                                        <state key="normal" title="automatic_handshake_information_hint" image="exclamationMark">
+                                                                            <color key="titleColor" name="ccBrownGrey"/>
+                                                                        </state>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="normalStyle" value="bodySmall"/>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="transKeyNormal" value="automatic_handshake_information_hint"/>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                        <connections>
+                                                                            <action selector="helpTapped:" destination="YPc-ty-Btr" eventType="touchUpInside" id="mys-Yu-LgT"/>
+                                                                        </connections>
+                                                                    </button>
                                                                     <view contentMode="scaleToFill" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="200" id="ZS9-0W-H1J" customClass="ShareAppCardView" customModule="Stopp_Corona" customModuleProvider="target">
-                                                                        <rect key="frame" x="24" y="32" width="366" height="200"/>
+                                                                        <rect key="frame" x="24" y="63" width="366" height="200"/>
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     </view>
@@ -258,8 +259,15 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                             </stackView>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k3Z-2H-1aY" userLabel="SeperatorLine">
+                                                                <rect key="frame" x="0.0" y="863.5" width="414" height="1"/>
+                                                                <color key="backgroundColor" name="ccDarkModeBorder"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="1" id="KoE-vF-2M8"/>
+                                                                </constraints>
+                                                            </view>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Q8J-2I-YfW" userLabel="Self Testing Stack View" customClass="BackgroundStackView" customModule="Stopp_Corona" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="863.5" width="414" height="208.5"/>
+                                                                <rect key="frame" x="0.0" y="864.5" width="414" height="208.5"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="main_body_feel_today" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JCJ-ad-B7r" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
                                                                         <rect key="frame" x="8" y="32" width="398" height="20.5"/>
@@ -305,8 +313,15 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                             </stackView>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vzu-wV-zOX" userLabel="SeperatorLine">
+                                                                <rect key="frame" x="0.0" y="1073" width="414" height="1"/>
+                                                                <color key="backgroundColor" name="ccDarkModeBorder"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="1" id="RVd-L4-m8g"/>
+                                                                </constraints>
+                                                            </view>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="gDd-RB-Sg5" userLabel="Sickness Certificate Stack View" customClass="BackgroundStackView" customModule="Stopp_Corona" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="1072" width="414" height="158.5"/>
+                                                                <rect key="frame" x="0.0" y="1074" width="414" height="158.5"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dCJ-lw-B2E" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
                                                                         <rect key="frame" x="8" y="32" width="398" height="20.5"/>
@@ -348,6 +363,7 @@
                                                         </subviews>
                                                     </stackView>
                                                 </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                         <color key="value" name="ccWhite"/>
@@ -424,9 +440,6 @@
             <point key="canvasLocation" x="264" y="151"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="d6X-BX-wfs"/>
-    </designables>
     <resources>
         <image name="automaticHandshakeInactiveIcon" width="277" height="141"/>
         <image name="burgerMenu" width="26" height="17"/>
@@ -439,6 +452,9 @@
         </namedColor>
         <namedColor name="ccBrownGrey">
             <color red="0.47450980392156861" green="0.47450980392156861" blue="0.47450980392156861" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ccDarkModeBorder">
+            <color red="0.95686274509803926" green="0.95686274509803926" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="ccShadow">
             <color red="0.0" green="0.0" blue="0.0" alpha="0.23000000417232513" colorSpace="custom" customColorSpace="sRGB"/>

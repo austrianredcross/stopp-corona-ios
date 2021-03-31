@@ -28,12 +28,12 @@ class ActivityView: UIView {
     private func configureView() {
         switch configuration.style {
         case .white:
-            backgroundColor = UIColor.white.withAlphaComponent(0.9)
+            backgroundColor = UIColor.systemBackground.withAlphaComponent(0.9)
             label.textColor = .ccBlack
         }
 
         activity.style = .large
-        activity.color = .ccRouge
+        activity.color = .ccRedText
         activity.startAnimating()
 
         addSubview(activity)

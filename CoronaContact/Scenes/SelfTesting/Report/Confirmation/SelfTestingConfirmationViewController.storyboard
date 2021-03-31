@@ -136,7 +136,7 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </label>
                                                                 </subviews>
-                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="trailing" secondItem="Lil-aA-iqe" secondAttribute="trailing" constant="24" id="Cbg-FJ-kmi"/>
                                                                     <constraint firstAttribute="trailing" secondItem="iyY-R1-ywP" secondAttribute="trailing" constant="24" id="cZB-f4-hrY"/>
@@ -167,7 +167,7 @@
                                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                                         <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="body"/>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="link"/>
                                                                             <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="self_testing_confirmation_phone_emergency_number"/>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </textView>
@@ -203,12 +203,12 @@
                                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                                         <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="body"/>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="link"/>
                                                                             <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="self_testing_confirmation_phone_ambulance_number"/>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </textView>
                                                                 </subviews>
-                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstItem="eFn-nf-9tB" firstAttribute="top" secondItem="iGr-pe-Vn4" secondAttribute="top" constant="16" id="6mM-ph-uA2"/>
                                                                     <constraint firstItem="rXk-2n-5JN" firstAttribute="leading" secondItem="iGr-pe-Vn4" secondAttribute="leading" constant="24" id="BxW-Gc-F2t"/>
@@ -233,7 +233,7 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </label>
                                                                 </subviews>
-                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstItem="068-dK-MDp" firstAttribute="leading" secondItem="C5v-1f-lOM" secondAttribute="leading" constant="24" id="SXq-Yi-EyZ"/>
                                                                     <constraint firstItem="068-dK-MDp" firstAttribute="top" secondItem="C5v-1f-lOM" secondAttribute="top" constant="16" id="aBl-h2-Njw"/>
@@ -282,7 +282,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="xS3-Cs-QOZ" secondAttribute="bottom" priority="250" id="17J-9N-UnI"/>
                                     <constraint firstItem="xS3-Cs-QOZ" firstAttribute="top" secondItem="WmM-br-PP5" secondAttribute="top" id="KTP-Ep-rlr"/>
