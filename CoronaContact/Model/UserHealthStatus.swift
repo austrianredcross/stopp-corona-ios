@@ -6,14 +6,6 @@
 import Resolver
 import UIKit
 
-private let dateFormatter = DateFormatter()
-
-private let dateString: (Date) -> String = { date in
-    let format = DateFormatter.dateFormat(fromTemplate: "dd.MMMM", options: 0, locale: Locale.current)
-    dateFormatter.dateFormat = format
-    return dateFormatter.string(from: date)
-}
-
 enum UserHealthStatus: Equatable {
     case isHealthy
     case isUnderSelfMonitoring
@@ -143,8 +135,7 @@ enum UserHealthStatus: Equatable {
             return nil
         }
 
-        let endOfQuarantine = dateString(date)
-        return String(format: "suspicion_guidelines_quarantine_end".localized, endOfQuarantine)
+        return String(format: "suspicion_guidelines_quarantine_end".localized, date.longMonth)
     }
 
     var primaryActionText: String {

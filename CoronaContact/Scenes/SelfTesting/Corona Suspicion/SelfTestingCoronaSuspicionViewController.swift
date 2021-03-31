@@ -64,7 +64,7 @@ final class SelfTestingCoronaSuspicionViewController: UIViewController, Storyboa
     @objc func confirmButtonTapped() {
         let date = datePicker.getSelectedDate ?? Date()
         viewModel?.saveSelectedReportDate(reportDate: date)
-        textfield.text = Calendar.current.isDateInToday(date) ? "general_today".localized : date.shortMonthNameString
+        textfield.text = Calendar.current.isDateInToday(date) ? "general_today".localized : date.longDayShortMonthLongYear
         
         self.view.endEditing(true)
     }

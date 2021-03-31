@@ -6,13 +6,6 @@
 import Foundation
 import Resolver
 
-private let dateFormatter = DateFormatter()
-
-private let dateString: (Date) -> String = { date in
-    dateFormatter.dateFormat = "revoke_sickness_report_dateformat".localized
-    return dateFormatter.string(from: date)
-}
-
 class RevokeSicknessStatusReportViewModel: ViewModel {
     @Injected private var healthRepository: HealthRepository
     @Injected private var flowController: RevokeSicknessFlowController
@@ -28,11 +21,7 @@ class RevokeSicknessStatusReportViewModel: ViewModel {
     }
 
     var dateLabel: String? {
-        guard let date = localStorage.attestedSicknessAt else {
-            return nil
-        }
-
-        return dateString(date)
+        return localStorage.attestedSicknessAt?.shortDate ?? ""
     }
 
     init(with coordinator: RevokeSicknessStatusReportCoordinator) {

@@ -6,13 +6,6 @@
 import Foundation
 import Resolver
 
-private let dateFormatter = DateFormatter()
-
-private let quarantineDateString: (Date) -> String = { date in
-    dateFormatter.dateFormat = DateFormatter.dateFormat(fromTemplate: "dd.MMMM", options: 0, locale: Locale.current)
-    return dateFormatter.string(from: date)
-}
-
 class AttestedSicknessGuidelinesViewModel: ViewModel {
     weak var coordinator: AttestedSicknessGuidelinesCoordinator?
     let healthRepository: HealthRepository = Resolver.resolve()
@@ -26,7 +19,7 @@ class AttestedSicknessGuidelinesViewModel: ViewModel {
             return ""
         }
         
-        return quarantineDateString(endOfQuarantine)
+        return endOfQuarantine.longMonth
     }
     
     var guidelines: [Instruction] {

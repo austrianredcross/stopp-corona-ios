@@ -5,19 +5,6 @@
 
 import Foundation
 
-private let dateFormatter = DateFormatter()
-
-private let dateString: (Date) -> String = { date in
-    let format = DateFormatter.dateFormat(fromTemplate: "dd.MMMM", options: 0, locale: Locale.current)
-    dateFormatter.dateFormat = format
-    return dateFormatter.string(from: date)
-}
-
-private let timeString: (Date) -> String = { date in
-    dateFormatter.dateFormat = "contact_sickness_time_format".localized
-    return dateFormatter.string(from: date)
-}
-
 struct InfectionWarning {
     let type: InfectionWarningType
     let timeStamp: Date
@@ -45,6 +32,6 @@ private extension Date {
             return "general_yesterday".localized
         }
 
-        return dateString(self)
+        return self.longMonth
     }
 }
