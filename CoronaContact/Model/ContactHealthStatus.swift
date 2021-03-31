@@ -70,9 +70,18 @@ extension ContactHealthStatus {
     var primaryColorNotification: UIColor {
         switch self {
         case .mixed, .red:
-            return .ccRouge
+            return .ccRedBackground
         case .yellow:
             return .ccYellow
+        }
+    }
+    
+    var notificationAppearance: QuarantineNotificationAppearance {
+        switch self {
+        case .red, .mixed:
+            return .whiteOnly
+        case .yellow:
+            return .color
         }
     }
     
@@ -108,7 +117,7 @@ extension ContactHealthStatus {
     var color: UIColor {
         switch self {
         case .mixed, .red:
-            return .ccRouge
+            return .ccRedBackground
         case .yellow:
             return .ccYellow
         }

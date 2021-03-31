@@ -49,8 +49,8 @@ final class SavedIDsViewController: UIViewController, StoryboardBased, ViewModel
             let bubbleView = BubbleView()
             bubbleView.text = String(instruction.index)
             bubbleView.backgroundColor = .clear
-            bubbleView.bubbleColor = .ccRouge
-            bubbleView.textColour = .systemBackground
+            bubbleView.bubbleColor = .ccRedButton
+            bubbleView.textColour = .ccWhiteText
             
             let spacing: CGFloat = 16
             let paddingView = UIView()

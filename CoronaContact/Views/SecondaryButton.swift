@@ -33,9 +33,9 @@ class SecondaryButton: TransButton {
     }
 
     private func configureView() {
-        backgroundColor = .white
+        backgroundColor = UIColor.ccWhite
         layer.cornerRadius = 8
-        layer.borderColor = UIColor.ccRouge.cgColor
+        layer.borderColor = UIColor.ccRedButton.cgColor
         layer.borderWidth = 1
         layer.masksToBounds = true
         heightAnchor.constraint(equalToConstant: 56).isActive = true

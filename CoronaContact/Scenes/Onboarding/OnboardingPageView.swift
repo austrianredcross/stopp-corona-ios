@@ -31,7 +31,7 @@ final class OnboardingPageView: UIView, NibLoadable {
             }
             
             if let textViewText = page.textViewText {
-                textView.textViewAttribute = TextViewAttribute(fullText: textViewText, links: [DeepLinkConstants.deepLinkTermsOfUseUrl, DeepLinkConstants.deepLinkFAQUrl], linkColor: UIColor.ccRouge)
+                textView.textViewAttribute = TextViewAttribute(fullText: textViewText, links: [DeepLinkConstants.deepLinkTermsOfUseUrl, DeepLinkConstants.deepLinkFAQUrl], linkColor: UIColor.ccLink)
             } else {
                 textView.isHidden = true
             }

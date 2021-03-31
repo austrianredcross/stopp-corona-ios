@@ -3,6 +3,16 @@
     {
       "filename" : "Icon.svg",
       "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "pickerIcon.svg",
+      "idiom" : "universal"
     }
   ],
   "info" : {

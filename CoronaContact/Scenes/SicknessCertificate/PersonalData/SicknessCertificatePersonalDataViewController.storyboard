@@ -86,7 +86,7 @@
                                                                 <subviews>
                                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qI0-Oj-6By">
                                                                         <rect key="frame" x="0.0" y="0.0" width="350" height="58"/>
-                                                                        <color key="textColor" name="ccRouge"/>
+                                                                        <color key="textColor" name="ccText"/>
                                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                                         <textInputTraits key="textInputTraits"/>
                                                                         <userDefinedRuntimeAttributes>
@@ -158,7 +158,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="1vr-i3-iJP" firstAttribute="leading" secondItem="vTG-ew-OfK" secondAttribute="leading" id="1dm-hH-17f"/>
                                     <constraint firstItem="1vr-i3-iJP" firstAttribute="centerX" secondItem="vTG-ew-OfK" secondAttribute="centerX" id="3Cs-Hv-193"/>
@@ -203,7 +203,7 @@
     </designables>
     <resources>
         <image name="pickerIcon" width="9" height="12"/>
-        <namedColor name="ccRouge">
+        <namedColor name="ccText">
             <color red="0.72549019607843135" green="0.074509803921568626" blue="0.10588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">

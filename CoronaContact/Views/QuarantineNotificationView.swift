@@ -19,13 +19,16 @@ struct ButtonAction {
 enum QuarantineNotificationAppearance {
     case regular
     case color
-
+    case whiteOnly
+    
     var textColor: UIColor {
         switch self {
         case .regular:
             return .ccBlack
         case .color:
             return .ccWhite
+        case .whiteOnly:
+            return .white
         }
     }
 
@@ -35,15 +38,19 @@ enum QuarantineNotificationAppearance {
             return .ccBlack
         case .color:
             return .ccWhite
+        case .whiteOnly:
+            return .white
         }
     }
 
     var arrowButtonColor: UIColor {
         switch self {
         case .regular:
-            return .ccRouge
+            return .ccRedButton
         case .color:
             return .ccWhite
+        case .whiteOnly:
+            return .white
         }
     }
 }
@@ -67,7 +74,7 @@ class QuarantineNotificationView: UIView, NibOwnerLoadable {
         didSet {
             if let icon = icon {
                 iconImageView.image = icon.withRenderingMode(.alwaysTemplate)
-                iconImageView.tintColor = .white
+                iconImageView.tintColor = appearance.arrowButtonColor
                 iconImageView.isHidden = false
             } else {
                 iconImageView.isHidden = true
@@ -214,6 +221,7 @@ class QuarantineNotificationView: UIView, NibOwnerLoadable {
         let label = TransLabel()
         label.numberOfLines = 0
         label.attributedText = title.set(style: StyleNames.body.rawValue)
+        label.textColor = UIColor.ccBlack
         buttonsStackView.addArrangedSubview(label)
         buttonsStackView.isHidden = false
     }

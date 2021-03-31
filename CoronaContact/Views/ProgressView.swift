@@ -109,7 +109,7 @@ class ProgressView: UIView {
 
         stepsViews.enumerated().forEach { index, stepView in
             if currentStep >= index {
-                stepView.backgroundColor = .ccRouge
+                stepView.backgroundColor = .ccRedText
             } else {
                 stepView.backgroundColor = .gray
             }

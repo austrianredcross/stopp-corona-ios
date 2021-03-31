@@ -128,6 +128,7 @@ final class MainViewController: UIViewController, StoryboardBased, ViewModelBase
         userHealthStatusView.icon = viewModel.userHealthStatus.icon
         userHealthStatusView.headlineText = viewModel.userHealthStatus.headline
         userHealthStatusView.descriptionText = viewModel.userHealthStatus.description
+        userHealthStatusView.appearance = viewModel.userHealthStatus.notificationAppearance
         userHealthStatusView.dateText = viewModel.userHealthStatus.dateText
         userHealthStatusView.quarantineCounter = viewModel.userHealthStatus.quarantineDays
         userHealthStatusView.isDateLabelEnabled = !userHealthStatusView.dateText.isEmpty
@@ -215,6 +216,7 @@ final class MainViewController: UIViewController, StoryboardBased, ViewModelBase
         primaryContactHealthStatusView.indicatorColor = contactHealthStatus.primaryColorNotification
         primaryContactHealthStatusView.icon = contactHealthStatus.iconImageNotification
         primaryContactHealthStatusView.headlineText = contactHealthStatus.primaryHeadlineNotification
+        primaryContactHealthStatusView.appearance = contactHealthStatus.notificationAppearance
         primaryContactHealthStatusView.quarantineCounter = contactHealthStatus.quarantineDays
         primaryContactHealthStatusView.descriptionText = contactHealthStatus.primaryDescriptionNotification
         primaryContactHealthStatusView.dateText = contactHealthStatus.primaryDateNotification

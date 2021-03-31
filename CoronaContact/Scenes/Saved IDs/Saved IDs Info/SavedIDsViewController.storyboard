@@ -22,16 +22,16 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="png-ah-PJ2">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="449.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="433"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="NSW-c7-oNH">
-                                                <rect key="frame" x="24" y="40" width="366" height="369.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="433"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="qEd-ph-Jjv" userLabel="Text Stack">
-                                                        <rect key="frame" x="0.0" y="0.0" width="366" height="299.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="433"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="Zow-7b-1uO">
-                                                                <rect key="frame" x="0.0" y="0.0" width="414" height="218"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="414" height="137"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="saved_IDs_headline" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wqm-Lj-Zex" userLabel="Subtitle" customClass="TransHeadingLabel" customModule="Stopp_Corona" customModuleProvider="target">
                                                                         <rect key="frame" x="16" y="32" width="382" height="20.5"/>
@@ -58,7 +58,7 @@
                                                                 <edgeInsets key="layoutMargins" top="32" left="16" bottom="32" right="16"/>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="lLe-II-PVp">
-                                                                <rect key="frame" x="0.0" y="250" width="414" height="264"/>
+                                                                <rect key="frame" x="0.0" y="169" width="414" height="264"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_Möchten Sie alle Keys löschen?" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lfb-z6-8ts" userLabel="Delete Subtitle" customClass="TransHeadingLabel" customModule="Stopp_Corona" customModuleProvider="target">
                                                                         <rect key="frame" x="16" y="32" width="382" height="20.5"/>

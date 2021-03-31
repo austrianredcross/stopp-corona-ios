@@ -54,6 +54,8 @@
 		4BCEB4B525657EE800D53E12 /* TransBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCEB4B425657EE800D53E12 /* TransBarButton.swift */; };
 		4BD0B8DC2427AF6400BFA123 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD0B8DB2427AF6400BFA123 /* NotificationService.swift */; };
 		4BD0B8DF2427AF9800BFA123 /* NotificationService+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD0B8DE2427AF9800BFA123 /* NotificationService+Injection.swift */; };
+		4BDA55DB2608E5F500BAB869 /* DarkStyle.css in Resources */ = {isa = PBXBuildFile; fileRef = 4BDA55D92608E5F500BAB869 /* DarkStyle.css */; };
+		4BDA55DC2608E5F500BAB869 /* LightStyle.css in Resources */ = {isa = PBXBuildFile; fileRef = 4BDA55DA2608E5F500BAB869 /* LightStyle.css */; };
 		4E019BD8242604D6004FF670 /* SelectedRoundCornersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E019BD7242604D6004FF670 /* SelectedRoundCornersView.swift */; };
 		4E019BDA24265DF7004FF670 /* Data+uuid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E019BD924265DF7004FF670 /* Data+uuid.swift */; };
 		4E019BE32427D287004FF670 /* Date+round.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E019BE22427D287004FF670 /* Date+round.swift */; };
@@ -440,6 +442,8 @@
 		4BCEB4B425657EE800D53E12 /* TransBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransBarButton.swift; sourceTree = "<group>"; };
 		4BD0B8DB2427AF6400BFA123 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		4BD0B8DE2427AF9800BFA123 /* NotificationService+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationService+Injection.swift"; sourceTree = "<group>"; };
+		4BDA55D92608E5F500BAB869 /* DarkStyle.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = DarkStyle.css; sourceTree = "<group>"; };
+		4BDA55DA2608E5F500BAB869 /* LightStyle.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = LightStyle.css; sourceTree = "<group>"; };
 		4E019BD7242604D6004FF670 /* SelectedRoundCornersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedRoundCornersView.swift; sourceTree = "<group>"; };
 		4E019BD924265DF7004FF670 /* Data+uuid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+uuid.swift"; sourceTree = "<group>"; };
 		4E019BE22427D287004FF670 /* Date+round.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+round.swift"; sourceTree = "<group>"; };
@@ -1067,6 +1071,8 @@
 		4EDB47FB242255A6000CE24A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4BDA55D92608E5F500BAB869 /* DarkStyle.css */,
+				4BDA55DA2608E5F500BAB869 /* LightStyle.css */,
 				4E7BA4A8242E28BD00AE0AC7 /* Animations */,
 				61D1A3CD242A3C40007F82ED /* Localisation */,
 				61032074243F24D800ED3A20 /* Websites */,
@@ -2011,6 +2017,7 @@
 				4B7379F12423E88700DF338E /* StartMenuViewController.storyboard in Resources */,
 				6153A4DC242598DC006A8570 /* SicknessCertificatePersonalDataViewController.storyboard in Resources */,
 				6103207E243F28A000ED3A20 /* en.privacy.html in Resources */,
+				4BDA55DB2608E5F500BAB869 /* DarkStyle.css in Resources */,
 				9215253D2427C5E00023F469 /* SelfTestingHintViewController.storyboard in Resources */,
 				1C5E3C25258287200037017D /* RiskAssessmentView.xib in Resources */,
 				4EDB47F12421E92E000CE24A /* OnboardingPageView.xib in Resources */,
@@ -2068,6 +2075,7 @@
 				61546549242CBEA60003D3D3 /* SuspicionGuidelinesViewController.storyboard in Resources */,
 				1C9E770625A761B300C6ADB7 /* SelfTestingCoronaSuspicionViewController.storyboard in Resources */,
 				1C417F1D25B9D96600BD45CF /* server.der in Resources */,
+				4BDA55DC2608E5F500BAB869 /* LightStyle.css in Resources */,
 				61459A53242ABFE200DC88A7 /* de.terms-of-use.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -73,9 +75,9 @@
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DEr-MA-Uae">
                                                         <rect key="frame" x="24" y="346" width="366" height="50"/>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     </view>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pn5-0K-cTZ" customClass="PrimaryButton" customModule="Stopp_Corona" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pn5-0K-cTZ" customClass="PrimaryButton" customModule="Stopp_Corona" customModuleProvider="target">
                                                         <rect key="frame" x="24" y="428" width="366" height="30"/>
                                                         <state key="normal" title="revoke_sickness_success_finish">
                                                             <color key="titleColor" name="ccBlack"/>
@@ -102,7 +104,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="qEd-ph-Jjv" firstAttribute="leading" secondItem="png-ah-PJ2" secondAttribute="leading" id="3HY-db-gxo"/>
                                             <constraint firstItem="qEd-ph-Jjv" firstAttribute="top" secondItem="png-ah-PJ2" secondAttribute="top" id="fVA-8A-dlC"/>
@@ -111,7 +113,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="png-ah-PJ2" firstAttribute="centerX" secondItem="8ba-P9-42c" secondAttribute="centerX" id="Fpz-yj-Lzw"/>
                                     <constraint firstItem="png-ah-PJ2" firstAttribute="leading" secondItem="8ba-P9-42c" secondAttribute="leading" id="LRj-iv-gEA"/>
@@ -124,14 +126,14 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="QAy-q1-rD4"/>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="8ba-P9-42c" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="KXe-a1-dTq"/>
                             <constraint firstItem="8ba-P9-42c" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Rbc-O9-pjW"/>
                             <constraint firstItem="8ba-P9-42c" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="U3c-j2-6r8"/>
                             <constraint firstItem="8ba-P9-42c" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="WYj-DQ-LvN"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="scrollView" destination="8ba-P9-42c" id="dzQ-al-z3p"/>
@@ -147,5 +149,8 @@
         <namedColor name="ccBlack">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

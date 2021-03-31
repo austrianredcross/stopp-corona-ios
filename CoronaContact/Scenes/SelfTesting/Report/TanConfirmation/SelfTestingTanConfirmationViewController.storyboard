@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,7 +19,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8mI-Bj-17J" customClass="ProgressView" customModule="Stopp_Corona">
                                 <rect key="frame" x="24" y="44" width="366" height="85"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="currentStep">
                                         <integer key="value" value="1"/>
@@ -64,12 +65,12 @@
                                                     </textField>
                                                     <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UxG-ZE-gwU">
                                                         <rect key="frame" x="24" y="195" width="366" height="128"/>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     </view>
                                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="fob-gb-edE">
                                                         <rect key="frame" x="24" y="355" width="366" height="76"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T5w-Ef-rOD" customClass="SecondaryButton" customModule="Stopp_Corona" customModuleProvider="target">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T5w-Ef-rOD" customClass="SecondaryButton" customModule="Stopp_Corona" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="366" height="30"/>
                                                                 <state key="normal" title="self_testing_tan_confirmation_resend_tan_button"/>
                                                                 <userDefinedRuntimeAttributes>
@@ -79,7 +80,7 @@
                                                                     <action selector="resendTanButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7ee-5c-XJ8"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Edd-zj-NId" customClass="PrimaryButton" customModule="Stopp_Corona" customModuleProvider="target">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Edd-zj-NId" customClass="PrimaryButton" customModule="Stopp_Corona" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="46" width="366" height="30"/>
                                                                 <state key="normal" title="self_testing_continue"/>
                                                                 <userDefinedRuntimeAttributes>
@@ -106,7 +107,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="LyJ-L8-cOY" firstAttribute="top" secondItem="cIp-ri-BhD" secondAttribute="top" id="3t3-3c-yGF"/>
                                             <constraint firstAttribute="bottom" secondItem="LyJ-L8-cOY" secondAttribute="bottom" id="JHw-NQ-Bid"/>
@@ -115,7 +116,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="cIp-ri-BhD" secondAttribute="trailing" id="80m-TR-YCM"/>
                                     <constraint firstItem="cIp-ri-BhD" firstAttribute="centerY" secondItem="p8J-EA-I8D" secondAttribute="centerY" priority="250" id="Jk2-Pf-aZj"/>
@@ -128,7 +129,8 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="bRF-y9-v8I"/>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="p8J-EA-I8D" firstAttribute="top" secondItem="8mI-Bj-17J" secondAttribute="bottom" constant="8" id="7q3-9d-5QX"/>
                             <constraint firstItem="p8J-EA-I8D" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="B1e-K6-JJe"/>
@@ -138,7 +140,6 @@
                             <constraint firstItem="8mI-Bj-17J" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="puX-CL-zEk"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8mI-Bj-17J" secondAttribute="trailing" constant="24" id="q5K-uF-Zih"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="descriptionLabel" destination="fdo-ec-Mkn" id="sa7-je-3aG"/>
@@ -151,4 +152,9 @@
             <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

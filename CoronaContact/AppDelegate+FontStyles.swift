@@ -19,6 +19,7 @@ enum StyleNames: String {
     case boldRed
     case boldYellow
     case boldBlue
+    case link
     case underline
     case h1
     case h1b
@@ -108,7 +109,7 @@ extension AppDelegate {
         Styles.register(StyleNames.bold.rawValue, style: boldStyle)
 
         let boldWhiteStyle = settings.bodyFontStyle(weight: .bold).byAdding {
-            $0.color = UIColor.white
+            $0.color = UIColor.ccWhite
         }
         Styles.register(StyleNames.boldWhite.rawValue, style: boldWhiteStyle)
 
@@ -119,7 +120,7 @@ extension AppDelegate {
         Styles.register(StyleNames.boldCenter.rawValue, style: boldCenterStyle)
 
         let boldRedStyle = settings.bodyFontStyle(weight: .bold).byAdding {
-            $0.color = UIColor.ccRouge
+            $0.color = UIColor.ccRedText
         }
         Styles.register(StyleNames.boldRed.rawValue, style: boldRedStyle)
 
@@ -155,6 +156,11 @@ extension AppDelegate {
             $0.alignment = .center
         }
         Styles.register(StyleNames.bodyCenter.rawValue, style: bodyCenterStyle)
+        
+        let linkStyle = settings.bodyFontStyle(weight: .regular).byAdding {
+            $0.color = UIColor.ccLink
+        }
+        Styles.register(StyleNames.link.rawValue, style: linkStyle)
     }
 
     private func registerBodySmallStyles(settings: FontSettings) {
@@ -171,7 +177,7 @@ extension AppDelegate {
     private func registerBodyLargeStyles(settings: FontSettings) {
         let bodyLargeBoldRed = Style {
             $0.font = UIFont.systemFont(ofSize: settings.size.bodyLarge, weight: .bold)
-            $0.color = UIColor.ccRouge
+            $0.color = UIColor.ccRedButton
             $0.minimumLineHeight = settings.height.body
             $0.maximumLineHeight = settings.height.body
         }
@@ -180,7 +186,7 @@ extension AppDelegate {
 
     private func registerHeadlineStyles(settings: FontSettings) {
         let h1Style = settings.h1FontStyle(weight: .bold).byAdding {
-            $0.color = UIColor.ccRouge
+            $0.color = UIColor.ccRedButton
             $0.alignment = .center
         }
         Styles.register(StyleNames.h1.rawValue, style: h1Style)
@@ -212,7 +218,7 @@ extension AppDelegate {
         Styles.register(StyleNames.automaticHandshakeHeadlineYellow.rawValue, style: activeYellowStyle)
         
         let activeRedStyle = settings.automaticHandshakeHeadlineActive().byAdding {
-            $0.color = UIColor.ccRouge
+            $0.color = UIColor.ccRedText
         }
         Styles.register(StyleNames.automaticHandshakeHeadlineRed.rawValue, style: activeRedStyle)
         
@@ -315,7 +321,7 @@ extension AppDelegate {
 
         let primaryButtonStyle = Style {
             $0.font = UIFont.systemFont(ofSize: settings.size.button, weight: .bold)
-            $0.color = UIColor.white
+            $0.color = UIColor.ccWhite
             $0.minimumLineHeight = settings.height.button
             $0.maximumLineHeight = settings.height.button
         }
@@ -350,7 +356,7 @@ extension AppDelegate {
                             "red": Styles.getStyle(.tableDataRed),
                         ]))
 
-        let secondaryButtonStyle = primaryButtonStyle.byAdding { $0.color = UIColor.ccRouge }
+        let secondaryButtonStyle = primaryButtonStyle.byAdding { $0.color = UIColor.ccRedButton }
         Styles.register(StyleNames.secondaryButton.rawValue, style: secondaryButtonStyle)
     }
 }

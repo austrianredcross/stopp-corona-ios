@@ -19,7 +19,7 @@ final class InteroperabilityViewController: UIViewController, StoryboardBased, V
     }
     
     private func configureTextView() {
-        linkTextView.textViewAttribute = TextViewAttribute(fullText: "interoperability_terms_of_use_faq_content".localized, links: [DeepLinkConstants.deepLinkPrivacyUrl, DeepLinkConstants.deepLinkFAQUrl], linkColor: .ccRouge)
+        linkTextView.textViewAttribute = TextViewAttribute(fullText: "interoperability_terms_of_use_faq_content".localized, links: [DeepLinkConstants.deepLinkPrivacyUrl, DeepLinkConstants.deepLinkFAQUrl], linkColor: .ccLink)
     }
     
     @IBAction func acceptButtonPressed(_ sender: Any) {

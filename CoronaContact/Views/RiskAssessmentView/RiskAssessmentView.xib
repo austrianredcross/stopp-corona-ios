@@ -11,7 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RiskAssessmentView" customModule="Stopp_Corona" customModuleProvider="target">
             <userDefinedRuntimeAttributes>
                 <userDefinedRuntimeAttribute type="string" keyPath="titleTransKey" value="automatic_handshake_switch"/>
-                <userDefinedRuntimeAttribute type="string" keyPath="titleStyleName" value="bold"/>
+                <userDefinedRuntimeAttribute type="string" keyPath="titleStyleName" value="boldWhite"/>
             </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="riskAssessmentCurrentStatusLabel" destination="uty-9u-WG3" id="byc-tl-pPP"/>

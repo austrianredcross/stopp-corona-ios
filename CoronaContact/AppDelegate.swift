@@ -129,9 +129,7 @@ extension AppDelegate {
 extension AppDelegate {
     func styleNavigationBar() {
         let navigationBarAppearace = UINavigationBar.appearance()
-        navigationBarAppearace.barTintColor = .white
         navigationBarAppearace.isTranslucent = false
-        navigationBarAppearace.setBackgroundImage(UIImage(), for: .default)
         navigationBarAppearace.shadowImage = UIImage()
         navigationBarAppearace.titleTextAttributes = [
             NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17, weight: .semibold),

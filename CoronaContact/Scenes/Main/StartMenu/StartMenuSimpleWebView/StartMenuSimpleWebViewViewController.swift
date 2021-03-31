@@ -14,6 +14,13 @@ final class StartMenuSimpleWebViewViewController: UIViewController, StoryboardBa
     @IBOutlet var webView: WKWebView!
     @IBOutlet var closeButton: UIBarButtonItem!
 
+    var isDarkMode = false
+    let log = ContextLogger(context: .default)
+
+    var htmlStyle: String {
+        return isDarkMode ? "DarkStyle" : "LightStyle"
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if navigationController?.navigationBar.isHidden == true {
@@ -24,7 +31,16 @@ final class StartMenuSimpleWebViewViewController: UIViewController, StoryboardBa
             navigationItem.rightBarButtonItems = []
         }
     }
-
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        if self.traitCollection.userInterfaceStyle == .dark {
+            isDarkMode = true
+        } else {
+            isDarkMode = false
+        }
+        setupUI()
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         if navigationBarHidden {
@@ -41,6 +57,12 @@ final class StartMenuSimpleWebViewViewController: UIViewController, StoryboardBa
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if self.traitCollection.userInterfaceStyle == .dark {
+            isDarkMode = true
+        } else {
+            isDarkMode = false
+        }
         setupUI()
     }
 
@@ -53,8 +75,26 @@ final class StartMenuSimpleWebViewViewController: UIViewController, StoryboardBa
 
         let url = website.url
         webView.loadFileURL(url, allowingReadAccessTo: url)
-        let request = URLRequest(url: url)
-        webView.load(request)
+        webView.isOpaque = false
+        webView.backgroundColor = .systemBackground
+        
+        let strCssHead = """
+            <head>\
+            <link rel="stylesheet" type="text/css" href="\(htmlStyle).css">\
+            </head>
+            """
+        
+        do {
+            let contents = try String(contentsOf: url)
+            if let stylePath = Bundle.main.path(forResource: htmlStyle, ofType: "css") {
+                let styleURL = URL(fileURLWithPath: stylePath)
+                webView.loadHTMLString(
+                    "\(strCssHead)\(contents)",
+                    baseURL: styleURL)
+            }
+        } catch {
+            log.error("web content from URL: \(url) could not be loaded error: \(error)")
+        }
     }
 
     @IBAction func closeButtonTapped(_ sender: Any) {

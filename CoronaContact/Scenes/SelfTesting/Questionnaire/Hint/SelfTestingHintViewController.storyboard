@@ -125,7 +125,7 @@
                                                         <directionalEdgeInsets key="directionalLayoutMargins" top="14" leading="14" bottom="14" trailing="24"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="stackBackgroundColor">
-                                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <color key="value" systemColor="systemBackgroundColor"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="overrideVertMarginMulti">
                                                                 <integer key="value" value="0"/>
@@ -193,7 +193,7 @@
                                                         <directionalEdgeInsets key="directionalLayoutMargins" top="14" leading="14" bottom="24" trailing="14"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="stackBackgroundColor">
-                                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <color key="value" systemColor="systemBackgroundColor"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="overrideVertMarginMulti">
                                                                 <integer key="value" value="0"/>

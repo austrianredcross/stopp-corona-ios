@@ -68,7 +68,7 @@ enum UserHealthStatus: Equatable {
         case .isProbablySick, .isUnderSelfMonitoring:
             return .ccYellow
         case .hasAttestedSickness:
-            return .ccRouge
+            return .ccRedBackground
         default:
             return nil
         }
@@ -129,7 +129,16 @@ enum UserHealthStatus: Equatable {
         
         return nil
     }
-
+    
+    var notificationAppearance: QuarantineNotificationAppearance {
+        switch self {
+        case .hasAttestedSickness:
+            return .whiteOnly
+        case .isProbablySick, .isUnderSelfMonitoring, .isHealthy:
+            return .color
+        }
+    }
+    
     var endOfQuarantine: String? {
         guard let quarantineDays = quarantineDays, let date = Date().addDays(quarantineDays) else {
             return nil
