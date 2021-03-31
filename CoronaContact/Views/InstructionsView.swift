@@ -19,6 +19,12 @@ class BubbleView: UIView {
             innerWrapperView.backgroundColor = bubbleColor
         }
     }
+    
+    var textColour: UIColor = .ccRouge {
+        didSet {
+            configureLabel()
+        }
+    }
 
     var bubbleSize: CGFloat = 56
     var insets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
@@ -72,7 +78,7 @@ class BubbleView: UIView {
     private func configureLabel() {
         label = UILabel()
         label.text = text
-        label.textColor = .ccRouge
+        label.textColor = textColour
         label.font = .systemFont(ofSize: 20, weight: .bold)
         label.translatesAutoresizingMaskIntoConstraints = false
         addSubview(label)
