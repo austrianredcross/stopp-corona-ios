@@ -76,7 +76,6 @@
                                                                     <userDefinedRuntimeAttribute type="string" keyPath="transKeyNormal" value="sickness_certificate_tan_confirmation_resend_tan_button"/>
                                                                 </userDefinedRuntimeAttributes>
                                                                 <connections>
-                                                                    <action selector="nextButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ta5-5F-bKe"/>
                                                                     <action selector="resendTanButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ku2-EZ-KMA"/>
                                                                 </connections>
                                                             </button>
