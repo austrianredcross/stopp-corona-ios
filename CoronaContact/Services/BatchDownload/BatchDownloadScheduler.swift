@@ -24,6 +24,9 @@ final class BatchDownloadScheduler {
         let progress = batchDownloadService.startBatchDownload(downloadRequirement) { result in
             switch result {
             case let .success(batches):
+                self.localStorage.performedBatchProcessingAt = Date()
+                self.localStorage.performedBatchProcessingDates.managingBatchProcessingDates(insert: Date())
+                
                 self.riskCalculationController.processBatches(batches, completionHandler: self.handleRiskCalculationResult)
                 self.log.debug("Successfully completed the background batch download task.")
                 task.setTaskCompleted(success: true)
@@ -86,8 +89,6 @@ final class BatchDownloadScheduler {
     private func handleRiskCalculationResult(_ result: Result<RiskCalculationResult, RiskCalculationError>) {
         if case let .success(riskResult) = result {
             log.debug("Passing the risk calculation result to the quarantine time controller.")
-            localStorage.performedBatchProcessingAt = Date()
-            localStorage.performedBatchProcessingDates.managingBatchProcessingDates(insert: Date())
             QuarantineTimeController.quarantineTimeCalculation(riskResult: riskResult)
         }
 
