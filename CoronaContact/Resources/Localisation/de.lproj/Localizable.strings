@@ -131,7 +131,7 @@
 "contact_sickness_warning_headline"                                          = "Verhalten bei Risiko-Verdacht";
 "contact_sickness_warning_headline_single"                                   = "1 Kontakt mit Coronavirus-Verdacht";
 "contact_sickness_warning_headline_multiple"                                 = "%d Kontakte mit Coronavirus-Verdacht";
-"contact_sickness_warning_description"                                       = "Bei einem oder mehrerer Ihrer Kontakte\nwurde der <b>Verdacht auf eine Corona-Infektion</b>\nfestgestellt. Daher besteht auch für Sie selbst ein erhöhtes Risiko infiziert zu sein.";
+"contact_sickness_warning_description"                                       = "Bei einem oder mehrerer Ihrer Kontakte\nwurde der <b>Verdacht auf eine Corona-Infektion</b> festgestellt.\nDaher besteht auch für Sie selbst ein erhöhtes Risiko infiziert zu sein.";
 "contact_sickness_warning_description_single"                                = "Bei einer Ihrer registrierten Begegnungen %@.";
 "contact_sickness_warning_explanation"                                       = "<b>gibt es den Verdacht auf eine Corona-Infektion</b>";
 "contact_sickness_warning_description_multiple"                              = "Bei %d Ihrer registrierten Begegnungen %@.";
