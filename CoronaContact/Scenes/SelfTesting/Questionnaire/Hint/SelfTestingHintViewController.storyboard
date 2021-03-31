@@ -37,21 +37,11 @@
                                                             <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="self_testing_hint_headline"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="self_testing_hint_headline" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1kM-3C-Vac" userLabel="self_testing_hint_headline" customClass="TransHeadingLabel" customModule="Stopp_Corona" customModuleProvider="target">
-                                                        <rect key="frame" x="24" y="28.5" width="366" height="20.5"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="h1"/>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="self_testing_hint_headline"/>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </label>
                                                 </subviews>
                                                 <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="24" bottom="8" trailing="24"/>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="hqD-aO-c8o">
-                                                <rect key="frame" x="0.0" y="90" width="414" height="41"/>
+                                                <rect key="frame" x="0.0" y="69.5" width="414" height="41"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" text="self_testing_hint_description_1" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eHS-sy-7h0" customClass="TransHeadingLabel" customModule="Stopp_Corona" customModuleProvider="target">
                                                         <rect key="frame" x="24" y="0.0" width="366" height="20.5"/>
@@ -270,7 +260,6 @@
                         <outlet property="resultLabel" destination="FCp-D4-Drk" id="7Rt-zq-CtS"/>
                         <outlet property="resultStackView" destination="RZd-27-6di" id="Pvj-og-U6d"/>
                         <outlet property="scrollView" destination="sZR-zG-W3V" id="3kG-2r-4Fb"/>
-                        <outlet property="selfTestingHintHeadlineLabel" destination="1kM-3C-Vac" id="m15-V4-FAe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

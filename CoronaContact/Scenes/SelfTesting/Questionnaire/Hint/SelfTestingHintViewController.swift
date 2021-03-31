@@ -8,7 +8,6 @@ import UIKit
 
 final class SelfTestingHintViewController: UIViewController, StoryboardBased, ViewModelBased, FlashableScrollIndicators {
     @IBOutlet var scrollView: UIScrollView!
-    @IBOutlet weak var selfTestingHintHeadlineLabel: TransHeadingLabel!
     @IBOutlet weak var resultLabel: TransHeadingLabel!
     @IBOutlet weak var resultStackView: UIStackView!
     var viewModel: SelfTestingHintViewModel?
@@ -17,8 +16,7 @@ final class SelfTestingHintViewController: UIViewController, StoryboardBased, Vi
         super.viewDidLoad()
         viewModel?.onViewDidLoad()
         
-        resultStackView.accessibilityElements = [resultLabel, selfTestingHintHeadlineLabel]
-        resultStackView.accessibilityLabel = resultLabel.text! + " " + selfTestingHintHeadlineLabel.text!
+        resultStackView.accessibilityLabel = resultLabel.text!
         resultStackView.isAccessibilityElement = true
         resultStackView.accessibilityTraits = .header
     }
