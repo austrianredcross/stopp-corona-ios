@@ -76,7 +76,6 @@
                                                                     <userDefinedRuntimeAttribute type="string" keyPath="transKeyNormal" value="self_testing_tan_confirmation_resend_tan_button"/>
                                                                 </userDefinedRuntimeAttributes>
                                                                 <connections>
-                                                                    <action selector="nextButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8ZR-6a-Aet"/>
                                                                     <action selector="resendTanButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7ee-5c-XJ8"/>
                                                                 </connections>
                                                             </button>
