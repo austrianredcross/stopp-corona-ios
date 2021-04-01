@@ -333,6 +333,14 @@ class MainViewModel: ViewModel {
     func revocation() {
         coordinator?.revocation()
     }
+    
+    func diaryFaqTapped() {
+        coordinator?.diaryFaq()
+    }
+    
+    func diaryTapped() {
+        coordinator?.diary()
+    }
 
     func contactSickness(with healthStatus: ContactHealthStatus) {
         if hasAttestedSickness {

@@ -10,7 +10,8 @@ final class SelfTestingCoronaSuspicionViewController: UIViewController, Storyboa
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet weak var textfield: UITextField!
     
-    let datePicker = DatePickerView()
+    // Initialize the DatePicker with the last 5 Days.
+    let datePicker = DatePicker(daysInPast: 5)
 
     var viewModel: SelfTestingCoronaSuspicionViewModel?
     
@@ -62,7 +63,7 @@ final class SelfTestingCoronaSuspicionViewController: UIViewController, Storyboa
     }
     
     @objc func confirmButtonTapped() {
-        let date = datePicker.getSelectedDate ?? Date()
+        let date = datePicker.chosenDate ?? Date()
         viewModel?.saveSelectedReportDate(reportDate: date)
         textfield.text = Calendar.current.isDateInToday(date) ? "general_today".localized : date.longDayShortMonthLongYear
         

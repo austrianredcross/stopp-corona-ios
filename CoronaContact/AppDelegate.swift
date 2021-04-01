@@ -8,6 +8,7 @@ import Lottie
 import Resolver
 import UIKit
 import UserNotifications
+import CoreData
 
 enum ScreenSize {
     case small, medium, large
@@ -31,6 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     @Injected private var exposureManager: ExposureManager
     @Injected private var batchDownloadScheduler: BatchDownloadScheduler
     @Injected private var appStartBatchController: AppStartBatchController
+    @Injected private var coreDataService: coreDataService
 
     lazy var screenSize: ScreenSize = {
         let width = UIScreen.main.bounds.size.width
@@ -88,8 +90,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if localStorage.hasSeenOnboarding {
             appStartBatchController.startBatchProcessing()
         }
+        
+        coreDataService.deleteDiariesInPast()
     }
-
+    
+    // MARK: Core Data
+    
+    lazy var persistentContainer: NSPersistentContainer = {
+    
+        let container = NSPersistentContainer(name: "StoppCorona")
+        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+            if let error = error as NSError? {
+                fatalError("Unresolved error \(error), \(error.userInfo)")
+            }
+        })
+        return container
+    }()
+    
+    func saveContext () {
+        let context = persistentContainer.viewContext
+        if context.hasChanges {
+            do {
+                try context.save()
+            } catch {
+                let nserror = error as NSError
+                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+            }
+        }
+    }
+    
     deinit {
         for observer in observers {
             NotificationCenter.default.removeObserver(observer)

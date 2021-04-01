@@ -129,6 +129,18 @@ class MainCoordinator: Coordinator, ShareSheetPresentable {
         addChildCoordinator(child)
         child.start()
     }
+    
+    func diaryFaq() {
+        let child = DiaryFaqCoordinator(navigationController: navigationController)
+        addChildCoordinator(child)
+        child.start()
+    }
+    
+    func diary() {
+        let child = DiaryOverviewCoordinator(navigationController: navigationController)
+        addChildCoordinator(child)
+        child.start()
+    }
 
     override func start() {
         let viewModel = MainViewModel(with: self)

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kef-9B-El6">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Diary Delete View Controller-->
+        <scene sceneID="REb-BI-lPn">
+            <objects>
+                <viewController id="kef-9B-El6" customClass="DiaryDeleteViewController" customModule="Stopp_Corona" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hqX-Rp-rqb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ITt-I4-UTy" customClass="SelectedRoundCornersView" customModule="Stopp_Corona" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <subviews>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U8J-xn-cA0">
+                                        <rect key="frame" x="0.0" y="16" width="414" height="820"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RDH-K1-BJu">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="820"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="VJX-9B-AP0" customClass="BackgroundStackView" customModule="Stopp_Corona" customModuleProvider="target">
+                                                        <rect key="frame" x="16" y="579" width="382" height="209"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="EG8-S7-1nJ">
+                                                                <rect key="frame" x="16" y="8" width="350" height="45"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Möchten Sie den Eintrag wirklich Löschen?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sWg-zN-l1Z" customClass="TransHeadingLabel" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="350" height="14.5"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="bold"/>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="diary_delete_title"/>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Diese Aktivität kann nicht mehr rückgängig gemacht werden." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Are-Ui-gPs" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="30.5" width="350" height="14.5"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="body"/>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="diary_delete_description"/>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                    </label>
+                                                                </subviews>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="SYF-7i-nlh">
+                                                                <rect key="frame" x="16" y="93" width="350" height="108"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kHG-2w-QRc" userLabel="Delete" customClass="PrimaryButton" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="16" width="350" height="30"/>
+                                                                        <state key="normal" title="Löschen"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="normalStyle" value="body"/>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="transKeyNormal" value="diary_delete_delete_button"/>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                        <connections>
+                                                                            <action selector="deleteButtonPressed" destination="kef-9B-El6" eventType="touchUpInside" id="m7J-hK-lqQ"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="48Y-W2-bTm" userLabel="Cancel" customClass="SecondaryButton" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="62" width="350" height="30"/>
+                                                                        <state key="normal" title="Abbrechen"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="normalStyle" value="body"/>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="transKeyNormal" value="diary_delete_cancel_button"/>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                        <connections>
+                                                                            <action selector="cancelButtonPressed" destination="kef-9B-El6" eventType="touchUpInside" id="nHx-2l-q6u"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                </subviews>
+                                                                <edgeInsets key="layoutMargins" top="16" left="0.0" bottom="16" right="0.0"/>
+                                                            </stackView>
+                                                        </subviews>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <edgeInsets key="layoutMargins" top="8" left="16" bottom="8" right="16"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="5"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </stackView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="VJX-9B-AP0" secondAttribute="trailing" constant="16" id="1nN-Qy-Tgz"/>
+                                                    <constraint firstItem="VJX-9B-AP0" firstAttribute="top" relation="greaterThanOrEqual" secondItem="RDH-K1-BJu" secondAttribute="top" id="3yc-of-kY4"/>
+                                                    <constraint firstItem="VJX-9B-AP0" firstAttribute="leading" secondItem="RDH-K1-BJu" secondAttribute="leading" constant="16" id="bxY-na-J7n"/>
+                                                    <constraint firstAttribute="bottom" secondItem="VJX-9B-AP0" secondAttribute="bottom" constant="32" id="g3Y-bE-rsO"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="RDH-K1-BJu" firstAttribute="leading" secondItem="U8J-xn-cA0" secondAttribute="leading" id="3J6-tz-5Za"/>
+                                            <constraint firstItem="RDH-K1-BJu" firstAttribute="top" secondItem="U8J-xn-cA0" secondAttribute="top" priority="250" id="6ME-bu-GXk"/>
+                                            <constraint firstItem="RDH-K1-BJu" firstAttribute="centerY" secondItem="U8J-xn-cA0" secondAttribute="centerY" priority="250" id="Amz-D0-Ffp"/>
+                                            <constraint firstAttribute="bottom" secondItem="RDH-K1-BJu" secondAttribute="bottom" id="EKI-Jw-yd2"/>
+                                            <constraint firstAttribute="trailing" secondItem="RDH-K1-BJu" secondAttribute="trailing" id="KYP-GH-twQ"/>
+                                            <constraint firstItem="RDH-K1-BJu" firstAttribute="centerX" secondItem="U8J-xn-cA0" secondAttribute="centerX" id="sMC-uU-ygi"/>
+                                        </constraints>
+                                        <viewLayoutGuide key="contentLayoutGuide" id="6eL-jo-zQ4"/>
+                                        <viewLayoutGuide key="frameLayoutGuide" id="Rhf-1k-i3z"/>
+                                    </scrollView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="U8J-xn-cA0" firstAttribute="top" secondItem="ITt-I4-UTy" secondAttribute="top" constant="16" id="Apl-8T-8tj"/>
+                                    <constraint firstAttribute="trailing" secondItem="U8J-xn-cA0" secondAttribute="trailing" id="B3v-XE-Wtf"/>
+                                    <constraint firstAttribute="bottom" secondItem="U8J-xn-cA0" secondAttribute="bottom" constant="16" id="Xou-Yi-fVs"/>
+                                    <constraint firstItem="U8J-xn-cA0" firstAttribute="leading" secondItem="ITt-I4-UTy" secondAttribute="leading" id="ZOL-ka-ZZY"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="hDa-Wz-9bI"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hDa-Wz-9bI" firstAttribute="trailing" secondItem="ITt-I4-UTy" secondAttribute="trailing" id="F13-w7-Osh"/>
+                            <constraint firstItem="ITt-I4-UTy" firstAttribute="leading" secondItem="hqX-Rp-rqb" secondAttribute="leading" id="lR1-DK-ZF8"/>
+                            <constraint firstItem="ITt-I4-UTy" firstAttribute="top" secondItem="hDa-Wz-9bI" secondAttribute="top" id="nNk-we-TDH"/>
+                            <constraint firstAttribute="bottom" secondItem="ITt-I4-UTy" secondAttribute="bottom" id="sdD-fD-XmK"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mnl-dT-daD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="125" y="95"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

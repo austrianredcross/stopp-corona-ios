@@ -26,4 +26,12 @@ extension ShareSheetPresentable where Self: Coordinator {
 
         presentActivity(activityItems: [item])
     }
+    
+    func presentShareDiary(diary: [DiaryDayInfo]) {
+        
+        let pdfCreator = PDFCreator(diary: diary)
+        let convertedPDF = pdfCreator.convertToPDF()
+                    
+        presentActivity(activityItems: [convertedPDF])
+    }
 }

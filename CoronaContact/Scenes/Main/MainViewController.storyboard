@@ -228,6 +228,82 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                             </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="9Za-sS-mjF" userLabel="Diary">
+                                                                <rect key="frame" x="0.0" y="568.5" width="414" height="437"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="diary_main_title" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kya-6X-8lK" customClass="TransHeadingLabel" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                        <rect key="frame" x="24" y="32" width="366" height="20.5"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="h1b"/>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="diary_main_title"/>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                    </label>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6q3-vI-EnJ">
+                                                                        <rect key="frame" x="24" y="84.5" width="366" height="143"/>
+                                                                        <subviews>
+                                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Diary" translatesAutoresizingMaskIntoConstraints="NO" id="nfy-Q1-Oce">
+                                                                                <rect key="frame" x="73" y="16" width="220" height="111"/>
+                                                                            </imageView>
+                                                                        </subviews>
+                                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                        <constraints>
+                                                                            <constraint firstItem="nfy-Q1-Oce" firstAttribute="centerY" secondItem="6q3-vI-EnJ" secondAttribute="centerY" id="09S-qe-w9F"/>
+                                                                            <constraint firstItem="nfy-Q1-Oce" firstAttribute="top" relation="greaterThanOrEqual" secondItem="6q3-vI-EnJ" secondAttribute="top" constant="16" id="4py-O9-jmD"/>
+                                                                            <constraint firstItem="nfy-Q1-Oce" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6q3-vI-EnJ" secondAttribute="leading" constant="16" id="XKz-Ku-y91"/>
+                                                                            <constraint firstItem="nfy-Q1-Oce" firstAttribute="width" secondItem="6q3-vI-EnJ" secondAttribute="width" multiplier="0.6" id="XvC-Pv-ibp"/>
+                                                                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="nfy-Q1-Oce" secondAttribute="bottom" constant="16" id="jlf-rR-XrW"/>
+                                                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="nfy-Q1-Oce" secondAttribute="trailing" constant="16" id="p8E-lL-fha"/>
+                                                                            <constraint firstItem="nfy-Q1-Oce" firstAttribute="centerX" secondItem="6q3-vI-EnJ" secondAttribute="centerX" id="yTg-ID-R9e"/>
+                                                                        </constraints>
+                                                                    </view>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="diary_main_description" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gKc-gr-gCb" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                        <rect key="frame" x="24" y="259.5" width="366" height="20.5"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="diary_main_description"/>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="body"/>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                    </label>
+                                                                    <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="s2N-ve-dMU" customClass="TransButton" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                        <rect key="frame" x="24" y="312" width="366" height="31"/>
+                                                                        <inset key="contentEdgeInsets" minX="0.0" minY="5" maxX="0.0" maxY="4"/>
+                                                                        <inset key="imageEdgeInsets" minX="6" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                                        <state key="normal" title="diary_main_link" image="exclamationMark">
+                                                                            <color key="titleColor" name="ccBrownGrey"/>
+                                                                        </state>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="normalStyle" value="linkBlue"/>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="transKeyNormal" value="diary_main_link"/>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                        <connections>
+                                                                            <action selector="diaryFaqTapped:" destination="YPc-ty-Btr" eventType="touchUpInside" id="Ytr-Uc-OD8"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OiM-d2-Crc" customClass="PrimaryButton" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                        <rect key="frame" x="24" y="375" width="366" height="30"/>
+                                                                        <state key="normal" title="diary_main_button"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="transKeyNormal" value="diary_main_button"/>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="normalStyle" value="body"/>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                        <connections>
+                                                                            <action selector="diaryTapped:" destination="YPc-ty-Btr" eventType="touchUpInside" id="mzR-Kt-kJg"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="trailing" secondItem="6q3-vI-EnJ" secondAttribute="trailing" constant="16" id="Rrq-8S-ghD"/>
+                                                                    <constraint firstItem="6q3-vI-EnJ" firstAttribute="top" secondItem="Kya-6X-8lK" secondAttribute="bottom" constant="16" id="fTv-wp-YjR"/>
+                                                                    <constraint firstItem="gKc-gr-gCb" firstAttribute="top" secondItem="6q3-vI-EnJ" secondAttribute="bottom" constant="16" id="mQu-Mo-wCA"/>
+                                                                    <constraint firstItem="6q3-vI-EnJ" firstAttribute="leading" secondItem="9Za-sS-mjF" secondAttribute="leading" constant="16" id="qwk-ut-hOi"/>
+                                                                </constraints>
+                                                                <edgeInsets key="layoutMargins" top="32" left="24" bottom="32" right="24"/>
+                                                            </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="J34-4X-N4a" userLabel="Share App Stack View" customClass="BackgroundStackView" customModule="Stopp_Corona" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="568.5" width="414" height="295"/>
                                                                 <subviews>
@@ -441,6 +517,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Diary" width="144" height="111"/>
         <image name="automaticHandshakeInactiveIcon" width="277" height="141"/>
         <image name="burgerMenu" width="26" height="17"/>
         <image name="exclamationMark" width="17" height="17"/>
