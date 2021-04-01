@@ -23,5 +23,6 @@ extension Resolver: ResolverRegistering {
         registerBatchDownloadServices()
         registerRiskCalculationController()
         registerExposureServices()
+        registerCoreDataService()
     }
 }

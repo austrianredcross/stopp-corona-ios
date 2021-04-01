@@ -21,6 +21,7 @@ enum StyleNames: String {
     case boldBlue
     case link
     case underline
+    case linkBlue
     case h1
     case h1b
     case h2
@@ -173,6 +174,17 @@ extension AppDelegate {
 
         Styles.register(StyleNames.bodySmall.rawValue, style: bodySmallStyle)
     }
+    
+    private func registerLinkBlueStyles(settings: FontSettings) {
+        let linkBlueStyle = Style {
+            $0.font = UIFont.systemFont(ofSize: settings.size.bodySmall, weight: .regular)
+            $0.color = UIColor.ccBlue
+            $0.minimumLineHeight = settings.height.body
+            $0.maximumLineHeight = settings.height.body
+        }
+
+        Styles.register(StyleNames.linkBlue.rawValue, style: linkBlueStyle)
+    }
 
     private func registerBodyLargeStyles(settings: FontSettings) {
         let bodyLargeBoldRed = Style {
@@ -316,6 +328,7 @@ extension AppDelegate {
         registerBodyLargeStyles(settings: settings)
         registerBodySmallStyles(settings: settings)
         registerHeadlineStyles(settings: settings)
+        registerLinkBlueStyles(settings: settings)
         registerAutomaticHandshakeHeadlineSytles(settings: settings)
         registerModifiers()
 

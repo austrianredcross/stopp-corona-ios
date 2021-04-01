@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DiaryLocationDayPeriodSelector" customModule="Stopp_Corona" customModuleProvider="target">
+            <connections>
+                <outlet property="afternoonLabel" destination="sDS-AL-ZoN" id="0vf-vS-Gxu"/>
+                <outlet property="afternoonSelectioView" destination="fSv-6D-Kz2" id="Tme-Ya-LaS"/>
+                <outlet property="eveningLabel" destination="U2F-5a-ap3" id="znH-LH-V4E"/>
+                <outlet property="eveningSelectionView" destination="eup-6b-zTh" id="Kcy-6m-xYx"/>
+                <outlet property="morningLabel" destination="d2d-bv-zkQ" id="e9Y-fk-kJF"/>
+                <outlet property="morningSelectionView" destination="ZbG-wZ-TS2" id="vTY-Y7-2gj"/>
+                <outlet property="noonLabel" destination="Cqw-Co-Sf4" id="UXH-JY-nNt"/>
+                <outlet property="noonSelectionView" destination="l0g-wM-EGU" id="aKx-71-iMk"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="327"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="7B2-To-1yz">
+                    <rect key="frame" x="0.0" y="60" width="414" height="251"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Exo-UC-Bee">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="123.5"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZbG-wZ-TS2" customClass="SelectedRoundCornersView" customModule="Stopp_Corona" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="205" height="123.5"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vormittag" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d2d-bv-zkQ" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
+                                            <rect key="frame" x="65" y="51.5" width="75" height="20.5"/>
+                                            <accessibility key="accessibilityConfiguration">
+                                                <accessibilityTraits key="traits" button="YES" staticText="YES"/>
+                                            </accessibility>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="diary_add_location_day_period_1"/>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="body"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstItem="d2d-bv-zkQ" firstAttribute="centerY" secondItem="ZbG-wZ-TS2" secondAttribute="centerY" id="Bpl-Yi-sgN"/>
+                                        <constraint firstItem="d2d-bv-zkQ" firstAttribute="centerX" secondItem="ZbG-wZ-TS2" secondAttribute="centerX" id="ylN-bj-Aw7"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="4"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                            <color key="value" name="ccBorder"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l0g-wM-EGU" customClass="SelectedRoundCornersView" customModule="Stopp_Corona" customModuleProvider="target">
+                                    <rect key="frame" x="209" y="0.0" width="205" height="123.5"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mittag" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cqw-Co-Sf4" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
+                                            <rect key="frame" x="78" y="51.5" width="49" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="body"/>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="diary_add_location_day_period_2"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstItem="Cqw-Co-Sf4" firstAttribute="centerY" secondItem="l0g-wM-EGU" secondAttribute="centerY" id="Dqq-4x-HJs"/>
+                                        <constraint firstItem="Cqw-Co-Sf4" firstAttribute="centerX" secondItem="l0g-wM-EGU" secondAttribute="centerX" id="jGx-nF-M8P"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                            <color key="value" name="ccBorder"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="4"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="BZZ-Sh-QUd">
+                            <rect key="frame" x="0.0" y="127.5" width="414" height="123.5"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fSv-6D-Kz2" customClass="SelectedRoundCornersView" customModule="Stopp_Corona" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="205" height="123.5"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nachmittag" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sDS-AL-ZoN" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
+                                            <rect key="frame" x="58.5" y="51.5" width="88.5" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="body"/>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="diary_add_location_day_period_3"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstItem="sDS-AL-ZoN" firstAttribute="centerY" secondItem="fSv-6D-Kz2" secondAttribute="centerY" id="2u6-9U-Td0"/>
+                                        <constraint firstItem="sDS-AL-ZoN" firstAttribute="centerX" secondItem="fSv-6D-Kz2" secondAttribute="centerX" id="XBi-eN-YQI"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                            <color key="value" name="ccBorder"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="4"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eup-6b-zTh" customClass="SelectedRoundCornersView" customModule="Stopp_Corona" customModuleProvider="target">
+                                    <rect key="frame" x="209" y="0.0" width="205" height="123.5"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Abend" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U2F-5a-ap3" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
+                                            <rect key="frame" x="77.5" y="51.5" width="50" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="body"/>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="diary_add_location_day_period_4"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstItem="U2F-5a-ap3" firstAttribute="centerX" secondItem="eup-6b-zTh" secondAttribute="centerX" id="7eG-C2-Kf3"/>
+                                        <constraint firstItem="U2F-5a-ap3" firstAttribute="centerY" secondItem="eup-6b-zTh" secondAttribute="centerY" id="yBg-lC-qas"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                            <color key="value" name="ccBorder"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="4"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="7B2-To-1yz" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="32e-PM-6Op"/>
+                <constraint firstItem="7B2-To-1yz" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="16" id="4JV-o2-NtZ"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="7B2-To-1yz" secondAttribute="bottom" constant="16" id="Erh-xu-I5H"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="7B2-To-1yz" secondAttribute="trailing" id="tFy-Sn-bo1"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="137.68115942028987" y="300.33482142857139"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="ccBorder">
+            <color red="0.89800000190734863" green="0.89800000190734863" blue="0.89800000190734863" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

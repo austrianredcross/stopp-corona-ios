@@ -19,7 +19,8 @@ final class SicknessCertificatePersonalDataViewController: UIViewController,
     @IBOutlet var personalDataDescriptionLabel: TransLabel!
     @IBOutlet weak var textfield: UITextField!
 
-    let datePicker = DatePickerView()
+    // Initialize the DatePicker with the last 5 Days.
+    let datePicker = DatePicker(daysInPast: 5)
 
     var viewModel: SicknessCertificatePersonalDataViewModel?
 
@@ -100,12 +101,9 @@ final class SicknessCertificatePersonalDataViewController: UIViewController,
     }
     
     @objc func confirmButtonTapped() {
-        let date = datePicker.getSelectedDate ?? Date()
-        
+        let date = datePicker.chosenDate ?? Date()
         localStorage.hasSymptomsOrPositiveAttestAt = date
-        
         personalDataDescriptionLabel.styledText = viewModel?.personalDataDescription
-
         textfield.text = Calendar.current.isDateInToday(date) ? "general_today".localized : date.longDayShortMonthLongYear
         
         self.view.endEditing(true)

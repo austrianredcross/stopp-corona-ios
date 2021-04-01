@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="19H114" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="BaseDiaryEntry" representedClassName="BaseDiaryEntry" isAbstract="YES" syncable="YES">
+        <attribute name="cdName" attributeType="String"/>
+    </entity>
+    <entity name="BaseEncounter" representedClassName="BaseEncounter" isAbstract="YES" syncable="YES">
+        <attribute name="cdDate" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="cdId" attributeType="UUID" usesScalarValueType="NO"/>
+    </entity>
+    <entity name="Event" representedClassName="Event" parentEntity="BaseDiaryEntry" syncable="YES">
+        <attribute name="cdArrivalTime" optional="YES" attributeType="String"/>
+        <attribute name="cdDepartureTime" optional="YES" attributeType="String"/>
+        <relationship name="eventEncounter" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EventEncounter" inverseName="event" inverseEntity="EventEncounter"/>
+    </entity>
+    <entity name="EventEncounter" representedClassName="EventEncounter" parentEntity="BaseEncounter" syncable="YES">
+        <relationship name="event" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Event" inverseName="eventEncounter" inverseEntity="Event"/>
+    </entity>
+    <entity name="Location" representedClassName="Location" parentEntity="BaseDiaryEntry" syncable="YES">
+        <attribute name="cdDayPeriod" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="locationEncounter" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LocationEncounter" inverseName="location" inverseEntity="LocationEncounter"/>
+    </entity>
+    <entity name="LocationEncounter" representedClassName="LocationEncounter" parentEntity="BaseEncounter" syncable="YES">
+        <relationship name="location" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Location" inverseName="locationEncounter" inverseEntity="Location"/>
+    </entity>
+    <entity name="Person" representedClassName="Person" parentEntity="BaseDiaryEntry" syncable="YES">
+        <attribute name="cdNotice" optional="YES" attributeType="String"/>
+        <relationship name="personEncounter" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PersonEncounter" inverseName="person" inverseEntity="PersonEncounter"/>
+    </entity>
+    <entity name="PersonEncounter" representedClassName="PersonEncounter" parentEntity="BaseEncounter" syncable="YES">
+        <relationship name="person" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Person" inverseName="personEncounter" inverseEntity="Person"/>
+    </entity>
+    <entity name="PublicTransport" representedClassName="PublicTransport" parentEntity="BaseDiaryEntry" syncable="YES">
+        <attribute name="cdArrival" optional="YES" attributeType="String"/>
+        <attribute name="cdDeparture" optional="YES" attributeType="String"/>
+        <attribute name="cdTime" optional="YES" attributeType="String"/>
+        <relationship name="publicTransportEncounter" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PublicTransportEncounter" inverseName="publicTransport" inverseEntity="PublicTransportEncounter"/>
+    </entity>
+    <entity name="PublicTransportEncounter" representedClassName="PublicTransportEncounter" parentEntity="BaseEncounter" syncable="YES">
+        <relationship name="publicTransport" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PublicTransport" inverseName="publicTransportEncounter" inverseEntity="PublicTransport"/>
+    </entity>
+    <elements>
+        <element name="BaseDiaryEntry" positionX="-398.36328125" positionY="-192.11328125" width="128" height="58"/>
+        <element name="BaseEncounter" positionX="-387.5078125" positionY="-753.5546875" width="128" height="73"/>
+        <element name="Event" positionX="-594" positionY="-603" width="128" height="88"/>
+        <element name="EventEncounter" positionX="-585" positionY="-594" width="128" height="58"/>
+        <element name="Location" positionX="-405.95703125" positionY="-420.90234375" width="128" height="73"/>
+        <element name="LocationEncounter" positionX="-406.83984375" positionY="-573.77734375" width="133.92578125" height="58"/>
+        <element name="Person" positionX="-779.375" positionY="-404.12890625" width="128" height="73"/>
+        <element name="PersonEncounter" positionX="-779.02734375" positionY="-563.38671875" width="128" height="58"/>
+        <element name="PublicTransport" positionX="-79.8203125" positionY="-428.8125" width="128" height="103"/>
+        <element name="PublicTransportEncounter" positionX="-96.0234375" positionY="-575.4921875" width="128" height="58"/>
+    </elements>
+</model>

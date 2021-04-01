@@ -7,7 +7,7 @@ import UIKit
 
 // @IBDesignable
 extension UIView {
-    @IBInspectable private var borderColor: UIColor? {
+    @IBInspectable var borderColor: UIColor? {
         get {
             guard let color = layer.borderColor else {
                 return nil

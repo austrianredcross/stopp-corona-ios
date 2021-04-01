@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ano-lv-tcd">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Diary Faq View Controller-->
+        <scene sceneID="81q-wM-J0p">
+            <objects>
+                <viewController id="ano-lv-tcd" customClass="DiaryFaqViewController" customModule="Stopp_Corona" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="R1z-F8-YNt">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rO8-Sh-Hof" customClass="SelectedRoundCornersView" customModule="Stopp_Corona" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <subviews>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e9R-4S-Z6f">
+                                        <rect key="frame" x="16" y="16" width="382" height="820"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p5a-KP-dfe">
+                                                <rect key="frame" x="0.0" y="0.0" width="382" height="245"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="4Jj-da-w4M">
+                                                        <rect key="frame" x="16" y="0.0" width="350" height="245"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wofür brauch ich das Kontakt-Tagebuch?" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a6t-6d-SYQ" customClass="TransHeadingLabel" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="350" height="14.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="h1b"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="diary_faq_headline"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T4p-qh-Nnf" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="46.5" width="350" height="20.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="body"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="diary_faq_info_content_1"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oN5-x0-651" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="99" width="350" height="20.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="diary_faq_info_content_2"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="body"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zSF-Le-Wyx" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="151.5" width="350" height="20.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="diary_faq_info_content_3"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="body"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Einträge, welche älter als 14 Tage sind, werden automatisch gelöscht." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8j9-Hc-5I9" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="204" width="350" height="41"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="body"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="diary_faq_info_content_4"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="4Jj-da-w4M" firstAttribute="top" secondItem="p5a-KP-dfe" secondAttribute="top" id="3EU-JT-8pm"/>
+                                                    <constraint firstAttribute="trailing" secondItem="4Jj-da-w4M" secondAttribute="trailing" constant="16" id="3hE-pg-SYL"/>
+                                                    <constraint firstAttribute="bottom" secondItem="4Jj-da-w4M" secondAttribute="bottom" priority="250" id="3te-RJ-MZf"/>
+                                                    <constraint firstItem="4Jj-da-w4M" firstAttribute="leading" secondItem="p5a-KP-dfe" secondAttribute="leading" constant="16" id="whR-o1-Z3V"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="p5a-KP-dfe" firstAttribute="centerY" secondItem="e9R-4S-Z6f" secondAttribute="centerY" priority="250" id="1GJ-eo-5yq"/>
+                                            <constraint firstItem="p5a-KP-dfe" firstAttribute="leading" secondItem="e9R-4S-Z6f" secondAttribute="leading" id="T9f-gx-Hfq"/>
+                                            <constraint firstAttribute="bottom" secondItem="p5a-KP-dfe" secondAttribute="bottom" priority="250" id="bQN-TE-m1h"/>
+                                            <constraint firstItem="p5a-KP-dfe" firstAttribute="centerX" secondItem="e9R-4S-Z6f" secondAttribute="centerX" id="dch-Hn-7LX"/>
+                                            <constraint firstItem="p5a-KP-dfe" firstAttribute="top" secondItem="e9R-4S-Z6f" secondAttribute="top" id="mGi-sz-4T7"/>
+                                            <constraint firstAttribute="trailing" secondItem="p5a-KP-dfe" secondAttribute="trailing" id="yYq-Kt-Q7i"/>
+                                        </constraints>
+                                        <viewLayoutGuide key="contentLayoutGuide" id="Yya-Z9-Mvs"/>
+                                        <viewLayoutGuide key="frameLayoutGuide" id="ivM-ag-fSD"/>
+                                    </scrollView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="e9R-4S-Z6f" secondAttribute="trailing" constant="16" id="DI2-gq-e5Q"/>
+                                    <constraint firstItem="e9R-4S-Z6f" firstAttribute="leading" secondItem="rO8-Sh-Hof" secondAttribute="leading" constant="16" id="bjw-du-mSC"/>
+                                    <constraint firstItem="e9R-4S-Z6f" firstAttribute="top" secondItem="rO8-Sh-Hof" secondAttribute="top" constant="16" id="iqV-wc-nDJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="e9R-4S-Z6f" secondAttribute="bottom" constant="16" id="rJS-zJ-8XJ"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="abO-jv-laV"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="rO8-Sh-Hof" firstAttribute="leading" secondItem="R1z-F8-YNt" secondAttribute="leading" id="5T1-av-ic7"/>
+                            <constraint firstAttribute="bottom" secondItem="rO8-Sh-Hof" secondAttribute="bottom" id="s0r-RI-CRr"/>
+                            <constraint firstAttribute="trailing" secondItem="rO8-Sh-Hof" secondAttribute="trailing" id="vx2-7t-AN4"/>
+                            <constraint firstItem="rO8-Sh-Hof" firstAttribute="top" secondItem="abO-jv-laV" secondAttribute="top" id="zkM-xe-ulc"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fXv-Di-b3e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131" y="62"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

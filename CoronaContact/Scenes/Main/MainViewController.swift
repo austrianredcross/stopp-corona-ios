@@ -353,6 +353,14 @@ final class MainViewController: UIViewController, StoryboardBased, ViewModelBase
         viewModel?.sicknessCertificateTapped()
     }
 
+    @IBAction func diaryFaqTapped(_ sender: Any) {
+        viewModel?.diaryFaqTapped()
+    }
+    
+    @IBAction func diaryTapped(_ sender: Any) {
+        viewModel?.diaryTapped()
+    }
+    
     // MARK: - Event Handling
 
     private func registerNotificationObserver() {

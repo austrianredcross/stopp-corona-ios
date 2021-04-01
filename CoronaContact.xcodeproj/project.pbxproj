@@ -51,6 +51,60 @@
 		4B82571E24266A32007E25C6 /* StartMenuSimpleWebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B82571A24266A32007E25C6 /* StartMenuSimpleWebViewViewController.swift */; };
 		4B82571F24266A32007E25C6 /* StartMenuSimpleWebViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B82571B24266A32007E25C6 /* StartMenuSimpleWebViewViewModel.swift */; };
 		4B82572124266B9E007E25C6 /* de.imprint.html in Resources */ = {isa = PBXBuildFile; fileRef = 4B82572024266B9E007E25C6 /* de.imprint.html */; };
+		4BA476DD2614A9C10038B9FC /* DiaryEntryPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA476DA2614A9C00038B9FC /* DiaryEntryPicker.swift */; };
+		4BA476DE2614A9C10038B9FC /* BasePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA476DB2614A9C10038B9FC /* BasePickerView.swift */; };
+		4BA476E72614AA270038B9FC /* StoppCorona.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4BA476E52614AA270038B9FC /* StoppCorona.xcdatamodeld */; };
+		4BA476F22614AA500038B9FC /* BaseDiaryInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA476EE2614AA500038B9FC /* BaseDiaryInformation.swift */; };
+		4BA476F32614AA500038B9FC /* DiaryDayInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA476EF2614AA500038B9FC /* DiaryDayInfo.swift */; };
+		4BA476F52614AA500038B9FC /* DiaryEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA476F12614AA500038B9FC /* DiaryEntry.swift */; };
+		4BA4770A2614AB030038B9FC /* PDFCreater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA477092614AB030038B9FC /* PDFCreater.swift */; };
+		4BA4772F2614AC250038B9FC /* CoreDataService+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA4772D2614AC250038B9FC /* CoreDataService+Injection.swift */; };
+		4BA477302614AC250038B9FC /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA4772E2614AC250038B9FC /* CoreDataService.swift */; };
+		4BA477522614AC3A0038B9FC /* DiaryDeleteViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BA477372614AC3A0038B9FC /* DiaryDeleteViewController.storyboard */; };
+		4BA477532614AC3A0038B9FC /* DiaryDeleteCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA477382614AC3A0038B9FC /* DiaryDeleteCoordinator.swift */; };
+		4BA477542614AC3A0038B9FC /* DiaryDeleteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA477392614AC3A0038B9FC /* DiaryDeleteViewModel.swift */; };
+		4BA477552614AC3A0038B9FC /* DiaryDeleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA4773A2614AC3A0038B9FC /* DiaryDeleteViewController.swift */; };
+		4BA477562614AC3A0038B9FC /* DiaryAddEntryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA4773C2614AC3A0038B9FC /* DiaryAddEntryCoordinator.swift */; };
+		4BA477572614AC3A0038B9FC /* DiaryAddEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA4773D2614AC3A0038B9FC /* DiaryAddEntryViewController.swift */; };
+		4BA477582614AC3A0038B9FC /* DiaryAddEntryViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BA4773E2614AC3A0038B9FC /* DiaryAddEntryViewController.storyboard */; };
+		4BA477592614AC3A0038B9FC /* DiaryAddEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA4773F2614AC3A0038B9FC /* DiaryAddEntryViewModel.swift */; };
+		4BA4775A2614AC3A0038B9FC /* DiaryFaqViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA477412614AC3A0038B9FC /* DiaryFaqViewController.swift */; };
+		4BA4775B2614AC3A0038B9FC /* DiaryFaqViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA477422614AC3A0038B9FC /* DiaryFaqViewModel.swift */; };
+		4BA4775C2614AC3A0038B9FC /* DiaryFaqViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BA477432614AC3A0038B9FC /* DiaryFaqViewController.storyboard */; };
+		4BA4775D2614AC3A0038B9FC /* DiaryFaqCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA477442614AC3A0038B9FC /* DiaryFaqCoordinator.swift */; };
+		4BA4775E2614AC3A0038B9FC /* DiaryDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA477462614AC3A0038B9FC /* DiaryDetailCoordinator.swift */; };
+		4BA4775F2614AC3A0038B9FC /* DiaryDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BA477472614AC3A0038B9FC /* DiaryDetailViewController.storyboard */; };
+		4BA477602614AC3A0038B9FC /* DiaryDetailEntryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA477482614AC3A0038B9FC /* DiaryDetailEntryCell.swift */; };
+		4BA477612614AC3A0038B9FC /* DiaryDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA477492614AC3A0038B9FC /* DiaryDetailViewModel.swift */; };
+		4BA477622614AC3A0038B9FC /* DiaryDetailEntryCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA4774A2614AC3A0038B9FC /* DiaryDetailEntryCellViewModel.swift */; };
+		4BA477632614AC3A0038B9FC /* DiaryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA4774B2614AC3A0038B9FC /* DiaryDetailViewController.swift */; };
+		4BA477642614AC3A0038B9FC /* DiaryOverviewDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA4774D2614AC3A0038B9FC /* DiaryOverviewDayCell.swift */; };
+		4BA477652614AC3A0038B9FC /* DiaryOverviewCoorrdinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA4774E2614AC3A0038B9FC /* DiaryOverviewCoorrdinator.swift */; };
+		4BA477662614AC3A0038B9FC /* DiaryOverviewViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BA4774F2614AC3A0038B9FC /* DiaryOverviewViewController.storyboard */; };
+		4BA477672614AC3A0038B9FC /* DiaryOverviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA477502614AC3A0038B9FC /* DiaryOverviewViewModel.swift */; };
+		4BA477682614AC3A0038B9FC /* DiaryOverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA477512614AC3A0038B9FC /* DiaryOverviewViewController.swift */; };
+		4BA477822614AC590038B9FC /* PublicTransport+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA4776E2614AC590038B9FC /* PublicTransport+CoreDataProperties.swift */; };
+		4BA477832614AC590038B9FC /* PublicTransportEncounter+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA4776F2614AC590038B9FC /* PublicTransportEncounter+CoreDataClass.swift */; };
+		4BA477842614AC590038B9FC /* BaseDiaryEntry+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA477702614AC590038B9FC /* BaseDiaryEntry+CoreDataProperties.swift */; };
+		4BA477852614AC590038B9FC /* Location+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA477712614AC590038B9FC /* Location+CoreDataProperties.swift */; };
+		4BA477862614AC590038B9FC /* LocationEncounter+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA477722614AC590038B9FC /* LocationEncounter+CoreDataProperties.swift */; };
+		4BA477872614AC590038B9FC /* LocationEncounter+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA477732614AC590038B9FC /* LocationEncounter+CoreDataClass.swift */; };
+		4BA477882614AC590038B9FC /* BaseEncounter+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA477742614AC590038B9FC /* BaseEncounter+CoreDataProperties.swift */; };
+		4BA477892614AC590038B9FC /* Event+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA477752614AC590038B9FC /* Event+CoreDataClass.swift */; };
+		4BA4778A2614AC590038B9FC /* PersonEncounter+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA477762614AC590038B9FC /* PersonEncounter+CoreDataClass.swift */; };
+		4BA4778B2614AC590038B9FC /* Person+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA477772614AC590038B9FC /* Person+CoreDataClass.swift */; };
+		4BA4778C2614AC590038B9FC /* EventEncounter+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA477782614AC590038B9FC /* EventEncounter+CoreDataProperties.swift */; };
+		4BA4778D2614AC590038B9FC /* Location+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA477792614AC590038B9FC /* Location+CoreDataClass.swift */; };
+		4BA4778E2614AC590038B9FC /* PublicTransportEncounter+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA4777A2614AC590038B9FC /* PublicTransportEncounter+CoreDataProperties.swift */; };
+		4BA4778F2614AC590038B9FC /* PersonEncounter+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA4777B2614AC590038B9FC /* PersonEncounter+CoreDataProperties.swift */; };
+		4BA477902614AC590038B9FC /* Person+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA4777C2614AC590038B9FC /* Person+CoreDataProperties.swift */; };
+		4BA477912614AC590038B9FC /* EventEncounter+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA4777D2614AC590038B9FC /* EventEncounter+CoreDataClass.swift */; };
+		4BA477922614AC590038B9FC /* BaseEncounter+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA4777E2614AC590038B9FC /* BaseEncounter+CoreDataClass.swift */; };
+		4BA477932614AC590038B9FC /* Event+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA4777F2614AC590038B9FC /* Event+CoreDataProperties.swift */; };
+		4BA477942614AC590038B9FC /* PublicTransport+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA477802614AC590038B9FC /* PublicTransport+CoreDataClass.swift */; };
+		4BA477952614AC590038B9FC /* BaseDiaryEntry+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA477812614AC590038B9FC /* BaseDiaryEntry+CoreDataClass.swift */; };
+		4BA4779D2614AC910038B9FC /* DiaryLocationDayPeriodSelector.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BA4779B2614AC910038B9FC /* DiaryLocationDayPeriodSelector.xib */; };
+		4BA4779E2614AC910038B9FC /* DiaryLocationDayPeriodSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA4779C2614AC910038B9FC /* DiaryLocationDayPeriodSelector.swift */; };
 		4BCEB4B525657EE800D53E12 /* TransBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCEB4B425657EE800D53E12 /* TransBarButton.swift */; };
 		4BD0B8DC2427AF6400BFA123 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD0B8DB2427AF6400BFA123 /* NotificationService.swift */; };
 		4BD0B8DF2427AF9800BFA123 /* NotificationService+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD0B8DE2427AF9800BFA123 /* NotificationService+Injection.swift */; };
@@ -439,6 +493,60 @@
 		4B82571A24266A32007E25C6 /* StartMenuSimpleWebViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartMenuSimpleWebViewViewController.swift; sourceTree = "<group>"; };
 		4B82571B24266A32007E25C6 /* StartMenuSimpleWebViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartMenuSimpleWebViewViewModel.swift; sourceTree = "<group>"; };
 		4B82572024266B9E007E25C6 /* de.imprint.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = de.imprint.html; sourceTree = "<group>"; };
+		4BA476DA2614A9C00038B9FC /* DiaryEntryPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryEntryPicker.swift; sourceTree = "<group>"; };
+		4BA476DB2614A9C10038B9FC /* BasePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasePickerView.swift; sourceTree = "<group>"; };
+		4BA476E62614AA270038B9FC /* StoppCorona.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StoppCorona.xcdatamodel; sourceTree = "<group>"; };
+		4BA476EE2614AA500038B9FC /* BaseDiaryInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseDiaryInformation.swift; sourceTree = "<group>"; };
+		4BA476EF2614AA500038B9FC /* DiaryDayInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryDayInfo.swift; sourceTree = "<group>"; };
+		4BA476F12614AA500038B9FC /* DiaryEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryEntry.swift; sourceTree = "<group>"; };
+		4BA477092614AB030038B9FC /* PDFCreater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFCreater.swift; sourceTree = "<group>"; };
+		4BA4772D2614AC250038B9FC /* CoreDataService+Injection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CoreDataService+Injection.swift"; sourceTree = "<group>"; };
+		4BA4772E2614AC250038B9FC /* CoreDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
+		4BA477372614AC3A0038B9FC /* DiaryDeleteViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DiaryDeleteViewController.storyboard; sourceTree = "<group>"; };
+		4BA477382614AC3A0038B9FC /* DiaryDeleteCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryDeleteCoordinator.swift; sourceTree = "<group>"; };
+		4BA477392614AC3A0038B9FC /* DiaryDeleteViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryDeleteViewModel.swift; sourceTree = "<group>"; };
+		4BA4773A2614AC3A0038B9FC /* DiaryDeleteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryDeleteViewController.swift; sourceTree = "<group>"; };
+		4BA4773C2614AC3A0038B9FC /* DiaryAddEntryCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryAddEntryCoordinator.swift; sourceTree = "<group>"; };
+		4BA4773D2614AC3A0038B9FC /* DiaryAddEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryAddEntryViewController.swift; sourceTree = "<group>"; };
+		4BA4773E2614AC3A0038B9FC /* DiaryAddEntryViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DiaryAddEntryViewController.storyboard; sourceTree = "<group>"; };
+		4BA4773F2614AC3A0038B9FC /* DiaryAddEntryViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryAddEntryViewModel.swift; sourceTree = "<group>"; };
+		4BA477412614AC3A0038B9FC /* DiaryFaqViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryFaqViewController.swift; sourceTree = "<group>"; };
+		4BA477422614AC3A0038B9FC /* DiaryFaqViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryFaqViewModel.swift; sourceTree = "<group>"; };
+		4BA477432614AC3A0038B9FC /* DiaryFaqViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DiaryFaqViewController.storyboard; sourceTree = "<group>"; };
+		4BA477442614AC3A0038B9FC /* DiaryFaqCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryFaqCoordinator.swift; sourceTree = "<group>"; };
+		4BA477462614AC3A0038B9FC /* DiaryDetailCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryDetailCoordinator.swift; sourceTree = "<group>"; };
+		4BA477472614AC3A0038B9FC /* DiaryDetailViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DiaryDetailViewController.storyboard; sourceTree = "<group>"; };
+		4BA477482614AC3A0038B9FC /* DiaryDetailEntryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryDetailEntryCell.swift; sourceTree = "<group>"; };
+		4BA477492614AC3A0038B9FC /* DiaryDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryDetailViewModel.swift; sourceTree = "<group>"; };
+		4BA4774A2614AC3A0038B9FC /* DiaryDetailEntryCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryDetailEntryCellViewModel.swift; sourceTree = "<group>"; };
+		4BA4774B2614AC3A0038B9FC /* DiaryDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryDetailViewController.swift; sourceTree = "<group>"; };
+		4BA4774D2614AC3A0038B9FC /* DiaryOverviewDayCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryOverviewDayCell.swift; sourceTree = "<group>"; };
+		4BA4774E2614AC3A0038B9FC /* DiaryOverviewCoorrdinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryOverviewCoorrdinator.swift; sourceTree = "<group>"; };
+		4BA4774F2614AC3A0038B9FC /* DiaryOverviewViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DiaryOverviewViewController.storyboard; sourceTree = "<group>"; };
+		4BA477502614AC3A0038B9FC /* DiaryOverviewViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryOverviewViewModel.swift; sourceTree = "<group>"; };
+		4BA477512614AC3A0038B9FC /* DiaryOverviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryOverviewViewController.swift; sourceTree = "<group>"; };
+		4BA4776E2614AC590038B9FC /* PublicTransport+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PublicTransport+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		4BA4776F2614AC590038B9FC /* PublicTransportEncounter+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PublicTransportEncounter+CoreDataClass.swift"; sourceTree = "<group>"; };
+		4BA477702614AC590038B9FC /* BaseDiaryEntry+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BaseDiaryEntry+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		4BA477712614AC590038B9FC /* Location+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Location+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		4BA477722614AC590038B9FC /* LocationEncounter+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LocationEncounter+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		4BA477732614AC590038B9FC /* LocationEncounter+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LocationEncounter+CoreDataClass.swift"; sourceTree = "<group>"; };
+		4BA477742614AC590038B9FC /* BaseEncounter+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BaseEncounter+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		4BA477752614AC590038B9FC /* Event+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Event+CoreDataClass.swift"; sourceTree = "<group>"; };
+		4BA477762614AC590038B9FC /* PersonEncounter+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PersonEncounter+CoreDataClass.swift"; sourceTree = "<group>"; };
+		4BA477772614AC590038B9FC /* Person+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataClass.swift"; sourceTree = "<group>"; };
+		4BA477782614AC590038B9FC /* EventEncounter+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EventEncounter+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		4BA477792614AC590038B9FC /* Location+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Location+CoreDataClass.swift"; sourceTree = "<group>"; };
+		4BA4777A2614AC590038B9FC /* PublicTransportEncounter+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PublicTransportEncounter+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		4BA4777B2614AC590038B9FC /* PersonEncounter+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PersonEncounter+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		4BA4777C2614AC590038B9FC /* Person+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		4BA4777D2614AC590038B9FC /* EventEncounter+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EventEncounter+CoreDataClass.swift"; sourceTree = "<group>"; };
+		4BA4777E2614AC590038B9FC /* BaseEncounter+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BaseEncounter+CoreDataClass.swift"; sourceTree = "<group>"; };
+		4BA4777F2614AC590038B9FC /* Event+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Event+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		4BA477802614AC590038B9FC /* PublicTransport+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PublicTransport+CoreDataClass.swift"; sourceTree = "<group>"; };
+		4BA477812614AC590038B9FC /* BaseDiaryEntry+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BaseDiaryEntry+CoreDataClass.swift"; sourceTree = "<group>"; };
+		4BA4779B2614AC910038B9FC /* DiaryLocationDayPeriodSelector.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DiaryLocationDayPeriodSelector.xib; sourceTree = "<group>"; };
+		4BA4779C2614AC910038B9FC /* DiaryLocationDayPeriodSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryLocationDayPeriodSelector.swift; sourceTree = "<group>"; };
 		4BCEB4B425657EE800D53E12 /* TransBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransBarButton.swift; sourceTree = "<group>"; };
 		4BD0B8DB2427AF6400BFA123 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		4BD0B8DE2427AF9800BFA123 /* NotificationService+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationService+Injection.swift"; sourceTree = "<group>"; };
@@ -902,6 +1010,122 @@
 			path = StartMenuSimpleWebView;
 			sourceTree = "<group>";
 		};
+		4BA4772C2614AC250038B9FC /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				4BA4772D2614AC250038B9FC /* CoreDataService+Injection.swift */,
+				4BA4772E2614AC250038B9FC /* CoreDataService.swift */,
+			);
+			name = CoreData;
+			path = ../../../../../CoreData;
+			sourceTree = "<group>";
+		};
+		4BA477352614AC3A0038B9FC /* Diary */ = {
+			isa = PBXGroup;
+			children = (
+				4BA477362614AC3A0038B9FC /* DiaryDelete */,
+				4BA4773B2614AC3A0038B9FC /* DiaryAddEntry */,
+				4BA477402614AC3A0038B9FC /* DiaryFaq */,
+				4BA477452614AC3A0038B9FC /* DiaryDetail */,
+				4BA4774C2614AC3A0038B9FC /* DiaryOverview */,
+			);
+			path = Diary;
+			sourceTree = "<group>";
+		};
+		4BA477362614AC3A0038B9FC /* DiaryDelete */ = {
+			isa = PBXGroup;
+			children = (
+				4BA477372614AC3A0038B9FC /* DiaryDeleteViewController.storyboard */,
+				4BA477382614AC3A0038B9FC /* DiaryDeleteCoordinator.swift */,
+				4BA477392614AC3A0038B9FC /* DiaryDeleteViewModel.swift */,
+				4BA4773A2614AC3A0038B9FC /* DiaryDeleteViewController.swift */,
+			);
+			path = DiaryDelete;
+			sourceTree = "<group>";
+		};
+		4BA4773B2614AC3A0038B9FC /* DiaryAddEntry */ = {
+			isa = PBXGroup;
+			children = (
+				4BA4773C2614AC3A0038B9FC /* DiaryAddEntryCoordinator.swift */,
+				4BA4773D2614AC3A0038B9FC /* DiaryAddEntryViewController.swift */,
+				4BA4773E2614AC3A0038B9FC /* DiaryAddEntryViewController.storyboard */,
+				4BA4773F2614AC3A0038B9FC /* DiaryAddEntryViewModel.swift */,
+			);
+			path = DiaryAddEntry;
+			sourceTree = "<group>";
+		};
+		4BA477402614AC3A0038B9FC /* DiaryFaq */ = {
+			isa = PBXGroup;
+			children = (
+				4BA477412614AC3A0038B9FC /* DiaryFaqViewController.swift */,
+				4BA477422614AC3A0038B9FC /* DiaryFaqViewModel.swift */,
+				4BA477432614AC3A0038B9FC /* DiaryFaqViewController.storyboard */,
+				4BA477442614AC3A0038B9FC /* DiaryFaqCoordinator.swift */,
+			);
+			path = DiaryFaq;
+			sourceTree = "<group>";
+		};
+		4BA477452614AC3A0038B9FC /* DiaryDetail */ = {
+			isa = PBXGroup;
+			children = (
+				4BA477462614AC3A0038B9FC /* DiaryDetailCoordinator.swift */,
+				4BA477472614AC3A0038B9FC /* DiaryDetailViewController.storyboard */,
+				4BA477482614AC3A0038B9FC /* DiaryDetailEntryCell.swift */,
+				4BA477492614AC3A0038B9FC /* DiaryDetailViewModel.swift */,
+				4BA4774A2614AC3A0038B9FC /* DiaryDetailEntryCellViewModel.swift */,
+				4BA4774B2614AC3A0038B9FC /* DiaryDetailViewController.swift */,
+			);
+			path = DiaryDetail;
+			sourceTree = "<group>";
+		};
+		4BA4774C2614AC3A0038B9FC /* DiaryOverview */ = {
+			isa = PBXGroup;
+			children = (
+				4BA4774D2614AC3A0038B9FC /* DiaryOverviewDayCell.swift */,
+				4BA4774E2614AC3A0038B9FC /* DiaryOverviewCoorrdinator.swift */,
+				4BA4774F2614AC3A0038B9FC /* DiaryOverviewViewController.storyboard */,
+				4BA477502614AC3A0038B9FC /* DiaryOverviewViewModel.swift */,
+				4BA477512614AC3A0038B9FC /* DiaryOverviewViewController.swift */,
+			);
+			path = DiaryOverview;
+			sourceTree = "<group>";
+		};
+		4BA4776D2614AC590038B9FC /* CoreDataModel */ = {
+			isa = PBXGroup;
+			children = (
+				4BA4776E2614AC590038B9FC /* PublicTransport+CoreDataProperties.swift */,
+				4BA4776F2614AC590038B9FC /* PublicTransportEncounter+CoreDataClass.swift */,
+				4BA477702614AC590038B9FC /* BaseDiaryEntry+CoreDataProperties.swift */,
+				4BA477712614AC590038B9FC /* Location+CoreDataProperties.swift */,
+				4BA477722614AC590038B9FC /* LocationEncounter+CoreDataProperties.swift */,
+				4BA477732614AC590038B9FC /* LocationEncounter+CoreDataClass.swift */,
+				4BA477742614AC590038B9FC /* BaseEncounter+CoreDataProperties.swift */,
+				4BA477752614AC590038B9FC /* Event+CoreDataClass.swift */,
+				4BA477762614AC590038B9FC /* PersonEncounter+CoreDataClass.swift */,
+				4BA477772614AC590038B9FC /* Person+CoreDataClass.swift */,
+				4BA477782614AC590038B9FC /* EventEncounter+CoreDataProperties.swift */,
+				4BA477792614AC590038B9FC /* Location+CoreDataClass.swift */,
+				4BA4777A2614AC590038B9FC /* PublicTransportEncounter+CoreDataProperties.swift */,
+				4BA4777B2614AC590038B9FC /* PersonEncounter+CoreDataProperties.swift */,
+				4BA4777C2614AC590038B9FC /* Person+CoreDataProperties.swift */,
+				4BA4777D2614AC590038B9FC /* EventEncounter+CoreDataClass.swift */,
+				4BA4777E2614AC590038B9FC /* BaseEncounter+CoreDataClass.swift */,
+				4BA4777F2614AC590038B9FC /* Event+CoreDataProperties.swift */,
+				4BA477802614AC590038B9FC /* PublicTransport+CoreDataClass.swift */,
+				4BA477812614AC590038B9FC /* BaseDiaryEntry+CoreDataClass.swift */,
+			);
+			path = CoreDataModel;
+			sourceTree = "<group>";
+		};
+		4BA4779A2614AC910038B9FC /* DiaryLocationDayPeriodSelector */ = {
+			isa = PBXGroup;
+			children = (
+				4BA4779B2614AC910038B9FC /* DiaryLocationDayPeriodSelector.xib */,
+				4BA4779C2614AC910038B9FC /* DiaryLocationDayPeriodSelector.swift */,
+			);
+			path = DiaryLocationDayPeriodSelector;
+			sourceTree = "<group>";
+		};
 		4BD0B8DA2427AF2B00BFA123 /* Notifications */ = {
 			isa = PBXGroup;
 			children = (
@@ -936,6 +1160,7 @@
 		4E0B3E37241F995D00EF60EE /* CoronaContact */ = {
 			isa = PBXGroup;
 			children = (
+				4BA476E52614AA270038B9FC /* StoppCorona.xcdatamodeld */,
 				4B1F6118242A60AD00E82D4C /* Stopp Corona.entitlements */,
 				4E5254CE2472B40100B6C3A4 /* Stopp Corona Test.entitlements */,
 				4E0B3E38241F995D00EF60EE /* AppDelegate.swift */,
@@ -1183,6 +1408,10 @@
 		614BA9FA2423C334006797AA /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4BA4776D2614AC590038B9FC /* CoreDataModel */,
+				4BA476EE2614AA500038B9FC /* BaseDiaryInformation.swift */,
+				4BA476EF2614AA500038B9FC /* DiaryDayInfo.swift */,
+				4BA476F12614AA500038B9FC /* DiaryEntry.swift */,
 				61D0F53624352E810026C91A /* RevocationStatus.swift */,
 				614BAA012423C334006797AA /* Answer.swift */,
 				614BAA042423C334006797AA /* Configuration.swift */,
@@ -1363,6 +1592,7 @@
 		6153A4F124259932006A8570 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				4BA477092614AB030038B9FC /* PDFCreater.swift */,
 				1C3841BD258774E3002B80BD /* DeepLinkConstants.swift */,
 				6153A4F224259932006A8570 /* KeyboardAdjustingBehavior.swift */,
 				6153A4F324259932006A8570 /* InputValidation.swift */,
@@ -1729,6 +1959,7 @@
 		839742CD30B274EE264849F8 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				4BA477352614AC3A0038B9FC /* Diary */,
 				1CAFD92F25D5388900866AA3 /* ReportHealthy */,
 				1C88C4E325BABDE700BB6D8B /* Interoperability */,
 				4ED175AE2458347400248D3B /* Debug */,
@@ -1749,6 +1980,9 @@
 		8397454646FF8D8C78AEC848 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4BA4779A2614AC910038B9FC /* DiaryLocationDayPeriodSelector */,
+				4BA476DB2614A9C10038B9FC /* BasePickerView.swift */,
+				4BA476DA2614A9C00038B9FC /* DiaryEntryPicker.swift */,
 				1CFBB25625C941D800F40248 /* IconLabelView */,
 				1CFBB25325C941AE00F40248 /* RiskAssessmentView */,
 				1C3841C1258774F9002B80BD /* LinkTextView.swift */,
@@ -1809,6 +2043,7 @@
 		83974D9D12AC236263A86D73 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				4BA4772C2614AC250038B9FC /* CoreData */,
 				7828A69F24922D92006AEAAC /* Maintenance */,
 				4E8984242473F00900499820 /* LocalStorage */,
 				615D36622438C24900B608AB /* Logging */,
@@ -2005,6 +2240,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BA477582614AC3A0038B9FC /* DiaryAddEntryViewController.storyboard in Resources */,
 				6153A4D1242598DC006A8570 /* SicknessCertificateStatusReportViewController.storyboard in Resources */,
 				61D1A3BF242A24B0007F82ED /* de.privacy.html in Resources */,
 				4E9BF7062420C2A100B360A4 /* MainViewController.storyboard in Resources */,
@@ -2025,6 +2261,7 @@
 				61D1A3D4242A3C40007F82ED /* Localizable.strings in Resources */,
 				616518E72460778C001219A7 /* ShareAppCardView.xib in Resources */,
 				7829D827247D507A0015F5A5 /* SavedIDsViewController.storyboard in Resources */,
+				4BA4775C2614AC3A0038B9FC /* DiaryFaqViewController.storyboard in Resources */,
 				61546541242CBE7F0003D3D3 /* SelfMonitoringGuidelinesViewController.storyboard in Resources */,
 				614D72302429084B00CC545D /* SelfTestingTanConfirmationViewController.storyboard in Resources */,
 				4E1F2EC324646B550088B8F8 /* sms.der in Resources */,
@@ -2052,12 +2289,14 @@
 				839743F271E19BEF66B89E3A /* OnboardingViewController.storyboard in Resources */,
 				4E1AAEF3246186FA00D43E2B /* RevocationConfirmationViewController.storyboard in Resources */,
 				613E35F8242E3F65009421A8 /* LaunchScreenView.xib in Resources */,
+				4BA4775F2614AC3A0038B9FC /* DiaryDetailViewController.storyboard in Resources */,
 				4E0D6D6824225FA30076CBD6 /* Assets.xcassets in Resources */,
 				4B82572124266B9E007E25C6 /* de.imprint.html in Resources */,
 				4EE28121242BA43900BC4C6E /* OnboardingConsentPageView.xib in Resources */,
 				1CE08CAE25DFC69300A12547 /* ExposureNotificationErrorView.xib in Resources */,
 				61D0F54924352E960026C91A /* RevocationStatusReportViewController.storyboard in Resources */,
 				614D722A2429084900CC545D /* SelfTestingStatusReportViewController.storyboard in Resources */,
+				4BA477662614AC3A0038B9FC /* DiaryOverviewViewController.storyboard in Resources */,
 				61D1A3D5242A3C40007F82ED /* InfoPlist.strings in Resources */,
 				92FFC9CB24275C3A00CC541B /* SelfTestingCheckSymptomsView.xib in Resources */,
 				92FFC9C024267D8200CC541B /* SelfTestingCheckSymptomsViewController.storyboard in Resources */,
@@ -2070,11 +2309,13 @@
 				1C764DAD25C9B6C20036E0D4 /* handshake_active_animation.json in Resources */,
 				1C764DB025C9B6C20036E0D4 /* handshake_contact_yellow_animation.json in Resources */,
 				615D36332437417600B608AB /* AttestedSicknessGuidelinesViewController.storyboard in Resources */,
+				4BA4779D2614AC910038B9FC /* DiaryLocationDayPeriodSelector.xib in Resources */,
 				61032078243F279400ED3A20 /* en.imprint.html in Resources */,
 				4B82571D24266A32007E25C6 /* StartMenuSimpleWebViewViewController.storyboard in Resources */,
 				61546549242CBEA60003D3D3 /* SuspicionGuidelinesViewController.storyboard in Resources */,
 				1C9E770625A761B300C6ADB7 /* SelfTestingCoronaSuspicionViewController.storyboard in Resources */,
 				1C417F1D25B9D96600BD45CF /* server.der in Resources */,
+				4BA477522614AC3A0038B9FC /* DiaryDeleteViewController.storyboard in Resources */,
 				4BDA55DC2608E5F500BAB869 /* LightStyle.css in Resources */,
 				61459A53242ABFE200DC88A7 /* de.terms-of-use.html in Resources */,
 			);
@@ -2234,14 +2475,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				614D7239242909C000CC545D /* SelfTestingConfirmationCoordinator.swift in Sources */,
+				4BA4778F2614AC590038B9FC /* PersonEncounter+CoreDataProperties.swift in Sources */,
 				61D0F53724352E820026C91A /* RevocationStatus.swift in Sources */,
 				611D9ED6248E6EEC00EBB420 /* ExposureKeysBatch.swift in Sources */,
 				61D0F53124352E240026C91A /* QuarantineTimeController.swift in Sources */,
 				4EDB47FA2422086B000CE24A /* UIView+ShadowBorders.swift in Sources */,
 				614D72072428E82700CC545D /* ContactSicknessCoordinator.swift in Sources */,
+				4BA4778D2614AC590038B9FC /* Location+CoreDataClass.swift in Sources */,
 				6153A50224259953006A8570 /* StandardTextField.swift in Sources */,
 				4E0D6D6A2422C43B0076CBD6 /* BackgroundStackview.swift in Sources */,
 				61D0F54824352E960026C91A /* RevocationStatusReportViewModel.swift in Sources */,
+				4BA4779E2614AC910038B9FC /* DiaryLocationDayPeriodSelector.swift in Sources */,
 				6153A52424264A2D006A8570 /* ActivityStyle.swift in Sources */,
 				6154654B242CBEA60003D3D3 /* SuspicionGuidelinesViewModel.swift in Sources */,
 				784C2D212487F93B005160A6 /* LittleSheetAnimator.swift in Sources */,
@@ -2252,12 +2496,16 @@
 				7829D825247D507A0015F5A5 /* SavedIDsCoordinator.swift in Sources */,
 				6153A4F724259932006A8570 /* NotificationToken.swift in Sources */,
 				614D720D2428E87000CC545D /* QuarantineGuidelinesViewController.swift in Sources */,
+				4BA477592614AC3A0038B9FC /* DiaryAddEntryViewModel.swift in Sources */,
 				7828A6A724926AAD006AEAAC /* RemoveObsoleteUserDefaults.swift in Sources */,
 				614BA9F12423C31C006797AA /* NetworkService+Injection.swift in Sources */,
+				4BA477832614AC590038B9FC /* PublicTransportEncounter+CoreDataClass.swift in Sources */,
 				618A6651242B8B84001BDBBF /* Collection+safe.swift in Sources */,
 				614D722E2429084B00CC545D /* SelfTestingTanConfirmationViewModel.swift in Sources */,
 				610CC2DF2497E0B5000CE97F /* AppStartBatchController.swift in Sources */,
 				616E1DA9243486C700109435 /* ArrowButton.swift in Sources */,
+				4BA477542614AC3A0038B9FC /* DiaryDeleteViewModel.swift in Sources */,
+				4BA477682614AC3A0038B9FC /* DiaryOverviewViewController.swift in Sources */,
 				4B7379ED2423DA7A00DF338E /* StartMenuCoordinator.swift in Sources */,
 				7829D824247D507A0015F5A5 /* SavedIDsViewController.swift in Sources */,
 				61251F25249143B100CEBCCD /* ExposureConfiguration.swift in Sources */,
@@ -2265,6 +2513,7 @@
 				8922A16C243D1DD6004E9D42 /* HealthRepository.swift in Sources */,
 				6153A4D5242598DC006A8570 /* SicknessCertificateConfirmationViewController.swift in Sources */,
 				61D1A3E6242A58CA007F82ED /* MainHelpViewController.swift in Sources */,
+				4BA4770A2614AB030038B9FC /* PDFCreater.swift in Sources */,
 				78859614248D7BA800283628 /* Coordinator.swift in Sources */,
 				614D722C2429084900CC545D /* SelfTestingStatusReportCoordinator.swift in Sources */,
 				9215254C2427C74A0023F469 /* SelfTestingSelfMonitoringCoordinator.swift in Sources */,
@@ -2279,6 +2528,8 @@
 				614D722D2429084900CC545D /* SelfTestingStatusReportViewModel.swift in Sources */,
 				61D0F5662435EABE0026C91A /* RevocationFlowController.swift in Sources */,
 				6153A4D9242598DC006A8570 /* SicknessCertificatePersonalDataCoordinator.swift in Sources */,
+				4BA477872614AC590038B9FC /* LocationEncounter+CoreDataClass.swift in Sources */,
+				4BA476F52614AA500038B9FC /* DiaryEntry.swift in Sources */,
 				92FFC9CA24275C3A00CC541B /* SelfTestingCheckSymptomsView.swift in Sources */,
 				61D0F55324352E960026C91A /* RevocationTanConfirmationViewModel.swift in Sources */,
 				6129B57D24923B5300E2D15B /* RiskCalculationController+Injection.swift in Sources */,
@@ -2292,18 +2543,23 @@
 				614D72252429084300CC545D /* SelfTestingPersonalDataViewModel.swift in Sources */,
 				61D0F55924352EA90026C91A /* CheckboxView.swift in Sources */,
 				6153A52624264A2D006A8570 /* ActivityPresentationStyle.swift in Sources */,
+				4BA4778C2614AC590038B9FC /* EventEncounter+CoreDataProperties.swift in Sources */,
 				614BAA0C2423C334006797AA /* InfectionInfo.swift in Sources */,
 				614BA9F02423C31C006797AA /* NetworkEndpoint.swift in Sources */,
+				4BA477612614AC3A0038B9FC /* DiaryDetailViewModel.swift in Sources */,
 				61273E9224979B3D001B86E6 /* ENExposureDetectionSummary+totalRiskScore.swift in Sources */,
 				6153A50124259953006A8570 /* ProgressView.swift in Sources */,
 				611D9EE5248E713100EBB420 /* FileManager+unzipItemWithOverride.swift in Sources */,
+				4BA4778A2614AC590038B9FC /* PersonEncounter+CoreDataClass.swift in Sources */,
 				6153A4E6242598DC006A8570 /* SicknessCertificateTanConfirmationCoordinator.swift in Sources */,
 				611D9EE0248E703E00EBB420 /* UnzipBatchOperation.swift in Sources */,
 				4B82571E24266A32007E25C6 /* StartMenuSimpleWebViewViewController.swift in Sources */,
+				4BA477622614AC3A0038B9FC /* DiaryDetailEntryCellViewModel.swift in Sources */,
 				9215253B2427C5E00023F469 /* SelfTestingHintCoordinator.swift in Sources */,
 				78859613248D739E00283628 /* AppVersionHistory.swift in Sources */,
 				8922A16E243DF094004E9D42 /* Observable.swift in Sources */,
 				6153A4E8242598F5006A8570 /* SicknessCertificateCoordinator.swift in Sources */,
+				4BA477842614AC590038B9FC /* BaseDiaryEntry+CoreDataProperties.swift in Sources */,
 				613AF72D24618DE80089085E /* Coordinator+ShareSheet.swift in Sources */,
 				784C2D23248856E4005160A6 /* WhatsNewViewModel.swift in Sources */,
 				4E019BE32427D287004FF670 /* Date+round.swift in Sources */,
@@ -2311,12 +2567,15 @@
 				614BAA0D2423C334006797AA /* SuccessResponse.swift in Sources */,
 				9215255E2427C7AA0023F469 /* SelfTestingSuspicionViewModel.swift in Sources */,
 				7828A6A524926859006AEAAC /* MaintenanceTaskRepository.swift in Sources */,
+				4BA4775E2614AC3A0038B9FC /* DiaryDetailCoordinator.swift in Sources */,
 				6155C6F9248F7437009BDE6B /* BatchDownloadScheduler.swift in Sources */,
 				611D9EE2248E704B00EBB420 /* CompleteOperation.swift in Sources */,
 				1CCE52E825D5278400345671 /* Date+toIntervalNumber.swift in Sources */,
 				4E8984282473F07600499820 /* LocalStorage+Injected.swift in Sources */,
 				4B21DB6C25827CE5001274DD /* TransHeadingLabel.swift in Sources */,
 				1CF3B35525A8451600AC94C2 /* SelfTestingCoronaSuspicionCoordinator.swift in Sources */,
+				4BA477562614AC3A0038B9FC /* DiaryAddEntryCoordinator.swift in Sources */,
+				4BA4775D2614AC3A0038B9FC /* DiaryFaqCoordinator.swift in Sources */,
 				614BAA0B2423C334006797AA /* Answer.swift in Sources */,
 				6153A4EF24259929006A8570 /* NotificationCenter+observe.swift in Sources */,
 				4E8984232473EFB500499820 /* PersistedWrapper.swift in Sources */,
@@ -2325,6 +2584,7 @@
 				92FFC9BE24267D8200CC541B /* SelfTestingCheckSymptomsCoordinator.swift in Sources */,
 				61546548242CBEA60003D3D3 /* SuspicionGuidelinesCoordinator.swift in Sources */,
 				4ED175C924606B0600248D3B /* RevokeSickness+Injection.swift in Sources */,
+				4BA477952614AC590038B9FC /* BaseDiaryEntry+CoreDataClass.swift in Sources */,
 				6155C701248FC5CD009BDE6B /* BatchDownloadSchedulerResult.swift in Sources */,
 				4E8984212473C15900499820 /* ContextLogger.swift in Sources */,
 				83974A3C096BEC7F5CCBFCC7 /* OnboardingViewController.swift in Sources */,
@@ -2334,8 +2594,10 @@
 				83974FEC5D515BECE3D2778D /* ApplicationCoordinator.swift in Sources */,
 				614BA9F32423C31C006797AA /* String+URLEncoding.swift in Sources */,
 				61251F212491259D00CEBCCD /* RiskCalculationController.swift in Sources */,
+				4BA476F22614AA500038B9FC /* BaseDiaryInformation.swift in Sources */,
 				4EDB47F82421F13E000CE24A /* OnboardingPageView.swift in Sources */,
 				6153A4DE242598DC006A8570 /* SicknessCertificateFlowController.swift in Sources */,
+				4BA477302614AC250038B9FC /* CoreDataService.swift in Sources */,
 				61DAF6F324922E6500A3B069 /* DetectDailyExposuresOperation.swift in Sources */,
 				61C4A4812427B848004D18BB /* QuarantineNotificationView.swift in Sources */,
 				614BAA0A2423C334006797AA /* ErrorResponse.swift in Sources */,
@@ -2343,6 +2605,7 @@
 				612C460224641C620072ECF7 /* RequestTan.swift in Sources */,
 				6153A52324264A2D006A8570 /* ActivityPresentableType.swift in Sources */,
 				839748117E82124039816540 /* AppDelegate+Injection.swift in Sources */,
+				4BA477602614AC3A0038B9FC /* DiaryDetailEntryCell.swift in Sources */,
 				4ED175B52458347400248D3B /* DebugNavigationController.swift in Sources */,
 				4ED175C824606B0200248D3B /* RevokeSicknessPersonalDataViewModel.swift in Sources */,
 				9215253C2427C5E00023F469 /* SelfTestingHintViewController.swift in Sources */,
@@ -2353,6 +2616,7 @@
 				614D722B2429084900CC545D /* SelfTestingStatusReportViewController.swift in Sources */,
 				614A0025243CF8DD00ACBD0A /* Date+addDays.swift in Sources */,
 				61D0F560243534980026C91A /* UIView+roundedCorners.swift in Sources */,
+				4BA477902614AC590038B9FC /* Person+CoreDataProperties.swift in Sources */,
 				61D1A3BD242A230A007F82ED /* StartMenuViewModel.swift in Sources */,
 				614BAA052423C334006797AA /* Language.swift in Sources */,
 				613E35FA242E3F71009421A8 /* AppConfiguration.swift in Sources */,
@@ -2360,6 +2624,7 @@
 				6153A52524264A2D006A8570 /* ActivityPresentable.swift in Sources */,
 				4ED175D92460730E00248D3B /* RevokeSicknessStatusReportCoordinator.swift in Sources */,
 				611D9ED9248E6FD900EBB420 /* BatchDownloadService.swift in Sources */,
+				4BA477572614AC3A0038B9FC /* DiaryAddEntryViewController.swift in Sources */,
 				614D720E2428E87000CC545D /* QuarantineGuidelinesViewModel.swift in Sources */,
 				4B7379E92423D9E600DF338E /* StartMenuViewController.swift in Sources */,
 				6153A4DB242598DC006A8570 /* SicknessCertificatePersonalDataViewController.swift in Sources */,
@@ -2383,11 +2648,13 @@
 				611D9EDE248E703000EBB420 /* BatchDownloadOperation.swift in Sources */,
 				1CFBB25C25C943B500F40248 /* IconLabelView.swift in Sources */,
 				1CF3B35125A844EB00AC94C2 /* SelfTestingCoronaSuspicionViewModel.swift in Sources */,
+				4BA477552614AC3A0038B9FC /* DiaryDeleteViewController.swift in Sources */,
 				1CAFD93525D5388900866AA3 /* ReportHealthyViewModel.swift in Sources */,
 				6186C6FE2492716F0070B616 /* RiskCalculationCompleteOperation.swift in Sources */,
 				6153A4D6242598DC006A8570 /* SicknessCertificateConfirmationViewModel.swift in Sources */,
 				61D0F55224352E960026C91A /* RevocationTanConfirmationCoordinator.swift in Sources */,
 				614D72242429084300CC545D /* SelfTestingPersonalDataViewController.swift in Sources */,
+				4BA476DE2614A9C10038B9FC /* BasePickerView.swift in Sources */,
 				1C88C4E925BABDE700BB6D8B /* InteroperabilityViewController.swift in Sources */,
 				92FFC9C72426878600CC541B /* SelfTesting+Injection.swift in Sources */,
 				6153A4E4242598DC006A8570 /* SicknessCertificateTanConfirmationViewController.swift in Sources */,
@@ -2395,9 +2662,11 @@
 				4E019BD8242604D6004FF670 /* SelectedRoundCornersView.swift in Sources */,
 				784C2D1D2487B19A005160A6 /* DebugAppHistoryViewController.swift in Sources */,
 				61459A57242AC48800DC88A7 /* Website.swift in Sources */,
+				4BA477642614AC3A0038B9FC /* DiaryOverviewDayCell.swift in Sources */,
 				61546542242CBE7F0003D3D3 /* SelfMonitoringGuidelinesViewController.swift in Sources */,
 				4E1AAEF4246186FA00D43E2B /* RevocationConfirmationViewController.swift in Sources */,
 				611B78B9242816950040CCB3 /* UIWindow+topMostViewController.swift in Sources */,
+				4BA477922614AC590038B9FC /* BaseEncounter+CoreDataClass.swift in Sources */,
 				6153A4D8242598DC006A8570 /* SicknessCertificateConfirmationCoordinator.swift in Sources */,
 				6153A52B24264A34006A8570 /* UIView+embedSubview.swift in Sources */,
 				6153A4D2242598DC006A8570 /* SicknessCertificateStatusReportViewController.swift in Sources */,
@@ -2420,6 +2689,7 @@
 				83974B1F6F49E544E670E7E3 /* NSString+localized.swift in Sources */,
 				6153A4E3242598DC006A8570 /* SicknessCertificateTanConfirmationViewModel.swift in Sources */,
 				4E1AAEFD2461870700D43E2B /* RevokeSicknessConfirmationViewModel.swift in Sources */,
+				4BA476F32614AA500038B9FC /* DiaryDayInfo.swift in Sources */,
 				611D9EE7248E7C9500EBB420 /* BatchDownloadConfiguration.swift in Sources */,
 				4B686A5A25CC4040000BE02B /* PhoneNumberTextView.swift in Sources */,
 				92FFC9C124267D8200CC541B /* SelfTestingCheckSymptomsViewModel.swift in Sources */,
@@ -2431,24 +2701,32 @@
 				61F50DDA2439EC8500798264 /* MissingPermissionsViewModel.swift in Sources */,
 				6153A4EE24259929006A8570 /* UIResponder+Traversing.swift in Sources */,
 				611B78BF242816BE0040CCB3 /* AppUpdateService.swift in Sources */,
+				4BA4775A2614AC3A0038B9FC /* DiaryFaqViewController.swift in Sources */,
 				1CAFD93725D5388900866AA3 /* ReportHealthyCoordinator.swift in Sources */,
 				61D0F56E2435EB870026C91A /* RevocationPersonalDataViewController.swift in Sources */,
 				61D0F55124352E960026C91A /* RevocationTanConfirmationViewController.swift in Sources */,
 				614BA9F22423C31C006797AA /* NetworkService.swift in Sources */,
 				614BA9F92423C31C006797AA /* NetworkConfiguration.swift in Sources */,
+				4BA4778E2614AC590038B9FC /* PublicTransportEncounter+CoreDataProperties.swift in Sources */,
+				4BA477822614AC590038B9FC /* PublicTransport+CoreDataProperties.swift in Sources */,
 				614D72312429084B00CC545D /* SelfTestingTanConfirmationCoordinator.swift in Sources */,
+				4BA477932614AC590038B9FC /* Event+CoreDataProperties.swift in Sources */,
 				4ED175DB2460731500248D3B /* RevokeSicknessStatusReportViewModel.swift in Sources */,
 				4BD0B8DC2427AF6400BFA123 /* NotificationService.swift in Sources */,
 				614D72052428E82700CC545D /* ContactSicknessViewModel.swift in Sources */,
 				6153A52924264A2D006A8570 /* ActivityView.swift in Sources */,
 				1C3841C2258774F9002B80BD /* LinkTextView.swift in Sources */,
+				4BA477892614AC590038B9FC /* Event+CoreDataClass.swift in Sources */,
+				4BA477532614AC3A0038B9FC /* DiaryDeleteCoordinator.swift in Sources */,
 				61653681247D114F0088A9D6 /* TracingKeys.swift in Sources */,
+				4BA477632614AC3A0038B9FC /* DiaryDetailViewController.swift in Sources */,
 				61C4A47924279433004D18BB /* UIActivityIndicatorView+scale.swift in Sources */,
 				9215254F2427C74A0023F469 /* SelfTestingSelfMonitoringViewController.swift in Sources */,
 				61D0F54A24352E960026C91A /* RevocationStatusReportViewController.swift in Sources */,
 				1CE08CB225DFCA2600A12547 /* ExposureNotificationErrorView.swift in Sources */,
 				61546540242CBE7F0003D3D3 /* SelfMonitoringGuidelinesCoordinator.swift in Sources */,
 				1C35920E25B7135F00EC93DB /* Date+ShortMonthName.swift in Sources */,
+				4BA476DD2614A9C10038B9FC /* DiaryEntryPicker.swift in Sources */,
 				61DAF6EF2492181100A3B069 /* ENIntervalNumber+date.swift in Sources */,
 				6186C702249277A80070B616 /* DetectExposuresOperation.swift in Sources */,
 				6153A4DD242598DC006A8570 /* SicknessCertificate+Injection.swift in Sources */,
@@ -2456,7 +2734,10 @@
 				6186C6FA24926E240070B616 /* DailyExposure.swift in Sources */,
 				4E5254D32472B8AF00B6C3A4 /* Exposure+Injection.swift in Sources */,
 				8397409A6F3CF92410AAEE06 /* TransLabel.swift in Sources */,
+				4BA477862614AC590038B9FC /* LocationEncounter+CoreDataProperties.swift in Sources */,
+				4BA477882614AC590038B9FC /* BaseEncounter+CoreDataProperties.swift in Sources */,
 				612E52B2249D0E8A0096DB9F /* FullExposure.swift in Sources */,
+				4BA4772F2614AC250038B9FC /* CoreDataService+Injection.swift in Sources */,
 				4ED175D024606F6D00248D3B /* RevokeSicknessTanConfirmationCoordinator.swift in Sources */,
 				614D72222429083F00CC545D /* SelfTestingPersonalDataCoordinator.swift in Sources */,
 				4ED175C724606AFE00248D3B /* RevokeSicknessPersonalDataViewController.swift in Sources */,
@@ -2471,10 +2752,12 @@
 				8397446DA0EAC8E79B9445BA /* TransButton.swift in Sources */,
 				614BAA072423C334006797AA /* IncomingInfectionMessage.swift in Sources */,
 				614BA9F42423C31C006797AA /* Response+parseJSON.swift in Sources */,
+				4BA477852614AC590038B9FC /* Location+CoreDataProperties.swift in Sources */,
 				614A0027243CFB3500ACBD0A /* BubbleArrowButton.swift in Sources */,
 				615D36352437417600B608AB /* AttestedSicknessGuidelinesViewModel.swift in Sources */,
 				6153A4D3242598DC006A8570 /* SicknessCertificateStatusReportCoordinator.swift in Sources */,
 				4E1AAEFB2461870700D43E2B /* RevokeSicknessConfirmationCoordinator.swift in Sources */,
+				4BA477652614AC3A0038B9FC /* DiaryOverviewCoorrdinator.swift in Sources */,
 				6129B57F24924B6A00E2D15B /* ENRiskLevel+diagnosisType.swift in Sources */,
 				617A4E79249152AE00F0B877 /* ENExposureDetectionSummary+lastExposureDate.swift in Sources */,
 				61F50DD92439EC8500798264 /* MissingPermissionsViewController.swift in Sources */,
@@ -2485,6 +2768,7 @@
 				61D0F56C2435EB870026C91A /* RevocationPersonalDataCoordinator.swift in Sources */,
 				1C783BEF257940C90011EC62 /* TransImageView.swift in Sources */,
 				6153A52724264A2D006A8570 /* ActivityModalViewController.swift in Sources */,
+				4BA477672614AC3A0038B9FC /* DiaryOverviewViewModel.swift in Sources */,
 				83974960BEEA73146FD4930C /* AutoMarginTableViewCell.swift in Sources */,
 				4ED175D224606F9600248D3B /* RevokeSicknessTanConfirmationViewController.swift in Sources */,
 				1C5E3C26258287200037017D /* RiskAssessmentView.swift in Sources */,
@@ -2493,10 +2777,12 @@
 				613E35F5242E3F65009421A8 /* LaunchScreenViewController.swift in Sources */,
 				615D36642438C25400B608AB /* LoggingService.swift in Sources */,
 				839748AF8A2EE9168002C226 /* DatabaseService+Injection.swift in Sources */,
+				4BA4778B2614AC590038B9FC /* Person+CoreDataClass.swift in Sources */,
 				4B82571C24266A32007E25C6 /* StartMenuSimpleWebViewCoordinator.swift in Sources */,
 				6153A4D4242598DC006A8570 /* SicknessCertificateStatusReportViewModel.swift in Sources */,
 				61D1A3E4242A58C9007F82ED /* MainHelpViewModel.swift in Sources */,
 				610571AF247E9EBE009A715E /* ReportHealthStatusFlowController.swift in Sources */,
+				4BA477942614AC590038B9FC /* PublicTransport+CoreDataClass.swift in Sources */,
 				9215255D2427C7AA0023F469 /* SelfTestingSuspicionCoordinator.swift in Sources */,
 				6153A4F624259932006A8570 /* InputValidation.swift in Sources */,
 				61546543242CBE7F0003D3D3 /* SelfMonitoringGuidelinesViewModel.swift in Sources */,
@@ -2507,11 +2793,13 @@
 				8397485AF4D5FC35155ED797 /* ConfigurationService+Injection.swift in Sources */,
 				4ED175CA24606B0A00248D3B /* RevokeSicknessFlowController.swift in Sources */,
 				61546553242D1A6D0003D3D3 /* AnswerView.swift in Sources */,
+				4BA476E72614AA270038B9FC /* StoppCorona.xcdatamodeld in Sources */,
 				4BD0B8DF2427AF9800BFA123 /* NotificationService+Injection.swift in Sources */,
 				839741974FFF610B5F936C7D /* History.swift in Sources */,
 				1CF3B35925A8594600AC94C2 /* DatePickerView.swift in Sources */,
 				616B75AB248E33A60030CD6B /* FileDownloadDestination.swift in Sources */,
 				611B78BE242816BE0040CCB3 /* AppUpdateService+Injection.swift in Sources */,
+				4BA477912614AC590038B9FC /* EventEncounter+CoreDataClass.swift in Sources */,
 				83974E39C51DA3FCCB202E62 /* MainCoordinator.swift in Sources */,
 				83974C2CD7A816EE91AA6583 /* OutgoingInfectionMessage.swift in Sources */,
 				4ED175B82458347400248D3B /* DebugViewModel.swift in Sources */,
@@ -2523,6 +2811,7 @@
 				17CE9FA0CBB1AA58675A1F5A /* UIApplication+SafariViewController.swift in Sources */,
 				83974901AF9ABB4176C37AD0 /* OnboardingConsentPageView.swift in Sources */,
 				83974E01F55C841BAD9C9D1D /* NetworkSession.swift in Sources */,
+				4BA4775B2614AC3A0038B9FC /* DiaryFaqViewModel.swift in Sources */,
 				4E1AAEF2246186FA00D43E2B /* RevocationConfirmationViewModel.swift in Sources */,
 				839740FB82072673E0314F53 /* M001InitialMigration.swift in Sources */,
 				83974B88D707E8ED8B8BC8AE /* TracingKeyPassword.swift in Sources */,
@@ -3086,6 +3375,19 @@
 			defaultConfigurationName = Production;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4BA476E52614AA270038B9FC /* StoppCorona.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4BA476E62614AA270038B9FC /* StoppCorona.xcdatamodel */,
+			);
+			currentVersion = 4BA476E62614AA270038B9FC /* StoppCorona.xcdatamodel */;
+			path = StoppCorona.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 4E0B3E2D241F995D00EF60EE /* Project object */;
 }

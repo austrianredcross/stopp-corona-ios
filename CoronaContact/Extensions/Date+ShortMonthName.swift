@@ -32,6 +32,10 @@ extension Date {
         return "\(longDay), \(shortMonth)\(year)"
     }
     
+    var longDayMonthLongYear: String {
+        return "\(longDay), \(shortDate)"
+    }
+    
     var longMonth: String {
         let dateFormatter = DateFormatter()
         
@@ -39,7 +43,7 @@ extension Date {
         
         return dateFormatter.string(from: self)
     }
-
+    
     var shortDate: String {
         let dateFormatter = DateFormatter()
         
