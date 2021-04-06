@@ -9,7 +9,7 @@ import CoreData
 
 class DiaryDetailViewModel: ViewModel {
     
-    @Injected private var coreDataService: coreDataService
+    @Injected private var coreDataService: CoreDataService
     
     private var diaryDayInfo: DiaryDayInfo
     private var coordinator: DiaryDetailCoordinator

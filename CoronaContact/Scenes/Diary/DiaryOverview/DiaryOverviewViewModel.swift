@@ -8,7 +8,7 @@ import UIKit
 
 class DiaryOverviewViewModel: ViewModel {
     
-    @Injected private var coreDataService: coreDataService
+    @Injected private var coreDataService: CoreDataService
     
     weak var coordinator: DiaryOverviewCoordinator?
     

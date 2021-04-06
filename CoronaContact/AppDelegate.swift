@@ -32,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     @Injected private var exposureManager: ExposureManager
     @Injected private var batchDownloadScheduler: BatchDownloadScheduler
     @Injected private var appStartBatchController: AppStartBatchController
-    @Injected private var coreDataService: coreDataService
+    @Injected private var coreDataService: CoreDataService
 
     lazy var screenSize: ScreenSize = {
         let width = UIScreen.main.bounds.size.width

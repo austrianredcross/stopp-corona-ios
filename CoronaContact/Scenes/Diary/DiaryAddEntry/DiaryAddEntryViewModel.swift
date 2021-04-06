@@ -8,7 +8,7 @@ import Resolver
 
 class DiaryAddEntryViewModel: ViewModel {
     
-    @Injected private var coreDataService: coreDataService
+    @Injected private var coreDataService: CoreDataService
     
     private var coordinator: DiaryAddEntryCoordinator
     private var viewController: DiaryAddEntryViewController

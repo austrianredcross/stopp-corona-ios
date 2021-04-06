@@ -8,6 +8,6 @@ import Resolver
 
 extension Resolver {
     public static func registerCoreDataService() {
-        register { CoreDataSerivce() }.scope(application)
+        register { CoreDataService() }.scope(application)
     }
 }

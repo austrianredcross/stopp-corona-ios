@@ -9,7 +9,7 @@ import Resolver
 
 class DiaryDeleteCoordinator: Coordinator {
     
-    @Injected private var coreDataService: coreDataService
+    @Injected private var coreDataService: CoreDataService
     
     private lazy var rootViewController: DiaryDeleteViewController = {
         let controller = DiaryDeleteViewController.instantiate()
