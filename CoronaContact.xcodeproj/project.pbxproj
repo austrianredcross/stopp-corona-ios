@@ -58,8 +58,6 @@
 		4BA476F32614AA500038B9FC /* DiaryDayInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA476EF2614AA500038B9FC /* DiaryDayInfo.swift */; };
 		4BA476F52614AA500038B9FC /* DiaryEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA476F12614AA500038B9FC /* DiaryEntry.swift */; };
 		4BA4770A2614AB030038B9FC /* PDFCreater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA477092614AB030038B9FC /* PDFCreater.swift */; };
-		4BA4772F2614AC250038B9FC /* CoreDataService+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA4772D2614AC250038B9FC /* CoreDataService+Injection.swift */; };
-		4BA477302614AC250038B9FC /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA4772E2614AC250038B9FC /* CoreDataService.swift */; };
 		4BA477522614AC3A0038B9FC /* DiaryDeleteViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BA477372614AC3A0038B9FC /* DiaryDeleteViewController.storyboard */; };
 		4BA477532614AC3A0038B9FC /* DiaryDeleteCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA477382614AC3A0038B9FC /* DiaryDeleteCoordinator.swift */; };
 		4BA477542614AC3A0038B9FC /* DiaryDeleteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA477392614AC3A0038B9FC /* DiaryDeleteViewModel.swift */; };
@@ -105,6 +103,8 @@
 		4BA477952614AC590038B9FC /* BaseDiaryEntry+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA477812614AC590038B9FC /* BaseDiaryEntry+CoreDataClass.swift */; };
 		4BA4779D2614AC910038B9FC /* DiaryLocationDayPeriodSelector.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BA4779B2614AC910038B9FC /* DiaryLocationDayPeriodSelector.xib */; };
 		4BA4779E2614AC910038B9FC /* DiaryLocationDayPeriodSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA4779C2614AC910038B9FC /* DiaryLocationDayPeriodSelector.swift */; };
+		4BB4BB0D261626E900122EA7 /* CoreDataService+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB4BB0B261626E900122EA7 /* CoreDataService+Injection.swift */; };
+		4BB4BB0E261626E900122EA7 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB4BB0C261626E900122EA7 /* CoreDataService.swift */; };
 		4BCEB4B525657EE800D53E12 /* TransBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCEB4B425657EE800D53E12 /* TransBarButton.swift */; };
 		4BD0B8DC2427AF6400BFA123 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD0B8DB2427AF6400BFA123 /* NotificationService.swift */; };
 		4BD0B8DF2427AF9800BFA123 /* NotificationService+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD0B8DE2427AF9800BFA123 /* NotificationService+Injection.swift */; };
@@ -500,8 +500,6 @@
 		4BA476EF2614AA500038B9FC /* DiaryDayInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryDayInfo.swift; sourceTree = "<group>"; };
 		4BA476F12614AA500038B9FC /* DiaryEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryEntry.swift; sourceTree = "<group>"; };
 		4BA477092614AB030038B9FC /* PDFCreater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFCreater.swift; sourceTree = "<group>"; };
-		4BA4772D2614AC250038B9FC /* CoreDataService+Injection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CoreDataService+Injection.swift"; sourceTree = "<group>"; };
-		4BA4772E2614AC250038B9FC /* CoreDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
 		4BA477372614AC3A0038B9FC /* DiaryDeleteViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DiaryDeleteViewController.storyboard; sourceTree = "<group>"; };
 		4BA477382614AC3A0038B9FC /* DiaryDeleteCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryDeleteCoordinator.swift; sourceTree = "<group>"; };
 		4BA477392614AC3A0038B9FC /* DiaryDeleteViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryDeleteViewModel.swift; sourceTree = "<group>"; };
@@ -547,6 +545,8 @@
 		4BA477812614AC590038B9FC /* BaseDiaryEntry+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BaseDiaryEntry+CoreDataClass.swift"; sourceTree = "<group>"; };
 		4BA4779B2614AC910038B9FC /* DiaryLocationDayPeriodSelector.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DiaryLocationDayPeriodSelector.xib; sourceTree = "<group>"; };
 		4BA4779C2614AC910038B9FC /* DiaryLocationDayPeriodSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryLocationDayPeriodSelector.swift; sourceTree = "<group>"; };
+		4BB4BB0B261626E900122EA7 /* CoreDataService+Injection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CoreDataService+Injection.swift"; sourceTree = "<group>"; };
+		4BB4BB0C261626E900122EA7 /* CoreDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
 		4BCEB4B425657EE800D53E12 /* TransBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransBarButton.swift; sourceTree = "<group>"; };
 		4BD0B8DB2427AF6400BFA123 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		4BD0B8DE2427AF9800BFA123 /* NotificationService+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationService+Injection.swift"; sourceTree = "<group>"; };
@@ -1010,16 +1010,6 @@
 			path = StartMenuSimpleWebView;
 			sourceTree = "<group>";
 		};
-		4BA4772C2614AC250038B9FC /* CoreData */ = {
-			isa = PBXGroup;
-			children = (
-				4BA4772D2614AC250038B9FC /* CoreDataService+Injection.swift */,
-				4BA4772E2614AC250038B9FC /* CoreDataService.swift */,
-			);
-			name = CoreData;
-			path = ../../../../../CoreData;
-			sourceTree = "<group>";
-		};
 		4BA477352614AC3A0038B9FC /* Diary */ = {
 			isa = PBXGroup;
 			children = (
@@ -1124,6 +1114,15 @@
 				4BA4779C2614AC910038B9FC /* DiaryLocationDayPeriodSelector.swift */,
 			);
 			path = DiaryLocationDayPeriodSelector;
+			sourceTree = "<group>";
+		};
+		4BB4BB0A261626E900122EA7 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				4BB4BB0B261626E900122EA7 /* CoreDataService+Injection.swift */,
+				4BB4BB0C261626E900122EA7 /* CoreDataService.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		4BD0B8DA2427AF2B00BFA123 /* Notifications */ = {
@@ -2043,7 +2042,7 @@
 		83974D9D12AC236263A86D73 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				4BA4772C2614AC250038B9FC /* CoreData */,
+				4BB4BB0A261626E900122EA7 /* CoreData */,
 				7828A69F24922D92006AEAAC /* Maintenance */,
 				4E8984242473F00900499820 /* LocalStorage */,
 				615D36622438C24900B608AB /* Logging */,
@@ -2540,9 +2539,11 @@
 				1CF3B35D25A85B8B00AC94C2 /* Date+getDates.swift in Sources */,
 				61F50DD72439EC8500798264 /* MissingPermissionsCoordinator.swift in Sources */,
 				4ED175B62458347400248D3B /* DebugCoordinator.swift in Sources */,
+				4BB4BB0D261626E900122EA7 /* CoreDataService+Injection.swift in Sources */,
 				614D72252429084300CC545D /* SelfTestingPersonalDataViewModel.swift in Sources */,
 				61D0F55924352EA90026C91A /* CheckboxView.swift in Sources */,
 				6153A52624264A2D006A8570 /* ActivityPresentationStyle.swift in Sources */,
+				4BB4BB0E261626E900122EA7 /* CoreDataService.swift in Sources */,
 				4BA4778C2614AC590038B9FC /* EventEncounter+CoreDataProperties.swift in Sources */,
 				614BAA0C2423C334006797AA /* InfectionInfo.swift in Sources */,
 				614BA9F02423C31C006797AA /* NetworkEndpoint.swift in Sources */,
@@ -2597,7 +2598,6 @@
 				4BA476F22614AA500038B9FC /* BaseDiaryInformation.swift in Sources */,
 				4EDB47F82421F13E000CE24A /* OnboardingPageView.swift in Sources */,
 				6153A4DE242598DC006A8570 /* SicknessCertificateFlowController.swift in Sources */,
-				4BA477302614AC250038B9FC /* CoreDataService.swift in Sources */,
 				61DAF6F324922E6500A3B069 /* DetectDailyExposuresOperation.swift in Sources */,
 				61C4A4812427B848004D18BB /* QuarantineNotificationView.swift in Sources */,
 				614BAA0A2423C334006797AA /* ErrorResponse.swift in Sources */,
@@ -2737,7 +2737,6 @@
 				4BA477862614AC590038B9FC /* LocationEncounter+CoreDataProperties.swift in Sources */,
 				4BA477882614AC590038B9FC /* BaseEncounter+CoreDataProperties.swift in Sources */,
 				612E52B2249D0E8A0096DB9F /* FullExposure.swift in Sources */,
-				4BA4772F2614AC250038B9FC /* CoreDataService+Injection.swift in Sources */,
 				4ED175D024606F6D00248D3B /* RevokeSicknessTanConfirmationCoordinator.swift in Sources */,
 				614D72222429083F00CC545D /* SelfTestingPersonalDataCoordinator.swift in Sources */,
 				4ED175C724606AFE00248D3B /* RevokeSicknessPersonalDataViewController.swift in Sources */,

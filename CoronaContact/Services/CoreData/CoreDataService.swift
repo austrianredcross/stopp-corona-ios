@@ -6,7 +6,7 @@
 import UIKit
 import CoreData
 
-class CoreDataSerivce {
+class CoreDataService {
     
     public var context: NSManagedObjectContext? {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return nil }
