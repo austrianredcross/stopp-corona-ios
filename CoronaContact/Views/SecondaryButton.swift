@@ -33,7 +33,7 @@ class SecondaryButton: TransButton {
     }
 
     private func configureView() {
-        backgroundColor = UIColor.ccWhite
+        backgroundColor = UIColor.systemBackground
         layer.cornerRadius = 8
         layer.borderColor = UIColor.ccRedButton.cgColor
         layer.borderWidth = 1

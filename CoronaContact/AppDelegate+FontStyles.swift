@@ -15,6 +15,7 @@ enum StyleNames: String {
     case bodySmall
     case bold
     case boldWhite
+    case boldBlack
     case boldCenter
     case boldRed
     case boldYellow
@@ -134,6 +135,11 @@ extension AppDelegate {
             $0.color = UIColor.ccBlue
         }
         Styles.register(StyleNames.boldBlue.rawValue, style: boldBlueStyle)
+        
+        let boldBlackStyle = settings.bodyFontStyle(weight: .bold).byAdding {
+            $0.color = UIColor.black
+        }
+        Styles.register(StyleNames.boldBlack.rawValue, style: boldBlackStyle)
     }
 
     private func registerBodyStyles(settings: FontSettings) {
