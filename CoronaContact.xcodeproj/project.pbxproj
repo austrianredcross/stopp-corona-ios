@@ -11,7 +11,12 @@
 		1C35920E25B7135F00EC93DB /* Date+ShortMonthName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C35920D25B7135F00EC93DB /* Date+ShortMonthName.swift */; };
 		1C3841BE258774E3002B80BD /* DeepLinkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3841BD258774E3002B80BD /* DeepLinkConstants.swift */; };
 		1C3841C2258774F9002B80BD /* LinkTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3841C1258774F9002B80BD /* LinkTextView.swift */; };
-		1C417F1D25B9D96600BD45CF /* server.der in Resources */ = {isa = PBXBuildFile; fileRef = 1C417F1C25B9D96600BD45CF /* server.der */; };
+		1C479341262EE64E00603586 /* sms_new.der in Resources */ = {isa = PBXBuildFile; fileRef = 1C47933B262EE64D00603586 /* sms_new.der */; };
+		1C479342262EE64E00603586 /* cdn_new.der in Resources */ = {isa = PBXBuildFile; fileRef = 1C47933C262EE64D00603586 /* cdn_new.der */; };
+		1C479343262EE64E00603586 /* server_new.der in Resources */ = {isa = PBXBuildFile; fileRef = 1C47933D262EE64D00603586 /* server_new.der */; };
+		1C479344262EE64E00603586 /* sms_old.der in Resources */ = {isa = PBXBuildFile; fileRef = 1C47933E262EE64D00603586 /* sms_old.der */; };
+		1C479345262EE64E00603586 /* server_old.der in Resources */ = {isa = PBXBuildFile; fileRef = 1C47933F262EE64E00603586 /* server_old.der */; };
+		1C479346262EE64E00603586 /* cdn_old.der in Resources */ = {isa = PBXBuildFile; fileRef = 1C479340262EE64E00603586 /* cdn_old.der */; };
 		1C5E3C25258287200037017D /* RiskAssessmentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C5E3C23258287200037017D /* RiskAssessmentView.xib */; };
 		1C5E3C26258287200037017D /* RiskAssessmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5E3C24258287200037017D /* RiskAssessmentView.swift */; };
 		1C764DAC25C9B6C20036E0D4 /* handshake_user_health_red_animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 1C764DA725C9B6C10036E0D4 /* handshake_user_health_red_animation.json */; };
@@ -125,7 +130,6 @@
 		4E1AAEFB2461870700D43E2B /* RevokeSicknessConfirmationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1AAEF72461870700D43E2B /* RevokeSicknessConfirmationCoordinator.swift */; };
 		4E1AAEFC2461870700D43E2B /* RevokeSicknessConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1AAEF82461870700D43E2B /* RevokeSicknessConfirmationViewController.swift */; };
 		4E1AAEFD2461870700D43E2B /* RevokeSicknessConfirmationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1AAEF92461870700D43E2B /* RevokeSicknessConfirmationViewModel.swift */; };
-		4E1F2EC324646B550088B8F8 /* sms.der in Resources */ = {isa = PBXBuildFile; fileRef = 4E1F2EC224646B550088B8F8 /* sms.der */; };
 		4E5254D12472B89200B6C3A4 /* ExposureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5254D02472B89200B6C3A4 /* ExposureManager.swift */; };
 		4E5254D32472B8AF00B6C3A4 /* Exposure+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5254D22472B8AF00B6C3A4 /* Exposure+Injection.swift */; };
 		4E8984212473C15900499820 /* ContextLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8984202473C15900499820 /* ContextLogger.swift */; };
@@ -165,8 +169,6 @@
 		4EDB47F82421F13E000CE24A /* OnboardingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDB47F72421F13E000CE24A /* OnboardingPageView.swift */; };
 		4EDB47FA2422086B000CE24A /* UIView+ShadowBorders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDB47F92422086B000CE24A /* UIView+ShadowBorders.swift */; };
 		4EE28121242BA43900BC4C6E /* OnboardingConsentPageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EE28120242BA43900BC4C6E /* OnboardingConsentPageView.xib */; };
-		4EE81CCF24AC8F140047CE6A /* cdn.der in Resources */ = {isa = PBXBuildFile; fileRef = 4EE81CCE24AC8F130047CE6A /* cdn.der */; };
-		4EE81CD024AC8F140047CE6A /* cdn.der in Resources */ = {isa = PBXBuildFile; fileRef = 4EE81CCE24AC8F130047CE6A /* cdn.der */; };
 		61032065243E0AE400ED3A20 /* FlashableScrollIndicators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61032064243E0AE400ED3A20 /* FlashableScrollIndicators.swift */; };
 		61032078243F279400ED3A20 /* en.imprint.html in Resources */ = {isa = PBXBuildFile; fileRef = 61032077243F279300ED3A20 /* en.imprint.html */; };
 		6103207C243F28A000ED3A20 /* en.privacy-and-terms-of-use.html in Resources */ = {isa = PBXBuildFile; fileRef = 61032079243F289F00ED3A20 /* en.privacy-and-terms-of-use.html */; };
@@ -451,7 +453,12 @@
 		1C35920D25B7135F00EC93DB /* Date+ShortMonthName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+ShortMonthName.swift"; sourceTree = "<group>"; };
 		1C3841BD258774E3002B80BD /* DeepLinkConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeepLinkConstants.swift; sourceTree = "<group>"; };
 		1C3841C1258774F9002B80BD /* LinkTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkTextView.swift; sourceTree = "<group>"; };
-		1C417F1C25B9D96600BD45CF /* server.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = server.der; sourceTree = "<group>"; };
+		1C47933B262EE64D00603586 /* sms_new.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = sms_new.der; sourceTree = "<group>"; };
+		1C47933C262EE64D00603586 /* cdn_new.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = cdn_new.der; sourceTree = "<group>"; };
+		1C47933D262EE64D00603586 /* server_new.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = server_new.der; sourceTree = "<group>"; };
+		1C47933E262EE64D00603586 /* sms_old.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = sms_old.der; sourceTree = "<group>"; };
+		1C47933F262EE64E00603586 /* server_old.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = server_old.der; sourceTree = "<group>"; };
+		1C479340262EE64E00603586 /* cdn_old.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = cdn_old.der; sourceTree = "<group>"; };
 		1C5E3C23258287200037017D /* RiskAssessmentView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RiskAssessmentView.xib; sourceTree = "<group>"; };
 		1C5E3C24258287200037017D /* RiskAssessmentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RiskAssessmentView.swift; sourceTree = "<group>"; };
 		1C764DA725C9B6C10036E0D4 /* handshake_user_health_red_animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = handshake_user_health_red_animation.json; sourceTree = "<group>"; };
@@ -569,7 +576,6 @@
 		4E1AAEF72461870700D43E2B /* RevokeSicknessConfirmationCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RevokeSicknessConfirmationCoordinator.swift; sourceTree = "<group>"; };
 		4E1AAEF82461870700D43E2B /* RevokeSicknessConfirmationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RevokeSicknessConfirmationViewController.swift; sourceTree = "<group>"; };
 		4E1AAEF92461870700D43E2B /* RevokeSicknessConfirmationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RevokeSicknessConfirmationViewModel.swift; sourceTree = "<group>"; };
-		4E1F2EC224646B550088B8F8 /* sms.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = sms.der; sourceTree = "<group>"; };
 		4E5254CE2472B40100B6C3A4 /* Stopp Corona Test.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Stopp Corona Test.entitlements"; sourceTree = "<group>"; };
 		4E5254D02472B89200B6C3A4 /* ExposureManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExposureManager.swift; sourceTree = "<group>"; };
 		4E5254D22472B8AF00B6C3A4 /* Exposure+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Exposure+Injection.swift"; sourceTree = "<group>"; };
@@ -609,7 +615,6 @@
 		4EDB47F72421F13E000CE24A /* OnboardingPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageView.swift; sourceTree = "<group>"; };
 		4EDB47F92422086B000CE24A /* UIView+ShadowBorders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ShadowBorders.swift"; sourceTree = "<group>"; };
 		4EE28120242BA43900BC4C6E /* OnboardingConsentPageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingConsentPageView.xib; sourceTree = "<group>"; };
-		4EE81CCE24AC8F130047CE6A /* cdn.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = cdn.der; sourceTree = "<group>"; };
 		5912459E0AF7798015BD7057 /* Pods-CoronaContactTests.production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoronaContactTests.production.xcconfig"; path = "Target Support Files/Pods-CoronaContactTests/Pods-CoronaContactTests.production.xcconfig"; sourceTree = "<group>"; };
 		61032064243E0AE400ED3A20 /* FlashableScrollIndicators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashableScrollIndicators.swift; sourceTree = "<group>"; };
 		61032077243F279300ED3A20 /* en.imprint.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = en.imprint.html; sourceTree = "<group>"; };
@@ -1803,9 +1808,12 @@
 		61FABC9E2431EBDE0085786B /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
-				1C417F1C25B9D96600BD45CF /* server.der */,
-				4EE81CCE24AC8F130047CE6A /* cdn.der */,
-				4E1F2EC224646B550088B8F8 /* sms.der */,
+				1C47933C262EE64D00603586 /* cdn_new.der */,
+				1C479340262EE64E00603586 /* cdn_old.der */,
+				1C47933D262EE64D00603586 /* server_new.der */,
+				1C47933F262EE64E00603586 /* server_old.der */,
+				1C47933B262EE64D00603586 /* sms_new.der */,
+				1C47933E262EE64D00603586 /* sms_old.der */,
 				61AB6EF024573737006B4190 /* Secrets.xcconfig */,
 				61AB6EF124573771006B4190 /* Secrets.template.xcconfig */,
 				61FABCB02432368E0085786B /* Base.xcconfig */,
@@ -2247,12 +2255,14 @@
 				4ED175D124606F9200248D3B /* RevokeSicknessTanConfirmationViewController.storyboard in Resources */,
 				1C88C4EA25BABDE700BB6D8B /* InteroperabilityViewController.storyboard in Resources */,
 				61C4A4802427B848004D18BB /* QuarantineNotificationView.xib in Resources */,
+				1C479342262EE64E00603586 /* cdn_new.der in Resources */,
 				1CFBB25825C941F000F40248 /* IconLabelView.xib in Resources */,
 				1C764DAE25C9B6C20036E0D4 /* handshake_contact_red_animation.json in Resources */,
 				4B7379F12423E88700DF338E /* StartMenuViewController.storyboard in Resources */,
 				6153A4DC242598DC006A8570 /* SicknessCertificatePersonalDataViewController.storyboard in Resources */,
 				6103207E243F28A000ED3A20 /* en.privacy.html in Resources */,
 				4BDA55DB2608E5F500BAB869 /* DarkStyle.css in Resources */,
+				1C479343262EE64E00603586 /* server_new.der in Resources */,
 				9215253D2427C5E00023F469 /* SelfTestingHintViewController.storyboard in Resources */,
 				1C5E3C25258287200037017D /* RiskAssessmentView.xib in Resources */,
 				4EDB47F12421E92E000CE24A /* OnboardingPageView.xib in Resources */,
@@ -2263,11 +2273,12 @@
 				4BA4775C2614AC3A0038B9FC /* DiaryFaqViewController.storyboard in Resources */,
 				61546541242CBE7F0003D3D3 /* SelfMonitoringGuidelinesViewController.storyboard in Resources */,
 				614D72302429084B00CC545D /* SelfTestingTanConfirmationViewController.storyboard in Resources */,
-				4E1F2EC324646B550088B8F8 /* sms.der in Resources */,
 				784C2D192487879C005160A6 /* WhatsNewViewController.storyboard in Resources */,
 				4E0B3E45241F995E00EF60EE /* LaunchScreen.storyboard in Resources */,
+				1C479345262EE64E00603586 /* server_old.der in Resources */,
 				613E35F6242E3F65009421A8 /* LaunchScreenViewController.storyboard in Resources */,
 				6103207C243F28A000ED3A20 /* en.privacy-and-terms-of-use.html in Resources */,
+				1C479341262EE64E00603586 /* sms_new.der in Resources */,
 				4E1AAEFA2461870700D43E2B /* RevokeSicknessConfirmationViewController.storyboard in Resources */,
 				1CAFD93625D5388900866AA3 /* ReportHealthyViewController.storyboard in Resources */,
 				614D72232429084300CC545D /* SelfTestingPersonalDataViewController.storyboard in Resources */,
@@ -2291,6 +2302,7 @@
 				4BA4775F2614AC3A0038B9FC /* DiaryDetailViewController.storyboard in Resources */,
 				4E0D6D6824225FA30076CBD6 /* Assets.xcassets in Resources */,
 				4B82572124266B9E007E25C6 /* de.imprint.html in Resources */,
+				1C479346262EE64E00603586 /* cdn_old.der in Resources */,
 				4EE28121242BA43900BC4C6E /* OnboardingConsentPageView.xib in Resources */,
 				1CE08CAE25DFC69300A12547 /* ExposureNotificationErrorView.xib in Resources */,
 				61D0F54924352E960026C91A /* RevocationStatusReportViewController.storyboard in Resources */,
@@ -2301,8 +2313,8 @@
 				92FFC9C024267D8200CC541B /* SelfTestingCheckSymptomsViewController.storyboard in Resources */,
 				61D0F56D2435EB870026C91A /* RevocationPersonalDataViewController.storyboard in Resources */,
 				6153A4D7242598DC006A8570 /* SicknessCertificateConfirmationViewController.storyboard in Resources */,
-				4EE81CCF24AC8F140047CE6A /* cdn.der in Resources */,
 				6153A4E5242598DC006A8570 /* SicknessCertificateTanConfirmationViewController.storyboard in Resources */,
+				1C479344262EE64E00603586 /* sms_old.der in Resources */,
 				8397407B842054D9947D6AB7 /* configuration.json in Resources */,
 				614D72102428E87000CC545D /* QuarantineGuidelinesViewController.storyboard in Resources */,
 				1C764DAD25C9B6C20036E0D4 /* handshake_active_animation.json in Resources */,
@@ -2313,7 +2325,6 @@
 				4B82571D24266A32007E25C6 /* StartMenuSimpleWebViewViewController.storyboard in Resources */,
 				61546549242CBEA60003D3D3 /* SuspicionGuidelinesViewController.storyboard in Resources */,
 				1C9E770625A761B300C6ADB7 /* SelfTestingCoronaSuspicionViewController.storyboard in Resources */,
-				1C417F1D25B9D96600BD45CF /* server.der in Resources */,
 				4BA477522614AC3A0038B9FC /* DiaryDeleteViewController.storyboard in Resources */,
 				4BDA55DC2608E5F500BAB869 /* LightStyle.css in Resources */,
 				61459A53242ABFE200DC88A7 /* de.terms-of-use.html in Resources */,
@@ -2324,7 +2335,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4EE81CD024AC8F140047CE6A /* cdn.der in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3003,7 +3013,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.1.2;
+				MARKETING_VERSION = 2.1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = at.roteskreuz.stopcorona.stage;
 				PRODUCT_NAME = "Stopp Corona";
 				PROVISIONING_PROFILE_SPECIFIER = "Stopp Corona Stage - Exposure Notification";
@@ -3027,7 +3037,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.1.2;
+				MARKETING_VERSION = 2.1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = at.roteskreuz.stopcorona;
 				PRODUCT_NAME = "Stopp Corona";
 				SWIFT_VERSION = 5.0;
@@ -3112,7 +3122,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.1.2;
+				MARKETING_VERSION = 2.1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = at.roteskreuz.stopcorona.stage;
 				PRODUCT_NAME = "Stopp Corona";
 				PROVISIONING_PROFILE_SPECIFIER = "Stopp Corona Stage - Exposure Notification";
