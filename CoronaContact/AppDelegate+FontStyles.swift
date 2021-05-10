@@ -20,6 +20,7 @@ enum StyleNames: String {
     case boldRed
     case boldYellow
     case boldBlue
+    case boldBlack
     case link
     case underline
     case linkBlue
