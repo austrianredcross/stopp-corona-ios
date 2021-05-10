@@ -243,8 +243,8 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                             </stackView>
-                                                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="9Za-sS-mjF" userLabel="Diary">
-                                                                <rect key="frame" x="0.0" y="599.5" width="414" height="224"/>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="9Za-sS-mjF" userLabel="Diary">
+                                                                <rect key="frame" x="0.0" y="599.5" width="414" height="437"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="diary_main_title" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kya-6X-8lK" customClass="TransHeadingLabel" customModule="Stopp_Corona" customModuleProvider="target">
                                                                         <rect key="frame" x="24" y="32" width="366" height="20.5"/>
