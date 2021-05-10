@@ -594,6 +594,7 @@
 "diary_export_filename"                                                      = "tagebuch";
 "diary_time_format"                                                          = "HH:mm";
 "diary_date_format"                                                          = "EEEE dd.MM.yyyy";
+"start_menu_item_diary"                                                      = "Kontakt-Tagebuch";
 "handshake_code_00"                                                          = "Meise";
 "handshake_code_01"                                                          = "Tukan";
 "handshake_code_02"                                                          = "Gämse";

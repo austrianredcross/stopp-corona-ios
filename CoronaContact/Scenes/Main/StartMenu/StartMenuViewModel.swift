@@ -80,4 +80,8 @@ class StartMenuViewModel: ViewModel {
     func updateView() {
         viewController?.updateView()
     }
+    
+    func diary() {
+        coordinator?.openDiary()
+    }
 }

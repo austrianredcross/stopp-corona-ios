@@ -90,6 +90,10 @@ final class StartMenuViewController: UIViewController, StoryboardBased, Flashabl
     @IBAction func imprintButtonTapped(_ sender: Any) {
         viewModel?.imprint()
     }
+    
+    @IBAction func diaryButtonTapped(_ sender: Any) {
+        viewModel?.diary()
+    }
 
     func updateView() {
         guard let viewModel = viewModel else { return }

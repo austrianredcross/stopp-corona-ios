@@ -178,6 +178,43 @@
                                                             <constraint firstItem="V2s-rI-a7M" firstAttribute="top" secondItem="n1g-tx-bI8" secondAttribute="top" id="nvQ-wf-I0C"/>
                                                         </constraints>
                                                     </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p6z-Jh-vTA" userLabel="Diary">
+                                                        <rect key="frame" x="24" y="463" width="366" height="63"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ylC-rZ-SKh" customClass="ArrowButton" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="366" height="34"/>
+                                                                <state key="normal" title="start_menu_item_share_app">
+                                                                    <color key="titleColor" name="ccBlack"/>
+                                                                </state>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="transKeyNormal" value="start_menu_item_diary"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="diaryButtonTapped:" destination="0DV-8a-Pct" eventType="touchUpInside" id="oBv-1r-Zo4"/>
+                                                                </connections>
+                                                            </button>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ryg-Pj-Fsz" userLabel="DividerView">
+                                                                <rect key="frame" x="0.0" y="52" width="366" height="1"/>
+                                                                <color key="backgroundColor" red="0.79607843140000001" green="0.79607843140000001" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="1" id="uJG-za-Thd"/>
+                                                                </constraints>
+                                                            </view>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <accessibility key="accessibilityConfiguration">
+                                                            <accessibilityTraits key="traits" button="YES"/>
+                                                        </accessibility>
+                                                        <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="Ryg-Pj-Fsz" secondAttribute="trailing" id="0jA-cA-iVG"/>
+                                                            <constraint firstItem="ylC-rZ-SKh" firstAttribute="top" secondItem="p6z-Jh-vTA" secondAttribute="top" id="4VA-qk-XcJ"/>
+                                                            <constraint firstItem="Ryg-Pj-Fsz" firstAttribute="top" secondItem="ylC-rZ-SKh" secondAttribute="bottom" constant="18" id="SN8-LP-lz2"/>
+                                                            <constraint firstAttribute="trailing" secondItem="ylC-rZ-SKh" secondAttribute="trailing" id="WJn-Fu-2Fe"/>
+                                                            <constraint firstAttribute="bottom" secondItem="Ryg-Pj-Fsz" secondAttribute="bottom" constant="10" id="eQY-5c-OJa"/>
+                                                            <constraint firstItem="ylC-rZ-SKh" firstAttribute="leading" secondItem="p6z-Jh-vTA" secondAttribute="leading" id="ehW-ss-UFR"/>
+                                                            <constraint firstItem="Ryg-Pj-Fsz" firstAttribute="leading" secondItem="p6z-Jh-vTA" secondAttribute="leading" id="nSl-iy-NZ6"/>
+                                                        </constraints>
+                                                    </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t8L-RM-QnI" userLabel="Share App">
                                                         <rect key="frame" x="24" y="365" width="366" height="63"/>
                                                         <subviews>
