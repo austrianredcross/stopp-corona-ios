@@ -267,8 +267,8 @@ final class MainViewController: UIViewController, StoryboardBased, ViewModelBase
 
     private func configureAutomationHandshakeView() {
         guard let viewModel = viewModel else { return }
-
-        if viewModel.isBackgroundHandshakeDisabled == false {
+        
+        if !viewModel.isBackgroundHandshakeDisabled && !viewModel.automaticHandshakePaused {
             
             automaticHandShakeInfoStackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
             viewModel.automaticHandshakeInfoViews.forEach { automaticHandShakeInfoStackView.addArrangedSubview($0) }
@@ -283,28 +283,33 @@ final class MainViewController: UIViewController, StoryboardBased, ViewModelBase
             automaticHandshakeInactiveView.isHidden = true
             automaticHandshakeActiveView.isHidden = false
             automaticHandshakeAnimationView.play()
+            
+            exposureNotificationErrorView.isHidden = true
             backgroundHandshakeStackView.stackViewSwitch.isOn = true
+            backgroundHandshakeStackView.stackViewSwitch.onTintColor = .ccBlue
+            backgroundHandshakeStackView.riskAssessmentCurrentStatusLabel.styleName = StyleNames.boldBlue.rawValue
+            backgroundHandshakeStackView.riskAssessmentCurrentStatusLabel.styledText = "automatic_handshake_switch_on".localized
+        } else {
+            
+            automaticHandshakeInactiveView.isHidden = false
+            automaticHandshakeActiveView.isHidden = true
+            automaticHandshakeAnimationView.pause()
+            automaticHandshakeHeadline.styleName = StyleNames.automaticHandshakeHeadlineDisable.rawValue
+            automaticHandshakeHeadline.text = "automatic_handshake_disabled_info".localized
+            
             if viewModel.automaticHandshakePaused {
                 exposureNotificationErrorView.isHidden = false
+                backgroundHandshakeStackView.stackViewSwitch.isOn = true
                 backgroundHandshakeStackView.stackViewSwitch.onTintColor = .ccYellow
                 backgroundHandshakeStackView.riskAssessmentCurrentStatusLabel.styleName = StyleNames.boldYellow.rawValue
                 backgroundHandshakeStackView.riskAssessmentCurrentStatusLabel.styledText = "automatic_handshake_switch_paused".localized
             } else {
                 exposureNotificationErrorView.isHidden = true
-                backgroundHandshakeStackView.stackViewSwitch.onTintColor = .ccBlue
-                backgroundHandshakeStackView.riskAssessmentCurrentStatusLabel.styleName = StyleNames.boldBlue.rawValue
-                backgroundHandshakeStackView.riskAssessmentCurrentStatusLabel.styledText = "automatic_handshake_switch_on".localized
+                backgroundHandshakeStackView.stackViewSwitch.isOn = false
+                backgroundHandshakeStackView.stackViewSwitch.onTintColor = .gray
+                backgroundHandshakeStackView.riskAssessmentCurrentStatusLabel.styleName = StyleNames.boldRed.rawValue
+                backgroundHandshakeStackView.riskAssessmentCurrentStatusLabel.styledText = "automatic_handshake_switch_off".localized
             }
-        } else {
-            backgroundHandshakeStackView.stackViewSwitch.isOn = false
-            automaticHandshakeInactiveView.isHidden = false
-            automaticHandshakeActiveView.isHidden = true
-            automaticHandshakeAnimationView.pause()
-            
-            automaticHandshakeHeadline.styleName = StyleNames.automaticHandshakeHeadlineDisable.rawValue
-            automaticHandshakeHeadline.text = "automatic_handshake_disabled_info".localized
-            backgroundHandshakeStackView.riskAssessmentCurrentStatusLabel.styleName = StyleNames.boldRed.rawValue
-            backgroundHandshakeStackView.riskAssessmentCurrentStatusLabel.styledText = "automatic_handshake_switch_off".localized
         }
     }
     
