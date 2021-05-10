@@ -21,7 +21,7 @@ class RevocationStatusReportViewModel: ViewModel {
     }
 
     var dateLabel: String? {
-        return localStorage.isProbablySickAt?.shortDate ?? ""
+        return localStorage.isProbablySickAt?.shortDayShortMonthLongYear ?? ""
     }
 
     init(with coordinator: RevocationStatusReportCoordinator) {

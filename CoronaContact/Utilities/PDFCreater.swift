@@ -43,7 +43,7 @@ class PDFCreator {
             var fullDiaryText = ""
             for oneDiaryDay in diaryDayInfo where !oneDiaryDay.diaryEntries.isEmpty {
 
-                fullDiaryText += "\(oneDiaryDay.date.shortDate): "
+                fullDiaryText += "\(oneDiaryDay.date.shortDayShortMonthLongYear): "
                 
                 for oneDiaryEntry in oneDiaryDay.diaryEntries {
                     

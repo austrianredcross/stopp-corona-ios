@@ -144,7 +144,7 @@ enum UserHealthStatus: Equatable {
             return nil
         }
 
-        return String(format: "suspicion_guidelines_quarantine_end".localized, date.longMonth)
+        return String(format: "suspicion_guidelines_quarantine_end".localized, date.shortDayLongMonth)
     }
 
     var primaryActionText: String {

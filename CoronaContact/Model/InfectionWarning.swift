@@ -32,6 +32,6 @@ private extension Date {
             return "general_yesterday".localized
         }
 
-        return self.longMonth
+        return self.shortDayLongMonth
     }
 }

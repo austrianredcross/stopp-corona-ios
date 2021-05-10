@@ -8,7 +8,7 @@ import Foundation
 struct History {
     let date: Date
     let autoDiscovered: Bool
-    var dateString: String { date.shortYear }
+    var dateString: String { date.shortDayShortMonthShortYear }
 
     var timeRangeString: String {
         let start = date.lastFullHour()
