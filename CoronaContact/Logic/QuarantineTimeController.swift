@@ -135,6 +135,9 @@ class QuarantineTimeController {
 
     private var lastRefreshAt: Date?
 
+    @Observable static var lastCalculationAt: Date = Date()
+    var subscriptions = Set<AnySubscription>()
+
     private let subscriber: (QuarantineStatus) -> Void
 
     init(timeConfiguration: QuarantineTimeConfiguration = QuarantineTimeConfiguration(),
@@ -166,14 +169,18 @@ class QuarantineTimeController {
         }
         localStorage.lastRedContact = lastRedContact
         localStorage.lastYellowContact = lastYellowContact
+        
+        lastCalculationAt = Date()
     }
 
     private func registerObservers() {
         observers.append(localStorage.$isUnderSelfMonitoring.addObserver(using: refresh))
         observers.append(localStorage.$attestedSicknessAt.addObserver(using: refresh))
         observers.append(localStorage.$isProbablySickAt.addObserver(using: refresh))
-        observers.append(localStorage.$lastRedContact.addObserver(using: refresh))
-        observers.append(localStorage.$lastYellowContact.addObserver(using: refresh))
+
+        QuarantineTimeController.$lastCalculationAt.subscribe { [weak self] _ in
+            self?.refresh()
+        }.add(to: &subscriptions)
     }
 
     public func refreshIfNecessary() {
@@ -274,7 +281,7 @@ class QuarantineTimeController {
         case .cleared:
             localStorage.allClearQuarantine = true
         default:
-            break
+            localStorage.allClearQuarantine = false
         }
     }
 
