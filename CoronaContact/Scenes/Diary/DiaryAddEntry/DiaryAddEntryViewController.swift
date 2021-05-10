@@ -83,6 +83,8 @@ class DiaryAddEntryViewController: UIViewController, StoryboardBased, ViewModelB
         diaryAddTitleLabel.styledText = "diary_add_title".localized
 
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidShow(notification:)), name: UIResponder.keyboardDidShowNotification, object: nil)
+
+        updateUI()
     }
     
     func configureTransportView() {
