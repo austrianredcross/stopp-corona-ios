@@ -97,7 +97,7 @@ extension DiaryDetailViewController: UITableViewDataSource {
     
     // Set the spacing between sections
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 10
+        return 1
     }
     
     // Make the background color show through

@@ -26,6 +26,10 @@ extension UIColor {
         UIColor(named: "ccWhiteText")!
     }
     
+    @nonobjc class var ccWhiteGrey: UIColor {
+        UIColor(named: "ccWhiteGrey")!
+    }
+    
     @nonobjc class var ccLink: UIColor {
         UIColor(named: "ccLink")!
     }
@@ -70,8 +74,8 @@ extension UIColor {
         UIColor(white: 0.4, alpha: 0.8)
     }
     
-    @nonobjc class var ccPopUpDarkBackground: UIColor {
-        UIColor(white: 0.1, alpha: 0.8)
+    @nonobjc class var ccBackground: UIColor {
+        UIColor(named: "ccBackground")!
     }
     
     @nonobjc class var ccBorder: UIColor {

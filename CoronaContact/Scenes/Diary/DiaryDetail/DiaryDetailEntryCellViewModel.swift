@@ -82,19 +82,25 @@ class DiaryDetailEntryCellViewModel: ViewModel {
     private func configurePublicTransportEntryInformation(entryInformation: PublicTransportDiaryEntryInformation) -> [UILabel] {
         var labels: [UILabel] = []
         
-        var fullInfo = ""
+        var locationInfo = ""
         if let departureLocation = entryInformation.departureLocation, !departureLocation.isEmpty {
-            fullInfo = "\(departureLocation)"
+            locationInfo = "\(departureLocation)"
         }
         
         if let destinationLocation = entryInformation.destinationLocation, !destinationLocation.isEmpty {
-            fullInfo = fullInfo.isEmpty ? "\(destinationLocation)" : "\(fullInfo) - \(destinationLocation)"
+            locationInfo = locationInfo.isEmpty ? "\(destinationLocation)" : "\(locationInfo) - \(destinationLocation)"
         }
-    
-        if !fullInfo.isEmpty {
-            let location = UILabel()
-            location.text = fullInfo
-            labels.append(location)
+            
+        if !locationInfo.isEmpty {
+            let label = UILabel()
+            label.text = locationInfo
+            labels.append(label)
+        }
+        
+        if let departureTime = entryInformation.departureTime, !departureTime.isEmpty {
+            let label = UILabel()
+            label.text = departureTime
+            labels.append(label)
         }
         
         return labels

@@ -75,6 +75,9 @@
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="string" keyPath="normalStyle" value="body"/>
                                                                             <userDefinedRuntimeAttribute type="string" keyPath="transKeyNormal" value="diary_delete_cancel_button"/>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="buttonBackgroundColor">
+                                                                                <color key="value" name="ccWhiteGrey"/>
+                                                                            </userDefinedRuntimeAttribute>
                                                                         </userDefinedRuntimeAttributes>
                                                                         <connections>
                                                                             <action selector="cancelButtonPressed" destination="kef-9B-El6" eventType="touchUpInside" id="nHx-2l-q6u"/>
@@ -84,7 +87,7 @@
                                                                 <edgeInsets key="layoutMargins" top="16" left="0.0" bottom="16" right="0.0"/>
                                                             </stackView>
                                                         </subviews>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <color key="backgroundColor" name="ccWhiteGrey"/>
                                                         <edgeInsets key="layoutMargins" top="8" left="16" bottom="8" right="16"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -145,6 +148,9 @@
         </scene>
     </scenes>
     <resources>
+        <namedColor name="ccWhiteGrey">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
