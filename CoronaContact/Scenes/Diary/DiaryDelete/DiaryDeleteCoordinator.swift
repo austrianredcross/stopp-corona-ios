@@ -26,7 +26,7 @@ class DiaryDeleteCoordinator: Coordinator {
     
     override func start() {
         rootViewController.modalPresentationStyle = .overFullScreen
-        rootViewController.view.backgroundColor = .ccPopUpDarkBackground
+        rootViewController.view.backgroundColor = .ccBackground
         let viewModel = DiaryDeleteViewModel(coordinator: self, baseDiaryInformation: baseDiaryInformation)
         rootViewController.viewModel = viewModel
         presentingViewController.present(rootViewController, animated: false, completion: nil)

@@ -37,14 +37,15 @@
                                                                         <rect key="frame" x="288" y="0.0" width="30" height="30"/>
                                                                         <subviews>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mgJ-6H-uR3">
-                                                                                <rect key="frame" x="10" y="10" width="10" height="10"/>
+                                                                                <rect key="frame" x="12" y="12" width="11" height="11"/>
+                                                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <state key="normal" image="startMenuClose"/>
                                                                                 <connections>
                                                                                     <action selector="closeButtonPressed:" destination="jaF-5b-GIG" eventType="touchUpInside" id="8oD-eN-aYT"/>
                                                                                 </connections>
                                                                             </button>
                                                                         </subviews>
-                                                                        <color key="backgroundColor" name="ccRouge"/>
+                                                                        <color key="backgroundColor" name="ccRedButton"/>
                                                                         <constraints>
                                                                             <constraint firstItem="mgJ-6H-uR3" firstAttribute="leading" secondItem="nlF-Ml-3aH" secondAttribute="leading" constant="12" id="82T-0G-oYW"/>
                                                                             <constraint firstAttribute="width" secondItem="nlF-Ml-3aH" secondAttribute="height" multiplier="1:1" id="U1o-ih-OJy"/>
@@ -92,7 +93,7 @@
                                                                                 </constraints>
                                                                             </imageView>
                                                                         </subviews>
-                                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
                                                                             <constraint firstItem="MXU-IA-lHr" firstAttribute="leading" secondItem="KIY-mb-3QF" secondAttribute="leading" id="Fpx-KS-HPQ"/>
                                                                             <constraint firstAttribute="bottom" secondItem="MXU-IA-lHr" secondAttribute="bottom" id="SZ5-cV-qsu"/>
@@ -114,7 +115,7 @@
                                                                         <subviews>
                                                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Notizen" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="m5i-8J-IAW">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="318" height="0.0"/>
-                                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <color key="textColor" systemColor="labelColor"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -148,7 +149,7 @@
                                                                                         </userDefinedRuntimeAttributes>
                                                                                     </label>
                                                                                 </subviews>
-                                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="trailing" secondItem="XzU-Bq-rjc" secondAttribute="trailing" id="Cal-uo-b5t"/>
                                                                                     <constraint firstItem="XzU-Bq-rjc" firstAttribute="top" secondItem="fIL-Id-Ajo" secondAttribute="top" constant="32" id="W2X-u3-How"/>
@@ -158,7 +159,7 @@
                                                                             </view>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yHE-z0-Bkh" customClass="DiaryLocationDayPeriodSelector" customModule="Stopp_Corona" customModuleProvider="target">
                                                                                 <rect key="frame" x="0.0" y="32" width="318" height="150"/>
-                                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="150" id="xIZ-jZ-L9p"/>
                                                                                 </constraints>
@@ -189,7 +190,7 @@
                                                                             </textField>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dOM-IP-zYM">
                                                                                 <rect key="frame" x="0.0" y="40" width="318" height="0.0"/>
-                                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             </view>
                                                                         </subviews>
                                                                         <directionalEdgeInsets key="directionalLayoutMargins" top="16" leading="0.0" bottom="0.0" trailing="0.0"/>
@@ -209,7 +210,7 @@
                                                                             </textField>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="20e-OA-AQy">
                                                                                 <rect key="frame" x="0.0" y="32" width="318" height="0.0"/>
-                                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             </view>
                                                                         </subviews>
                                                                         <directionalEdgeInsets key="directionalLayoutMargins" top="16" leading="0.0" bottom="0.0" trailing="0.0"/>
@@ -232,7 +233,6 @@
                                                         </connections>
                                                     </button>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstItem="0LW-0k-jLO" firstAttribute="top" secondItem="cah-9I-VPl" secondAttribute="bottom" constant="16" id="AlM-1u-2VK"/>
                                                     <constraint firstAttribute="trailing" secondItem="cah-9I-VPl" secondAttribute="trailing" id="Fwm-WK-Ee2"/>
@@ -257,7 +257,7 @@
                                         <viewLayoutGuide key="frameLayoutGuide" id="kSe-7p-y9W"/>
                                     </scrollView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" name="ccWhiteGrey"/>
                                 <constraints>
                                     <constraint firstItem="1st-KH-hbz" firstAttribute="top" secondItem="77H-fx-4Ou" secondAttribute="top" constant="16" id="D6E-4O-Cw7"/>
                                     <constraint firstAttribute="trailing" secondItem="1st-KH-hbz" secondAttribute="trailing" constant="16" id="Kvg-Sm-cyZ"/>
@@ -310,8 +310,14 @@
         <namedColor name="ccBorder">
             <color red="0.89800000190734863" green="0.89800000190734863" blue="0.89800000190734863" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <namedColor name="ccRedButton">
+            <color red="0.72549019607843135" green="0.074509803921568626" blue="0.10588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="ccRouge">
             <color red="0.72549019607843135" green="0.074509803921568626" blue="0.10588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ccWhiteGrey">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

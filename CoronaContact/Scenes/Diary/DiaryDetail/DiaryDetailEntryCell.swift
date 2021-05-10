@@ -40,7 +40,7 @@ class DiaryDetailEntryCell: UITableViewCell, ViewModelBased {
         addShadow(ofColor: .black, radius: 3, offset: CGSize(width: 0, height: 1), opacity: 0.5)
         
         let tintedImage = deleteButton.imageView?.image?.withRenderingMode(.alwaysTemplate)
-        deleteButton.imageView?.tintColor = .ccRouge
+        deleteButton.imageView?.tintColor = .ccRedButton
         deleteButton.imageView?.contentMode = .scaleAspectFit
         deleteButton.setImage(tintedImage, for: .normal)
         deleteButton.setImage(tintedImage, for: .disabled)

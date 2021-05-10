@@ -171,7 +171,7 @@
                 </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="7B2-To-1yz" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="32e-PM-6Op"/>
                 <constraint firstItem="7B2-To-1yz" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="16" id="4JV-o2-NtZ"/>
@@ -186,8 +186,5 @@
         <namedColor name="ccBorder">
             <color red="0.89800000190734863" green="0.89800000190734863" blue="0.89800000190734863" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

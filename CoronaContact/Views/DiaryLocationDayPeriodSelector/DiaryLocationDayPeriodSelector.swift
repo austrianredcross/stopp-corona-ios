@@ -114,19 +114,19 @@ class DiaryLocationDayPeriodSelector: UIView, NibOwnerLoadable {
     private func setSelectionViewToDefault() {
         
         morningSelectionView.borderColor = .ccBorder
-        morningSelectionView.backgroundColor = .systemBackground
+        morningSelectionView.backgroundColor = .ccWhiteGrey
         morningLabel.accessibilityLabel = morningLabel.text! + "," + "accessibility_inactive".localized
 
         noonSelectionView.borderColor = .ccBorder
-        noonSelectionView.backgroundColor = .systemBackground
+        noonSelectionView.backgroundColor = .ccWhiteGrey
         morningLabel.accessibilityLabel = morningLabel.text! + "," + "accessibility_inactive".localized
 
         afternoonSelectioView.borderColor = .ccBorder
-        afternoonSelectioView.backgroundColor = .systemBackground
+        afternoonSelectioView.backgroundColor = .ccWhiteGrey
         morningLabel.accessibilityLabel = morningLabel.text! + "," + "accessibility_inactive".localized
 
         eveningSelectionView.borderColor = .ccBorder
-        eveningSelectionView.backgroundColor = .systemBackground
+        eveningSelectionView.backgroundColor = .ccWhiteGrey
         morningLabel.accessibilityLabel = morningLabel.text! + "," + "accessibility_inactive".localized
     }
     

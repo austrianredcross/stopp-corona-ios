@@ -22,7 +22,7 @@ class DiaryAddEntryCoordinator: Coordinator {
     
     override func start() {
         rootViewController.modalPresentationStyle = .overFullScreen
-        rootViewController.view.backgroundColor = .ccPopUpBackground
+        rootViewController.view.backgroundColor = .ccBackground
         let viewModel = DiaryAddEntryViewModel(coordinator: self, viewController: rootViewController, saveEntityDate: saveEntryDate)
         rootViewController.viewModel = viewModel
         presentingViewController.present(rootViewController, animated: false, completion: nil)
