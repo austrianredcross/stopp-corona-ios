@@ -19,7 +19,7 @@ class AttestedSicknessGuidelinesViewModel: ViewModel {
             return ""
         }
         
-        return endOfQuarantine.longMonth
+        return endOfQuarantine.shortDayLongMonth
     }
     
     var guidelines: [Instruction] {

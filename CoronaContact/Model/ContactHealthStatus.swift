@@ -234,7 +234,7 @@ extension ContactHealthStatus {
             return nil
         }
 
-        return date.longMonth
+        return date.shortDayLongMonth
     }
     
     var infectedDateString: String? {
@@ -243,7 +243,7 @@ extension ContactHealthStatus {
         
         guard let lastRedContact = localStorage.lastRedContact else { return nil }
         
-        return lastRedContact.longMonth
+        return lastRedContact.shortDayLongMonth
     }
 
     var guidelines: [Instruction] {

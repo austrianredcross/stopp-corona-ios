@@ -21,7 +21,7 @@ class RevokeSicknessStatusReportViewModel: ViewModel {
     }
 
     var dateLabel: String? {
-        return localStorage.attestedSicknessAt?.shortDate ?? ""
+        return localStorage.attestedSicknessAt?.shortDayShortMonthLongYear ?? ""
     }
 
     init(with coordinator: RevokeSicknessStatusReportCoordinator) {

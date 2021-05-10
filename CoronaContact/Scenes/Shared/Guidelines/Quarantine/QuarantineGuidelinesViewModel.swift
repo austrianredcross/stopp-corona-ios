@@ -19,7 +19,7 @@ class QuarantineGuidelinesViewModel: ViewModel {
             
         guard let monitoringDays = healtRepository.userHealthStatus.quarantineDays, let date = Date().addDays(monitoringDays) else { return nil }
         
-        return date.longMonth
+        return date.shortDayLongMonth
     }
     
     var guidelines: [Instruction] {
