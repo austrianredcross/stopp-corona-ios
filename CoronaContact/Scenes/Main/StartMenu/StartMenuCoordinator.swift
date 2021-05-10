@@ -82,6 +82,12 @@ class StartMenuCoordinator: Coordinator, ShareSheetPresentable {
 
         child.rootViewController.viewModel?.website = .privacyAndTermsOfUse
     }
+    
+    func openDiary() {
+        let child = DiaryOverviewCoordinator(navigationController: navigationController)
+        addChildCoordinator(child)
+        child.start()
+    }
 
     override func finish(animated: Bool = false) {
         if rootViewController.parent == navigationController {

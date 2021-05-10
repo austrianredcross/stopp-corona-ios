@@ -591,10 +591,11 @@
 "diary_faq_info_content_2"                                                   = "If you are infected with the coronavirus, the health department will need to reach out to all of your recent contacts.\nOur primary focus will be on people you had contact with 48 hours before the onset of symptoms. Your contact diary helps us to quickly identify potential carriers of COVID-19, helping to slow the spread of the disease.";
 "diary_faq_info_content_3"                                                   = "If necessary, the Magistrate’s Health Department may ask for a copy of your contact diary and their contact information. Your contact diary helps you by having all this information ready. The diary entries are visible exclusively to you and are only kept in the app on your phone. This information won't be forwarded or used for contact tracing.";
 "diary_faq_info_content_4"                                                   = "Entries older than 14 days are automatically deleted.";
-"diary_hour"                                                                 = "o`clock";
+"diary_hour"                                                                 = "o'clock";
 "diary_export_filename"                                                      = "diary";
 "diary_time_format"                                                          = "HH:mm";
 "diary_date_format"                                                          = "EEEE dd.MM.yyyy";
+"start_menu_item_diary"                                                      = "Contact diary";
 "handshake_code_00"                                                          = "Meise";
 "handshake_code_01"                                                          = "Tukan";
 "handshake_code_02"                                                          = "Gämse";
