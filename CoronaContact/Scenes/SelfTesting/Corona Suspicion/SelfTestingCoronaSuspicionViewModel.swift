@@ -28,7 +28,7 @@ class SelfTestingCoronaSuspicionViewModel: ViewModel {
         
         guard let coordinator = coordinator else { return }
         
-        let child = SelfTestingSuspicionCoordinator(navigationController: coordinator.navigationController)
+        let child = SelfTestingPersonalDataCoordinator(navigationController: coordinator.navigationController)
         coordinator.addChildCoordinator(child)
         child.start()
     }
