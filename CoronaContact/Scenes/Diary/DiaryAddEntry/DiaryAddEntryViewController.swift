@@ -161,13 +161,13 @@ class DiaryAddEntryViewController: UIViewController, StoryboardBased, ViewModelB
     }
     
     @objc func confirmEventArrivalDatePickerButtonTapped() {
-        eventArrivalTimeTextField.text = "\(timePicker.date.dayTime)) \("diary_hour".localized)"
+        eventArrivalTimeTextField.text = "\(timePicker.date.dayTime) \("diary_hour".localized)"
         
         dismissKeyboard()
     }
     
     @objc func confirmEventDepartureDatePickerButtonTapped() {
-        eventDepartureTimeTextField.text = "\(timePicker.date.dayTime)) \("diary_hour".localized)"
+        eventDepartureTimeTextField.text = "\(timePicker.date.dayTime) \("diary_hour".localized)"
         
         dismissKeyboard()
     }
@@ -188,7 +188,7 @@ class DiaryAddEntryViewController: UIViewController, StoryboardBased, ViewModelB
     }
     
     @objc func confirmDatePickerButtonTapped() {
-        publicTransportDepartureTimeTextField.text = "\(timePicker.date.dayTime)) \("diary_hour".localized)"
+        publicTransportDepartureTimeTextField.text = "\(timePicker.date.dayTime) \("diary_hour".localized)"
 
         dismissKeyboard()
     }
