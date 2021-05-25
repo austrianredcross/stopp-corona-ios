@@ -48,6 +48,9 @@ final class MainViewController: UIViewController, StoryboardBased, ViewModelBase
     @IBOutlet var selfTestingStackView: UIStackView!
     @IBOutlet var sicknessCertificateStackView: UIStackView!
     
+    @IBOutlet var selfTestingSeparatorLine: UIView!
+    @IBOutlet var sicknessCertificateSeparatorLine: UIView!
+    
     private weak var launchScreenView: LaunchScreenView!
 
     override func viewDidLoad() {
@@ -330,12 +333,14 @@ final class MainViewController: UIViewController, StoryboardBased, ViewModelBase
         guard let viewModel = viewModel else { return }
 
         selfTestingStackView.isHidden = viewModel.isProbablySick || viewModel.hasAttestedSickness
+        selfTestingSeparatorLine.isHidden = viewModel.isProbablySick || viewModel.hasAttestedSickness
     }
 
     private func configureSicknessCertificateView() {
         guard let viewModel = viewModel else { return }
 
         sicknessCertificateStackView.isHidden = viewModel.hasAttestedSickness
+        sicknessCertificateSeparatorLine.isHidden = viewModel.hasAttestedSickness
     }
 
     @IBAction func helpTapped(_ sender: Any) {
