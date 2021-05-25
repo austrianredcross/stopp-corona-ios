@@ -67,7 +67,7 @@
                                                         <subviews>
                                                             <view contentMode="scaleToFill" placeholderIntrinsicWidth="374" placeholderIntrinsicHeight="500" translatesAutoresizingMaskIntoConstraints="NO" id="zc1-8m-hoa" customClass="InstructionsView" customModule="Stopp_Corona" customModuleProvider="target">
                                                                 <rect key="frame" x="8" y="12" width="374" height="678.5"/>
-                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <color key="backgroundColor" name="ccWhite"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="color" keyPath="bubbleColor">
                                                                         <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
