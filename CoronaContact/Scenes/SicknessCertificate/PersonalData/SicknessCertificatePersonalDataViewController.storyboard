@@ -114,7 +114,6 @@
                                                         </subviews>
                                                         <edgeInsets key="layoutMargins" top="8" left="8" bottom="20" right="8"/>
                                                     </stackView>
-                                                        <rect key="frame" x="24" y="371" width="366" height="34"/>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Tg-Ri-E0m" customClass="StandardTextField" customModule="Stopp_Corona" customModuleProvider="target">
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
