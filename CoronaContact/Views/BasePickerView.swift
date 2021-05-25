@@ -90,7 +90,7 @@ class BasePickerView: UIPickerView, UIPickerViewDelegate, UIPickerViewDataSource
         let attributedString = NSMutableAttributedString(string: visibleString)
         
         let range = NSRange(location: 0, length: visibleString.count)
-        attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.ccRouge, range: range)
+        attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.ccRedButton, range: range)
         
         attributedString.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: 20, weight: .bold), range: range)
 

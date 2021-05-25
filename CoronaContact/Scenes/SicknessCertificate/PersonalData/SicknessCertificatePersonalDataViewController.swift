@@ -88,7 +88,7 @@ final class SicknessCertificatePersonalDataViewController: UIViewController,
         if localStorage.hasSymptomsOrPositiveAttestAt != nil {
             let date = localStorage.hasSymptomsOrPositiveAttestAt!
             personalDataDescriptionLabel.styledText = viewModel?.personalDataDescription
-            textfield.text = Calendar.current.isDateInToday(date) ? "general_today".localized : date.longDayShortMonthLongYear
+            textfield.styledText = Calendar.current.isDateInToday(date) ? "general_today".localized : date.longDayShortMonthLongYear
         } else {
             confirmButtonTapped()
         }
@@ -104,7 +104,7 @@ final class SicknessCertificatePersonalDataViewController: UIViewController,
         let date = datePicker.chosenDate ?? Date()
         localStorage.hasSymptomsOrPositiveAttestAt = date
         personalDataDescriptionLabel.styledText = viewModel?.personalDataDescription
-        textfield.text = Calendar.current.isDateInToday(date) ? "general_today".localized : date.longDayShortMonthLongYear
+        textfield.styledText = Calendar.current.isDateInToday(date) ? "general_today".localized : date.longDayShortMonthLongYear
         
         self.view.endEditing(true)
     }
