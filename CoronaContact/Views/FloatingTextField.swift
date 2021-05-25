@@ -217,7 +217,7 @@ class FloatingTextField: UITextField, ValidateableInputType {
         borderView = UIView()
         borderView.layer.cornerRadius = 8
         borderView.layer.borderWidth = 1.0
-        borderView.layer.borderColor = UIColor.black.cgColor
+        borderView.layer.borderColor = UIColor.ccBorder.cgColor
         borderView.translatesAutoresizingMaskIntoConstraints = false
         borderView.isUserInteractionEnabled = false
 
@@ -235,7 +235,7 @@ class FloatingTextField: UITextField, ValidateableInputType {
         label = PaddingLabel(frame: textRect(forBounds: bounds))
         label.text = labelText
         label.insets = labelInsets
-        label.backgroundColor = UIColor.ccWhite
+        label.backgroundColor = UIColor.systemBackground
         label.translatesAutoresizingMaskIntoConstraints = false
         label.isUserInteractionEnabled = false
         addSubview(label)
@@ -315,7 +315,7 @@ class FloatingTextField: UITextField, ValidateableInputType {
 
     private func removeError() {
         errorLabel?.isHidden = true
-        borderView?.layer.borderColor = UIColor.ccBlack.cgColor
+        borderView?.layer.borderColor = UIColor.ccBorder.cgColor
         borderView?.layer.borderWidth = calculatedBorderWidth
     }
 
