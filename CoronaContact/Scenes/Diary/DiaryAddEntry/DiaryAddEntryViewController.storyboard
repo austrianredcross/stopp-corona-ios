@@ -106,7 +106,6 @@
                                                                             <constraint firstAttribute="trailing" secondItem="bye-dc-RwO" secondAttribute="trailing" constant="16" id="lLl-3C-CSS"/>
                                                                         </constraints>
                                                                     </view>
-                                                                        <rect key="frame" x="16" y="104.5" width="318" height="34"/>
                                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kqX-yd-5Gp" customClass="StandardTextField" customModule="Stopp_Corona" customModuleProvider="target">
                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
