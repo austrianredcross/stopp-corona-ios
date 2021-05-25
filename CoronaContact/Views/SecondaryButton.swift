@@ -40,4 +40,13 @@ class SecondaryButton: TransButton {
         layer.masksToBounds = true
         heightAnchor.constraint(equalToConstant: 56).isActive = true
     }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        
+        if traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection) {
+            // This will take the correct color based on the Theme.
+            layer.borderColor = UIColor.ccRedButton.cgColor
+        }
+    }
 }
