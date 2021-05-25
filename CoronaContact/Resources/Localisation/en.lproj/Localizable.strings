@@ -1,4 +1,4 @@
-"product_name"                                                               = "Stop Corona";
+"product_name"                                                               = "Stopp Corona";
 "current_language"                                                           = "en";
 "general_validation_required"                                                = "Required";
 "general_ok"                                                                 = "OK";
@@ -28,7 +28,7 @@
 "accessibility_revokation_report_status_button_disabled_description"         = "Please confirm that you have provided all information truthfully";
 "onboarding_headline_1"                                                      = "Welcome";
 "onboarding_copy_1_img"                                                      = "Image: Falling numbers of Corona cases";
-"onboarding_copy_1"                                                          = "By using the Stop Corona app, you are helping to <b>slow down the spread of the virus</b> and save lives.";
+"onboarding_copy_1"                                                          = "By using the Stopp Corona app, you are helping to <b>slow down the spread of the virus</b> and save lives.";
 "onboarding_headline_2"                                                      = "Risk assessment";
 "onboarding_copy_2_img"                                                      = "Image: Contacts are identified via Bluetooth";
 "onboarding_copy_2"                                                          = "Activate the automatic risk assessment via Bluetooth to save contacts <b>anonymously and locally</b> and to determine your <b>current risk of infection</b>.";
@@ -115,7 +115,7 @@
 "contact_sickness_guidelines_quarantine_rule"                                = "If you have an official quarantine notification, please take into account the quarantine period specified in the official quarantine notification.";
 "contact_sickness_guidelines_no_public_transport"                            = "Do not use public transport on your way and avoid contact with other people if possible.";
 "contact_sickness_guidelines_first"                                          = "<b>Please go to quarantine immediately and until %@.</b>\n\nAvoid public transport and contact with other people on the way home.";
-"contact_sickness_guidelines_second"                                         = "Call the <b>Corona hotline</b> <tel>1450 </tel> and report that you have had contact with an infected person on <b>%@</b>. Mention the identification via the <b>Stop Corona App </b> and that you are a contact person via the app (<b>Kontaktperson 4 </b>).";
+"contact_sickness_guidelines_second"                                         = "Call the <b>Corona hotline</b> <tel>1450 </tel> and report that you have had contact with an infected person on <b>%@</b>. Mention the identification via the <b>Stopp Corona App </b> and that you are a contact person via the app (<b>Kontaktperson 4 </b>).";
 "contact_sickness_guidelines_third"                                          = "You will receive an <b>official COVID-19 test </b> after approx. 5 days. If that is negative, you can end the quarantine.";
 "contact_sickness_guidelines_fourth"                                         = "<b>Keep a physical distance </b> from healthy roommates.";
 "contact_sickness_guidelines_fifth"                                          = "Monitor your health and <b>check your body temperature twice a day</b>.";
@@ -257,7 +257,7 @@
 "sickness_certificate_confirmation_title"                                    = "Infection reported";
 "sickness_certificate_confirmation_title_extra"                              = "Share IDs";
 "sickness_certificate_confirmation_headline"                                 = "Infection reported";
-"sickness_certificate_confirmation_headline_extra"                           = "IDs from contact log shared with Stop Corona app";
+"sickness_certificate_confirmation_headline_extra"                           = "IDs from contact log shared with Stopp Corona app";
 "sickness_certificate_confirmation_description"                              = "Thank you for reporting your infection and for contributing significantly to the common good.\n\n<b>Your contacts were notified anonymously.</b>\n\nWe wish you a speedy recovery!";
 "sickness_certificate_confirmation_description_extra"                        = "Other contacts will now be notified of your sick note.";
 "sickness_certificate_confirmation_secondary_button"                         = "Quarantine guidelines";
@@ -390,7 +390,7 @@
 "self_testing_confirmation_title"                                            = "Report status";
 "self_testing_confirmation_title_extra"                                      = "Share IDs";
 "self_testing_confirmation_headline"                                         = "Suspected infection reported";
-"self_testing_confirmation_headline_extra"                                   = "IDs from contact log shared with Stop Corona App";
+"self_testing_confirmation_headline_extra"                                   = "IDs from contact log shared with Stopp Corona App";
 "self_testing_confirmation_description"                                      = "Thank you for reporting your suspected infection and for contributing significantly to the common good.";
 "self_testing_confirmation_description_extra"                                = "Other contacts will now be notified of your suspicion.";
 "self_testing_confirmation_next_steps_headline"                              = "Next steps";
