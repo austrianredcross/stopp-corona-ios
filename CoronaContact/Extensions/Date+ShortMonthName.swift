@@ -11,9 +11,7 @@ extension Date {
     }
     
     var longDayShortMonthLongYear: String {
-        let year = Locale.current.languageCode == englishLanguageCode ? ", \(longYear)" : " \(longYear)"
-        
-        return "\(longDay), \(shortMonth)\(year)"
+        return "\(longDay), \(shortDayShortMonthLongYear)"
     }
     
     var longDayMonthLongYear: String {
