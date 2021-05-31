@@ -48,8 +48,9 @@ final class MainViewController: UIViewController, StoryboardBased, ViewModelBase
     @IBOutlet var selfTestingStackView: UIStackView!
     @IBOutlet var sicknessCertificateStackView: UIStackView!
     
-    @IBOutlet var selfTestingSeparatorLine: UIView!
-    @IBOutlet var sicknessCertificateSeparatorLine: UIView!
+    @IBOutlet var selfTestingSeparatorLineStackView: UIStackView!
+    @IBOutlet var sicknessCertificateSeparatorLineStackView: UIStackView!
+    @IBOutlet var riskAssessmentUpdatedAtStackView: UIStackView!
     
     private weak var launchScreenView: LaunchScreenView!
 
@@ -283,6 +284,7 @@ final class MainViewController: UIViewController, StoryboardBased, ViewModelBase
             automaticHandshakeHeadline.styleName = viewModel.automaticHandshakeHeadlineStyle
             automaticHandshakeHeadline.text = viewModel.automaticHandshakeHeadlineText
             
+            riskAssessmentUpdatedAtStackView.isHidden = false
             automaticHandshakeInactiveView.isHidden = true
             automaticHandshakeActiveView.isHidden = false
             automaticHandshakeAnimationView.play()
@@ -294,6 +296,7 @@ final class MainViewController: UIViewController, StoryboardBased, ViewModelBase
             backgroundHandshakeStackView.riskAssessmentCurrentStatusLabel.styledText = "automatic_handshake_switch_on".localized
         } else {
             
+            riskAssessmentUpdatedAtStackView.isHidden = false
             automaticHandshakeInactiveView.isHidden = false
             automaticHandshakeActiveView.isHidden = true
             automaticHandshakeAnimationView.pause()
@@ -307,11 +310,13 @@ final class MainViewController: UIViewController, StoryboardBased, ViewModelBase
                 backgroundHandshakeStackView.riskAssessmentCurrentStatusLabel.styleName = StyleNames.boldYellow.rawValue
                 backgroundHandshakeStackView.riskAssessmentCurrentStatusLabel.styledText = "automatic_handshake_switch_paused".localized
             } else {
+                riskAssessmentUpdatedAtStackView.isHidden = true
                 exposureNotificationErrorView.isHidden = true
                 backgroundHandshakeStackView.stackViewSwitch.isOn = false
                 backgroundHandshakeStackView.stackViewSwitch.onTintColor = .gray
                 backgroundHandshakeStackView.riskAssessmentCurrentStatusLabel.styleName = StyleNames.boldRed.rawValue
                 backgroundHandshakeStackView.riskAssessmentCurrentStatusLabel.styledText = "automatic_handshake_switch_off".localized
+                
             }
         }
     }
@@ -333,14 +338,14 @@ final class MainViewController: UIViewController, StoryboardBased, ViewModelBase
         guard let viewModel = viewModel else { return }
 
         selfTestingStackView.isHidden = viewModel.isProbablySick || viewModel.hasAttestedSickness
-        selfTestingSeparatorLine.isHidden = viewModel.isProbablySick || viewModel.hasAttestedSickness
+        selfTestingSeparatorLineStackView.isHidden = viewModel.isProbablySick || viewModel.hasAttestedSickness
     }
 
     private func configureSicknessCertificateView() {
         guard let viewModel = viewModel else { return }
 
         sicknessCertificateStackView.isHidden = viewModel.hasAttestedSickness
-        sicknessCertificateSeparatorLine.isHidden = viewModel.hasAttestedSickness
+        sicknessCertificateSeparatorLineStackView.isHidden = viewModel.hasAttestedSickness
     }
 
     @IBAction func helpTapped(_ sender: Any) {
