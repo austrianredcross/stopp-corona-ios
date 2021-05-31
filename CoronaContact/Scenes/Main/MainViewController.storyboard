@@ -90,11 +90,9 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="HvU-Mi-vYS" userLabel="Content">
-                                                        <rect key="frame" x="0.0" y="1056" width="414" height="1799.5"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="HvU-Mi-vYS" userLabel="Content">
                                                         <subviews>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="aM4-Bj-TGf" userLabel="Main Information Stack View" customClass="BackgroundStackView" customModule="Stopp_Corona" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="414" height="568.5"/>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="aM4-Bj-TGf" userLabel="Main Information Stack View" customClass="BackgroundStackView" customModule="Stopp_Corona" customModuleProvider="target">
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lwW-nB-zfn" customClass="SelectedRoundCornersView" customModule="Stopp_Corona" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="128"/>
@@ -201,40 +199,79 @@
                                                                             <constraint firstAttribute="trailing" secondItem="mAZ-2b-GoZ" secondAttribute="trailing" id="spW-sf-NXN"/>
                                                                         </constraints>
                                                                     </view>
-                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QmO-6n-EzW" userLabel="SeperatorLine">
-                                                                        <rect key="frame" x="0.0" y="438.5" width="414" height="1"/>
-                                                                        <color key="backgroundColor" name="ccBorder"/>
-                                                                        <constraints>
-                                                                            <constraint firstAttribute="height" constant="1" id="6Jc-Pw-0Af"/>
-                                                                        </constraints>
-                                                                    </view>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="3Jm-vF-f9F">
-                                                                        <rect key="frame" x="0.0" y="439.5" width="414" height="128"/>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="nWK-HX-Gpe">
+                                                                        <subviews>
+                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QmO-6n-EzW" userLabel="SeperatorLine">
+                                                                                <color key="backgroundColor" name="ccBorder"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="height" constant="1" id="6Jc-Pw-0Af"/>
+                                                                                </constraints>
+                                                                            </view>
+                                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="3Jm-vF-f9F">
+                                                                            </stackView>
+                                                                        </subviews>
                                                                     </stackView>
-                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nuK-Vg-1IL" userLabel="SeperatorLine">
-                                                                        <rect key="frame" x="0.0" y="567.5" width="414" height="1"/>
-                                                                        <color key="backgroundColor" name="ccBorder"/>
-                                                                        <constraints>
-                                                                            <constraint firstAttribute="height" constant="1" id="ceI-Qz-JwX"/>
-                                                                        </constraints>
-                                                                    </view>
-                                                                    <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y3K-0d-XED" customClass="TransButton" customModule="Stopp_Corona" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="568.5" width="414" height="31"/>
-                                                                        <inset key="contentEdgeInsets" minX="0.0" minY="5" maxX="0.0" maxY="4"/>
-                                                                        <inset key="imageEdgeInsets" minX="6" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                                        <state key="normal" title="automatic_handshake_information_hint" image="exclamationMark">
-                                                                            <color key="titleColor" name="ccBrownGrey"/>
-                                                                        </state>
-                                                                        <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="string" keyPath="normalStyle" value="bodySmall"/>
-                                                                            <userDefinedRuntimeAttribute type="string" keyPath="transKeyNormal" value="automatic_handshake_information_hint"/>
-                                                                        </userDefinedRuntimeAttributes>
-                                                                        <connections>
-                                                                            <action selector="helpTapped:" destination="YPc-ty-Btr" eventType="touchUpInside" id="mys-Yu-LgT"/>
-                                                                        </connections>
-                                                                    </button>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="EIq-4X-wdw">
+                                                                        <subviews>
+                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nuK-Vg-1IL" userLabel="SeperatorLine">
+                                                                                <color key="backgroundColor" name="ccBorder"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="height" constant="1" id="ceI-Qz-JwX"/>
+                                                                                </constraints>
+                                                                            </view>
+                                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ZdQ-R9-iYa" userLabel="SeperatorStackView" customClass="BackgroundStackView" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                                <subviews>
+                                                                                    <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y3K-0d-XED" customClass="TransButton" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="31"/>
+                                                                                        <inset key="contentEdgeInsets" minX="0.0" minY="5" maxX="0.0" maxY="4"/>
+                                                                                        <inset key="imageEdgeInsets" minX="6" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                                                        <state key="normal" title="automatic_handshake_information_hint" image="exclamationMark">
+                                                                                            <color key="titleColor" name="ccBrownGrey"/>
+                                                                                        </state>
+                                                                                        <userDefinedRuntimeAttributes>
+                                                                                            <userDefinedRuntimeAttribute type="string" keyPath="normalStyle" value="bodySmall"/>
+                                                                                            <userDefinedRuntimeAttribute type="string" keyPath="transKeyNormal" value="automatic_handshake_information_hint"/>
+                                                                                        </userDefinedRuntimeAttributes>
+                                                                                        <connections>
+                                                                                            <action selector="helpTapped:" destination="YPc-ty-Btr" eventType="touchUpInside" id="mys-Yu-LgT"/>
+                                                                                        </connections>
+                                                                                    </button>
+                                                                                </subviews>
+                                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                <userDefinedRuntimeAttributes>
+                                                                                    <userDefinedRuntimeAttribute type="number" keyPath="overrideVertMarginMulti">
+                                                                                        <real key="value" value="1"/>
+                                                                                    </userDefinedRuntimeAttribute>
+                                                                                    <userDefinedRuntimeAttribute type="number" keyPath="overrideHorztMarginMulti">
+                                                                                        <real key="value" value="1"/>
+                                                                                    </userDefinedRuntimeAttribute>
+                                                                                    <userDefinedRuntimeAttribute type="number" keyPath="overrideSpacingMulti">
+                                                                                        <real key="value" value="0.80000000000000004"/>
+                                                                                    </userDefinedRuntimeAttribute>
+                                                                                </userDefinedRuntimeAttributes>
+                                                                            </stackView>
+                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cnt-8e-nlo" userLabel="SeperatorLine">
+                                                                                <color key="backgroundColor" name="ccDarkModeBorder"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="height" constant="1" id="NUH-4C-FjV"/>
+                                                                                </constraints>
+                                                                            </view>
+                                                                        </subviews>
+                                                                    </stackView>
                                                                 </subviews>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <edgeInsets key="layoutMargins" top="8" left="16" bottom="0.0" right="16"/>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="M3L-nF-iVZ" userLabel="SeperatorStackView" customClass="BackgroundStackView" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                <subviews>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Aj4-49-5w3" userLabel="SeperatorLine">
+                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="1" id="kju-4c-BxC"/>
+                                                                        </constraints>
+                                                                    </view>
+                                                                </subviews>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="number" keyPath="overrideVertMarginMulti">
                                                                         <real key="value" value="1"/>
@@ -247,13 +284,6 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                             </stackView>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Of-pH-7Ec" userLabel="SeperatorLine">
-                                                                <rect key="frame" x="0.0" y="615.5" width="414" height="1"/>
-                                                                <color key="backgroundColor" name="ccDarkModeBorder"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="1" id="3ar-RF-BEi"/>
-                                                                </constraints>
-                                                            </view>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="9Za-sS-mjF" userLabel="Diary">
                                                                 <rect key="frame" x="0.0" y="568.5" width="414" height="437"/>
                                                                 <subviews>
@@ -331,13 +361,28 @@
                                                                 </constraints>
                                                                 <edgeInsets key="layoutMargins" top="32" left="24" bottom="32" right="24"/>
                                                             </stackView>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k3Z-2H-1aY" userLabel="SeperatorLine">
-                                                                <rect key="frame" x="0.0" y="863.5" width="414" height="1"/>
-                                                                <color key="backgroundColor" name="ccDarkModeBorder"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="1" id="KoE-vF-2M8"/>
-                                                                </constraints>
-                                                            </view>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="xcA-JH-rfZ" userLabel="SeperatorStackView" customClass="BackgroundStackView" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                <subviews>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X8A-zM-hdi" userLabel="SeperatorLine">
+                                                                        <color key="backgroundColor" name="ccDarkModeBorder"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="1" id="uZA-lG-0hm"/>
+                                                                        </constraints>
+                                                                    </view>
+                                                                </subviews>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="overrideVertMarginMulti">
+                                                                        <real key="value" value="1"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="overrideHorztMarginMulti">
+                                                                        <real key="value" value="1"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="overrideSpacingMulti">
+                                                                        <real key="value" value="0.80000000000000004"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Q8J-2I-YfW" userLabel="Self Testing Stack View" customClass="BackgroundStackView" customModule="Stopp_Corona" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="864.5" width="414" height="208.5"/>
                                                                 <subviews>
@@ -379,20 +424,35 @@
                                                                     </stackView>
                                                                 </subviews>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                                <edgeInsets key="layoutMargins" top="32" left="8" bottom="40" right="8"/>
+                                                                <edgeInsets key="layoutMargins" top="32" left="8" bottom="32" right="8"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="number" keyPath="overrideHorztMarginMulti">
                                                                         <real key="value" value="1"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                             </stackView>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vzu-wV-zOX" userLabel="SeperatorLine">
-                                                                <rect key="frame" x="0.0" y="1073" width="414" height="1"/>
-                                                                <color key="backgroundColor" name="ccDarkModeBorder"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="1" id="RVd-L4-m8g"/>
-                                                                </constraints>
-                                                            </view>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="YlG-8c-hcJ" userLabel="SeperatorStackView" customClass="BackgroundStackView" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                <subviews>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mq4-3h-QT2" userLabel="SeperatorLine">
+                                                                        <color key="backgroundColor" name="ccDarkModeBorder"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="1" id="0XZ-WN-C6p"/>
+                                                                        </constraints>
+                                                                    </view>
+                                                                </subviews>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="overrideVertMarginMulti">
+                                                                        <real key="value" value="1"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="overrideHorztMarginMulti">
+                                                                        <real key="value" value="1"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="overrideSpacingMulti">
+                                                                        <real key="value" value="0.80000000000000004"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="gDd-RB-Sg5" userLabel="Sickness Certificate Stack View" customClass="BackgroundStackView" customModule="Stopp_Corona" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="1074" width="414" height="158.5"/>
                                                                 <subviews>
@@ -424,7 +484,7 @@
                                                                     </stackView>
                                                                 </subviews>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                                <edgeInsets key="layoutMargins" top="32" left="8" bottom="40" right="8"/>
+                                                                <edgeInsets key="layoutMargins" top="32" left="8" bottom="42" right="8"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="number" keyPath="overrideHorztMarginMulti">
                                                                         <real key="value" value="1"/>
@@ -434,23 +494,27 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                             </stackView>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="J34-4X-N4a" userLabel="Share App Stack View" customClass="BackgroundStackView" customModule="Stopp_Corona" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="1535.5" width="414" height="264"/>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="42" translatesAutoresizingMaskIntoConstraints="NO" id="J34-4X-N4a" userLabel="Share App Stack View" customClass="BackgroundStackView" customModule="Stopp_Corona" customModuleProvider="target">
                                                                 <subviews>
-                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GTy-NT-h0L" userLabel="SeperatorLine">
-                                                                        <rect key="frame" x="24" y="32" width="366" height="50"/>
-                                                                        <color key="backgroundColor" name="ccDarkModeBorder"/>
-                                                                        <constraints>
-                                                                            <constraint firstAttribute="height" constant="1" id="Dhr-iw-nsJ"/>
-                                                                        </constraints>
-                                                                    </view>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="cmZ-n0-GSo" userLabel="SeperatorStackView" customClass="BackgroundStackView" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                        <subviews>
+                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gdm-dv-Hf1" userLabel="SeperatorLine">
+                                                                                <color key="backgroundColor" name="ccDarkModeBorder"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="height" constant="1" id="FFH-hs-MXG"/>
+                                                                                </constraints>
+                                                                            </view>
+                                                                        </subviews>
+                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <edgeInsets key="layoutMargins" top="0.0" left="-8" bottom="0.0" right="-8"/>
+                                                                    </stackView>
                                                                     <view contentMode="scaleToFill" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="200" id="ZS9-0W-H1J" customClass="ShareAppCardView" customModule="Stopp_Corona" customModuleProvider="target">
                                                                         <rect key="frame" x="24" y="32" width="366" height="200"/>
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     </view>
                                                                 </subviews>
-                                                                <edgeInsets key="layoutMargins" top="32" left="24" bottom="32" right="24"/>
+                                                                <edgeInsets key="layoutMargins" top="0.0" left="24" bottom="32" right="24"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="color" keyPath="stackBackgroundColor">
                                                                         <color key="value" name="ccWhite"/>
@@ -524,12 +588,13 @@
                         <outlet property="primaryContactHealthStatusView" destination="Ulg-gU-lIf" id="1Te-1K-oXR"/>
                         <outlet property="revocationStatusView" destination="pHd-1H-Yfl" id="ZLl-kR-cAC"/>
                         <outlet property="revocationWrapperView" destination="5fe-EH-9Ri" id="NNx-MM-MFc"/>
+                        <outlet property="riskAssessmentUpdatedAtStackView" destination="nWK-HX-Gpe" id="3q6-cK-hBe"/>
                         <outlet property="scrollView" destination="IlO-4J-Mtf" id="2U2-kY-Vrx"/>
                         <outlet property="secondaryContactHealthStatusView" destination="yHc-0o-uim" id="4UA-CZ-j2F"/>
-                        <outlet property="selfTestingSeparatorLine" destination="k3Z-2H-1aY" id="lNu-xP-Wew"/>
+                        <outlet property="selfTestingSeparatorLineStackView" destination="xcA-JH-rfZ" id="yYW-zw-h9Z"/>
                         <outlet property="selfTestingStackView" destination="Q8J-2I-YfW" id="4K6-GY-005"/>
                         <outlet property="shareAppCardView" destination="ZS9-0W-H1J" id="adn-aO-JUn"/>
-                        <outlet property="sicknessCertificateSeparatorLine" destination="vzu-wV-zOX" id="ZgM-Q7-Dfq"/>
+                        <outlet property="sicknessCertificateSeparatorLineStackView" destination="YlG-8c-hcJ" id="7PQ-Gq-4iG"/>
                         <outlet property="sicknessCertificateStackView" destination="gDd-RB-Sg5" id="11b-Jl-nzL"/>
                         <outlet property="userHealthStatusView" destination="Pg8-NU-47Y" id="7fL-Z8-m9g"/>
                         <outlet property="userHealthWrapperView" destination="06k-hV-t2h" id="Nau-nW-w8b"/>
@@ -540,6 +605,9 @@
             <point key="canvasLocation" x="264" y="151"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="d6X-BX-wfs"/>
+    </designables>
     <resources>
         <image name="Diary" width="144" height="111"/>
         <image name="automaticHandshakeInactiveIcon" width="277" height="141"/>
