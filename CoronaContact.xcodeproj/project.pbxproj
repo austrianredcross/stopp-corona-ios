@@ -3013,7 +3013,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.1.4;
+				MARKETING_VERSION = 2.1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = at.roteskreuz.stopcorona.stage;
 				PRODUCT_NAME = "Stopp Corona";
 				PROVISIONING_PROFILE_SPECIFIER = "Stopp Corona Stage - Exposure Notification";
@@ -3037,7 +3037,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.1.4;
+				MARKETING_VERSION = 2.1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = at.roteskreuz.stopcorona;
 				PRODUCT_NAME = "Stopp Corona";
 				SWIFT_VERSION = 5.0;
@@ -3122,7 +3122,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.1.4;
+				MARKETING_VERSION = 2.1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = at.roteskreuz.stopcorona.stage;
 				PRODUCT_NAME = "Stopp Corona";
 				PROVISIONING_PROFILE_SPECIFIER = "Stopp Corona Stage - Exposure Notification";
