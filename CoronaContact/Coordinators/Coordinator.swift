@@ -72,6 +72,15 @@ extension ErrorPresentableCoordinator where Self: Coordinator {
             presentAlert()
         }
     }
+    
+    func showErrorAlert(with error: Error) {
+        // Handle here the different Error Types
+        if let agesError =  error as? AGESError {
+            showErrorAlert(title: agesError.title, error: agesError.description)
+        } else {
+            showErrorAlert()
+        }
+    }
 
     func showGenericErrorAlert(closeButtonTitle: String? = nil, closeAction: ((UIAlertAction) -> Void)? = nil) {
         showErrorAlert(

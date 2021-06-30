@@ -89,4 +89,28 @@ extension UIColor {
     @nonobjc class var ccDarkBlue: UIColor {
         UIColor(named: "ccDarkBlue")!
     }
+    
+    @nonobjc class var ccIncidenceWhite: UIColor {
+        UIColor(named: "ccIncidenceWhite")!
+    }
+
+    @nonobjc class var ccIncidenceYellow: UIColor {
+        UIColor(named: "ccIncidenceYellow")!
+    }
+
+    @nonobjc class var ccIncidenceOrange: UIColor {
+        UIColor(named: "ccIncidenceOrange")!
+    }
+    
+    @nonobjc class var ccIncidenceDarkRed: UIColor {
+        UIColor(named: "ccIncidenceDarkRed")!
+    }
+    
+    @nonobjc class var ccIncidenceBlack: UIColor {
+        UIColor(named: "ccIncidenceBlack")!
+    }
+    
+    @nonobjc class var ccTextGrey: UIColor {
+        UIColor(named: "ccTextGrey")!
+    }
 }

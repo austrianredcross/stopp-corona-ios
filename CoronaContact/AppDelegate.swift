@@ -33,6 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     @Injected private var batchDownloadScheduler: BatchDownloadScheduler
     @Injected private var appStartBatchController: AppStartBatchController
     @Injected private var coreDataService: CoreDataService
+    @Injected private var agesRepository: AGESRepository
 
     lazy var screenSize: ScreenSize = {
         let width = UIScreen.main.bounds.size.width
@@ -90,6 +91,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if localStorage.hasSeenOnboarding {
             appStartBatchController.startBatchProcessing()
         }
+        
+        agesRepository.fetchStatistics()
         
         coreDataService.deleteDiariesInPast()
     }

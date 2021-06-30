@@ -6,11 +6,10 @@
 import Resolver
 import UIKit
 
-class MainCoordinator: Coordinator, ShareSheetPresentable {
+class MainCoordinator: Coordinator, ShareSheetPresentable, ErrorPresentableCoordinator {
+    var rootViewController: UIViewController
+    
     var navigationController: UINavigationController
-    var rootViewController: UIViewController {
-        navigationController
-    }
 
     @Injected private var notificationService: NotificationService
     @Injected private var localStorage: LocalStorage
@@ -19,6 +18,7 @@ class MainCoordinator: Coordinator, ShareSheetPresentable {
 
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
+        self.rootViewController = navigationController
     }
 
     func help() {
@@ -141,7 +141,19 @@ class MainCoordinator: Coordinator, ShareSheetPresentable {
         addChildCoordinator(child)
         child.start()
     }
-
+    
+    func statistics() {
+        let child = StatisticsDetailCoordinator(navigationController: navigationController)
+        addChildCoordinator(child)
+        child.start()
+    }
+    
+    func showLegend() {
+        let child = StatisticsLegendCoordinator(presentingViewController: navigationController)
+        addChildCoordinator(child)
+        child.start()
+    }
+    
     override func start() {
         let viewModel = MainViewModel(with: self)
         let viewController = MainViewController.instantiate(with: viewModel)

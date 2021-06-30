@@ -20,12 +20,16 @@ enum StyleNames: String {
     case boldRed
     case boldYellow
     case boldBlue
+    case bodyGrey
     case link
     case underline
     case linkBlue
+    case white
+    case red
     case h1
     case h1b
     case h2
+    case whiteToBlack
     case h2Center
     case tableHeader
     case tableData
@@ -168,6 +172,27 @@ extension AppDelegate {
             $0.color = UIColor.ccLink
         }
         Styles.register(StyleNames.link.rawValue, style: linkStyle)
+        
+        let redStyle = settings.bodyFontStyle(weight: .regular).byAdding {
+            $0.color = UIColor.ccRedButton
+        }
+        Styles.register(StyleNames.red.rawValue, style: redStyle)
+        
+        let whiteStyle = settings.bodyFontStyle(weight: .regular).byAdding {
+            $0.color = UIColor.white
+        }
+        Styles.register(StyleNames.white.rawValue, style: whiteStyle)
+        
+        let whiteToBlackStyle = settings.bodyFontStyle(weight: .regular).byAdding {
+            $0.color = UIColor.systemBackground
+        }
+        Styles.register(StyleNames.whiteToBlack.rawValue, style: whiteToBlackStyle)
+        
+        let bodyGreyStyle = settings.bodyFontStyle(weight: .regular).byAdding {
+            $0.color = UIColor.ccTextGrey
+        }
+        Styles.register(StyleNames.bodyGrey.rawValue, style: bodyGreyStyle)
+        
     }
 
     private func registerBodySmallStyles(settings: FontSettings) {

@@ -5,6 +5,12 @@
 
 import UIKit
 
+enum PickerViewSource {
+    case dates(dates: [Date] = [])
+    case diaryEntry(entries: [DiaryEntry] = DiaryEntry.allCases)
+    case state(states: [Bundesland] = [])
+}
+
 class BasePickerView: UIPickerView, UIPickerViewDelegate, UIPickerViewDataSource {
     
     private let pickerWidth: CGFloat = 366
@@ -12,6 +18,7 @@ class BasePickerView: UIPickerView, UIPickerViewDelegate, UIPickerViewDataSource
     
     final var selectedDate: Date?
     final var selectedDiaryEntry: DiaryEntry?
+    final var selectedState: Bundesland = .österreich
     
     var pickerViewData: PickerViewSource? {
         didSet {
@@ -48,6 +55,8 @@ class BasePickerView: UIPickerView, UIPickerViewDelegate, UIPickerViewDataSource
             return dates.count
         case let .diaryEntry(entries):
             return entries.count
+        case .state(states: let states):
+            return states.count
         }
     }
     
@@ -68,6 +77,8 @@ class BasePickerView: UIPickerView, UIPickerViewDelegate, UIPickerViewDataSource
             selectedDate = dates[row]
         case let .diaryEntry(entries):
             selectedDiaryEntry = entries[row]
+        case .state(states: let states):
+            selectedState = states[row]
         }
     }
     
@@ -85,6 +96,8 @@ class BasePickerView: UIPickerView, UIPickerViewDelegate, UIPickerViewDataSource
             visibleString = Calendar.current.isDateInToday(dates[row]) ? "general_today".localized : dates[row].longDayShortMonthLongYear
         case let .diaryEntry(entries):
             visibleString = entries[row].translatedName
+        case .state(states: let states):
+            visibleString = states[row].localized
         }
         
         let attributedString = NSMutableAttributedString(string: visibleString)

@@ -47,15 +47,50 @@
 		1CFBB26625C984B000F40248 /* Array+ManagingBatchProcessingDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFBB26525C984B000F40248 /* Array+ManagingBatchProcessingDates.swift */; };
 		4B21DB6C25827CE5001274DD /* TransHeadingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B21DB6B25827CE5001274DD /* TransHeadingLabel.swift */; };
 		4B25BA9D2429592A00CDD1CF /* UserHealthStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B25BA9C2429592A00CDD1CF /* UserHealthStatus.swift */; };
+		4B3BA5CC265D22CA003A973F /* StatisticsInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3BA5CB265D22CA003A973F /* StatisticsInfo.swift */; };
+		4B3BA5D0265D230B003A973F /* UIView+Accessbility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3BA5CF265D230B003A973F /* UIView+Accessbility.swift */; };
+		4B5077CB2678F63A00459E21 /* UIImage+InitWithColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5077CA2678F63900459E21 /* UIImage+InitWithColor.swift */; };
 		4B686A5A25CC4040000BE02B /* PhoneNumberTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B686A5925CC4040000BE02B /* PhoneNumberTextView.swift */; };
 		4B7379E92423D9E600DF338E /* StartMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7379E82423D9E600DF338E /* StartMenuViewController.swift */; };
 		4B7379ED2423DA7A00DF338E /* StartMenuCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7379EC2423DA7A00DF338E /* StartMenuCoordinator.swift */; };
 		4B7379F12423E88700DF338E /* StartMenuViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B7379F02423E88700DF338E /* StartMenuViewController.storyboard */; };
+		4B762A0B2656440D006E778A /* bezirke_95_geo.json in Resources */ = {isa = PBXBuildFile; fileRef = 4B762A092656440D006E778A /* bezirke_95_geo.json */; };
+		4B762A0C2656440D006E778A /* laender_95_geo.json in Resources */ = {isa = PBXBuildFile; fileRef = 4B762A0A2656440D006E778A /* laender_95_geo.json */; };
+		4B762A1226564429006E778A /* StateDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B762A1126564429006E778A /* StateDrawer.swift */; };
+		4B762A1626566159006E778A /* FloatingPoint+Degrees.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B762A1526566159006E778A /* FloatingPoint+Degrees.swift */; };
+		4B762A2D2656619C006E778A /* Bundesland+gkz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B762A2C2656619C006E778A /* Bundesland+gkz.swift */; };
 		4B82571C24266A32007E25C6 /* StartMenuSimpleWebViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B82571824266A32007E25C6 /* StartMenuSimpleWebViewCoordinator.swift */; };
 		4B82571D24266A32007E25C6 /* StartMenuSimpleWebViewViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B82571924266A32007E25C6 /* StartMenuSimpleWebViewViewController.storyboard */; };
 		4B82571E24266A32007E25C6 /* StartMenuSimpleWebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B82571A24266A32007E25C6 /* StartMenuSimpleWebViewViewController.swift */; };
 		4B82571F24266A32007E25C6 /* StartMenuSimpleWebViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B82571B24266A32007E25C6 /* StartMenuSimpleWebViewViewModel.swift */; };
 		4B82572124266B9E007E25C6 /* de.imprint.html in Resources */ = {isa = PBXBuildFile; fileRef = 4B82572024266B9E007E25C6 /* de.imprint.html */; };
+		4B980C67264950C100AA9D00 /* CovidFallZahlen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B980C5D264950C100AA9D00 /* CovidFallZahlen.swift */; };
+		4B980C68264950C100AA9D00 /* CovidFaelleGKZ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B980C5E264950C100AA9D00 /* CovidFaelleGKZ.swift */; };
+		4B980C69264950C100AA9D00 /* CovidStatistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B980C5F264950C100AA9D00 /* CovidStatistics.swift */; };
+		4B980C6A264950C100AA9D00 /* CovidFaelleAltergruppe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B980C60264950C100AA9D00 /* CovidFaelleAltergruppe.swift */; };
+		4B980C6B264950C100AA9D00 /* CovidFaelleGKZ+State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B980C62264950C100AA9D00 /* CovidFaelleGKZ+State.swift */; };
+		4B980C6C264950C100AA9D00 /* AGESError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B980C63264950C100AA9D00 /* AGESError.swift */; };
+		4B980C6D264950C100AA9D00 /* AGESDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B980C65264950C100AA9D00 /* AGESDate.swift */; };
+		4B980C6E264950C100AA9D00 /* CovidFaelleTimeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B980C66264950C100AA9D00 /* CovidFaelleTimeline.swift */; };
+		4B980C7F264950E500AA9D00 /* IncidenceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B980C73264950E400AA9D00 /* IncidenceTableViewCell.swift */; };
+		4B980C80264950E500AA9D00 /* IncidenceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B980C74264950E400AA9D00 /* IncidenceViewModel.swift */; };
+		4B980C81264950E500AA9D00 /* StatisticsDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B980C75264950E400AA9D00 /* StatisticsDetailViewController.storyboard */; };
+		4B980C82264950E500AA9D00 /* StatisticsLegendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B980C77264950E400AA9D00 /* StatisticsLegendViewController.swift */; };
+		4B980C83264950E500AA9D00 /* StatisticsLegendCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B980C78264950E400AA9D00 /* StatisticsLegendCoordinator.swift */; };
+		4B980C84264950E500AA9D00 /* StatisticsLegendViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B980C79264950E400AA9D00 /* StatisticsLegendViewController.storyboard */; };
+		4B980C85264950E500AA9D00 /* StatisticsLegendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B980C7A264950E400AA9D00 /* StatisticsLegendViewModel.swift */; };
+		4B980C86264950E500AA9D00 /* StatisticsDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B980C7B264950E400AA9D00 /* StatisticsDetailViewModel.swift */; };
+		4B980C87264950E500AA9D00 /* StatisticsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B980C7C264950E400AA9D00 /* StatisticsDetailViewController.swift */; };
+		4B980C88264950E500AA9D00 /* StatisticsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B980C7D264950E400AA9D00 /* StatisticsCollectionViewCell.swift */; };
+		4B980C89264950E500AA9D00 /* StatisticsDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B980C7E264950E400AA9D00 /* StatisticsDetailCoordinator.swift */; };
+		4B980C8F264952C800AA9D00 /* Array+LastTwoAgesDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B980C8C264952C800AA9D00 /* Array+LastTwoAgesDates.swift */; };
+		4B980C90264952C800AA9D00 /* Double+asFormattedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B980C8D264952C800AA9D00 /* Double+asFormattedString.swift */; };
+		4B980C91264952C800AA9D00 /* Int+asDouble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B980C8E264952C800AA9D00 /* Int+asDouble.swift */; };
+		4B980C952649536E00AA9D00 /* ExpandButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B980C942649536E00AA9D00 /* ExpandButton.swift */; };
+		4B980C9A2649541100AA9D00 /* AgesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B980C982649541100AA9D00 /* AgesRepository.swift */; };
+		4B980C9B2649541100AA9D00 /* AgesRepository+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B980C992649541100AA9D00 /* AgesRepository+Injection.swift */; };
+		4B980CA72649563900AA9D00 /* String+convertToISO8601.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B980CA62649563800AA9D00 /* String+convertToISO8601.swift */; };
+		4B980CAB2649567E00AA9D00 /* Bundesland+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B980CAA2649567E00AA9D00 /* Bundesland+Localized.swift */; };
 		4BA476DD2614A9C10038B9FC /* DiaryEntryPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA476DA2614A9C00038B9FC /* DiaryEntryPicker.swift */; };
 		4BA476DE2614A9C10038B9FC /* BasePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA476DB2614A9C10038B9FC /* BasePickerView.swift */; };
 		4BA476E72614AA270038B9FC /* StoppCorona.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4BA476E52614AA270038B9FC /* StoppCorona.xcdatamodeld */; };
@@ -491,15 +526,50 @@
 		4B1F6118242A60AD00E82D4C /* Stopp Corona.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Stopp Corona.entitlements"; sourceTree = "<group>"; };
 		4B21DB6B25827CE5001274DD /* TransHeadingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransHeadingLabel.swift; sourceTree = "<group>"; };
 		4B25BA9C2429592A00CDD1CF /* UserHealthStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHealthStatus.swift; sourceTree = "<group>"; };
+		4B3BA5CB265D22CA003A973F /* StatisticsInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsInfo.swift; sourceTree = "<group>"; };
+		4B3BA5CF265D230B003A973F /* UIView+Accessbility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Accessbility.swift"; sourceTree = "<group>"; };
+		4B5077CA2678F63900459E21 /* UIImage+InitWithColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+InitWithColor.swift"; sourceTree = "<group>"; };
 		4B686A5925CC4040000BE02B /* PhoneNumberTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberTextView.swift; sourceTree = "<group>"; };
 		4B7379E82423D9E600DF338E /* StartMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartMenuViewController.swift; sourceTree = "<group>"; };
 		4B7379EC2423DA7A00DF338E /* StartMenuCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartMenuCoordinator.swift; sourceTree = "<group>"; };
 		4B7379F02423E88700DF338E /* StartMenuViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = StartMenuViewController.storyboard; sourceTree = "<group>"; };
+		4B762A092656440D006E778A /* bezirke_95_geo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = bezirke_95_geo.json; sourceTree = "<group>"; };
+		4B762A0A2656440D006E778A /* laender_95_geo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = laender_95_geo.json; sourceTree = "<group>"; };
+		4B762A1126564429006E778A /* StateDrawer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateDrawer.swift; sourceTree = "<group>"; };
+		4B762A1526566159006E778A /* FloatingPoint+Degrees.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FloatingPoint+Degrees.swift"; sourceTree = "<group>"; };
+		4B762A2C2656619C006E778A /* Bundesland+gkz.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundesland+gkz.swift"; sourceTree = "<group>"; };
 		4B82571824266A32007E25C6 /* StartMenuSimpleWebViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartMenuSimpleWebViewCoordinator.swift; sourceTree = "<group>"; };
 		4B82571924266A32007E25C6 /* StartMenuSimpleWebViewViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StartMenuSimpleWebViewViewController.storyboard; sourceTree = "<group>"; };
 		4B82571A24266A32007E25C6 /* StartMenuSimpleWebViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartMenuSimpleWebViewViewController.swift; sourceTree = "<group>"; };
 		4B82571B24266A32007E25C6 /* StartMenuSimpleWebViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartMenuSimpleWebViewViewModel.swift; sourceTree = "<group>"; };
 		4B82572024266B9E007E25C6 /* de.imprint.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = de.imprint.html; sourceTree = "<group>"; };
+		4B980C5D264950C100AA9D00 /* CovidFallZahlen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CovidFallZahlen.swift; sourceTree = "<group>"; };
+		4B980C5E264950C100AA9D00 /* CovidFaelleGKZ.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CovidFaelleGKZ.swift; sourceTree = "<group>"; };
+		4B980C5F264950C100AA9D00 /* CovidStatistics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CovidStatistics.swift; sourceTree = "<group>"; };
+		4B980C60264950C100AA9D00 /* CovidFaelleAltergruppe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CovidFaelleAltergruppe.swift; sourceTree = "<group>"; };
+		4B980C62264950C100AA9D00 /* CovidFaelleGKZ+State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CovidFaelleGKZ+State.swift"; sourceTree = "<group>"; };
+		4B980C63264950C100AA9D00 /* AGESError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGESError.swift; sourceTree = "<group>"; };
+		4B980C65264950C100AA9D00 /* AGESDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGESDate.swift; sourceTree = "<group>"; };
+		4B980C66264950C100AA9D00 /* CovidFaelleTimeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CovidFaelleTimeline.swift; sourceTree = "<group>"; };
+		4B980C73264950E400AA9D00 /* IncidenceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IncidenceTableViewCell.swift; sourceTree = "<group>"; };
+		4B980C74264950E400AA9D00 /* IncidenceViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IncidenceViewModel.swift; sourceTree = "<group>"; };
+		4B980C75264950E400AA9D00 /* StatisticsDetailViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = StatisticsDetailViewController.storyboard; sourceTree = "<group>"; };
+		4B980C77264950E400AA9D00 /* StatisticsLegendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsLegendViewController.swift; sourceTree = "<group>"; };
+		4B980C78264950E400AA9D00 /* StatisticsLegendCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsLegendCoordinator.swift; sourceTree = "<group>"; };
+		4B980C79264950E400AA9D00 /* StatisticsLegendViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = StatisticsLegendViewController.storyboard; sourceTree = "<group>"; };
+		4B980C7A264950E400AA9D00 /* StatisticsLegendViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsLegendViewModel.swift; sourceTree = "<group>"; };
+		4B980C7B264950E400AA9D00 /* StatisticsDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsDetailViewModel.swift; sourceTree = "<group>"; };
+		4B980C7C264950E400AA9D00 /* StatisticsDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsDetailViewController.swift; sourceTree = "<group>"; };
+		4B980C7D264950E400AA9D00 /* StatisticsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsCollectionViewCell.swift; sourceTree = "<group>"; };
+		4B980C7E264950E400AA9D00 /* StatisticsDetailCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsDetailCoordinator.swift; sourceTree = "<group>"; };
+		4B980C8C264952C800AA9D00 /* Array+LastTwoAgesDates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+LastTwoAgesDates.swift"; sourceTree = "<group>"; };
+		4B980C8D264952C800AA9D00 /* Double+asFormattedString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+asFormattedString.swift"; sourceTree = "<group>"; };
+		4B980C8E264952C800AA9D00 /* Int+asDouble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+asDouble.swift"; sourceTree = "<group>"; };
+		4B980C942649536E00AA9D00 /* ExpandButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandButton.swift; sourceTree = "<group>"; };
+		4B980C982649541100AA9D00 /* AgesRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AgesRepository.swift; path = Network/AgesRepository.swift; sourceTree = "<group>"; };
+		4B980C992649541100AA9D00 /* AgesRepository+Injection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "AgesRepository+Injection.swift"; path = "Network/AgesRepository+Injection.swift"; sourceTree = "<group>"; };
+		4B980CA62649563800AA9D00 /* String+convertToISO8601.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+convertToISO8601.swift"; sourceTree = "<group>"; };
+		4B980CAA2649567E00AA9D00 /* Bundesland+Localized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundesland+Localized.swift"; sourceTree = "<group>"; };
 		4BA476DA2614A9C00038B9FC /* DiaryEntryPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryEntryPicker.swift; sourceTree = "<group>"; };
 		4BA476DB2614A9C10038B9FC /* BasePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasePickerView.swift; sourceTree = "<group>"; };
 		4BA476E62614AA270038B9FC /* StoppCorona.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StoppCorona.xcdatamodel; sourceTree = "<group>"; };
@@ -1004,6 +1074,15 @@
 			path = StartMenu;
 			sourceTree = "<group>";
 		};
+		4B762A082656440D006E778A /* GeoJSON */ = {
+			isa = PBXGroup;
+			children = (
+				4B762A092656440D006E778A /* bezirke_95_geo.json */,
+				4B762A0A2656440D006E778A /* laender_95_geo.json */,
+			);
+			path = GeoJSON;
+			sourceTree = "<group>";
+		};
 		4B825717242669F1007E25C6 /* StartMenuSimpleWebView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1013,6 +1092,74 @@
 				4B82571B24266A32007E25C6 /* StartMenuSimpleWebViewViewModel.swift */,
 			);
 			path = StartMenuSimpleWebView;
+			sourceTree = "<group>";
+		};
+		4B980C5C264950C100AA9D00 /* AGES */ = {
+			isa = PBXGroup;
+			children = (
+				4B980C5D264950C100AA9D00 /* CovidFallZahlen.swift */,
+				4B980C5E264950C100AA9D00 /* CovidFaelleGKZ.swift */,
+				4B980C5F264950C100AA9D00 /* CovidStatistics.swift */,
+				4B980C60264950C100AA9D00 /* CovidFaelleAltergruppe.swift */,
+				4B980C61264950C100AA9D00 /* Extensions */,
+				4B980C63264950C100AA9D00 /* AGESError.swift */,
+				4B980C64264950C100AA9D00 /* Protocols */,
+				4B980C66264950C100AA9D00 /* CovidFaelleTimeline.swift */,
+			);
+			path = AGES;
+			sourceTree = "<group>";
+		};
+		4B980C61264950C100AA9D00 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4B762A2C2656619C006E778A /* Bundesland+gkz.swift */,
+				4B980CAA2649567E00AA9D00 /* Bundesland+Localized.swift */,
+				4B980C62264950C100AA9D00 /* CovidFaelleGKZ+State.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4B980C64264950C100AA9D00 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				4B980C65264950C100AA9D00 /* AGESDate.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		4B980C71264950E400AA9D00 /* Statistics */ = {
+			isa = PBXGroup;
+			children = (
+				4B980C72264950E400AA9D00 /* StatisticsIncidence */,
+				4B980C75264950E400AA9D00 /* StatisticsDetailViewController.storyboard */,
+				4B980C76264950E400AA9D00 /* StatisticsLegende */,
+				4B980C7B264950E400AA9D00 /* StatisticsDetailViewModel.swift */,
+				4B980C7C264950E400AA9D00 /* StatisticsDetailViewController.swift */,
+				4B980C7D264950E400AA9D00 /* StatisticsCollectionViewCell.swift */,
+				4B980C7E264950E400AA9D00 /* StatisticsDetailCoordinator.swift */,
+				4B3BA5CB265D22CA003A973F /* StatisticsInfo.swift */,
+			);
+			path = Statistics;
+			sourceTree = "<group>";
+		};
+		4B980C72264950E400AA9D00 /* StatisticsIncidence */ = {
+			isa = PBXGroup;
+			children = (
+				4B980C73264950E400AA9D00 /* IncidenceTableViewCell.swift */,
+				4B980C74264950E400AA9D00 /* IncidenceViewModel.swift */,
+			);
+			path = StatisticsIncidence;
+			sourceTree = "<group>";
+		};
+		4B980C76264950E400AA9D00 /* StatisticsLegende */ = {
+			isa = PBXGroup;
+			children = (
+				4B980C77264950E400AA9D00 /* StatisticsLegendViewController.swift */,
+				4B980C78264950E400AA9D00 /* StatisticsLegendCoordinator.swift */,
+				4B980C79264950E400AA9D00 /* StatisticsLegendViewController.storyboard */,
+				4B980C7A264950E400AA9D00 /* StatisticsLegendViewModel.swift */,
+			);
+			path = StatisticsLegende;
 			sourceTree = "<group>";
 		};
 		4BA477352614AC3A0038B9FC /* Diary */ = {
@@ -1300,6 +1447,7 @@
 		4EDB47FB242255A6000CE24A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4B762A082656440D006E778A /* GeoJSON */,
 				4BDA55D92608E5F500BAB869 /* DarkStyle.css */,
 				4BDA55DA2608E5F500BAB869 /* LightStyle.css */,
 				4E7BA4A8242E28BD00AE0AC7 /* Animations */,
@@ -1366,6 +1514,7 @@
 			isa = PBXGroup;
 			children = (
 				611D9EE4248E713100EBB420 /* FileManager+unzipItemWithOverride.swift */,
+				4B3BA5CF265D230B003A973F /* UIView+Accessbility.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1412,6 +1561,7 @@
 		614BA9FA2423C334006797AA /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4B980C5C264950C100AA9D00 /* AGES */,
 				4BA4776D2614AC590038B9FC /* CoreDataModel */,
 				4BA476EE2614AA500038B9FC /* BaseDiaryInformation.swift */,
 				4BA476EF2614AA500038B9FC /* DiaryDayInfo.swift */,
@@ -1596,6 +1746,7 @@
 		6153A4F124259932006A8570 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				4B762A1126564429006E778A /* StateDrawer.swift */,
 				4BA477092614AB030038B9FC /* PDFCreater.swift */,
 				1C3841BD258774E3002B80BD /* DeepLinkConstants.swift */,
 				6153A4F224259932006A8570 /* KeyboardAdjustingBehavior.swift */,
@@ -1921,6 +2072,11 @@
 		839741865A3ACD223DF71E46 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				4B762A1526566159006E778A /* FloatingPoint+Degrees.swift */,
+				4B980CA62649563800AA9D00 /* String+convertToISO8601.swift */,
+				4B980C8C264952C800AA9D00 /* Array+LastTwoAgesDates.swift */,
+				4B980C8D264952C800AA9D00 /* Double+asFormattedString.swift */,
+				4B980C8E264952C800AA9D00 /* Int+asDouble.swift */,
 				1CCE52E725D5278400345671 /* Date+toIntervalNumber.swift */,
 				614A0024243CF8DD00ACBD0A /* Date+addDays.swift */,
 				61D0F53424352E3D0026C91A /* Date+daysUntil.swift */,
@@ -1951,6 +2107,7 @@
 				61273E9124979B3D001B86E6 /* ENExposureDetectionSummary+totalRiskScore.swift */,
 				1C35920D25B7135F00EC93DB /* Date+ShortMonthName.swift */,
 				1CFBB26525C984B000F40248 /* Array+ManagingBatchProcessingDates.swift */,
+				4B5077CA2678F63900459E21 /* UIImage+InitWithColor.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1966,6 +2123,7 @@
 		839742CD30B274EE264849F8 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				4B980C71264950E400AA9D00 /* Statistics */,
 				4BA477352614AC3A0038B9FC /* Diary */,
 				1CAFD92F25D5388900866AA3 /* ReportHealthy */,
 				1C88C4E325BABDE700BB6D8B /* Interoperability */,
@@ -1987,6 +2145,7 @@
 		8397454646FF8D8C78AEC848 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4B980C942649536E00AA9D00 /* ExpandButton.swift */,
 				4BA4779A2614AC910038B9FC /* DiaryLocationDayPeriodSelector */,
 				4BA476DB2614A9C10038B9FC /* BasePickerView.swift */,
 				4BA476DA2614A9C00038B9FC /* DiaryEntryPicker.swift */,
@@ -2050,6 +2209,8 @@
 		83974D9D12AC236263A86D73 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				4B980C982649541100AA9D00 /* AgesRepository.swift */,
+				4B980C992649541100AA9D00 /* AgesRepository+Injection.swift */,
 				4BB4BB0A261626E900122EA7 /* CoreData */,
 				7828A69F24922D92006AEAAC /* Maintenance */,
 				4E8984242473F00900499820 /* LocalStorage */,
@@ -2251,10 +2412,12 @@
 				6153A4D1242598DC006A8570 /* SicknessCertificateStatusReportViewController.storyboard in Resources */,
 				61D1A3BF242A24B0007F82ED /* de.privacy.html in Resources */,
 				4E9BF7062420C2A100B360A4 /* MainViewController.storyboard in Resources */,
+				4B980C84264950E500AA9D00 /* StatisticsLegendViewController.storyboard in Resources */,
 				61D1A3E7242A58CA007F82ED /* MainHelpViewController.storyboard in Resources */,
 				4ED175D124606F9200248D3B /* RevokeSicknessTanConfirmationViewController.storyboard in Resources */,
 				1C88C4EA25BABDE700BB6D8B /* InteroperabilityViewController.storyboard in Resources */,
 				61C4A4802427B848004D18BB /* QuarantineNotificationView.xib in Resources */,
+				4B762A0C2656440D006E778A /* laender_95_geo.json in Resources */,
 				1C479342262EE64E00603586 /* cdn_new.der in Resources */,
 				1CFBB25825C941F000F40248 /* IconLabelView.xib in Resources */,
 				1C764DAE25C9B6C20036E0D4 /* handshake_contact_red_animation.json in Resources */,
@@ -2288,6 +2451,7 @@
 				61D0F55A24352EA90026C91A /* CheckboxLabelView.xib in Resources */,
 				61459A55242AC15F00DC88A7 /* de.privacy-and-terms-of-use.html in Resources */,
 				61D0F55024352E960026C91A /* RevocationTanConfirmationViewController.storyboard in Resources */,
+				4B762A0B2656440D006E778A /* bezirke_95_geo.json in Resources */,
 				1C764DAF25C9B6C20036E0D4 /* handshake_user_health_yellow_animation.json in Resources */,
 				6103207D243F28A000ED3A20 /* en.terms-of-use.html in Resources */,
 				1C764DAC25C9B6C20036E0D4 /* handshake_user_health_red_animation.json in Resources */,
@@ -2316,6 +2480,7 @@
 				6153A4E5242598DC006A8570 /* SicknessCertificateTanConfirmationViewController.storyboard in Resources */,
 				1C479344262EE64E00603586 /* sms_old.der in Resources */,
 				8397407B842054D9947D6AB7 /* configuration.json in Resources */,
+				4B980C81264950E500AA9D00 /* StatisticsDetailViewController.storyboard in Resources */,
 				614D72102428E87000CC545D /* QuarantineGuidelinesViewController.storyboard in Resources */,
 				1C764DAD25C9B6C20036E0D4 /* handshake_active_animation.json in Resources */,
 				1C764DB025C9B6C20036E0D4 /* handshake_contact_yellow_animation.json in Resources */,
@@ -2517,7 +2682,9 @@
 				4BA477682614AC3A0038B9FC /* DiaryOverviewViewController.swift in Sources */,
 				4B7379ED2423DA7A00DF338E /* StartMenuCoordinator.swift in Sources */,
 				7829D824247D507A0015F5A5 /* SavedIDsViewController.swift in Sources */,
+				4B762A1226564429006E778A /* StateDrawer.swift in Sources */,
 				61251F25249143B100CEBCCD /* ExposureConfiguration.swift in Sources */,
+				4B980C67264950C100AA9D00 /* CovidFallZahlen.swift in Sources */,
 				4EB52F00243C72FA0004FAA0 /* Benchmark.swift in Sources */,
 				8922A16C243D1DD6004E9D42 /* HealthRepository.swift in Sources */,
 				6153A4D5242598DC006A8570 /* SicknessCertificateConfirmationViewController.swift in Sources */,
@@ -2527,6 +2694,8 @@
 				614D722C2429084900CC545D /* SelfTestingStatusReportCoordinator.swift in Sources */,
 				9215254C2427C74A0023F469 /* SelfTestingSelfMonitoringCoordinator.swift in Sources */,
 				4E0B3E39241F995D00EF60EE /* AppDelegate.swift in Sources */,
+				4B980C82264950E500AA9D00 /* StatisticsLegendViewController.swift in Sources */,
+				4B980C91264952C800AA9D00 /* Int+asDouble.swift in Sources */,
 				4E9BF7082420C31400B360A4 /* MainViewController.swift in Sources */,
 				614BAA0E2423C334006797AA /* Configuration.swift in Sources */,
 				611D9EDC248E702000EBB420 /* AsyncOperation.swift in Sources */,
@@ -2536,6 +2705,7 @@
 				6153A52224264A2D006A8570 /* ActivityConfiguration.swift in Sources */,
 				614D722D2429084900CC545D /* SelfTestingStatusReportViewModel.swift in Sources */,
 				61D0F5662435EABE0026C91A /* RevocationFlowController.swift in Sources */,
+				4B980C89264950E500AA9D00 /* StatisticsDetailCoordinator.swift in Sources */,
 				6153A4D9242598DC006A8570 /* SicknessCertificatePersonalDataCoordinator.swift in Sources */,
 				4BA477872614AC590038B9FC /* LocationEncounter+CoreDataClass.swift in Sources */,
 				4BA476F52614AA500038B9FC /* DiaryEntry.swift in Sources */,
@@ -2556,12 +2726,14 @@
 				4BB4BB0E261626E900122EA7 /* CoreDataService.swift in Sources */,
 				4BA4778C2614AC590038B9FC /* EventEncounter+CoreDataProperties.swift in Sources */,
 				614BAA0C2423C334006797AA /* InfectionInfo.swift in Sources */,
+				4B3BA5CC265D22CA003A973F /* StatisticsInfo.swift in Sources */,
 				614BA9F02423C31C006797AA /* NetworkEndpoint.swift in Sources */,
 				4BA477612614AC3A0038B9FC /* DiaryDetailViewModel.swift in Sources */,
 				61273E9224979B3D001B86E6 /* ENExposureDetectionSummary+totalRiskScore.swift in Sources */,
 				6153A50124259953006A8570 /* ProgressView.swift in Sources */,
 				611D9EE5248E713100EBB420 /* FileManager+unzipItemWithOverride.swift in Sources */,
 				4BA4778A2614AC590038B9FC /* PersonEncounter+CoreDataClass.swift in Sources */,
+				4B762A2D2656619C006E778A /* Bundesland+gkz.swift in Sources */,
 				6153A4E6242598DC006A8570 /* SicknessCertificateTanConfirmationCoordinator.swift in Sources */,
 				611D9EE0248E703E00EBB420 /* UnzipBatchOperation.swift in Sources */,
 				4B82571E24266A32007E25C6 /* StartMenuSimpleWebViewViewController.swift in Sources */,
@@ -2571,8 +2743,10 @@
 				8922A16E243DF094004E9D42 /* Observable.swift in Sources */,
 				6153A4E8242598F5006A8570 /* SicknessCertificateCoordinator.swift in Sources */,
 				4BA477842614AC590038B9FC /* BaseDiaryEntry+CoreDataProperties.swift in Sources */,
+				4B980CAB2649567E00AA9D00 /* Bundesland+Localized.swift in Sources */,
 				613AF72D24618DE80089085E /* Coordinator+ShareSheet.swift in Sources */,
 				784C2D23248856E4005160A6 /* WhatsNewViewModel.swift in Sources */,
+				4B980C85264950E500AA9D00 /* StatisticsLegendViewModel.swift in Sources */,
 				4E019BE32427D287004FF670 /* Date+round.swift in Sources */,
 				4ED175B72458347400248D3B /* DebugViewController.swift in Sources */,
 				614BAA0D2423C334006797AA /* SuccessResponse.swift in Sources */,
@@ -2582,10 +2756,12 @@
 				6155C6F9248F7437009BDE6B /* BatchDownloadScheduler.swift in Sources */,
 				611D9EE2248E704B00EBB420 /* CompleteOperation.swift in Sources */,
 				1CCE52E825D5278400345671 /* Date+toIntervalNumber.swift in Sources */,
+				4B980C87264950E500AA9D00 /* StatisticsDetailViewController.swift in Sources */,
 				4E8984282473F07600499820 /* LocalStorage+Injected.swift in Sources */,
 				4B21DB6C25827CE5001274DD /* TransHeadingLabel.swift in Sources */,
 				1CF3B35525A8451600AC94C2 /* SelfTestingCoronaSuspicionCoordinator.swift in Sources */,
 				4BA477562614AC3A0038B9FC /* DiaryAddEntryCoordinator.swift in Sources */,
+				4B980C9B2649541100AA9D00 /* AgesRepository+Injection.swift in Sources */,
 				4BA4775D2614AC3A0038B9FC /* DiaryFaqCoordinator.swift in Sources */,
 				614BAA0B2423C334006797AA /* Answer.swift in Sources */,
 				6153A4EF24259929006A8570 /* NotificationCenter+observe.swift in Sources */,
@@ -2599,10 +2775,12 @@
 				6155C701248FC5CD009BDE6B /* BatchDownloadSchedulerResult.swift in Sources */,
 				4E8984212473C15900499820 /* ContextLogger.swift in Sources */,
 				83974A3C096BEC7F5CCBFCC7 /* OnboardingViewController.swift in Sources */,
+				4B3BA5D0265D230B003A973F /* UIView+Accessbility.swift in Sources */,
 				614D72332429094200CC545D /* SelfTestingReportFlowController.swift in Sources */,
 				614BA9EF2423C31C006797AA /* NetworkClient.swift in Sources */,
 				614BA9F52423C31C006797AA /* JSONDecoder+date.swift in Sources */,
 				83974FEC5D515BECE3D2778D /* ApplicationCoordinator.swift in Sources */,
+				4B980C6E264950C100AA9D00 /* CovidFaelleTimeline.swift in Sources */,
 				614BA9F32423C31C006797AA /* String+URLEncoding.swift in Sources */,
 				61251F212491259D00CEBCCD /* RiskCalculationController.swift in Sources */,
 				4BA476F22614AA500038B9FC /* BaseDiaryInformation.swift in Sources */,
@@ -2626,6 +2804,7 @@
 				614D722B2429084900CC545D /* SelfTestingStatusReportViewController.swift in Sources */,
 				614A0025243CF8DD00ACBD0A /* Date+addDays.swift in Sources */,
 				61D0F560243534980026C91A /* UIView+roundedCorners.swift in Sources */,
+				4B980C6C264950C100AA9D00 /* AGESError.swift in Sources */,
 				4BA477902614AC590038B9FC /* Person+CoreDataProperties.swift in Sources */,
 				61D1A3BD242A230A007F82ED /* StartMenuViewModel.swift in Sources */,
 				614BAA052423C334006797AA /* Language.swift in Sources */,
@@ -2658,14 +2837,17 @@
 				611D9EDE248E703000EBB420 /* BatchDownloadOperation.swift in Sources */,
 				1CFBB25C25C943B500F40248 /* IconLabelView.swift in Sources */,
 				1CF3B35125A844EB00AC94C2 /* SelfTestingCoronaSuspicionViewModel.swift in Sources */,
+				4B980C86264950E500AA9D00 /* StatisticsDetailViewModel.swift in Sources */,
 				4BA477552614AC3A0038B9FC /* DiaryDeleteViewController.swift in Sources */,
 				1CAFD93525D5388900866AA3 /* ReportHealthyViewModel.swift in Sources */,
 				6186C6FE2492716F0070B616 /* RiskCalculationCompleteOperation.swift in Sources */,
 				6153A4D6242598DC006A8570 /* SicknessCertificateConfirmationViewModel.swift in Sources */,
 				61D0F55224352E960026C91A /* RevocationTanConfirmationCoordinator.swift in Sources */,
 				614D72242429084300CC545D /* SelfTestingPersonalDataViewController.swift in Sources */,
+				4B980C7F264950E500AA9D00 /* IncidenceTableViewCell.swift in Sources */,
 				4BA476DE2614A9C10038B9FC /* BasePickerView.swift in Sources */,
 				1C88C4E925BABDE700BB6D8B /* InteroperabilityViewController.swift in Sources */,
+				4B980C6A264950C100AA9D00 /* CovidFaelleAltergruppe.swift in Sources */,
 				92FFC9C72426878600CC541B /* SelfTesting+Injection.swift in Sources */,
 				6153A4E4242598DC006A8570 /* SicknessCertificateTanConfirmationViewController.swift in Sources */,
 				4E019BDA24265DF7004FF670 /* Data+uuid.swift in Sources */,
@@ -2691,6 +2873,7 @@
 				61D0F54B24352E960026C91A /* RevocationStatusReportCoordinator.swift in Sources */,
 				61032065243E0AE400ED3A20 /* FlashableScrollIndicators.swift in Sources */,
 				61D1A3E5242A58CA007F82ED /* MainHelpCoordinator.swift in Sources */,
+				4B980CA72649563900AA9D00 /* String+convertToISO8601.swift in Sources */,
 				92FFC9BF24267D8200CC541B /* SelfTestingCheckSymptomsViewController.swift in Sources */,
 				4ED12C7A2492B8A800DDA10C /* MaintenancePerforming.swift in Sources */,
 				4ED175D32460705200248D3B /* RevokeSicknessTanConfirmationViewModel.swift in Sources */,
@@ -2713,6 +2896,7 @@
 				611B78BF242816BE0040CCB3 /* AppUpdateService.swift in Sources */,
 				4BA4775A2614AC3A0038B9FC /* DiaryFaqViewController.swift in Sources */,
 				1CAFD93725D5388900866AA3 /* ReportHealthyCoordinator.swift in Sources */,
+				4B980C83264950E500AA9D00 /* StatisticsLegendCoordinator.swift in Sources */,
 				61D0F56E2435EB870026C91A /* RevocationPersonalDataViewController.swift in Sources */,
 				61D0F55124352E960026C91A /* RevocationTanConfirmationViewController.swift in Sources */,
 				614BA9F22423C31C006797AA /* NetworkService.swift in Sources */,
@@ -2725,19 +2909,24 @@
 				4BD0B8DC2427AF6400BFA123 /* NotificationService.swift in Sources */,
 				614D72052428E82700CC545D /* ContactSicknessViewModel.swift in Sources */,
 				6153A52924264A2D006A8570 /* ActivityView.swift in Sources */,
+				4B762A1626566159006E778A /* FloatingPoint+Degrees.swift in Sources */,
 				1C3841C2258774F9002B80BD /* LinkTextView.swift in Sources */,
 				4BA477892614AC590038B9FC /* Event+CoreDataClass.swift in Sources */,
+				4B980C6D264950C100AA9D00 /* AGESDate.swift in Sources */,
 				4BA477532614AC3A0038B9FC /* DiaryDeleteCoordinator.swift in Sources */,
 				61653681247D114F0088A9D6 /* TracingKeys.swift in Sources */,
 				4BA477632614AC3A0038B9FC /* DiaryDetailViewController.swift in Sources */,
 				61C4A47924279433004D18BB /* UIActivityIndicatorView+scale.swift in Sources */,
+				4B980C68264950C100AA9D00 /* CovidFaelleGKZ.swift in Sources */,
 				9215254F2427C74A0023F469 /* SelfTestingSelfMonitoringViewController.swift in Sources */,
 				61D0F54A24352E960026C91A /* RevocationStatusReportViewController.swift in Sources */,
+				4B980C90264952C800AA9D00 /* Double+asFormattedString.swift in Sources */,
 				1CE08CB225DFCA2600A12547 /* ExposureNotificationErrorView.swift in Sources */,
 				61546540242CBE7F0003D3D3 /* SelfMonitoringGuidelinesCoordinator.swift in Sources */,
 				1C35920E25B7135F00EC93DB /* Date+ShortMonthName.swift in Sources */,
 				4BA476DD2614A9C10038B9FC /* DiaryEntryPicker.swift in Sources */,
 				61DAF6EF2492181100A3B069 /* ENIntervalNumber+date.swift in Sources */,
+				4B980C952649536E00AA9D00 /* ExpandButton.swift in Sources */,
 				6186C702249277A80070B616 /* DetectExposuresOperation.swift in Sources */,
 				6153A4DD242598DC006A8570 /* SicknessCertificate+Injection.swift in Sources */,
 				614D720F2428E87000CC545D /* QuarantineGuidelinesCoordinator.swift in Sources */,
@@ -2762,9 +2951,12 @@
 				614BAA072423C334006797AA /* IncomingInfectionMessage.swift in Sources */,
 				614BA9F42423C31C006797AA /* Response+parseJSON.swift in Sources */,
 				4BA477852614AC590038B9FC /* Location+CoreDataProperties.swift in Sources */,
+				4B5077CB2678F63A00459E21 /* UIImage+InitWithColor.swift in Sources */,
 				614A0027243CFB3500ACBD0A /* BubbleArrowButton.swift in Sources */,
 				615D36352437417600B608AB /* AttestedSicknessGuidelinesViewModel.swift in Sources */,
 				6153A4D3242598DC006A8570 /* SicknessCertificateStatusReportCoordinator.swift in Sources */,
+				4B980C80264950E500AA9D00 /* IncidenceViewModel.swift in Sources */,
+				4B980C8F264952C800AA9D00 /* Array+LastTwoAgesDates.swift in Sources */,
 				4E1AAEFB2461870700D43E2B /* RevokeSicknessConfirmationCoordinator.swift in Sources */,
 				4BA477652614AC3A0038B9FC /* DiaryOverviewCoorrdinator.swift in Sources */,
 				6129B57F24924B6A00E2D15B /* ENRiskLevel+diagnosisType.swift in Sources */,
@@ -2772,7 +2964,9 @@
 				61F50DD92439EC8500798264 /* MissingPermissionsViewController.swift in Sources */,
 				4E1AAEFC2461870700D43E2B /* RevokeSicknessConfirmationViewController.swift in Sources */,
 				6153A50024259953006A8570 /* PaddingLabel.swift in Sources */,
+				4B980C9A2649541100AA9D00 /* AgesRepository.swift in Sources */,
 				4ED175C524606AF400248D3B /* RevokeSicknessPersonalDataCoordinator.swift in Sources */,
+				4B980C6B264950C100AA9D00 /* CovidFaelleGKZ+State.swift in Sources */,
 				611B78BA242816950040CCB3 /* UIApplication+AppStoreAppId.swift in Sources */,
 				61D0F56C2435EB870026C91A /* RevocationPersonalDataCoordinator.swift in Sources */,
 				1C783BEF257940C90011EC62 /* TransImageView.swift in Sources */,
@@ -2798,6 +2992,7 @@
 				4ED175DA2460731200248D3B /* RevokeSicknessStatusReportViewController.swift in Sources */,
 				4BCEB4B525657EE800D53E12 /* TransBarButton.swift in Sources */,
 				4B25BA9D2429592A00CDD1CF /* UserHealthStatus.swift in Sources */,
+				4B980C88264950E500AA9D00 /* StatisticsCollectionViewCell.swift in Sources */,
 				8397409E6D4A0FD3F83CE213 /* ConfigurationService.swift in Sources */,
 				8397485AF4D5FC35155ED797 /* ConfigurationService+Injection.swift in Sources */,
 				4ED175CA24606B0A00248D3B /* RevokeSicknessFlowController.swift in Sources */,
@@ -2809,6 +3004,7 @@
 				616B75AB248E33A60030CD6B /* FileDownloadDestination.swift in Sources */,
 				611B78BE242816BE0040CCB3 /* AppUpdateService+Injection.swift in Sources */,
 				4BA477912614AC590038B9FC /* EventEncounter+CoreDataClass.swift in Sources */,
+				4B980C69264950C100AA9D00 /* CovidStatistics.swift in Sources */,
 				83974E39C51DA3FCCB202E62 /* MainCoordinator.swift in Sources */,
 				83974C2CD7A816EE91AA6583 /* OutgoingInfectionMessage.swift in Sources */,
 				4ED175B82458347400248D3B /* DebugViewModel.swift in Sources */,

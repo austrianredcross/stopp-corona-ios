@@ -21,6 +21,12 @@ enum NetworkConfiguration: ConfigurationRetrievable {
     static var cdnHostURL: URL = {
         AppConfiguration.value(for: "API_CDN_HOST_URL") { URL(string: $0)! }
     }()
+    
+    static var cdnAGESURL: URL = {
+        // TODO: Add this to the AppConfiguration
+        return URL(string: "https://covid19-dashboard.ages.at")!
+    }()
+    
 
     static let authorizationKey: String = {
         let authorizationKey: String = AppConfiguration.value(for: "API_AUTHORIZATION_KEY")

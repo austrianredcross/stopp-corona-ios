@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9zX-pq-1mf">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Statistics Legend View Controller-->
+        <scene sceneID="lR5-Ki-xr7">
+            <objects>
+                <viewController id="9zX-pq-1mf" customClass="StatisticsLegendViewController" customModule="Stopp_Corona" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5Pa-5D-QcA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qKB-vS-x9R">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PdH-9r-CFt" customClass="SelectedRoundCornersView" customModule="Stopp_Corona" customModuleProvider="target">
+                                        <rect key="frame" x="16" y="16" width="382" height="499"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="G1H-Uu-2ez" customClass="BackgroundStackView" customModule="Stopp_Corona" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="382" height="499"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="U8T-cS-Oxp">
+                                                        <rect key="frame" x="16" y="8" width="350" height="325"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IaC-9m-gQn" userLabel="title" customClass="TransHeadingLabel" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="16" width="350" height="20.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="covid_statistics_legend_title"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="h1b"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fUl-VE-Vc4" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="68.5" width="350" height="20.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="body"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="covid_statistics_legend_descreption"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </label>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="unu-Qm-W6f">
+                                                                <rect key="frame" x="0.0" y="89" width="350" height="569"/>
+                                                            </stackView>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <edgeInsets key="layoutMargins" top="16" left="0.0" bottom="16" right="0.0"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="overrideVertMarginMulti">
+                                                                <real key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="overrideSpacingMulti">
+                                                                <real key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </stackView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qrv-LS-Tqp" customClass="PrimaryButton" customModule="Stopp_Corona" customModuleProvider="target">
+                                                        <rect key="frame" x="16" y="427" width="350" height="56"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="56" id="OYc-2m-bFW"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Button"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="transKeyNormal" value="covid_statistics_legend_close"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="statisticsLegendClosePressed:" destination="9zX-pq-1mf" eventType="touchUpInside" id="KVM-nZ-N0x"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" name="ccWhiteGrey"/>
+                                                <edgeInsets key="layoutMargins" top="8" left="16" bottom="16" right="16"/>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="G1H-Uu-2ez" secondAttribute="trailing" id="Ac3-c4-aSf"/>
+                                            <constraint firstAttribute="bottom" secondItem="G1H-Uu-2ez" secondAttribute="bottom" id="HaQ-va-j59"/>
+                                            <constraint firstItem="G1H-Uu-2ez" firstAttribute="leading" secondItem="PdH-9r-CFt" secondAttribute="leading" id="Tr1-xv-nx5"/>
+                                            <constraint firstItem="G1H-Uu-2ez" firstAttribute="top" secondItem="PdH-9r-CFt" secondAttribute="top" id="rvw-LI-pmY"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="12"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="PdH-9r-CFt" firstAttribute="centerY" secondItem="qKB-vS-x9R" secondAttribute="centerY" priority="250" id="9cv-0v-Xoc"/>
+                                    <constraint firstItem="PdH-9r-CFt" firstAttribute="top" secondItem="qKB-vS-x9R" secondAttribute="top" constant="16" id="Nrs-Qy-d9K"/>
+                                    <constraint firstItem="PdH-9r-CFt" firstAttribute="leading" secondItem="qKB-vS-x9R" secondAttribute="leading" constant="16" id="Xll-yE-A32"/>
+                                    <constraint firstAttribute="bottom" secondItem="PdH-9r-CFt" secondAttribute="bottom" priority="250" constant="16" id="aDb-lB-uyG"/>
+                                    <constraint firstAttribute="trailing" secondItem="PdH-9r-CFt" secondAttribute="trailing" constant="16" id="bJr-1o-UR1"/>
+                                    <constraint firstItem="PdH-9r-CFt" firstAttribute="centerX" secondItem="qKB-vS-x9R" secondAttribute="centerX" id="xSX-zG-Rd4"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="buN-1B-f8m"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="UHg-y6-Qvb"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ODp-xY-1o3"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="qKB-vS-x9R" firstAttribute="leading" secondItem="ODp-xY-1o3" secondAttribute="leading" id="UFT-3P-za0"/>
+                            <constraint firstItem="ODp-xY-1o3" firstAttribute="bottom" secondItem="qKB-vS-x9R" secondAttribute="bottom" id="USE-wV-Pcg"/>
+                            <constraint firstItem="qKB-vS-x9R" firstAttribute="top" secondItem="ODp-xY-1o3" secondAttribute="top" id="XxV-e6-yhM"/>
+                            <constraint firstItem="ODp-xY-1o3" firstAttribute="trailing" secondItem="qKB-vS-x9R" secondAttribute="trailing" id="Ydb-xh-dcs"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="stackView" destination="unu-Qm-W6f" id="v53-iJ-SCV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ubE-O4-bQ5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="225" y="173"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="ccWhiteGrey">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

@@ -1,6 +1,9 @@
 PODS:
   - Alamofire (5.0.5)
   - Carte (2.2.1)
+  - geos (6.0.2)
+  - GEOSwift (8.0.2):
+    - geos (~> 6.0)
   - lottie-ios (3.1.6)
   - M13Checkbox (3.4.0)
   - Moya (14.0.0):
@@ -25,6 +28,7 @@ PODS:
 
 DEPENDENCIES:
   - Carte
+  - GEOSwift (~> 8.0.2)
   - lottie-ios
   - M13Checkbox
   - Moya
@@ -41,6 +45,8 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - Carte
+    - geos
+    - GEOSwift
     - lottie-ios
     - M13Checkbox
     - Moya
@@ -56,6 +62,8 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: df2f8f826963b08b9a870791ad48e07a10090b2e
   Carte: 6bcff4eaa894ff5b979d646de833fec96e04a38c
+  geos: 73e5122ba8c6857812419873df3aa9a1920140a9
+  GEOSwift: 259844a41c1680d7dc8d9a393741a08f84c0e23a
   lottie-ios: 85ce835dd8c53e02509f20729fc7d6a4e6645a0a
   M13Checkbox: 6f59404540ac98ba83a3d1afac335895a40c6a5d
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
@@ -68,6 +76,6 @@ SPEC CHECKSUMS:
   SwiftyBeaver: d39e7c376bf15e9fffca8263b8fd1f42ea56aa2d
   ZIPFoundation: b1f0de4eed33e74a676f76e12559ab6b75990197
 
-PODFILE CHECKSUM: 4dfc7799add80bff9e9a2136c41be174b3b8fbd8
+PODFILE CHECKSUM: f4ebbf75b43eb93abda61acb330da60260ad1fb4
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.10.1

@@ -16,6 +16,8 @@ class TransButton: UIButton {
 
     var styledTextNormal: String = "" { didSet { updateTexts() } }
 
+    let defaultHeightConstant: CGFloat = 56.0
+    
     private func updateTexts() {
         if let normalStyle = normalStyle {
             var text = styledTextNormal.set(style: normalStyle)

@@ -58,6 +58,7 @@ CocoaPods is used to manage third-party dependencies. Please make sure you have 
 * [SwiftRichString](https://github.com/malcommac/SwiftRichString)
 * [SwiftyBeaver](https://github.com/SwiftyBeaver/SwiftyBeaver)
 * [ZIPFoundation](https://github.com/weichsel/ZIPFoundation)
+* [GEOSwift](https://github.com/GEOSwift/GEOSwift)
 
 Notices for third party libraries in this repository are contained in `NOTICE.md`.
 

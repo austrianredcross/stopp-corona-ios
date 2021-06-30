@@ -14,6 +14,7 @@ extension Resolver: ResolverRegistering {
         registerNetworkServices()
         registerSelfTestingDependencies()
         registerRevocationDependencies()
+        registerAGESDependencies()
         registerRevokeSicknessDependencies()
         registerNotificationServices()
         registerAppUpdateServices()

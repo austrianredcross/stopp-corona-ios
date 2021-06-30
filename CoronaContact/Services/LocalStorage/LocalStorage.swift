@@ -80,4 +80,8 @@ class LocalStorage {
     
     @Persisted(userDefaultsKey: "has_been_agreed_interoperability", notificationName: .init("hasBeenAgreedInteroperability"), defaultValue: false)
     var hasBeenAgreedInteroperability: Bool
+    
+    @Persisted(userDefaultsKey: "latest_AGES_Download", notificationName: .init("latestAGESDownload"), defaultValue: Date().addDays(-3)?.shortDayLongMonth)
+    var latestAGESDownload: String?
+    
 }
