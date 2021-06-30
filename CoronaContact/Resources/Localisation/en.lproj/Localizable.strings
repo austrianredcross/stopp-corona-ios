@@ -487,7 +487,7 @@
 "revocation_tan_confirmation_resend_tan_button"                              = "Send TAN again";
 "revocation_report_status_title"                                             = "Report status";
 "revocation_report_status_headline"                                          = "Confirm all-clear";
-"revocation_report_status_description"                                       = "You have informed your contacts on %@ that you have experienced symptoms of corona infection.\n\nIf through\n• a laboratory report, or\n• a doctor\nIf it has been confirmed that you are not infected with the coronavirus, please inform your contacts with this all-clear.\n\nIn the next step we will request access to the stored random IDs for this purpose. We need this access to inform your previously notified contacts about the all-clear.";
+"revocation_report_status_description"                                       = "You have informed your contacts on %@ that you have experienced symptoms of corona infection.\n\nIf through\n• a laboratory report, or\n• a doctor\nIf it has been confirmed that you are not infected with the coronavirus, please inform your contacts with this all-clear.\n\nIn the next step we will request access to the stored random IDs for this purpose. We need this access to inform your previously notified contacts about the all-clear.(This request is only required once and executed)";
 "revocation_report_status_date_format"                                       = "dd.MM.yyyy";
 "revocation_report_status_agreement_label"                                   = "I hereby confirm that the information provided is true and correct.";
 "revocation_report_status_button"                                            = "confirm all-clear";
