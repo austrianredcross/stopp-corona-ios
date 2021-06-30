@@ -6,9 +6,14 @@
 import UIKit
 
 extension UIView {
-    func roundedCorners(corners: CACornerMask, radius: CGFloat) {
+    enum CornerRadiusSize: CGFloat {
+        case small = 5.0
+        case normal = 10.0
+    }
+    
+    func roundedCorners(corners: CACornerMask, radius: CornerRadiusSize) {
         clipsToBounds = true
-        layer.cornerRadius = radius
+        layer.cornerRadius = radius.rawValue
         layer.maskedCorners = corners
     }
 }

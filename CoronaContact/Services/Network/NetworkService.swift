@@ -81,4 +81,8 @@ final class NetworkService {
             }
         }
     }
+    
+    func downloadCovidStatistics(completion: @escaping (Result<CovidStatistics, NetworkError>) -> Void) {
+        client.request(.covidStatistics, completion: completion)
+    }
 }

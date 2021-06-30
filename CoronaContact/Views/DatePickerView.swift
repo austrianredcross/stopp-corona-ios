@@ -16,3 +16,15 @@ class DatePicker: BasePickerView {
         return selectedDate
     }
 }
+
+class StatePicker: BasePickerView {
+    
+    convenience init(states: [Bundesland] = Bundesland.allCases) {
+        self.init()
+        pickerViewData = PickerViewSource.state(states: states)
+    }
+
+    var chosenState: Bundesland? {
+        return selectedState
+    }
+}

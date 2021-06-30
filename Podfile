@@ -4,7 +4,6 @@ post_install do |pi|
   # https://github.com/CocoaPods/CocoaPods/issues/7314
   fix_deployment_target(pi)
   
-  
 end
 
 def fix_deployment_target(pod_installer)
@@ -42,7 +41,6 @@ def fix_deployment_target(pod_installer)
   at_exit { `ruby #{pods_dir}/Carte/Sources/Carte/carte.rb configure` }
 end
 
-
 # ignore all warnings from all pods
 inhibit_all_warnings!
 use_frameworks!
@@ -61,7 +59,8 @@ target 'CoronaContact' do
   pod 'SQLite.swift'
   pod 'SQLiteMigrationManager.swift'
   pod 'ZIPFoundation', '~> 0.9'
-  
+  pod 'GEOSwift', '~> 8.0.2'
+
   target 'CoronaContactTests' do
     inherit! :search_paths
   end

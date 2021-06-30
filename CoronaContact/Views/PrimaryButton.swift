@@ -27,6 +27,6 @@ class PrimaryButton: TransButton {
         if isEnabled { backgroundColor = .ccRedButton } else { backgroundColor = .ccBrownGrey }
         layer.cornerRadius = 8
         layer.masksToBounds = true
-        heightAnchor.constraint(equalToConstant: 56).isActive = true
+        heightAnchor.constraint(equalToConstant: defaultHeightConstant).isActive = true
     }
 }

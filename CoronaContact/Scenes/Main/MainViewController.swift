@@ -13,6 +13,45 @@ import UIKit
 #endif
 
 final class MainViewController: UIViewController, StoryboardBased, ViewModelBased, FlashableScrollIndicators {
+    
+    @IBOutlet var scrollView: UIScrollView!
+    @IBOutlet var notificationStackView: UIStackView!
+    @IBOutlet var userHealthStatusView: QuarantineNotificationView!
+    @IBOutlet var contactHealthStatusView: QuarantineNotificationView!
+    @IBOutlet var primaryContactHealthStatusView: QuarantineNotificationView!
+    @IBOutlet var secondaryContactHealthStatusView: QuarantineNotificationView!
+    @IBOutlet var revocationStatusView: QuarantineNotificationView!
+    @IBOutlet var userHealthWrapperView: UIView!
+    @IBOutlet var contactHealthWrapperView: UIView!
+    @IBOutlet var revocationWrapperView: UIView!
+    @IBOutlet var backgroundHandshakeStackView: RiskAssessmentView!
+    @IBOutlet var exposureNotificationErrorView: ExposureNotificationErrorView!
+    @IBOutlet var automaticHandshakeInactiveView: UIView!
+    @IBOutlet var automaticHandshakeActiveView: UIView!
+    @IBOutlet var automaticHandshakeAnimationView: AnimationView!
+    @IBOutlet var automaticHandshakeHeadline: TransHeadingLabel!
+    @IBOutlet var automaticHandShakeInfoStackView: UIStackView!
+    @IBOutlet var shareAppCardView: ShareAppCardView!
+    @IBOutlet var selfTestingStackView: UIStackView!
+    @IBOutlet var sicknessCertificateStackView: UIStackView!
+    @IBOutlet var selfTestingSeparatorLineStackView: UIStackView!
+    @IBOutlet var sicknessCertificateSeparatorLineStackView: UIStackView!
+    @IBOutlet var riskAssessmentUpdatedAtStackView: UIStackView!
+
+    /* COVID Statistics*/
+    @IBOutlet var covidIncidencesTableView: UITableView!
+    @IBOutlet var covidIncidencesTableViewContainer: UIStackView!
+    @IBOutlet var expandButtonUnderLine: UIView!
+    @IBOutlet var covidIncidencesTableViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet var stateImageView: UIImageView!
+    @IBOutlet var incidenceComparisonLabel: TransLabel!
+    @IBOutlet var agesErrorStackView: UIStackView!
+    @IBOutlet var agesIncidenceStackView: UIStackView!
+    
+    var isloaded = false
+    
+    private weak var launchScreenView: LaunchScreenView!
+
     var viewModel: MainViewModel? {
         didSet {
             viewModel?.viewController = self
@@ -21,39 +60,19 @@ final class MainViewController: UIViewController, StoryboardBased, ViewModelBase
 
     var flashScrollIndicatorsAfter: DispatchTimeInterval { .seconds(1) }
 
-    @IBOutlet var scrollView: UIScrollView!
+    var isCovidIncidencesTableViewHidden = false {
+        didSet {
+            covidIncidencesTableViewContainer.isHidden = isCovidIncidencesTableViewHidden
+            expandButtonUnderLine.isHidden = !isCovidIncidencesTableViewHidden
+            
+            covidIncidencesTableViewContainer.roundedCorners(corners: [.layerMinXMaxYCorner, .layerMaxXMaxYCorner], radius: .normal)
+            covidIncidencesTableViewContainer.layer.borderWidth = isCovidIncidencesTableViewHidden ? 0 : 1
+            
+            covidIncidencesTableViewContainer.layoutIfNeeded()
+            updateView()
+        }
+    }
     
-    @IBOutlet var notificationStackView: UIStackView!
-    
-    @IBOutlet var userHealthStatusView: QuarantineNotificationView!
-    @IBOutlet var contactHealthStatusView: QuarantineNotificationView!
-    @IBOutlet var primaryContactHealthStatusView: QuarantineNotificationView!
-    @IBOutlet var secondaryContactHealthStatusView: QuarantineNotificationView!
-    @IBOutlet var revocationStatusView: QuarantineNotificationView!
-
-    @IBOutlet var userHealthWrapperView: UIView!
-    @IBOutlet var contactHealthWrapperView: UIView!
-    @IBOutlet var revocationWrapperView: UIView!
-    
-    @IBOutlet var backgroundHandshakeStackView: RiskAssessmentView!
-    @IBOutlet var exposureNotificationErrorView: ExposureNotificationErrorView!
-    @IBOutlet var automaticHandshakeInactiveView: UIView!
-    @IBOutlet var automaticHandshakeActiveView: UIView!
-    @IBOutlet var automaticHandshakeAnimationView: AnimationView!
-    @IBOutlet var automaticHandshakeHeadline: TransHeadingLabel!
-    @IBOutlet var automaticHandShakeInfoStackView: UIStackView!
-    
-    @IBOutlet var shareAppCardView: ShareAppCardView!
-    
-    @IBOutlet var selfTestingStackView: UIStackView!
-    @IBOutlet var sicknessCertificateStackView: UIStackView!
-    
-    @IBOutlet var selfTestingSeparatorLineStackView: UIStackView!
-    @IBOutlet var sicknessCertificateSeparatorLineStackView: UIStackView!
-    @IBOutlet var riskAssessmentUpdatedAtStackView: UIStackView!
-    
-    private weak var launchScreenView: LaunchScreenView!
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -61,6 +80,12 @@ final class MainViewController: UIViewController, StoryboardBased, ViewModelBase
         setupLaunchScreen()
         setupAutomatedHandshakeAnimation()
         registerNotificationObserver()
+        
+        isCovidIncidencesTableViewHidden = false
+        covidIncidencesTableView.dataSource = self
+        covidIncidencesTableView.delegate = self
+        
+        scrollView.delegate = self
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -101,6 +126,13 @@ final class MainViewController: UIViewController, StoryboardBased, ViewModelBase
     private func setupAutomatedHandshakeAnimation() {
         automaticHandshakeAnimationView.loopMode = .loop
     }
+    
+    func reloadAGESView() {
+        guard let viewModel = viewModel, isViewLoaded else { return }
+        
+        stateImageView.image = viewModel.drawMap()
+        viewModel.setupIncidences()
+    }
 
     func updateView() {
         guard let viewModel = viewModel, isViewLoaded else { return }
@@ -115,6 +147,27 @@ final class MainViewController: UIViewController, StoryboardBased, ViewModelBase
         configureSicknessCertificateView()
         configureAutomationHandshakeView()
         configureBackgroundHandshakeStackView()
+        
+        covidIncidencesTableView.reloadData()
+        covidIncidencesTableView.layoutIfNeeded()
+        
+        guard let lastDate = viewModel.agesRepository.lastDate?.shortDayShortMonth,
+           let penultimateDate = viewModel.agesRepository.penultimateDate?.shortDayShortMonth else  {
+            agesIncidenceStackView.isHidden = true
+            agesErrorStackView.isHidden = false
+            return
+        }
+        
+        incidenceComparisonLabel.styledText = String(format: "main_covid_statistics_comparison".localized, lastDate, penultimateDate)
+        
+        covidIncidencesTableViewHeightConstraint.constant = covidIncidencesTableView.contentSize.height
+        
+        agesIncidenceStackView.isHidden = false
+        agesErrorStackView.isHidden = true
+    }
+    
+    func showError(with error: Error) {
+        viewModel?.showError(with: error)
     }
 
     private func configureUserHealthstatusView() {
@@ -376,6 +429,19 @@ final class MainViewController: UIViewController, StoryboardBased, ViewModelBase
         viewModel?.diaryTapped()
     }
     
+    @IBAction func statisticsTapped(_ sender: Any) {
+        viewModel?.statistics()
+    }
+        
+    @IBAction func covidIncidenceExpandButtonTapped(_ sender: ExpandButton) {
+        isCovidIncidencesTableViewHidden.toggle()
+        sender.isCollapsed.toggle()
+    }
+    
+    @IBAction func statisticsLegendTapped(_ sender: Any) {
+        viewModel?.showLegend()
+    }
+    
     // MARK: - Event Handling
 
     private func registerNotificationObserver() {
@@ -396,5 +462,20 @@ final class MainViewController: UIViewController, StoryboardBased, ViewModelBase
         if isOnScreen {
             viewModel?.viewWillAppear()
         }
+    }
+}
+
+// MARK: - TableView Delegate
+extension MainViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel?.incidences.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: IncidenceTableViewCell.identifier, for: indexPath) as? IncidenceTableViewCell else { return UITableViewCell() }
+
+        cell.viewModel = viewModel?.incidences[indexPath.item]
+        return cell
     }
 }

@@ -27,11 +27,11 @@ extension Date {
     }
     
     var shortMonthWithTime: String {
-        return "\(shortMonth), \(dayTime)"
+        return "\(monthAbbrevation), \(dayTime)"
     }
     
     var shortDayShortMonthShortYear: String {
-        return Locale.current.languageCode == englishLanguageCode ? "\(shortMonth) \(shortDay), \(shortYear)" : "\(shortDay)\(shortMonth).\(shortYear)"
+        return Locale.current.languageCode == englishLanguageCode ? "\(monthAbbrevation) \(shortDay), \(shortYear)" : "\(shortDay)\(monthAbbrevation).\(shortYear)"
     }
     
     var dayTime: String {
@@ -39,7 +39,7 @@ extension Date {
     }
     
     var shortDayShortMonthLongYear: String {
-        return Locale.current.languageCode == englishLanguageCode ? "\(shortMonth) \(shortDay), \(longYear)" : "\(shortDay)\(shortMonth).\(longYear)"
+        return Locale.current.languageCode == englishLanguageCode ? "\(monthAbbrevation) \(shortDay), \(longYear)" : "\(shortDay)\(monthAbbrevation).\(longYear)"
     }
     
     private var longYear: String {
@@ -58,7 +58,7 @@ extension Date {
         return dateFormatter.string(from: self)
     }
     
-    private var shortMonth: String {
+    private var monthAbbrevation: String {
         let dateFormatter = DateFormatter()
         
         dateFormatter.dateFormat = "MMM"
@@ -114,5 +114,17 @@ extension Date {
         dateFormatter.dateFormat = "HH:mm"
         
         return dateFormatter.string(from: self)
+    }
+    
+    private var shortMonth: String {
+        let dateFormatter = DateFormatter()
+        
+        dateFormatter.dateFormat = "MM"
+        
+        return dateFormatter.string(from: self)
+    }
+    
+    var shortDayShortMonth: String {
+        return Locale.current.languageCode == englishLanguageCode ? "\(shortMonth) \(shortDay)" : "\(shortDay)\(shortMonth)"
     }
 }

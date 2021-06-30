@@ -20,10 +20,12 @@ class MainViewModel: ViewModel {
     @Injected private var repository: HealthRepository
     @Injected private var localStorage: LocalStorage
     @Injected private var exposureService: ExposureManager
+    @Injected var agesRepository: AGESRepository
     private var observers = [NSObjectProtocol]()
 
     weak var coordinator: MainCoordinator?
     weak var viewController: MainViewController?
+    var incidences: [Incidence] = []
 
     var automaticHandshakePaused: Bool {
         exposureService.exposureNotificationStatus == .bluetoothOff
@@ -202,6 +204,12 @@ class MainViewModel: ViewModel {
                 self?.updateView()
             }
             .add(to: &subscriptions)
+        
+        agesRepository.$covidStatistics
+            .subscribe { [weak self] _ in
+                self?.setupIncidences()
+            }
+            .add(to: &subscriptions)
     }
 
     deinit {
@@ -237,6 +245,8 @@ class MainViewModel: ViewModel {
 
     func viewWillAppear() {
         repository.refresh()
+        agesRepository.updateView = viewController?.reloadAGESView
+        
     }
 
     func updateView() {
@@ -342,6 +352,17 @@ class MainViewModel: ViewModel {
         coordinator?.diary()
     }
 
+    func statistics() {
+        coordinator?.statistics()
+    }
+    func showLegend() {
+        coordinator?.showLegend()
+    }
+    
+    func showError(with error: Error) {
+        coordinator?.showErrorAlert(with: error)
+    }
+
     func contactSickness(with healthStatus: ContactHealthStatus) {
         if hasAttestedSickness {
             coordinator?.attestedSicknessGuidelines()
@@ -356,5 +377,35 @@ class MainViewModel: ViewModel {
                 self?.coordinator?.showMissingPermissions(type: .exposureFramework)
             }
         }
+    }
+        
+    func drawMap() -> UIImage? {
+        do {
+            return try agesRepository.drawImage(from: .österreich)
+        } catch {
+            showError(with: error)
+            return nil
+        }
+    }
+    
+    func setupIncidences() {
+        
+        incidences.removeAll()
+        
+        Bundesland.getCases.forEach({ state in
+            
+            guard let covidFaelleTimelineFiltered = agesRepository.covidStatistics?.covidFaelleTimeline.filter({ $0.bundesland == state }) else { return }
+            
+            let lastTwoTimeLines = covidFaelleTimelineFiltered.lastTwoElements()
+            
+            guard let lastDayCovidFaelleTimeline = lastTwoTimeLines?.lastDay as? CovidFaelleTimeline,
+                  let penultimateDayCovidFaelleTimeline = lastTwoTimeLines?.penultimateDay as? CovidFaelleTimeline else { return }
+            
+            let siebenTageInzidenzFaelleDiff = lastDayCovidFaelleTimeline.siebenTageInzidenzFaelle - penultimateDayCovidFaelleTimeline.siebenTageInzidenzFaelle
+            
+            incidences.append(Incidence(incidenceState: IncidenceState(lastDayCovidFaelleTimeline.siebenTageInzidenzFaelle), incidenceTitle: state.localized, incidenceValue: lastDayCovidFaelleTimeline.siebenTageInzidenzFaelle, incidenceIncrementValue: siebenTageInzidenzFaelleDiff))
+        })
+        
+        updateView()
     }
 }

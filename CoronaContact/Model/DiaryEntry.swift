@@ -65,8 +65,3 @@ enum DiaryEntry: CaseIterable {
         }
     }
 }
-
-enum PickerViewSource {
-    case dates(dates: [Date] = [])
-    case diaryEntry(entries: [DiaryEntry] = DiaryEntry.allCases)
-}

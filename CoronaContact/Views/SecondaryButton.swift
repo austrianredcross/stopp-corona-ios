@@ -38,7 +38,7 @@ class SecondaryButton: TransButton {
         layer.borderColor = UIColor.ccRedButton.cgColor
         layer.borderWidth = 1
         layer.masksToBounds = true
-        heightAnchor.constraint(equalToConstant: 56).isActive = true
+        heightAnchor.constraint(equalToConstant: defaultHeightConstant).isActive = true
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {

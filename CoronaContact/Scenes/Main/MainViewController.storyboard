@@ -22,10 +22,10 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lpd-HQ-Qp5">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="2272.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="3708"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="fdk-l7-Mva">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="2855.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="5639"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="jkK-gs-8va" userLabel="Notification Stack View" customClass="BackgroundStackView" customModule="Stopp_Corona" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1040"/>
@@ -91,8 +91,10 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="HvU-Mi-vYS" userLabel="Content">
+                                                        <rect key="frame" x="0.0" y="1040" width="414" height="2668"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="aM4-Bj-TGf" userLabel="Main Information Stack View" customClass="BackgroundStackView" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="414" height="1536.5"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lwW-nB-zfn" customClass="SelectedRoundCornersView" customModule="Stopp_Corona" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="128"/>
@@ -200,26 +202,32 @@
                                                                         </constraints>
                                                                     </view>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="nWK-HX-Gpe">
+                                                                        <rect key="frame" x="16" y="478.5" width="382" height="1009"/>
                                                                         <subviews>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QmO-6n-EzW" userLabel="SeperatorLine">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="382" height="1"/>
                                                                                 <color key="backgroundColor" name="ccBorder"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="1" id="6Jc-Pw-0Af"/>
                                                                                 </constraints>
                                                                             </view>
                                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="3Jm-vF-f9F">
+                                                                                <rect key="frame" x="0.0" y="9" width="382" height="1000"/>
                                                                             </stackView>
                                                                         </subviews>
                                                                     </stackView>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="EIq-4X-wdw">
+                                                                        <rect key="frame" x="16" y="1503.5" width="382" height="33"/>
                                                                         <subviews>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nuK-Vg-1IL" userLabel="SeperatorLine">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="382" height="1"/>
                                                                                 <color key="backgroundColor" name="ccBorder"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="1" id="ceI-Qz-JwX"/>
                                                                                 </constraints>
                                                                             </view>
                                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ZdQ-R9-iYa" userLabel="SeperatorStackView" customClass="BackgroundStackView" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                                <rect key="frame" x="0.0" y="1" width="382" height="31"/>
                                                                                 <subviews>
                                                                                     <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y3K-0d-XED" customClass="TransButton" customModule="Stopp_Corona" customModuleProvider="target">
                                                                                         <rect key="frame" x="0.0" y="0.0" width="382" height="31"/>
@@ -250,22 +258,329 @@
                                                                                     </userDefinedRuntimeAttribute>
                                                                                 </userDefinedRuntimeAttributes>
                                                                             </stackView>
-                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cnt-8e-nlo" userLabel="SeperatorLine">
-                                                                                <color key="backgroundColor" name="ccDarkModeBorder"/>
-                                                                                <constraints>
-                                                                                    <constraint firstAttribute="height" constant="1" id="NUH-4C-FjV"/>
-                                                                                </constraints>
-                                                                            </view>
                                                                         </subviews>
                                                                     </stackView>
                                                                 </subviews>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                 <edgeInsets key="layoutMargins" top="8" left="16" bottom="0.0" right="16"/>
                                                             </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="1UT-gh-aZA" userLabel="SeperatorStackView" customClass="BackgroundStackView" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="1535.5" width="414" height="1"/>
+                                                                <subviews>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="01E-xv-4Bb" userLabel="SeperatorLine">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1"/>
+                                                                        <color key="backgroundColor" name="ccDarkModeBorder"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="1" id="mE4-2x-OTm"/>
+                                                                        </constraints>
+                                                                    </view>
+                                                                </subviews>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="overrideVertMarginMulti">
+                                                                        <real key="value" value="1"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="overrideHorztMarginMulti">
+                                                                        <real key="value" value="1"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="overrideSpacingMulti">
+                                                                        <real key="value" value="0.80000000000000004"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="Ctj-Xb-cbr" userLabel="Covid Statistics">
+                                                                <rect key="frame" x="0.0" y="1537.5" width="414" height="970.5"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="main_covid_statistics_title" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2fb-x5-S3L" customClass="TransHeadingLabel" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                        <rect key="frame" x="24" y="32" width="366" height="20.5"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="h1b"/>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="main_covid_statistics_title"/>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                    </label>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Fet-Hd-dqf">
+                                                                        <rect key="frame" x="24" y="84.5" width="366" height="20.5"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kUr-Mf-Gsd" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="366" height="20.5"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                                <nil key="textColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                                <userDefinedRuntimeAttributes>
+                                                                                    <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="body"/>
+                                                                                    <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="ages_api_validation_error"/>
+                                                                                </userDefinedRuntimeAttributes>
+                                                                            </label>
+                                                                        </subviews>
+                                                                    </stackView>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="9RN-qq-f1R">
+                                                                        <rect key="frame" x="24" y="137" width="366" height="801.5"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="main_covid_statistics_ comparison" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ws7-4r-ClV" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="366" height="20.5"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                                <nil key="textColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                                <userDefinedRuntimeAttributes>
+                                                                                    <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="main_covid_statistics_comparison"/>
+                                                                                    <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="body"/>
+                                                                                </userDefinedRuntimeAttributes>
+                                                                            </label>
+                                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="09D-Ma-vSv">
+                                                                                <rect key="frame" x="0.0" y="52.5" width="366" height="468"/>
+                                                                                <accessibility key="accessibilityConfiguration">
+                                                                                    <bool key="isElement" value="YES"/>
+                                                                                </accessibility>
+                                                                            </imageView>
+                                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="-1" translatesAutoresizingMaskIntoConstraints="NO" id="5fA-BL-EiU">
+                                                                                <rect key="frame" x="0.0" y="552.5" width="366" height="187"/>
+                                                                                <subviews>
+                                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="xQq-bf-uSv">
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="366" height="34"/>
+                                                                                        <subviews>
+                                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8qo-FW-Y3g" customClass="ExpandButton" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                                                <rect key="frame" x="0.0" y="0.0" width="366" height="34"/>
+                                                                                                <state key="normal" title="main_covid_statistics_expanded_collapsed_state_button"/>
+                                                                                                <userDefinedRuntimeAttributes>
+                                                                                                    <userDefinedRuntimeAttribute type="string" keyPath="normalStyle" value="body"/>
+                                                                                                    <userDefinedRuntimeAttribute type="string" keyPath="transKeyNormal" value="main_covid_statistics_expanded_collapsed_state_button"/>
+                                                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isCollapsed" value="NO"/>
+                                                                                                </userDefinedRuntimeAttributes>
+                                                                                                <connections>
+                                                                                                    <action selector="covidIncidenceExpandButtonTapped:" destination="YPc-ty-Btr" eventType="touchUpInside" id="lRQ-cF-ox8"/>
+                                                                                                </connections>
+                                                                                            </button>
+                                                                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0qM-7c-yrU" userLabel="SeperatorLine">
+                                                                                                <rect key="frame" x="0.0" y="0.0" width="366" height="1"/>
+                                                                                                <color key="backgroundColor" name="ccDarkModeBorder"/>
+                                                                                                <constraints>
+                                                                                                    <constraint firstAttribute="height" constant="1" id="8qe-CX-EiH"/>
+                                                                                                </constraints>
+                                                                                            </view>
+                                                                                        </subviews>
+                                                                                    </stackView>
+                                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="zzX-kH-Ipo">
+                                                                                        <rect key="frame" x="0.0" y="33" width="366" height="154"/>
+                                                                                        <subviews>
+                                                                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Br8-fO-vlT">
+                                                                                                <rect key="frame" x="16" y="0.0" width="334" height="100"/>
+                                                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                                <constraints>
+                                                                                                    <constraint firstAttribute="height" constant="100" id="k0G-6m-PLd"/>
+                                                                                                </constraints>
+                                                                                                <prototypes>
+                                                                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="IncidenceTableViewCell" id="Ffe-iM-UW1" customClass="IncidenceTableViewCell" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                                                        <rect key="frame" x="0.0" y="28" width="334" height="70"/>
+                                                                                                        <autoresizingMask key="autoresizingMask"/>
+                                                                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ffe-iM-UW1" id="v5u-CO-bf4">
+                                                                                                            <rect key="frame" x="0.0" y="0.0" width="334" height="70"/>
+                                                                                                            <autoresizingMask key="autoresizingMask"/>
+                                                                                                            <subviews>
+                                                                                                                <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="z0H-vS-eeJ">
+                                                                                                                    <rect key="frame" x="0.0" y="0.0" width="334" height="70"/>
+                                                                                                                    <subviews>
+                                                                                                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TI9-BM-viJ">
+                                                                                                                            <rect key="frame" x="0.0" y="10" width="30" height="50"/>
+                                                                                                                            <subviews>
+                                                                                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LDX-eF-HgN" userLabel="IncidenceCase">
+                                                                                                                                    <rect key="frame" x="0.0" y="0.0" width="30" height="50"/>
+                                                                                                                                    <subviews>
+                                                                                                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JtX-99-eUz">
+                                                                                                                                            <rect key="frame" x="0.0" y="10" width="30" height="30"/>
+                                                                                                                                            <color key="backgroundColor" name="ccRouge"/>
+                                                                                                                                            <constraints>
+                                                                                                                                                <constraint firstAttribute="height" constant="30" id="EhW-MW-o9O"/>
+                                                                                                                                                <constraint firstAttribute="width" secondItem="JtX-99-eUz" secondAttribute="height" multiplier="1:1" id="y0y-Cn-BHS"/>
+                                                                                                                                            </constraints>
+                                                                                                                                        </view>
+                                                                                                                                    </subviews>
+                                                                                                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                                                                                    <constraints>
+                                                                                                                                        <constraint firstItem="JtX-99-eUz" firstAttribute="leading" secondItem="LDX-eF-HgN" secondAttribute="leading" id="AeW-tW-WYL"/>
+                                                                                                                                        <constraint firstAttribute="trailing" secondItem="JtX-99-eUz" secondAttribute="trailing" id="NVL-i6-oWH"/>
+                                                                                                                                        <constraint firstItem="JtX-99-eUz" firstAttribute="centerY" secondItem="LDX-eF-HgN" secondAttribute="centerY" id="YOw-We-RUx"/>
+                                                                                                                                        <constraint firstItem="JtX-99-eUz" firstAttribute="centerX" secondItem="LDX-eF-HgN" secondAttribute="centerX" id="dlu-Ha-IBG"/>
+                                                                                                                                    </constraints>
+                                                                                                                                </view>
+                                                                                                                            </subviews>
+                                                                                                                        </stackView>
+                                                                                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="4b9-5r-z4m">
+                                                                                                                            <rect key="frame" x="38" y="10" width="113.5" height="50"/>
+                                                                                                                            <subviews>
+                                                                                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RlJ-1u-KVi">
+                                                                                                                                    <rect key="frame" x="0.0" y="0.0" width="113.5" height="50"/>
+                                                                                                                                    <subviews>
+                                                                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iV6-XM-dok" userLabel="Title" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                                                                                            <rect key="frame" x="0.0" y="0.0" width="97.5" height="50"/>
+                                                                                                                                            <string key="text">Labeldsfsfds
+ 123131</string>
+                                                                                                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                                                                                            <nil key="textColor"/>
+                                                                                                                                            <nil key="highlightedColor"/>
+                                                                                                                                        </label>
+                                                                                                                                    </subviews>
+                                                                                                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                                                                                    <constraints>
+                                                                                                                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="iV6-XM-dok" secondAttribute="trailing" id="81Y-U3-Usd"/>
+                                                                                                                                        <constraint firstItem="iV6-XM-dok" firstAttribute="top" secondItem="RlJ-1u-KVi" secondAttribute="top" id="MWl-eV-RYe"/>
+                                                                                                                                        <constraint firstAttribute="bottom" secondItem="iV6-XM-dok" secondAttribute="bottom" id="YyA-jy-G9j"/>
+                                                                                                                                        <constraint firstItem="iV6-XM-dok" firstAttribute="leading" secondItem="RlJ-1u-KVi" secondAttribute="leading" id="w0Q-9M-O2b"/>
+                                                                                                                                    </constraints>
+                                                                                                                                </view>
+                                                                                                                            </subviews>
+                                                                                                                        </stackView>
+                                                                                                                        <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="I2Z-3V-z68">
+                                                                                                                            <rect key="frame" x="159.5" y="10" width="25" height="50"/>
+                                                                                                                            <subviews>
+                                                                                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lso-DA-a5T">
+                                                                                                                                    <rect key="frame" x="0.0" y="0.0" width="25" height="50"/>
+                                                                                                                                    <subviews>
+                                                                                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="tTG-D4-HPL">
+                                                                                                                                            <rect key="frame" x="0.0" y="12.5" width="25" height="25"/>
+                                                                                                                                            <constraints>
+                                                                                                                                                <constraint firstAttribute="height" constant="25" id="1XI-KU-MSI"/>
+                                                                                                                                                <constraint firstAttribute="width" secondItem="tTG-D4-HPL" secondAttribute="height" multiplier="1:1" id="SF5-UM-8Fq"/>
+                                                                                                                                            </constraints>
+                                                                                                                                        </imageView>
+                                                                                                                                    </subviews>
+                                                                                                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                                                                                    <constraints>
+                                                                                                                                        <constraint firstAttribute="trailing" secondItem="tTG-D4-HPL" secondAttribute="trailing" id="Ery-le-lgQ"/>
+                                                                                                                                        <constraint firstItem="tTG-D4-HPL" firstAttribute="leading" secondItem="Lso-DA-a5T" secondAttribute="leading" id="PMC-Vf-lEz"/>
+                                                                                                                                        <constraint firstItem="tTG-D4-HPL" firstAttribute="centerX" secondItem="Lso-DA-a5T" secondAttribute="centerX" id="Z0r-cx-rlb"/>
+                                                                                                                                        <constraint firstItem="tTG-D4-HPL" firstAttribute="centerY" secondItem="Lso-DA-a5T" secondAttribute="centerY" id="ZSn-5y-ye1"/>
+                                                                                                                                    </constraints>
+                                                                                                                                </view>
+                                                                                                                            </subviews>
+                                                                                                                        </stackView>
+                                                                                                                        <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="O83-QC-yHy">
+                                                                                                                            <rect key="frame" x="192.5" y="10" width="66.5" height="50"/>
+                                                                                                                            <subviews>
+                                                                                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e4T-nU-6gs">
+                                                                                                                                    <rect key="frame" x="0.0" y="0.0" width="66.5" height="50"/>
+                                                                                                                                    <subviews>
+                                                                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="natural" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="erk-ci-bZm" userLabel="Value" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                                                                                            <rect key="frame" x="0.0" y="0.0" width="66.5" height="50"/>
+                                                                                                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                                                                                            <nil key="textColor"/>
+                                                                                                                                            <nil key="highlightedColor"/>
+                                                                                                                                        </label>
+                                                                                                                                    </subviews>
+                                                                                                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                                                                    <constraints>
+                                                                                                                                        <constraint firstAttribute="bottom" secondItem="erk-ci-bZm" secondAttribute="bottom" id="7Ko-gv-9i6"/>
+                                                                                                                                        <constraint firstAttribute="trailing" secondItem="erk-ci-bZm" secondAttribute="trailing" id="Rok-xk-P1u"/>
+                                                                                                                                        <constraint firstItem="erk-ci-bZm" firstAttribute="top" secondItem="e4T-nU-6gs" secondAttribute="top" id="bVu-a5-Txw"/>
+                                                                                                                                        <constraint firstItem="erk-ci-bZm" firstAttribute="leading" secondItem="e4T-nU-6gs" secondAttribute="leading" id="hXS-og-iEE"/>
+                                                                                                                                    </constraints>
+                                                                                                                                </view>
+                                                                                                                            </subviews>
+                                                                                                                        </stackView>
+                                                                                                                        <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="zxA-CP-YBl">
+                                                                                                                            <rect key="frame" x="267" y="10" width="67" height="50"/>
+                                                                                                                            <subviews>
+                                                                                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wjQ-Dh-snt">
+                                                                                                                                    <rect key="frame" x="0.0" y="0.0" width="67" height="50"/>
+                                                                                                                                    <subviews>
+                                                                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" semanticContentAttribute="forceRightToLeft" text="Label" textAlignment="natural" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F83-F0-TKH" userLabel="IncrementValue" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                                                                                            <rect key="frame" x="0.0" y="0.0" width="67" height="50"/>
+                                                                                                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                                                                                            <nil key="textColor"/>
+                                                                                                                                            <nil key="highlightedColor"/>
+                                                                                                                                        </label>
+                                                                                                                                    </subviews>
+                                                                                                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                                                                                    <constraints>
+                                                                                                                                        <constraint firstItem="F83-F0-TKH" firstAttribute="leading" secondItem="wjQ-Dh-snt" secondAttribute="leading" id="Pfr-fd-KRP"/>
+                                                                                                                                        <constraint firstAttribute="trailing" secondItem="F83-F0-TKH" secondAttribute="trailing" id="SFX-ff-nL0"/>
+                                                                                                                                        <constraint firstAttribute="bottom" secondItem="F83-F0-TKH" secondAttribute="bottom" id="egc-gY-fTD"/>
+                                                                                                                                        <constraint firstItem="F83-F0-TKH" firstAttribute="top" secondItem="wjQ-Dh-snt" secondAttribute="top" id="z7e-bY-0cs"/>
+                                                                                                                                    </constraints>
+                                                                                                                                </view>
+                                                                                                                            </subviews>
+                                                                                                                        </stackView>
+                                                                                                                    </subviews>
+                                                                                                                    <constraints>
+                                                                                                                        <constraint firstItem="zxA-CP-YBl" firstAttribute="width" secondItem="z0H-vS-eeJ" secondAttribute="width" multiplier="0.2" id="EcT-QZ-bPn"/>
+                                                                                                                        <constraint firstItem="O83-QC-yHy" firstAttribute="width" secondItem="z0H-vS-eeJ" secondAttribute="width" multiplier="0.2" id="lgT-j8-8iD"/>
+                                                                                                                    </constraints>
+                                                                                                                    <edgeInsets key="layoutMargins" top="10" left="0.0" bottom="10" right="0.0"/>
+                                                                                                                </stackView>
+                                                                                                            </subviews>
+                                                                                                            <constraints>
+                                                                                                                <constraint firstAttribute="bottom" secondItem="z0H-vS-eeJ" secondAttribute="bottom" id="IYf-As-abe"/>
+                                                                                                                <constraint firstItem="z0H-vS-eeJ" firstAttribute="top" secondItem="v5u-CO-bf4" secondAttribute="top" id="cKe-rJ-1od"/>
+                                                                                                                <constraint firstItem="z0H-vS-eeJ" firstAttribute="leading" secondItem="v5u-CO-bf4" secondAttribute="leading" id="n6Y-MK-jqN"/>
+                                                                                                                <constraint firstAttribute="trailing" secondItem="z0H-vS-eeJ" secondAttribute="trailing" id="qcs-gu-mto"/>
+                                                                                                            </constraints>
+                                                                                                        </tableViewCellContentView>
+                                                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                                        <connections>
+                                                                                                            <outlet property="contentViewContainer" destination="v5u-CO-bf4" id="edK-dA-D3Z"/>
+                                                                                                            <outlet property="incidenceColor" destination="JtX-99-eUz" id="07M-bq-vu9"/>
+                                                                                                            <outlet property="incidenceIncrementValue" destination="F83-F0-TKH" id="JOS-A6-qwp"/>
+                                                                                                            <outlet property="incidenceStackView" destination="zxA-CP-YBl" id="gjy-Db-oL3"/>
+                                                                                                            <outlet property="incidenceTitle" destination="iV6-XM-dok" id="AaB-vC-Vql"/>
+                                                                                                            <outlet property="incidenceValue" destination="erk-ci-bZm" id="R9h-8V-lz5"/>
+                                                                                                            <outlet property="incidenceValueIcon" destination="tTG-D4-HPL" id="cqW-XN-QEZ"/>
+                                                                                                        </connections>
+                                                                                                    </tableViewCell>
+                                                                                                </prototypes>
+                                                                                            </tableView>
+                                                                                            <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D4H-jC-9DJ" customClass="TransButton" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                                                <rect key="frame" x="16" y="116" width="334" height="22"/>
+                                                                                                <state key="normal" title="main_covid_statistics_legend" image="exclamationMark">
+                                                                                                    <color key="titleColor" name="ccBrownGrey"/>
+                                                                                                </state>
+                                                                                                <userDefinedRuntimeAttributes>
+                                                                                                    <userDefinedRuntimeAttribute type="string" keyPath="normalStyle" value="linkBlue"/>
+                                                                                                    <userDefinedRuntimeAttribute type="string" keyPath="transKeyNormal" value="main_covid_statistics_legend"/>
+                                                                                                    <userDefinedRuntimeAttribute type="image" keyPath="arrowImage" value="exclamationMark"/>
+                                                                                                </userDefinedRuntimeAttributes>
+                                                                                                <connections>
+                                                                                                    <action selector="statisticsLegendTapped:" destination="YPc-ty-Btr" eventType="touchUpInside" id="Unc-CC-H5y"/>
+                                                                                                </connections>
+                                                                                            </button>
+                                                                                        </subviews>
+                                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                        <edgeInsets key="layoutMargins" top="0.0" left="16" bottom="16" right="16"/>
+                                                                                        <userDefinedRuntimeAttributes>
+                                                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                                                <color key="value" name="ccBorder"/>
+                                                                                            </userDefinedRuntimeAttribute>
+                                                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                                                <real key="value" value="1"/>
+                                                                                            </userDefinedRuntimeAttribute>
+                                                                                        </userDefinedRuntimeAttributes>
+                                                                                    </stackView>
+                                                                                </subviews>
+                                                                            </stackView>
+                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7sn-wS-SsR" customClass="SecondaryButton" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                                <rect key="frame" x="0.0" y="771.5" width="366" height="30"/>
+                                                                                <state key="normal" title="main_covid_statistics_button"/>
+                                                                                <userDefinedRuntimeAttributes>
+                                                                                    <userDefinedRuntimeAttribute type="string" keyPath="normalStyle" value="body"/>
+                                                                                    <userDefinedRuntimeAttribute type="string" keyPath="transKeyNormal" value="main_covid_statistics_show_button"/>
+                                                                                </userDefinedRuntimeAttributes>
+                                                                                <connections>
+                                                                                    <action selector="statisticsTapped:" destination="YPc-ty-Btr" eventType="touchUpInside" id="b6N-8l-rn3"/>
+                                                                                </connections>
+                                                                            </button>
+                                                                        </subviews>
+                                                                    </stackView>
+                                                                </subviews>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <edgeInsets key="layoutMargins" top="32" left="24" bottom="32" right="24"/>
+                                                            </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="M3L-nF-iVZ" userLabel="SeperatorStackView" customClass="BackgroundStackView" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="2508" width="414" height="1"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Aj4-49-5w3" userLabel="SeperatorLine">
-                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1"/>
+                                                                        <color key="backgroundColor" name="ccDarkModeBorder"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="1" id="kju-4c-BxC"/>
                                                                         </constraints>
@@ -285,7 +600,7 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="9Za-sS-mjF" userLabel="Diary">
-                                                                <rect key="frame" x="0.0" y="568.5" width="414" height="437"/>
+                                                                <rect key="frame" x="0.0" y="1572" width="414" height="437"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="diary_main_title" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kya-6X-8lK" customClass="TransHeadingLabel" customModule="Stopp_Corona" customModuleProvider="target">
                                                                         <rect key="frame" x="24" y="32" width="366" height="20.5"/>
@@ -362,8 +677,10 @@
                                                                 <edgeInsets key="layoutMargins" top="32" left="24" bottom="32" right="24"/>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="xcA-JH-rfZ" userLabel="SeperatorStackView" customClass="BackgroundStackView" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="2946" width="414" height="1"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X8A-zM-hdi" userLabel="SeperatorLine">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1"/>
                                                                         <color key="backgroundColor" name="ccDarkModeBorder"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="1" id="uZA-lG-0hm"/>
@@ -384,7 +701,7 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Q8J-2I-YfW" userLabel="Self Testing Stack View" customClass="BackgroundStackView" customModule="Stopp_Corona" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="864.5" width="414" height="208.5"/>
+                                                                <rect key="frame" x="0.0" y="2300" width="414" height="208.5"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="main_body_feel_today" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JCJ-ad-B7r" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
                                                                         <rect key="frame" x="8" y="32" width="398" height="20.5"/>
@@ -432,8 +749,10 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="YlG-8c-hcJ" userLabel="SeperatorStackView" customClass="BackgroundStackView" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="3147.5" width="414" height="1"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mq4-3h-QT2" userLabel="SeperatorLine">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1"/>
                                                                         <color key="backgroundColor" name="ccDarkModeBorder"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="1" id="0XZ-WN-C6p"/>
@@ -454,7 +773,7 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="gDd-RB-Sg5" userLabel="Sickness Certificate Stack View" customClass="BackgroundStackView" customModule="Stopp_Corona" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="1074" width="414" height="158.5"/>
+                                                                <rect key="frame" x="0.0" y="2509.5" width="414" height="158.5"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dCJ-lw-B2E" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
                                                                         <rect key="frame" x="8" y="32" width="398" height="20.5"/>
@@ -494,11 +813,14 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                             </stackView>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="42" translatesAutoresizingMaskIntoConstraints="NO" id="J34-4X-N4a" userLabel="Share App Stack View" customClass="BackgroundStackView" customModule="Stopp_Corona" customModuleProvider="target">
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="36" translatesAutoresizingMaskIntoConstraints="NO" id="J34-4X-N4a" userLabel="Share App Stack View" customClass="BackgroundStackView" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="3308" width="414" height="1268"/>
                                                                 <subviews>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="cmZ-n0-GSo" userLabel="SeperatorStackView" customClass="BackgroundStackView" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                        <rect key="frame" x="24" y="0.0" width="366" height="1000"/>
                                                                         <subviews>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gdm-dv-Hf1" userLabel="SeperatorLine">
+                                                                                <rect key="frame" x="-8" y="0.0" width="382" height="1000"/>
                                                                                 <color key="backgroundColor" name="ccDarkModeBorder"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="1" id="FFH-hs-MXG"/>
@@ -509,7 +831,7 @@
                                                                         <edgeInsets key="layoutMargins" top="0.0" left="-8" bottom="0.0" right="-8"/>
                                                                     </stackView>
                                                                     <view contentMode="scaleToFill" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="200" id="ZS9-0W-H1J" customClass="ShareAppCardView" customModule="Stopp_Corona" customModuleProvider="target">
-                                                                        <rect key="frame" x="24" y="32" width="366" height="200"/>
+                                                                        <rect key="frame" x="24" y="42" width="366" height="200"/>
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     </view>
@@ -575,6 +897,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="agesErrorStackView" destination="Fet-Hd-dqf" id="zTZ-vC-b1j"/>
+                        <outlet property="agesIncidenceStackView" destination="9RN-qq-f1R" id="bcB-5R-E0t"/>
                         <outlet property="automaticHandShakeInfoStackView" destination="3Jm-vF-f9F" id="VY6-FV-kd6"/>
                         <outlet property="automaticHandshakeActiveView" destination="voS-OA-tvG" id="Usk-cS-T4j"/>
                         <outlet property="automaticHandshakeAnimationView" destination="d6X-BX-wfs" id="hEb-yc-3aH"/>
@@ -583,7 +907,12 @@
                         <outlet property="backgroundHandshakeStackView" destination="MIx-K4-Jlz" id="iNq-8E-u4d"/>
                         <outlet property="contactHealthStatusView" destination="Ulg-gU-lIf" id="T9q-vQ-9IU"/>
                         <outlet property="contactHealthWrapperView" destination="huJ-A4-HYE" id="AP4-KN-TPn"/>
+                        <outlet property="covidIncidencesTableView" destination="Br8-fO-vlT" id="YXb-k5-Rix"/>
+                        <outlet property="covidIncidencesTableViewContainer" destination="zzX-kH-Ipo" id="IY8-0C-7Pq"/>
+                        <outlet property="covidIncidencesTableViewHeightConstraint" destination="k0G-6m-PLd" id="fE9-uH-a4s"/>
+                        <outlet property="expandButtonUnderLine" destination="0qM-7c-yrU" id="7uc-3p-wPr"/>
                         <outlet property="exposureNotificationErrorView" destination="f67-cP-xz8" id="w7l-yH-RvF"/>
+                        <outlet property="incidenceComparisonLabel" destination="ws7-4r-ClV" id="wFg-ds-Wdv"/>
                         <outlet property="notificationStackView" destination="jkK-gs-8va" id="9bt-dI-9PD"/>
                         <outlet property="primaryContactHealthStatusView" destination="Ulg-gU-lIf" id="1Te-1K-oXR"/>
                         <outlet property="revocationStatusView" destination="pHd-1H-Yfl" id="ZLl-kR-cAC"/>
@@ -596,6 +925,7 @@
                         <outlet property="shareAppCardView" destination="ZS9-0W-H1J" id="adn-aO-JUn"/>
                         <outlet property="sicknessCertificateSeparatorLineStackView" destination="YlG-8c-hcJ" id="7PQ-Gq-4iG"/>
                         <outlet property="sicknessCertificateStackView" destination="gDd-RB-Sg5" id="11b-Jl-nzL"/>
+                        <outlet property="stateImageView" destination="09D-Ma-vSv" id="hoH-Qp-P2Q"/>
                         <outlet property="userHealthStatusView" destination="Pg8-NU-47Y" id="7fL-Z8-m9g"/>
                         <outlet property="userHealthWrapperView" destination="06k-hV-t2h" id="Nau-nW-w8b"/>
                     </connections>
@@ -611,7 +941,7 @@
     <resources>
         <image name="Diary" width="144" height="111"/>
         <image name="automaticHandshakeInactiveIcon" width="277" height="141"/>
-        <image name="burgerMenu" width="26" height="17"/>
+        <image name="burgerMenu" width="16" height="16"/>
         <image name="exclamationMark" width="17" height="17"/>
         <namedColor name="ccBlack">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -624,6 +954,9 @@
         </namedColor>
         <namedColor name="ccDarkModeBorder">
             <color red="0.95686274509803926" green="0.95686274509803926" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ccRouge">
+            <color red="0.72549019607843135" green="0.074509803921568626" blue="0.10588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="ccShadow">
             <color red="0.0" green="0.0" blue="0.0" alpha="0.23000000417232513" colorSpace="custom" customColorSpace="sRGB"/>
