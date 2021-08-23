@@ -61,9 +61,6 @@ enum Bundesland: String, Codable, CaseIterable {
     case wien = "Wien"
     case österreich = "Österreich"
     
-    static var getCases: [Bundesland] {
-        return Bundesland.allCases.filter({ $0 != .alle })
-    }
 }
 
 enum Geschlecht: String, Codable {
