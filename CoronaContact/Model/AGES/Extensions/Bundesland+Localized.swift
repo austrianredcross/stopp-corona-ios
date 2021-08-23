@@ -32,4 +32,13 @@ extension Bundesland {
             return "covid_statistics_state_id_austria".localized
         }
     }
+    
+    static var getCases: [Bundesland] {
+        var newList = Bundesland.allCases.filter({ $0 != .alle && $0 != .österreich })
+
+        //Reorder so the case österreich is always the first value.
+        newList.insert(.österreich, at: 0)
+        return newList
+
+    }
 }
