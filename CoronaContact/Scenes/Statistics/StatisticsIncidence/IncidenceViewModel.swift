@@ -111,7 +111,7 @@ enum IncidenceState: CaseIterable {
         switch incidences {
         case 0:
             self = .zero
-        case 1..<100:
+        case 0..<100:
             self = .underOneHundred
         case 100..<200:
             self = .aboveOneHundred
