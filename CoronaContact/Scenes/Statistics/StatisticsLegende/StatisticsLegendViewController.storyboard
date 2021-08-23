@@ -24,46 +24,31 @@
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PdH-9r-CFt" customClass="SelectedRoundCornersView" customModule="Stopp_Corona" customModuleProvider="target">
                                         <rect key="frame" x="16" y="16" width="382" height="499"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="G1H-Uu-2ez" customClass="BackgroundStackView" customModule="Stopp_Corona" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="382" height="499"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1V8-qr-xil">
+                                                <rect key="frame" x="0.0" y="0.0" width="382" height="786"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="U8T-cS-Oxp">
-                                                        <rect key="frame" x="16" y="8" width="350" height="325"/>
-                                                        <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IaC-9m-gQn" userLabel="title" customClass="TransHeadingLabel" customModule="Stopp_Corona" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="16" width="350" height="20.5"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <nil key="textColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                                <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="covid_statistics_legend_title"/>
-                                                                    <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="h1b"/>
-                                                                </userDefinedRuntimeAttributes>
-                                                            </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fUl-VE-Vc4" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="68.5" width="350" height="20.5"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <nil key="textColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                                <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="body"/>
-                                                                    <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="covid_statistics_legend_descreption"/>
-                                                                </userDefinedRuntimeAttributes>
-                                                            </label>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="unu-Qm-W6f">
-                                                                <rect key="frame" x="0.0" y="89" width="350" height="569"/>
-                                                            </stackView>
-                                                        </subviews>
-                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <edgeInsets key="layoutMargins" top="16" left="0.0" bottom="16" right="0.0"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IaC-9m-gQn" userLabel="title" customClass="TransHeadingLabel" customModule="Stopp_Corona" customModuleProvider="target">
+                                                        <rect key="frame" x="16" y="16" width="350" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
                                                         <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="overrideVertMarginMulti">
-                                                                <real key="value" value="1"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="overrideSpacingMulti">
-                                                                <real key="value" value="1"/>
-                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="covid_statistics_legend_title"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="h1b"/>
                                                         </userDefinedRuntimeAttributes>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fUl-VE-Vc4" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
+                                                        <rect key="frame" x="16" y="68.5" width="350" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="body"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="covid_statistics_legend_description"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </label>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" placeholderIntrinsicWidth="350" placeholderIntrinsicHeight="50" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="unu-Qm-W6f">
+                                                        <rect key="frame" x="16" y="121" width="350" height="50"/>
                                                     </stackView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qrv-LS-Tqp" customClass="PrimaryButton" customModule="Stopp_Corona" customModuleProvider="target">
                                                         <rect key="frame" x="16" y="427" width="350" height="56"/>
@@ -80,15 +65,29 @@
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" name="ccWhiteGrey"/>
-                                                <edgeInsets key="layoutMargins" top="8" left="16" bottom="16" right="16"/>
-                                            </stackView>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="qrv-LS-Tqp" secondAttribute="trailing" constant="16" id="HIu-4C-p53"/>
+                                                    <constraint firstItem="unu-Qm-W6f" firstAttribute="trailing" secondItem="IaC-9m-gQn" secondAttribute="trailing" id="Igb-7D-n2s"/>
+                                                    <constraint firstItem="fUl-VE-Vc4" firstAttribute="leading" secondItem="IaC-9m-gQn" secondAttribute="leading" id="MNE-NR-52j"/>
+                                                    <constraint firstItem="fUl-VE-Vc4" firstAttribute="top" secondItem="IaC-9m-gQn" secondAttribute="bottom" constant="32" id="Ny5-r7-Izu"/>
+                                                    <constraint firstItem="unu-Qm-W6f" firstAttribute="top" secondItem="fUl-VE-Vc4" secondAttribute="bottom" constant="32" id="Q35-24-eGG"/>
+                                                    <constraint firstItem="IaC-9m-gQn" firstAttribute="top" secondItem="1V8-qr-xil" secondAttribute="top" constant="16" id="XRf-dZ-4Qp"/>
+                                                    <constraint firstItem="qrv-LS-Tqp" firstAttribute="leading" secondItem="1V8-qr-xil" secondAttribute="leading" constant="16" id="ckb-hI-NhO"/>
+                                                    <constraint firstItem="fUl-VE-Vc4" firstAttribute="trailing" secondItem="IaC-9m-gQn" secondAttribute="trailing" id="fcl-Nx-UaP"/>
+                                                    <constraint firstAttribute="trailing" secondItem="IaC-9m-gQn" secondAttribute="trailing" constant="16" id="guD-7x-HZo"/>
+                                                    <constraint firstItem="IaC-9m-gQn" firstAttribute="leading" secondItem="1V8-qr-xil" secondAttribute="leading" constant="16" id="iLW-Zd-dKw"/>
+                                                    <constraint firstItem="qrv-LS-Tqp" firstAttribute="top" relation="greaterThanOrEqual" secondItem="unu-Qm-W6f" secondAttribute="bottom" constant="16" id="qWw-TZ-dJj"/>
+                                                    <constraint firstItem="unu-Qm-W6f" firstAttribute="leading" secondItem="IaC-9m-gQn" secondAttribute="leading" id="qlQ-pT-zq5"/>
+                                                    <constraint firstAttribute="bottom" secondItem="qrv-LS-Tqp" secondAttribute="bottom" constant="16" id="xlO-a0-pBb"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="G1H-Uu-2ez" secondAttribute="trailing" id="Ac3-c4-aSf"/>
-                                            <constraint firstAttribute="bottom" secondItem="G1H-Uu-2ez" secondAttribute="bottom" id="HaQ-va-j59"/>
-                                            <constraint firstItem="G1H-Uu-2ez" firstAttribute="leading" secondItem="PdH-9r-CFt" secondAttribute="leading" id="Tr1-xv-nx5"/>
-                                            <constraint firstItem="G1H-Uu-2ez" firstAttribute="top" secondItem="PdH-9r-CFt" secondAttribute="top" id="rvw-LI-pmY"/>
+                                            <constraint firstAttribute="bottom" secondItem="1V8-qr-xil" secondAttribute="bottom" id="2fU-2T-XmT"/>
+                                            <constraint firstItem="1V8-qr-xil" firstAttribute="top" secondItem="PdH-9r-CFt" secondAttribute="top" id="EBL-8a-HBn"/>
+                                            <constraint firstItem="1V8-qr-xil" firstAttribute="leading" secondItem="PdH-9r-CFt" secondAttribute="leading" id="boX-K1-bcY"/>
+                                            <constraint firstAttribute="trailing" secondItem="1V8-qr-xil" secondAttribute="trailing" id="yUF-3T-d9E"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">

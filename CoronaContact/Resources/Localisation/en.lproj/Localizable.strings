@@ -618,7 +618,7 @@
 "covid_statistics_increment_negative"                                        = "downward";
 "covid_statistics_increment_no_changes"                                      = "No changes";
 "covid_statistics_legend_title"                                              = "7-day incidence: by thresholds";
-"covid_statistics_legend_descreption"                                        = "The color coding of the individual districts shows their 7-day incidence according to fixed threshold values. In this way you can see directly which districts currently have a very high or low value.";
+"covid_statistics_legend_description"                                        = "The color coding of the individual districts shows their 7-day incidence according to fixed threshold values. This way you can see directly which districts currently have a very high or low value.";
 "covid_statistics_legend_no_changes"                                         = "0 / No changes";
 "covid_statistics_legend_under_one_hundred"                                  = "< 100 new cases";
 "covid_statistics_legend_above_one_hundred"                                  = "≥ 100 new cases";

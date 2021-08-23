@@ -617,7 +617,7 @@
 "covid_statistics_increment_negative"                                        = "nach unten";
 "covid_statistics_increment_no_changes"                                      = "Keine Veränderung";
 "covid_statistics_legend_title"                                              = "7 Tage-Inzidenz: nach Schwellenwerten";
-"covid_statistics_legend_descreption"                                        = "Die farbliche Markierung der einzelnen Bezirke zeigt deren 7-Tage-Inzidenz nach unveränderlichen Schwellenwerten. So erkennen Sie direkt, welche Bezirke derzeit einen sehr hohen oder niedrigen Wert haben.";
+"covid_statistics_legend_description"                                        = "Die farbliche Markierung der einzelnen Bezirke zeigt deren 7-Tage-Inzidenz nach unveränderlichen Schwellenwerten. So erkennen Sie direkt, welche Bezirke derzeit einen sehr hohen oder niedrigen Wert haben.";
 "covid_statistics_legend_no_changes"                                         = "0 / Keine Veränderung";
 "covid_statistics_legend_under_one_hundred"                                  = "< 100 neue Fälle";
 "covid_statistics_legend_above_one_hundred"                                  = "≥ 100 neue Fälle";
