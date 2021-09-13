@@ -95,7 +95,7 @@ extension Date {
         let maxLength = (Locale.current.languageCode == englishLanguageCode ? "01st" : "01.").count
 
         guard let day = Int(dayFormatter.string(from: self)),
-              let dayString = numberFormatter.string(from: NSNumber(value: day - 5)),
+              let dayString = numberFormatter.string(from: NSNumber(value: day)),
               let dayWithPadding = dayString.leftPadding(toLength: maxLength, withPad: "0") else {
             return ""
         }
