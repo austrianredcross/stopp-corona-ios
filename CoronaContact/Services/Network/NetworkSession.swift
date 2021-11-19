@@ -24,4 +24,8 @@ class NetworkSession {
             return Alamofire.Session(configuration: configuration, serverTrustManager: trustManager)
         #endif
     }
+    
+    static func openSession() -> Alamofire.Session {
+        return Alamofire.Session.default
+    }
 }
