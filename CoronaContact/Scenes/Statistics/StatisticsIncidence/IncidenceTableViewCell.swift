@@ -31,8 +31,8 @@ class IncidenceTableViewCell: UITableViewCell, ViewModelBased {
         guard let viewModel = viewModel else { return }
         
         incidenceTitle.styleName = StyleNames.body.rawValue
-        incidenceValue.styleName = StyleNames.bold.rawValue
-        incidenceIncrementValue.styleName = StyleNames.body.rawValue
+        incidenceValue.styleName = StyleNames.boldCenter.rawValue
+        incidenceIncrementValue.styleName = StyleNames.bodyCenter.rawValue
         
         incidenceColor.backgroundColor = viewModel.incidenceState.color
         
