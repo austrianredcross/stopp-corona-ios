@@ -47,6 +47,7 @@ final class MainViewController: UIViewController, StoryboardBased, ViewModelBase
     @IBOutlet var incidenceComparisonLabel: TransLabel!
     @IBOutlet var agesErrorStackView: UIStackView!
     @IBOutlet var agesIncidenceStackView: UIStackView!
+    @IBOutlet weak var agesLoadingView: UIActivityIndicatorView!
     
     var isloaded = false
     
@@ -150,20 +151,34 @@ final class MainViewController: UIViewController, StoryboardBased, ViewModelBase
         
         covidIncidencesTableView.reloadData()
         covidIncidencesTableView.layoutIfNeeded()
+                
+        agesLoadingView.startAnimating()
         
-        guard let lastDate = viewModel.agesRepository.lastDate?.shortDayShortMonth,
-           let penultimateDate = viewModel.agesRepository.penultimateDate?.shortDayShortMonth else  {
+        if viewModel.agesRepository.isDataLoading {
+            agesLoadingView.isHidden = false
             agesIncidenceStackView.isHidden = true
-            agesErrorStackView.isHidden = false
-            return
+            agesErrorStackView.isHidden = true
+        } else {
+            
+            agesLoadingView.stopAnimating()
+            
+            guard let lastDate = viewModel.agesRepository.lastDate?.shortDayShortMonth,
+                  let penultimateDate = viewModel.agesRepository.penultimateDate?.shortDayShortMonth else {
+                
+                agesIncidenceStackView.isHidden = true
+                agesErrorStackView.isHidden = false
+                agesLoadingView.isHidden = true
+                return
+            }
+            
+            incidenceComparisonLabel.styledText = String(format: "main_covid_statistics_comparison".localized, lastDate, penultimateDate)
+            
+            covidIncidencesTableViewHeightConstraint.constant = covidIncidencesTableView.contentSize.height
+            
+            agesLoadingView.isHidden = true
+            agesIncidenceStackView.isHidden = false
+            agesErrorStackView.isHidden = true
         }
-        
-        incidenceComparisonLabel.styledText = String(format: "main_covid_statistics_comparison".localized, lastDate, penultimateDate)
-        
-        covidIncidencesTableViewHeightConstraint.constant = covidIncidencesTableView.contentSize.height
-        
-        agesIncidenceStackView.isHidden = false
-        agesErrorStackView.isHidden = true
     }
     
     func showError(with error: Error) {

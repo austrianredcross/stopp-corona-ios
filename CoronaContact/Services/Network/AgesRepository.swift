@@ -26,6 +26,7 @@ class AGESRepository {
     // Can be nil if the Dates we get from AGES are invalid
     var lastDate: Date?
     var penultimateDate: Date?
+    var isDataLoading = false
     
     init() {
         $covidStatistics.subscribe { [weak self] _ in
@@ -37,14 +38,20 @@ class AGESRepository {
     }
     
     func fetchStatistics() {
+        isDataLoading = true
+        
         networkService.downloadCovidStatistics { [weak self] result in
             guard let self = self else { return }
             switch result {
             case let .success(response):
+                self.isDataLoading = false
+
                 self.setDatesForComparison(with: response)
                 self.localStorage.latestAGESDownload = self.covidStatistics?.creationDate
 
             case .failure(let error):
+                self.isDataLoading = false
+
                 self.showError?(error)
             }
         }

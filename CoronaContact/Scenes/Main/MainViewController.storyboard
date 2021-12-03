@@ -301,6 +301,10 @@
                                                                             <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="main_covid_statistics_title"/>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </label>
+                                                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="jXp-C4-95s">
+                                                                        <rect key="frame" x="24" y="84.5" width="366" height="20"/>
+                                                                        <color key="color" name="ccRedButton"/>
+                                                                    </activityIndicatorView>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Fet-Hd-dqf">
                                                                         <rect key="frame" x="24" y="84.5" width="366" height="20.5"/>
                                                                         <subviews>
@@ -903,6 +907,7 @@
                     <connections>
                         <outlet property="agesErrorStackView" destination="Fet-Hd-dqf" id="zTZ-vC-b1j"/>
                         <outlet property="agesIncidenceStackView" destination="9RN-qq-f1R" id="bcB-5R-E0t"/>
+                        <outlet property="agesLoadingView" destination="jXp-C4-95s" id="e4o-7Z-K5v"/>
                         <outlet property="automaticHandShakeInfoStackView" destination="3Jm-vF-f9F" id="VY6-FV-kd6"/>
                         <outlet property="automaticHandshakeActiveView" destination="voS-OA-tvG" id="Usk-cS-T4j"/>
                         <outlet property="automaticHandshakeAnimationView" destination="d6X-BX-wfs" id="hEb-yc-3aH"/>
@@ -958,6 +963,9 @@
         </namedColor>
         <namedColor name="ccDarkModeBorder">
             <color red="0.95686274509803926" green="0.95686274509803926" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ccRedButton">
+            <color red="0.72549019607843135" green="0.074509803921568626" blue="0.10588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="ccRouge">
             <color red="0.72549019607843135" green="0.074509803921568626" blue="0.10588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
