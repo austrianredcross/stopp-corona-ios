@@ -17,7 +17,6 @@ final class NetworkClient {
     var handleStatusCode: ((Int) -> Void)?
 
     private let provider = MoyaProvider<NetworkEndpoint>(session: NetworkSession.session())
-    private let openProvider = MoyaProvider<NetworkEndpoint>(session: NetworkSession.openSession())
 
     private let log = LoggingService.self
 
@@ -61,57 +60,46 @@ final class NetworkClient {
     @discardableResult
     func request<Payload: Decodable>(_ target: NetworkEndpoint, completion: @escaping (Result<Payload, NetworkError>) -> Void) -> Cancellable {
         
-        switch target {
-        case .covidStatistics:
-            return openProvider.request(target) { [weak self] result in
-                self?.resolveResult(client: self, result: result, completion: completion)
-            }
-        default:
-            return provider.request(target) { [weak self] result in
-                self?.resolveResult(client: self, result: result, completion: completion)
-            }
-        }
-    }
-    
-    func resolveResult<Payload: Decodable>(client: NetworkClient?, result: Result<Response, MoyaError>, completion: @escaping (Result<Payload, NetworkError>) -> Void) {
-        switch result {
-        case let .success(response):
-
-            client?.handleStatusCode?(response.statusCode)
-
-            do {
-                let filteredResponse = try response.filterSuccessfulStatusCodes()
-                completion(.success(try filteredResponse.parseJSON()))
-                client?.log.verbose(response.detailedDebugDescription, context: .network)
-
-            } catch {
-                if let error = error as? DecodingError {
-                    client?.log.error("\(response.detailedDebugDescription) DecodingError: \(error)", context: .network)
-                    completion(.failure(.parsingError(error)))
-                    return
+        return provider.request(target) { [weak self] result in
+            switch result {
+            case let .success(response):
+                
+                self?.handleStatusCode?(response.statusCode)
+                
+                do {
+                    let filteredResponse = try response.filterSuccessfulStatusCodes()
+                    completion(.success(try filteredResponse.parseJSON()))
+                    self?.log.verbose(response.detailedDebugDescription, context: .network)
+                    
+                } catch {
+                    if let error = error as? DecodingError {
+                        self?.log.error("\(response.detailedDebugDescription) DecodingError: \(error)", context: .network)
+                        completion(.failure(.parsingError(error)))
+                        return
+                    }
+                    
+                    let statusCode = HTTPStatusCode(statusCode: response.statusCode)
+                    if statusCode == .notModified {
+                        completion(.failure(.notModifiedError))
+                        return
+                    }
+                    
+                    let errorResponse = response.parseError()
+                    
+                    completion(.failure(.unknownError(statusCode, error, errorResponse)))
+                    let text = String(data: response.data, encoding: .utf8)
+                    self?.log.error("\(response.detailedDebugDescription) data: \(text ?? "<no response data>")", context: .network)
                 }
-
-                let statusCode = HTTPStatusCode(statusCode: response.statusCode)
-                if statusCode == .notModified {
-                    completion(.failure(.notModifiedError))
-                    return
-                }
-
-                let errorResponse = response.parseError()
-
+                
+            case let .failure(error):
+                self?.log.error(error.detailedDebugDescription, context: .network)
+                self?.handleStatusCode?(error.errorCode)
+                
+                let errorResponse = error.response?.parseError()
+                let statusCode = HTTPStatusCode(statusCode: error.errorCode)
+                
                 completion(.failure(.unknownError(statusCode, error, errorResponse)))
-                let text = String(data: response.data, encoding: .utf8)
-                client?.log.error("\(response.detailedDebugDescription) data: \(text ?? "<no response data>")", context: .network)
             }
-
-        case let .failure(error):
-            client?.log.error(error.detailedDebugDescription, context: .network)
-            client?.handleStatusCode?(error.errorCode)
-
-            let errorResponse = error.response?.parseError()
-            let statusCode = HTTPStatusCode(statusCode: error.errorCode)
-
-            completion(.failure(.unknownError(statusCode, error, errorResponse)))
         }
     }
 }

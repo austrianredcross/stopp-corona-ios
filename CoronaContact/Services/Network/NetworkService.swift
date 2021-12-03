@@ -83,6 +83,26 @@ final class NetworkService {
     }
     
     func downloadCovidStatistics(completion: @escaping (Result<CovidStatistics, NetworkError>) -> Void) {
-        client.request(.covidStatistics, completion: completion)
+        guard let url = URL(string: "\(NetworkEndpoint.covidStatistics.baseURL)\(NetworkEndpoint.covidStatistics.path)") else {
+            completion(.failure(NetworkError.parsingError(URLError(.badURL))))
+            return }
+        
+        do {
+            try NetworkSession.backgroundSession(url: url, completion: { url in
+                if let string = try? String(contentsOf: url) {
+                    do {
+                        guard let data = string.data(using: .utf8) else { return }
+                        let covidStatistics = try JSONDecoder().decode(CovidStatistics.self, from: data)
+                        
+                        completion(.success(covidStatistics))
+                    } catch {
+                        completion(.failure(NetworkError.parsingError(error)))
+                    }
+                }
+            })
+        } catch {
+            completion(.failure(NetworkError.parsingError(error)))
+            
+        }
     }
 }
