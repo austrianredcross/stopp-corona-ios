@@ -80,9 +80,9 @@
 "Start Screen Notification (Contact status)"                                 = "";
 "contact_health_status_headline"                                             = "Attention";
 "contact_health_status_red_warning_description"                              = "A <b>corona infection</b> has been detected in one or more of your contacts.";
-"contact_health_status_red_warning_date_text"                                = "Please monitor your state of health <b>until %@</b>.";
+"contact_health_status_red_warning_date_text"                                = "Please go into quarantine <b>until %@</b>.";
 "contact_health_status_yellow_warning_description"                           = "One or more of your contacts were found to have a <b>suspected corona infection</b>.";
-"contact_health_status_yellow_warning_date_text"                             = "Please monitor <b> to%@ </b> your state of health.";
+"contact_health_status_yellow_warning_date_text"                             = "Please monitor your state of health <b>until %@</b>.";
 "contact_health_status_mixed_warning_description"                            = "A <b>corona infection</b> has been detected in one or more of your contacts.\nPlease go into quarantine <b>until %@</b>.\n\nOne or more of your contacts were found to have a <b>suspected corona infection</b>.";
 "contact_health_status_quarantine_days_button"                               = "What should I do?";
 "health_status_red_warning_single_contact_headline"                          = "Attention";
@@ -122,9 +122,9 @@
 "contact_sickness_guidelines_sixth"                                          = "Ask your neighbors or relatives to take care of you. If that is not possible, the <b>Team Austria</b> will be happy to help you on <tel>0800 600 600</tel>.";
 "contact_sickness_guidelines_consulting_headline"                            = "<b>Do you need psychological support?</b>";
 "contact_sickness_guidelines_consulting_description"                         = "Contact your general practitioner or one of the following numbers:";
-"contact_sickness_guidelines_consulting_first"                               = "<b>Ö3 Kummernummer</b> <tel>116123</tel>";
-"contact_sickness_guidelines_consulting_second"                              = "<b>Rat auf Draht</b> <tel>147</tel>";
-"contact_sickness_guidelines_consulting_third"                               = "<b>Pastoral advice service</b> <tel>142</tel>";
+"contact_sickness_guidelines_consulting_first"                               = "Ö3 Kummernummer <tel>116123</tel>";
+"contact_sickness_guidelines_consulting_second"                              = "Rat auf Draht <tel>147</tel>";
+"contact_sickness_guidelines_consulting_third"                               = "Pastoral advice service <tel>142</tel>";
 "contact_sickness_handshake_date"                                            = "%1$@, between %2$@ and %3$@ o`clock";
 "contact_sickness_time_format"                                               = "H";
 "contact_sickness_warning_title"                                             = "What should I do?";
@@ -270,11 +270,10 @@
 "sickness_certificate_quarantine_guidelines_steps_headline"                  = "Please stay in quarantine!";
 "sickness_certificate_quarantine_guidelines_steps_quarantine_end"            = "Your doctor will decide when you can end the quarantine.";
 "sickness_certificate_quarantine_guidelines_steps_no_public_transport"       = "Please do not use public transport on the way and avoid contact with other people.";
-"sickness_certificate_quarantine_guidelines_steps_first"                     = "<b>Avoid up to %@ personal contacts</b> and keep your distance from other people.";
-"sickness_certificate_quarantine_guidelines_steps_second"                    = "Do a <b>PCR test after 5 days.</b>";
-"sickness_certificate_quarantine_guidelines_steps_third"                     = "Monitor your health and <b>check your body temperature twice a day</b>.\nIf you develop <b>symptoms</b> (fever, cough, shortness of breath, difficulty breathing), stay at home and call <b>health number</b> <tel>1450</tel>";
-"sickness_certificate_quarantine_guidelines_steps_fourth"                    = "You can ask neighbors or family members to take care of your needs. If that is not possible, the <b>Team Austria</b> will be happy to help you on <tel>0800 600 600</tel>.";
-"sickness_certificate_quarantine_guidelines_steps_fifth"                     = "If you have general questions about Covid-19, you can contact the AGES <b>coronavirus hotline</b> at <tel>0800 555 621</tel>.";
+"sickness_certificate_quarantine_guidelines_steps_first"                     = "<b>Please quarantine yourself immediately until you are healthy again.</b> Avoid public transport and contact with other people on the way home.";
+"sickness_certificate_quarantine_guidelines_steps_second"                    = "<b>Keep a physical distance</b> from healthy roommates.";
+"sickness_certificate_quarantine_guidelines_steps_third"                     = "Monitor your health and <b>check your body temperature twice a day</b>.";
+"sickness_certificate_quarantine_guidelines_steps_fourth"                    = "Ask your neighbors or relatives to take care of you. If that is not possible, the <b>Team Österreich</b> will be happy to help you on <tel>0800 600 600</tel>.";
 "sickness_certificate_quarantine_guidelines_consulting_description"          = "<b>Do you need psychological support?</b>\n\nPlease contact your attending physician or one of the following numbers:";
 "sickness_certificate_quarantine_guidelines_consulting_first"                = "Ö3 Kummernummer <tel>116123</tel>";
 "sickness_certificate_quarantine_guidelines_consulting_second"               = "Rat auf Draht <tel>147</tel>";
@@ -286,7 +285,7 @@
 "quarantine_guidelines_third"                                                = "Please keep a <b>sufficient distance from other people</b> and wear a face mask, especially indoors.";
 "quarantine_guidelines_fourth"                                               = "If you develop a fever, cough or have difficulty breathing, please call the <b>Corona hotline</b> at <tel>1450</tel> or your general practitioner immediately.";
 "quarantine_guidelines_phone_headline"                                       = "You need help urgently?";
-"quarantine_guidelines_phone_description"                                    = "If you feel that you cannot manage at home, you cannot breathe or you are seriously ill, please contact the following numbers:";
+"quarantine_guidelines_phone_description"                                    = "If you feel that you cannot manage at home, you cannot breathe or you are seriously ill, please contact the following numbers::";
 "quarantine_guidelines_phone_emergency_label"                                = "Medical emergency service";
 "quarantine_guidelines_phone_emergency_number"                               = "<tel>141</tel>";
 "quarantine_guidelines_phone_ambulance_label"                                = "Ambulance";
@@ -398,7 +397,7 @@
 "self_testing_confirmation_next_steps_description"                           = "If you are older than 65 and / or suffer from at least one of the following illnesses, please call 1450 or your attending physician to discuss the further procedure:\n\n• Badly adjusted high blood pressure \n• Insulin-dependent diabetes and poor general condition \n• Pronounced obesity \n• Circulatory disorders of the heart, cardiac insufficiency requiring therapy \n• COPD in advanced stages \n• Kidney disease (subject to dialysis) \n• high level immunosuppression\n\nPlease inform your doctor or the hospital by phone so that you\n\n • can be tested for coronavirus \n • can get Medical treatment\n\nIf this is not possible, please call this number: <tel>1450</tel>\n\n<b>Please stay at home.</b>\nPlease read the quarantine guidelines.";
 "self_testing_confirmation_next_steps_button"                                = "Quarantine guidelines";
 "self_testing_confirmation_consulting_headline"                              = "You need help urgently?";
-"self_testing_confirmation_consulting_description"                           = "If you feel that you cannot manage at home, you cannot breathe or you are seriously ill, please contact the following numbers:";
+"self_testing_confirmation_consulting_description"                           = "If you feel that you cannot manage at home, you cannot breathe or you are seriously ill, please contact the following numbers::";
 "self_testing_confirmation_phone_emergency_label"                            = "Medical emergency service";
 "self_testing_confirmation_phone_emergency_number"                           = "<tel>141</tel>";
 "self_testing_confirmation_phone_ambulance_label"                            = "Ambulance";
@@ -440,7 +439,7 @@
 "suspicion_guidelines_precaution_fifth"                                      = "Monitor your health and <b>check your body temperature twice a day</b>.";
 "suspicion_guidelines_precaution_sixth"                                      = "Ask neighbors or relatives to take care of you. If this is not possible, the <b>Team Austria</b> will be happy to help you at:<tel>0800 600 600</tel>";
 "suspicion_guidelines_consulting_headline"                                   = "You need help urgently?";
-"suspicion_guidelines_consulting_description"                                = "If you feel that you cannot manage at home, you cannot breathe or you are seriously ill, please contact the following numbers:";
+"suspicion_guidelines_consulting_description"                                = "If you feel that you cannot manage at home, you cannot breathe or you are seriously ill, please contact the following numbers::";
 "suspicion_guidelines_phone_emergency_label"                                 = "Medical emergency service";
 "suspicion_guidelines_phone_emergency_number"                                = "141";
 "suspicion_guidelines_phone_ambulance_label"                                 = "Ambulance";
@@ -597,8 +596,6 @@
 "diary_time_format"                                                          = "HH:mm";
 "diary_date_format"                                                          = "EEEE dd.MM.yyyy";
 "start_menu_item_diary"                                                      = "Contact diary";
-"contact_sickness_guidelines_medical_emergency_service"                      = "<b>Medical emergency service</b> <tel>141</tel>";
-"contact_sickness_guidelines_ambulance"                                      = "<b>Ambulance</b> <tel>144</tel>";
 "main_covid_statistics_title"                                                = "7-day incidence: by thresholds";
 "main_covid_statistics_comparison"                                           = "As of %s, compared to %s";
 "main_covid_statistics_expanded_collapsed_state_button"                      = "Figures from individual states";
