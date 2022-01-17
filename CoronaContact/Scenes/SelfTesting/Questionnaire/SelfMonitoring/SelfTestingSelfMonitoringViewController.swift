@@ -37,9 +37,9 @@ final class SelfTestingSelfMonitoringViewController: UIViewController, Storyboar
 
     private func setupUI() {
         instructionsView.instructions = [
-            .init(index: 1, text: "self_testing_self_monitoring_recommendation_1".localized),
-            .init(index: 2, text: "self_testing_self_monitoring_recommendation_2".localized),
-            .init(index: 3, text: "self_testing_self_monitoring_recommendation_3".localized),
+            .init(index: 1, text: "self_testing_self_monitoring_recommendation_1".localized, instructionIcon: InstructionIcons.thermometer),
+            .init(index: 2, text: "self_testing_self_monitoring_recommendation_2".localized, instructionIcon: InstructionIcons.pcr),
+            .init(index: 3, text: "self_testing_self_monitoring_recommendation_3".localized, instructionIcon: InstructionIcons.distance),
         ]
         
         selfTestingView.accessibilityElements = [selfTestingResultLabel, selfTestingSelfMonitoringHeadlineLabel]

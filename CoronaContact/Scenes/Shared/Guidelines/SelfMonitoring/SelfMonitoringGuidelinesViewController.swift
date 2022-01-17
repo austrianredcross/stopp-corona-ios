@@ -36,9 +36,9 @@ final class SelfMonitoringGuidelinesViewController: UIViewController, Storyboard
         title = "self_monitoring_guidelines_title".localized
 
         instructionsView.instructions = [
-            .init(index: 1, text: "self_monitoring_guidelines_next_steps_first".localized),
-            .init(index: 2, text: "self_monitoring_guidelines_next_steps_second".localized),
-            .init(index: 3, text: "self_monitoring_guidelines_next_steps_third".localized),
+            .init(index: 1, text: "self_monitoring_guidelines_next_steps_first".localized, instructionIcon: InstructionIcons.thermometer),
+            .init(index: 2, text: "self_monitoring_guidelines_next_steps_second".localized, instructionIcon: InstructionIcons.pcr),
+            .init(index: 3, text: "self_monitoring_guidelines_next_steps_third".localized, instructionIcon: InstructionIcons.distance),
         ]
 
         if let date = viewModel?.dateLabel {

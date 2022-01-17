@@ -59,15 +59,15 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="KiL-HQ-Gda">
-                                                <rect key="frame" x="0.0" y="41" width="414" height="1143.5"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="KiL-HQ-Gda">
+                                                <rect key="frame" x="0.0" y="41" width="414" height="1553.5"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iaN-XW-okT">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="724.5"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" placeholderIntrinsicWidth="374" placeholderIntrinsicHeight="500" translatesAutoresizingMaskIntoConstraints="NO" id="zc1-8m-hoa" customClass="InstructionsView" customModule="Stopp_Corona" customModuleProvider="target">
                                                                 <rect key="frame" x="8" y="12" width="374" height="678.5"/>
-                                                                <color key="backgroundColor" name="ccWhite"/>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="color" keyPath="bubbleColor">
                                                                         <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -75,7 +75,7 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                         </subviews>
-                                                        <color key="backgroundColor" name="ccWhite"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstItem="zc1-8m-hoa" firstAttribute="top" secondItem="iaN-XW-okT" secondAttribute="top" constant="12" id="BqV-F4-ugW"/>
                                                             <constraint firstItem="zc1-8m-hoa" firstAttribute="leading" secondItem="iaN-XW-okT" secondAttribute="leading" constant="8" id="ctV-q2-kUx"/>
@@ -83,8 +83,94 @@
                                                             <constraint firstAttribute="bottom" secondItem="zc1-8m-hoa" secondAttribute="bottom" constant="34" id="tT1-kR-zgd"/>
                                                         </constraints>
                                                     </view>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="bB2-0E-PuO">
+                                                        <rect key="frame" x="0.0" y="754.5" width="414" height="350"/>
+                                                        <subviews>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oYh-fY-F0X">
+                                                                <rect key="frame" x="0.0" y="0.0" width="414" height="106"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="quarantine_guidelines_phone_headline" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vv7-fB-CfR" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                        <rect key="frame" x="24" y="30" width="366" height="31.5"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="h2"/>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="quarantine_guidelines_phone_headline"/>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="quarantine_guidelines_phone_description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k9F-3S-wrq" customClass="TransLabel" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                        <rect key="frame" x="24" y="69.5" width="366" height="20.5"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="body"/>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="quarantine_guidelines_phone_description"/>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                    </label>
+                                                                </subviews>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <constraints>
+                                                                    <constraint firstItem="k9F-3S-wrq" firstAttribute="leading" secondItem="oYh-fY-F0X" secondAttribute="leading" constant="24" id="8an-MT-Sa4"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="k9F-3S-wrq" secondAttribute="bottom" constant="16" id="Swo-1v-IgM"/>
+                                                                    <constraint firstItem="vv7-fB-CfR" firstAttribute="top" secondItem="oYh-fY-F0X" secondAttribute="top" constant="30" id="XIm-kE-3yE"/>
+                                                                    <constraint firstItem="k9F-3S-wrq" firstAttribute="top" secondItem="vv7-fB-CfR" secondAttribute="bottom" constant="8" id="adi-Hj-6n8"/>
+                                                                    <constraint firstItem="vv7-fB-CfR" firstAttribute="leading" secondItem="oYh-fY-F0X" secondAttribute="leading" constant="24" id="bdU-Cf-kqd"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="vv7-fB-CfR" secondAttribute="trailing" constant="24" id="c45-nj-ejT"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="k9F-3S-wrq" secondAttribute="trailing" constant="24" id="tU0-AT-Cua"/>
+                                                                </constraints>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7C4-2v-EZl">
+                                                                <rect key="frame" x="0.0" y="106" width="414" height="122"/>
+                                                                <subviews>
+                                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="366" placeholderIntrinsicHeight="25" text="contact_sickness_guidelines_consulting_third" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fs2-Ul-jmi" customClass="PhoneNumberTextView" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                        <rect key="frame" x="24" y="8" width="366" height="106"/>
+                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <color key="textColor" systemColor="labelColor"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="body"/>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="contact_sickness_guidelines_medical_emergency_service"/>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                    </textView>
+                                                                </subviews>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="trailing" secondItem="fs2-Ul-jmi" secondAttribute="trailing" constant="24" id="3FC-Gv-ba6"/>
+                                                                    <constraint firstItem="fs2-Ul-jmi" firstAttribute="top" secondItem="7C4-2v-EZl" secondAttribute="top" constant="8" id="TuJ-T1-SnA"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="fs2-Ul-jmi" secondAttribute="bottom" constant="8" id="fKJ-Xw-ceA"/>
+                                                                    <constraint firstItem="fs2-Ul-jmi" firstAttribute="leading" secondItem="7C4-2v-EZl" secondAttribute="leading" constant="24" id="sg0-QP-YJH"/>
+                                                                </constraints>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LIQ-dJ-6ot">
+                                                                <rect key="frame" x="0.0" y="228" width="414" height="122"/>
+                                                                <subviews>
+                                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="366" placeholderIntrinsicHeight="25" text="contact_sickness_guidelines_consulting_third" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fCK-hP-aNL" customClass="PhoneNumberTextView" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                        <rect key="frame" x="24" y="8" width="366" height="98"/>
+                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <color key="textColor" systemColor="labelColor"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="body"/>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="transKey" value="contact_sickness_guidelines_ambulance"/>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                    </textView>
+                                                                </subviews>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <constraints>
+                                                                    <constraint firstItem="fCK-hP-aNL" firstAttribute="top" secondItem="LIQ-dJ-6ot" secondAttribute="top" constant="8" id="BYr-fq-b9o"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="fCK-hP-aNL" secondAttribute="trailing" constant="24" id="ahc-rJ-0mc"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="fCK-hP-aNL" secondAttribute="bottom" constant="16" id="p2c-wJ-TN8"/>
+                                                                    <constraint firstItem="fCK-hP-aNL" firstAttribute="leading" secondItem="LIQ-dJ-6ot" secondAttribute="leading" constant="24" id="qvK-Hc-CMs"/>
+                                                                </constraints>
+                                                            </view>
+                                                        </subviews>
+                                                    </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Pv8-OX-avK">
-                                                        <rect key="frame" x="0.0" y="724.5" width="414" height="419"/>
+                                                        <rect key="frame" x="0.0" y="1134.5" width="414" height="419"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aZn-Tq-hlf">
                                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="87"/>
@@ -145,11 +231,11 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </textView>
                                                                 </subviews>
-                                                                <color key="backgroundColor" name="ccWhite"/>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="bottom" secondItem="kzK-e7-PPo" secondAttribute="bottom" constant="16" id="82z-K9-3TU"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="kzK-e7-PPo" secondAttribute="bottom" constant="8" id="82z-K9-3TU"/>
                                                                     <constraint firstItem="kzK-e7-PPo" firstAttribute="leading" secondItem="ll8-cM-am1" secondAttribute="leading" constant="24" id="J8S-ea-IX1"/>
-                                                                    <constraint firstItem="kzK-e7-PPo" firstAttribute="top" secondItem="ll8-cM-am1" secondAttribute="top" constant="16" id="Rso-1g-g6e"/>
+                                                                    <constraint firstItem="kzK-e7-PPo" firstAttribute="top" secondItem="ll8-cM-am1" secondAttribute="top" constant="8" id="Rso-1g-g6e"/>
                                                                     <constraint firstAttribute="trailing" secondItem="kzK-e7-PPo" secondAttribute="trailing" constant="24" id="Xkh-yU-9kS"/>
                                                                 </constraints>
                                                             </view>
@@ -171,8 +257,8 @@
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="trailing" secondItem="Y6c-R5-rYS" secondAttribute="trailing" constant="24" id="C2T-2B-KY5"/>
-                                                                    <constraint firstItem="Y6c-R5-rYS" firstAttribute="top" secondItem="zza-sI-68j" secondAttribute="top" constant="16" id="g35-6I-L4e"/>
-                                                                    <constraint firstAttribute="bottom" secondItem="Y6c-R5-rYS" secondAttribute="bottom" constant="16" id="ozA-Nr-gEu"/>
+                                                                    <constraint firstItem="Y6c-R5-rYS" firstAttribute="top" secondItem="zza-sI-68j" secondAttribute="top" constant="8" id="g35-6I-L4e"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="Y6c-R5-rYS" secondAttribute="bottom" constant="8" id="ozA-Nr-gEu"/>
                                                                     <constraint firstItem="Y6c-R5-rYS" firstAttribute="leading" secondItem="zza-sI-68j" secondAttribute="leading" constant="24" id="zUb-W1-sx8"/>
                                                                 </constraints>
                                                             </view>
@@ -191,17 +277,18 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </textView>
                                                                 </subviews>
-                                                                <color key="backgroundColor" name="ccWhite"/>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstItem="URH-Hx-9fR" firstAttribute="leading" secondItem="83f-qf-mvM" secondAttribute="leading" constant="24" id="VOb-Ps-iZy"/>
                                                                     <constraint firstAttribute="trailing" secondItem="URH-Hx-9fR" secondAttribute="trailing" constant="24" id="cLS-ox-AxH"/>
                                                                     <constraint firstAttribute="bottom" secondItem="URH-Hx-9fR" secondAttribute="bottom" constant="16" id="nA7-fh-IYW"/>
-                                                                    <constraint firstItem="URH-Hx-9fR" firstAttribute="top" secondItem="83f-qf-mvM" secondAttribute="top" constant="16" id="qXf-jX-9Kx"/>
+                                                                    <constraint firstItem="URH-Hx-9fR" firstAttribute="top" secondItem="83f-qf-mvM" secondAttribute="top" constant="8" id="qXf-jX-9Kx"/>
                                                                 </constraints>
                                                             </view>
                                                         </subviews>
                                                     </stackView>
                                                 </subviews>
+                                                <color key="backgroundColor" name="ccWhite"/>
                                             </stackView>
                                         </subviews>
                                     </stackView>

@@ -5,13 +5,28 @@
 
 import UIKit
 
+enum InstructionIcons: String {
+    case none = ""
+    case distance = "instruction_distance"
+    case doctor = "instruction_doctor"
+    case house = "instruction_house"
+    case mask = "instruction_mask"
+    case neighbor = "instruction_neighbor"
+    case pcr = "instruction_pcr"
+    case phone = "instruction_phone"
+    case questionmark = "instruction_questionmark"
+    case thermometer = "instruction_thermometer"
+}
+
 struct Instruction {
     let index: Int
     let text: String
+    let instructionIcon: InstructionIcons
 }
 
 class BubbleView: UIView {
     private var innerWrapperView: UIView!
+    private var imageView: UIImageView!
     private var label: UILabel!
 
     var bubbleColor: UIColor = .white {
@@ -31,6 +46,12 @@ class BubbleView: UIView {
     var text: String = "" {
         didSet {
             label.text = text
+        }
+    }
+    
+    var iconText: InstructionIcons = .none {
+        didSet {
+            imageView.image = UIImage(named: iconText.rawValue)
         }
     }
 
@@ -54,6 +75,7 @@ class BubbleView: UIView {
 
     private func configureView() {
         configureInnerWrapper()
+        configureImageView()
         configureLabel()
     }
 
@@ -74,7 +96,19 @@ class BubbleView: UIView {
             innerWrapperView.heightAnchor.constraint(equalToConstant: bubbleSize),
         ])
     }
+    private func configureImageView() {
+        
+        imageView = UIImageView()
 
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(imageView)
+
+        NSLayoutConstraint.activate([
+            imageView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            imageView.centerYAnchor.constraint(equalTo: centerYAnchor),
+        ])
+    }
+    
     private func configureLabel() {
         label = UILabel()
         label.text = text
@@ -148,10 +182,16 @@ class InstructionsView: UIView {
 
     private func addInstruction(_ instruction: Instruction) {
         let bubbleView = BubbleView()
-        bubbleView.text = String(instruction.index)
-        bubbleView.backgroundColor = backgroundColor
-        bubbleView.bubbleColor = bubbleColor
-
+        
+        if instruction.instructionIcon == .none {
+            bubbleView.text = String(instruction.index)
+            bubbleView.backgroundColor = backgroundColor
+            bubbleView.bubbleColor = .ccWhite
+        } else {
+            bubbleView.iconText = instruction.instructionIcon
+            bubbleView.bubbleColor = .ccRouge
+        }
+        
         let paddingView = UIView()
 
         if instruction.text.contains("<tel>") {

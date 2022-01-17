@@ -28,10 +28,10 @@ final class MainHelpViewController: UIViewController, StoryboardBased, ViewModel
         title = "automatic_handshake_help_title".localized
 
         instructionsView.instructions = [
-            .init(index: 1, text: "automatic_handshake_help_instruction_first".localized),
-            .init(index: 2, text: "automatic_handshake_help_instruction_second".localized),
-            .init(index: 3, text: "automatic_handshake_help_instruction_third".localized),
-            .init(index: 4, text: "automatic_handshake_help_instruction_fourth".localized),
+            .init(index: 1, text: "automatic_handshake_help_instruction_first".localized, instructionIcon: InstructionIcons.none),
+            .init(index: 2, text: "automatic_handshake_help_instruction_second".localized, instructionIcon: InstructionIcons.none),
+            .init(index: 3, text: "automatic_handshake_help_instruction_third".localized, instructionIcon: InstructionIcons.none),
+            .init(index: 4, text: "automatic_handshake_help_instruction_fourth".localized, instructionIcon: InstructionIcons.none),
         ]
     }
 

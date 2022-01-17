@@ -258,21 +258,21 @@ extension ContactHealthStatus {
     
     var redGuidelines: [Instruction] {
         [
-            .init(index: 1, text: String(format: "contact_sickness_guidelines_first".localized, endOfQuarantine!)),
-            .init(index: 2, text: String(format: "contact_sickness_guidelines_second".localized, infectedDateString!)),
-            .init(index: 3, text: "contact_sickness_guidelines_third".localized),
-            .init(index: 4, text: "contact_sickness_guidelines_fourth".localized),
-            .init(index: 5, text: "contact_sickness_guidelines_fifth".localized),
-            .init(index: 6, text: "contact_sickness_guidelines_sixth".localized),
+            .init(index: 1, text: String(format: "contact_sickness_guidelines_first".localized, endOfQuarantine!), instructionIcon: InstructionIcons.house),
+            .init(index: 2, text: String(format: "contact_sickness_guidelines_second".localized, infectedDateString!), instructionIcon: InstructionIcons.phone),
+            .init(index: 3, text: "contact_sickness_guidelines_third".localized, instructionIcon: InstructionIcons.pcr),
+            .init(index: 4, text: "contact_sickness_guidelines_fourth".localized, instructionIcon: InstructionIcons.distance),
+            .init(index: 5, text: "contact_sickness_guidelines_fifth".localized, instructionIcon: InstructionIcons.thermometer),
+            .init(index: 6, text: "contact_sickness_guidelines_sixth".localized, instructionIcon: InstructionIcons.neighbor),
         ]
     }
     
     var yellowGuidelines: [Instruction] {
         [
-            .init(index: 1, text: String(format: "contact_sickness_warning_guidelines_first".localized, endOfQuarantine!)),
-            .init(index: 2, text: "contact_sickness_warning_guidelines_second".localized),
-            .init(index: 3, text: "contact_sickness_warning_guidelines_third".localized),
-            .init(index: 4, text: "contact_sickness_warning_guidelines_fourth".localized),
+            .init(index: 1, text: String(format: "contact_sickness_warning_guidelines_first".localized, endOfQuarantine!), instructionIcon: InstructionIcons.house),
+            .init(index: 2, text: "contact_sickness_warning_guidelines_second".localized, instructionIcon: InstructionIcons.distance),
+            .init(index: 3, text: "contact_sickness_warning_guidelines_third".localized, instructionIcon: InstructionIcons.mask),
+            .init(index: 4, text: "contact_sickness_warning_guidelines_fourth".localized, instructionIcon: InstructionIcons.phone),
         ]
     }
 }
