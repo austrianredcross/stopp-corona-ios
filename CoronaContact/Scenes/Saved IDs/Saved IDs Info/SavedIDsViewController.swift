@@ -13,11 +13,11 @@ final class SavedIDsViewController: UIViewController, StoryboardBased, ViewModel
     var viewModel: SavedIDsViewModel?
 
     var instructions: [Instruction] = [
-        Instruction(index: 1, text: "saved_IDs_delete_content_1".localized),
-        Instruction(index: 2, text: "saved_IDs_delete_content_2".localized),
-        Instruction(index: 3, text: "saved_IDs_delete_content_3".localized),
-        Instruction(index: 4, text: "saved_IDs_delete_content_4".localized),
-        Instruction(index: 5, text: "saved_IDs_delete_content_5".localized)]
+        Instruction(index: 1, text: "saved_IDs_delete_content_1".localized, instructionIcon: InstructionIcons.none),
+        Instruction(index: 2, text: "saved_IDs_delete_content_2".localized, instructionIcon: InstructionIcons.none),
+        Instruction(index: 3, text: "saved_IDs_delete_content_3".localized, instructionIcon: InstructionIcons.none),
+        Instruction(index: 4, text: "saved_IDs_delete_content_4".localized, instructionIcon: InstructionIcons.none),
+        Instruction(index: 5, text: "saved_IDs_delete_content_5".localized, instructionIcon: InstructionIcons.none)]
     
     override func viewDidLoad() {
         super.viewDidLoad()

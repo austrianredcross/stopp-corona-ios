@@ -24,10 +24,10 @@ class QuarantineGuidelinesViewModel: ViewModel {
     
     var guidelines: [Instruction] {
         [
-            .init(index: 1, text: String(format: "quarantine_guidelines_first".localized, quarantineDateString!)),
-            .init(index: 2, text: "quarantine_guidelines_second".localized),
-            .init(index: 3, text: "quarantine_guidelines_third".localized),
-            .init(index: 4, text: "quarantine_guidelines_fourth".localized),
+            .init(index: 1, text: String(format: "quarantine_guidelines_first".localized, quarantineDateString!), instructionIcon: InstructionIcons.thermometer),
+            .init(index: 2, text: "quarantine_guidelines_second".localized, instructionIcon: InstructionIcons.distance),
+            .init(index: 3, text: "quarantine_guidelines_third".localized, instructionIcon: InstructionIcons.mask),
+            .init(index: 4, text: "quarantine_guidelines_fourth".localized, instructionIcon: InstructionIcons.doctor),
         ]
     }
 }

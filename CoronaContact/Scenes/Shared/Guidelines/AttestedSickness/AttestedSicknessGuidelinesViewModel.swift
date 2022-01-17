@@ -24,10 +24,11 @@ class AttestedSicknessGuidelinesViewModel: ViewModel {
     
     var guidelines: [Instruction] {
         [
-            .init(index: 1, text: String(format: "sickness_certificate_quarantine_guidelines_steps_first".localized, endOfQuarantine)),
-            .init(index: 2, text: "sickness_certificate_quarantine_guidelines_steps_second".localized),
-            .init(index: 3, text: "sickness_certificate_quarantine_guidelines_steps_third".localized),
-            .init(index: 4, text: "sickness_certificate_quarantine_guidelines_steps_fourth".localized),
+            .init(index: 1, text: String(format: "sickness_certificate_quarantine_guidelines_steps_first".localized, endOfQuarantine), instructionIcon: InstructionIcons.house),
+            .init(index: 2, text: "sickness_certificate_quarantine_guidelines_steps_second".localized, instructionIcon: InstructionIcons.pcr),
+            .init(index: 3, text: "sickness_certificate_quarantine_guidelines_steps_third".localized, instructionIcon: InstructionIcons.thermometer),
+            .init(index: 4, text: "sickness_certificate_quarantine_guidelines_steps_fourth".localized, instructionIcon: InstructionIcons.neighbor),
+            .init(index: 5, text: "sickness_certificate_quarantine_guidelines_steps_fifth".localized, instructionIcon: InstructionIcons.questionmark),
         ]
     }
 }

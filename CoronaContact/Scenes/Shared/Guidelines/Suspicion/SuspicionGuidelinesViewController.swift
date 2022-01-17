@@ -35,12 +35,12 @@ final class SuspicionGuidelinesViewController: UIViewController, StoryboardBased
         title = "suspicion_guidelines_title".localized
 
         instructionsView.instructions = [
-            .init(index: 1, text: "suspicion_guidelines_precaution_first".localized),
-            .init(index: 2, text: "suspicion_guidelines_precaution_second".localized),
-            .init(index: 3, text: "suspicion_guidelines_precaution_third".localized),
-            .init(index: 4, text: "suspicion_guidelines_precaution_fourth".localized),
-            .init(index: 5, text: "suspicion_guidelines_precaution_fifth".localized),
-            .init(index: 6, text: "suspicion_guidelines_precaution_sixth".localized),
+            .init(index: 1, text: "suspicion_guidelines_precaution_first".localized, instructionIcon: InstructionIcons.house),
+            .init(index: 2, text: "suspicion_guidelines_precaution_second".localized, instructionIcon: InstructionIcons.phone),
+            .init(index: 3, text: "suspicion_guidelines_precaution_third".localized, instructionIcon: InstructionIcons.doctor),
+            .init(index: 4, text: "suspicion_guidelines_precaution_fourth".localized, instructionIcon: InstructionIcons.distance),
+            .init(index: 5, text: "suspicion_guidelines_precaution_fifth".localized, instructionIcon: InstructionIcons.thermometer),
+            .init(index: 6, text: "suspicion_guidelines_precaution_sixth".localized, instructionIcon: InstructionIcons.neighbor),
         ]
     }
 
