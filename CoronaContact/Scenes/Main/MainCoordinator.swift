@@ -130,6 +130,12 @@ class MainCoordinator: Coordinator, ShareSheetPresentable, ErrorPresentableCoord
         child.start()
     }
     
+    func showSunDownerController() {
+        let child = SunDownerCoordinator(navigationController: navigationController)
+        addChildCoordinator(child)
+        child.start()
+    }
+    
     func diaryFaq() {
         let child = DiaryFaqCoordinator(navigationController: navigationController)
         addChildCoordinator(child)
@@ -170,6 +176,10 @@ class MainCoordinator: Coordinator, ShareSheetPresentable, ErrorPresentableCoord
         } else if !localStorage.hasBeenAgreedInteroperability {
             DispatchQueue.main.async {
                 self.showInteroperabilityController()
+            }
+        } else if !localStorage.hasBeenVisibleSunDowner {
+            DispatchQueue.main.async {
+                self.showSunDownerController()
             }
         } else {
             notificationService.dismissAllNotifications()

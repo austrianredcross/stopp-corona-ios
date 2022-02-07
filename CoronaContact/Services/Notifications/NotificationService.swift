@@ -11,6 +11,8 @@ struct NotificationServiceKeys {
     static let selfTestPush = "selfTestPush"
     static let quarantineCompleted = "quarantineCompleted"
     static let uploadMissingDay = "uploadMissingDay"
+    static let hasBeenVisibleSunDowner = "hasBeenVisibleSunDowner"
+    static let sundownerIsToday = "sundownerIsToday"
 }
 
 class NotificationService: NSObject {
@@ -35,6 +37,37 @@ class NotificationService: NSObject {
 
     func dismissAllNotifications() {
         notificationCenter.removeAllDeliveredNotifications()
+    }
+    
+    func showSundownerNotification() {
+
+        log.info("Show Sundowner Notification")
+        
+        if !localStorage.hasBeenVisibleSunDowner && !localStorage.sundownerForceUpdatelocalNotificationHasBeenVisible {
+            localStorage.sundownerForceUpdatelocalNotificationHasBeenVisible = true
+            
+            showNotification(
+                identifier: NotificationServiceKeys.hasBeenVisibleSunDowner,
+                title: "local_notification_sundowner_title".localized,
+                body: String(format: "local_notification_sundowner_forced_update".localized, Date().sundDownerDate.shortDayShortMonthLongYear),
+                at: Date()
+            )
+            log.info("Sundowner Notification was displayed because the hasBeenVisibleSunDowner is false")
+        } else if Date().sundDownerDate.isToday, !localStorage.sundownerIsTodaylocalNotificationHasBeenVisible {
+            localStorage.sundownerIsTodaylocalNotificationHasBeenVisible = true
+
+            showNotification(
+                identifier: NotificationServiceKeys.sundownerIsToday,
+                title: "local_notification_sundowner_title".localized,
+                body: "local_notification_sundowner_last_day_notification".localized,
+                at: Date().sundDownerDate
+            )
+            log.info("Sundowner Notification was displayed because the sundDownerDate isToday")
+        } else {
+            log.info("Sundowner Date :\(Date().sundDownerDate.isToday)")
+            log.info("hasBeenVisibleSunDowner :\(localStorage.hasBeenVisibleSunDowner)")
+            log.error("Sundowner Notification was not displayed")
+        }
     }
 
     func registerMissingKeysReminder() {

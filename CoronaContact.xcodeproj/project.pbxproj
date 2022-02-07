@@ -46,10 +46,16 @@
 		1CFBB25C25C943B500F40248 /* IconLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFBB25B25C943B500F40248 /* IconLabelView.swift */; };
 		1CFBB26625C984B000F40248 /* Array+ManagingBatchProcessingDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFBB26525C984B000F40248 /* Array+ManagingBatchProcessingDates.swift */; };
 		4B21DB6C25827CE5001274DD /* TransHeadingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B21DB6B25827CE5001274DD /* TransHeadingLabel.swift */; };
+		4B23152D26D3AB0700D5265B /* SunDownerNotificationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B23152C26D3AB0700D5265B /* SunDownerNotificationView.xib */; };
+		4B23153126D3AB2200D5265B /* SunDownerNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B23153026D3AB2200D5265B /* SunDownerNotificationView.swift */; };
 		4B25BA9D2429592A00CDD1CF /* UserHealthStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B25BA9C2429592A00CDD1CF /* UserHealthStatus.swift */; };
 		4B3BA5CC265D22CA003A973F /* StatisticsInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3BA5CB265D22CA003A973F /* StatisticsInfo.swift */; };
 		4B3BA5D0265D230B003A973F /* UIView+Accessbility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3BA5CF265D230B003A973F /* UIView+Accessbility.swift */; };
 		4B5077CB2678F63A00459E21 /* UIImage+InitWithColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5077CA2678F63900459E21 /* UIImage+InitWithColor.swift */; };
+		4B5A6FAF26D379B500D8830B /* SunDownerViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B5A6FAE26D379B500D8830B /* SunDownerViewController.storyboard */; };
+		4B5A6FB326D379C500D8830B /* SunDownerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5A6FB226D379C500D8830B /* SunDownerViewController.swift */; };
+		4B5A6FB726D379CF00D8830B /* SunDownerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5A6FB626D379CF00D8830B /* SunDownerViewModel.swift */; };
+		4B5A6FBB26D379DC00D8830B /* SunDownerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5A6FBA26D379DC00D8830B /* SunDownerCoordinator.swift */; };
 		4B686A5A25CC4040000BE02B /* PhoneNumberTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B686A5925CC4040000BE02B /* PhoneNumberTextView.swift */; };
 		4B7379E92423D9E600DF338E /* StartMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7379E82423D9E600DF338E /* StartMenuViewController.swift */; };
 		4B7379ED2423DA7A00DF338E /* StartMenuCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7379EC2423DA7A00DF338E /* StartMenuCoordinator.swift */; };
@@ -64,6 +70,8 @@
 		4B82571E24266A32007E25C6 /* StartMenuSimpleWebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B82571A24266A32007E25C6 /* StartMenuSimpleWebViewViewController.swift */; };
 		4B82571F24266A32007E25C6 /* StartMenuSimpleWebViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B82571B24266A32007E25C6 /* StartMenuSimpleWebViewViewModel.swift */; };
 		4B82572124266B9E007E25C6 /* de.imprint.html in Resources */ = {isa = PBXBuildFile; fileRef = 4B82572024266B9E007E25C6 /* de.imprint.html */; };
+		4B87697A275E398800DC9D47 /* SunDownerPageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B876979275E398800DC9D47 /* SunDownerPageView.xib */; };
+		4B87697C275E3E5200DC9D47 /* SunDownerPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B87697B275E3E5200DC9D47 /* SunDownerPageView.swift */; };
 		4B980C67264950C100AA9D00 /* CovidFallZahlen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B980C5D264950C100AA9D00 /* CovidFallZahlen.swift */; };
 		4B980C68264950C100AA9D00 /* CovidFaelleGKZ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B980C5E264950C100AA9D00 /* CovidFaelleGKZ.swift */; };
 		4B980C69264950C100AA9D00 /* CovidStatistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B980C5F264950C100AA9D00 /* CovidStatistics.swift */; };
@@ -526,10 +534,16 @@
 		1FDDA0B8090AAB9A97DCB475 /* Pods-CoronaContactTests.stage.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoronaContactTests.stage.xcconfig"; path = "Target Support Files/Pods-CoronaContactTests/Pods-CoronaContactTests.stage.xcconfig"; sourceTree = "<group>"; };
 		4B1F6118242A60AD00E82D4C /* Stopp Corona.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Stopp Corona.entitlements"; sourceTree = "<group>"; };
 		4B21DB6B25827CE5001274DD /* TransHeadingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransHeadingLabel.swift; sourceTree = "<group>"; };
+		4B23152C26D3AB0700D5265B /* SunDownerNotificationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SunDownerNotificationView.xib; sourceTree = "<group>"; };
+		4B23153026D3AB2200D5265B /* SunDownerNotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunDownerNotificationView.swift; sourceTree = "<group>"; };
 		4B25BA9C2429592A00CDD1CF /* UserHealthStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHealthStatus.swift; sourceTree = "<group>"; };
 		4B3BA5CB265D22CA003A973F /* StatisticsInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsInfo.swift; sourceTree = "<group>"; };
 		4B3BA5CF265D230B003A973F /* UIView+Accessbility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Accessbility.swift"; sourceTree = "<group>"; };
 		4B5077CA2678F63900459E21 /* UIImage+InitWithColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+InitWithColor.swift"; sourceTree = "<group>"; };
+		4B5A6FAE26D379B500D8830B /* SunDownerViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SunDownerViewController.storyboard; sourceTree = "<group>"; };
+		4B5A6FB226D379C500D8830B /* SunDownerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunDownerViewController.swift; sourceTree = "<group>"; };
+		4B5A6FB626D379CF00D8830B /* SunDownerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunDownerViewModel.swift; sourceTree = "<group>"; };
+		4B5A6FBA26D379DC00D8830B /* SunDownerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunDownerCoordinator.swift; sourceTree = "<group>"; };
 		4B686A5925CC4040000BE02B /* PhoneNumberTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberTextView.swift; sourceTree = "<group>"; };
 		4B7379E82423D9E600DF338E /* StartMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartMenuViewController.swift; sourceTree = "<group>"; };
 		4B7379EC2423DA7A00DF338E /* StartMenuCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartMenuCoordinator.swift; sourceTree = "<group>"; };
@@ -544,6 +558,8 @@
 		4B82571A24266A32007E25C6 /* StartMenuSimpleWebViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartMenuSimpleWebViewViewController.swift; sourceTree = "<group>"; };
 		4B82571B24266A32007E25C6 /* StartMenuSimpleWebViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartMenuSimpleWebViewViewModel.swift; sourceTree = "<group>"; };
 		4B82572024266B9E007E25C6 /* de.imprint.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = de.imprint.html; sourceTree = "<group>"; };
+		4B876979275E398800DC9D47 /* SunDownerPageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SunDownerPageView.xib; sourceTree = "<group>"; };
+		4B87697B275E3E5200DC9D47 /* SunDownerPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunDownerPageView.swift; sourceTree = "<group>"; };
 		4B980C5D264950C100AA9D00 /* CovidFallZahlen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CovidFallZahlen.swift; sourceTree = "<group>"; };
 		4B980C5E264950C100AA9D00 /* CovidFaelleGKZ.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CovidFaelleGKZ.swift; sourceTree = "<group>"; };
 		4B980C5F264950C100AA9D00 /* CovidStatistics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CovidStatistics.swift; sourceTree = "<group>"; };
@@ -1064,6 +1080,19 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		4B5A6FAD26D3799800D8830B /* Sundowner */ = {
+			isa = PBXGroup;
+			children = (
+				4B5A6FAE26D379B500D8830B /* SunDownerViewController.storyboard */,
+				4B5A6FB226D379C500D8830B /* SunDownerViewController.swift */,
+				4B5A6FB626D379CF00D8830B /* SunDownerViewModel.swift */,
+				4B5A6FBA26D379DC00D8830B /* SunDownerCoordinator.swift */,
+				4B876979275E398800DC9D47 /* SunDownerPageView.xib */,
+				4B87697B275E3E5200DC9D47 /* SunDownerPageView.swift */,
+			);
+			path = Sundowner;
+			sourceTree = "<group>";
+		};
 		4B7379E72423D99000DF338E /* StartMenu */ = {
 			isa = PBXGroup;
 			children = (
@@ -1316,9 +1345,9 @@
 				4BA476E52614AA270038B9FC /* StoppCorona.xcdatamodeld */,
 				4B1F6118242A60AD00E82D4C /* Stopp Corona.entitlements */,
 				4E5254CE2472B40100B6C3A4 /* Stopp Corona Test.entitlements */,
-				4E0B3E38241F995D00EF60EE /* AppDelegate.swift */,
 				839749AD5CC31574CCB7808B /* AppDelegate+Injection.swift */,
 				4EDB47F22421EB2B000CE24A /* AppDelegate+FontStyles.swift */,
+				4E0B3E38241F995D00EF60EE /* AppDelegate.swift */,
 				613E35F9242E3F71009421A8 /* AppConfiguration.swift */,
 				4E0B3E46241F995F00EF60EE /* Info.plist */,
 				83974FAF837DA80DDD2DD134 /* Coordinators */,
@@ -2126,6 +2155,7 @@
 		839742CD30B274EE264849F8 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				4B5A6FAD26D3799800D8830B /* Sundowner */,
 				4B980C71264950E400AA9D00 /* Statistics */,
 				4BA477352614AC3A0038B9FC /* Diary */,
 				1CAFD92F25D5388900866AA3 /* ReportHealthy */,
@@ -2182,6 +2212,8 @@
 				4B686A5925CC4040000BE02B /* PhoneNumberTextView.swift */,
 				1CE08CAD25DFC69300A12547 /* ExposureNotificationErrorView.xib */,
 				1CE08CB125DFCA2600A12547 /* ExposureNotificationErrorView.swift */,
+				4B23152C26D3AB0700D5265B /* SunDownerNotificationView.xib */,
+				4B23153026D3AB2200D5265B /* SunDownerNotificationView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -2462,6 +2494,7 @@
 				921525602427C7AA0023F469 /* SelfTestingSuspicionViewController.storyboard in Resources */,
 				614D723A242909C000CC545D /* SelfTestingConfirmationViewController.storyboard in Resources */,
 				9215254E2427C74A0023F469 /* SelfTestingSelfMonitoringViewController.storyboard in Resources */,
+				4B87697A275E398800DC9D47 /* SunDownerPageView.xib in Resources */,
 				61F50DD82439EC8500798264 /* MissingPermissionsViewController.storyboard in Resources */,
 				839743F271E19BEF66B89E3A /* OnboardingViewController.storyboard in Resources */,
 				4E1AAEF3246186FA00D43E2B /* RevocationConfirmationViewController.storyboard in Resources */,
@@ -2486,6 +2519,7 @@
 				4B980C81264950E500AA9D00 /* StatisticsDetailViewController.storyboard in Resources */,
 				614D72102428E87000CC545D /* QuarantineGuidelinesViewController.storyboard in Resources */,
 				1C764DAD25C9B6C20036E0D4 /* handshake_active_animation.json in Resources */,
+				4B23152D26D3AB0700D5265B /* SunDownerNotificationView.xib in Resources */,
 				1C764DB025C9B6C20036E0D4 /* handshake_contact_yellow_animation.json in Resources */,
 				615D36332437417600B608AB /* AttestedSicknessGuidelinesViewController.storyboard in Resources */,
 				4BA4779D2614AC910038B9FC /* DiaryLocationDayPeriodSelector.xib in Resources */,
@@ -2493,6 +2527,7 @@
 				4B82571D24266A32007E25C6 /* StartMenuSimpleWebViewViewController.storyboard in Resources */,
 				61546549242CBEA60003D3D3 /* SuspicionGuidelinesViewController.storyboard in Resources */,
 				1C9E770625A761B300C6ADB7 /* SelfTestingCoronaSuspicionViewController.storyboard in Resources */,
+				4B5A6FAF26D379B500D8830B /* SunDownerViewController.storyboard in Resources */,
 				4BA477522614AC3A0038B9FC /* DiaryDeleteViewController.storyboard in Resources */,
 				4BDA55DC2608E5F500BAB869 /* LightStyle.css in Resources */,
 				61459A53242ABFE200DC88A7 /* de.terms-of-use.html in Resources */,
@@ -2705,6 +2740,7 @@
 				615D36322437417600B608AB /* AttestedSicknessGuidelinesCoordinator.swift in Sources */,
 				784C2D1B24878885005160A6 /* WhatsNewCoordinator.swift in Sources */,
 				4EDB47F62421EF46000CE24A /* UIColor+NamedColors.swift in Sources */,
+				4B5A6FBB26D379DC00D8830B /* SunDownerCoordinator.swift in Sources */,
 				6153A52224264A2D006A8570 /* ActivityConfiguration.swift in Sources */,
 				614D722D2429084900CC545D /* SelfTestingStatusReportViewModel.swift in Sources */,
 				61D0F5662435EABE0026C91A /* RevocationFlowController.swift in Sources */,
@@ -2794,6 +2830,7 @@
 				614BAA0A2423C334006797AA /* ErrorResponse.swift in Sources */,
 				61BB41DB2436845F0083053B /* Date+daysUntil.swift in Sources */,
 				612C460224641C620072ECF7 /* RequestTan.swift in Sources */,
+				4B23153126D3AB2200D5265B /* SunDownerNotificationView.swift in Sources */,
 				6153A52324264A2D006A8570 /* ActivityPresentableType.swift in Sources */,
 				839748117E82124039816540 /* AppDelegate+Injection.swift in Sources */,
 				4BA477602614AC3A0038B9FC /* DiaryDetailEntryCell.swift in Sources */,
@@ -2845,6 +2882,7 @@
 				1CAFD93525D5388900866AA3 /* ReportHealthyViewModel.swift in Sources */,
 				6186C6FE2492716F0070B616 /* RiskCalculationCompleteOperation.swift in Sources */,
 				6153A4D6242598DC006A8570 /* SicknessCertificateConfirmationViewModel.swift in Sources */,
+				4B5A6FB726D379CF00D8830B /* SunDownerViewModel.swift in Sources */,
 				61D0F55224352E960026C91A /* RevocationTanConfirmationCoordinator.swift in Sources */,
 				614D72242429084300CC545D /* SelfTestingPersonalDataViewController.swift in Sources */,
 				4B980C7F264950E500AA9D00 /* IncidenceTableViewCell.swift in Sources */,
@@ -2986,6 +3024,7 @@
 				839748AF8A2EE9168002C226 /* DatabaseService+Injection.swift in Sources */,
 				4BA4778B2614AC590038B9FC /* Person+CoreDataClass.swift in Sources */,
 				4B82571C24266A32007E25C6 /* StartMenuSimpleWebViewCoordinator.swift in Sources */,
+				4B5A6FB326D379C500D8830B /* SunDownerViewController.swift in Sources */,
 				6153A4D4242598DC006A8570 /* SicknessCertificateStatusReportViewModel.swift in Sources */,
 				61D1A3E4242A58C9007F82ED /* MainHelpViewModel.swift in Sources */,
 				610571AF247E9EBE009A715E /* ReportHealthStatusFlowController.swift in Sources */,
@@ -2995,6 +3034,7 @@
 				61546543242CBE7F0003D3D3 /* SelfMonitoringGuidelinesViewModel.swift in Sources */,
 				4ED175DA2460731200248D3B /* RevokeSicknessStatusReportViewController.swift in Sources */,
 				4BCEB4B525657EE800D53E12 /* TransBarButton.swift in Sources */,
+				4B87697C275E3E5200DC9D47 /* SunDownerPageView.swift in Sources */,
 				4B25BA9D2429592A00CDD1CF /* UserHealthStatus.swift in Sources */,
 				4B980C88264950E500AA9D00 /* StatisticsCollectionViewCell.swift in Sources */,
 				8397409E6D4A0FD3F83CE213 /* ConfigurationService.swift in Sources */,

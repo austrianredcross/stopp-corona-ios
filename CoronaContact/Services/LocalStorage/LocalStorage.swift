@@ -81,6 +81,15 @@ class LocalStorage {
     @Persisted(userDefaultsKey: "has_been_agreed_interoperability", notificationName: .init("hasBeenAgreedInteroperability"), defaultValue: false)
     var hasBeenAgreedInteroperability: Bool
     
+    @Persisted(userDefaultsKey: "has_been_visible_sundowner", notificationName: .init("hasBeenVisibleSunDowner"), defaultValue: false)
+    var hasBeenVisibleSunDowner: Bool
+    
+    @Persisted(userDefaultsKey: "sundowner_forced_udpate_local_notification_has_been_visible", notificationName: .init("sundownerForceUpdatelocalNotificationHasBeenVisible"), defaultValue: false)
+    var sundownerForceUpdatelocalNotificationHasBeenVisible: Bool
+    
+    @Persisted(userDefaultsKey: "sundowner_is_today_local_notification_has_been_visible", notificationName: .init("sundownerIsTodaylocalNotificationHasBeenVisible"), defaultValue: false)
+    var sundownerIsTodaylocalNotificationHasBeenVisible: Bool
+    
     @Persisted(userDefaultsKey: "latest_AGES_Download", notificationName: .init("latestAGESDownload"), defaultValue: Date().addDays(-3)?.shortDayLongMonth)
     var latestAGESDownload: String?
     

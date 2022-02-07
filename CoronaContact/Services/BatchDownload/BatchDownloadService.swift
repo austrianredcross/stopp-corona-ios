@@ -20,6 +20,7 @@ final class BatchDownloadService {
     }
 
     @Injected private var networkService: NetworkService
+    @Injected private var notificationService: NotificationService
 
     private lazy var queue: OperationQueue = {
         let queue = OperationQueue()
@@ -34,6 +35,9 @@ final class BatchDownloadService {
     func startBatchDownload(_ downloadRequirement: DownloadRequirement,
                             completionHandler: @escaping (Result<[UnzippedBatch], BatchDownloadError>) -> Void) -> Progress
     {
+        
+        self.notificationService.showSundownerNotification()
+
         let progress = Progress()
 
         unzippedBatches = []

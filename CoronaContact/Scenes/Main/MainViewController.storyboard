@@ -22,13 +22,29 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lpd-HQ-Qp5">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="3708"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="5912"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="fdk-l7-Mva">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="5639"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="5912"/>
                                                 <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="NEF-xo-XXa" userLabel="SunDowner Wrapper View" customClass="BackgroundStackView" customModule="Stopp_Corona" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="264"/>
+                                                        <subviews>
+                                                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="200" translatesAutoresizingMaskIntoConstraints="NO" id="LWw-7J-qVn" userLabel="SunDowner Notification View" customClass="SunDownerNotificationView" customModule="Stopp_Corona" customModuleProvider="target">
+                                                                <rect key="frame" x="24" y="32" width="366" height="200"/>
+                                                                <color key="backgroundColor" name="ccWhite"/>
+                                                            </view>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <edgeInsets key="layoutMargins" top="32" left="24" bottom="32" right="24"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="stackBackgroundColor">
+                                                                <color key="value" name="ccWhite"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="jkK-gs-8va" userLabel="Notification Stack View" customClass="BackgroundStackView" customModule="Stopp_Corona" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1040"/>
+                                                        <rect key="frame" x="0.0" y="280" width="414" height="1040"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="06k-hV-t2h" userLabel="User Health Wrapper View" customClass="BackgroundStackView" customModule="Stopp_Corona" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="264"/>
@@ -935,6 +951,8 @@
                         <outlet property="sicknessCertificateSeparatorLineStackView" destination="YlG-8c-hcJ" id="7PQ-Gq-4iG"/>
                         <outlet property="sicknessCertificateStackView" destination="gDd-RB-Sg5" id="11b-Jl-nzL"/>
                         <outlet property="stateImageView" destination="09D-Ma-vSv" id="hoH-Qp-P2Q"/>
+                        <outlet property="sunDownerView" destination="LWw-7J-qVn" id="cCs-ZY-79K"/>
+                        <outlet property="sunDownerWrapperView" destination="NEF-xo-XXa" id="YIf-6S-HZY"/>
                         <outlet property="userHealthStatusView" destination="Pg8-NU-47Y" id="7fL-Z8-m9g"/>
                         <outlet property="userHealthWrapperView" destination="06k-hV-t2h" id="Nau-nW-w8b"/>
                     </connections>

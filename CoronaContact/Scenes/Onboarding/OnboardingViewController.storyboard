@@ -27,7 +27,7 @@
                                     <constraint firstAttribute="height" constant="20" id="p8i-DT-Z3s"/>
                                 </constraints>
                                 <color key="pageIndicatorTintColor" name="ccBrownGrey"/>
-                                <color key="currentPageIndicatorTintColor" name="ccText"/>
+                                <color key="currentPageIndicatorTintColor" name="ccRedText"/>
                             </pageControl>
                             <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pDi-ZF-KNl">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="535"/>
@@ -106,7 +106,7 @@
         <namedColor name="ccBrownGrey">
             <color red="0.47450980392156861" green="0.47450980392156861" blue="0.47450980392156861" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="ccText">
+        <namedColor name="ccRedText">
             <color red="0.72549019607843135" green="0.074509803921568626" blue="0.10588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="rouge">
