@@ -10,6 +10,16 @@ extension Date {
         return "en"
     }
     
+    var sundDownerDate: Date {
+        
+        var dateComponents = DateComponents()
+        dateComponents.year = 2022
+        dateComponents.month = 02
+        dateComponents.day = 28
+        
+        return Calendar.current.date(from: dateComponents) ?? Date()
+    }
+    
     var longDayShortMonthLongYear: String {
         return "\(longDay), \(shortDayShortMonthLongYear)"
     }
@@ -39,7 +49,7 @@ extension Date {
     }
     
     var shortDayShortMonthLongYear: String {
-        return Locale.current.languageCode == englishLanguageCode ? "\(monthAbbrevation) \(shortDay), \(longYear)" : "\(shortDay)\(monthAbbrevation).\(longYear)"
+        return Locale.current.languageCode == englishLanguageCode ? "\(monthAbbrevation) \(shortDay), \(longYear)" : "\(shortDay)\(monthAbbrevation)\(longYear)"
     }
     
     private var longYear: String {

@@ -21,6 +21,8 @@ final class MainViewController: UIViewController, StoryboardBased, ViewModelBase
     @IBOutlet var primaryContactHealthStatusView: QuarantineNotificationView!
     @IBOutlet var secondaryContactHealthStatusView: QuarantineNotificationView!
     @IBOutlet var revocationStatusView: QuarantineNotificationView!
+    @IBOutlet var sunDownerView: SunDownerNotificationView!
+    @IBOutlet var sunDownerWrapperView: UIView!
     @IBOutlet var userHealthWrapperView: UIView!
     @IBOutlet var contactHealthWrapperView: UIView!
     @IBOutlet var revocationWrapperView: UIView!
@@ -148,6 +150,7 @@ final class MainViewController: UIViewController, StoryboardBased, ViewModelBase
         configureSicknessCertificateView()
         configureAutomationHandshakeView()
         configureBackgroundHandshakeStackView()
+        configureSunDownerView()
         
         covidIncidencesTableView.reloadData()
         covidIncidencesTableView.layoutIfNeeded()
@@ -183,6 +186,15 @@ final class MainViewController: UIViewController, StoryboardBased, ViewModelBase
     
     func showError(with error: Error) {
         viewModel?.showError(with: error)
+    }
+    
+    private func configureSunDownerView() {
+        guard let viewModel = viewModel else { return }
+
+        if viewModel.hasBeenVisibleSunDowner {
+            sunDownerWrapperView.isHidden = false
+            sunDownerView.isHidden = false
+        }
     }
 
     private func configureUserHealthstatusView() {

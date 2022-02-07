@@ -34,7 +34,7 @@ class NetworkSession {
         
         DownloadSessionDelegate.shared.downloadCompleted = completion
         
-        guard let request  = try? URLRequest(url: url, method: .post, headers: headers) else { throw URLError(.badURL) }
+        guard let request  = try? URLRequest(url: url, method: .get, headers: headers) else { throw URLError(.badURL) }
 
          let task = URLSession(configuration: configuration, delegate: DownloadSessionDelegate.shared, delegateQueue: nil).downloadTask(with: request)
          task.resume()

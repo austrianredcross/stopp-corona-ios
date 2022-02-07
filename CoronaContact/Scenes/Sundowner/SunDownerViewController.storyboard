@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NCU-vN-Ji6">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Sun Downer View Controller-->
+        <scene sceneID="0at-D1-JrR">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="NCU-vN-Ji6" customClass="SunDownerViewController" customModule="Stopp_Corona" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gT7-jA-pGC"/>
+                        <viewControllerLayoutGuide type="bottom" id="6hM-1i-RVG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9Ay-2j-eDD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="QPt-DJ-d9C">
+                                <rect key="frame" x="0.0" y="746" width="414" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="AKE-9F-eRI"/>
+                                </constraints>
+                                <color key="pageIndicatorTintColor" name="ccBrownGrey"/>
+                                <color key="currentPageIndicatorTintColor" name="ccRedText"/>
+                            </pageControl>
+                            <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Gb-ra-iqG">
+                                <rect key="frame" x="0.0" y="44" width="414" height="686"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="DKW-JN-iYw">
+                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="686"/>
+                                        <subviews>
+                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ILL-lk-nKK">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="532"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="ILL-lk-nKK" firstAttribute="width" secondItem="c90-be-XTD" secondAttribute="width" id="154-uO-wq5"/>
+                                    <constraint firstItem="DKW-JN-iYw" firstAttribute="top" secondItem="enF-gg-0hz" secondAttribute="top" id="Agf-gl-Kbh"/>
+                                    <constraint firstItem="DKW-JN-iYw" firstAttribute="height" secondItem="c90-be-XTD" secondAttribute="height" id="Gki-xy-nOp"/>
+                                    <constraint firstItem="DKW-JN-iYw" firstAttribute="bottom" secondItem="enF-gg-0hz" secondAttribute="bottom" id="ca9-ps-JKv"/>
+                                    <constraint firstItem="DKW-JN-iYw" firstAttribute="leading" secondItem="enF-gg-0hz" secondAttribute="leading" id="vh4-9N-pNn"/>
+                                    <constraint firstItem="DKW-JN-iYw" firstAttribute="trailing" secondItem="enF-gg-0hz" secondAttribute="trailing" id="wpj-kw-JCS"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="enF-gg-0hz"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="c90-be-XTD"/>
+                                <connections>
+                                    <outlet property="delegate" destination="NCU-vN-Ji6" id="M36-IG-9Hu"/>
+                                </connections>
+                            </scrollView>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JL7-Zn-UVB" customClass="PrimaryButton" customModule="Stopp_Corona" customModuleProvider="target">
+                                <rect key="frame" x="24" y="782" width="366" height="56"/>
+                                <color key="backgroundColor" name="rouge"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="2Qj-vE-zQf"/>
+                                </constraints>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="NCU-vN-Ji6" eventType="touchUpInside" id="Mee-3q-9Dq"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="xpd-Bb-ll2"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="8Gb-ra-iqG" firstAttribute="top" secondItem="gT7-jA-pGC" secondAttribute="bottom" id="7kw-mD-xeW"/>
+                            <constraint firstItem="QPt-DJ-d9C" firstAttribute="leading" secondItem="9Ay-2j-eDD" secondAttribute="leading" id="Gif-2m-hGD"/>
+                            <constraint firstAttribute="trailing" secondItem="JL7-Zn-UVB" secondAttribute="trailing" constant="24" id="KYZ-BH-TuU"/>
+                            <constraint firstAttribute="trailing" secondItem="QPt-DJ-d9C" secondAttribute="trailing" id="LVL-EV-PV7"/>
+                            <constraint firstItem="8Gb-ra-iqG" firstAttribute="leading" secondItem="9Ay-2j-eDD" secondAttribute="leading" id="NMm-P1-52x"/>
+                            <constraint firstItem="QPt-DJ-d9C" firstAttribute="top" secondItem="8Gb-ra-iqG" secondAttribute="bottom" constant="16" id="f7Z-ti-adc"/>
+                            <constraint firstAttribute="trailing" secondItem="8Gb-ra-iqG" secondAttribute="trailing" id="o3b-vh-f4G"/>
+                            <constraint firstItem="JL7-Zn-UVB" firstAttribute="top" secondItem="QPt-DJ-d9C" secondAttribute="bottom" constant="16" id="syj-V6-Ar5"/>
+                            <constraint firstItem="6hM-1i-RVG" firstAttribute="top" secondItem="JL7-Zn-UVB" secondAttribute="bottom" constant="24" id="trZ-xb-8F8"/>
+                            <constraint firstItem="JL7-Zn-UVB" firstAttribute="leading" secondItem="9Ay-2j-eDD" secondAttribute="leading" constant="24" id="wfb-pB-Ain"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="button" destination="JL7-Zn-UVB" id="2pE-HD-Un9"/>
+                        <outlet property="pageControl" destination="QPt-DJ-d9C" id="NSh-LD-QsY"/>
+                        <outlet property="scrollView" destination="8Gb-ra-iqG" id="5Ps-HH-xtb"/>
+                        <outlet property="stackView" destination="DKW-JN-iYw" id="1Wh-0X-FKd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gzZ-CV-aPR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="ccBrownGrey">
+            <color red="0.47450980392156861" green="0.47450980392156861" blue="0.47450980392156861" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ccRedText">
+            <color red="0.72549019607843135" green="0.074509803921568626" blue="0.10588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="rouge">
+            <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

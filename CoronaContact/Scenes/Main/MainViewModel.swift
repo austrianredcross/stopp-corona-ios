@@ -78,6 +78,10 @@ class MainViewModel: ViewModel {
         repository.userHealthStatus
     }
     
+    var hasBeenVisibleSunDowner: Bool {
+        return localStorage.hasBeenVisibleSunDowner
+    }
+    
     private var automaticHandshakePriority: AutomaticHandshakePriority {
         
         if userHealthStatus == .hasAttestedSickness {
