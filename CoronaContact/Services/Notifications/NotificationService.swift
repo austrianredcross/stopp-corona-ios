@@ -49,8 +49,7 @@ class NotificationService: NSObject {
             showNotification(
                 identifier: NotificationServiceKeys.hasBeenVisibleSunDowner,
                 title: "local_notification_sundowner_title".localized,
-                body: String(format: "local_notification_sundowner_forced_update".localized, Date().sundDownerDate.shortDayShortMonthLongYear),
-                at: Date()
+                body: String(format: "local_notification_sundowner_forced_update".localized, Date().sundDownerDate.shortDayShortMonthLongYear)
             )
             log.info("Sundowner Notification was displayed because the hasBeenVisibleSunDowner is false")
         } else if Date().sundDownerDate.isToday, !localStorage.sundownerIsTodaylocalNotificationHasBeenVisible {
@@ -59,8 +58,7 @@ class NotificationService: NSObject {
             showNotification(
                 identifier: NotificationServiceKeys.sundownerIsToday,
                 title: "local_notification_sundowner_title".localized,
-                body: "local_notification_sundowner_last_day_notification".localized,
-                at: Date().sundDownerDate
+                body: "local_notification_sundowner_last_day_notification".localized
             )
             log.info("Sundowner Notification was displayed because the sundDownerDate isToday")
         } else {
