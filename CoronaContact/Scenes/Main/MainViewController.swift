@@ -194,6 +194,9 @@ final class MainViewController: UIViewController, StoryboardBased, ViewModelBase
         if viewModel.hasBeenVisibleSunDowner {
             sunDownerWrapperView.isHidden = false
             sunDownerView.isHidden = false
+        } else {
+            sunDownerWrapperView.isHidden = true
+            sunDownerView.isHidden = true
         }
     }
 
