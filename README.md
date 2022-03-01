@@ -1,5 +1,9 @@
 # Stopp Corona iOS App
 
+**Important**: The development has stopped with **28.02.2022**
+
+---
+
 „Stopp Corona“ helps you to keep track of encounters with friends, family or co-workers and save them anonymously. Should you contract the corona virus all your encounters of the last 48 hours will be informed automatically and anonymously.
 
 [![App Store Download Link](.github/app-store-badge.png)](https://apps.apple.com/at/app/apple-store/id1503717224)
